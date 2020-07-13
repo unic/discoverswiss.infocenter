@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Infocenter\Client\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Infocenter\Client\ObjectSerializer;
 
 /**
  * ImageObject Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -72,16 +72,16 @@ class ImageObject implements ModelInterface, ArrayAccess
 'id' => 'string',
 'identifier' => 'string',
 'datasource' => 'string',
-'data_governance' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
-'image' => '\Swagger\Client\Model\AdministrativeAreaAddressImage',
+'image' => '\Infocenter\Client\Model\AdministrativeAreaAddressImage',
 'same_as' => 'string',
 'url' => 'string',
 'additional_type' => 'string',
-'links' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
-'labels' => '\Swagger\Client\Model\AdministrativeAreaAddressLabels[]',
+'links' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
+'labels' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
 'name' => 'string'    ];
 
     /**
@@ -739,7 +739,7 @@ class ImageObject implements ModelInterface, ArrayAccess
     /**
      * Gets data_governance
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
      */
     public function getDataGovernance()
     {
@@ -749,7 +749,7 @@ class ImageObject implements ModelInterface, ArrayAccess
     /**
      * Sets data_governance
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
      *
      * @return $this
      */
@@ -835,7 +835,7 @@ class ImageObject implements ModelInterface, ArrayAccess
     /**
      * Gets image
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImage
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImage
      */
     public function getImage()
     {
@@ -845,7 +845,7 @@ class ImageObject implements ModelInterface, ArrayAccess
     /**
      * Sets image
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImage $image image
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImage $image image
      *
      * @return $this
      */
@@ -931,7 +931,7 @@ class ImageObject implements ModelInterface, ArrayAccess
     /**
      * Gets links
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
      */
     public function getLinks()
     {
@@ -941,7 +941,7 @@ class ImageObject implements ModelInterface, ArrayAccess
     /**
      * Sets links
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
      *
      * @return $this
      */
@@ -955,7 +955,7 @@ class ImageObject implements ModelInterface, ArrayAccess
     /**
      * Gets labels
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
      */
     public function getLabels()
     {
@@ -965,7 +965,7 @@ class ImageObject implements ModelInterface, ArrayAccess
     /**
      * Sets labels
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
      *
      * @return $this
      */

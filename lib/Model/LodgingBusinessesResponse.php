@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Infocenter\Client\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Infocenter\Client\ObjectSerializer;
 
 /**
  * LodgingBusinessesResponse Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class LodgingBusinessesResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'has_next_page' => 'bool',
 'next_page_token' => 'string',
-'data' => '\Swagger\Client\Model\LodgingBusiness[]'    ];
+'data' => '\Infocenter\Client\Model\LodgingBusiness[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -259,7 +259,7 @@ class LodgingBusinessesResponse implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \Swagger\Client\Model\LodgingBusiness[]
+     * @return \Infocenter\Client\Model\LodgingBusiness[]
      */
     public function getData()
     {
@@ -269,7 +269,7 @@ class LodgingBusinessesResponse implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Swagger\Client\Model\LodgingBusiness[] $data data
+     * @param \Infocenter\Client\Model\LodgingBusiness[] $data data
      *
      * @return $this
      */

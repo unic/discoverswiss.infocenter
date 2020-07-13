@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Infocenter\Client\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Infocenter\Client\ObjectSerializer;
 
 /**
  * Category Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,13 +57,13 @@ class Category implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'is_winter' => 'bool',
-'parent' => '\Swagger\Client\Model\AdministrativeAreaAddressLabels',
-'icons' => '\Swagger\Client\Model\CategoryIcons[]',
+'parent' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels',
+'icons' => '\Infocenter\Client\Model\CategoryIcons[]',
 'type' => 'string',
 'id' => 'string',
 'identifier' => 'string',
 'datasource' => 'string',
-'data_governance' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
 'name' => 'string'    ];
 
     /**
@@ -271,7 +271,7 @@ class Category implements ModelInterface, ArrayAccess
     /**
      * Gets parent
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressLabels
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels
      */
     public function getParent()
     {
@@ -281,7 +281,7 @@ class Category implements ModelInterface, ArrayAccess
     /**
      * Sets parent
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressLabels $parent parent
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels $parent parent
      *
      * @return $this
      */
@@ -295,7 +295,7 @@ class Category implements ModelInterface, ArrayAccess
     /**
      * Gets icons
      *
-     * @return \Swagger\Client\Model\CategoryIcons[]
+     * @return \Infocenter\Client\Model\CategoryIcons[]
      */
     public function getIcons()
     {
@@ -305,7 +305,7 @@ class Category implements ModelInterface, ArrayAccess
     /**
      * Sets icons
      *
-     * @param \Swagger\Client\Model\CategoryIcons[] $icons icons
+     * @param \Infocenter\Client\Model\CategoryIcons[] $icons icons
      *
      * @return $this
      */
@@ -415,7 +415,7 @@ class Category implements ModelInterface, ArrayAccess
     /**
      * Gets data_governance
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
      */
     public function getDataGovernance()
     {
@@ -425,7 +425,7 @@ class Category implements ModelInterface, ArrayAccess
     /**
      * Sets data_governance
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
      *
      * @return $this
      */

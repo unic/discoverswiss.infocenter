@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Infocenter\Client\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Infocenter\Client\ObjectSerializer;
 
 /**
  * AdministrativeAreaAddressImageDataGovernance Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,9 +56,9 @@ class AdministrativeAreaAddressImageDataGovernance implements ModelInterface, Ar
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'supplier' => '\Swagger\Client\Model\AdministrativeAreaAddressSource',
-'term' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceTerm',
-'source' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSource',
+        'supplier' => '\Infocenter\Client\Model\AdministrativeAreaAddressSource',
+'term' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceTerm',
+'source' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSource',
 'author' => 'string'    ];
 
     /**
@@ -217,7 +217,7 @@ class AdministrativeAreaAddressImageDataGovernance implements ModelInterface, Ar
     /**
      * Gets supplier
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressSource
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressSource
      */
     public function getSupplier()
     {
@@ -227,7 +227,7 @@ class AdministrativeAreaAddressImageDataGovernance implements ModelInterface, Ar
     /**
      * Sets supplier
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressSource $supplier supplier
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressSource $supplier supplier
      *
      * @return $this
      */
@@ -241,7 +241,7 @@ class AdministrativeAreaAddressImageDataGovernance implements ModelInterface, Ar
     /**
      * Gets term
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceTerm
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceTerm
      */
     public function getTerm()
     {
@@ -251,7 +251,7 @@ class AdministrativeAreaAddressImageDataGovernance implements ModelInterface, Ar
     /**
      * Sets term
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceTerm $term term
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceTerm $term term
      *
      * @return $this
      */
@@ -265,7 +265,7 @@ class AdministrativeAreaAddressImageDataGovernance implements ModelInterface, Ar
     /**
      * Gets source
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSource
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSource
      */
     public function getSource()
     {
@@ -275,7 +275,7 @@ class AdministrativeAreaAddressImageDataGovernance implements ModelInterface, Ar
     /**
      * Sets source
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSource $source source
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSource $source source
      *
      * @return $this
      */

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **caption** | **string** |  | [optional] 
-**data_governance** | [**\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance**](AdministrativeAreaAddressImageDataGovernance.md) |  | [optional] 
+**data_governance** | [**\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance**](AdministrativeAreaAddressImageDataGovernance.md) |  | [optional] 
 **content_url** | **string** |  | [optional] 
 **thumbnail_url** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 

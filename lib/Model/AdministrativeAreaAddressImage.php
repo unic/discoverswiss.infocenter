@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Infocenter\Client\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Infocenter\Client\ObjectSerializer;
 
 /**
  * AdministrativeAreaAddressImage Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'caption' => 'string',
-'data_governance' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
 'content_url' => 'string',
 'thumbnail_url' => 'string',
 'id' => 'string',
@@ -253,7 +253,7 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
     /**
      * Gets data_governance
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
      */
     public function getDataGovernance()
     {
@@ -263,7 +263,7 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
     /**
      * Sets data_governance
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Infocenter\Client\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Infocenter\Client\ObjectSerializer;
 
 /**
  * Place Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,22 +57,22 @@ class Place implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'available_language' => 'string[]',
-'address' => '\Swagger\Client\Model\AdministrativeAreaAddress',
+'address' => '\Infocenter\Client\Model\AdministrativeAreaAddress',
 'fax_number' => 'string',
-'geo' => '\Swagger\Client\Model\AdministrativeAreaGeo',
+'geo' => '\Infocenter\Client\Model\AdministrativeAreaGeo',
 'has_map' => 'string',
 'is_accessible_for_free' => 'bool',
 'maximum_attendee_capacity' => 'int',
-'opening_hours_specification' => '\Swagger\Client\Model\AdministrativeAreaAddressHoursAvailable[]',
-'photo' => '\Swagger\Client\Model\AdministrativeAreaAddressImage[]',
+'opening_hours_specification' => '\Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[]',
+'photo' => '\Infocenter\Client\Model\AdministrativeAreaAddressImage[]',
 'public_access' => 'bool',
 'smoking_allowed' => 'bool',
-'source' => '\Swagger\Client\Model\AdministrativeAreaAddressSource',
-'special_opening_hours_specification' => '\Swagger\Client\Model\AdministrativeAreaAddressHoursAvailable[]',
+'source' => '\Infocenter\Client\Model\AdministrativeAreaAddressSource',
+'special_opening_hours_specification' => '\Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[]',
 'telephone' => 'string',
 'tourist_type' => 'string',
-'additional_property' => '\Swagger\Client\Model\AdministrativeAreaAdditionalProperty[]',
-'geo_shape' => '\Swagger\Client\Model\AdministrativeAreaGeoShape',
+'additional_property' => '\Infocenter\Client\Model\AdministrativeAreaAdditionalProperty[]',
+'geo_shape' => '\Infocenter\Client\Model\AdministrativeAreaGeoShape',
 'cc' => 'string',
 'located' => 'string[]',
 'copyright' => 'string',
@@ -87,24 +87,24 @@ class Place implements ModelInterface, ArrayAccess
 'zurichcard' => 'string',
 'zurichcard_description' => 'string',
 'osm_id' => 'string',
-'aggregate_rating' => '\Swagger\Client\Model\AdministrativeAreaAggregateRating',
+'aggregate_rating' => '\Infocenter\Client\Model\AdministrativeAreaAggregateRating',
 'type' => 'string',
 'opening_hours' => 'string',
-'category' => '\Swagger\Client\Model\AdministrativeAreaAddressLabels[]',
-'contained_in_place' => '\Swagger\Client\Model\AdministrativeAreaAddressLabels[]',
+'category' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
+'contained_in_place' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
 'id' => 'string',
 'identifier' => 'string',
 'datasource' => 'string',
-'data_governance' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
-'image' => '\Swagger\Client\Model\AdministrativeAreaAddressImage',
+'image' => '\Infocenter\Client\Model\AdministrativeAreaAddressImage',
 'same_as' => 'string',
 'url' => 'string',
 'additional_type' => 'string',
-'links' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
-'labels' => '\Swagger\Client\Model\AdministrativeAreaAddressLabels[]',
+'links' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
+'labels' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
 'name' => 'string'    ];
 
     /**
@@ -517,7 +517,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddress
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddress
      */
     public function getAddress()
     {
@@ -527,7 +527,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddress $address address
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddress $address address
      *
      * @return $this
      */
@@ -565,7 +565,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets geo
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaGeo
+     * @return \Infocenter\Client\Model\AdministrativeAreaGeo
      */
     public function getGeo()
     {
@@ -575,7 +575,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets geo
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaGeo $geo geo
+     * @param \Infocenter\Client\Model\AdministrativeAreaGeo $geo geo
      *
      * @return $this
      */
@@ -661,7 +661,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets opening_hours_specification
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressHoursAvailable[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[]
      */
     public function getOpeningHoursSpecification()
     {
@@ -671,7 +671,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets opening_hours_specification
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressHoursAvailable[] $opening_hours_specification opening_hours_specification
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[] $opening_hours_specification opening_hours_specification
      *
      * @return $this
      */
@@ -685,7 +685,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets photo
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImage[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImage[]
      */
     public function getPhoto()
     {
@@ -695,7 +695,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets photo
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImage[] $photo photo
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImage[] $photo photo
      *
      * @return $this
      */
@@ -757,7 +757,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets source
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressSource
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressSource
      */
     public function getSource()
     {
@@ -767,7 +767,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressSource $source source
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressSource $source source
      *
      * @return $this
      */
@@ -781,7 +781,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets special_opening_hours_specification
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressHoursAvailable[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[]
      */
     public function getSpecialOpeningHoursSpecification()
     {
@@ -791,7 +791,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets special_opening_hours_specification
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressHoursAvailable[] $special_opening_hours_specification special_opening_hours_specification
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[] $special_opening_hours_specification special_opening_hours_specification
      *
      * @return $this
      */
@@ -853,7 +853,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets additional_property
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAdditionalProperty[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAdditionalProperty[]
      */
     public function getAdditionalProperty()
     {
@@ -863,7 +863,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets additional_property
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAdditionalProperty[] $additional_property additional_property
+     * @param \Infocenter\Client\Model\AdministrativeAreaAdditionalProperty[] $additional_property additional_property
      *
      * @return $this
      */
@@ -877,7 +877,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets geo_shape
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaGeoShape
+     * @return \Infocenter\Client\Model\AdministrativeAreaGeoShape
      */
     public function getGeoShape()
     {
@@ -887,7 +887,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets geo_shape
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaGeoShape $geo_shape geo_shape
+     * @param \Infocenter\Client\Model\AdministrativeAreaGeoShape $geo_shape geo_shape
      *
      * @return $this
      */
@@ -1237,7 +1237,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets aggregate_rating
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAggregateRating
+     * @return \Infocenter\Client\Model\AdministrativeAreaAggregateRating
      */
     public function getAggregateRating()
     {
@@ -1247,7 +1247,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets aggregate_rating
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAggregateRating $aggregate_rating aggregate_rating
+     * @param \Infocenter\Client\Model\AdministrativeAreaAggregateRating $aggregate_rating aggregate_rating
      *
      * @return $this
      */
@@ -1309,7 +1309,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets category
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
      */
     public function getCategory()
     {
@@ -1319,7 +1319,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets category
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressLabels[] $category category
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $category category
      *
      * @return $this
      */
@@ -1333,7 +1333,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets contained_in_place
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
      */
     public function getContainedInPlace()
     {
@@ -1343,7 +1343,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets contained_in_place
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressLabels[] $contained_in_place contained_in_place
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $contained_in_place contained_in_place
      *
      * @return $this
      */
@@ -1429,7 +1429,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets data_governance
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
      */
     public function getDataGovernance()
     {
@@ -1439,7 +1439,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets data_governance
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
      *
      * @return $this
      */
@@ -1525,7 +1525,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets image
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImage
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImage
      */
     public function getImage()
     {
@@ -1535,7 +1535,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets image
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImage $image image
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImage $image image
      *
      * @return $this
      */
@@ -1621,7 +1621,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets links
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
      */
     public function getLinks()
     {
@@ -1631,7 +1631,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets links
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
      *
      * @return $this
      */
@@ -1645,7 +1645,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Gets labels
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
      */
     public function getLabels()
     {
@@ -1655,7 +1655,7 @@ class Place implements ModelInterface, ArrayAccess
     /**
      * Sets labels
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
      *
      * @return $this
      */

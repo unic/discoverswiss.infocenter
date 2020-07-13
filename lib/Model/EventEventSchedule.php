@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Infocenter\Client\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Infocenter\Client\ObjectSerializer;
 
 /**
  * EventEventSchedule Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,17 +59,17 @@ class EventEventSchedule implements ModelInterface, ArrayAccess
         'by_day' => 'string[]',
 'start_date' => 'string',
 'end_date' => 'string',
-'start_time' => '\Swagger\Client\Model\EventStartTime',
-'end_time' => '\Swagger\Client\Model\EventStartTime',
+'start_time' => '\Infocenter\Client\Model\EventStartTime',
+'end_time' => '\Infocenter\Client\Model\EventStartTime',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
-'image' => '\Swagger\Client\Model\AdministrativeAreaAddressImage',
+'image' => '\Infocenter\Client\Model\AdministrativeAreaAddressImage',
 'same_as' => 'string',
 'url' => 'string',
 'additional_type' => 'string',
-'links' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
-'labels' => '\Swagger\Client\Model\AdministrativeAreaAddressLabels[]',
+'links' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
+'labels' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
 'name' => 'string'    ];
 
     /**
@@ -355,7 +355,7 @@ class EventEventSchedule implements ModelInterface, ArrayAccess
     /**
      * Gets start_time
      *
-     * @return \Swagger\Client\Model\EventStartTime
+     * @return \Infocenter\Client\Model\EventStartTime
      */
     public function getStartTime()
     {
@@ -365,7 +365,7 @@ class EventEventSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets start_time
      *
-     * @param \Swagger\Client\Model\EventStartTime $start_time start_time
+     * @param \Infocenter\Client\Model\EventStartTime $start_time start_time
      *
      * @return $this
      */
@@ -379,7 +379,7 @@ class EventEventSchedule implements ModelInterface, ArrayAccess
     /**
      * Gets end_time
      *
-     * @return \Swagger\Client\Model\EventStartTime
+     * @return \Infocenter\Client\Model\EventStartTime
      */
     public function getEndTime()
     {
@@ -389,7 +389,7 @@ class EventEventSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets end_time
      *
-     * @param \Swagger\Client\Model\EventStartTime $end_time end_time
+     * @param \Infocenter\Client\Model\EventStartTime $end_time end_time
      *
      * @return $this
      */
@@ -475,7 +475,7 @@ class EventEventSchedule implements ModelInterface, ArrayAccess
     /**
      * Gets image
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImage
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImage
      */
     public function getImage()
     {
@@ -485,7 +485,7 @@ class EventEventSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets image
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImage $image image
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImage $image image
      *
      * @return $this
      */
@@ -571,7 +571,7 @@ class EventEventSchedule implements ModelInterface, ArrayAccess
     /**
      * Gets links
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
      */
     public function getLinks()
     {
@@ -581,7 +581,7 @@ class EventEventSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets links
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
      *
      * @return $this
      */
@@ -595,7 +595,7 @@ class EventEventSchedule implements ModelInterface, ArrayAccess
     /**
      * Gets labels
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
      */
     public function getLabels()
     {
@@ -605,7 +605,7 @@ class EventEventSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets labels
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
      *
      * @return $this
      */

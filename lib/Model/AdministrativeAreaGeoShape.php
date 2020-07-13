@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Infocenter\Client\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Infocenter\Client\ObjectSerializer;
 
 /**
  * AdministrativeAreaGeoShape Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'address' => '\Swagger\Client\Model\AdministrativeAreaAddress',
+        'address' => '\Infocenter\Client\Model\AdministrativeAreaAddress',
 'address_country' => 'string',
 'elevation' => 'double',
 'postal_code' => 'string',
@@ -67,12 +67,12 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
-'image' => '\Swagger\Client\Model\AdministrativeAreaAddressImage',
+'image' => '\Infocenter\Client\Model\AdministrativeAreaAddressImage',
 'same_as' => 'string',
 'url' => 'string',
 'additional_type' => 'string',
-'links' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
-'labels' => '\Swagger\Client\Model\AdministrativeAreaAddressLabels[]',
+'links' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
+'labels' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
 'name' => 'string'    ];
 
     /**
@@ -301,7 +301,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddress
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddress
      */
     public function getAddress()
     {
@@ -311,7 +311,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddress $address address
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddress $address address
      *
      * @return $this
      */
@@ -565,7 +565,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
     /**
      * Gets image
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImage
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImage
      */
     public function getImage()
     {
@@ -575,7 +575,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
     /**
      * Sets image
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImage $image image
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImage $image image
      *
      * @return $this
      */
@@ -661,7 +661,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
     /**
      * Gets links
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
      */
     public function getLinks()
     {
@@ -671,7 +671,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
     /**
      * Sets links
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
      *
      * @return $this
      */
@@ -685,7 +685,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
     /**
      * Gets labels
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
      */
     public function getLabels()
     {
@@ -695,7 +695,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
     /**
      * Sets labels
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
      *
      * @return $this
      */

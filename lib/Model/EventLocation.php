@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Infocenter\Client\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Infocenter\Client\ObjectSerializer;
 
 /**
  * EventLocation Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,8 +56,8 @@ class EventLocation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'address' => '\Swagger\Client\Model\AdministrativeAreaAddress',
-'geo' => '\Swagger\Client\Model\AdministrativeAreaGeo',
+        'address' => '\Infocenter\Client\Model\AdministrativeAreaAddress',
+'geo' => '\Infocenter\Client\Model\AdministrativeAreaGeo',
 'name' => 'string',
 'id' => 'string',
 'identifier' => 'string'    ];
@@ -223,7 +223,7 @@ class EventLocation implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddress
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddress
      */
     public function getAddress()
     {
@@ -233,7 +233,7 @@ class EventLocation implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddress $address address
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddress $address address
      *
      * @return $this
      */
@@ -247,7 +247,7 @@ class EventLocation implements ModelInterface, ArrayAccess
     /**
      * Gets geo
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaGeo
+     * @return \Infocenter\Client\Model\AdministrativeAreaGeo
      */
     public function getGeo()
     {
@@ -257,7 +257,7 @@ class EventLocation implements ModelInterface, ArrayAccess
     /**
      * Sets geo
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaGeo $geo geo
+     * @param \Infocenter\Client\Model\AdministrativeAreaGeo $geo geo
      *
      * @return $this
      */

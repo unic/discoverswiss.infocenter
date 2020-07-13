@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Infocenter\Client\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Infocenter\Client\ObjectSerializer;
 
 /**
  * EventOrganizerContactPoint Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,17 +61,17 @@ class EventOrganizerContactPoint implements ModelInterface, ArrayAccess
 'email' => 'string',
 'fax_number' => 'string',
 'telephone' => 'string',
-'source' => '\Swagger\Client\Model\AdministrativeAreaAddressSource',
-'hours_available' => '\Swagger\Client\Model\AdministrativeAreaAddressHoursAvailable[]',
+'source' => '\Infocenter\Client\Model\AdministrativeAreaAddressSource',
+'hours_available' => '\Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[]',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
-'image' => '\Swagger\Client\Model\AdministrativeAreaAddressImage',
+'image' => '\Infocenter\Client\Model\AdministrativeAreaAddressImage',
 'same_as' => 'string',
 'url' => 'string',
 'additional_type' => 'string',
-'links' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
-'labels' => '\Swagger\Client\Model\AdministrativeAreaAddressLabels[]',
+'links' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
+'labels' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
 'name' => 'string'    ];
 
     /**
@@ -415,7 +415,7 @@ class EventOrganizerContactPoint implements ModelInterface, ArrayAccess
     /**
      * Gets source
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressSource
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressSource
      */
     public function getSource()
     {
@@ -425,7 +425,7 @@ class EventOrganizerContactPoint implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressSource $source source
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressSource $source source
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ class EventOrganizerContactPoint implements ModelInterface, ArrayAccess
     /**
      * Gets hours_available
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressHoursAvailable[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[]
      */
     public function getHoursAvailable()
     {
@@ -449,7 +449,7 @@ class EventOrganizerContactPoint implements ModelInterface, ArrayAccess
     /**
      * Sets hours_available
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressHoursAvailable[] $hours_available hours_available
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[] $hours_available hours_available
      *
      * @return $this
      */
@@ -535,7 +535,7 @@ class EventOrganizerContactPoint implements ModelInterface, ArrayAccess
     /**
      * Gets image
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImage
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImage
      */
     public function getImage()
     {
@@ -545,7 +545,7 @@ class EventOrganizerContactPoint implements ModelInterface, ArrayAccess
     /**
      * Sets image
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImage $image image
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImage $image image
      *
      * @return $this
      */
@@ -631,7 +631,7 @@ class EventOrganizerContactPoint implements ModelInterface, ArrayAccess
     /**
      * Gets links
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
      */
     public function getLinks()
     {
@@ -641,7 +641,7 @@ class EventOrganizerContactPoint implements ModelInterface, ArrayAccess
     /**
      * Sets links
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
      *
      * @return $this
      */
@@ -655,7 +655,7 @@ class EventOrganizerContactPoint implements ModelInterface, ArrayAccess
     /**
      * Gets labels
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
      */
     public function getLabels()
     {
@@ -665,7 +665,7 @@ class EventOrganizerContactPoint implements ModelInterface, ArrayAccess
     /**
      * Sets labels
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
      *
      * @return $this
      */

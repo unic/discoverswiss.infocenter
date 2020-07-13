@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Infocenter\Client\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Infocenter\Client\ObjectSerializer;
 
 /**
  * AdministrativeAreaAddressImageDataGovernanceSource Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,10 +56,10 @@ class AdministrativeAreaAddressImageDataGovernanceSource implements ModelInterfa
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'partner' => '\Swagger\Client\Model\AdministrativeAreaAddressSource',
+        'partner' => '\Infocenter\Client\Model\AdministrativeAreaAddressSource',
 'name' => 'string',
-'logo' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLogo',
-'link' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]'    ];
+'logo' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLogo',
+'link' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -217,7 +217,7 @@ class AdministrativeAreaAddressImageDataGovernanceSource implements ModelInterfa
     /**
      * Gets partner
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressSource
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressSource
      */
     public function getPartner()
     {
@@ -227,7 +227,7 @@ class AdministrativeAreaAddressImageDataGovernanceSource implements ModelInterfa
     /**
      * Sets partner
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressSource $partner partner
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressSource $partner partner
      *
      * @return $this
      */
@@ -265,7 +265,7 @@ class AdministrativeAreaAddressImageDataGovernanceSource implements ModelInterfa
     /**
      * Gets logo
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLogo
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLogo
      */
     public function getLogo()
     {
@@ -275,7 +275,7 @@ class AdministrativeAreaAddressImageDataGovernanceSource implements ModelInterfa
     /**
      * Sets logo
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLogo $logo logo
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLogo $logo logo
      *
      * @return $this
      */
@@ -289,7 +289,7 @@ class AdministrativeAreaAddressImageDataGovernanceSource implements ModelInterfa
     /**
      * Gets link
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
      */
     public function getLink()
     {
@@ -299,7 +299,7 @@ class AdministrativeAreaAddressImageDataGovernanceSource implements ModelInterfa
     /**
      * Sets link
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $link link
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $link link
      *
      * @return $this
      */

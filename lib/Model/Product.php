@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Infocenter\Client\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Infocenter\Client\ObjectSerializer;
 
 /**
  * Product Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,10 +59,10 @@ class Product implements ModelInterface, ArrayAccess
         'id' => 'string',
 'identifier' => 'string',
 'datasource' => 'string',
-'data_governance' => '\Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
 'name' => 'string',
 'sku' => 'string',
-'price_list' => '\Swagger\Client\Model\ProductPriceList[]',
+'price_list' => '\Infocenter\Client\Model\ProductPriceList[]',
 'tax_rate' => 'double'    ];
 
     /**
@@ -313,7 +313,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets data_governance
      *
-     * @return \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance
+     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
      */
     public function getDataGovernance()
     {
@@ -323,7 +323,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets data_governance
      *
-     * @param \Swagger\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
+     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
      *
      * @return $this
      */
@@ -385,7 +385,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets price_list
      *
-     * @return \Swagger\Client\Model\ProductPriceList[]
+     * @return \Infocenter\Client\Model\ProductPriceList[]
      */
     public function getPriceList()
     {
@@ -395,7 +395,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets price_list
      *
-     * @param \Swagger\Client\Model\ProductPriceList[] $price_list price_list
+     * @param \Infocenter\Client\Model\ProductPriceList[] $price_list price_list
      *
      * @return $this
      */

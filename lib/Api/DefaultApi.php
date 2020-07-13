@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api\Infocenter;
+namespace Infocenter\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Infocenter\Client\ApiException;
+use Infocenter\Client\Configuration;
+use Infocenter\Client\HeaderSelector;
+use Infocenter\Client\ObjectSerializer;
 
 /**
  * DefaultApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -94,9 +94,9 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\AdministrativeArea
+     * @return \Infocenter\Client\Model\AdministrativeArea
      */
     public function administrativeAreaRegion($id, $accept_language = null)
     {
@@ -112,13 +112,13 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\AdministrativeArea, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\AdministrativeArea, HTTP status code, HTTP response headers (array of strings)
      */
     public function administrativeAreaRegionWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\AdministrativeArea';
+        $returnType = '\Infocenter\Client\Model\AdministrativeArea';
         $request = $this->administrativeAreaRegionRequest($id, $accept_language);
 
         try {
@@ -170,7 +170,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\AdministrativeArea',
+                        '\Infocenter\Client\Model\AdministrativeArea',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -214,7 +214,7 @@ class DefaultApi
      */
     public function administrativeAreaRegionAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\AdministrativeArea';
+        $returnType = '\Infocenter\Client\Model\AdministrativeArea';
         $request = $this->administrativeAreaRegionRequest($id, $accept_language);
 
         return $this->client
@@ -375,9 +375,9 @@ class DefaultApi
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Category
+     * @return \Infocenter\Client\Model\Category
      */
     public function category($id, $accept_language = null)
     {
@@ -393,13 +393,13 @@ class DefaultApi
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Category, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\Category, HTTP status code, HTTP response headers (array of strings)
      */
     public function categoryWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\Category';
+        $returnType = '\Infocenter\Client\Model\Category';
         $request = $this->categoryRequest($id, $accept_language);
 
         try {
@@ -451,7 +451,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Category',
+                        '\Infocenter\Client\Model\Category',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -495,7 +495,7 @@ class DefaultApi
      */
     public function categoryAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\Category';
+        $returnType = '\Infocenter\Client\Model\Category';
         $request = $this->categoryRequest($id, $accept_language);
 
         return $this->client
@@ -656,9 +656,9 @@ class DefaultApi
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\CivicStructure
+     * @return \Infocenter\Client\Model\CivicStructure
      */
     public function civicStructure($id, $accept_language = null)
     {
@@ -674,13 +674,13 @@ class DefaultApi
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\CivicStructure, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\CivicStructure, HTTP status code, HTTP response headers (array of strings)
      */
     public function civicStructureWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\CivicStructure';
+        $returnType = '\Infocenter\Client\Model\CivicStructure';
         $request = $this->civicStructureRequest($id, $accept_language);
 
         try {
@@ -732,7 +732,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\CivicStructure',
+                        '\Infocenter\Client\Model\CivicStructure',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -776,7 +776,7 @@ class DefaultApi
      */
     public function civicStructureAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\CivicStructure';
+        $returnType = '\Infocenter\Client\Model\CivicStructure';
         $request = $this->civicStructureRequest($id, $accept_language);
 
         return $this->client
@@ -937,9 +937,9 @@ class DefaultApi
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\CreativeWork
+     * @return \Infocenter\Client\Model\CreativeWork
      */
     public function creativeWork($id, $accept_language = null)
     {
@@ -955,13 +955,13 @@ class DefaultApi
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\CreativeWork, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\CreativeWork, HTTP status code, HTTP response headers (array of strings)
      */
     public function creativeWorkWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\CreativeWork';
+        $returnType = '\Infocenter\Client\Model\CreativeWork';
         $request = $this->creativeWorkRequest($id, $accept_language);
 
         try {
@@ -1013,7 +1013,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\CreativeWork',
+                        '\Infocenter\Client\Model\CreativeWork',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1057,7 +1057,7 @@ class DefaultApi
      */
     public function creativeWorkAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\CreativeWork';
+        $returnType = '\Infocenter\Client\Model\CreativeWork';
         $request = $this->creativeWorkRequest($id, $accept_language);
 
         return $this->client
@@ -1218,9 +1218,9 @@ class DefaultApi
      * @param  string $term_code Use property code of a term to get the current term version. (required)
      * @param  string $accept_language Supply this header to select the term version in the correct language and deliver localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\TermVersion
+     * @return \Infocenter\Client\Model\TermVersion
      */
     public function currentTermVersion($term_code, $accept_language = null)
     {
@@ -1236,13 +1236,13 @@ class DefaultApi
      * @param  string $term_code Use property code of a term to get the current term version. (required)
      * @param  string $accept_language Supply this header to select the term version in the correct language and deliver localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\TermVersion, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\TermVersion, HTTP status code, HTTP response headers (array of strings)
      */
     public function currentTermVersionWithHttpInfo($term_code, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\TermVersion';
+        $returnType = '\Infocenter\Client\Model\TermVersion';
         $request = $this->currentTermVersionRequest($term_code, $accept_language);
 
         try {
@@ -1294,7 +1294,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\TermVersion',
+                        '\Infocenter\Client\Model\TermVersion',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1338,7 +1338,7 @@ class DefaultApi
      */
     public function currentTermVersionAsyncWithHttpInfo($term_code, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\TermVersion';
+        $returnType = '\Infocenter\Client\Model\TermVersion';
         $request = $this->currentTermVersionRequest($term_code, $accept_language);
 
         return $this->client
@@ -1499,9 +1499,9 @@ class DefaultApi
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Event
+     * @return \Infocenter\Client\Model\Event
      */
     public function event($id, $accept_language = null)
     {
@@ -1517,13 +1517,13 @@ class DefaultApi
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Event, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\Event, HTTP status code, HTTP response headers (array of strings)
      */
     public function eventWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\Event';
+        $returnType = '\Infocenter\Client\Model\Event';
         $request = $this->eventRequest($id, $accept_language);
 
         try {
@@ -1575,7 +1575,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Event',
+                        '\Infocenter\Client\Model\Event',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1619,7 +1619,7 @@ class DefaultApi
      */
     public function eventAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\Event';
+        $returnType = '\Infocenter\Client\Model\Event';
         $request = $this->eventRequest($id, $accept_language);
 
         return $this->client
@@ -1780,9 +1780,9 @@ class DefaultApi
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\FoodEstablishment
+     * @return \Infocenter\Client\Model\FoodEstablishment
      */
     public function foodEstablishment($id, $accept_language = null)
     {
@@ -1798,13 +1798,13 @@ class DefaultApi
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\FoodEstablishment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\FoodEstablishment, HTTP status code, HTTP response headers (array of strings)
      */
     public function foodEstablishmentWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\FoodEstablishment';
+        $returnType = '\Infocenter\Client\Model\FoodEstablishment';
         $request = $this->foodEstablishmentRequest($id, $accept_language);
 
         try {
@@ -1856,7 +1856,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\FoodEstablishment',
+                        '\Infocenter\Client\Model\FoodEstablishment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1900,7 +1900,7 @@ class DefaultApi
      */
     public function foodEstablishmentAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\FoodEstablishment';
+        $returnType = '\Infocenter\Client\Model\FoodEstablishment';
         $request = $this->foodEstablishmentRequest($id, $accept_language);
 
         return $this->client
@@ -2059,7 +2059,7 @@ class DefaultApi
      * GetStatus
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2074,7 +2074,7 @@ class DefaultApi
      * GetStatus
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2277,9 +2277,9 @@ class DefaultApi
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ImageObject
+     * @return \Infocenter\Client\Model\ImageObject
      */
     public function imageObject($id, $accept_language = null)
     {
@@ -2295,13 +2295,13 @@ class DefaultApi
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ImageObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\ImageObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function imageObjectWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\ImageObject';
+        $returnType = '\Infocenter\Client\Model\ImageObject';
         $request = $this->imageObjectRequest($id, $accept_language);
 
         try {
@@ -2353,7 +2353,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ImageObject',
+                        '\Infocenter\Client\Model\ImageObject',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2397,7 +2397,7 @@ class DefaultApi
      */
     public function imageObjectAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\ImageObject';
+        $returnType = '\Infocenter\Client\Model\ImageObject';
         $request = $this->imageObjectRequest($id, $accept_language);
 
         return $this->client
@@ -2563,9 +2563,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\AdministrativeAreasResponse
+     * @return \Infocenter\Client\Model\AdministrativeAreasResponse
      */
     public function listAdministrativeAreaRegion($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
@@ -2586,13 +2586,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\AdministrativeAreasResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\AdministrativeAreasResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAdministrativeAreaRegionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\AdministrativeAreasResponse';
+        $returnType = '\Infocenter\Client\Model\AdministrativeAreasResponse';
         $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         try {
@@ -2644,7 +2644,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\AdministrativeAreasResponse',
+                        '\Infocenter\Client\Model\AdministrativeAreasResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2698,7 +2698,7 @@ class DefaultApi
      */
     public function listAdministrativeAreaRegionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\AdministrativeAreasResponse';
+        $returnType = '\Infocenter\Client\Model\AdministrativeAreasResponse';
         $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         return $this->client
@@ -2878,9 +2878,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\CategoriesResponse
+     * @return \Infocenter\Client\Model\CategoriesResponse
      */
     public function listCategory($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
@@ -2900,13 +2900,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\CategoriesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\CategoriesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCategoryWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\CategoriesResponse';
+        $returnType = '\Infocenter\Client\Model\CategoriesResponse';
         $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         try {
@@ -2958,7 +2958,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\CategoriesResponse',
+                        '\Infocenter\Client\Model\CategoriesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3010,7 +3010,7 @@ class DefaultApi
      */
     public function listCategoryAsyncWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\CategoriesResponse';
+        $returnType = '\Infocenter\Client\Model\CategoriesResponse';
         $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         return $this->client
@@ -3186,9 +3186,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\CivicStructuresResponse
+     * @return \Infocenter\Client\Model\CivicStructuresResponse
      */
     public function listCivicStructure($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
@@ -3209,13 +3209,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\CivicStructuresResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\CivicStructuresResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCivicStructureWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\CivicStructuresResponse';
+        $returnType = '\Infocenter\Client\Model\CivicStructuresResponse';
         $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         try {
@@ -3267,7 +3267,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\CivicStructuresResponse',
+                        '\Infocenter\Client\Model\CivicStructuresResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3321,7 +3321,7 @@ class DefaultApi
      */
     public function listCivicStructureAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\CivicStructuresResponse';
+        $returnType = '\Infocenter\Client\Model\CivicStructuresResponse';
         $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         return $this->client
@@ -3500,9 +3500,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\CreativeWorksResponse
+     * @return \Infocenter\Client\Model\CreativeWorksResponse
      */
     public function listCreativeWork($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
@@ -3521,13 +3521,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\CreativeWorksResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\CreativeWorksResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCreativeWorkWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\CreativeWorksResponse';
+        $returnType = '\Infocenter\Client\Model\CreativeWorksResponse';
         $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         try {
@@ -3579,7 +3579,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\CreativeWorksResponse',
+                        '\Infocenter\Client\Model\CreativeWorksResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3629,7 +3629,7 @@ class DefaultApi
      */
     public function listCreativeWorkAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\CreativeWorksResponse';
+        $returnType = '\Infocenter\Client\Model\CreativeWorksResponse';
         $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         return $this->client
@@ -3801,9 +3801,9 @@ class DefaultApi
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\EventsResponse
+     * @return \Infocenter\Client\Model\EventsResponse
      */
     public function listEvents($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $accept_language = null)
     {
@@ -3825,13 +3825,13 @@ class DefaultApi
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\EventsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\EventsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listEventsWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\EventsResponse';
+        $returnType = '\Infocenter\Client\Model\EventsResponse';
         $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $accept_language);
 
         try {
@@ -3883,7 +3883,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\EventsResponse',
+                        '\Infocenter\Client\Model\EventsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3939,7 +3939,7 @@ class DefaultApi
      */
     public function listEventsAsyncWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\EventsResponse';
+        $returnType = '\Infocenter\Client\Model\EventsResponse';
         $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $accept_language);
 
         return $this->client
@@ -4125,9 +4125,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\FoodEstablishmentsResponse
+     * @return \Infocenter\Client\Model\FoodEstablishmentsResponse
      */
     public function listFoodEstablishment($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
@@ -4148,13 +4148,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\FoodEstablishmentsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\FoodEstablishmentsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listFoodEstablishmentWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\FoodEstablishmentsResponse';
+        $returnType = '\Infocenter\Client\Model\FoodEstablishmentsResponse';
         $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         try {
@@ -4206,7 +4206,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\FoodEstablishmentsResponse',
+                        '\Infocenter\Client\Model\FoodEstablishmentsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4260,7 +4260,7 @@ class DefaultApi
      */
     public function listFoodEstablishmentAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\FoodEstablishmentsResponse';
+        $returnType = '\Infocenter\Client\Model\FoodEstablishmentsResponse';
         $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         return $this->client
@@ -4439,9 +4439,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ImageObjectsResponse
+     * @return \Infocenter\Client\Model\ImageObjectsResponse
      */
     public function listImageObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
@@ -4460,13 +4460,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ImageObjectsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\ImageObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listImageObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\ImageObjectsResponse';
+        $returnType = '\Infocenter\Client\Model\ImageObjectsResponse';
         $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         try {
@@ -4518,7 +4518,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ImageObjectsResponse',
+                        '\Infocenter\Client\Model\ImageObjectsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4568,7 +4568,7 @@ class DefaultApi
      */
     public function listImageObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\ImageObjectsResponse';
+        $returnType = '\Infocenter\Client\Model\ImageObjectsResponse';
         $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         return $this->client
@@ -4739,9 +4739,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\LocalBusinessesResponse
+     * @return \Infocenter\Client\Model\LocalBusinessesResponse
      */
     public function listLocalBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
@@ -4762,13 +4762,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\LocalBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\LocalBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listLocalBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\LocalBusinessesResponse';
+        $returnType = '\Infocenter\Client\Model\LocalBusinessesResponse';
         $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         try {
@@ -4820,7 +4820,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\LocalBusinessesResponse',
+                        '\Infocenter\Client\Model\LocalBusinessesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4874,7 +4874,7 @@ class DefaultApi
      */
     public function listLocalBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\LocalBusinessesResponse';
+        $returnType = '\Infocenter\Client\Model\LocalBusinessesResponse';
         $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         return $this->client
@@ -5055,9 +5055,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\LodgingBusinessesResponse
+     * @return \Infocenter\Client\Model\LodgingBusinessesResponse
      */
     public function listLodgingBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
@@ -5078,13 +5078,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\LodgingBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\LodgingBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listLodgingBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\LodgingBusinessesResponse';
+        $returnType = '\Infocenter\Client\Model\LodgingBusinessesResponse';
         $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         try {
@@ -5136,7 +5136,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\LodgingBusinessesResponse',
+                        '\Infocenter\Client\Model\LodgingBusinessesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5190,7 +5190,7 @@ class DefaultApi
      */
     public function listLodgingBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\LodgingBusinessesResponse';
+        $returnType = '\Infocenter\Client\Model\LodgingBusinessesResponse';
         $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         return $this->client
@@ -5369,9 +5369,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\MediaObjectsResponse
+     * @return \Infocenter\Client\Model\MediaObjectsResponse
      */
     public function listMediaObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
@@ -5390,13 +5390,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\MediaObjectsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\MediaObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listMediaObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\MediaObjectsResponse';
+        $returnType = '\Infocenter\Client\Model\MediaObjectsResponse';
         $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         try {
@@ -5448,7 +5448,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\MediaObjectsResponse',
+                        '\Infocenter\Client\Model\MediaObjectsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5498,7 +5498,7 @@ class DefaultApi
      */
     public function listMediaObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\MediaObjectsResponse';
+        $returnType = '\Infocenter\Client\Model\MediaObjectsResponse';
         $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         return $this->client
@@ -5669,9 +5669,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PlacesResponse
+     * @return \Infocenter\Client\Model\PlacesResponse
      */
     public function listPlace($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
@@ -5692,13 +5692,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PlacesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\PlacesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listPlaceWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\PlacesResponse';
+        $returnType = '\Infocenter\Client\Model\PlacesResponse';
         $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         try {
@@ -5750,7 +5750,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PlacesResponse',
+                        '\Infocenter\Client\Model\PlacesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5804,7 +5804,7 @@ class DefaultApi
      */
     public function listPlaceAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\PlacesResponse';
+        $returnType = '\Infocenter\Client\Model\PlacesResponse';
         $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         return $this->client
@@ -5982,9 +5982,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ProductsResponse
+     * @return \Infocenter\Client\Model\ProductsResponse
      */
     public function listProducts($datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
@@ -6002,13 +6002,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ProductsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\ProductsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listProductsWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\ProductsResponse';
+        $returnType = '\Infocenter\Client\Model\ProductsResponse';
         $request = $this->listProductsRequest($datasource, $continuation_token, $top, $accept_language);
 
         try {
@@ -6060,7 +6060,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ProductsResponse',
+                        '\Infocenter\Client\Model\ProductsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6108,7 +6108,7 @@ class DefaultApi
      */
     public function listProductsAsyncWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\ProductsResponse';
+        $returnType = '\Infocenter\Client\Model\ProductsResponse';
         $request = $this->listProductsRequest($datasource, $continuation_token, $top, $accept_language);
 
         return $this->client
@@ -6274,9 +6274,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ToursResponse
+     * @return \Infocenter\Client\Model\ToursResponse
      */
     public function listTour($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
@@ -6297,13 +6297,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ToursResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\ToursResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listTourWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\ToursResponse';
+        $returnType = '\Infocenter\Client\Model\ToursResponse';
         $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         try {
@@ -6355,7 +6355,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ToursResponse',
+                        '\Infocenter\Client\Model\ToursResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6409,7 +6409,7 @@ class DefaultApi
      */
     public function listTourAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\ToursResponse';
+        $returnType = '\Infocenter\Client\Model\ToursResponse';
         $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
 
         return $this->client
@@ -6585,9 +6585,9 @@ class DefaultApi
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\LocalBusiness
+     * @return \Infocenter\Client\Model\LocalBusiness
      */
     public function localBusiness($id, $accept_language = null)
     {
@@ -6603,13 +6603,13 @@ class DefaultApi
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\LocalBusiness, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\LocalBusiness, HTTP status code, HTTP response headers (array of strings)
      */
     public function localBusinessWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\LocalBusiness';
+        $returnType = '\Infocenter\Client\Model\LocalBusiness';
         $request = $this->localBusinessRequest($id, $accept_language);
 
         try {
@@ -6661,7 +6661,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\LocalBusiness',
+                        '\Infocenter\Client\Model\LocalBusiness',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6705,7 +6705,7 @@ class DefaultApi
      */
     public function localBusinessAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\LocalBusiness';
+        $returnType = '\Infocenter\Client\Model\LocalBusiness';
         $request = $this->localBusinessRequest($id, $accept_language);
 
         return $this->client
@@ -6866,9 +6866,9 @@ class DefaultApi
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\LodgingBusiness
+     * @return \Infocenter\Client\Model\LodgingBusiness
      */
     public function lodgingBusiness($id, $accept_language = null)
     {
@@ -6884,13 +6884,13 @@ class DefaultApi
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\LodgingBusiness, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\LodgingBusiness, HTTP status code, HTTP response headers (array of strings)
      */
     public function lodgingBusinessWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\LodgingBusiness';
+        $returnType = '\Infocenter\Client\Model\LodgingBusiness';
         $request = $this->lodgingBusinessRequest($id, $accept_language);
 
         try {
@@ -6942,7 +6942,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\LodgingBusiness',
+                        '\Infocenter\Client\Model\LodgingBusiness',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6986,7 +6986,7 @@ class DefaultApi
      */
     public function lodgingBusinessAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\LodgingBusiness';
+        $returnType = '\Infocenter\Client\Model\LodgingBusiness';
         $request = $this->lodgingBusinessRequest($id, $accept_language);
 
         return $this->client
@@ -7147,9 +7147,9 @@ class DefaultApi
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\MediaObject
+     * @return \Infocenter\Client\Model\MediaObject
      */
     public function mediaObject($id, $accept_language = null)
     {
@@ -7165,13 +7165,13 @@ class DefaultApi
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\MediaObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\MediaObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function mediaObjectWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\MediaObject';
+        $returnType = '\Infocenter\Client\Model\MediaObject';
         $request = $this->mediaObjectRequest($id, $accept_language);
 
         try {
@@ -7223,7 +7223,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\MediaObject',
+                        '\Infocenter\Client\Model\MediaObject',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7267,7 +7267,7 @@ class DefaultApi
      */
     public function mediaObjectAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\MediaObject';
+        $returnType = '\Infocenter\Client\Model\MediaObject';
         $request = $this->mediaObjectRequest($id, $accept_language);
 
         return $this->client
@@ -7428,9 +7428,9 @@ class DefaultApi
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Place
+     * @return \Infocenter\Client\Model\Place
      */
     public function place($id, $accept_language = null)
     {
@@ -7446,13 +7446,13 @@ class DefaultApi
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Place, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\Place, HTTP status code, HTTP response headers (array of strings)
      */
     public function placeWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\Place';
+        $returnType = '\Infocenter\Client\Model\Place';
         $request = $this->placeRequest($id, $accept_language);
 
         try {
@@ -7504,7 +7504,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Place',
+                        '\Infocenter\Client\Model\Place',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7548,7 +7548,7 @@ class DefaultApi
      */
     public function placeAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\Place';
+        $returnType = '\Infocenter\Client\Model\Place';
         $request = $this->placeRequest($id, $accept_language);
 
         return $this->client
@@ -7709,9 +7709,9 @@ class DefaultApi
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Product
+     * @return \Infocenter\Client\Model\Product
      */
     public function product($id, $accept_language = null)
     {
@@ -7727,13 +7727,13 @@ class DefaultApi
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
     public function productWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\Product';
+        $returnType = '\Infocenter\Client\Model\Product';
         $request = $this->productRequest($id, $accept_language);
 
         try {
@@ -7785,7 +7785,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Product',
+                        '\Infocenter\Client\Model\Product',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7829,7 +7829,7 @@ class DefaultApi
      */
     public function productAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\Product';
+        $returnType = '\Infocenter\Client\Model\Product';
         $request = $this->productRequest($id, $accept_language);
 
         return $this->client
@@ -7990,9 +7990,9 @@ class DefaultApi
      * @param  string $code Use property code of TermVersion to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\TermVersion
+     * @return \Infocenter\Client\Model\TermVersion
      */
     public function termVersion($code, $accept_language = null)
     {
@@ -8008,13 +8008,13 @@ class DefaultApi
      * @param  string $code Use property code of TermVersion to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\TermVersion, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\TermVersion, HTTP status code, HTTP response headers (array of strings)
      */
     public function termVersionWithHttpInfo($code, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\TermVersion';
+        $returnType = '\Infocenter\Client\Model\TermVersion';
         $request = $this->termVersionRequest($code, $accept_language);
 
         try {
@@ -8066,7 +8066,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\TermVersion',
+                        '\Infocenter\Client\Model\TermVersion',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8110,7 +8110,7 @@ class DefaultApi
      */
     public function termVersionAsyncWithHttpInfo($code, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\TermVersion';
+        $returnType = '\Infocenter\Client\Model\TermVersion';
         $request = $this->termVersionRequest($code, $accept_language);
 
         return $this->client
@@ -8271,9 +8271,9 @@ class DefaultApi
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Tour
+     * @return \Infocenter\Client\Model\Tour
      */
     public function tour($id, $accept_language = null)
     {
@@ -8289,13 +8289,13 @@ class DefaultApi
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Tour, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\Tour, HTTP status code, HTTP response headers (array of strings)
      */
     public function tourWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\Tour';
+        $returnType = '\Infocenter\Client\Model\Tour';
         $request = $this->tourRequest($id, $accept_language);
 
         try {
@@ -8347,7 +8347,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Tour',
+                        '\Infocenter\Client\Model\Tour',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8391,7 +8391,7 @@ class DefaultApi
      */
     public function tourAsyncWithHttpInfo($id, $accept_language = null)
     {
-        $returnType = '\Swagger\Client\Model\Tour';
+        $returnType = '\Infocenter\Client\Model\Tour';
         $request = $this->tourRequest($id, $accept_language);
 
         return $this->client
