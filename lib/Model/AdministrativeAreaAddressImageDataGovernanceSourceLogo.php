@@ -58,6 +58,7 @@ class AdministrativeAreaAddressImageDataGovernanceSourceLogo implements ModelInt
     protected static $swaggerTypes = [
         'caption' => 'string',
 'content_url' => 'string',
+'in_language' => 'string',
 'thumbnail_url' => 'string',
 'id' => 'string',
 'identifier' => 'string'    ];
@@ -70,6 +71,7 @@ class AdministrativeAreaAddressImageDataGovernanceSourceLogo implements ModelInt
     protected static $swaggerFormats = [
         'caption' => null,
 'content_url' => null,
+'in_language' => null,
 'thumbnail_url' => null,
 'id' => null,
 'identifier' => null    ];
@@ -103,6 +105,7 @@ class AdministrativeAreaAddressImageDataGovernanceSourceLogo implements ModelInt
     protected static $attributeMap = [
         'caption' => 'caption',
 'content_url' => 'contentUrl',
+'in_language' => 'inLanguage',
 'thumbnail_url' => 'thumbnailUrl',
 'id' => 'id',
 'identifier' => 'identifier'    ];
@@ -115,6 +118,7 @@ class AdministrativeAreaAddressImageDataGovernanceSourceLogo implements ModelInt
     protected static $setters = [
         'caption' => 'setCaption',
 'content_url' => 'setContentUrl',
+'in_language' => 'setInLanguage',
 'thumbnail_url' => 'setThumbnailUrl',
 'id' => 'setId',
 'identifier' => 'setIdentifier'    ];
@@ -127,6 +131,7 @@ class AdministrativeAreaAddressImageDataGovernanceSourceLogo implements ModelInt
     protected static $getters = [
         'caption' => 'getCaption',
 'content_url' => 'getContentUrl',
+'in_language' => 'getInLanguage',
 'thumbnail_url' => 'getThumbnailUrl',
 'id' => 'getId',
 'identifier' => 'getIdentifier'    ];
@@ -191,6 +196,7 @@ class AdministrativeAreaAddressImageDataGovernanceSourceLogo implements ModelInt
     {
         $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
         $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
+        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
         $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
@@ -264,6 +270,30 @@ class AdministrativeAreaAddressImageDataGovernanceSourceLogo implements ModelInt
     public function setContentUrl($content_url)
     {
         $this->container['content_url'] = $content_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets in_language
+     *
+     * @return string
+     */
+    public function getInLanguage()
+    {
+        return $this->container['in_language'];
+    }
+
+    /**
+     * Sets in_language
+     *
+     * @param string $in_language in_language
+     *
+     * @return $this
+     */
+    public function setInLanguage($in_language)
+    {
+        $this->container['in_language'] = $in_language;
 
         return $this;
     }

@@ -57,6 +57,7 @@ class EventAttachment implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'content_url' => 'string',
+'in_language' => 'string',
 'thumbnail_url' => 'string',
 'id' => 'string',
 'identifier' => 'string'    ];
@@ -68,6 +69,7 @@ class EventAttachment implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'content_url' => null,
+'in_language' => null,
 'thumbnail_url' => null,
 'id' => null,
 'identifier' => null    ];
@@ -100,6 +102,7 @@ class EventAttachment implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'content_url' => 'contentUrl',
+'in_language' => 'inLanguage',
 'thumbnail_url' => 'thumbnailUrl',
 'id' => 'id',
 'identifier' => 'identifier'    ];
@@ -111,6 +114,7 @@ class EventAttachment implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'content_url' => 'setContentUrl',
+'in_language' => 'setInLanguage',
 'thumbnail_url' => 'setThumbnailUrl',
 'id' => 'setId',
 'identifier' => 'setIdentifier'    ];
@@ -122,6 +126,7 @@ class EventAttachment implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'content_url' => 'getContentUrl',
+'in_language' => 'getInLanguage',
 'thumbnail_url' => 'getThumbnailUrl',
 'id' => 'getId',
 'identifier' => 'getIdentifier'    ];
@@ -185,6 +190,7 @@ class EventAttachment implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
+        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
         $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
@@ -234,6 +240,30 @@ class EventAttachment implements ModelInterface, ArrayAccess
     public function setContentUrl($content_url)
     {
         $this->container['content_url'] = $content_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets in_language
+     *
+     * @return string
+     */
+    public function getInLanguage()
+    {
+        return $this->container['in_language'];
+    }
+
+    /**
+     * Sets in_language
+     *
+     * @param string $in_language in_language
+     *
+     * @return $this
+     */
+    public function setInLanguage($in_language)
+    {
+        $this->container['in_language'] = $in_language;
 
         return $this;
     }

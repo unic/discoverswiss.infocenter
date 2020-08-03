@@ -1,6 +1,6 @@
 <?php
 /**
- * AdministrativeAreaAddressImage
+ * TourElevation
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * AdministrativeAreaAddressImage Class Doc Comment
+ * TourElevation Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
+class TourElevation implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AdministrativeArea_address_image';
+    protected static $swaggerModelName = 'Tour_elevation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,13 +56,10 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'caption' => 'string',
-'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
-'content_url' => 'string',
-'in_language' => 'string',
-'thumbnail_url' => 'string',
-'id' => 'string',
-'identifier' => 'string'    ];
+        'ascent' => 'int',
+'descent' => 'int',
+'min_altitude' => 'int',
+'max_altitude' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,13 +67,10 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'caption' => null,
-'data_governance' => null,
-'content_url' => null,
-'in_language' => null,
-'thumbnail_url' => null,
-'id' => null,
-'identifier' => null    ];
+        'ascent' => 'int32',
+'descent' => 'int32',
+'min_altitude' => 'int32',
+'max_altitude' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -105,13 +99,10 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'caption' => 'caption',
-'data_governance' => 'dataGovernance',
-'content_url' => 'contentUrl',
-'in_language' => 'inLanguage',
-'thumbnail_url' => 'thumbnailUrl',
-'id' => 'id',
-'identifier' => 'identifier'    ];
+        'ascent' => 'ascent',
+'descent' => 'descent',
+'min_altitude' => 'minAltitude',
+'max_altitude' => 'maxAltitude'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -119,13 +110,10 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'caption' => 'setCaption',
-'data_governance' => 'setDataGovernance',
-'content_url' => 'setContentUrl',
-'in_language' => 'setInLanguage',
-'thumbnail_url' => 'setThumbnailUrl',
-'id' => 'setId',
-'identifier' => 'setIdentifier'    ];
+        'ascent' => 'setAscent',
+'descent' => 'setDescent',
+'min_altitude' => 'setMinAltitude',
+'max_altitude' => 'setMaxAltitude'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -133,13 +121,10 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'caption' => 'getCaption',
-'data_governance' => 'getDataGovernance',
-'content_url' => 'getContentUrl',
-'in_language' => 'getInLanguage',
-'thumbnail_url' => 'getThumbnailUrl',
-'id' => 'getId',
-'identifier' => 'getIdentifier'    ];
+        'ascent' => 'getAscent',
+'descent' => 'getDescent',
+'min_altitude' => 'getMinAltitude',
+'max_altitude' => 'getMaxAltitude'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -199,13 +184,10 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
-        $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
-        $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['ascent'] = isset($data['ascent']) ? $data['ascent'] : null;
+        $this->container['descent'] = isset($data['descent']) ? $data['descent'] : null;
+        $this->container['min_altitude'] = isset($data['min_altitude']) ? $data['min_altitude'] : null;
+        $this->container['max_altitude'] = isset($data['max_altitude']) ? $data['max_altitude'] : null;
     }
 
     /**
@@ -233,169 +215,97 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets caption
+     * Gets ascent
      *
-     * @return string
+     * @return int
      */
-    public function getCaption()
+    public function getAscent()
     {
-        return $this->container['caption'];
+        return $this->container['ascent'];
     }
 
     /**
-     * Sets caption
+     * Sets ascent
      *
-     * @param string $caption caption
+     * @param int $ascent ascent
      *
      * @return $this
      */
-    public function setCaption($caption)
+    public function setAscent($ascent)
     {
-        $this->container['caption'] = $caption;
+        $this->container['ascent'] = $ascent;
 
         return $this;
     }
 
     /**
-     * Gets data_governance
+     * Gets descent
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
+     * @return int
      */
-    public function getDataGovernance()
+    public function getDescent()
     {
-        return $this->container['data_governance'];
+        return $this->container['descent'];
     }
 
     /**
-     * Sets data_governance
+     * Sets descent
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
+     * @param int $descent descent
      *
      * @return $this
      */
-    public function setDataGovernance($data_governance)
+    public function setDescent($descent)
     {
-        $this->container['data_governance'] = $data_governance;
+        $this->container['descent'] = $descent;
 
         return $this;
     }
 
     /**
-     * Gets content_url
+     * Gets min_altitude
      *
-     * @return string
+     * @return int
      */
-    public function getContentUrl()
+    public function getMinAltitude()
     {
-        return $this->container['content_url'];
+        return $this->container['min_altitude'];
     }
 
     /**
-     * Sets content_url
+     * Sets min_altitude
      *
-     * @param string $content_url content_url
+     * @param int $min_altitude min_altitude
      *
      * @return $this
      */
-    public function setContentUrl($content_url)
+    public function setMinAltitude($min_altitude)
     {
-        $this->container['content_url'] = $content_url;
+        $this->container['min_altitude'] = $min_altitude;
 
         return $this;
     }
 
     /**
-     * Gets in_language
+     * Gets max_altitude
      *
-     * @return string
+     * @return int
      */
-    public function getInLanguage()
+    public function getMaxAltitude()
     {
-        return $this->container['in_language'];
+        return $this->container['max_altitude'];
     }
 
     /**
-     * Sets in_language
+     * Sets max_altitude
      *
-     * @param string $in_language in_language
+     * @param int $max_altitude max_altitude
      *
      * @return $this
      */
-    public function setInLanguage($in_language)
+    public function setMaxAltitude($max_altitude)
     {
-        $this->container['in_language'] = $in_language;
-
-        return $this;
-    }
-
-    /**
-     * Gets thumbnail_url
-     *
-     * @return string
-     */
-    public function getThumbnailUrl()
-    {
-        return $this->container['thumbnail_url'];
-    }
-
-    /**
-     * Sets thumbnail_url
-     *
-     * @param string $thumbnail_url thumbnail_url
-     *
-     * @return $this
-     */
-    public function setThumbnailUrl($thumbnail_url)
-    {
-        $this->container['thumbnail_url'] = $thumbnail_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets identifier
-     *
-     * @return string
-     */
-    public function getIdentifier()
-    {
-        return $this->container['identifier'];
-    }
-
-    /**
-     * Sets identifier
-     *
-     * @param string $identifier identifier
-     *
-     * @return $this
-     */
-    public function setIdentifier($identifier)
-    {
-        $this->container['identifier'] = $identifier;
+        $this->container['max_altitude'] = $max_altitude;
 
         return $this;
     }

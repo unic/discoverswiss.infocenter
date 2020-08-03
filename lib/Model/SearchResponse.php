@@ -1,6 +1,6 @@
 <?php
 /**
- * AdministrativeAreaAddressImage
+ * SearchResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * AdministrativeAreaAddressImage Class Doc Comment
+ * SearchResponse Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
+class SearchResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AdministrativeArea_address_image';
+    protected static $swaggerModelName = 'SearchResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,13 +56,9 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'caption' => 'string',
-'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
-'content_url' => 'string',
-'in_language' => 'string',
-'thumbnail_url' => 'string',
-'id' => 'string',
-'identifier' => 'string'    ];
+        'count' => 'int',
+'values' => '\Infocenter\Client\Model\Index[]',
+'facets' => 'map[string,\Infocenter\Client\Model\IList1]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,13 +66,9 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'caption' => null,
-'data_governance' => null,
-'content_url' => null,
-'in_language' => null,
-'thumbnail_url' => null,
-'id' => null,
-'identifier' => null    ];
+        'count' => 'int64',
+'values' => null,
+'facets' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -105,13 +97,9 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'caption' => 'caption',
-'data_governance' => 'dataGovernance',
-'content_url' => 'contentUrl',
-'in_language' => 'inLanguage',
-'thumbnail_url' => 'thumbnailUrl',
-'id' => 'id',
-'identifier' => 'identifier'    ];
+        'count' => 'count',
+'values' => 'values',
+'facets' => 'facets'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -119,13 +107,9 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'caption' => 'setCaption',
-'data_governance' => 'setDataGovernance',
-'content_url' => 'setContentUrl',
-'in_language' => 'setInLanguage',
-'thumbnail_url' => 'setThumbnailUrl',
-'id' => 'setId',
-'identifier' => 'setIdentifier'    ];
+        'count' => 'setCount',
+'values' => 'setValues',
+'facets' => 'setFacets'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -133,13 +117,9 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'caption' => 'getCaption',
-'data_governance' => 'getDataGovernance',
-'content_url' => 'getContentUrl',
-'in_language' => 'getInLanguage',
-'thumbnail_url' => 'getThumbnailUrl',
-'id' => 'getId',
-'identifier' => 'getIdentifier'    ];
+        'count' => 'getCount',
+'values' => 'getValues',
+'facets' => 'getFacets'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -199,13 +179,9 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
-        $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
-        $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['values'] = isset($data['values']) ? $data['values'] : null;
+        $this->container['facets'] = isset($data['facets']) ? $data['facets'] : null;
     }
 
     /**
@@ -233,169 +209,73 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets caption
+     * Gets count
      *
-     * @return string
+     * @return int
      */
-    public function getCaption()
+    public function getCount()
     {
-        return $this->container['caption'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets caption
+     * Sets count
      *
-     * @param string $caption caption
+     * @param int $count count
      *
      * @return $this
      */
-    public function setCaption($caption)
+    public function setCount($count)
     {
-        $this->container['caption'] = $caption;
+        $this->container['count'] = $count;
 
         return $this;
     }
 
     /**
-     * Gets data_governance
+     * Gets values
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
+     * @return \Infocenter\Client\Model\Index[]
      */
-    public function getDataGovernance()
+    public function getValues()
     {
-        return $this->container['data_governance'];
+        return $this->container['values'];
     }
 
     /**
-     * Sets data_governance
+     * Sets values
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
+     * @param \Infocenter\Client\Model\Index[] $values values
      *
      * @return $this
      */
-    public function setDataGovernance($data_governance)
+    public function setValues($values)
     {
-        $this->container['data_governance'] = $data_governance;
+        $this->container['values'] = $values;
 
         return $this;
     }
 
     /**
-     * Gets content_url
+     * Gets facets
      *
-     * @return string
+     * @return map[string,\Infocenter\Client\Model\IList1]
      */
-    public function getContentUrl()
+    public function getFacets()
     {
-        return $this->container['content_url'];
+        return $this->container['facets'];
     }
 
     /**
-     * Sets content_url
+     * Sets facets
      *
-     * @param string $content_url content_url
+     * @param map[string,\Infocenter\Client\Model\IList1] $facets facets
      *
      * @return $this
      */
-    public function setContentUrl($content_url)
+    public function setFacets($facets)
     {
-        $this->container['content_url'] = $content_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets in_language
-     *
-     * @return string
-     */
-    public function getInLanguage()
-    {
-        return $this->container['in_language'];
-    }
-
-    /**
-     * Sets in_language
-     *
-     * @param string $in_language in_language
-     *
-     * @return $this
-     */
-    public function setInLanguage($in_language)
-    {
-        $this->container['in_language'] = $in_language;
-
-        return $this;
-    }
-
-    /**
-     * Gets thumbnail_url
-     *
-     * @return string
-     */
-    public function getThumbnailUrl()
-    {
-        return $this->container['thumbnail_url'];
-    }
-
-    /**
-     * Sets thumbnail_url
-     *
-     * @param string $thumbnail_url thumbnail_url
-     *
-     * @return $this
-     */
-    public function setThumbnailUrl($thumbnail_url)
-    {
-        $this->container['thumbnail_url'] = $thumbnail_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets identifier
-     *
-     * @return string
-     */
-    public function getIdentifier()
-    {
-        return $this->container['identifier'];
-    }
-
-    /**
-     * Sets identifier
-     *
-     * @param string $identifier identifier
-     *
-     * @return $this
-     */
-    public function setIdentifier($identifier)
-    {
-        $this->container['identifier'] = $identifier;
+        $this->container['facets'] = $facets;
 
         return $this;
     }

@@ -61,11 +61,13 @@ class CreativeWork implements ModelInterface, ArrayAccess
 'encoding_format' => 'string',
 'is_accessible_for_free' => 'bool',
 'thumbnail_url' => 'string',
+'in_language' => 'string',
 'type' => 'string',
 'id' => 'string',
 'identifier' => 'string',
 'datasource' => 'string',
 'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'last_modified' => '\DateTime',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -88,11 +90,13 @@ class CreativeWork implements ModelInterface, ArrayAccess
 'encoding_format' => null,
 'is_accessible_for_free' => null,
 'thumbnail_url' => null,
+'in_language' => null,
 'type' => null,
 'id' => null,
 'identifier' => null,
 'datasource' => null,
 'data_governance' => null,
+'last_modified' => 'date-time',
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -136,11 +140,13 @@ class CreativeWork implements ModelInterface, ArrayAccess
 'encoding_format' => 'encodingFormat',
 'is_accessible_for_free' => 'isAccessibleForFree',
 'thumbnail_url' => 'thumbnailUrl',
+'in_language' => 'inLanguage',
 'type' => 'type',
 'id' => '@id',
 'identifier' => 'identifier',
 'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
+'last_modified' => 'lastModified',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -163,11 +169,13 @@ class CreativeWork implements ModelInterface, ArrayAccess
 'encoding_format' => 'setEncodingFormat',
 'is_accessible_for_free' => 'setIsAccessibleForFree',
 'thumbnail_url' => 'setThumbnailUrl',
+'in_language' => 'setInLanguage',
 'type' => 'setType',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
+'last_modified' => 'setLastModified',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -190,11 +198,13 @@ class CreativeWork implements ModelInterface, ArrayAccess
 'encoding_format' => 'getEncodingFormat',
 'is_accessible_for_free' => 'getIsAccessibleForFree',
 'thumbnail_url' => 'getThumbnailUrl',
+'in_language' => 'getInLanguage',
 'type' => 'getType',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
+'last_modified' => 'getLastModified',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -269,11 +279,13 @@ class CreativeWork implements ModelInterface, ArrayAccess
         $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
         $this->container['is_accessible_for_free'] = isset($data['is_accessible_for_free']) ? $data['is_accessible_for_free'] : null;
         $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
+        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
+        $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -431,6 +443,30 @@ class CreativeWork implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets in_language
+     *
+     * @return string
+     */
+    public function getInLanguage()
+    {
+        return $this->container['in_language'];
+    }
+
+    /**
+     * Sets in_language
+     *
+     * @param string $in_language in_language
+     *
+     * @return $this
+     */
+    public function setInLanguage($in_language)
+    {
+        $this->container['in_language'] = $in_language;
+
+        return $this;
+    }
+
+    /**
      * Gets type
      *
      * @return string
@@ -546,6 +582,30 @@ class CreativeWork implements ModelInterface, ArrayAccess
     public function setDataGovernance($data_governance)
     {
         $this->container['data_governance'] = $data_governance;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_modified
+     *
+     * @return \DateTime
+     */
+    public function getLastModified()
+    {
+        return $this->container['last_modified'];
+    }
+
+    /**
+     * Sets last_modified
+     *
+     * @param \DateTime $last_modified last_modified
+     *
+     * @return $this
+     */
+    public function setLastModified($last_modified)
+    {
+        $this->container['last_modified'] = $last_modified;
 
         return $this;
     }

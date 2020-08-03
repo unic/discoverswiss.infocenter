@@ -43,6 +43,7 @@ Name | Type | Description | Notes
 **identifier** | **string** |  | [optional] 
 **datasource** | **string** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance**](AdministrativeAreaAddressImageDataGovernance.md) |  | [optional] 
+**last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **disambiguating_description** | **string** |  | [optional] 

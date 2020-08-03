@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **circle** | **string** |  | [optional] 
 **line** | **string** |  | [optional] 
 **polygon** | **string** |  | [optional] 
+**multiline** | **string** |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **disambiguating_description** | **string** |  | [optional] 

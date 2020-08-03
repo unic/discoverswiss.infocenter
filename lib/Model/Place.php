@@ -96,6 +96,7 @@ class Place implements ModelInterface, ArrayAccess
 'identifier' => 'string',
 'datasource' => 'string',
 'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'last_modified' => '\DateTime',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -153,6 +154,7 @@ class Place implements ModelInterface, ArrayAccess
 'identifier' => null,
 'datasource' => null,
 'data_governance' => null,
+'last_modified' => 'date-time',
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -231,6 +233,7 @@ class Place implements ModelInterface, ArrayAccess
 'identifier' => 'identifier',
 'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
+'last_modified' => 'lastModified',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -288,6 +291,7 @@ class Place implements ModelInterface, ArrayAccess
 'identifier' => 'setIdentifier',
 'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
+'last_modified' => 'setLastModified',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -345,6 +349,7 @@ class Place implements ModelInterface, ArrayAccess
 'identifier' => 'getIdentifier',
 'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
+'last_modified' => 'getLastModified',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -454,6 +459,7 @@ class Place implements ModelInterface, ArrayAccess
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
+        $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -1446,6 +1452,30 @@ class Place implements ModelInterface, ArrayAccess
     public function setDataGovernance($data_governance)
     {
         $this->container['data_governance'] = $data_governance;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_modified
+     *
+     * @return \DateTime
+     */
+    public function getLastModified()
+    {
+        return $this->container['last_modified'];
+    }
+
+    /**
+     * Sets last_modified
+     *
+     * @param \DateTime $last_modified last_modified
+     *
+     * @return $this
+     */
+    public function setLastModified($last_modified)
+    {
+        $this->container['last_modified'] = $last_modified;
 
         return $this;
     }

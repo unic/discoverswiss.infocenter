@@ -1,6 +1,6 @@
 <?php
 /**
- * AdministrativeAreaAddressImage
+ * TourRating
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * AdministrativeAreaAddressImage Class Doc Comment
+ * TourRating Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
+class TourRating implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AdministrativeArea_address_image';
+    protected static $swaggerModelName = 'Tour_rating';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,13 +56,11 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'caption' => 'string',
-'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
-'content_url' => 'string',
-'in_language' => 'string',
-'thumbnail_url' => 'string',
-'id' => 'string',
-'identifier' => 'string'    ];
+        'condition' => 'int',
+'difficulty' => 'int',
+'technique' => 'int',
+'quality_of_experience' => 'int',
+'landscape' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,13 +68,11 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'caption' => null,
-'data_governance' => null,
-'content_url' => null,
-'in_language' => null,
-'thumbnail_url' => null,
-'id' => null,
-'identifier' => null    ];
+        'condition' => 'int32',
+'difficulty' => 'int32',
+'technique' => 'int32',
+'quality_of_experience' => 'int32',
+'landscape' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -105,13 +101,11 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'caption' => 'caption',
-'data_governance' => 'dataGovernance',
-'content_url' => 'contentUrl',
-'in_language' => 'inLanguage',
-'thumbnail_url' => 'thumbnailUrl',
-'id' => 'id',
-'identifier' => 'identifier'    ];
+        'condition' => 'condition',
+'difficulty' => 'difficulty',
+'technique' => 'technique',
+'quality_of_experience' => 'qualityOfExperience',
+'landscape' => 'landscape'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -119,13 +113,11 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'caption' => 'setCaption',
-'data_governance' => 'setDataGovernance',
-'content_url' => 'setContentUrl',
-'in_language' => 'setInLanguage',
-'thumbnail_url' => 'setThumbnailUrl',
-'id' => 'setId',
-'identifier' => 'setIdentifier'    ];
+        'condition' => 'setCondition',
+'difficulty' => 'setDifficulty',
+'technique' => 'setTechnique',
+'quality_of_experience' => 'setQualityOfExperience',
+'landscape' => 'setLandscape'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -133,13 +125,11 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'caption' => 'getCaption',
-'data_governance' => 'getDataGovernance',
-'content_url' => 'getContentUrl',
-'in_language' => 'getInLanguage',
-'thumbnail_url' => 'getThumbnailUrl',
-'id' => 'getId',
-'identifier' => 'getIdentifier'    ];
+        'condition' => 'getCondition',
+'difficulty' => 'getDifficulty',
+'technique' => 'getTechnique',
+'quality_of_experience' => 'getQualityOfExperience',
+'landscape' => 'getLandscape'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -199,13 +189,11 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
-        $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
-        $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['condition'] = isset($data['condition']) ? $data['condition'] : null;
+        $this->container['difficulty'] = isset($data['difficulty']) ? $data['difficulty'] : null;
+        $this->container['technique'] = isset($data['technique']) ? $data['technique'] : null;
+        $this->container['quality_of_experience'] = isset($data['quality_of_experience']) ? $data['quality_of_experience'] : null;
+        $this->container['landscape'] = isset($data['landscape']) ? $data['landscape'] : null;
     }
 
     /**
@@ -233,169 +221,121 @@ class AdministrativeAreaAddressImage implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets caption
+     * Gets condition
      *
-     * @return string
+     * @return int
      */
-    public function getCaption()
+    public function getCondition()
     {
-        return $this->container['caption'];
+        return $this->container['condition'];
     }
 
     /**
-     * Sets caption
+     * Sets condition
      *
-     * @param string $caption caption
+     * @param int $condition condition
      *
      * @return $this
      */
-    public function setCaption($caption)
+    public function setCondition($condition)
     {
-        $this->container['caption'] = $caption;
+        $this->container['condition'] = $condition;
 
         return $this;
     }
 
     /**
-     * Gets data_governance
+     * Gets difficulty
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
+     * @return int
      */
-    public function getDataGovernance()
+    public function getDifficulty()
     {
-        return $this->container['data_governance'];
+        return $this->container['difficulty'];
     }
 
     /**
-     * Sets data_governance
+     * Sets difficulty
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
+     * @param int $difficulty difficulty
      *
      * @return $this
      */
-    public function setDataGovernance($data_governance)
+    public function setDifficulty($difficulty)
     {
-        $this->container['data_governance'] = $data_governance;
+        $this->container['difficulty'] = $difficulty;
 
         return $this;
     }
 
     /**
-     * Gets content_url
+     * Gets technique
      *
-     * @return string
+     * @return int
      */
-    public function getContentUrl()
+    public function getTechnique()
     {
-        return $this->container['content_url'];
+        return $this->container['technique'];
     }
 
     /**
-     * Sets content_url
+     * Sets technique
      *
-     * @param string $content_url content_url
+     * @param int $technique technique
      *
      * @return $this
      */
-    public function setContentUrl($content_url)
+    public function setTechnique($technique)
     {
-        $this->container['content_url'] = $content_url;
+        $this->container['technique'] = $technique;
 
         return $this;
     }
 
     /**
-     * Gets in_language
+     * Gets quality_of_experience
      *
-     * @return string
+     * @return int
      */
-    public function getInLanguage()
+    public function getQualityOfExperience()
     {
-        return $this->container['in_language'];
+        return $this->container['quality_of_experience'];
     }
 
     /**
-     * Sets in_language
+     * Sets quality_of_experience
      *
-     * @param string $in_language in_language
+     * @param int $quality_of_experience quality_of_experience
      *
      * @return $this
      */
-    public function setInLanguage($in_language)
+    public function setQualityOfExperience($quality_of_experience)
     {
-        $this->container['in_language'] = $in_language;
+        $this->container['quality_of_experience'] = $quality_of_experience;
 
         return $this;
     }
 
     /**
-     * Gets thumbnail_url
+     * Gets landscape
      *
-     * @return string
+     * @return int
      */
-    public function getThumbnailUrl()
+    public function getLandscape()
     {
-        return $this->container['thumbnail_url'];
+        return $this->container['landscape'];
     }
 
     /**
-     * Sets thumbnail_url
+     * Sets landscape
      *
-     * @param string $thumbnail_url thumbnail_url
+     * @param int $landscape landscape
      *
      * @return $this
      */
-    public function setThumbnailUrl($thumbnail_url)
+    public function setLandscape($landscape)
     {
-        $this->container['thumbnail_url'] = $thumbnail_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets identifier
-     *
-     * @return string
-     */
-    public function getIdentifier()
-    {
-        return $this->container['identifier'];
-    }
-
-    /**
-     * Sets identifier
-     *
-     * @param string $identifier identifier
-     *
-     * @return $this
-     */
-    public function setIdentifier($identifier)
-    {
-        $this->container['identifier'] = $identifier;
+        $this->container['landscape'] = $landscape;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * AdministrativeArea
+ * Webcam
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * AdministrativeArea Class Doc Comment
+ * Webcam Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AdministrativeArea implements ModelInterface, ArrayAccess
+class Webcam implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class AdministrativeArea implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AdministrativeArea';
+    protected static $swaggerModelName = 'Webcam';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -60,7 +60,9 @@ class Tour implements ModelInterface, ArrayAccess
 'length' => 'double',
 'time' => 'int',
 'elevation_json' => 'object',
+'elevation' => '\Infocenter\Client\Model\TourElevation',
 'rating_json' => 'object',
+'rating' => '\Infocenter\Client\Model\TourRating',
 'season_json' => 'object',
 'difficulties_json' => 'object',
 'exposition_json' => 'object',
@@ -116,6 +118,7 @@ class Tour implements ModelInterface, ArrayAccess
 'identifier' => 'string',
 'datasource' => 'string',
 'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'last_modified' => '\DateTime',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -137,7 +140,9 @@ class Tour implements ModelInterface, ArrayAccess
 'length' => 'double',
 'time' => 'int32',
 'elevation_json' => null,
+'elevation' => null,
 'rating_json' => null,
+'rating' => null,
 'season_json' => null,
 'difficulties_json' => null,
 'exposition_json' => null,
@@ -193,6 +198,7 @@ class Tour implements ModelInterface, ArrayAccess
 'identifier' => null,
 'datasource' => null,
 'data_governance' => null,
+'last_modified' => 'date-time',
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -235,7 +241,9 @@ class Tour implements ModelInterface, ArrayAccess
 'length' => 'length',
 'time' => 'time',
 'elevation_json' => 'elevationJson',
+'elevation' => 'elevation',
 'rating_json' => 'ratingJson',
+'rating' => 'rating',
 'season_json' => 'seasonJson',
 'difficulties_json' => 'difficultiesJson',
 'exposition_json' => 'expositionJson',
@@ -291,6 +299,7 @@ class Tour implements ModelInterface, ArrayAccess
 'identifier' => 'identifier',
 'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
+'last_modified' => 'lastModified',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -312,7 +321,9 @@ class Tour implements ModelInterface, ArrayAccess
 'length' => 'setLength',
 'time' => 'setTime',
 'elevation_json' => 'setElevationJson',
+'elevation' => 'setElevation',
 'rating_json' => 'setRatingJson',
+'rating' => 'setRating',
 'season_json' => 'setSeasonJson',
 'difficulties_json' => 'setDifficultiesJson',
 'exposition_json' => 'setExpositionJson',
@@ -368,6 +379,7 @@ class Tour implements ModelInterface, ArrayAccess
 'identifier' => 'setIdentifier',
 'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
+'last_modified' => 'setLastModified',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -389,7 +401,9 @@ class Tour implements ModelInterface, ArrayAccess
 'length' => 'getLength',
 'time' => 'getTime',
 'elevation_json' => 'getElevationJson',
+'elevation' => 'getElevation',
 'rating_json' => 'getRatingJson',
+'rating' => 'getRating',
 'season_json' => 'getSeasonJson',
 'difficulties_json' => 'getDifficultiesJson',
 'exposition_json' => 'getExpositionJson',
@@ -445,6 +459,7 @@ class Tour implements ModelInterface, ArrayAccess
 'identifier' => 'getIdentifier',
 'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
+'last_modified' => 'getLastModified',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -518,7 +533,9 @@ class Tour implements ModelInterface, ArrayAccess
         $this->container['length'] = isset($data['length']) ? $data['length'] : null;
         $this->container['time'] = isset($data['time']) ? $data['time'] : null;
         $this->container['elevation_json'] = isset($data['elevation_json']) ? $data['elevation_json'] : null;
+        $this->container['elevation'] = isset($data['elevation']) ? $data['elevation'] : null;
         $this->container['rating_json'] = isset($data['rating_json']) ? $data['rating_json'] : null;
+        $this->container['rating'] = isset($data['rating']) ? $data['rating'] : null;
         $this->container['season_json'] = isset($data['season_json']) ? $data['season_json'] : null;
         $this->container['difficulties_json'] = isset($data['difficulties_json']) ? $data['difficulties_json'] : null;
         $this->container['exposition_json'] = isset($data['exposition_json']) ? $data['exposition_json'] : null;
@@ -574,6 +591,7 @@ class Tour implements ModelInterface, ArrayAccess
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
+        $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -707,6 +725,30 @@ class Tour implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets elevation
+     *
+     * @return \Infocenter\Client\Model\TourElevation
+     */
+    public function getElevation()
+    {
+        return $this->container['elevation'];
+    }
+
+    /**
+     * Sets elevation
+     *
+     * @param \Infocenter\Client\Model\TourElevation $elevation elevation
+     *
+     * @return $this
+     */
+    public function setElevation($elevation)
+    {
+        $this->container['elevation'] = $elevation;
+
+        return $this;
+    }
+
+    /**
      * Gets rating_json
      *
      * @return object
@@ -726,6 +768,30 @@ class Tour implements ModelInterface, ArrayAccess
     public function setRatingJson($rating_json)
     {
         $this->container['rating_json'] = $rating_json;
+
+        return $this;
+    }
+
+    /**
+     * Gets rating
+     *
+     * @return \Infocenter\Client\Model\TourRating
+     */
+    public function getRating()
+    {
+        return $this->container['rating'];
+    }
+
+    /**
+     * Sets rating
+     *
+     * @param \Infocenter\Client\Model\TourRating $rating rating
+     *
+     * @return $this
+     */
+    public function setRating($rating)
+    {
+        $this->container['rating'] = $rating;
 
         return $this;
     }
@@ -2046,6 +2112,30 @@ class Tour implements ModelInterface, ArrayAccess
     public function setDataGovernance($data_governance)
     {
         $this->container['data_governance'] = $data_governance;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_modified
+     *
+     * @return \DateTime
+     */
+    public function getLastModified()
+    {
+        return $this->container['last_modified'];
+    }
+
+    /**
+     * Sets last_modified
+     *
+     * @param \DateTime $last_modified last_modified
+     *
+     * @return $this
+     */
+    public function setLastModified($last_modified)
+    {
+        $this->container['last_modified'] = $last_modified;
 
         return $this;
     }

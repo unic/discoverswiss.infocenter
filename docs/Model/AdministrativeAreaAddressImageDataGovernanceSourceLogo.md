@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **caption** | **string** |  | [optional] 
 **content_url** | **string** |  | [optional] 
+**in_language** | **string** |  | [optional] 
 **thumbnail_url** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 

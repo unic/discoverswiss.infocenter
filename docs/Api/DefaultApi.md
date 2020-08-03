@@ -6,7 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**administrativeAreaRegion**](DefaultApi.md#administrativearearegion) | **GET** /areas/{id} | AdministrativeArea (Region)
 [**category**](DefaultApi.md#category) | **GET** /categories/{id} | Category
+[**categoryTree**](DefaultApi.md#categorytree) | **GET** /categories/{id}/tree | Category Tree
 [**civicStructure**](DefaultApi.md#civicstructure) | **GET** /civicStructures/{id} | CivicStructure
+[**condition**](DefaultApi.md#condition) | **GET** /conditions/{id} | Condition
 [**creativeWork**](DefaultApi.md#creativework) | **GET** /creativeWorks/{id} | CreativeWork
 [**currentTermVersion**](DefaultApi.md#currenttermversion) | **GET** /termversions/{termCode}/currentVersion | Current TermVersion
 [**event**](DefaultApi.md#event) | **GET** /events/{id} | Event
@@ -16,6 +18,7 @@ Method | HTTP request | Description
 [**listAdministrativeAreaRegion**](DefaultApi.md#listadministrativearearegion) | **GET** /areas | List AdministrativeArea (Region)
 [**listCategory**](DefaultApi.md#listcategory) | **GET** /categories | List Category
 [**listCivicStructure**](DefaultApi.md#listcivicstructure) | **GET** /civicStructures | List CivicStructure
+[**listCondition**](DefaultApi.md#listcondition) | **GET** /conditions | List Condition
 [**listCreativeWork**](DefaultApi.md#listcreativework) | **GET** /creativeWorks | List CreativeWork
 [**listEvents**](DefaultApi.md#listevents) | **GET** /events | List Events
 [**listFoodEstablishment**](DefaultApi.md#listfoodestablishment) | **GET** /foodEstablishments | List FoodEstablishment
@@ -26,13 +29,16 @@ Method | HTTP request | Description
 [**listPlace**](DefaultApi.md#listplace) | **GET** /places | List Place
 [**listProducts**](DefaultApi.md#listproducts) | **GET** /products | List Products
 [**listTour**](DefaultApi.md#listtour) | **GET** /tours | List Tour
+[**listWebcams**](DefaultApi.md#listwebcams) | **GET** /webcams | List Webcams
 [**localBusiness**](DefaultApi.md#localbusiness) | **GET** /localbusinesses/{id} | LocalBusiness
 [**lodgingBusiness**](DefaultApi.md#lodgingbusiness) | **GET** /lodgingbusinesses/{id} | LodgingBusiness
 [**mediaObject**](DefaultApi.md#mediaobject) | **GET** /mediaObjects/{id} | MediaObject
 [**place**](DefaultApi.md#place) | **GET** /places/{id} | Place
 [**product**](DefaultApi.md#product) | **GET** /products/{id} | Product
+[**search**](DefaultApi.md#search) | **GET** /search | Search
 [**termVersion**](DefaultApi.md#termversion) | **GET** /termversions/{code} | TermVersion
 [**tour**](DefaultApi.md#tour) | **GET** /tours/{id} | Tour
+[**webcam**](DefaultApi.md#webcam) | **GET** /webcams/{id} | Webcam
 
 # **administrativeAreaRegion**
 > \Infocenter\Client\Model\AdministrativeArea administrativeAreaRegion($id, $accept_language)
@@ -152,6 +158,65 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **categoryTree**
+> \Infocenter\Client\Model\Category categoryTree($id, $accept_language)
+
+Category Tree
+
+Get the full detailed information of a Category tree.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Category to set root category.
+$accept_language = "accept_language_example"; // string | Localized properties.
+
+try {
+    $result = $apiInstance->categoryTree($id, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->categoryTree: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of Category to set root category. |
+ **accept_language** | **string**| Localized properties. | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\Category**](../Model/Category.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **civicStructure**
 > \Infocenter\Client\Model\CivicStructure civicStructure($id, $accept_language)
 
@@ -199,6 +264,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Infocenter\Client\Model\CivicStructure**](../Model/CivicStructure.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **condition**
+> \Infocenter\Client\Model\Condition condition($id, $accept_language)
+
+Condition
+
+Get the full detailed information of a Condition object.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Condition to get single object.
+$accept_language = "accept_language_example"; // string | Localized properties.
+
+try {
+    $result = $apiInstance->condition($id, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->condition: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of Condition to get single object. |
+ **accept_language** | **string**| Localized properties. | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\Condition**](../Model/Condition.md)
 
 ### Authorization
 
@@ -751,6 +875,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Infocenter\Client\Model\CivicStructuresResponse**](../Model/CivicStructuresResponse.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **listCondition**
+> \Infocenter\Client\Model\ConditionsResponse listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+
+List Condition
+
+Get the list of the Conditions with full detailed information.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$category = "category_example"; // string | Use property identifier of category to filter.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$datasource = "datasource_example"; // string | Use datasource to filter.
+$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
+$top = 56; // int | Format - int32. Number of next set of entities.
+$accept_language = "accept_language_example"; // string | Localized properties.
+
+try {
+    $result = $apiInstance->listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->listCondition: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category** | **string**| Use property identifier of category to filter. | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **datasource** | **string**| Use datasource to filter. | [optional]
+ **continuation_token** | **string**| Use it for get next set of data. | [optional]
+ **top** | **int**| Format - int32. Number of next set of entities. | [optional]
+ **accept_language** | **string**| Localized properties. | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\ConditionsResponse**](../Model/ConditionsResponse.md)
 
 ### Authorization
 
@@ -1437,6 +1630,75 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **listWebcams**
+> \Infocenter\Client\Model\WebcamsResponse listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+
+List Webcams
+
+Get the list of the Webcams with full detailed information.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$category = "category_example"; // string | Use property identifier of category to filter.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$datasource = "datasource_example"; // string | Use datasource to filter.
+$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
+$top = 56; // int | Format - int32. Number of next set of entities.
+$accept_language = "accept_language_example"; // string | Localized properties.
+
+try {
+    $result = $apiInstance->listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->listWebcams: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category** | **string**| Use property identifier of category to filter. | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **datasource** | **string**| Use datasource to filter. | [optional]
+ **continuation_token** | **string**| Use it for get next set of data. | [optional]
+ **top** | **int**| Format - int32. Number of next set of entities. | [optional]
+ **accept_language** | **string**| Localized properties. | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\WebcamsResponse**](../Model/WebcamsResponse.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **localBusiness**
 > \Infocenter\Client\Model\LocalBusiness localBusiness($id, $accept_language)
 
@@ -1732,6 +1994,73 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **search**
+> \Infocenter\Client\Model\SearchResponse search($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language)
+
+Search
+
+Search for the Index objects.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$search_text = "search_text_example"; // string | Use property for search request text
+$current_page = 56; // int | Format - int32. Use property to set number of page
+$results_per_page = 56; // int | Format - int32. Use property to set count of results per page
+$order_by = "order_by_example"; // string | Use property for ordering
+$filters = "filters_example"; // string | Use property for odata filters
+$accept_language = "accept_language_example"; // string | Localized properties.
+
+try {
+    $result = $apiInstance->search($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->search: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **search_text** | **string**| Use property for search request text | [optional]
+ **current_page** | **int**| Format - int32. Use property to set number of page | [optional]
+ **results_per_page** | **int**| Format - int32. Use property to set count of results per page | [optional]
+ **order_by** | **string**| Use property for ordering | [optional]
+ **filters** | **string**| Use property for odata filters | [optional]
+ **accept_language** | **string**| Localized properties. | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\SearchResponse**](../Model/SearchResponse.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **termVersion**
 > \Infocenter\Client\Model\TermVersion termVersion($code, $accept_language)
 
@@ -1838,6 +2167,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Infocenter\Client\Model\Tour**](../Model/Tour.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **webcam**
+> \Infocenter\Client\Model\Webcam webcam($id, $accept_language)
+
+Webcam
+
+Get the full detailed information of a Webcam object.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Webcam to get single object.
+$accept_language = "accept_language_example"; // string | Localized properties.
+
+try {
+    $result = $apiInstance->webcam($id, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->webcam: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of Webcam to get single object. |
+ **accept_language** | **string**| Localized properties. | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\Webcam**](../Model/Webcam.md)
 
 ### Authorization
 

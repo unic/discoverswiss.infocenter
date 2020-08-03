@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **caption** | **string** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance**](AdministrativeAreaAddressImageDataGovernance.md) |  | [optional] 
 **content_url** | **string** |  | [optional] 
+**in_language** | **string** |  | [optional] 
 **thumbnail_url** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 

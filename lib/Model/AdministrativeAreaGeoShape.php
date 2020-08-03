@@ -64,6 +64,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
 'circle' => 'string',
 'line' => 'string',
 'polygon' => 'string',
+'multiline' => 'string',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -89,6 +90,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
 'circle' => null,
 'line' => null,
 'polygon' => null,
+'multiline' => null,
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -135,6 +137,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
 'circle' => 'circle',
 'line' => 'line',
 'polygon' => 'polygon',
+'multiline' => 'multiline',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -160,6 +163,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
 'circle' => 'setCircle',
 'line' => 'setLine',
 'polygon' => 'setPolygon',
+'multiline' => 'setMultiline',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -185,6 +189,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
 'circle' => 'getCircle',
 'line' => 'getLine',
 'polygon' => 'getPolygon',
+'multiline' => 'getMultiline',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -262,6 +267,7 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
         $this->container['circle'] = isset($data['circle']) ? $data['circle'] : null;
         $this->container['line'] = isset($data['line']) ? $data['line'] : null;
         $this->container['polygon'] = isset($data['polygon']) ? $data['polygon'] : null;
+        $this->container['multiline'] = isset($data['multiline']) ? $data['multiline'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -486,6 +492,30 @@ class AdministrativeAreaGeoShape implements ModelInterface, ArrayAccess
     public function setPolygon($polygon)
     {
         $this->container['polygon'] = $polygon;
+
+        return $this;
+    }
+
+    /**
+     * Gets multiline
+     *
+     * @return string
+     */
+    public function getMultiline()
+    {
+        return $this->container['multiline'];
+    }
+
+    /**
+     * Sets multiline
+     *
+     * @param string $multiline multiline
+     *
+     * @return $this
+     */
+    public function setMultiline($multiline)
+    {
+        $this->container['multiline'] = $multiline;
 
         return $this;
     }

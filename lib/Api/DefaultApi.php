@@ -649,6 +649,287 @@ class DefaultApi
     }
 
     /**
+     * Operation categoryTree
+     *
+     * Category Tree
+     *
+     * @param  string $id Use property identifier of Category to set root category. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\Category
+     */
+    public function categoryTree($id, $accept_language = null)
+    {
+        list($response) = $this->categoryTreeWithHttpInfo($id, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation categoryTreeWithHttpInfo
+     *
+     * Category Tree
+     *
+     * @param  string $id Use property identifier of Category to set root category. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\Category, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function categoryTreeWithHttpInfo($id, $accept_language = null)
+    {
+        $returnType = '\Infocenter\Client\Model\Category';
+        $request = $this->categoryTreeRequest($id, $accept_language);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\Category',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation categoryTreeAsync
+     *
+     * Category Tree
+     *
+     * @param  string $id Use property identifier of Category to set root category. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function categoryTreeAsync($id, $accept_language = null)
+    {
+        return $this->categoryTreeAsyncWithHttpInfo($id, $accept_language)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation categoryTreeAsyncWithHttpInfo
+     *
+     * Category Tree
+     *
+     * @param  string $id Use property identifier of Category to set root category. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function categoryTreeAsyncWithHttpInfo($id, $accept_language = null)
+    {
+        $returnType = '\Infocenter\Client\Model\Category';
+        $request = $this->categoryTreeRequest($id, $accept_language);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'categoryTree'
+     *
+     * @param  string $id Use property identifier of Category to set root category. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function categoryTreeRequest($id, $accept_language = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling categoryTree'
+            );
+        }
+
+        $resourcePath = '/categories/{id}/tree';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation civicStructure
      *
      * CivicStructure
@@ -835,6 +1116,287 @@ class DefaultApi
         }
 
         $resourcePath = '/civicStructures/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation condition
+     *
+     * Condition
+     *
+     * @param  string $id Use property identifier of Condition to get single object. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\Condition
+     */
+    public function condition($id, $accept_language = null)
+    {
+        list($response) = $this->conditionWithHttpInfo($id, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation conditionWithHttpInfo
+     *
+     * Condition
+     *
+     * @param  string $id Use property identifier of Condition to get single object. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\Condition, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function conditionWithHttpInfo($id, $accept_language = null)
+    {
+        $returnType = '\Infocenter\Client\Model\Condition';
+        $request = $this->conditionRequest($id, $accept_language);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\Condition',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation conditionAsync
+     *
+     * Condition
+     *
+     * @param  string $id Use property identifier of Condition to get single object. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function conditionAsync($id, $accept_language = null)
+    {
+        return $this->conditionAsyncWithHttpInfo($id, $accept_language)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation conditionAsyncWithHttpInfo
+     *
+     * Condition
+     *
+     * @param  string $id Use property identifier of Condition to get single object. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function conditionAsyncWithHttpInfo($id, $accept_language = null)
+    {
+        $returnType = '\Infocenter\Client\Model\Condition';
+        $request = $this->conditionRequest($id, $accept_language);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'condition'
+     *
+     * @param  string $id Use property identifier of Condition to get single object. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function conditionRequest($id, $accept_language = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling condition'
+            );
+        }
+
+        $resourcePath = '/conditions/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3379,6 +3941,322 @@ class DefaultApi
     {
 
         $resourcePath = '/civicStructures';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($category !== null) {
+            $queryParams['category'] = ObjectSerializer::toQueryValue($category);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($updated_since !== null) {
+            $queryParams['updatedSince'] = ObjectSerializer::toQueryValue($updated_since);
+        }
+        // query params
+        if ($datasource !== null) {
+            $queryParams['datasource'] = ObjectSerializer::toQueryValue($datasource);
+        }
+        // query params
+        if ($continuation_token !== null) {
+            $queryParams['continuationToken'] = ObjectSerializer::toQueryValue($continuation_token);
+        }
+        // query params
+        if ($top !== null) {
+            $queryParams['top'] = ObjectSerializer::toQueryValue($top);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listCondition
+     *
+     * List Condition
+     *
+     * @param  string $category Use property identifier of category to filter. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $updated_since Format - date-time (as date-time in RFC3339). Return only changed data since specific date. (optional)
+     * @param  string $datasource Use datasource to filter. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
+     * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\ConditionsResponse
+     */
+    public function listCondition($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    {
+        list($response) = $this->listConditionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation listConditionWithHttpInfo
+     *
+     * List Condition
+     *
+     * @param  string $category Use property identifier of category to filter. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $updated_since Format - date-time (as date-time in RFC3339). Return only changed data since specific date. (optional)
+     * @param  string $datasource Use datasource to filter. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
+     * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\ConditionsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listConditionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    {
+        $returnType = '\Infocenter\Client\Model\ConditionsResponse';
+        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\ConditionsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listConditionAsync
+     *
+     * List Condition
+     *
+     * @param  string $category Use property identifier of category to filter. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $updated_since Format - date-time (as date-time in RFC3339). Return only changed data since specific date. (optional)
+     * @param  string $datasource Use datasource to filter. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
+     * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listConditionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    {
+        return $this->listConditionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listConditionAsyncWithHttpInfo
+     *
+     * List Condition
+     *
+     * @param  string $category Use property identifier of category to filter. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $updated_since Format - date-time (as date-time in RFC3339). Return only changed data since specific date. (optional)
+     * @param  string $datasource Use datasource to filter. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
+     * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listConditionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    {
+        $returnType = '\Infocenter\Client\Model\ConditionsResponse';
+        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listCondition'
+     *
+     * @param  string $category Use property identifier of category to filter. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $updated_since Format - date-time (as date-time in RFC3339). Return only changed data since specific date. (optional)
+     * @param  string $datasource Use datasource to filter. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
+     * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function listConditionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    {
+
+        $resourcePath = '/conditions';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -6578,6 +7456,322 @@ class DefaultApi
     }
 
     /**
+     * Operation listWebcams
+     *
+     * List Webcams
+     *
+     * @param  string $category Use property identifier of category to filter. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $updated_since Format - date-time (as date-time in RFC3339). Return only changed data since specific date. (optional)
+     * @param  string $datasource Use datasource to filter. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
+     * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\WebcamsResponse
+     */
+    public function listWebcams($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    {
+        list($response) = $this->listWebcamsWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation listWebcamsWithHttpInfo
+     *
+     * List Webcams
+     *
+     * @param  string $category Use property identifier of category to filter. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $updated_since Format - date-time (as date-time in RFC3339). Return only changed data since specific date. (optional)
+     * @param  string $datasource Use datasource to filter. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
+     * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\WebcamsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listWebcamsWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    {
+        $returnType = '\Infocenter\Client\Model\WebcamsResponse';
+        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\WebcamsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listWebcamsAsync
+     *
+     * List Webcams
+     *
+     * @param  string $category Use property identifier of category to filter. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $updated_since Format - date-time (as date-time in RFC3339). Return only changed data since specific date. (optional)
+     * @param  string $datasource Use datasource to filter. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
+     * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listWebcamsAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    {
+        return $this->listWebcamsAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listWebcamsAsyncWithHttpInfo
+     *
+     * List Webcams
+     *
+     * @param  string $category Use property identifier of category to filter. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $updated_since Format - date-time (as date-time in RFC3339). Return only changed data since specific date. (optional)
+     * @param  string $datasource Use datasource to filter. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
+     * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listWebcamsAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    {
+        $returnType = '\Infocenter\Client\Model\WebcamsResponse';
+        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listWebcams'
+     *
+     * @param  string $category Use property identifier of category to filter. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $updated_since Format - date-time (as date-time in RFC3339). Return only changed data since specific date. (optional)
+     * @param  string $datasource Use datasource to filter. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
+     * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function listWebcamsRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    {
+
+        $resourcePath = '/webcams';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($category !== null) {
+            $queryParams['category'] = ObjectSerializer::toQueryValue($category);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($updated_since !== null) {
+            $queryParams['updatedSince'] = ObjectSerializer::toQueryValue($updated_since);
+        }
+        // query params
+        if ($datasource !== null) {
+            $queryParams['datasource'] = ObjectSerializer::toQueryValue($datasource);
+        }
+        // query params
+        if ($continuation_token !== null) {
+            $queryParams['continuationToken'] = ObjectSerializer::toQueryValue($continuation_token);
+        }
+        // query params
+        if ($top !== null) {
+            $queryParams['top'] = ObjectSerializer::toQueryValue($top);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation localBusiness
      *
      * LocalBusiness
@@ -7983,6 +9177,313 @@ class DefaultApi
     }
 
     /**
+     * Operation search
+     *
+     * Search
+     *
+     * @param  string $search_text Use property for search request text (optional)
+     * @param  int $current_page Format - int32. Use property to set number of page (optional)
+     * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
+     * @param  string $order_by Use property for ordering (optional)
+     * @param  string $filters Use property for odata filters (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\SearchResponse
+     */
+    public function search($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null)
+    {
+        list($response) = $this->searchWithHttpInfo($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation searchWithHttpInfo
+     *
+     * Search
+     *
+     * @param  string $search_text Use property for search request text (optional)
+     * @param  int $current_page Format - int32. Use property to set number of page (optional)
+     * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
+     * @param  string $order_by Use property for ordering (optional)
+     * @param  string $filters Use property for odata filters (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\SearchResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function searchWithHttpInfo($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null)
+    {
+        $returnType = '\Infocenter\Client\Model\SearchResponse';
+        $request = $this->searchRequest($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\SearchResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation searchAsync
+     *
+     * Search
+     *
+     * @param  string $search_text Use property for search request text (optional)
+     * @param  int $current_page Format - int32. Use property to set number of page (optional)
+     * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
+     * @param  string $order_by Use property for ordering (optional)
+     * @param  string $filters Use property for odata filters (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function searchAsync($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null)
+    {
+        return $this->searchAsyncWithHttpInfo($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation searchAsyncWithHttpInfo
+     *
+     * Search
+     *
+     * @param  string $search_text Use property for search request text (optional)
+     * @param  int $current_page Format - int32. Use property to set number of page (optional)
+     * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
+     * @param  string $order_by Use property for ordering (optional)
+     * @param  string $filters Use property for odata filters (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function searchAsyncWithHttpInfo($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null)
+    {
+        $returnType = '\Infocenter\Client\Model\SearchResponse';
+        $request = $this->searchRequest($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'search'
+     *
+     * @param  string $search_text Use property for search request text (optional)
+     * @param  int $current_page Format - int32. Use property to set number of page (optional)
+     * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
+     * @param  string $order_by Use property for ordering (optional)
+     * @param  string $filters Use property for odata filters (optional)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function searchRequest($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null)
+    {
+
+        $resourcePath = '/search';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($search_text !== null) {
+            $queryParams['searchText'] = ObjectSerializer::toQueryValue($search_text);
+        }
+        // query params
+        if ($current_page !== null) {
+            $queryParams['currentPage'] = ObjectSerializer::toQueryValue($current_page);
+        }
+        // query params
+        if ($results_per_page !== null) {
+            $queryParams['resultsPerPage'] = ObjectSerializer::toQueryValue($results_per_page);
+        }
+        // query params
+        if ($order_by !== null) {
+            $queryParams['orderBy'] = ObjectSerializer::toQueryValue($order_by);
+        }
+        // query params
+        if ($filters !== null) {
+            $queryParams['filters'] = ObjectSerializer::toQueryValue($filters);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation termVersion
      *
      * TermVersion
@@ -8450,6 +9951,287 @@ class DefaultApi
         }
 
         $resourcePath = '/tours/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation webcam
+     *
+     * Webcam
+     *
+     * @param  string $id Use property identifier of Webcam to get single object. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\Webcam
+     */
+    public function webcam($id, $accept_language = null)
+    {
+        list($response) = $this->webcamWithHttpInfo($id, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation webcamWithHttpInfo
+     *
+     * Webcam
+     *
+     * @param  string $id Use property identifier of Webcam to get single object. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\Webcam, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function webcamWithHttpInfo($id, $accept_language = null)
+    {
+        $returnType = '\Infocenter\Client\Model\Webcam';
+        $request = $this->webcamRequest($id, $accept_language);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\Webcam',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation webcamAsync
+     *
+     * Webcam
+     *
+     * @param  string $id Use property identifier of Webcam to get single object. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function webcamAsync($id, $accept_language = null)
+    {
+        return $this->webcamAsyncWithHttpInfo($id, $accept_language)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation webcamAsyncWithHttpInfo
+     *
+     * Webcam
+     *
+     * @param  string $id Use property identifier of Webcam to get single object. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function webcamAsyncWithHttpInfo($id, $accept_language = null)
+    {
+        $returnType = '\Infocenter\Client\Model\Webcam';
+        $request = $this->webcamRequest($id, $accept_language);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'webcam'
+     *
+     * @param  string $id Use property identifier of Webcam to get single object. (required)
+     * @param  string $accept_language Localized properties. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function webcamRequest($id, $accept_language = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling webcam'
+            );
+        }
+
+        $resourcePath = '/webcams/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **identifier** | **string** |  | [optional] 
 **datasource** | **string** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance**](AdministrativeAreaAddressImageDataGovernance.md) |  | [optional] 
+**last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **sku** | **string** |  | [optional] 
 **price_list** | [**\Infocenter\Client\Model\ProductPriceList[]**](ProductPriceList.md) |  | [optional] 

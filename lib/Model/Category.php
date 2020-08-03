@@ -64,6 +64,7 @@ class Category implements ModelInterface, ArrayAccess
 'identifier' => 'string',
 'datasource' => 'string',
 'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'last_modified' => '\DateTime',
 'name' => 'string'    ];
 
     /**
@@ -80,6 +81,7 @@ class Category implements ModelInterface, ArrayAccess
 'identifier' => null,
 'datasource' => null,
 'data_governance' => null,
+'last_modified' => 'date-time',
 'name' => null    ];
 
     /**
@@ -117,6 +119,7 @@ class Category implements ModelInterface, ArrayAccess
 'identifier' => 'identifier',
 'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
+'last_modified' => 'lastModified',
 'name' => 'name'    ];
 
     /**
@@ -133,6 +136,7 @@ class Category implements ModelInterface, ArrayAccess
 'identifier' => 'setIdentifier',
 'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
+'last_modified' => 'setLastModified',
 'name' => 'setName'    ];
 
     /**
@@ -149,6 +153,7 @@ class Category implements ModelInterface, ArrayAccess
 'identifier' => 'getIdentifier',
 'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
+'last_modified' => 'getLastModified',
 'name' => 'getName'    ];
 
     /**
@@ -217,6 +222,7 @@ class Category implements ModelInterface, ArrayAccess
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
+        $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
@@ -432,6 +438,30 @@ class Category implements ModelInterface, ArrayAccess
     public function setDataGovernance($data_governance)
     {
         $this->container['data_governance'] = $data_governance;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_modified
+     *
+     * @return \DateTime
+     */
+    public function getLastModified()
+    {
+        return $this->container['last_modified'];
+    }
+
+    /**
+     * Sets last_modified
+     *
+     * @param \DateTime $last_modified last_modified
+     *
+     * @return $this
+     */
+    public function setLastModified($last_modified)
+    {
+        $this->container['last_modified'] = $last_modified;
 
         return $this;
     }

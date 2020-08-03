@@ -1,17 +1,8 @@
-# LodgingBusiness
+# Webcam
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amenity_feature** | [**\Infocenter\Client\Model\LodgingBusinessAmenityFeature[]**](LodgingBusinessAmenityFeature.md) |  | [optional] 
-**checkin_time** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**checkout_time** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**number_of_rooms** | [**\Infocenter\Client\Model\LodgingBusinessNumberOfRooms[]**](LodgingBusinessNumberOfRooms.md) |  | [optional] 
-**pets_allowed** | **bool** |  | [optional] 
-**star_rating** | [**\Infocenter\Client\Model\FoodEstablishmentStarRating**](FoodEstablishmentStarRating.md) |  | [optional] 
-**contact_point** | [**\Infocenter\Client\Model\EventOrganizerContactPoint**](EventOrganizerContactPoint.md) |  | [optional] 
-**opening_days** | **string** |  | [optional] 
-**price_range** | **string** |  | [optional] 
 **available_language** | **string[]** |  | [optional] 
 **address** | [**\Infocenter\Client\Model\AdministrativeAreaAddress**](AdministrativeAreaAddress.md) |  | [optional] 
 **fax_number** | **string** |  | [optional] 

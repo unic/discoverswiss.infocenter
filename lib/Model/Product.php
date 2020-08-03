@@ -60,6 +60,7 @@ class Product implements ModelInterface, ArrayAccess
 'identifier' => 'string',
 'datasource' => 'string',
 'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'last_modified' => '\DateTime',
 'name' => 'string',
 'sku' => 'string',
 'price_list' => '\Infocenter\Client\Model\ProductPriceList[]',
@@ -75,6 +76,7 @@ class Product implements ModelInterface, ArrayAccess
 'identifier' => null,
 'datasource' => null,
 'data_governance' => null,
+'last_modified' => 'date-time',
 'name' => null,
 'sku' => null,
 'price_list' => null,
@@ -111,6 +113,7 @@ class Product implements ModelInterface, ArrayAccess
 'identifier' => 'identifier',
 'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
+'last_modified' => 'lastModified',
 'name' => 'name',
 'sku' => 'sku',
 'price_list' => 'priceList',
@@ -126,6 +129,7 @@ class Product implements ModelInterface, ArrayAccess
 'identifier' => 'setIdentifier',
 'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
+'last_modified' => 'setLastModified',
 'name' => 'setName',
 'sku' => 'setSku',
 'price_list' => 'setPriceList',
@@ -141,6 +145,7 @@ class Product implements ModelInterface, ArrayAccess
 'identifier' => 'getIdentifier',
 'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
+'last_modified' => 'getLastModified',
 'name' => 'getName',
 'sku' => 'getSku',
 'price_list' => 'getPriceList',
@@ -208,6 +213,7 @@ class Product implements ModelInterface, ArrayAccess
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
+        $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['sku'] = isset($data['sku']) ? $data['sku'] : null;
         $this->container['price_list'] = isset($data['price_list']) ? $data['price_list'] : null;
@@ -330,6 +336,30 @@ class Product implements ModelInterface, ArrayAccess
     public function setDataGovernance($data_governance)
     {
         $this->container['data_governance'] = $data_governance;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_modified
+     *
+     * @return \DateTime
+     */
+    public function getLastModified()
+    {
+        return $this->container['last_modified'];
+    }
+
+    /**
+     * Sets last_modified
+     *
+     * @param \DateTime $last_modified last_modified
+     *
+     * @return $this
+     */
+    public function setLastModified($last_modified)
+    {
+        $this->container['last_modified'] = $last_modified;
 
         return $this;
     }

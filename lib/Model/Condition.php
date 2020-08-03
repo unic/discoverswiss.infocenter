@@ -1,6 +1,6 @@
 <?php
 /**
- * AdministrativeArea
+ * Condition
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * AdministrativeArea Class Doc Comment
+ * Condition Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AdministrativeArea implements ModelInterface, ArrayAccess
+class Condition implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class AdministrativeArea implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AdministrativeArea';
+    protected static $swaggerModelName = 'Condition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,11 @@ class AdministrativeArea implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'available_language' => 'string[]',
+        'winter_activity' => 'bool',
+'day_of_inspection' => '\DateTime',
+'date_from' => '\DateTime',
+'valid_to' => '\DateTime',
+'available_language' => 'string[]',
 'address' => '\Infocenter\Client\Model\AdministrativeAreaAddress',
 'fax_number' => 'string',
 'geo' => '\Infocenter\Client\Model\AdministrativeAreaGeo',
@@ -114,7 +118,11 @@ class AdministrativeArea implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'available_language' => null,
+        'winter_activity' => null,
+'day_of_inspection' => 'date-time',
+'date_from' => 'date-time',
+'valid_to' => 'date-time',
+'available_language' => null,
 'address' => null,
 'fax_number' => null,
 'geo' => null,
@@ -193,7 +201,11 @@ class AdministrativeArea implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'available_language' => 'availableLanguage',
+        'winter_activity' => 'winterActivity',
+'day_of_inspection' => 'dayOfInspection',
+'date_from' => 'dateFrom',
+'valid_to' => 'validTo',
+'available_language' => 'availableLanguage',
 'address' => 'address',
 'fax_number' => 'faxNumber',
 'geo' => 'geo',
@@ -251,7 +263,11 @@ class AdministrativeArea implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'available_language' => 'setAvailableLanguage',
+        'winter_activity' => 'setWinterActivity',
+'day_of_inspection' => 'setDayOfInspection',
+'date_from' => 'setDateFrom',
+'valid_to' => 'setValidTo',
+'available_language' => 'setAvailableLanguage',
 'address' => 'setAddress',
 'fax_number' => 'setFaxNumber',
 'geo' => 'setGeo',
@@ -309,7 +325,11 @@ class AdministrativeArea implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'available_language' => 'getAvailableLanguage',
+        'winter_activity' => 'getWinterActivity',
+'day_of_inspection' => 'getDayOfInspection',
+'date_from' => 'getDateFrom',
+'valid_to' => 'getValidTo',
+'available_language' => 'getAvailableLanguage',
 'address' => 'getAddress',
 'fax_number' => 'getFaxNumber',
 'geo' => 'getGeo',
@@ -419,6 +439,10 @@ class AdministrativeArea implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['winter_activity'] = isset($data['winter_activity']) ? $data['winter_activity'] : null;
+        $this->container['day_of_inspection'] = isset($data['day_of_inspection']) ? $data['day_of_inspection'] : null;
+        $this->container['date_from'] = isset($data['date_from']) ? $data['date_from'] : null;
+        $this->container['valid_to'] = isset($data['valid_to']) ? $data['valid_to'] : null;
         $this->container['available_language'] = isset($data['available_language']) ? $data['available_language'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['fax_number'] = isset($data['fax_number']) ? $data['fax_number'] : null;
@@ -495,6 +519,102 @@ class AdministrativeArea implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets winter_activity
+     *
+     * @return bool
+     */
+    public function getWinterActivity()
+    {
+        return $this->container['winter_activity'];
+    }
+
+    /**
+     * Sets winter_activity
+     *
+     * @param bool $winter_activity winter_activity
+     *
+     * @return $this
+     */
+    public function setWinterActivity($winter_activity)
+    {
+        $this->container['winter_activity'] = $winter_activity;
+
+        return $this;
+    }
+
+    /**
+     * Gets day_of_inspection
+     *
+     * @return \DateTime
+     */
+    public function getDayOfInspection()
+    {
+        return $this->container['day_of_inspection'];
+    }
+
+    /**
+     * Sets day_of_inspection
+     *
+     * @param \DateTime $day_of_inspection day_of_inspection
+     *
+     * @return $this
+     */
+    public function setDayOfInspection($day_of_inspection)
+    {
+        $this->container['day_of_inspection'] = $day_of_inspection;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_from
+     *
+     * @return \DateTime
+     */
+    public function getDateFrom()
+    {
+        return $this->container['date_from'];
+    }
+
+    /**
+     * Sets date_from
+     *
+     * @param \DateTime $date_from date_from
+     *
+     * @return $this
+     */
+    public function setDateFrom($date_from)
+    {
+        $this->container['date_from'] = $date_from;
+
+        return $this;
+    }
+
+    /**
+     * Gets valid_to
+     *
+     * @return \DateTime
+     */
+    public function getValidTo()
+    {
+        return $this->container['valid_to'];
+    }
+
+    /**
+     * Sets valid_to
+     *
+     * @param \DateTime $valid_to valid_to
+     *
+     * @return $this
+     */
+    public function setValidTo($valid_to)
+    {
+        $this->container['valid_to'] = $valid_to;
+
+        return $this;
+    }
 
     /**
      * Gets available_language
