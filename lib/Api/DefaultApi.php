@@ -93,14 +93,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\AdministrativeArea
      */
-    public function administrativeAreaRegion($id, $accept_language = null)
+    public function administrativeAreaRegion($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->administrativeAreaRegionWithHttpInfo($id, $accept_language);
+        list($response) = $this->administrativeAreaRegionWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -111,15 +112,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\AdministrativeArea, HTTP status code, HTTP response headers (array of strings)
      */
-    public function administrativeAreaRegionWithHttpInfo($id, $accept_language = null)
+    public function administrativeAreaRegionWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\AdministrativeArea';
-        $request = $this->administrativeAreaRegionRequest($id, $accept_language);
+        $request = $this->administrativeAreaRegionRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,13 +189,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function administrativeAreaRegionAsync($id, $accept_language = null)
+    public function administrativeAreaRegionAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->administrativeAreaRegionAsyncWithHttpInfo($id, $accept_language)
+        return $this->administrativeAreaRegionAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -208,14 +211,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function administrativeAreaRegionAsyncWithHttpInfo($id, $accept_language = null)
+    public function administrativeAreaRegionAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\AdministrativeArea';
-        $request = $this->administrativeAreaRegionRequest($id, $accept_language);
+        $request = $this->administrativeAreaRegionRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -259,11 +263,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function administrativeAreaRegionRequest($id, $accept_language = null)
+    protected function administrativeAreaRegionRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -282,6 +287,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -374,14 +383,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\Category
      */
-    public function category($id, $accept_language = null)
+    public function category($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->categoryWithHttpInfo($id, $accept_language);
+        list($response) = $this->categoryWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -392,15 +402,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\Category, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryWithHttpInfo($id, $accept_language = null)
+    public function categoryWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Category';
-        $request = $this->categoryRequest($id, $accept_language);
+        $request = $this->categoryRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -468,13 +479,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAsync($id, $accept_language = null)
+    public function categoryAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->categoryAsyncWithHttpInfo($id, $accept_language)
+        return $this->categoryAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -489,14 +501,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAsyncWithHttpInfo($id, $accept_language = null)
+    public function categoryAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Category';
-        $request = $this->categoryRequest($id, $accept_language);
+        $request = $this->categoryRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -540,11 +553,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function categoryRequest($id, $accept_language = null)
+    protected function categoryRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -563,6 +577,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -655,14 +673,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\Category
      */
-    public function categoryTree($id, $accept_language = null)
+    public function categoryTree($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->categoryTreeWithHttpInfo($id, $accept_language);
+        list($response) = $this->categoryTreeWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -673,15 +692,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\Category, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryTreeWithHttpInfo($id, $accept_language = null)
+    public function categoryTreeWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Category';
-        $request = $this->categoryTreeRequest($id, $accept_language);
+        $request = $this->categoryTreeRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -749,13 +769,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryTreeAsync($id, $accept_language = null)
+    public function categoryTreeAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->categoryTreeAsyncWithHttpInfo($id, $accept_language)
+        return $this->categoryTreeAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -770,14 +791,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryTreeAsyncWithHttpInfo($id, $accept_language = null)
+    public function categoryTreeAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Category';
-        $request = $this->categoryTreeRequest($id, $accept_language);
+        $request = $this->categoryTreeRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -821,11 +843,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function categoryTreeRequest($id, $accept_language = null)
+    protected function categoryTreeRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -844,6 +867,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -936,14 +963,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\CivicStructure
      */
-    public function civicStructure($id, $accept_language = null)
+    public function civicStructure($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->civicStructureWithHttpInfo($id, $accept_language);
+        list($response) = $this->civicStructureWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -954,15 +982,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\CivicStructure, HTTP status code, HTTP response headers (array of strings)
      */
-    public function civicStructureWithHttpInfo($id, $accept_language = null)
+    public function civicStructureWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\CivicStructure';
-        $request = $this->civicStructureRequest($id, $accept_language);
+        $request = $this->civicStructureRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1030,13 +1059,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function civicStructureAsync($id, $accept_language = null)
+    public function civicStructureAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->civicStructureAsyncWithHttpInfo($id, $accept_language)
+        return $this->civicStructureAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1051,14 +1081,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function civicStructureAsyncWithHttpInfo($id, $accept_language = null)
+    public function civicStructureAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\CivicStructure';
-        $request = $this->civicStructureRequest($id, $accept_language);
+        $request = $this->civicStructureRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1102,11 +1133,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function civicStructureRequest($id, $accept_language = null)
+    protected function civicStructureRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1125,6 +1157,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -1217,14 +1253,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\Condition
      */
-    public function condition($id, $accept_language = null)
+    public function condition($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->conditionWithHttpInfo($id, $accept_language);
+        list($response) = $this->conditionWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -1235,15 +1272,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\Condition, HTTP status code, HTTP response headers (array of strings)
      */
-    public function conditionWithHttpInfo($id, $accept_language = null)
+    public function conditionWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Condition';
-        $request = $this->conditionRequest($id, $accept_language);
+        $request = $this->conditionRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1311,13 +1349,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function conditionAsync($id, $accept_language = null)
+    public function conditionAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->conditionAsyncWithHttpInfo($id, $accept_language)
+        return $this->conditionAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1332,14 +1371,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function conditionAsyncWithHttpInfo($id, $accept_language = null)
+    public function conditionAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Condition';
-        $request = $this->conditionRequest($id, $accept_language);
+        $request = $this->conditionRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1383,11 +1423,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function conditionRequest($id, $accept_language = null)
+    protected function conditionRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1406,6 +1447,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -1498,14 +1543,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\CreativeWork
      */
-    public function creativeWork($id, $accept_language = null)
+    public function creativeWork($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->creativeWorkWithHttpInfo($id, $accept_language);
+        list($response) = $this->creativeWorkWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -1516,15 +1562,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\CreativeWork, HTTP status code, HTTP response headers (array of strings)
      */
-    public function creativeWorkWithHttpInfo($id, $accept_language = null)
+    public function creativeWorkWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\CreativeWork';
-        $request = $this->creativeWorkRequest($id, $accept_language);
+        $request = $this->creativeWorkRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1592,13 +1639,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function creativeWorkAsync($id, $accept_language = null)
+    public function creativeWorkAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->creativeWorkAsyncWithHttpInfo($id, $accept_language)
+        return $this->creativeWorkAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1613,14 +1661,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function creativeWorkAsyncWithHttpInfo($id, $accept_language = null)
+    public function creativeWorkAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\CreativeWork';
-        $request = $this->creativeWorkRequest($id, $accept_language);
+        $request = $this->creativeWorkRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1664,11 +1713,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function creativeWorkRequest($id, $accept_language = null)
+    protected function creativeWorkRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1687,6 +1737,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -1779,14 +1833,15 @@ class DefaultApi
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
      * @param  string $accept_language Supply this header to select the term version in the correct language and deliver localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\TermVersion
      */
-    public function currentTermVersion($term_code, $accept_language = null)
+    public function currentTermVersion($term_code, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->currentTermVersionWithHttpInfo($term_code, $accept_language);
+        list($response) = $this->currentTermVersionWithHttpInfo($term_code, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -1797,15 +1852,16 @@ class DefaultApi
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
      * @param  string $accept_language Supply this header to select the term version in the correct language and deliver localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\TermVersion, HTTP status code, HTTP response headers (array of strings)
      */
-    public function currentTermVersionWithHttpInfo($term_code, $accept_language = null)
+    public function currentTermVersionWithHttpInfo($term_code, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\TermVersion';
-        $request = $this->currentTermVersionRequest($term_code, $accept_language);
+        $request = $this->currentTermVersionRequest($term_code, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1873,13 +1929,14 @@ class DefaultApi
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
      * @param  string $accept_language Supply this header to select the term version in the correct language and deliver localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function currentTermVersionAsync($term_code, $accept_language = null)
+    public function currentTermVersionAsync($term_code, $accept_language = null, $accept_timezone = null)
     {
-        return $this->currentTermVersionAsyncWithHttpInfo($term_code, $accept_language)
+        return $this->currentTermVersionAsyncWithHttpInfo($term_code, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1894,14 +1951,15 @@ class DefaultApi
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
      * @param  string $accept_language Supply this header to select the term version in the correct language and deliver localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function currentTermVersionAsyncWithHttpInfo($term_code, $accept_language = null)
+    public function currentTermVersionAsyncWithHttpInfo($term_code, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\TermVersion';
-        $request = $this->currentTermVersionRequest($term_code, $accept_language);
+        $request = $this->currentTermVersionRequest($term_code, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1945,11 +2003,12 @@ class DefaultApi
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
      * @param  string $accept_language Supply this header to select the term version in the correct language and deliver localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function currentTermVersionRequest($term_code, $accept_language = null)
+    protected function currentTermVersionRequest($term_code, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'term_code' is set
         if ($term_code === null || (is_array($term_code) && count($term_code) === 0)) {
@@ -1968,6 +2027,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -2060,14 +2123,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\Event
      */
-    public function event($id, $accept_language = null)
+    public function event($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->eventWithHttpInfo($id, $accept_language);
+        list($response) = $this->eventWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -2078,15 +2142,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\Event, HTTP status code, HTTP response headers (array of strings)
      */
-    public function eventWithHttpInfo($id, $accept_language = null)
+    public function eventWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Event';
-        $request = $this->eventRequest($id, $accept_language);
+        $request = $this->eventRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2154,13 +2219,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eventAsync($id, $accept_language = null)
+    public function eventAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->eventAsyncWithHttpInfo($id, $accept_language)
+        return $this->eventAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2175,14 +2241,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eventAsyncWithHttpInfo($id, $accept_language = null)
+    public function eventAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Event';
-        $request = $this->eventRequest($id, $accept_language);
+        $request = $this->eventRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2226,11 +2293,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function eventRequest($id, $accept_language = null)
+    protected function eventRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -2249,6 +2317,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -2341,14 +2413,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\FoodEstablishment
      */
-    public function foodEstablishment($id, $accept_language = null)
+    public function foodEstablishment($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->foodEstablishmentWithHttpInfo($id, $accept_language);
+        list($response) = $this->foodEstablishmentWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -2359,15 +2432,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\FoodEstablishment, HTTP status code, HTTP response headers (array of strings)
      */
-    public function foodEstablishmentWithHttpInfo($id, $accept_language = null)
+    public function foodEstablishmentWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\FoodEstablishment';
-        $request = $this->foodEstablishmentRequest($id, $accept_language);
+        $request = $this->foodEstablishmentRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2435,13 +2509,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function foodEstablishmentAsync($id, $accept_language = null)
+    public function foodEstablishmentAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->foodEstablishmentAsyncWithHttpInfo($id, $accept_language)
+        return $this->foodEstablishmentAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2456,14 +2531,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function foodEstablishmentAsyncWithHttpInfo($id, $accept_language = null)
+    public function foodEstablishmentAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\FoodEstablishment';
-        $request = $this->foodEstablishmentRequest($id, $accept_language);
+        $request = $this->foodEstablishmentRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2507,11 +2583,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function foodEstablishmentRequest($id, $accept_language = null)
+    protected function foodEstablishmentRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -2530,6 +2607,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -2838,14 +2919,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\ImageObject
      */
-    public function imageObject($id, $accept_language = null)
+    public function imageObject($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->imageObjectWithHttpInfo($id, $accept_language);
+        list($response) = $this->imageObjectWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -2856,15 +2938,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\ImageObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function imageObjectWithHttpInfo($id, $accept_language = null)
+    public function imageObjectWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\ImageObject';
-        $request = $this->imageObjectRequest($id, $accept_language);
+        $request = $this->imageObjectRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2932,13 +3015,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function imageObjectAsync($id, $accept_language = null)
+    public function imageObjectAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->imageObjectAsyncWithHttpInfo($id, $accept_language)
+        return $this->imageObjectAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2953,14 +3037,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function imageObjectAsyncWithHttpInfo($id, $accept_language = null)
+    public function imageObjectAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\ImageObject';
-        $request = $this->imageObjectRequest($id, $accept_language);
+        $request = $this->imageObjectRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3004,11 +3089,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function imageObjectRequest($id, $accept_language = null)
+    protected function imageObjectRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -3027,6 +3113,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -3123,15 +3213,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\AdministrativeAreasResponse
      */
-    public function listAdministrativeAreaRegion($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listAdministrativeAreaRegion($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
-        list($response) = $this->listAdministrativeAreaRegionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listAdministrativeAreaRegionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_timezone, $accept_language);
         return $response;
     }
 
@@ -3146,16 +3238,18 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\AdministrativeAreasResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAdministrativeAreaRegionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listAdministrativeAreaRegionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\AdministrativeAreasResponse';
-        $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_timezone, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3227,14 +3321,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAdministrativeAreaRegionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listAdministrativeAreaRegionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
-        return $this->listAdministrativeAreaRegionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listAdministrativeAreaRegionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_timezone, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3253,15 +3349,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAdministrativeAreaRegionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listAdministrativeAreaRegionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\AdministrativeAreasResponse';
-        $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_timezone, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3309,12 +3407,14 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listAdministrativeAreaRegionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listAdministrativeAreaRegionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
 
         $resourcePath = '/areas';
@@ -3347,6 +3447,14 @@ class DefaultApi
         // query params
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
+        }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
         // header params
         if ($accept_language !== null) {
@@ -3438,15 +3546,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\CategoriesResponse
      */
-    public function listCategory($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCategory($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null)
     {
-        list($response) = $this->listCategoryWithHttpInfo($parent_category, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listCategoryWithHttpInfo($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language);
         return $response;
     }
 
@@ -3460,16 +3569,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\CategoriesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCategoryWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCategoryWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\CategoriesResponse';
-        $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3540,14 +3650,15 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCategoryAsync($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCategoryAsync($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null)
     {
-        return $this->listCategoryAsyncWithHttpInfo($parent_category, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listCategoryAsyncWithHttpInfo($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3565,15 +3676,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCategoryAsyncWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCategoryAsyncWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\CategoriesResponse';
-        $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3620,12 +3732,13 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listCategoryRequest($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listCategoryRequest($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null)
     {
 
         $resourcePath = '/categories';
@@ -3654,6 +3767,10 @@ class DefaultApi
         // query params
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
+        }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
         }
         // header params
         if ($accept_language !== null) {
@@ -3746,15 +3863,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\CivicStructuresResponse
      */
-    public function listCivicStructure($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCivicStructure($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listCivicStructureWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listCivicStructureWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -3769,16 +3888,18 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\CivicStructuresResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCivicStructureWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCivicStructureWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\CivicStructuresResponse';
-        $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3850,14 +3971,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCivicStructureAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCivicStructureAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listCivicStructureAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listCivicStructureAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3876,15 +3999,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCivicStructureAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCivicStructureAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\CivicStructuresResponse';
-        $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3932,12 +4057,14 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listCivicStructureRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listCivicStructureRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/civicStructures';
@@ -3971,9 +4098,17 @@ class DefaultApi
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
         }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
 
@@ -4062,15 +4197,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\ConditionsResponse
      */
-    public function listCondition($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCondition($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
-        list($response) = $this->listConditionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listConditionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_timezone, $accept_language);
         return $response;
     }
 
@@ -4085,16 +4222,18 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\ConditionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listConditionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listConditionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\ConditionsResponse';
-        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_timezone, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4166,14 +4305,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listConditionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listConditionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
-        return $this->listConditionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listConditionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_timezone, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4192,15 +4333,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listConditionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listConditionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\ConditionsResponse';
-        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_timezone, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4248,12 +4391,14 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listConditionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listConditionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
 
         $resourcePath = '/conditions';
@@ -4286,6 +4431,14 @@ class DefaultApi
         // query params
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
+        }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
         // header params
         if ($accept_language !== null) {
@@ -4376,15 +4529,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\CreativeWorksResponse
      */
-    public function listCreativeWork($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCreativeWork($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listCreativeWorkWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listCreativeWorkWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -4397,16 +4552,18 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\CreativeWorksResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCreativeWorkWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCreativeWorkWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\CreativeWorksResponse';
-        $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4476,14 +4633,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCreativeWorkAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCreativeWorkAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listCreativeWorkAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listCreativeWorkAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4500,15 +4659,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCreativeWorkAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listCreativeWorkAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\CreativeWorksResponse';
-        $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4554,12 +4715,14 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listCreativeWorkRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listCreativeWorkRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/creativeWorks';
@@ -4585,9 +4748,17 @@ class DefaultApi
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
         }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
 
@@ -4677,15 +4848,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter by the region (administrative area). (optional)
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\EventsResponse
      */
-    public function listEvents($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $accept_language = null)
+    public function listEvents($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
-        list($response) = $this->listEventsWithHttpInfo($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $accept_language);
+        list($response) = $this->listEventsWithHttpInfo($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $accept_timezone, $accept_language);
         return $response;
     }
 
@@ -4701,16 +4874,18 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter by the region (administrative area). (optional)
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\EventsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listEventsWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $accept_language = null)
+    public function listEventsWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\EventsResponse';
-        $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $accept_language);
+        $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $accept_timezone, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4783,14 +4958,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter by the region (administrative area). (optional)
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listEventsAsync($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $accept_language = null)
+    public function listEventsAsync($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
-        return $this->listEventsAsyncWithHttpInfo($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $accept_language)
+        return $this->listEventsAsyncWithHttpInfo($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $accept_timezone, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4810,15 +4987,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter by the region (administrative area). (optional)
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listEventsAsyncWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $accept_language = null)
+    public function listEventsAsyncWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\EventsResponse';
-        $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $accept_language);
+        $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $accept_timezone, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4867,12 +5046,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter by the region (administrative area). (optional)
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listEventsRequest($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $accept_language = null)
+    protected function listEventsRequest($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $accept_timezone = null, $accept_language = null)
     {
 
         $resourcePath = '/events';
@@ -4909,6 +5090,14 @@ class DefaultApi
         // query params
         if ($location !== null) {
             $queryParams['location'] = ObjectSerializer::toQueryValue($location);
+        }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
         // header params
         if ($accept_language !== null) {
@@ -5001,15 +5190,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\FoodEstablishmentsResponse
      */
-    public function listFoodEstablishment($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listFoodEstablishment($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listFoodEstablishmentWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listFoodEstablishmentWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -5024,16 +5215,18 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\FoodEstablishmentsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listFoodEstablishmentWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listFoodEstablishmentWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\FoodEstablishmentsResponse';
-        $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5105,14 +5298,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listFoodEstablishmentAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listFoodEstablishmentAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listFoodEstablishmentAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listFoodEstablishmentAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5131,15 +5326,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listFoodEstablishmentAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listFoodEstablishmentAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\FoodEstablishmentsResponse';
-        $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5187,12 +5384,14 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listFoodEstablishmentRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listFoodEstablishmentRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/foodEstablishments';
@@ -5226,9 +5425,17 @@ class DefaultApi
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
         }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
 
@@ -5315,15 +5522,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\ImageObjectsResponse
      */
-    public function listImageObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listImageObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listImageObjectWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listImageObjectWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -5336,16 +5545,18 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\ImageObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listImageObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listImageObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\ImageObjectsResponse';
-        $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5415,14 +5626,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listImageObjectAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listImageObjectAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listImageObjectAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listImageObjectAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5439,15 +5652,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listImageObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listImageObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\ImageObjectsResponse';
-        $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5493,12 +5708,14 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listImageObjectRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listImageObjectRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/imageObjects';
@@ -5524,9 +5741,17 @@ class DefaultApi
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
         }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
 
@@ -5615,15 +5840,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\LocalBusinessesResponse
      */
-    public function listLocalBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listLocalBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listLocalBusinessWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listLocalBusinessWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -5638,16 +5865,18 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\LocalBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLocalBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listLocalBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\LocalBusinessesResponse';
-        $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5719,14 +5948,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLocalBusinessAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listLocalBusinessAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listLocalBusinessAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listLocalBusinessAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5745,15 +5976,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLocalBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listLocalBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\LocalBusinessesResponse';
-        $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5801,12 +6034,14 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listLocalBusinessRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listLocalBusinessRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/localbusinesses';
@@ -5840,9 +6075,17 @@ class DefaultApi
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
         }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
 
@@ -5931,15 +6174,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\LodgingBusinessesResponse
      */
-    public function listLodgingBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listLodgingBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listLodgingBusinessWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listLodgingBusinessWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -5954,16 +6199,18 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\LodgingBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLodgingBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listLodgingBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\LodgingBusinessesResponse';
-        $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6035,14 +6282,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLodgingBusinessAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listLodgingBusinessAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listLodgingBusinessAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listLodgingBusinessAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6061,15 +6310,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLodgingBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listLodgingBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\LodgingBusinessesResponse';
-        $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6117,12 +6368,14 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listLodgingBusinessRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listLodgingBusinessRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/lodgingbusinesses';
@@ -6156,9 +6409,17 @@ class DefaultApi
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
         }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
 
@@ -6245,15 +6506,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\MediaObjectsResponse
      */
-    public function listMediaObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listMediaObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listMediaObjectWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listMediaObjectWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -6266,16 +6529,18 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\MediaObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listMediaObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listMediaObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\MediaObjectsResponse';
-        $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6345,14 +6610,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMediaObjectAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listMediaObjectAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listMediaObjectAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listMediaObjectAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6369,15 +6636,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMediaObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listMediaObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\MediaObjectsResponse';
-        $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6423,12 +6692,14 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listMediaObjectRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listMediaObjectRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/mediaObjects';
@@ -6454,9 +6725,17 @@ class DefaultApi
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
         }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
 
@@ -6545,15 +6824,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\PlacesResponse
      */
-    public function listPlace($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listPlace($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listPlaceWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listPlaceWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -6568,16 +6849,18 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\PlacesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listPlaceWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listPlaceWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\PlacesResponse';
-        $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6649,14 +6932,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPlaceAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listPlaceAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listPlaceAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listPlaceAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6675,15 +6960,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPlaceAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listPlaceAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\PlacesResponse';
-        $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6731,12 +7018,14 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listPlaceRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listPlaceRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/places';
@@ -6770,9 +7059,17 @@ class DefaultApi
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
         }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
 
@@ -6858,15 +7155,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of Data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\ProductsResponse
      */
-    public function listProducts($datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listProducts($datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null)
     {
-        list($response) = $this->listProductsWithHttpInfo($datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listProductsWithHttpInfo($datasource, $continuation_token, $top, $project, $accept_language);
         return $response;
     }
 
@@ -6878,16 +7176,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of Data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\ProductsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listProductsWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listProductsWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\ProductsResponse';
-        $request = $this->listProductsRequest($datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listProductsRequest($datasource, $continuation_token, $top, $project, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6956,14 +7255,15 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of Data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProductsAsync($datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listProductsAsync($datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null)
     {
-        return $this->listProductsAsyncWithHttpInfo($datasource, $continuation_token, $top, $accept_language)
+        return $this->listProductsAsyncWithHttpInfo($datasource, $continuation_token, $top, $project, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6979,15 +7279,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of Data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProductsAsyncWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listProductsAsyncWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\ProductsResponse';
-        $request = $this->listProductsRequest($datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listProductsRequest($datasource, $continuation_token, $top, $project, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7032,12 +7333,13 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of Data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listProductsRequest($datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listProductsRequest($datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null)
     {
 
         $resourcePath = '/products';
@@ -7059,10 +7361,267 @@ class DefaultApi
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
         }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
         }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listTimezones
+     *
+     * List Timezones
+     *
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\TimeZoneResponseArray
+     */
+    public function listTimezones()
+    {
+        list($response) = $this->listTimezonesWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation listTimezonesWithHttpInfo
+     *
+     * List Timezones
+     *
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\TimeZoneResponseArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listTimezonesWithHttpInfo()
+    {
+        $returnType = '\Infocenter\Client\Model\TimeZoneResponseArray';
+        $request = $this->listTimezonesRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\TimeZoneResponseArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listTimezonesAsync
+     *
+     * List Timezones
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listTimezonesAsync()
+    {
+        return $this->listTimezonesAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listTimezonesAsyncWithHttpInfo
+     *
+     * List Timezones
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listTimezonesAsyncWithHttpInfo()
+    {
+        $returnType = '\Infocenter\Client\Model\TimeZoneResponseArray';
+        $request = $this->listTimezonesRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listTimezones'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function listTimezonesRequest()
+    {
+
+        $resourcePath = '/timezones';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
 
 
         // body params
@@ -7150,15 +7709,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\ToursResponse
      */
-    public function listTour($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listTour($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listTourWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listTourWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -7173,16 +7734,18 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\ToursResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listTourWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listTourWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\ToursResponse';
-        $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7254,14 +7817,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTourAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listTourAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listTourAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listTourAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7280,15 +7845,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTourAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listTourAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\ToursResponse';
-        $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7336,12 +7903,14 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listTourRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listTourRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/tours';
@@ -7375,9 +7944,17 @@ class DefaultApi
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
         }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
 
@@ -7466,15 +8043,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\WebcamsResponse
      */
-    public function listWebcams($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listWebcams($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listWebcamsWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        list($response) = $this->listWebcamsWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -7489,16 +8068,18 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\WebcamsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listWebcamsWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listWebcamsWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\WebcamsResponse';
-        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7570,14 +8151,16 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listWebcamsAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listWebcamsAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listWebcamsAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language)
+        return $this->listWebcamsAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7596,15 +8179,17 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listWebcamsAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    public function listWebcamsAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\WebcamsResponse';
-        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $accept_language);
+        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7652,12 +8237,14 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
+     * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listWebcamsRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $accept_language = null)
+    protected function listWebcamsRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/webcams';
@@ -7691,9 +8278,17 @@ class DefaultApi
         if ($top !== null) {
             $queryParams['top'] = ObjectSerializer::toQueryValue($top);
         }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
 
@@ -7778,14 +8373,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\LocalBusiness
      */
-    public function localBusiness($id, $accept_language = null)
+    public function localBusiness($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->localBusinessWithHttpInfo($id, $accept_language);
+        list($response) = $this->localBusinessWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -7796,15 +8392,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\LocalBusiness, HTTP status code, HTTP response headers (array of strings)
      */
-    public function localBusinessWithHttpInfo($id, $accept_language = null)
+    public function localBusinessWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\LocalBusiness';
-        $request = $this->localBusinessRequest($id, $accept_language);
+        $request = $this->localBusinessRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7872,13 +8469,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function localBusinessAsync($id, $accept_language = null)
+    public function localBusinessAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->localBusinessAsyncWithHttpInfo($id, $accept_language)
+        return $this->localBusinessAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7893,14 +8491,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function localBusinessAsyncWithHttpInfo($id, $accept_language = null)
+    public function localBusinessAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\LocalBusiness';
-        $request = $this->localBusinessRequest($id, $accept_language);
+        $request = $this->localBusinessRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7944,11 +8543,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function localBusinessRequest($id, $accept_language = null)
+    protected function localBusinessRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -7967,6 +8567,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -8059,14 +8663,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\LodgingBusiness
      */
-    public function lodgingBusiness($id, $accept_language = null)
+    public function lodgingBusiness($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->lodgingBusinessWithHttpInfo($id, $accept_language);
+        list($response) = $this->lodgingBusinessWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -8077,15 +8682,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\LodgingBusiness, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lodgingBusinessWithHttpInfo($id, $accept_language = null)
+    public function lodgingBusinessWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\LodgingBusiness';
-        $request = $this->lodgingBusinessRequest($id, $accept_language);
+        $request = $this->lodgingBusinessRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8153,13 +8759,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lodgingBusinessAsync($id, $accept_language = null)
+    public function lodgingBusinessAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->lodgingBusinessAsyncWithHttpInfo($id, $accept_language)
+        return $this->lodgingBusinessAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8174,14 +8781,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lodgingBusinessAsyncWithHttpInfo($id, $accept_language = null)
+    public function lodgingBusinessAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\LodgingBusiness';
-        $request = $this->lodgingBusinessRequest($id, $accept_language);
+        $request = $this->lodgingBusinessRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8225,11 +8833,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function lodgingBusinessRequest($id, $accept_language = null)
+    protected function lodgingBusinessRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -8248,6 +8857,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -8340,14 +8953,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\MediaObject
      */
-    public function mediaObject($id, $accept_language = null)
+    public function mediaObject($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->mediaObjectWithHttpInfo($id, $accept_language);
+        list($response) = $this->mediaObjectWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -8358,15 +8972,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\MediaObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mediaObjectWithHttpInfo($id, $accept_language = null)
+    public function mediaObjectWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\MediaObject';
-        $request = $this->mediaObjectRequest($id, $accept_language);
+        $request = $this->mediaObjectRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8434,13 +9049,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mediaObjectAsync($id, $accept_language = null)
+    public function mediaObjectAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->mediaObjectAsyncWithHttpInfo($id, $accept_language)
+        return $this->mediaObjectAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8455,14 +9071,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mediaObjectAsyncWithHttpInfo($id, $accept_language = null)
+    public function mediaObjectAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\MediaObject';
-        $request = $this->mediaObjectRequest($id, $accept_language);
+        $request = $this->mediaObjectRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8506,11 +9123,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mediaObjectRequest($id, $accept_language = null)
+    protected function mediaObjectRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -8529,6 +9147,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -8621,14 +9243,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\Place
      */
-    public function place($id, $accept_language = null)
+    public function place($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->placeWithHttpInfo($id, $accept_language);
+        list($response) = $this->placeWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -8639,15 +9262,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\Place, HTTP status code, HTTP response headers (array of strings)
      */
-    public function placeWithHttpInfo($id, $accept_language = null)
+    public function placeWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Place';
-        $request = $this->placeRequest($id, $accept_language);
+        $request = $this->placeRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8715,13 +9339,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function placeAsync($id, $accept_language = null)
+    public function placeAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->placeAsyncWithHttpInfo($id, $accept_language)
+        return $this->placeAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8736,14 +9361,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function placeAsyncWithHttpInfo($id, $accept_language = null)
+    public function placeAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Place';
-        $request = $this->placeRequest($id, $accept_language);
+        $request = $this->placeRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8787,11 +9413,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function placeRequest($id, $accept_language = null)
+    protected function placeRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -8810,6 +9437,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -8902,14 +9533,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\Product
      */
-    public function product($id, $accept_language = null)
+    public function product($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->productWithHttpInfo($id, $accept_language);
+        list($response) = $this->productWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -8920,15 +9552,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productWithHttpInfo($id, $accept_language = null)
+    public function productWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Product';
-        $request = $this->productRequest($id, $accept_language);
+        $request = $this->productRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8996,13 +9629,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productAsync($id, $accept_language = null)
+    public function productAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->productAsyncWithHttpInfo($id, $accept_language)
+        return $this->productAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9017,14 +9651,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productAsyncWithHttpInfo($id, $accept_language = null)
+    public function productAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Product';
-        $request = $this->productRequest($id, $accept_language);
+        $request = $this->productRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9068,11 +9703,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function productRequest($id, $accept_language = null)
+    protected function productRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -9091,6 +9727,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -9187,14 +9827,15 @@ class DefaultApi
      * @param  string $order_by Use property for ordering (optional)
      * @param  string $filters Use property for odata filters (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\SearchResponse
      */
-    public function search($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null)
+    public function search($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->searchWithHttpInfo($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language);
+        list($response) = $this->searchWithHttpInfo($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -9209,15 +9850,16 @@ class DefaultApi
      * @param  string $order_by Use property for ordering (optional)
      * @param  string $filters Use property for odata filters (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\SearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchWithHttpInfo($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null)
+    public function searchWithHttpInfo($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\SearchResponse';
-        $request = $this->searchRequest($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language);
+        $request = $this->searchRequest($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9289,13 +9931,14 @@ class DefaultApi
      * @param  string $order_by Use property for ordering (optional)
      * @param  string $filters Use property for odata filters (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAsync($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null)
+    public function searchAsync($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->searchAsyncWithHttpInfo($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language)
+        return $this->searchAsyncWithHttpInfo($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9314,14 +9957,15 @@ class DefaultApi
      * @param  string $order_by Use property for ordering (optional)
      * @param  string $filters Use property for odata filters (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAsyncWithHttpInfo($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null)
+    public function searchAsyncWithHttpInfo($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\SearchResponse';
-        $request = $this->searchRequest($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language);
+        $request = $this->searchRequest($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9369,11 +10013,12 @@ class DefaultApi
      * @param  string $order_by Use property for ordering (optional)
      * @param  string $filters Use property for odata filters (optional)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchRequest($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null)
+    protected function searchRequest($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/search';
@@ -9406,6 +10051,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
 
@@ -9490,14 +10139,15 @@ class DefaultApi
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\TermVersion
      */
-    public function termVersion($code, $accept_language = null)
+    public function termVersion($code, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->termVersionWithHttpInfo($code, $accept_language);
+        list($response) = $this->termVersionWithHttpInfo($code, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -9508,15 +10158,16 @@ class DefaultApi
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\TermVersion, HTTP status code, HTTP response headers (array of strings)
      */
-    public function termVersionWithHttpInfo($code, $accept_language = null)
+    public function termVersionWithHttpInfo($code, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\TermVersion';
-        $request = $this->termVersionRequest($code, $accept_language);
+        $request = $this->termVersionRequest($code, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9584,13 +10235,14 @@ class DefaultApi
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function termVersionAsync($code, $accept_language = null)
+    public function termVersionAsync($code, $accept_language = null, $accept_timezone = null)
     {
-        return $this->termVersionAsyncWithHttpInfo($code, $accept_language)
+        return $this->termVersionAsyncWithHttpInfo($code, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9605,14 +10257,15 @@ class DefaultApi
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function termVersionAsyncWithHttpInfo($code, $accept_language = null)
+    public function termVersionAsyncWithHttpInfo($code, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\TermVersion';
-        $request = $this->termVersionRequest($code, $accept_language);
+        $request = $this->termVersionRequest($code, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9656,11 +10309,12 @@ class DefaultApi
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function termVersionRequest($code, $accept_language = null)
+    protected function termVersionRequest($code, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'code' is set
         if ($code === null || (is_array($code) && count($code) === 0)) {
@@ -9679,6 +10333,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -9771,14 +10429,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\Tour
      */
-    public function tour($id, $accept_language = null)
+    public function tour($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->tourWithHttpInfo($id, $accept_language);
+        list($response) = $this->tourWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -9789,15 +10448,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\Tour, HTTP status code, HTTP response headers (array of strings)
      */
-    public function tourWithHttpInfo($id, $accept_language = null)
+    public function tourWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Tour';
-        $request = $this->tourRequest($id, $accept_language);
+        $request = $this->tourRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9865,13 +10525,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tourAsync($id, $accept_language = null)
+    public function tourAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->tourAsyncWithHttpInfo($id, $accept_language)
+        return $this->tourAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9886,14 +10547,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tourAsyncWithHttpInfo($id, $accept_language = null)
+    public function tourAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Tour';
-        $request = $this->tourRequest($id, $accept_language);
+        $request = $this->tourRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9937,11 +10599,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function tourRequest($id, $accept_language = null)
+    protected function tourRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -9960,6 +10623,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
@@ -10052,14 +10719,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\Webcam
      */
-    public function webcam($id, $accept_language = null)
+    public function webcam($id, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->webcamWithHttpInfo($id, $accept_language);
+        list($response) = $this->webcamWithHttpInfo($id, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -10070,15 +10738,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\Webcam, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webcamWithHttpInfo($id, $accept_language = null)
+    public function webcamWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Webcam';
-        $request = $this->webcamRequest($id, $accept_language);
+        $request = $this->webcamRequest($id, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10146,13 +10815,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webcamAsync($id, $accept_language = null)
+    public function webcamAsync($id, $accept_language = null, $accept_timezone = null)
     {
-        return $this->webcamAsyncWithHttpInfo($id, $accept_language)
+        return $this->webcamAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10167,14 +10837,15 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webcamAsyncWithHttpInfo($id, $accept_language = null)
+    public function webcamAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\Webcam';
-        $request = $this->webcamRequest($id, $accept_language);
+        $request = $this->webcamRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10218,11 +10889,12 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID for response dates &amp; times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function webcamRequest($id, $accept_language = null)
+    protected function webcamRequest($id, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -10241,6 +10913,10 @@ class DefaultApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
         }
 
         // path params
