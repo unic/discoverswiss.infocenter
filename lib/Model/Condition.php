@@ -61,22 +61,22 @@ class Condition implements ModelInterface, ArrayAccess
 'date_from' => '\DateTime',
 'valid_to' => '\DateTime',
 'available_language' => 'string[]',
-'address' => '\Infocenter\Client\Model\AdministrativeAreaAddress',
+'address' => '\Infocenter\Client\Model\PostalAddress',
 'fax_number' => 'string',
-'geo' => '\Infocenter\Client\Model\AdministrativeAreaGeo',
+'geo' => '\Infocenter\Client\Model\GeoCoordinates',
 'has_map' => 'string',
 'is_accessible_for_free' => 'bool',
 'maximum_attendee_capacity' => 'int',
-'opening_hours_specification' => '\Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[]',
-'photo' => '\Infocenter\Client\Model\AdministrativeAreaAddressImage[]',
+'opening_hours_specification' => '\Infocenter\Client\Model\OpeningHoursSpecification[]',
+'photo' => '\Infocenter\Client\Model\ImageObject[]',
 'public_access' => 'bool',
 'smoking_allowed' => 'bool',
-'source' => '\Infocenter\Client\Model\AdministrativeAreaAddressSource',
-'special_opening_hours_specification' => '\Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[]',
+'source' => '\Infocenter\Client\Model\Partner',
+'special_opening_hours_specification' => '\Infocenter\Client\Model\OpeningHoursSpecification[]',
 'telephone' => 'string',
 'tourist_type' => 'string',
-'additional_property' => '\Infocenter\Client\Model\AdministrativeAreaAdditionalProperty[]',
-'geo_shape' => '\Infocenter\Client\Model\AdministrativeAreaGeoShape',
+'additional_property' => '\Infocenter\Client\Model\PropertyValue[]',
+'geo_shape' => '\Infocenter\Client\Model\GeoShape',
 'cc' => 'string',
 'located' => 'string[]',
 'copyright' => 'string',
@@ -91,25 +91,25 @@ class Condition implements ModelInterface, ArrayAccess
 'zurichcard' => 'string',
 'zurichcard_description' => 'string',
 'osm_id' => 'string',
-'aggregate_rating' => '\Infocenter\Client\Model\AdministrativeAreaAggregateRating',
+'aggregate_rating' => '\Infocenter\Client\Model\AggregateRating',
 'type' => 'string',
 'opening_hours' => 'string',
-'category' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
-'contained_in_place' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
+'category' => '\Infocenter\Client\Model\Category[]',
+'contained_in_place' => '\Infocenter\Client\Model\Place[]',
 'id' => 'string',
 'identifier' => 'string',
 'datasource' => 'string',
-'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'data_governance' => '\Infocenter\Client\Model\DataGovernance',
 'last_modified' => '\DateTime',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
-'image' => '\Infocenter\Client\Model\AdministrativeAreaAddressImage',
+'image' => '\Infocenter\Client\Model\ImageObject',
 'same_as' => 'string',
 'url' => 'string',
 'additional_type' => 'string',
-'links' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
-'labels' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
+'links' => '\Infocenter\Client\Model\Link[]',
+'labels' => '\Infocenter\Client\Model\Tag[]',
 'name' => 'string'    ];
 
     /**
@@ -643,7 +643,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddress
+     * @return \Infocenter\Client\Model\PostalAddress
      */
     public function getAddress()
     {
@@ -653,7 +653,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddress $address address
+     * @param \Infocenter\Client\Model\PostalAddress $address address
      *
      * @return $this
      */
@@ -691,7 +691,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets geo
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaGeo
+     * @return \Infocenter\Client\Model\GeoCoordinates
      */
     public function getGeo()
     {
@@ -701,7 +701,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets geo
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaGeo $geo geo
+     * @param \Infocenter\Client\Model\GeoCoordinates $geo geo
      *
      * @return $this
      */
@@ -787,7 +787,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets opening_hours_specification
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[]
+     * @return \Infocenter\Client\Model\OpeningHoursSpecification[]
      */
     public function getOpeningHoursSpecification()
     {
@@ -797,7 +797,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets opening_hours_specification
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[] $opening_hours_specification opening_hours_specification
+     * @param \Infocenter\Client\Model\OpeningHoursSpecification[] $opening_hours_specification opening_hours_specification
      *
      * @return $this
      */
@@ -811,7 +811,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets photo
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImage[]
+     * @return \Infocenter\Client\Model\ImageObject[]
      */
     public function getPhoto()
     {
@@ -821,7 +821,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets photo
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImage[] $photo photo
+     * @param \Infocenter\Client\Model\ImageObject[] $photo photo
      *
      * @return $this
      */
@@ -883,7 +883,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets source
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressSource
+     * @return \Infocenter\Client\Model\Partner
      */
     public function getSource()
     {
@@ -893,7 +893,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressSource $source source
+     * @param \Infocenter\Client\Model\Partner $source source
      *
      * @return $this
      */
@@ -907,7 +907,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets special_opening_hours_specification
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[]
+     * @return \Infocenter\Client\Model\OpeningHoursSpecification[]
      */
     public function getSpecialOpeningHoursSpecification()
     {
@@ -917,7 +917,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets special_opening_hours_specification
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressHoursAvailable[] $special_opening_hours_specification special_opening_hours_specification
+     * @param \Infocenter\Client\Model\OpeningHoursSpecification[] $special_opening_hours_specification special_opening_hours_specification
      *
      * @return $this
      */
@@ -979,7 +979,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets additional_property
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAdditionalProperty[]
+     * @return \Infocenter\Client\Model\PropertyValue[]
      */
     public function getAdditionalProperty()
     {
@@ -989,7 +989,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets additional_property
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAdditionalProperty[] $additional_property additional_property
+     * @param \Infocenter\Client\Model\PropertyValue[] $additional_property additional_property
      *
      * @return $this
      */
@@ -1003,7 +1003,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets geo_shape
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaGeoShape
+     * @return \Infocenter\Client\Model\GeoShape
      */
     public function getGeoShape()
     {
@@ -1013,7 +1013,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets geo_shape
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaGeoShape $geo_shape geo_shape
+     * @param \Infocenter\Client\Model\GeoShape $geo_shape geo_shape
      *
      * @return $this
      */
@@ -1363,7 +1363,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets aggregate_rating
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAggregateRating
+     * @return \Infocenter\Client\Model\AggregateRating
      */
     public function getAggregateRating()
     {
@@ -1373,7 +1373,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets aggregate_rating
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAggregateRating $aggregate_rating aggregate_rating
+     * @param \Infocenter\Client\Model\AggregateRating $aggregate_rating aggregate_rating
      *
      * @return $this
      */
@@ -1435,7 +1435,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets category
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\Category[]
      */
     public function getCategory()
     {
@@ -1445,7 +1445,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets category
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $category category
+     * @param \Infocenter\Client\Model\Category[] $category category
      *
      * @return $this
      */
@@ -1459,7 +1459,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets contained_in_place
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\Place[]
      */
     public function getContainedInPlace()
     {
@@ -1469,7 +1469,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets contained_in_place
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $contained_in_place contained_in_place
+     * @param \Infocenter\Client\Model\Place[] $contained_in_place contained_in_place
      *
      * @return $this
      */
@@ -1555,7 +1555,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets data_governance
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
+     * @return \Infocenter\Client\Model\DataGovernance
      */
     public function getDataGovernance()
     {
@@ -1565,7 +1565,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets data_governance
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
+     * @param \Infocenter\Client\Model\DataGovernance $data_governance data_governance
      *
      * @return $this
      */
@@ -1675,7 +1675,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets image
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImage
+     * @return \Infocenter\Client\Model\ImageObject
      */
     public function getImage()
     {
@@ -1685,7 +1685,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets image
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImage $image image
+     * @param \Infocenter\Client\Model\ImageObject $image image
      *
      * @return $this
      */
@@ -1771,7 +1771,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets links
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
+     * @return \Infocenter\Client\Model\Link[]
      */
     public function getLinks()
     {
@@ -1781,7 +1781,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets links
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
+     * @param \Infocenter\Client\Model\Link[] $links links
      *
      * @return $this
      */
@@ -1795,7 +1795,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Gets labels
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\Tag[]
      */
     public function getLabels()
     {
@@ -1805,7 +1805,7 @@ class Condition implements ModelInterface, ArrayAccess
     /**
      * Sets labels
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
+     * @param \Infocenter\Client\Model\Tag[] $labels labels
      *
      * @return $this
      */

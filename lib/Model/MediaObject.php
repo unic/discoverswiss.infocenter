@@ -56,33 +56,11 @@ class MediaObject implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content_size' => 'string',
-'content_url' => 'string',
-'embed_url' => 'string',
-'height' => 'string',
-'width' => 'string',
-'content_reference_time' => '\DateTime',
-'copyright_year' => 'double',
-'encoding_format' => 'string',
-'is_accessible_for_free' => 'bool',
-'thumbnail_url' => 'string',
+        'content_url' => 'string',
 'in_language' => 'string',
-'type' => 'string',
+'thumbnail_url' => 'string',
 'id' => 'string',
-'identifier' => 'string',
-'datasource' => 'string',
-'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
-'last_modified' => '\DateTime',
-'alternate_name' => 'string',
-'description' => 'string',
-'disambiguating_description' => 'string',
-'image' => '\Infocenter\Client\Model\AdministrativeAreaAddressImage',
-'same_as' => 'string',
-'url' => 'string',
-'additional_type' => 'string',
-'links' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
-'labels' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
-'name' => 'string'    ];
+'identifier' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -90,33 +68,11 @@ class MediaObject implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'content_size' => null,
-'content_url' => null,
-'embed_url' => null,
-'height' => null,
-'width' => null,
-'content_reference_time' => 'date-time',
-'copyright_year' => 'double',
-'encoding_format' => null,
-'is_accessible_for_free' => null,
-'thumbnail_url' => null,
+        'content_url' => null,
 'in_language' => null,
-'type' => null,
+'thumbnail_url' => null,
 'id' => null,
-'identifier' => null,
-'datasource' => null,
-'data_governance' => null,
-'last_modified' => 'date-time',
-'alternate_name' => null,
-'description' => null,
-'disambiguating_description' => null,
-'image' => null,
-'same_as' => null,
-'url' => null,
-'additional_type' => null,
-'links' => null,
-'labels' => null,
-'name' => null    ];
+'identifier' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -145,33 +101,11 @@ class MediaObject implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'content_size' => 'contentSize',
-'content_url' => 'contentUrl',
-'embed_url' => 'embedUrl',
-'height' => 'height',
-'width' => 'width',
-'content_reference_time' => 'contentReferenceTime',
-'copyright_year' => 'copyrightYear',
-'encoding_format' => 'encodingFormat',
-'is_accessible_for_free' => 'isAccessibleForFree',
-'thumbnail_url' => 'thumbnailUrl',
+        'content_url' => 'contentUrl',
 'in_language' => 'inLanguage',
-'type' => 'type',
-'id' => '@id',
-'identifier' => 'identifier',
-'datasource' => 'datasource',
-'data_governance' => 'dataGovernance',
-'last_modified' => 'lastModified',
-'alternate_name' => 'alternateName',
-'description' => 'description',
-'disambiguating_description' => 'disambiguatingDescription',
-'image' => 'image',
-'same_as' => 'sameAs',
-'url' => 'url',
-'additional_type' => 'additionalType',
-'links' => 'links',
-'labels' => 'labels',
-'name' => 'name'    ];
+'thumbnail_url' => 'thumbnailUrl',
+'id' => 'id',
+'identifier' => 'identifier'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -179,33 +113,11 @@ class MediaObject implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'content_size' => 'setContentSize',
-'content_url' => 'setContentUrl',
-'embed_url' => 'setEmbedUrl',
-'height' => 'setHeight',
-'width' => 'setWidth',
-'content_reference_time' => 'setContentReferenceTime',
-'copyright_year' => 'setCopyrightYear',
-'encoding_format' => 'setEncodingFormat',
-'is_accessible_for_free' => 'setIsAccessibleForFree',
-'thumbnail_url' => 'setThumbnailUrl',
+        'content_url' => 'setContentUrl',
 'in_language' => 'setInLanguage',
-'type' => 'setType',
+'thumbnail_url' => 'setThumbnailUrl',
 'id' => 'setId',
-'identifier' => 'setIdentifier',
-'datasource' => 'setDatasource',
-'data_governance' => 'setDataGovernance',
-'last_modified' => 'setLastModified',
-'alternate_name' => 'setAlternateName',
-'description' => 'setDescription',
-'disambiguating_description' => 'setDisambiguatingDescription',
-'image' => 'setImage',
-'same_as' => 'setSameAs',
-'url' => 'setUrl',
-'additional_type' => 'setAdditionalType',
-'links' => 'setLinks',
-'labels' => 'setLabels',
-'name' => 'setName'    ];
+'identifier' => 'setIdentifier'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -213,33 +125,11 @@ class MediaObject implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'content_size' => 'getContentSize',
-'content_url' => 'getContentUrl',
-'embed_url' => 'getEmbedUrl',
-'height' => 'getHeight',
-'width' => 'getWidth',
-'content_reference_time' => 'getContentReferenceTime',
-'copyright_year' => 'getCopyrightYear',
-'encoding_format' => 'getEncodingFormat',
-'is_accessible_for_free' => 'getIsAccessibleForFree',
-'thumbnail_url' => 'getThumbnailUrl',
+        'content_url' => 'getContentUrl',
 'in_language' => 'getInLanguage',
-'type' => 'getType',
+'thumbnail_url' => 'getThumbnailUrl',
 'id' => 'getId',
-'identifier' => 'getIdentifier',
-'datasource' => 'getDatasource',
-'data_governance' => 'getDataGovernance',
-'last_modified' => 'getLastModified',
-'alternate_name' => 'getAlternateName',
-'description' => 'getDescription',
-'disambiguating_description' => 'getDisambiguatingDescription',
-'image' => 'getImage',
-'same_as' => 'getSameAs',
-'url' => 'getUrl',
-'additional_type' => 'getAdditionalType',
-'links' => 'getLinks',
-'labels' => 'getLabels',
-'name' => 'getName'    ];
+'identifier' => 'getIdentifier'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -299,33 +189,11 @@ class MediaObject implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['content_size'] = isset($data['content_size']) ? $data['content_size'] : null;
         $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
-        $this->container['embed_url'] = isset($data['embed_url']) ? $data['embed_url'] : null;
-        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
-        $this->container['content_reference_time'] = isset($data['content_reference_time']) ? $data['content_reference_time'] : null;
-        $this->container['copyright_year'] = isset($data['copyright_year']) ? $data['copyright_year'] : null;
-        $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
-        $this->container['is_accessible_for_free'] = isset($data['is_accessible_for_free']) ? $data['is_accessible_for_free'] : null;
-        $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
         $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
-        $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
-        $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
-        $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
-        $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
-        $this->container['image'] = isset($data['image']) ? $data['image'] : null;
-        $this->container['same_as'] = isset($data['same_as']) ? $data['same_as'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['labels'] = isset($data['labels']) ? $data['labels'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /**
@@ -353,30 +221,6 @@ class MediaObject implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets content_size
-     *
-     * @return string
-     */
-    public function getContentSize()
-    {
-        return $this->container['content_size'];
-    }
-
-    /**
-     * Sets content_size
-     *
-     * @param string $content_size content_size
-     *
-     * @return $this
-     */
-    public function setContentSize($content_size)
-    {
-        $this->container['content_size'] = $content_size;
-
-        return $this;
-    }
-
-    /**
      * Gets content_url
      *
      * @return string
@@ -396,198 +240,6 @@ class MediaObject implements ModelInterface, ArrayAccess
     public function setContentUrl($content_url)
     {
         $this->container['content_url'] = $content_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets embed_url
-     *
-     * @return string
-     */
-    public function getEmbedUrl()
-    {
-        return $this->container['embed_url'];
-    }
-
-    /**
-     * Sets embed_url
-     *
-     * @param string $embed_url embed_url
-     *
-     * @return $this
-     */
-    public function setEmbedUrl($embed_url)
-    {
-        $this->container['embed_url'] = $embed_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets height
-     *
-     * @return string
-     */
-    public function getHeight()
-    {
-        return $this->container['height'];
-    }
-
-    /**
-     * Sets height
-     *
-     * @param string $height height
-     *
-     * @return $this
-     */
-    public function setHeight($height)
-    {
-        $this->container['height'] = $height;
-
-        return $this;
-    }
-
-    /**
-     * Gets width
-     *
-     * @return string
-     */
-    public function getWidth()
-    {
-        return $this->container['width'];
-    }
-
-    /**
-     * Sets width
-     *
-     * @param string $width width
-     *
-     * @return $this
-     */
-    public function setWidth($width)
-    {
-        $this->container['width'] = $width;
-
-        return $this;
-    }
-
-    /**
-     * Gets content_reference_time
-     *
-     * @return \DateTime
-     */
-    public function getContentReferenceTime()
-    {
-        return $this->container['content_reference_time'];
-    }
-
-    /**
-     * Sets content_reference_time
-     *
-     * @param \DateTime $content_reference_time content_reference_time
-     *
-     * @return $this
-     */
-    public function setContentReferenceTime($content_reference_time)
-    {
-        $this->container['content_reference_time'] = $content_reference_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets copyright_year
-     *
-     * @return double
-     */
-    public function getCopyrightYear()
-    {
-        return $this->container['copyright_year'];
-    }
-
-    /**
-     * Sets copyright_year
-     *
-     * @param double $copyright_year copyright_year
-     *
-     * @return $this
-     */
-    public function setCopyrightYear($copyright_year)
-    {
-        $this->container['copyright_year'] = $copyright_year;
-
-        return $this;
-    }
-
-    /**
-     * Gets encoding_format
-     *
-     * @return string
-     */
-    public function getEncodingFormat()
-    {
-        return $this->container['encoding_format'];
-    }
-
-    /**
-     * Sets encoding_format
-     *
-     * @param string $encoding_format encoding_format
-     *
-     * @return $this
-     */
-    public function setEncodingFormat($encoding_format)
-    {
-        $this->container['encoding_format'] = $encoding_format;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_accessible_for_free
-     *
-     * @return bool
-     */
-    public function getIsAccessibleForFree()
-    {
-        return $this->container['is_accessible_for_free'];
-    }
-
-    /**
-     * Sets is_accessible_for_free
-     *
-     * @param bool $is_accessible_for_free is_accessible_for_free
-     *
-     * @return $this
-     */
-    public function setIsAccessibleForFree($is_accessible_for_free)
-    {
-        $this->container['is_accessible_for_free'] = $is_accessible_for_free;
-
-        return $this;
-    }
-
-    /**
-     * Gets thumbnail_url
-     *
-     * @return string
-     */
-    public function getThumbnailUrl()
-    {
-        return $this->container['thumbnail_url'];
-    }
-
-    /**
-     * Sets thumbnail_url
-     *
-     * @param string $thumbnail_url thumbnail_url
-     *
-     * @return $this
-     */
-    public function setThumbnailUrl($thumbnail_url)
-    {
-        $this->container['thumbnail_url'] = $thumbnail_url;
 
         return $this;
     }
@@ -617,25 +269,25 @@ class MediaObject implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets type
+     * Gets thumbnail_url
      *
      * @return string
      */
-    public function getType()
+    public function getThumbnailUrl()
     {
-        return $this->container['type'];
+        return $this->container['thumbnail_url'];
     }
 
     /**
-     * Sets type
+     * Sets thumbnail_url
      *
-     * @param string $type type
+     * @param string $thumbnail_url thumbnail_url
      *
      * @return $this
      */
-    public function setType($type)
+    public function setThumbnailUrl($thumbnail_url)
     {
-        $this->container['type'] = $type;
+        $this->container['thumbnail_url'] = $thumbnail_url;
 
         return $this;
     }
@@ -684,318 +336,6 @@ class MediaObject implements ModelInterface, ArrayAccess
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
-
-        return $this;
-    }
-
-    /**
-     * Gets datasource
-     *
-     * @return string
-     */
-    public function getDatasource()
-    {
-        return $this->container['datasource'];
-    }
-
-    /**
-     * Sets datasource
-     *
-     * @param string $datasource datasource
-     *
-     * @return $this
-     */
-    public function setDatasource($datasource)
-    {
-        $this->container['datasource'] = $datasource;
-
-        return $this;
-    }
-
-    /**
-     * Gets data_governance
-     *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
-     */
-    public function getDataGovernance()
-    {
-        return $this->container['data_governance'];
-    }
-
-    /**
-     * Sets data_governance
-     *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
-     *
-     * @return $this
-     */
-    public function setDataGovernance($data_governance)
-    {
-        $this->container['data_governance'] = $data_governance;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_modified
-     *
-     * @return \DateTime
-     */
-    public function getLastModified()
-    {
-        return $this->container['last_modified'];
-    }
-
-    /**
-     * Sets last_modified
-     *
-     * @param \DateTime $last_modified last_modified
-     *
-     * @return $this
-     */
-    public function setLastModified($last_modified)
-    {
-        $this->container['last_modified'] = $last_modified;
-
-        return $this;
-    }
-
-    /**
-     * Gets alternate_name
-     *
-     * @return string
-     */
-    public function getAlternateName()
-    {
-        return $this->container['alternate_name'];
-    }
-
-    /**
-     * Sets alternate_name
-     *
-     * @param string $alternate_name alternate_name
-     *
-     * @return $this
-     */
-    public function setAlternateName($alternate_name)
-    {
-        $this->container['alternate_name'] = $alternate_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets disambiguating_description
-     *
-     * @return string
-     */
-    public function getDisambiguatingDescription()
-    {
-        return $this->container['disambiguating_description'];
-    }
-
-    /**
-     * Sets disambiguating_description
-     *
-     * @param string $disambiguating_description disambiguating_description
-     *
-     * @return $this
-     */
-    public function setDisambiguatingDescription($disambiguating_description)
-    {
-        $this->container['disambiguating_description'] = $disambiguating_description;
-
-        return $this;
-    }
-
-    /**
-     * Gets image
-     *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImage
-     */
-    public function getImage()
-    {
-        return $this->container['image'];
-    }
-
-    /**
-     * Sets image
-     *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImage $image image
-     *
-     * @return $this
-     */
-    public function setImage($image)
-    {
-        $this->container['image'] = $image;
-
-        return $this;
-    }
-
-    /**
-     * Gets same_as
-     *
-     * @return string
-     */
-    public function getSameAs()
-    {
-        return $this->container['same_as'];
-    }
-
-    /**
-     * Sets same_as
-     *
-     * @param string $same_as same_as
-     *
-     * @return $this
-     */
-    public function setSameAs($same_as)
-    {
-        $this->container['same_as'] = $same_as;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string $url url
-     *
-     * @return $this
-     */
-    public function setUrl($url)
-    {
-        $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_type
-     *
-     * @return string
-     */
-    public function getAdditionalType()
-    {
-        return $this->container['additional_type'];
-    }
-
-    /**
-     * Sets additional_type
-     *
-     * @param string $additional_type additional_type
-     *
-     * @return $this
-     */
-    public function setAdditionalType($additional_type)
-    {
-        $this->container['additional_type'] = $additional_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets links
-     *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
-     */
-    public function getLinks()
-    {
-        return $this->container['links'];
-    }
-
-    /**
-     * Sets links
-     *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
-     *
-     * @return $this
-     */
-    public function setLinks($links)
-    {
-        $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets labels
-     *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
-     */
-    public function getLabels()
-    {
-        return $this->container['labels'];
-    }
-
-    /**
-     * Sets labels
-     *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
-     *
-     * @return $this
-     */
-    public function setLabels($labels)
-    {
-        $this->container['labels'] = $labels;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
 
         return $this;
     }

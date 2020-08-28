@@ -36,9 +36,11 @@ Method | HTTP request | Description
 [**mediaObject**](DefaultApi.md#mediaobject) | **GET** /mediaObjects/{id} | MediaObject
 [**place**](DefaultApi.md#place) | **GET** /places/{id} | Place
 [**product**](DefaultApi.md#product) | **GET** /products/{id} | Product
-[**search**](DefaultApi.md#search) | **GET** /search | Search
+[**search**](DefaultApi.md#search) | **POST** /search | Search
+[**searchByGET**](DefaultApi.md#searchbyget) | **GET** /search | Search by GET
 [**termVersion**](DefaultApi.md#termversion) | **GET** /termversions/{code} | TermVersion
 [**tour**](DefaultApi.md#tour) | **GET** /tours/{id} | Tour
+[**treeAdministrativeAreaRegion**](DefaultApi.md#treeadministrativearearegion) | **GET** /areas/{id}/tree | Tree AdministrativeArea (Region)
 [**webcam**](DefaultApi.md#webcam) | **GET** /webcams/{id} | Webcam
 
 # **administrativeAreaRegion**
@@ -68,7 +70,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Region to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->administrativeAreaRegion($id, $accept_language, $accept_timezone);
@@ -85,7 +87,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Region to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -129,7 +131,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Category to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->category($id, $accept_language, $accept_timezone);
@@ -146,7 +148,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Category to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -164,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **categoryTree**
-> \Infocenter\Client\Model\Category categoryTree($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\CategoryTreeItem categoryTree($id, $accept_language, $accept_timezone)
 
 Category Tree
 
@@ -190,7 +192,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Category to set root category.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->categoryTree($id, $accept_language, $accept_timezone);
@@ -207,11 +209,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Category to set root category. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
-[**\Infocenter\Client\Model\Category**](../Model/Category.md)
+[**\Infocenter\Client\Model\CategoryTreeItem**](../Model/CategoryTreeItem.md)
 
 ### Authorization
 
@@ -251,7 +253,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of CivicStructure to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->civicStructure($id, $accept_language, $accept_timezone);
@@ -268,7 +270,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of CivicStructure to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -312,7 +314,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Condition to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->condition($id, $accept_language, $accept_timezone);
@@ -329,7 +331,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Condition to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -373,7 +375,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of CreativeWork to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->creativeWork($id, $accept_language, $accept_timezone);
@@ -390,7 +392,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of CreativeWork to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -434,7 +436,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $term_code = "term_code_example"; // string | Use property code of a term to get the current term version.
 $accept_language = "accept_language_example"; // string | Supply this header to select the term version in the correct language and deliver localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->currentTermVersion($term_code, $accept_language, $accept_timezone);
@@ -451,7 +453,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **term_code** | **string**| Use property code of a term to get the current term version. |
  **accept_language** | **string**| Supply this header to select the term version in the correct language and deliver localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -495,7 +497,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Event to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->event($id, $accept_language, $accept_timezone);
@@ -512,7 +514,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Event to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -556,7 +558,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of FoodEstablishment to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->foodEstablishment($id, $accept_language, $accept_timezone);
@@ -573,7 +575,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of FoodEstablishment to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -669,7 +671,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of ImageObject to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->imageObject($id, $accept_language, $accept_timezone);
@@ -686,7 +688,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of ImageObject to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -704,7 +706,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAdministrativeAreaRegion**
-> \Infocenter\Client\Model\AdministrativeAreasResponse listAdministrativeAreaRegion($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_timezone, $accept_language)
+> \Infocenter\Client\Model\AdministrativeAreasResponse listAdministrativeAreaRegion($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_timezone, $accept_language)
 
 List AdministrativeArea (Region)
 
@@ -735,11 +737,12 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$select = "select_example"; // string | Pass list of object properties to query
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 $accept_language = "accept_language_example"; // string | Localized properties.
 
 try {
-    $result = $apiInstance->listAdministrativeAreaRegion($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_timezone, $accept_language);
+    $result = $apiInstance->listAdministrativeAreaRegion($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_timezone, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listAdministrativeAreaRegion: ', $e->getMessage(), PHP_EOL;
@@ -758,7 +761,8 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
 
 ### Return type
@@ -777,7 +781,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCategory**
-> \Infocenter\Client\Model\CategoriesResponse listCategory($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language)
+> \Infocenter\Client\Model\CategoriesResponse listCategory($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language)
 
 List Category
 
@@ -807,10 +811,11 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Localized properties.
 
 try {
-    $result = $apiInstance->listCategory($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language);
+    $result = $apiInstance->listCategory($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCategory: ', $e->getMessage(), PHP_EOL;
@@ -828,6 +833,7 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
 
 ### Return type
@@ -846,7 +852,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCivicStructure**
-> \Infocenter\Client\Model\CivicStructuresResponse listCivicStructure($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\CivicStructuresResponse listCivicStructure($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
 
 List CivicStructure
 
@@ -877,11 +883,12 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->listCivicStructure($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
+    $result = $apiInstance->listCivicStructure($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCivicStructure: ', $e->getMessage(), PHP_EOL;
@@ -900,8 +907,9 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -919,7 +927,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCondition**
-> \Infocenter\Client\Model\ConditionsResponse listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_timezone, $accept_language)
+> \Infocenter\Client\Model\ConditionsResponse listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_timezone, $accept_language)
 
 List Condition
 
@@ -950,11 +958,12 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$select = "select_example"; // string | Pass list of object properties to query
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 $accept_language = "accept_language_example"; // string | Localized properties.
 
 try {
-    $result = $apiInstance->listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_timezone, $accept_language);
+    $result = $apiInstance->listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_timezone, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCondition: ', $e->getMessage(), PHP_EOL;
@@ -973,7 +982,8 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
 
 ### Return type
@@ -992,7 +1002,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCreativeWork**
-> \Infocenter\Client\Model\CreativeWorksResponse listCreativeWork($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\CreativeWorksResponse listCreativeWork($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
 
 List CreativeWork
 
@@ -1021,11 +1031,12 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->listCreativeWork($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
+    $result = $apiInstance->listCreativeWork($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCreativeWork: ', $e->getMessage(), PHP_EOL;
@@ -1042,8 +1053,9 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -1061,7 +1073,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listEvents**
-> \Infocenter\Client\Model\EventsResponse listEvents($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $accept_timezone, $accept_language)
+> \Infocenter\Client\Model\EventsResponse listEvents($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $accept_timezone, $accept_language)
 
 List Events
 
@@ -1093,11 +1105,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter by the region (administrative area).
 $location = "location_example"; // string | Use property identifier of place to filter by the location (business).
 $project = "project_example"; // string | Use this property to filter objects by project
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$select = "select_example"; // string | Pass list of object properties to query
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 $accept_language = "accept_language_example"; // string | Localized properties.
 
 try {
-    $result = $apiInstance->listEvents($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $accept_timezone, $accept_language);
+    $result = $apiInstance->listEvents($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $accept_timezone, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listEvents: ', $e->getMessage(), PHP_EOL;
@@ -1117,7 +1130,8 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter by the region (administrative area). | [optional]
  **location** | **string**| Use property identifier of place to filter by the location (business). | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
 
 ### Return type
@@ -1136,7 +1150,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listFoodEstablishment**
-> \Infocenter\Client\Model\FoodEstablishmentsResponse listFoodEstablishment($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\FoodEstablishmentsResponse listFoodEstablishment($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
 
 List FoodEstablishment
 
@@ -1167,11 +1181,12 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->listFoodEstablishment($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
+    $result = $apiInstance->listFoodEstablishment($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listFoodEstablishment: ', $e->getMessage(), PHP_EOL;
@@ -1190,8 +1205,9 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -1209,7 +1225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listImageObject**
-> \Infocenter\Client\Model\ImageObjectsResponse listImageObject($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\ImageObjectsResponse listImageObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
 
 List ImageObject
 
@@ -1238,11 +1254,12 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->listImageObject($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
+    $result = $apiInstance->listImageObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listImageObject: ', $e->getMessage(), PHP_EOL;
@@ -1259,8 +1276,9 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -1278,7 +1296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listLocalBusiness**
-> \Infocenter\Client\Model\LocalBusinessesResponse listLocalBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\LocalBusinessesResponse listLocalBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
 
 List LocalBusiness
 
@@ -1309,11 +1327,12 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->listLocalBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
+    $result = $apiInstance->listLocalBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listLocalBusiness: ', $e->getMessage(), PHP_EOL;
@@ -1332,8 +1351,9 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -1351,7 +1371,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listLodgingBusiness**
-> \Infocenter\Client\Model\LodgingBusinessesResponse listLodgingBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\LodgingBusinessesResponse listLodgingBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
 
 List LodgingBusiness
 
@@ -1382,11 +1402,12 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->listLodgingBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
+    $result = $apiInstance->listLodgingBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listLodgingBusiness: ', $e->getMessage(), PHP_EOL;
@@ -1405,8 +1426,9 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -1424,7 +1446,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMediaObject**
-> \Infocenter\Client\Model\MediaObjectsResponse listMediaObject($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\MediaObjectsResponse listMediaObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
 
 List MediaObject
 
@@ -1453,11 +1475,12 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->listMediaObject($updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
+    $result = $apiInstance->listMediaObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listMediaObject: ', $e->getMessage(), PHP_EOL;
@@ -1474,8 +1497,9 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -1493,7 +1517,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listPlace**
-> \Infocenter\Client\Model\PlacesResponse listPlace($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\PlacesResponse listPlace($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
 
 List Place
 
@@ -1524,11 +1548,12 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->listPlace($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
+    $result = $apiInstance->listPlace($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listPlace: ', $e->getMessage(), PHP_EOL;
@@ -1547,8 +1572,9 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -1566,7 +1592,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listProducts**
-> \Infocenter\Client\Model\ProductsResponse listProducts($datasource, $continuation_token, $top, $project, $accept_language)
+> \Infocenter\Client\Model\ProductsResponse listProducts($datasource, $continuation_token, $top, $project, $select, $accept_language)
 
 List Products
 
@@ -1594,10 +1620,11 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of Data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Localized properties.
 
 try {
-    $result = $apiInstance->listProducts($datasource, $continuation_token, $top, $project, $accept_language);
+    $result = $apiInstance->listProducts($datasource, $continuation_token, $top, $project, $select, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listProducts: ', $e->getMessage(), PHP_EOL;
@@ -1613,6 +1640,7 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of Data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
 
 ### Return type
@@ -1684,7 +1712,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTour**
-> \Infocenter\Client\Model\ToursResponse listTour($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\ToursResponse listTour($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
 
 List Tour
 
@@ -1715,11 +1743,12 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->listTour($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
+    $result = $apiInstance->listTour($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listTour: ', $e->getMessage(), PHP_EOL;
@@ -1738,8 +1767,9 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -1757,7 +1787,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listWebcams**
-> \Infocenter\Client\Model\WebcamsResponse listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\WebcamsResponse listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
 
 List Webcams
 
@@ -1788,11 +1818,12 @@ $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $accept_language, $accept_timezone);
+    $result = $apiInstance->listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listWebcams: ', $e->getMessage(), PHP_EOL;
@@ -1811,8 +1842,9 @@ Name | Type | Description  | Notes
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -1856,7 +1888,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of LocalBusiness to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->localBusiness($id, $accept_language, $accept_timezone);
@@ -1873,7 +1905,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of LocalBusiness to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -1917,7 +1949,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of LodgingBusiness to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->lodgingBusiness($id, $accept_language, $accept_timezone);
@@ -1934,7 +1966,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of LodgingBusiness to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -1978,7 +2010,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of MediaObject to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->mediaObject($id, $accept_language, $accept_timezone);
@@ -1995,7 +2027,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of MediaObject to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -2039,7 +2071,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Place to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->place($id, $accept_language, $accept_timezone);
@@ -2056,7 +2088,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Place to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -2100,7 +2132,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Product to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->product($id, $accept_language, $accept_timezone);
@@ -2117,7 +2149,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Product to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -2135,9 +2167,70 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **search**
-> \Infocenter\Client\Model\SearchResponse search($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\SearchResponse search($body, $accept_language, $accept_timezone)
 
 Search
+
+Search for the Index objects.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Infocenter\Client\Model\ExtendedSearchRequest(); // \Infocenter\Client\Model\ExtendedSearchRequest | 
+$accept_language = "accept_language_example"; // string | Localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+
+try {
+    $result = $apiInstance->search($body, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->search: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Infocenter\Client\Model\ExtendedSearchRequest**](../Model/ExtendedSearchRequest.md)|  | [optional]
+ **accept_language** | **string**| Localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\SearchResponse**](../Model/SearchResponse.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **searchByGET**
+> \Infocenter\Client\Model\SearchResponse searchByGET($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone)
+
+Search by GET
 
 Search for the Index objects.
 
@@ -2165,13 +2258,13 @@ $results_per_page = 56; // int | Format - int32. Use property to set count of re
 $order_by = "order_by_example"; // string | Use property for ordering
 $filters = "filters_example"; // string | Use property for odata filters
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->search($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone);
+    $result = $apiInstance->searchByGET($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->search: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->searchByGET: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2186,7 +2279,7 @@ Name | Type | Description  | Notes
  **order_by** | **string**| Use property for ordering | [optional]
  **filters** | **string**| Use property for odata filters | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -2230,7 +2323,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $code = "code_example"; // string | Use property code of TermVersion to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->termVersion($code, $accept_language, $accept_timezone);
@@ -2247,7 +2340,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **code** | **string**| Use property code of TermVersion to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
@@ -2291,7 +2384,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Tour to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->tour($id, $accept_language, $accept_timezone);
@@ -2308,11 +2401,76 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Tour to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
 [**\Infocenter\Client\Model\Tour**](../Model/Tour.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **treeAdministrativeAreaRegion**
+> \Infocenter\Client\Model\AdministrativeAreaTreeItem treeAdministrativeAreaRegion($id, $levels, $admin_areas_only, $accept_timezone, $accept_language)
+
+Tree AdministrativeArea (Region)
+
+Get a tree of the Regions with the most important information started from defined Region.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Region to set root Region.
+$levels = "levels_example"; // string | controls how deep the tree should go. default = 1
+$admin_areas_only = "admin_areas_only_example"; // string | set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default = false
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Localized properties.
+
+try {
+    $result = $apiInstance->treeAdministrativeAreaRegion($id, $levels, $admin_areas_only, $accept_timezone, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->treeAdministrativeAreaRegion: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of Region to set root Region. |
+ **levels** | **string**| controls how deep the tree should go. default &#x3D; 1 | [optional]
+ **admin_areas_only** | **string**| set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
+ **accept_language** | **string**| Localized properties. | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\AdministrativeAreaTreeItem**](../Model/AdministrativeAreaTreeItem.md)
 
 ### Authorization
 
@@ -2352,7 +2510,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Webcam to get single object.
 $accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates & times
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
     $result = $apiInstance->webcam($id, $accept_language, $accept_timezone);
@@ -2369,7 +2527,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Webcam to get single object. |
  **accept_language** | **string**| Localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID for response dates &amp; times | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 

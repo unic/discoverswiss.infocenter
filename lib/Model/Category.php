@@ -56,16 +56,8 @@ class Category implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'is_winter' => 'bool',
-'parent' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels',
-'icons' => '\Infocenter\Client\Model\CategoryIcons[]',
-'type' => 'string',
-'id' => 'string',
-'identifier' => 'string',
-'datasource' => 'string',
-'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
-'last_modified' => '\DateTime',
-'name' => 'string'    ];
+        'id' => 'string',
+'identifier' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -73,16 +65,8 @@ class Category implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'is_winter' => null,
-'parent' => null,
-'icons' => null,
-'type' => null,
-'id' => null,
-'identifier' => null,
-'datasource' => null,
-'data_governance' => null,
-'last_modified' => 'date-time',
-'name' => null    ];
+        'id' => null,
+'identifier' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -111,16 +95,8 @@ class Category implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_winter' => 'isWinter',
-'parent' => 'parent',
-'icons' => 'icons',
-'type' => 'type',
-'id' => '@id',
-'identifier' => 'identifier',
-'datasource' => 'datasource',
-'data_governance' => 'dataGovernance',
-'last_modified' => 'lastModified',
-'name' => 'name'    ];
+        'id' => 'id',
+'identifier' => 'identifier'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -128,16 +104,8 @@ class Category implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_winter' => 'setIsWinter',
-'parent' => 'setParent',
-'icons' => 'setIcons',
-'type' => 'setType',
-'id' => 'setId',
-'identifier' => 'setIdentifier',
-'datasource' => 'setDatasource',
-'data_governance' => 'setDataGovernance',
-'last_modified' => 'setLastModified',
-'name' => 'setName'    ];
+        'id' => 'setId',
+'identifier' => 'setIdentifier'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -145,16 +113,8 @@ class Category implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_winter' => 'getIsWinter',
-'parent' => 'getParent',
-'icons' => 'getIcons',
-'type' => 'getType',
-'id' => 'getId',
-'identifier' => 'getIdentifier',
-'datasource' => 'getDatasource',
-'data_governance' => 'getDataGovernance',
-'last_modified' => 'getLastModified',
-'name' => 'getName'    ];
+        'id' => 'getId',
+'identifier' => 'getIdentifier'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -214,16 +174,8 @@ class Category implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_winter'] = isset($data['is_winter']) ? $data['is_winter'] : null;
-        $this->container['parent'] = isset($data['parent']) ? $data['parent'] : null;
-        $this->container['icons'] = isset($data['icons']) ? $data['icons'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
-        $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
-        $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
-        $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /**
@@ -249,102 +201,6 @@ class Category implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets is_winter
-     *
-     * @return bool
-     */
-    public function getIsWinter()
-    {
-        return $this->container['is_winter'];
-    }
-
-    /**
-     * Sets is_winter
-     *
-     * @param bool $is_winter is_winter
-     *
-     * @return $this
-     */
-    public function setIsWinter($is_winter)
-    {
-        $this->container['is_winter'] = $is_winter;
-
-        return $this;
-    }
-
-    /**
-     * Gets parent
-     *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels
-     */
-    public function getParent()
-    {
-        return $this->container['parent'];
-    }
-
-    /**
-     * Sets parent
-     *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels $parent parent
-     *
-     * @return $this
-     */
-    public function setParent($parent)
-    {
-        $this->container['parent'] = $parent;
-
-        return $this;
-    }
-
-    /**
-     * Gets icons
-     *
-     * @return \Infocenter\Client\Model\CategoryIcons[]
-     */
-    public function getIcons()
-    {
-        return $this->container['icons'];
-    }
-
-    /**
-     * Sets icons
-     *
-     * @param \Infocenter\Client\Model\CategoryIcons[] $icons icons
-     *
-     * @return $this
-     */
-    public function setIcons($icons)
-    {
-        $this->container['icons'] = $icons;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -390,102 +246,6 @@ class Category implements ModelInterface, ArrayAccess
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
-
-        return $this;
-    }
-
-    /**
-     * Gets datasource
-     *
-     * @return string
-     */
-    public function getDatasource()
-    {
-        return $this->container['datasource'];
-    }
-
-    /**
-     * Sets datasource
-     *
-     * @param string $datasource datasource
-     *
-     * @return $this
-     */
-    public function setDatasource($datasource)
-    {
-        $this->container['datasource'] = $datasource;
-
-        return $this;
-    }
-
-    /**
-     * Gets data_governance
-     *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
-     */
-    public function getDataGovernance()
-    {
-        return $this->container['data_governance'];
-    }
-
-    /**
-     * Sets data_governance
-     *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
-     *
-     * @return $this
-     */
-    public function setDataGovernance($data_governance)
-    {
-        $this->container['data_governance'] = $data_governance;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_modified
-     *
-     * @return \DateTime
-     */
-    public function getLastModified()
-    {
-        return $this->container['last_modified'];
-    }
-
-    /**
-     * Sets last_modified
-     *
-     * @param \DateTime $last_modified last_modified
-     *
-     * @return $this
-     */
-    public function setLastModified($last_modified)
-    {
-        $this->container['last_modified'] = $last_modified;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
 
         return $this;
     }

@@ -48,7 +48,7 @@ class TourElevation implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Tour_elevation';
+    protected static $swaggerModelName = 'TourElevation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

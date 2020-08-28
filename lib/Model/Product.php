@@ -59,11 +59,11 @@ class Product implements ModelInterface, ArrayAccess
         'id' => 'string',
 'identifier' => 'string',
 'datasource' => 'string',
-'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'data_governance' => '\Infocenter\Client\Model\DataGovernance',
 'last_modified' => '\DateTime',
 'name' => 'string',
 'sku' => 'string',
-'price_list' => '\Infocenter\Client\Model\ProductPriceList[]',
+'price_list' => '\Infocenter\Client\Model\ProductPrice[]',
 'tax_rate' => 'double'    ];
 
     /**
@@ -319,7 +319,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets data_governance
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
+     * @return \Infocenter\Client\Model\DataGovernance
      */
     public function getDataGovernance()
     {
@@ -329,7 +329,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets data_governance
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
+     * @param \Infocenter\Client\Model\DataGovernance $data_governance data_governance
      *
      * @return $this
      */
@@ -415,7 +415,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets price_list
      *
-     * @return \Infocenter\Client\Model\ProductPriceList[]
+     * @return \Infocenter\Client\Model\ProductPrice[]
      */
     public function getPriceList()
     {
@@ -425,7 +425,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets price_list
      *
-     * @param \Infocenter\Client\Model\ProductPriceList[] $price_list price_list
+     * @param \Infocenter\Client\Model\ProductPrice[] $price_list price_list
      *
      * @return $this
      */

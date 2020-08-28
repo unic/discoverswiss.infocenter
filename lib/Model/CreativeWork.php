@@ -66,17 +66,17 @@ class CreativeWork implements ModelInterface, ArrayAccess
 'id' => 'string',
 'identifier' => 'string',
 'datasource' => 'string',
-'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'data_governance' => '\Infocenter\Client\Model\DataGovernance',
 'last_modified' => '\DateTime',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
-'image' => '\Infocenter\Client\Model\AdministrativeAreaAddressImage',
+'image' => '\Infocenter\Client\Model\ImageObject',
 'same_as' => 'string',
 'url' => 'string',
 'additional_type' => 'string',
-'links' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
-'labels' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
+'links' => '\Infocenter\Client\Model\Link[]',
+'labels' => '\Infocenter\Client\Model\Tag[]',
 'name' => 'string'    ];
 
     /**
@@ -565,7 +565,7 @@ class CreativeWork implements ModelInterface, ArrayAccess
     /**
      * Gets data_governance
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
+     * @return \Infocenter\Client\Model\DataGovernance
      */
     public function getDataGovernance()
     {
@@ -575,7 +575,7 @@ class CreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets data_governance
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
+     * @param \Infocenter\Client\Model\DataGovernance $data_governance data_governance
      *
      * @return $this
      */
@@ -685,7 +685,7 @@ class CreativeWork implements ModelInterface, ArrayAccess
     /**
      * Gets image
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImage
+     * @return \Infocenter\Client\Model\ImageObject
      */
     public function getImage()
     {
@@ -695,7 +695,7 @@ class CreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets image
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImage $image image
+     * @param \Infocenter\Client\Model\ImageObject $image image
      *
      * @return $this
      */
@@ -781,7 +781,7 @@ class CreativeWork implements ModelInterface, ArrayAccess
     /**
      * Gets links
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
+     * @return \Infocenter\Client\Model\Link[]
      */
     public function getLinks()
     {
@@ -791,7 +791,7 @@ class CreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets links
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
+     * @param \Infocenter\Client\Model\Link[] $links links
      *
      * @return $this
      */
@@ -805,7 +805,7 @@ class CreativeWork implements ModelInterface, ArrayAccess
     /**
      * Gets labels
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\Tag[]
      */
     public function getLabels()
     {
@@ -815,7 +815,7 @@ class CreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets labels
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
+     * @param \Infocenter\Client\Model\Tag[] $labels labels
      *
      * @return $this
      */

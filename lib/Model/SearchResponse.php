@@ -58,7 +58,7 @@ class SearchResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'count' => 'int',
 'values' => '\Infocenter\Client\Model\Index[]',
-'facets' => 'map[string,\Infocenter\Client\Model\IList1]'    ];
+'facets' => 'map[string,\Infocenter\Client\Model\FacetResponse]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -259,7 +259,7 @@ class SearchResponse implements ModelInterface, ArrayAccess
     /**
      * Gets facets
      *
-     * @return map[string,\Infocenter\Client\Model\IList1]
+     * @return map[string,\Infocenter\Client\Model\FacetResponse]
      */
     public function getFacets()
     {
@@ -269,7 +269,7 @@ class SearchResponse implements ModelInterface, ArrayAccess
     /**
      * Sets facets
      *
-     * @param map[string,\Infocenter\Client\Model\IList1] $facets facets
+     * @param map[string,\Infocenter\Client\Model\FacetResponse] $facets facets
      *
      * @return $this
      */

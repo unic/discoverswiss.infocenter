@@ -48,7 +48,7 @@ class TourRating implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Tour_rating';
+    protected static $swaggerModelName = 'TourRating';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

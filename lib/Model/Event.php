@@ -56,35 +56,35 @@ class Event implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'organizer' => '\Infocenter\Client\Model\EventOrganizer',
+        'organizer' => '\Infocenter\Client\Model\Organization',
 'start_date' => '\DateTime',
 'end_date' => '\DateTime',
-'event_schedule' => '\Infocenter\Client\Model\EventEventSchedule[]',
+'event_schedule' => '\Infocenter\Client\Model\Schedule[]',
 'min_start_date' => '\DateTime',
 'max_start_date' => '\DateTime',
-'location' => '\Infocenter\Client\Model\EventLocation',
+'location' => '\Infocenter\Client\Model\Place',
 'in_language' => 'string[]',
-'photo' => '\Infocenter\Client\Model\AdministrativeAreaAddressImage[]',
-'attachment' => '\Infocenter\Client\Model\EventAttachment[]',
+'photo' => '\Infocenter\Client\Model\ImageObject[]',
+'attachment' => '\Infocenter\Client\Model\MediaObject[]',
 'price_information' => 'string',
 'ticketing_contact' => 'string',
 'opening_hours' => 'string',
-'category' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
-'contained_in_place' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
+'category' => '\Infocenter\Client\Model\Category[]',
+'contained_in_place' => '\Infocenter\Client\Model\Place[]',
 'id' => 'string',
 'identifier' => 'string',
 'datasource' => 'string',
-'data_governance' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance',
+'data_governance' => '\Infocenter\Client\Model\DataGovernance',
 'last_modified' => '\DateTime',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
-'image' => '\Infocenter\Client\Model\AdministrativeAreaAddressImage',
+'image' => '\Infocenter\Client\Model\ImageObject',
 'same_as' => 'string',
 'url' => 'string',
 'additional_type' => 'string',
-'links' => '\Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]',
-'labels' => '\Infocenter\Client\Model\AdministrativeAreaAddressLabels[]',
+'links' => '\Infocenter\Client\Model\Link[]',
+'labels' => '\Infocenter\Client\Model\Tag[]',
 'name' => 'string'    ];
 
     /**
@@ -373,7 +373,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets organizer
      *
-     * @return \Infocenter\Client\Model\EventOrganizer
+     * @return \Infocenter\Client\Model\Organization
      */
     public function getOrganizer()
     {
@@ -383,7 +383,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets organizer
      *
-     * @param \Infocenter\Client\Model\EventOrganizer $organizer organizer
+     * @param \Infocenter\Client\Model\Organization $organizer organizer
      *
      * @return $this
      */
@@ -445,7 +445,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets event_schedule
      *
-     * @return \Infocenter\Client\Model\EventEventSchedule[]
+     * @return \Infocenter\Client\Model\Schedule[]
      */
     public function getEventSchedule()
     {
@@ -455,7 +455,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets event_schedule
      *
-     * @param \Infocenter\Client\Model\EventEventSchedule[] $event_schedule event_schedule
+     * @param \Infocenter\Client\Model\Schedule[] $event_schedule event_schedule
      *
      * @return $this
      */
@@ -517,7 +517,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets location
      *
-     * @return \Infocenter\Client\Model\EventLocation
+     * @return \Infocenter\Client\Model\Place
      */
     public function getLocation()
     {
@@ -527,7 +527,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets location
      *
-     * @param \Infocenter\Client\Model\EventLocation $location location
+     * @param \Infocenter\Client\Model\Place $location location
      *
      * @return $this
      */
@@ -565,7 +565,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets photo
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImage[]
+     * @return \Infocenter\Client\Model\ImageObject[]
      */
     public function getPhoto()
     {
@@ -575,7 +575,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets photo
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImage[] $photo photo
+     * @param \Infocenter\Client\Model\ImageObject[] $photo photo
      *
      * @return $this
      */
@@ -589,7 +589,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets attachment
      *
-     * @return \Infocenter\Client\Model\EventAttachment[]
+     * @return \Infocenter\Client\Model\MediaObject[]
      */
     public function getAttachment()
     {
@@ -599,7 +599,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets attachment
      *
-     * @param \Infocenter\Client\Model\EventAttachment[] $attachment attachment
+     * @param \Infocenter\Client\Model\MediaObject[] $attachment attachment
      *
      * @return $this
      */
@@ -685,7 +685,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets category
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\Category[]
      */
     public function getCategory()
     {
@@ -695,7 +695,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets category
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $category category
+     * @param \Infocenter\Client\Model\Category[] $category category
      *
      * @return $this
      */
@@ -709,7 +709,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets contained_in_place
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\Place[]
      */
     public function getContainedInPlace()
     {
@@ -719,7 +719,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets contained_in_place
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $contained_in_place contained_in_place
+     * @param \Infocenter\Client\Model\Place[] $contained_in_place contained_in_place
      *
      * @return $this
      */
@@ -805,7 +805,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets data_governance
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance
+     * @return \Infocenter\Client\Model\DataGovernance
      */
     public function getDataGovernance()
     {
@@ -815,7 +815,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets data_governance
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernance $data_governance data_governance
+     * @param \Infocenter\Client\Model\DataGovernance $data_governance data_governance
      *
      * @return $this
      */
@@ -925,7 +925,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets image
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImage
+     * @return \Infocenter\Client\Model\ImageObject
      */
     public function getImage()
     {
@@ -935,7 +935,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets image
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImage $image image
+     * @param \Infocenter\Client\Model\ImageObject $image image
      *
      * @return $this
      */
@@ -1021,7 +1021,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets links
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[]
+     * @return \Infocenter\Client\Model\Link[]
      */
     public function getLinks()
     {
@@ -1031,7 +1031,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets links
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressImageDataGovernanceSourceLink[] $links links
+     * @param \Infocenter\Client\Model\Link[] $links links
      *
      * @return $this
      */
@@ -1045,7 +1045,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets labels
      *
-     * @return \Infocenter\Client\Model\AdministrativeAreaAddressLabels[]
+     * @return \Infocenter\Client\Model\Tag[]
      */
     public function getLabels()
     {
@@ -1055,7 +1055,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets labels
      *
-     * @param \Infocenter\Client\Model\AdministrativeAreaAddressLabels[] $labels labels
+     * @param \Infocenter\Client\Model\Tag[] $labels labels
      *
      * @return $this
      */
