@@ -44,7 +44,7 @@ Method | HTTP request | Description
 [**webcam**](DefaultApi.md#webcam) | **GET** /webcams/{id} | Webcam
 
 # **administrativeAreaRegion**
-> \Infocenter\Client\Model\AdministrativeArea administrativeAreaRegion($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsAdministrativeArea administrativeAreaRegion($id, $accept_language, $accept_timezone)
 
 AdministrativeArea (Region)
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\AdministrativeArea**](../Model/AdministrativeArea.md)
+[**\Infocenter\Client\Model\DsAdministrativeArea**](../Model/DsAdministrativeArea.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **category**
-> \Infocenter\Client\Model\Category category($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCategory category($id, $accept_language, $accept_timezone)
 
 Category
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\Category**](../Model/Category.md)
+[**\Infocenter\Client\Model\DsCategory**](../Model/DsCategory.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **categoryTree**
-> \Infocenter\Client\Model\CategoryTreeItem categoryTree($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCategoryTreeItem categoryTree($id, $accept_language, $accept_timezone)
 
 Category Tree
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\CategoryTreeItem**](../Model/CategoryTreeItem.md)
+[**\Infocenter\Client\Model\DsCategoryTreeItem**](../Model/DsCategoryTreeItem.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **civicStructure**
-> \Infocenter\Client\Model\CivicStructure civicStructure($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCivicStructure civicStructure($id, $accept_language, $accept_timezone)
 
 CivicStructure
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\CivicStructure**](../Model/CivicStructure.md)
+[**\Infocenter\Client\Model\DsCivicStructure**](../Model/DsCivicStructure.md)
 
 ### Authorization
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **condition**
-> \Infocenter\Client\Model\Condition condition($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCondition condition($id, $accept_language, $accept_timezone)
 
 Condition
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\Condition**](../Model/Condition.md)
+[**\Infocenter\Client\Model\DsCondition**](../Model/DsCondition.md)
 
 ### Authorization
 
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **creativeWork**
-> \Infocenter\Client\Model\CreativeWork creativeWork($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCreativeWork creativeWork($id, $accept_language, $accept_timezone)
 
 CreativeWork
 
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\CreativeWork**](../Model/CreativeWork.md)
+[**\Infocenter\Client\Model\DsCreativeWork**](../Model/DsCreativeWork.md)
 
 ### Authorization
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **currentTermVersion**
-> \Infocenter\Client\Model\TermVersion currentTermVersion($term_code, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTermVersion currentTermVersion($term_code, $accept_language, $accept_timezone)
 
 Current TermVersion
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\TermVersion**](../Model/TermVersion.md)
+[**\Infocenter\Client\Model\DsTermVersion**](../Model/DsTermVersion.md)
 
 ### Authorization
 
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **event**
-> \Infocenter\Client\Model\Event event($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsEvent event($id, $accept_language, $accept_timezone)
 
 Event
 
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\Event**](../Model/Event.md)
+[**\Infocenter\Client\Model\DsEvent**](../Model/DsEvent.md)
 
 ### Authorization
 
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **foodEstablishment**
-> \Infocenter\Client\Model\FoodEstablishment foodEstablishment($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsFoodEstablishment foodEstablishment($id, $accept_language, $accept_timezone)
 
 FoodEstablishment
 
@@ -579,7 +579,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\FoodEstablishment**](../Model/FoodEstablishment.md)
+[**\Infocenter\Client\Model\DsFoodEstablishment**](../Model/DsFoodEstablishment.md)
 
 ### Authorization
 
@@ -645,7 +645,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **imageObject**
-> \Infocenter\Client\Model\ImageObject imageObject($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsImageObject imageObject($id, $accept_language, $accept_timezone)
 
 ImageObject
 
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\ImageObject**](../Model/ImageObject.md)
+[**\Infocenter\Client\Model\DsImageObject**](../Model/DsImageObject.md)
 
 ### Authorization
 
@@ -706,7 +706,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAdministrativeAreaRegion**
-> \Infocenter\Client\Model\AdministrativeAreasResponse listAdministrativeAreaRegion($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language)
+> \Infocenter\Client\Model\DsAdministrativeAreasResponse listAdministrativeAreaRegion($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language)
 
 List AdministrativeArea (Region)
 
@@ -773,7 +773,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\AdministrativeAreasResponse**](../Model/AdministrativeAreasResponse.md)
+[**\Infocenter\Client\Model\DsAdministrativeAreasResponse**](../Model/DsAdministrativeAreasResponse.md)
 
 ### Authorization
 
@@ -787,7 +787,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCategory**
-> \Infocenter\Client\Model\CategoriesResponse listCategory($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language)
+> \Infocenter\Client\Model\DsCategoriesResponse listCategory($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language)
 
 List Category
 
@@ -848,7 +848,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\CategoriesResponse**](../Model/CategoriesResponse.md)
+[**\Infocenter\Client\Model\DsCategoriesResponse**](../Model/DsCategoriesResponse.md)
 
 ### Authorization
 
@@ -862,7 +862,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCivicStructure**
-> \Infocenter\Client\Model\CivicStructuresResponse listCivicStructure($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCivicStructuresResponse listCivicStructure($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
 
 List CivicStructure
 
@@ -925,7 +925,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\CivicStructuresResponse**](../Model/CivicStructuresResponse.md)
+[**\Infocenter\Client\Model\DsCivicStructuresResponse**](../Model/DsCivicStructuresResponse.md)
 
 ### Authorization
 
@@ -939,7 +939,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCondition**
-> \Infocenter\Client\Model\ConditionsResponse listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language)
+> \Infocenter\Client\Model\DsConditionsResponse listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language)
 
 List Condition
 
@@ -1002,7 +1002,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\ConditionsResponse**](../Model/ConditionsResponse.md)
+[**\Infocenter\Client\Model\DsConditionsResponse**](../Model/DsConditionsResponse.md)
 
 ### Authorization
 
@@ -1016,7 +1016,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCreativeWork**
-> \Infocenter\Client\Model\CreativeWorksResponse listCreativeWork($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCreativeWorksResponse listCreativeWork($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
 
 List CreativeWork
 
@@ -1075,7 +1075,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\CreativeWorksResponse**](../Model/CreativeWorksResponse.md)
+[**\Infocenter\Client\Model\DsCreativeWorksResponse**](../Model/DsCreativeWorksResponse.md)
 
 ### Authorization
 
@@ -1089,7 +1089,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listEvents**
-> \Infocenter\Client\Model\EventsResponse listEvents($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language)
+> \Infocenter\Client\Model\DsEventsResponse listEvents($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language)
 
 List Events
 
@@ -1154,7 +1154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\EventsResponse**](../Model/EventsResponse.md)
+[**\Infocenter\Client\Model\DsEventsResponse**](../Model/DsEventsResponse.md)
 
 ### Authorization
 
@@ -1168,7 +1168,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listFoodEstablishment**
-> \Infocenter\Client\Model\FoodEstablishmentsResponse listFoodEstablishment($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsFoodEstablishmentsResponse listFoodEstablishment($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
 
 List FoodEstablishment
 
@@ -1231,7 +1231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\FoodEstablishmentsResponse**](../Model/FoodEstablishmentsResponse.md)
+[**\Infocenter\Client\Model\DsFoodEstablishmentsResponse**](../Model/DsFoodEstablishmentsResponse.md)
 
 ### Authorization
 
@@ -1245,7 +1245,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listImageObject**
-> \Infocenter\Client\Model\ImageObjectsResponse listImageObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsImageObjectsResponse listImageObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
 
 List ImageObject
 
@@ -1304,7 +1304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\ImageObjectsResponse**](../Model/ImageObjectsResponse.md)
+[**\Infocenter\Client\Model\DsImageObjectsResponse**](../Model/DsImageObjectsResponse.md)
 
 ### Authorization
 
@@ -1318,7 +1318,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listLocalBusiness**
-> \Infocenter\Client\Model\LocalBusinessesResponse listLocalBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsLocalBusinessesResponse listLocalBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
 
 List LocalBusiness
 
@@ -1381,7 +1381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\LocalBusinessesResponse**](../Model/LocalBusinessesResponse.md)
+[**\Infocenter\Client\Model\DsLocalBusinessesResponse**](../Model/DsLocalBusinessesResponse.md)
 
 ### Authorization
 
@@ -1395,7 +1395,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listLodgingBusiness**
-> \Infocenter\Client\Model\LodgingBusinessesResponse listLodgingBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsLodgingBusinessesResponse listLodgingBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
 
 List LodgingBusiness
 
@@ -1458,7 +1458,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\LodgingBusinessesResponse**](../Model/LodgingBusinessesResponse.md)
+[**\Infocenter\Client\Model\DsLodgingBusinessesResponse**](../Model/DsLodgingBusinessesResponse.md)
 
 ### Authorization
 
@@ -1472,7 +1472,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMediaObject**
-> \Infocenter\Client\Model\MediaObjectsResponse listMediaObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsMediaObjectsResponse listMediaObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
 
 List MediaObject
 
@@ -1531,7 +1531,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\MediaObjectsResponse**](../Model/MediaObjectsResponse.md)
+[**\Infocenter\Client\Model\DsMediaObjectsResponse**](../Model/DsMediaObjectsResponse.md)
 
 ### Authorization
 
@@ -1545,7 +1545,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listPlace**
-> \Infocenter\Client\Model\PlacesResponse listPlace($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsPlacesResponse listPlace($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
 
 List Place
 
@@ -1608,7 +1608,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\PlacesResponse**](../Model/PlacesResponse.md)
+[**\Infocenter\Client\Model\DsPlacesResponse**](../Model/DsPlacesResponse.md)
 
 ### Authorization
 
@@ -1622,7 +1622,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listProducts**
-> \Infocenter\Client\Model\ProductsResponse listProducts($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language)
+> \Infocenter\Client\Model\DsProductsResponse listProducts($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language)
 
 List Products
 
@@ -1677,7 +1677,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\ProductsResponse**](../Model/ProductsResponse.md)
+[**\Infocenter\Client\Model\DsProductsResponse**](../Model/DsProductsResponse.md)
 
 ### Authorization
 
@@ -1691,7 +1691,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTimezones**
-> \Infocenter\Client\Model\TimeZoneResponseArray listTimezones()
+> \Infocenter\Client\Model\DsTimeZoneResponseArray listTimezones()
 
 List Timezones
 
@@ -1730,7 +1730,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Infocenter\Client\Model\TimeZoneResponseArray**](../Model/TimeZoneResponseArray.md)
+[**\Infocenter\Client\Model\DsTimeZoneResponseArray**](../Model/DsTimeZoneResponseArray.md)
 
 ### Authorization
 
@@ -1744,7 +1744,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTour**
-> \Infocenter\Client\Model\ToursResponse listTour($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsToursResponse listTour($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
 
 List Tour
 
@@ -1807,7 +1807,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\ToursResponse**](../Model/ToursResponse.md)
+[**\Infocenter\Client\Model\DsToursResponse**](../Model/DsToursResponse.md)
 
 ### Authorization
 
@@ -1821,7 +1821,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listWebcams**
-> \Infocenter\Client\Model\WebcamsResponse listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWebcamsResponse listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
 
 List Webcams
 
@@ -1884,7 +1884,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\WebcamsResponse**](../Model/WebcamsResponse.md)
+[**\Infocenter\Client\Model\DsWebcamsResponse**](../Model/DsWebcamsResponse.md)
 
 ### Authorization
 
@@ -1898,7 +1898,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **localBusiness**
-> \Infocenter\Client\Model\LocalBusiness localBusiness($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsLocalBusiness localBusiness($id, $accept_language, $accept_timezone)
 
 LocalBusiness
 
@@ -1945,7 +1945,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\LocalBusiness**](../Model/LocalBusiness.md)
+[**\Infocenter\Client\Model\DsLocalBusiness**](../Model/DsLocalBusiness.md)
 
 ### Authorization
 
@@ -1959,7 +1959,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lodgingBusiness**
-> \Infocenter\Client\Model\LodgingBusiness lodgingBusiness($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsLodgingBusiness lodgingBusiness($id, $accept_language, $accept_timezone)
 
 LodgingBusiness
 
@@ -2006,7 +2006,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\LodgingBusiness**](../Model/LodgingBusiness.md)
+[**\Infocenter\Client\Model\DsLodgingBusiness**](../Model/DsLodgingBusiness.md)
 
 ### Authorization
 
@@ -2020,7 +2020,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **mediaObject**
-> \Infocenter\Client\Model\MediaObject mediaObject($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsMediaObject mediaObject($id, $accept_language, $accept_timezone)
 
 MediaObject
 
@@ -2067,7 +2067,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\MediaObject**](../Model/MediaObject.md)
+[**\Infocenter\Client\Model\DsMediaObject**](../Model/DsMediaObject.md)
 
 ### Authorization
 
@@ -2081,7 +2081,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **place**
-> \Infocenter\Client\Model\Place place($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsPlace place($id, $accept_language, $accept_timezone)
 
 Place
 
@@ -2128,7 +2128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\Place**](../Model/Place.md)
+[**\Infocenter\Client\Model\DsPlace**](../Model/DsPlace.md)
 
 ### Authorization
 
@@ -2142,7 +2142,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **product**
-> \Infocenter\Client\Model\Product product($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsProduct product($id, $accept_language, $accept_timezone)
 
 Product
 
@@ -2189,7 +2189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\Product**](../Model/Product.md)
+[**\Infocenter\Client\Model\DsProduct**](../Model/DsProduct.md)
 
 ### Authorization
 
@@ -2203,7 +2203,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **search**
-> \Infocenter\Client\Model\SearchResponse search($body, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsSearchResponse search($body, $accept_language, $accept_timezone)
 
 Search
 
@@ -2227,7 +2227,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Infocenter\Client\Model\ExtendedSearchRequest(); // \Infocenter\Client\Model\ExtendedSearchRequest | 
+$body = new \Infocenter\Client\Model\DsExtendedSearchRequest(); // \Infocenter\Client\Model\DsExtendedSearchRequest | 
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
@@ -2244,13 +2244,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Infocenter\Client\Model\ExtendedSearchRequest**](../Model/ExtendedSearchRequest.md)|  | [optional]
+ **body** | [**\Infocenter\Client\Model\DsExtendedSearchRequest**](../Model/DsExtendedSearchRequest.md)|  | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
 ### Return type
 
-[**\Infocenter\Client\Model\SearchResponse**](../Model/SearchResponse.md)
+[**\Infocenter\Client\Model\DsSearchResponse**](../Model/DsSearchResponse.md)
 
 ### Authorization
 
@@ -2264,7 +2264,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByGET**
-> \Infocenter\Client\Model\SearchResponse searchByGET($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsSearchResponse searchByGET($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone)
 
 Search by GET
 
@@ -2319,7 +2319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\SearchResponse**](../Model/SearchResponse.md)
+[**\Infocenter\Client\Model\DsSearchResponse**](../Model/DsSearchResponse.md)
 
 ### Authorization
 
@@ -2333,7 +2333,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **termVersion**
-> \Infocenter\Client\Model\TermVersion termVersion($code, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTermVersion termVersion($code, $accept_language, $accept_timezone)
 
 TermVersion
 
@@ -2380,7 +2380,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\TermVersion**](../Model/TermVersion.md)
+[**\Infocenter\Client\Model\DsTermVersion**](../Model/DsTermVersion.md)
 
 ### Authorization
 
@@ -2394,7 +2394,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tour**
-> \Infocenter\Client\Model\Tour tour($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTour tour($id, $accept_language, $accept_timezone)
 
 Tour
 
@@ -2441,7 +2441,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\Tour**](../Model/Tour.md)
+[**\Infocenter\Client\Model\DsTour**](../Model/DsTour.md)
 
 ### Authorization
 
@@ -2455,7 +2455,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **treeAdministrativeAreaRegion**
-> \Infocenter\Client\Model\AdministrativeAreaTreeItem treeAdministrativeAreaRegion($id, $levels, $admin_areas_only, $accept_timezone, $accept_language)
+> \Infocenter\Client\Model\DsAdministrativeAreaTreeItem treeAdministrativeAreaRegion($id, $levels, $admin_areas_only, $accept_timezone, $accept_language)
 
 Tree AdministrativeArea (Region)
 
@@ -2506,7 +2506,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\AdministrativeAreaTreeItem**](../Model/AdministrativeAreaTreeItem.md)
+[**\Infocenter\Client\Model\DsAdministrativeAreaTreeItem**](../Model/DsAdministrativeAreaTreeItem.md)
 
 ### Authorization
 
@@ -2520,7 +2520,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **webcam**
-> \Infocenter\Client\Model\Webcam webcam($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWebcam webcam($id, $accept_language, $accept_timezone)
 
 Webcam
 
@@ -2567,7 +2567,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\Webcam**](../Model/Webcam.md)
+[**\Infocenter\Client\Model\DsWebcam**](../Model/DsWebcam.md)
 
 ### Authorization
 

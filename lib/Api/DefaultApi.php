@@ -97,7 +97,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\AdministrativeArea
+     * @return \Infocenter\Client\Model\DsAdministrativeArea
      */
     public function administrativeAreaRegion($id, $accept_language = null, $accept_timezone = null)
     {
@@ -116,11 +116,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\AdministrativeArea, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsAdministrativeArea, HTTP status code, HTTP response headers (array of strings)
      */
     public function administrativeAreaRegionWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\AdministrativeArea';
+        $returnType = '\Infocenter\Client\Model\DsAdministrativeArea';
         $request = $this->administrativeAreaRegionRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -172,7 +172,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\AdministrativeArea',
+                        '\Infocenter\Client\Model\DsAdministrativeArea',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -218,7 +218,7 @@ class DefaultApi
      */
     public function administrativeAreaRegionAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\AdministrativeArea';
+        $returnType = '\Infocenter\Client\Model\DsAdministrativeArea';
         $request = $this->administrativeAreaRegionRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -387,7 +387,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\Category
+     * @return \Infocenter\Client\Model\DsCategory
      */
     public function category($id, $accept_language = null, $accept_timezone = null)
     {
@@ -406,11 +406,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\Category, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsCategory, HTTP status code, HTTP response headers (array of strings)
      */
     public function categoryWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Category';
+        $returnType = '\Infocenter\Client\Model\DsCategory';
         $request = $this->categoryRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -462,7 +462,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\Category',
+                        '\Infocenter\Client\Model\DsCategory',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -508,7 +508,7 @@ class DefaultApi
      */
     public function categoryAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Category';
+        $returnType = '\Infocenter\Client\Model\DsCategory';
         $request = $this->categoryRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -677,7 +677,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\CategoryTreeItem
+     * @return \Infocenter\Client\Model\DsCategoryTreeItem
      */
     public function categoryTree($id, $accept_language = null, $accept_timezone = null)
     {
@@ -696,11 +696,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\CategoryTreeItem, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsCategoryTreeItem, HTTP status code, HTTP response headers (array of strings)
      */
     public function categoryTreeWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\CategoryTreeItem';
+        $returnType = '\Infocenter\Client\Model\DsCategoryTreeItem';
         $request = $this->categoryTreeRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -752,7 +752,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\CategoryTreeItem',
+                        '\Infocenter\Client\Model\DsCategoryTreeItem',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -798,7 +798,7 @@ class DefaultApi
      */
     public function categoryTreeAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\CategoryTreeItem';
+        $returnType = '\Infocenter\Client\Model\DsCategoryTreeItem';
         $request = $this->categoryTreeRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -967,7 +967,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\CivicStructure
+     * @return \Infocenter\Client\Model\DsCivicStructure
      */
     public function civicStructure($id, $accept_language = null, $accept_timezone = null)
     {
@@ -986,11 +986,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\CivicStructure, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsCivicStructure, HTTP status code, HTTP response headers (array of strings)
      */
     public function civicStructureWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\CivicStructure';
+        $returnType = '\Infocenter\Client\Model\DsCivicStructure';
         $request = $this->civicStructureRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -1042,7 +1042,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\CivicStructure',
+                        '\Infocenter\Client\Model\DsCivicStructure',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1088,7 +1088,7 @@ class DefaultApi
      */
     public function civicStructureAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\CivicStructure';
+        $returnType = '\Infocenter\Client\Model\DsCivicStructure';
         $request = $this->civicStructureRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -1257,7 +1257,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\Condition
+     * @return \Infocenter\Client\Model\DsCondition
      */
     public function condition($id, $accept_language = null, $accept_timezone = null)
     {
@@ -1276,11 +1276,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\Condition, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsCondition, HTTP status code, HTTP response headers (array of strings)
      */
     public function conditionWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Condition';
+        $returnType = '\Infocenter\Client\Model\DsCondition';
         $request = $this->conditionRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -1332,7 +1332,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\Condition',
+                        '\Infocenter\Client\Model\DsCondition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1378,7 +1378,7 @@ class DefaultApi
      */
     public function conditionAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Condition';
+        $returnType = '\Infocenter\Client\Model\DsCondition';
         $request = $this->conditionRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -1547,7 +1547,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\CreativeWork
+     * @return \Infocenter\Client\Model\DsCreativeWork
      */
     public function creativeWork($id, $accept_language = null, $accept_timezone = null)
     {
@@ -1566,11 +1566,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\CreativeWork, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsCreativeWork, HTTP status code, HTTP response headers (array of strings)
      */
     public function creativeWorkWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\CreativeWork';
+        $returnType = '\Infocenter\Client\Model\DsCreativeWork';
         $request = $this->creativeWorkRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -1622,7 +1622,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\CreativeWork',
+                        '\Infocenter\Client\Model\DsCreativeWork',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1668,7 +1668,7 @@ class DefaultApi
      */
     public function creativeWorkAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\CreativeWork';
+        $returnType = '\Infocenter\Client\Model\DsCreativeWork';
         $request = $this->creativeWorkRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -1837,7 +1837,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\TermVersion
+     * @return \Infocenter\Client\Model\DsTermVersion
      */
     public function currentTermVersion($term_code, $accept_language = null, $accept_timezone = null)
     {
@@ -1856,11 +1856,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\TermVersion, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsTermVersion, HTTP status code, HTTP response headers (array of strings)
      */
     public function currentTermVersionWithHttpInfo($term_code, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\TermVersion';
+        $returnType = '\Infocenter\Client\Model\DsTermVersion';
         $request = $this->currentTermVersionRequest($term_code, $accept_language, $accept_timezone);
 
         try {
@@ -1912,7 +1912,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\TermVersion',
+                        '\Infocenter\Client\Model\DsTermVersion',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1958,7 +1958,7 @@ class DefaultApi
      */
     public function currentTermVersionAsyncWithHttpInfo($term_code, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\TermVersion';
+        $returnType = '\Infocenter\Client\Model\DsTermVersion';
         $request = $this->currentTermVersionRequest($term_code, $accept_language, $accept_timezone);
 
         return $this->client
@@ -2127,7 +2127,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\Event
+     * @return \Infocenter\Client\Model\DsEvent
      */
     public function event($id, $accept_language = null, $accept_timezone = null)
     {
@@ -2146,11 +2146,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\Event, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsEvent, HTTP status code, HTTP response headers (array of strings)
      */
     public function eventWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Event';
+        $returnType = '\Infocenter\Client\Model\DsEvent';
         $request = $this->eventRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -2202,7 +2202,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\Event',
+                        '\Infocenter\Client\Model\DsEvent',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2248,7 +2248,7 @@ class DefaultApi
      */
     public function eventAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Event';
+        $returnType = '\Infocenter\Client\Model\DsEvent';
         $request = $this->eventRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -2417,7 +2417,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\FoodEstablishment
+     * @return \Infocenter\Client\Model\DsFoodEstablishment
      */
     public function foodEstablishment($id, $accept_language = null, $accept_timezone = null)
     {
@@ -2436,11 +2436,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\FoodEstablishment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsFoodEstablishment, HTTP status code, HTTP response headers (array of strings)
      */
     public function foodEstablishmentWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\FoodEstablishment';
+        $returnType = '\Infocenter\Client\Model\DsFoodEstablishment';
         $request = $this->foodEstablishmentRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -2492,7 +2492,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\FoodEstablishment',
+                        '\Infocenter\Client\Model\DsFoodEstablishment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2538,7 +2538,7 @@ class DefaultApi
      */
     public function foodEstablishmentAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\FoodEstablishment';
+        $returnType = '\Infocenter\Client\Model\DsFoodEstablishment';
         $request = $this->foodEstablishmentRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -2923,7 +2923,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\ImageObject
+     * @return \Infocenter\Client\Model\DsImageObject
      */
     public function imageObject($id, $accept_language = null, $accept_timezone = null)
     {
@@ -2942,11 +2942,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\ImageObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsImageObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function imageObjectWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\ImageObject';
+        $returnType = '\Infocenter\Client\Model\DsImageObject';
         $request = $this->imageObjectRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -2998,7 +2998,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\ImageObject',
+                        '\Infocenter\Client\Model\DsImageObject',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3044,7 +3044,7 @@ class DefaultApi
      */
     public function imageObjectAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\ImageObject';
+        $returnType = '\Infocenter\Client\Model\DsImageObject';
         $request = $this->imageObjectRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -3223,7 +3223,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\AdministrativeAreasResponse
+     * @return \Infocenter\Client\Model\DsAdministrativeAreasResponse
      */
     public function listAdministrativeAreaRegion($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
     {
@@ -3252,11 +3252,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\AdministrativeAreasResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsAdministrativeAreasResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAdministrativeAreaRegionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
     {
-        $returnType = '\Infocenter\Client\Model\AdministrativeAreasResponse';
+        $returnType = '\Infocenter\Client\Model\DsAdministrativeAreasResponse';
         $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language);
 
         try {
@@ -3308,7 +3308,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\AdministrativeAreasResponse',
+                        '\Infocenter\Client\Model\DsAdministrativeAreasResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3374,7 +3374,7 @@ class DefaultApi
      */
     public function listAdministrativeAreaRegionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
     {
-        $returnType = '\Infocenter\Client\Model\AdministrativeAreasResponse';
+        $returnType = '\Infocenter\Client\Model\DsAdministrativeAreasResponse';
         $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language);
 
         return $this->client
@@ -3590,7 +3590,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\CategoriesResponse
+     * @return \Infocenter\Client\Model\DsCategoriesResponse
      */
     public function listCategory($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
     {
@@ -3616,11 +3616,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\CategoriesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsCategoriesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCategoryWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
     {
-        $returnType = '\Infocenter\Client\Model\CategoriesResponse';
+        $returnType = '\Infocenter\Client\Model\DsCategoriesResponse';
         $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language);
 
         try {
@@ -3672,7 +3672,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\CategoriesResponse',
+                        '\Infocenter\Client\Model\DsCategoriesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3732,7 +3732,7 @@ class DefaultApi
      */
     public function listCategoryAsyncWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
     {
-        $returnType = '\Infocenter\Client\Model\CategoriesResponse';
+        $returnType = '\Infocenter\Client\Model\DsCategoriesResponse';
         $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language);
 
         return $this->client
@@ -3934,7 +3934,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\CivicStructuresResponse
+     * @return \Infocenter\Client\Model\DsCivicStructuresResponse
      */
     public function listCivicStructure($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
@@ -3961,11 +3961,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\CivicStructuresResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsCivicStructuresResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCivicStructureWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\CivicStructuresResponse';
+        $returnType = '\Infocenter\Client\Model\DsCivicStructuresResponse';
         $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
@@ -4017,7 +4017,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\CivicStructuresResponse',
+                        '\Infocenter\Client\Model\DsCivicStructuresResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4079,7 +4079,7 @@ class DefaultApi
      */
     public function listCivicStructureAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\CivicStructuresResponse';
+        $returnType = '\Infocenter\Client\Model\DsCivicStructuresResponse';
         $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
@@ -4286,7 +4286,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\ConditionsResponse
+     * @return \Infocenter\Client\Model\DsConditionsResponse
      */
     public function listCondition($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
@@ -4313,11 +4313,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\ConditionsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsConditionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listConditionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
-        $returnType = '\Infocenter\Client\Model\ConditionsResponse';
+        $returnType = '\Infocenter\Client\Model\DsConditionsResponse';
         $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language);
 
         try {
@@ -4369,7 +4369,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\ConditionsResponse',
+                        '\Infocenter\Client\Model\DsConditionsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4431,7 +4431,7 @@ class DefaultApi
      */
     public function listConditionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
-        $returnType = '\Infocenter\Client\Model\ConditionsResponse';
+        $returnType = '\Infocenter\Client\Model\DsConditionsResponse';
         $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language);
 
         return $this->client
@@ -4636,7 +4636,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\CreativeWorksResponse
+     * @return \Infocenter\Client\Model\DsCreativeWorksResponse
      */
     public function listCreativeWork($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
@@ -4661,11 +4661,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\CreativeWorksResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsCreativeWorksResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCreativeWorkWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\CreativeWorksResponse';
+        $returnType = '\Infocenter\Client\Model\DsCreativeWorksResponse';
         $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
@@ -4717,7 +4717,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\CreativeWorksResponse',
+                        '\Infocenter\Client\Model\DsCreativeWorksResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4775,7 +4775,7 @@ class DefaultApi
      */
     public function listCreativeWorkAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\CreativeWorksResponse';
+        $returnType = '\Infocenter\Client\Model\DsCreativeWorksResponse';
         $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
@@ -4973,7 +4973,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\EventsResponse
+     * @return \Infocenter\Client\Model\DsEventsResponse
      */
     public function listEvents($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
@@ -5001,11 +5001,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\EventsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsEventsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listEventsWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
-        $returnType = '\Infocenter\Client\Model\EventsResponse';
+        $returnType = '\Infocenter\Client\Model\DsEventsResponse';
         $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language);
 
         try {
@@ -5057,7 +5057,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\EventsResponse',
+                        '\Infocenter\Client\Model\DsEventsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5121,7 +5121,7 @@ class DefaultApi
      */
     public function listEventsAsyncWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
-        $returnType = '\Infocenter\Client\Model\EventsResponse';
+        $returnType = '\Infocenter\Client\Model\DsEventsResponse';
         $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language);
 
         return $this->client
@@ -5333,7 +5333,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\FoodEstablishmentsResponse
+     * @return \Infocenter\Client\Model\DsFoodEstablishmentsResponse
      */
     public function listFoodEstablishment($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
@@ -5360,11 +5360,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\FoodEstablishmentsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsFoodEstablishmentsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listFoodEstablishmentWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\FoodEstablishmentsResponse';
+        $returnType = '\Infocenter\Client\Model\DsFoodEstablishmentsResponse';
         $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
@@ -5416,7 +5416,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\FoodEstablishmentsResponse',
+                        '\Infocenter\Client\Model\DsFoodEstablishmentsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5478,7 +5478,7 @@ class DefaultApi
      */
     public function listFoodEstablishmentAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\FoodEstablishmentsResponse';
+        $returnType = '\Infocenter\Client\Model\DsFoodEstablishmentsResponse';
         $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
@@ -5683,7 +5683,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\ImageObjectsResponse
+     * @return \Infocenter\Client\Model\DsImageObjectsResponse
      */
     public function listImageObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
@@ -5708,11 +5708,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\ImageObjectsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsImageObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listImageObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\ImageObjectsResponse';
+        $returnType = '\Infocenter\Client\Model\DsImageObjectsResponse';
         $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
@@ -5764,7 +5764,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\ImageObjectsResponse',
+                        '\Infocenter\Client\Model\DsImageObjectsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5822,7 +5822,7 @@ class DefaultApi
      */
     public function listImageObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\ImageObjectsResponse';
+        $returnType = '\Infocenter\Client\Model\DsImageObjectsResponse';
         $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
@@ -6019,7 +6019,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\LocalBusinessesResponse
+     * @return \Infocenter\Client\Model\DsLocalBusinessesResponse
      */
     public function listLocalBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
@@ -6046,11 +6046,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\LocalBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsLocalBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listLocalBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\LocalBusinessesResponse';
+        $returnType = '\Infocenter\Client\Model\DsLocalBusinessesResponse';
         $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
@@ -6102,7 +6102,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\LocalBusinessesResponse',
+                        '\Infocenter\Client\Model\DsLocalBusinessesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6164,7 +6164,7 @@ class DefaultApi
      */
     public function listLocalBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\LocalBusinessesResponse';
+        $returnType = '\Infocenter\Client\Model\DsLocalBusinessesResponse';
         $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
@@ -6371,7 +6371,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\LodgingBusinessesResponse
+     * @return \Infocenter\Client\Model\DsLodgingBusinessesResponse
      */
     public function listLodgingBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
@@ -6398,11 +6398,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\LodgingBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsLodgingBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listLodgingBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\LodgingBusinessesResponse';
+        $returnType = '\Infocenter\Client\Model\DsLodgingBusinessesResponse';
         $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
@@ -6454,7 +6454,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\LodgingBusinessesResponse',
+                        '\Infocenter\Client\Model\DsLodgingBusinessesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6516,7 +6516,7 @@ class DefaultApi
      */
     public function listLodgingBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\LodgingBusinessesResponse';
+        $returnType = '\Infocenter\Client\Model\DsLodgingBusinessesResponse';
         $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
@@ -6721,7 +6721,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\MediaObjectsResponse
+     * @return \Infocenter\Client\Model\DsMediaObjectsResponse
      */
     public function listMediaObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
@@ -6746,11 +6746,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\MediaObjectsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsMediaObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listMediaObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\MediaObjectsResponse';
+        $returnType = '\Infocenter\Client\Model\DsMediaObjectsResponse';
         $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
@@ -6802,7 +6802,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\MediaObjectsResponse',
+                        '\Infocenter\Client\Model\DsMediaObjectsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6860,7 +6860,7 @@ class DefaultApi
      */
     public function listMediaObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\MediaObjectsResponse';
+        $returnType = '\Infocenter\Client\Model\DsMediaObjectsResponse';
         $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
@@ -7057,7 +7057,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\PlacesResponse
+     * @return \Infocenter\Client\Model\DsPlacesResponse
      */
     public function listPlace($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
@@ -7084,11 +7084,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\PlacesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsPlacesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listPlaceWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\PlacesResponse';
+        $returnType = '\Infocenter\Client\Model\DsPlacesResponse';
         $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
@@ -7140,7 +7140,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\PlacesResponse',
+                        '\Infocenter\Client\Model\DsPlacesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7202,7 +7202,7 @@ class DefaultApi
      */
     public function listPlaceAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\PlacesResponse';
+        $returnType = '\Infocenter\Client\Model\DsPlacesResponse';
         $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
@@ -7405,7 +7405,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\ProductsResponse
+     * @return \Infocenter\Client\Model\DsProductsResponse
      */
     public function listProducts($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
     {
@@ -7428,11 +7428,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\ProductsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsProductsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listProductsWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
     {
-        $returnType = '\Infocenter\Client\Model\ProductsResponse';
+        $returnType = '\Infocenter\Client\Model\DsProductsResponse';
         $request = $this->listProductsRequest($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language);
 
         try {
@@ -7484,7 +7484,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\ProductsResponse',
+                        '\Infocenter\Client\Model\DsProductsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7538,7 +7538,7 @@ class DefaultApi
      */
     public function listProductsAsyncWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
     {
-        $returnType = '\Infocenter\Client\Model\ProductsResponse';
+        $returnType = '\Infocenter\Client\Model\DsProductsResponse';
         $request = $this->listProductsRequest($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language);
 
         return $this->client
@@ -7714,7 +7714,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\TimeZoneResponseArray
+     * @return \Infocenter\Client\Model\DsTimeZoneResponseArray
      */
     public function listTimezones()
     {
@@ -7730,11 +7730,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\TimeZoneResponseArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsTimeZoneResponseArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function listTimezonesWithHttpInfo()
     {
-        $returnType = '\Infocenter\Client\Model\TimeZoneResponseArray';
+        $returnType = '\Infocenter\Client\Model\DsTimeZoneResponseArray';
         $request = $this->listTimezonesRequest();
 
         try {
@@ -7786,7 +7786,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\TimeZoneResponseArray',
+                        '\Infocenter\Client\Model\DsTimeZoneResponseArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7826,7 +7826,7 @@ class DefaultApi
      */
     public function listTimezonesAsyncWithHttpInfo()
     {
-        $returnType = '\Infocenter\Client\Model\TimeZoneResponseArray';
+        $returnType = '\Infocenter\Client\Model\DsTimeZoneResponseArray';
         $request = $this->listTimezonesRequest();
 
         return $this->client
@@ -7978,7 +7978,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\ToursResponse
+     * @return \Infocenter\Client\Model\DsToursResponse
      */
     public function listTour($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
@@ -8005,11 +8005,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\ToursResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsToursResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listTourWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\ToursResponse';
+        $returnType = '\Infocenter\Client\Model\DsToursResponse';
         $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
@@ -8061,7 +8061,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\ToursResponse',
+                        '\Infocenter\Client\Model\DsToursResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8123,7 +8123,7 @@ class DefaultApi
      */
     public function listTourAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\ToursResponse';
+        $returnType = '\Infocenter\Client\Model\DsToursResponse';
         $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
@@ -8330,7 +8330,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\WebcamsResponse
+     * @return \Infocenter\Client\Model\DsWebcamsResponse
      */
     public function listWebcams($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
@@ -8357,11 +8357,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\WebcamsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsWebcamsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listWebcamsWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\WebcamsResponse';
+        $returnType = '\Infocenter\Client\Model\DsWebcamsResponse';
         $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
@@ -8413,7 +8413,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\WebcamsResponse',
+                        '\Infocenter\Client\Model\DsWebcamsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8475,7 +8475,7 @@ class DefaultApi
      */
     public function listWebcamsAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\WebcamsResponse';
+        $returnType = '\Infocenter\Client\Model\DsWebcamsResponse';
         $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
@@ -8674,7 +8674,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\LocalBusiness
+     * @return \Infocenter\Client\Model\DsLocalBusiness
      */
     public function localBusiness($id, $accept_language = null, $accept_timezone = null)
     {
@@ -8693,11 +8693,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\LocalBusiness, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsLocalBusiness, HTTP status code, HTTP response headers (array of strings)
      */
     public function localBusinessWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\LocalBusiness';
+        $returnType = '\Infocenter\Client\Model\DsLocalBusiness';
         $request = $this->localBusinessRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -8749,7 +8749,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\LocalBusiness',
+                        '\Infocenter\Client\Model\DsLocalBusiness',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8795,7 +8795,7 @@ class DefaultApi
      */
     public function localBusinessAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\LocalBusiness';
+        $returnType = '\Infocenter\Client\Model\DsLocalBusiness';
         $request = $this->localBusinessRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -8964,7 +8964,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\LodgingBusiness
+     * @return \Infocenter\Client\Model\DsLodgingBusiness
      */
     public function lodgingBusiness($id, $accept_language = null, $accept_timezone = null)
     {
@@ -8983,11 +8983,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\LodgingBusiness, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsLodgingBusiness, HTTP status code, HTTP response headers (array of strings)
      */
     public function lodgingBusinessWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\LodgingBusiness';
+        $returnType = '\Infocenter\Client\Model\DsLodgingBusiness';
         $request = $this->lodgingBusinessRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -9039,7 +9039,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\LodgingBusiness',
+                        '\Infocenter\Client\Model\DsLodgingBusiness',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9085,7 +9085,7 @@ class DefaultApi
      */
     public function lodgingBusinessAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\LodgingBusiness';
+        $returnType = '\Infocenter\Client\Model\DsLodgingBusiness';
         $request = $this->lodgingBusinessRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -9254,7 +9254,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\MediaObject
+     * @return \Infocenter\Client\Model\DsMediaObject
      */
     public function mediaObject($id, $accept_language = null, $accept_timezone = null)
     {
@@ -9273,11 +9273,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\MediaObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsMediaObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function mediaObjectWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\MediaObject';
+        $returnType = '\Infocenter\Client\Model\DsMediaObject';
         $request = $this->mediaObjectRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -9329,7 +9329,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\MediaObject',
+                        '\Infocenter\Client\Model\DsMediaObject',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9375,7 +9375,7 @@ class DefaultApi
      */
     public function mediaObjectAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\MediaObject';
+        $returnType = '\Infocenter\Client\Model\DsMediaObject';
         $request = $this->mediaObjectRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -9544,7 +9544,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\Place
+     * @return \Infocenter\Client\Model\DsPlace
      */
     public function place($id, $accept_language = null, $accept_timezone = null)
     {
@@ -9563,11 +9563,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\Place, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsPlace, HTTP status code, HTTP response headers (array of strings)
      */
     public function placeWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Place';
+        $returnType = '\Infocenter\Client\Model\DsPlace';
         $request = $this->placeRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -9619,7 +9619,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\Place',
+                        '\Infocenter\Client\Model\DsPlace',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9665,7 +9665,7 @@ class DefaultApi
      */
     public function placeAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Place';
+        $returnType = '\Infocenter\Client\Model\DsPlace';
         $request = $this->placeRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -9834,7 +9834,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\Product
+     * @return \Infocenter\Client\Model\DsProduct
      */
     public function product($id, $accept_language = null, $accept_timezone = null)
     {
@@ -9853,11 +9853,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\Product, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsProduct, HTTP status code, HTTP response headers (array of strings)
      */
     public function productWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Product';
+        $returnType = '\Infocenter\Client\Model\DsProduct';
         $request = $this->productRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -9909,7 +9909,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\Product',
+                        '\Infocenter\Client\Model\DsProduct',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9955,7 +9955,7 @@ class DefaultApi
      */
     public function productAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Product';
+        $returnType = '\Infocenter\Client\Model\DsProduct';
         $request = $this->productRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -10118,13 +10118,13 @@ class DefaultApi
      *
      * Search
      *
-     * @param  \Infocenter\Client\Model\ExtendedSearchRequest $body body (optional)
+     * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body body (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\SearchResponse
+     * @return \Infocenter\Client\Model\DsSearchResponse
      */
     public function search($body = null, $accept_language = null, $accept_timezone = null)
     {
@@ -10137,17 +10137,17 @@ class DefaultApi
      *
      * Search
      *
-     * @param  \Infocenter\Client\Model\ExtendedSearchRequest $body (optional)
+     * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\SearchResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsSearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchWithHttpInfo($body = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\SearchResponse';
+        $returnType = '\Infocenter\Client\Model\DsSearchResponse';
         $request = $this->searchRequest($body, $accept_language, $accept_timezone);
 
         try {
@@ -10199,7 +10199,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\SearchResponse',
+                        '\Infocenter\Client\Model\DsSearchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10214,7 +10214,7 @@ class DefaultApi
      *
      * Search
      *
-     * @param  \Infocenter\Client\Model\ExtendedSearchRequest $body (optional)
+     * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -10236,7 +10236,7 @@ class DefaultApi
      *
      * Search
      *
-     * @param  \Infocenter\Client\Model\ExtendedSearchRequest $body (optional)
+     * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -10245,7 +10245,7 @@ class DefaultApi
      */
     public function searchAsyncWithHttpInfo($body = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\SearchResponse';
+        $returnType = '\Infocenter\Client\Model\DsSearchResponse';
         $request = $this->searchRequest($body, $accept_language, $accept_timezone);
 
         return $this->client
@@ -10288,7 +10288,7 @@ class DefaultApi
     /**
      * Create request for operation 'search'
      *
-     * @param  \Infocenter\Client\Model\ExtendedSearchRequest $body (optional)
+     * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -10407,7 +10407,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\SearchResponse
+     * @return \Infocenter\Client\Model\DsSearchResponse
      */
     public function searchByGET($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
     {
@@ -10430,11 +10430,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\SearchResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsSearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchByGETWithHttpInfo($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\SearchResponse';
+        $returnType = '\Infocenter\Client\Model\DsSearchResponse';
         $request = $this->searchByGETRequest($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone);
 
         try {
@@ -10486,7 +10486,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\SearchResponse',
+                        '\Infocenter\Client\Model\DsSearchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10540,7 +10540,7 @@ class DefaultApi
      */
     public function searchByGETAsyncWithHttpInfo($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\SearchResponse';
+        $returnType = '\Infocenter\Client\Model\DsSearchResponse';
         $request = $this->searchByGETRequest($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone);
 
         return $this->client
@@ -10719,7 +10719,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\TermVersion
+     * @return \Infocenter\Client\Model\DsTermVersion
      */
     public function termVersion($code, $accept_language = null, $accept_timezone = null)
     {
@@ -10738,11 +10738,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\TermVersion, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsTermVersion, HTTP status code, HTTP response headers (array of strings)
      */
     public function termVersionWithHttpInfo($code, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\TermVersion';
+        $returnType = '\Infocenter\Client\Model\DsTermVersion';
         $request = $this->termVersionRequest($code, $accept_language, $accept_timezone);
 
         try {
@@ -10794,7 +10794,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\TermVersion',
+                        '\Infocenter\Client\Model\DsTermVersion',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10840,7 +10840,7 @@ class DefaultApi
      */
     public function termVersionAsyncWithHttpInfo($code, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\TermVersion';
+        $returnType = '\Infocenter\Client\Model\DsTermVersion';
         $request = $this->termVersionRequest($code, $accept_language, $accept_timezone);
 
         return $this->client
@@ -11009,7 +11009,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\Tour
+     * @return \Infocenter\Client\Model\DsTour
      */
     public function tour($id, $accept_language = null, $accept_timezone = null)
     {
@@ -11028,11 +11028,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\Tour, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsTour, HTTP status code, HTTP response headers (array of strings)
      */
     public function tourWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Tour';
+        $returnType = '\Infocenter\Client\Model\DsTour';
         $request = $this->tourRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -11084,7 +11084,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\Tour',
+                        '\Infocenter\Client\Model\DsTour',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11130,7 +11130,7 @@ class DefaultApi
      */
     public function tourAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Tour';
+        $returnType = '\Infocenter\Client\Model\DsTour';
         $request = $this->tourRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
@@ -11301,7 +11301,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\AdministrativeAreaTreeItem
+     * @return \Infocenter\Client\Model\DsAdministrativeAreaTreeItem
      */
     public function treeAdministrativeAreaRegion($id, $levels = null, $admin_areas_only = null, $accept_timezone = null, $accept_language = null)
     {
@@ -11322,11 +11322,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\AdministrativeAreaTreeItem, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsAdministrativeAreaTreeItem, HTTP status code, HTTP response headers (array of strings)
      */
     public function treeAdministrativeAreaRegionWithHttpInfo($id, $levels = null, $admin_areas_only = null, $accept_timezone = null, $accept_language = null)
     {
-        $returnType = '\Infocenter\Client\Model\AdministrativeAreaTreeItem';
+        $returnType = '\Infocenter\Client\Model\DsAdministrativeAreaTreeItem';
         $request = $this->treeAdministrativeAreaRegionRequest($id, $levels, $admin_areas_only, $accept_timezone, $accept_language);
 
         try {
@@ -11378,7 +11378,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\AdministrativeAreaTreeItem',
+                        '\Infocenter\Client\Model\DsAdministrativeAreaTreeItem',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11428,7 +11428,7 @@ class DefaultApi
      */
     public function treeAdministrativeAreaRegionAsyncWithHttpInfo($id, $levels = null, $admin_areas_only = null, $accept_timezone = null, $accept_language = null)
     {
-        $returnType = '\Infocenter\Client\Model\AdministrativeAreaTreeItem';
+        $returnType = '\Infocenter\Client\Model\DsAdministrativeAreaTreeItem';
         $request = $this->treeAdministrativeAreaRegionRequest($id, $levels, $admin_areas_only, $accept_timezone, $accept_language);
 
         return $this->client
@@ -11607,7 +11607,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\Webcam
+     * @return \Infocenter\Client\Model\DsWebcam
      */
     public function webcam($id, $accept_language = null, $accept_timezone = null)
     {
@@ -11626,11 +11626,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\Webcam, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsWebcam, HTTP status code, HTTP response headers (array of strings)
      */
     public function webcamWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Webcam';
+        $returnType = '\Infocenter\Client\Model\DsWebcam';
         $request = $this->webcamRequest($id, $accept_language, $accept_timezone);
 
         try {
@@ -11682,7 +11682,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\Webcam',
+                        '\Infocenter\Client\Model\DsWebcam',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11728,7 +11728,7 @@ class DefaultApi
      */
     public function webcamAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\Webcam';
+        $returnType = '\Infocenter\Client\Model\DsWebcam';
         $request = $this->webcamRequest($id, $accept_language, $accept_timezone);
 
         return $this->client
