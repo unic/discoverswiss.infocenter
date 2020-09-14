@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**count** | **int** |  | [optional] 
 **has_next_page** | **bool** |  | [optional] 
 **next_page_token** | **string** |  | [optional] 
 **data** | [**\Infocenter\Client\Model\Tour[]**](Tour.md) |  | [optional] 

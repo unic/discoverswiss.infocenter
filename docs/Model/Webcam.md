@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **datasource** | **string** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\DataGovernance**](DataGovernance.md) |  | [optional] 
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**available_data_language** | **string[]** |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **disambiguating_description** | **string** |  | [optional] 

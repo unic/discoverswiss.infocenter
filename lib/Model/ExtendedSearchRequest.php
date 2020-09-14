@@ -60,6 +60,7 @@ class ExtendedSearchRequest implements ModelInterface, ArrayAccess
 'type' => 'string[]',
 'datasource' => 'string[]',
 'project' => 'string[]',
+'parent_type' => 'string[]',
 'facets' => '\Infocenter\Client\Model\FacetRequest[]',
 'search_text' => 'string',
 'current_page' => 'int',
@@ -76,6 +77,7 @@ class ExtendedSearchRequest implements ModelInterface, ArrayAccess
 'type' => null,
 'datasource' => null,
 'project' => null,
+'parent_type' => null,
 'facets' => null,
 'search_text' => null,
 'current_page' => 'int32',
@@ -113,6 +115,7 @@ class ExtendedSearchRequest implements ModelInterface, ArrayAccess
 'type' => 'type',
 'datasource' => 'datasource',
 'project' => 'project',
+'parent_type' => 'parentType',
 'facets' => 'facets',
 'search_text' => 'searchText',
 'current_page' => 'currentPage',
@@ -129,6 +132,7 @@ class ExtendedSearchRequest implements ModelInterface, ArrayAccess
 'type' => 'setType',
 'datasource' => 'setDatasource',
 'project' => 'setProject',
+'parent_type' => 'setParentType',
 'facets' => 'setFacets',
 'search_text' => 'setSearchText',
 'current_page' => 'setCurrentPage',
@@ -145,6 +149,7 @@ class ExtendedSearchRequest implements ModelInterface, ArrayAccess
 'type' => 'getType',
 'datasource' => 'getDatasource',
 'project' => 'getProject',
+'parent_type' => 'getParentType',
 'facets' => 'getFacets',
 'search_text' => 'getSearchText',
 'current_page' => 'getCurrentPage',
@@ -213,6 +218,7 @@ class ExtendedSearchRequest implements ModelInterface, ArrayAccess
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['project'] = isset($data['project']) ? $data['project'] : null;
+        $this->container['parent_type'] = isset($data['parent_type']) ? $data['parent_type'] : null;
         $this->container['facets'] = isset($data['facets']) ? $data['facets'] : null;
         $this->container['search_text'] = isset($data['search_text']) ? $data['search_text'] : null;
         $this->container['current_page'] = isset($data['current_page']) ? $data['current_page'] : null;
@@ -336,6 +342,30 @@ class ExtendedSearchRequest implements ModelInterface, ArrayAccess
     public function setProject($project)
     {
         $this->container['project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent_type
+     *
+     * @return string[]
+     */
+    public function getParentType()
+    {
+        return $this->container['parent_type'];
+    }
+
+    /**
+     * Sets parent_type
+     *
+     * @param string[] $parent_type parent_type
+     *
+     * @return $this
+     */
+    public function setParentType($parent_type)
+    {
+        $this->container['parent_type'] = $parent_type;
 
         return $this;
     }

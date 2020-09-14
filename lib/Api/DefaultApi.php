@@ -3215,6 +3215,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
+     * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
@@ -3222,9 +3225,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\AdministrativeAreasResponse
      */
-    public function listAdministrativeAreaRegion($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    public function listAdministrativeAreaRegion($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
     {
-        list($response) = $this->listAdministrativeAreaRegionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_timezone, $accept_language);
+        list($response) = $this->listAdministrativeAreaRegionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language);
         return $response;
     }
 
@@ -3241,6 +3244,9 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
+     * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
@@ -3248,10 +3254,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\AdministrativeAreasResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAdministrativeAreaRegionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    public function listAdministrativeAreaRegionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\AdministrativeAreasResponse';
-        $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_timezone, $accept_language);
+        $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3325,15 +3331,18 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
+     * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAdministrativeAreaRegionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    public function listAdministrativeAreaRegionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
     {
-        return $this->listAdministrativeAreaRegionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_timezone, $accept_language)
+        return $this->listAdministrativeAreaRegionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3354,16 +3363,19 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
+     * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAdministrativeAreaRegionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    public function listAdministrativeAreaRegionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\AdministrativeAreasResponse';
-        $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_timezone, $accept_language);
+        $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3413,13 +3425,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
+     * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listAdministrativeAreaRegionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    protected function listAdministrativeAreaRegionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
     {
 
         $resourcePath = '/areas';
@@ -3460,6 +3475,18 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // query params
+        if ($admin_areas_only !== null) {
+            $queryParams['adminAreasOnly'] = ObjectSerializer::toQueryValue($admin_areas_only);
+        }
+        // query params
+        if ($root_objects_only !== null) {
+            $queryParams['rootObjectsOnly'] = ObjectSerializer::toQueryValue($root_objects_only);
         }
         // header params
         if ($accept_timezone !== null) {
@@ -3557,15 +3584,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\CategoriesResponse
      */
-    public function listCategory($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null)
+    public function listCategory($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
     {
-        list($response) = $this->listCategoryWithHttpInfo($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language);
+        list($response) = $this->listCategoryWithHttpInfo($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language);
         return $response;
     }
 
@@ -3581,16 +3610,18 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\CategoriesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCategoryWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null)
+    public function listCategoryWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\CategoriesResponse';
-        $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language);
+        $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3663,14 +3694,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCategoryAsync($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null)
+    public function listCategoryAsync($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
     {
-        return $this->listCategoryAsyncWithHttpInfo($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language)
+        return $this->listCategoryAsyncWithHttpInfo($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3690,15 +3723,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCategoryAsyncWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null)
+    public function listCategoryAsyncWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\CategoriesResponse';
-        $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language);
+        $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3747,12 +3782,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listCategoryRequest($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null)
+    protected function listCategoryRequest($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
     {
 
         $resourcePath = '/categories';
@@ -3789,6 +3826,14 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // query params
+        if ($root_objects_only !== null) {
+            $queryParams['rootObjectsOnly'] = ObjectSerializer::toQueryValue($root_objects_only);
         }
         // header params
         if ($accept_language !== null) {
@@ -3883,6 +3928,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -3890,9 +3936,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\CivicStructuresResponse
      */
-    public function listCivicStructure($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listCivicStructure($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listCivicStructureWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        list($response) = $this->listCivicStructureWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -3909,6 +3955,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -3916,10 +3963,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\CivicStructuresResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCivicStructureWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listCivicStructureWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\CivicStructuresResponse';
-        $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3993,15 +4040,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCivicStructureAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listCivicStructureAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listCivicStructureAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
+        return $this->listCivicStructureAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4022,16 +4070,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCivicStructureAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listCivicStructureAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\CivicStructuresResponse';
-        $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4081,13 +4130,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listCivicStructureRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    protected function listCivicStructureRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/civicStructures';
@@ -4128,6 +4178,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_language !== null) {
@@ -4226,6 +4280,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
@@ -4233,9 +4288,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\ConditionsResponse
      */
-    public function listCondition($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    public function listCondition($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
-        list($response) = $this->listConditionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_timezone, $accept_language);
+        list($response) = $this->listConditionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language);
         return $response;
     }
 
@@ -4252,6 +4307,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
@@ -4259,10 +4315,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\ConditionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listConditionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    public function listConditionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\ConditionsResponse';
-        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_timezone, $accept_language);
+        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4336,15 +4392,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listConditionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    public function listConditionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
-        return $this->listConditionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_timezone, $accept_language)
+        return $this->listConditionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4365,16 +4422,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listConditionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    public function listConditionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\ConditionsResponse';
-        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_timezone, $accept_language);
+        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4424,13 +4482,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listConditionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    protected function listConditionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
 
         $resourcePath = '/conditions';
@@ -4471,6 +4530,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_timezone !== null) {
@@ -4567,6 +4630,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -4574,9 +4638,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\CreativeWorksResponse
      */
-    public function listCreativeWork($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listCreativeWork($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listCreativeWorkWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        list($response) = $this->listCreativeWorkWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -4591,6 +4655,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -4598,10 +4663,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\CreativeWorksResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCreativeWorkWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listCreativeWorkWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\CreativeWorksResponse';
-        $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4673,15 +4738,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCreativeWorkAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listCreativeWorkAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listCreativeWorkAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
+        return $this->listCreativeWorkAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4700,16 +4766,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCreativeWorkAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listCreativeWorkAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\CreativeWorksResponse';
-        $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4757,13 +4824,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listCreativeWorkRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    protected function listCreativeWorkRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/creativeWorks';
@@ -4796,6 +4864,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_language !== null) {
@@ -4895,6 +4967,7 @@ class DefaultApi
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
@@ -4902,9 +4975,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\EventsResponse
      */
-    public function listEvents($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    public function listEvents($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
-        list($response) = $this->listEventsWithHttpInfo($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $accept_timezone, $accept_language);
+        list($response) = $this->listEventsWithHttpInfo($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language);
         return $response;
     }
 
@@ -4922,6 +4995,7 @@ class DefaultApi
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
@@ -4929,10 +5003,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\EventsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listEventsWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    public function listEventsWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\EventsResponse';
-        $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $accept_timezone, $accept_language);
+        $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5007,15 +5081,16 @@ class DefaultApi
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listEventsAsync($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    public function listEventsAsync($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
-        return $this->listEventsAsyncWithHttpInfo($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $accept_timezone, $accept_language)
+        return $this->listEventsAsyncWithHttpInfo($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5037,16 +5112,17 @@ class DefaultApi
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listEventsAsyncWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    public function listEventsAsyncWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\EventsResponse';
-        $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $accept_timezone, $accept_language);
+        $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5097,13 +5173,14 @@ class DefaultApi
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listEventsRequest($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $accept_timezone = null, $accept_language = null)
+    protected function listEventsRequest($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
     {
 
         $resourcePath = '/events';
@@ -5148,6 +5225,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_timezone !== null) {
@@ -5246,6 +5327,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -5253,9 +5335,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\FoodEstablishmentsResponse
      */
-    public function listFoodEstablishment($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listFoodEstablishment($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listFoodEstablishmentWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        list($response) = $this->listFoodEstablishmentWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -5272,6 +5354,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -5279,10 +5362,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\FoodEstablishmentsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listFoodEstablishmentWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listFoodEstablishmentWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\FoodEstablishmentsResponse';
-        $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5356,15 +5439,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listFoodEstablishmentAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listFoodEstablishmentAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listFoodEstablishmentAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
+        return $this->listFoodEstablishmentAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5385,16 +5469,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listFoodEstablishmentAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listFoodEstablishmentAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\FoodEstablishmentsResponse';
-        $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5444,13 +5529,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listFoodEstablishmentRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    protected function listFoodEstablishmentRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/foodEstablishments';
@@ -5491,6 +5577,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_language !== null) {
@@ -5587,6 +5677,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -5594,9 +5685,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\ImageObjectsResponse
      */
-    public function listImageObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listImageObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listImageObjectWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        list($response) = $this->listImageObjectWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -5611,6 +5702,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -5618,10 +5710,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\ImageObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listImageObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listImageObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\ImageObjectsResponse';
-        $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5693,15 +5785,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listImageObjectAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listImageObjectAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listImageObjectAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
+        return $this->listImageObjectAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5720,16 +5813,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listImageObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listImageObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\ImageObjectsResponse';
-        $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5777,13 +5871,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listImageObjectRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    protected function listImageObjectRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/imageObjects';
@@ -5816,6 +5911,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_language !== null) {
@@ -5914,6 +6013,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -5921,9 +6021,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\LocalBusinessesResponse
      */
-    public function listLocalBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listLocalBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listLocalBusinessWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        list($response) = $this->listLocalBusinessWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -5940,6 +6040,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -5947,10 +6048,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\LocalBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLocalBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listLocalBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\LocalBusinessesResponse';
-        $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6024,15 +6125,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLocalBusinessAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listLocalBusinessAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listLocalBusinessAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
+        return $this->listLocalBusinessAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6053,16 +6155,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLocalBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listLocalBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\LocalBusinessesResponse';
-        $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6112,13 +6215,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listLocalBusinessRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    protected function listLocalBusinessRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/localbusinesses';
@@ -6159,6 +6263,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_language !== null) {
@@ -6257,6 +6365,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -6264,9 +6373,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\LodgingBusinessesResponse
      */
-    public function listLodgingBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listLodgingBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listLodgingBusinessWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        list($response) = $this->listLodgingBusinessWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -6283,6 +6392,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -6290,10 +6400,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\LodgingBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLodgingBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listLodgingBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\LodgingBusinessesResponse';
-        $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6367,15 +6477,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLodgingBusinessAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listLodgingBusinessAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listLodgingBusinessAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
+        return $this->listLodgingBusinessAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6396,16 +6507,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLodgingBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listLodgingBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\LodgingBusinessesResponse';
-        $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6455,13 +6567,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listLodgingBusinessRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    protected function listLodgingBusinessRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/lodgingbusinesses';
@@ -6502,6 +6615,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_language !== null) {
@@ -6598,6 +6715,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -6605,9 +6723,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\MediaObjectsResponse
      */
-    public function listMediaObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listMediaObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listMediaObjectWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        list($response) = $this->listMediaObjectWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -6622,6 +6740,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -6629,10 +6748,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\MediaObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listMediaObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listMediaObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\MediaObjectsResponse';
-        $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6704,15 +6823,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMediaObjectAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listMediaObjectAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listMediaObjectAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
+        return $this->listMediaObjectAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6731,16 +6851,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMediaObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listMediaObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\MediaObjectsResponse';
-        $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6788,13 +6909,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listMediaObjectRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    protected function listMediaObjectRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/mediaObjects';
@@ -6827,6 +6949,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_language !== null) {
@@ -6925,6 +7051,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -6932,9 +7059,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\PlacesResponse
      */
-    public function listPlace($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listPlace($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listPlaceWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        list($response) = $this->listPlaceWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -6951,6 +7078,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -6958,10 +7086,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\PlacesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listPlaceWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listPlaceWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\PlacesResponse';
-        $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7035,15 +7163,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPlaceAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listPlaceAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listPlaceAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
+        return $this->listPlaceAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7064,16 +7193,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPlaceAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listPlaceAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\PlacesResponse';
-        $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7123,13 +7253,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listPlaceRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    protected function listPlaceRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/places';
@@ -7170,6 +7301,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_language !== null) {
@@ -7265,15 +7400,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\ProductsResponse
      */
-    public function listProducts($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null)
+    public function listProducts($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
     {
-        list($response) = $this->listProductsWithHttpInfo($datasource, $continuation_token, $top, $project, $select, $accept_language);
+        list($response) = $this->listProductsWithHttpInfo($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language);
         return $response;
     }
 
@@ -7287,16 +7423,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\ProductsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listProductsWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null)
+    public function listProductsWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\ProductsResponse';
-        $request = $this->listProductsRequest($datasource, $continuation_token, $top, $project, $select, $accept_language);
+        $request = $this->listProductsRequest($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7367,14 +7504,15 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProductsAsync($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null)
+    public function listProductsAsync($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
     {
-        return $this->listProductsAsyncWithHttpInfo($datasource, $continuation_token, $top, $project, $select, $accept_language)
+        return $this->listProductsAsyncWithHttpInfo($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7392,15 +7530,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProductsAsyncWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null)
+    public function listProductsAsyncWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\ProductsResponse';
-        $request = $this->listProductsRequest($datasource, $continuation_token, $top, $project, $select, $accept_language);
+        $request = $this->listProductsRequest($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7447,12 +7586,13 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listProductsRequest($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null)
+    protected function listProductsRequest($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
     {
 
         $resourcePath = '/products';
@@ -7481,6 +7621,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_language !== null) {
@@ -7828,6 +7972,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -7835,9 +7980,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\ToursResponse
      */
-    public function listTour($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listTour($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listTourWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        list($response) = $this->listTourWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -7854,6 +7999,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -7861,10 +8007,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\ToursResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listTourWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listTourWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\ToursResponse';
-        $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7938,15 +8084,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTourAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listTourAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listTourAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
+        return $this->listTourAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7967,16 +8114,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTourAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listTourAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\ToursResponse';
-        $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8026,13 +8174,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listTourRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    protected function listTourRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/tours';
@@ -8073,6 +8222,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_language !== null) {
@@ -8171,6 +8324,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -8178,9 +8332,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\WebcamsResponse
      */
-    public function listWebcams($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listWebcams($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listWebcamsWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        list($response) = $this->listWebcamsWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -8197,6 +8351,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
@@ -8204,10 +8359,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\WebcamsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listWebcamsWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listWebcamsWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\WebcamsResponse';
-        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8281,15 +8436,16 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listWebcamsAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listWebcamsAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listWebcamsAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone)
+        return $this->listWebcamsAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8310,16 +8466,17 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listWebcamsAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    public function listWebcamsAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\WebcamsResponse';
-        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $accept_language, $accept_timezone);
+        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8369,13 +8526,14 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $accept_language Localized properties. (optional)
      * @param  string $accept_timezone Time zone ID for response dates and times (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listWebcamsRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $accept_language = null, $accept_timezone = null)
+    protected function listWebcamsRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/webcams';
@@ -8416,6 +8574,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($include_count !== null) {
+            $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
         }
         // header params
         if ($accept_language !== null) {

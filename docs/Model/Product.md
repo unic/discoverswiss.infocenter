@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **datasource** | **string** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\DataGovernance**](DataGovernance.md) |  | [optional] 
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**available_data_language** | **string[]** |  | [optional] 
 **name** | **string** |  | [optional] 
 **sku** | **string** |  | [optional] 
 **price_list** | [**\Infocenter\Client\Model\ProductPrice[]**](ProductPrice.md) |  | [optional] 

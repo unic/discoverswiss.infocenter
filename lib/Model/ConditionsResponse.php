@@ -56,7 +56,8 @@ class ConditionsResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'has_next_page' => 'bool',
+        'count' => 'int',
+'has_next_page' => 'bool',
 'next_page_token' => 'string',
 'data' => '\Infocenter\Client\Model\Condition[]'    ];
 
@@ -66,7 +67,8 @@ class ConditionsResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'has_next_page' => null,
+        'count' => 'int32',
+'has_next_page' => null,
 'next_page_token' => null,
 'data' => null    ];
 
@@ -97,7 +99,8 @@ class ConditionsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'has_next_page' => 'hasNextPage',
+        'count' => 'count',
+'has_next_page' => 'hasNextPage',
 'next_page_token' => 'nextPageToken',
 'data' => 'data'    ];
 
@@ -107,7 +110,8 @@ class ConditionsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'has_next_page' => 'setHasNextPage',
+        'count' => 'setCount',
+'has_next_page' => 'setHasNextPage',
 'next_page_token' => 'setNextPageToken',
 'data' => 'setData'    ];
 
@@ -117,7 +121,8 @@ class ConditionsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'has_next_page' => 'getHasNextPage',
+        'count' => 'getCount',
+'has_next_page' => 'getHasNextPage',
 'next_page_token' => 'getNextPageToken',
 'data' => 'getData'    ];
 
@@ -179,6 +184,7 @@ class ConditionsResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['has_next_page'] = isset($data['has_next_page']) ? $data['has_next_page'] : null;
         $this->container['next_page_token'] = isset($data['next_page_token']) ? $data['next_page_token'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
@@ -207,6 +213,30 @@ class ConditionsResponse implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets count
+     *
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     *
+     * @param int $count count
+     *
+     * @return $this
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
+
+        return $this;
+    }
 
     /**
      * Gets has_next_page

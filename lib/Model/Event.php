@@ -76,6 +76,7 @@ class Event implements ModelInterface, ArrayAccess
 'datasource' => 'string',
 'data_governance' => '\Infocenter\Client\Model\DataGovernance',
 'last_modified' => '\DateTime',
+'available_data_language' => 'string[]',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -113,6 +114,7 @@ class Event implements ModelInterface, ArrayAccess
 'datasource' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
+'available_data_language' => null,
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -171,6 +173,7 @@ class Event implements ModelInterface, ArrayAccess
 'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
+'available_data_language' => 'availableDataLanguage',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -208,6 +211,7 @@ class Event implements ModelInterface, ArrayAccess
 'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
+'available_data_language' => 'setAvailableDataLanguage',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -245,6 +249,7 @@ class Event implements ModelInterface, ArrayAccess
 'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
+'available_data_language' => 'getAvailableDataLanguage',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -334,6 +339,7 @@ class Event implements ModelInterface, ArrayAccess
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
+        $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -846,6 +852,30 @@ class Event implements ModelInterface, ArrayAccess
     public function setLastModified($last_modified)
     {
         $this->container['last_modified'] = $last_modified;
+
+        return $this;
+    }
+
+    /**
+     * Gets available_data_language
+     *
+     * @return string[]
+     */
+    public function getAvailableDataLanguage()
+    {
+        return $this->container['available_data_language'];
+    }
+
+    /**
+     * Sets available_data_language
+     *
+     * @param string[] $available_data_language available_data_language
+     *
+     * @return $this
+     */
+    public function setAvailableDataLanguage($available_data_language)
+    {
+        $this->container['available_data_language'] = $available_data_language;
 
         return $this;
     }

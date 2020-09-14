@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **type** | **string[]** |  | [optional] 
 **datasource** | **string[]** |  | [optional] 
 **project** | **string[]** |  | [optional] 
+**parent_type** | **string[]** |  | [optional] 
 **facets** | [**\Infocenter\Client\Model\FacetRequest[]**](FacetRequest.md) |  | [optional] 
 **search_text** | **string** |  | [optional] 
 **current_page** | **int** |  | [optional] 
