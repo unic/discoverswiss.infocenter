@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**supplier** | [**\Infocenter\Client\Model\DsPartner**](DsPartner.md) |  | [optional] 
+**supplier** | [**\Infocenter\Client\Model\DsPartnerSimplex**](DsPartnerSimplex.md) |  | [optional] 
 **term** | [**\Infocenter\Client\Model\DsTerm**](DsTerm.md) |  | [optional] 
 **source** | [**\Infocenter\Client\Model\DsSource**](DsSource.md) |  | [optional] 
 **author** | **string** |  | [optional] 

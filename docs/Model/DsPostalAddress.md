@@ -15,18 +15,19 @@ Name | Type | Description | Notes
 **email** | **string** |  | [optional] 
 **fax_number** | **string** |  | [optional] 
 **telephone** | **string** |  | [optional] 
-**source** | [**\Infocenter\Client\Model\DsPartner**](DsPartner.md) |  | [optional] 
+**source** | [**\Infocenter\Client\Model\DsPartnerSimplex**](DsPartnerSimplex.md) |  | [optional] 
 **hours_available** | [**\Infocenter\Client\Model\DsOpeningHoursSpecification[]**](DsOpeningHoursSpecification.md) |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **disambiguating_description** | **string** |  | [optional] 
-**image** | [**\Infocenter\Client\Model\DsImageObject**](DsImageObject.md) |  | [optional] 
+**image** | [**\Infocenter\Client\Model\DsImageObjectSimplex**](DsImageObjectSimplex.md) |  | [optional] 
 **same_as** | **string** |  | [optional] 
 **url** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
 **links** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
-**labels** | [**\Infocenter\Client\Model\DsTag[]**](DsTag.md) |  | [optional] 
+**tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **name** | **string** |  | [optional] 
+**type** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**partner** | [**\Infocenter\Client\Model\DsPartner**](DsPartner.md) |  | [optional] 
+**partner** | [**\Infocenter\Client\Model\DsPartnerSimplex**](DsPartnerSimplex.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **logo** | [**\Infocenter\Client\Model\DsLogoImageObject**](DsLogoImageObject.md) |  | [optional] 
 **link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 

@@ -1,6 +1,6 @@
 # Infocenter\Client\DefaultApi
 
-All URIs are relative to *https://api.discover.swiss/test/info*
+All URIs are relative to *https://api.discover.swiss/test/info/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**event**](DefaultApi.md#event) | **GET** /events/{id} | Event
 [**foodEstablishment**](DefaultApi.md#foodestablishment) | **GET** /foodEstablishments/{id} | FoodEstablishment
 [**getStatus**](DefaultApi.md#getstatus) | **GET** /status | GetStatus
+[**getStatusAbout**](DefaultApi.md#getstatusabout) | **GET** /status/about | GetStatusAbout
 [**imageObject**](DefaultApi.md#imageobject) | **GET** /imageObjects/{id} | ImageObject
 [**listAdministrativeAreaRegion**](DefaultApi.md#listadministrativearearegion) | **GET** /areas | List AdministrativeArea (Region)
 [**listCategory**](DefaultApi.md#listcategory) | **GET** /categories | List Category
@@ -28,6 +29,7 @@ Method | HTTP request | Description
 [**listMediaObject**](DefaultApi.md#listmediaobject) | **GET** /mediaObjects | List MediaObject
 [**listPlace**](DefaultApi.md#listplace) | **GET** /places | List Place
 [**listProducts**](DefaultApi.md#listproducts) | **GET** /products | List Products
+[**listTag**](DefaultApi.md#listtag) | **GET** /tags | List Tag
 [**listTimezones**](DefaultApi.md#listtimezones) | **GET** /timezones | List Timezones
 [**listTour**](DefaultApi.md#listtour) | **GET** /tours | List Tour
 [**listWebcams**](DefaultApi.md#listwebcams) | **GET** /webcams | List Webcams
@@ -38,13 +40,14 @@ Method | HTTP request | Description
 [**product**](DefaultApi.md#product) | **GET** /products/{id} | Product
 [**search**](DefaultApi.md#search) | **POST** /search | Search
 [**searchByGET**](DefaultApi.md#searchbyget) | **GET** /search | Search by GET
+[**tag**](DefaultApi.md#tag) | **GET** /tags/{id} | Tag
 [**termVersion**](DefaultApi.md#termversion) | **GET** /termversions/{code} | TermVersion
 [**tour**](DefaultApi.md#tour) | **GET** /tours/{id} | Tour
 [**treeAdministrativeAreaRegion**](DefaultApi.md#treeadministrativearearegion) | **GET** /areas/{id}/tree | Tree AdministrativeArea (Region)
 [**webcam**](DefaultApi.md#webcam) | **GET** /webcams/{id} | Webcam
 
 # **administrativeAreaRegion**
-> \Infocenter\Client\Model\DsAdministrativeArea administrativeAreaRegion($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsAdministrativeArea administrativeAreaRegion($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 AdministrativeArea (Region)
 
@@ -69,11 +72,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Region to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->administrativeAreaRegion($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->administrativeAreaRegion($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->administrativeAreaRegion: ', $e->getMessage(), PHP_EOL;
@@ -86,6 +91,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Region to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -105,7 +112,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **category**
-> \Infocenter\Client\Model\DsCategory category($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCategory category($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 Category
 
@@ -130,11 +137,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Category to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->category($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->category($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->category: ', $e->getMessage(), PHP_EOL;
@@ -147,6 +156,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Category to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -227,7 +238,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **civicStructure**
-> \Infocenter\Client\Model\DsCivicStructure civicStructure($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCivicStructure civicStructure($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 CivicStructure
 
@@ -252,11 +263,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of CivicStructure to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->civicStructure($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->civicStructure($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->civicStructure: ', $e->getMessage(), PHP_EOL;
@@ -269,6 +282,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of CivicStructure to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -288,7 +303,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **condition**
-> \Infocenter\Client\Model\DsCondition condition($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCondition condition($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 Condition
 
@@ -313,11 +328,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Condition to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->condition($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->condition($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->condition: ', $e->getMessage(), PHP_EOL;
@@ -330,6 +347,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Condition to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -349,7 +368,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **creativeWork**
-> \Infocenter\Client\Model\DsCreativeWork creativeWork($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCreativeWork creativeWork($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 CreativeWork
 
@@ -374,11 +393,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of CreativeWork to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->creativeWork($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->creativeWork($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->creativeWork: ', $e->getMessage(), PHP_EOL;
@@ -391,6 +412,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of CreativeWork to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -471,7 +494,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **event**
-> \Infocenter\Client\Model\DsEvent event($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsEvent event($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 Event
 
@@ -496,11 +519,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Event to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->event($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->event($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->event: ', $e->getMessage(), PHP_EOL;
@@ -513,6 +538,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Event to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -532,7 +559,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **foodEstablishment**
-> \Infocenter\Client\Model\DsFoodEstablishment foodEstablishment($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsFoodEstablishment foodEstablishment($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 FoodEstablishment
 
@@ -557,11 +584,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of FoodEstablishment to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->foodEstablishment($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->foodEstablishment($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->foodEstablishment: ', $e->getMessage(), PHP_EOL;
@@ -574,6 +603,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of FoodEstablishment to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -593,7 +624,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getStatus**
-> getStatus()
+> \Infocenter\Client\Model\DsStatusGet200TextPlainResponse getStatus()
 
 GetStatus
 
@@ -619,9 +650,62 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 
 try {
-    $apiInstance->getStatus();
+    $result = $apiInstance->getStatus();
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStatus: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Infocenter\Client\Model\DsStatusGet200TextPlainResponse**](../Model/DsStatusGet200TextPlainResponse.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getStatusAbout**
+> getStatusAbout()
+
+GetStatusAbout
+
+Get API Status, Version and Name
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $apiInstance->getStatusAbout();
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getStatusAbout: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -645,7 +729,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **imageObject**
-> \Infocenter\Client\Model\DsImageObject imageObject($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsImageObject imageObject($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 ImageObject
 
@@ -670,11 +754,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of ImageObject to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->imageObject($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->imageObject($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->imageObject: ', $e->getMessage(), PHP_EOL;
@@ -687,6 +773,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of ImageObject to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -1690,6 +1778,79 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **listTag**
+> \Infocenter\Client\Model\DsTagsResponse listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+
+List Tag
+
+Get the list of the Tags with full detailed information.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$datasource = "datasource_example"; // string | Use datasource to filter.
+$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
+$top = 56; // int | Format - int32. Number of next set of entities.
+$project = "project_example"; // string | Use this property to filter objects by project
+$select = "select_example"; // string | Pass list of object properties to query
+$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$accept_language = "accept_language_example"; // string | Localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+
+try {
+    $result = $apiInstance->listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->listTag: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **datasource** | **string**| Use datasource to filter. | [optional]
+ **continuation_token** | **string**| Use it for get next set of data. | [optional]
+ **top** | **int**| Format - int32. Number of next set of entities. | [optional]
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
+ **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **accept_language** | **string**| Localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsTagsResponse**](../Model/DsTagsResponse.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **listTimezones**
 > \Infocenter\Client\Model\DsTimeZoneResponseArray listTimezones()
 
@@ -1898,7 +2059,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **localBusiness**
-> \Infocenter\Client\Model\DsLocalBusiness localBusiness($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsLocalBusiness localBusiness($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 LocalBusiness
 
@@ -1923,11 +2084,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of LocalBusiness to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->localBusiness($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->localBusiness($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->localBusiness: ', $e->getMessage(), PHP_EOL;
@@ -1940,6 +2103,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of LocalBusiness to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -1959,7 +2124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lodgingBusiness**
-> \Infocenter\Client\Model\DsLodgingBusiness lodgingBusiness($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsLodgingBusiness lodgingBusiness($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 LodgingBusiness
 
@@ -1984,11 +2149,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of LodgingBusiness to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->lodgingBusiness($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->lodgingBusiness($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->lodgingBusiness: ', $e->getMessage(), PHP_EOL;
@@ -2001,6 +2168,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of LodgingBusiness to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -2020,7 +2189,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **mediaObject**
-> \Infocenter\Client\Model\DsMediaObject mediaObject($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsMediaObject mediaObject($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 MediaObject
 
@@ -2045,11 +2214,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of MediaObject to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->mediaObject($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->mediaObject($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->mediaObject: ', $e->getMessage(), PHP_EOL;
@@ -2062,6 +2233,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of MediaObject to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -2081,7 +2254,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **place**
-> \Infocenter\Client\Model\DsPlace place($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsPlace place($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 Place
 
@@ -2106,11 +2279,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Place to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->place($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->place($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->place: ', $e->getMessage(), PHP_EOL;
@@ -2123,6 +2298,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Place to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -2142,7 +2319,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **product**
-> \Infocenter\Client\Model\DsProduct product($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsProduct product($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 Product
 
@@ -2167,11 +2344,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Product to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->product($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->product($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->product: ', $e->getMessage(), PHP_EOL;
@@ -2184,6 +2363,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Product to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -2332,6 +2513,69 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **tag**
+> \Infocenter\Client\Model\DsTag tag($id, $project, $accept_language, $accept_timezone)
+
+Tag
+
+Get the full detailed information of a Tag object.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Tag to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$accept_language = "accept_language_example"; // string | Localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+
+try {
+    $result = $apiInstance->tag($id, $project, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->tag: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of Tag to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **accept_language** | **string**| Localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsTag**](../Model/DsTag.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **termVersion**
 > \Infocenter\Client\Model\DsTermVersion termVersion($code, $accept_language, $accept_timezone)
 
@@ -2394,7 +2638,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tour**
-> \Infocenter\Client\Model\DsTour tour($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTour tour($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 Tour
 
@@ -2419,11 +2663,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Tour to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->tour($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->tour($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->tour: ', $e->getMessage(), PHP_EOL;
@@ -2436,6 +2682,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Tour to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 
@@ -2520,7 +2768,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **webcam**
-> \Infocenter\Client\Model\DsWebcam webcam($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWebcam webcam($id, $project, $contained_in_place, $accept_language, $accept_timezone)
 
 Webcam
 
@@ -2545,11 +2793,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Webcam to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $accept_language = "accept_language_example"; // string | Localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
 
 try {
-    $result = $apiInstance->webcam($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->webcam($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->webcam: ', $e->getMessage(), PHP_EOL;
@@ -2562,6 +2812,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Webcam to get single object. |
+ **project** | **string**| Use this property to filter objects by project | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **accept_language** | **string**| Localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID for response dates and times | [optional]
 

@@ -8,13 +8,14 @@ Name | Type | Description | Notes
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **disambiguating_description** | **string** |  | [optional] 
-**image** | [**\Infocenter\Client\Model\DsImageObject**](DsImageObject.md) |  | [optional] 
+**image** | [**\Infocenter\Client\Model\DsImageObjectSimplex**](DsImageObjectSimplex.md) |  | [optional] 
 **same_as** | **string** |  | [optional] 
 **url** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
 **links** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
-**labels** | [**\Infocenter\Client\Model\DsTag[]**](DsTag.md) |  | [optional] 
+**tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **name** | **string** |  | [optional] 
+**type** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
