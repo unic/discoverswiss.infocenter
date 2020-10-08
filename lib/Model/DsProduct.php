@@ -65,7 +65,8 @@ class DsProduct implements ModelInterface, ArrayAccess
 'name' => 'string',
 'sku' => 'string',
 'price_list' => '\Infocenter\Client\Model\DsProductPrice[]',
-'tax_rate' => 'double'    ];
+'tax_rate' => 'double',
+'contains_translated_data' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -82,7 +83,8 @@ class DsProduct implements ModelInterface, ArrayAccess
 'name' => null,
 'sku' => null,
 'price_list' => null,
-'tax_rate' => 'double'    ];
+'tax_rate' => 'double',
+'contains_translated_data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -120,7 +122,8 @@ class DsProduct implements ModelInterface, ArrayAccess
 'name' => 'name',
 'sku' => 'sku',
 'price_list' => 'priceList',
-'tax_rate' => 'taxRate'    ];
+'tax_rate' => 'taxRate',
+'contains_translated_data' => 'containsTranslatedData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -137,7 +140,8 @@ class DsProduct implements ModelInterface, ArrayAccess
 'name' => 'setName',
 'sku' => 'setSku',
 'price_list' => 'setPriceList',
-'tax_rate' => 'setTaxRate'    ];
+'tax_rate' => 'setTaxRate',
+'contains_translated_data' => 'setContainsTranslatedData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -154,7 +158,8 @@ class DsProduct implements ModelInterface, ArrayAccess
 'name' => 'getName',
 'sku' => 'getSku',
 'price_list' => 'getPriceList',
-'tax_rate' => 'getTaxRate'    ];
+'tax_rate' => 'getTaxRate',
+'contains_translated_data' => 'getContainsTranslatedData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -224,6 +229,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['sku'] = isset($data['sku']) ? $data['sku'] : null;
         $this->container['price_list'] = isset($data['price_list']) ? $data['price_list'] : null;
         $this->container['tax_rate'] = isset($data['tax_rate']) ? $data['tax_rate'] : null;
+        $this->container['contains_translated_data'] = isset($data['contains_translated_data']) ? $data['contains_translated_data'] : null;
     }
 
     /**
@@ -486,6 +492,30 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setTaxRate($tax_rate)
     {
         $this->container['tax_rate'] = $tax_rate;
+
+        return $this;
+    }
+
+    /**
+     * Gets contains_translated_data
+     *
+     * @return bool
+     */
+    public function getContainsTranslatedData()
+    {
+        return $this->container['contains_translated_data'];
+    }
+
+    /**
+     * Sets contains_translated_data
+     *
+     * @param bool $contains_translated_data contains_translated_data
+     *
+     * @return $this
+     */
+    public function setContainsTranslatedData($contains_translated_data)
+    {
+        $this->container['contains_translated_data'] = $contains_translated_data;
 
         return $this;
     }

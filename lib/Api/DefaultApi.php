@@ -3083,11 +3083,12 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Infocenter\Client\Model\DsStatusResponse
      */
     public function getStatusAbout()
     {
-        $this->getStatusAboutWithHttpInfo();
+        list($response) = $this->getStatusAboutWithHttpInfo();
+        return $response;
     }
 
     /**
@@ -3098,11 +3099,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsStatusResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStatusAboutWithHttpInfo()
     {
-        $returnType = '';
+        $returnType = '\Infocenter\Client\Model\DsStatusResponse';
         $request = $this->getStatusAboutRequest();
 
         try {
@@ -3133,10 +3134,32 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsStatusResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -3172,14 +3195,28 @@ class DefaultApi
      */
     public function getStatusAboutAsyncWithHttpInfo()
     {
-        $returnType = '';
+        $returnType = '\Infocenter\Client\Model\DsStatusResponse';
         $request = $this->getStatusAboutRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3222,11 +3259,11 @@ class DefaultApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
+                ['text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                [],
+                ['text/plain'],
                 []
             );
         }

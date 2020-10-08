@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **by_day** | **string[]** |  | [optional] 
 **start_date** | **string** |  | [optional] 
 **end_date** | **string** |  | [optional] 
-**start_time** | [**\Infocenter\Client\Model\DsScheduleStartTime**](DsScheduleStartTime.md) |  | [optional] 
-**end_time** | [**\Infocenter\Client\Model\DsScheduleStartTime**](DsScheduleStartTime.md) |  | [optional] 
+**start_time** | **string** |  | [optional] 
+**end_time** | **string** |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **disambiguating_description** | **string** |  | [optional] 
@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **additional_type** | **string** |  | [optional] 
 **links** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
 **tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
+**contains_translated_data** | **bool** |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

@@ -67,6 +67,7 @@ class DsOrganization implements ModelInterface, ArrayAccess
 'additional_type' => 'string',
 'links' => '\Infocenter\Client\Model\DsLink[]',
 'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'contains_translated_data' => 'bool',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -87,6 +88,7 @@ class DsOrganization implements ModelInterface, ArrayAccess
 'additional_type' => null,
 'links' => null,
 'tag' => null,
+'contains_translated_data' => null,
 'name' => null,
 'type' => null    ];
 
@@ -128,6 +130,7 @@ class DsOrganization implements ModelInterface, ArrayAccess
 'additional_type' => 'additionalType',
 'links' => 'links',
 'tag' => 'tag',
+'contains_translated_data' => 'containsTranslatedData',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -148,6 +151,7 @@ class DsOrganization implements ModelInterface, ArrayAccess
 'additional_type' => 'setAdditionalType',
 'links' => 'setLinks',
 'tag' => 'setTag',
+'contains_translated_data' => 'setContainsTranslatedData',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -168,6 +172,7 @@ class DsOrganization implements ModelInterface, ArrayAccess
 'additional_type' => 'getAdditionalType',
 'links' => 'getLinks',
 'tag' => 'getTag',
+'contains_translated_data' => 'getContainsTranslatedData',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -240,6 +245,7 @@ class DsOrganization implements ModelInterface, ArrayAccess
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
+        $this->container['contains_translated_data'] = isset($data['contains_translated_data']) ? $data['contains_translated_data'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -528,6 +534,30 @@ class DsOrganization implements ModelInterface, ArrayAccess
     public function setTag($tag)
     {
         $this->container['tag'] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets contains_translated_data
+     *
+     * @return bool
+     */
+    public function getContainsTranslatedData()
+    {
+        return $this->container['contains_translated_data'];
+    }
+
+    /**
+     * Sets contains_translated_data
+     *
+     * @param bool $contains_translated_data contains_translated_data
+     *
+     * @return $this
+     */
+    public function setContainsTranslatedData($contains_translated_data)
+    {
+        $this->container['contains_translated_data'] = $contains_translated_data;
 
         return $this;
     }

@@ -64,6 +64,7 @@ class DsTag implements ModelInterface, ArrayAccess
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
+'contains_translated_data' => 'bool',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -81,6 +82,7 @@ class DsTag implements ModelInterface, ArrayAccess
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
+'contains_translated_data' => null,
 'name' => null,
 'type' => null    ];
 
@@ -119,6 +121,7 @@ class DsTag implements ModelInterface, ArrayAccess
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
+'contains_translated_data' => 'containsTranslatedData',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -136,6 +139,7 @@ class DsTag implements ModelInterface, ArrayAccess
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
+'contains_translated_data' => 'setContainsTranslatedData',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -153,6 +157,7 @@ class DsTag implements ModelInterface, ArrayAccess
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
+'contains_translated_data' => 'getContainsTranslatedData',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -222,6 +227,7 @@ class DsTag implements ModelInterface, ArrayAccess
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
+        $this->container['contains_translated_data'] = isset($data['contains_translated_data']) ? $data['contains_translated_data'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -438,6 +444,30 @@ class DsTag implements ModelInterface, ArrayAccess
     public function setAvailableDataLanguage($available_data_language)
     {
         $this->container['available_data_language'] = $available_data_language;
+
+        return $this;
+    }
+
+    /**
+     * Gets contains_translated_data
+     *
+     * @return bool
+     */
+    public function getContainsTranslatedData()
+    {
+        return $this->container['contains_translated_data'];
+    }
+
+    /**
+     * Sets contains_translated_data
+     *
+     * @param bool $contains_translated_data contains_translated_data
+     *
+     * @return $this
+     */
+    public function setContainsTranslatedData($contains_translated_data)
+    {
+        $this->container['contains_translated_data'] = $contains_translated_data;
 
         return $this;
     }

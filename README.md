@@ -344,7 +344,8 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 
 try {
-    $apiInstance->getStatusAbout();
+    $result = $apiInstance->getStatusAbout();
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStatusAbout: ', $e->getMessage(), PHP_EOL;
 }
@@ -1380,10 +1381,10 @@ Class | Method | HTTP request | Description
  - [DsQuantitativeValue](docs/Model/DsQuantitativeValue.md)
  - [DsRating](docs/Model/DsRating.md)
  - [DsSchedule](docs/Model/DsSchedule.md)
- - [DsScheduleStartTime](docs/Model/DsScheduleStartTime.md)
  - [DsSearchResponse](docs/Model/DsSearchResponse.md)
  - [DsSource](docs/Model/DsSource.md)
  - [DsStatusGet200TextPlainResponse](docs/Model/DsStatusGet200TextPlainResponse.md)
+ - [DsStatusResponse](docs/Model/DsStatusResponse.md)
  - [DsTag](docs/Model/DsTag.md)
  - [DsTagSimplex](docs/Model/DsTagSimplex.md)
  - [DsTagsResponse](docs/Model/DsTagsResponse.md)

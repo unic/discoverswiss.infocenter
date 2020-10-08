@@ -677,7 +677,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getStatusAbout**
-> getStatusAbout()
+> \Infocenter\Client\Model\DsStatusResponse getStatusAbout()
 
 GetStatusAbout
 
@@ -703,7 +703,8 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 
 try {
-    $apiInstance->getStatusAbout();
+    $result = $apiInstance->getStatusAbout();
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStatusAbout: ', $e->getMessage(), PHP_EOL;
 }
@@ -715,7 +716,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**\Infocenter\Client\Model\DsStatusResponse**](../Model/DsStatusResponse.md)
 
 ### Authorization
 
@@ -724,7 +725,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

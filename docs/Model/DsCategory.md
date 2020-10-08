@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **available_data_language** | **string[]** |  | [optional] 
 **name_plural** | **string** |  | [optional] 
+**contains_translated_data** | **bool** |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

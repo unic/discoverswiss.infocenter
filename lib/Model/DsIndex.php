@@ -64,7 +64,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'type' => 'string',
 'additional_type' => 'string',
 'address' => '\Infocenter\Client\Model\DsPostalAddress',
-'geo' => 'string',
+'geo' => '\Infocenter\Client\Model\DsGeoCoordinates',
 'opening_hours' => 'string',
 'image' => '\Infocenter\Client\Model\DsImageObjectSimplex',
 'name' => 'string',
@@ -499,7 +499,7 @@ class DsIndex implements ModelInterface, ArrayAccess
     /**
      * Gets geo
      *
-     * @return string
+     * @return \Infocenter\Client\Model\DsGeoCoordinates
      */
     public function getGeo()
     {
@@ -509,7 +509,7 @@ class DsIndex implements ModelInterface, ArrayAccess
     /**
      * Sets geo
      *
-     * @param string $geo geo
+     * @param \Infocenter\Client\Model\DsGeoCoordinates $geo geo
      *
      * @return $this
      */
