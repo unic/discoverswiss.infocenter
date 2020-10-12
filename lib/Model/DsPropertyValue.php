@@ -60,7 +60,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'min_value' => 'double',
 'unit_code' => 'string',
 'unit_text' => 'string',
-'value' => '\Infocenter\Client\Model\DsObject',
+'value' => 'string',
 'property_id' => 'string',
 'value_type' => 'string',
 'alternate_name' => 'string',
@@ -397,7 +397,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Gets value
      *
-     * @return \Infocenter\Client\Model\DsObject
+     * @return string
      */
     public function getValue()
     {
@@ -407,7 +407,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param \Infocenter\Client\Model\DsObject $value value
+     * @param string $value value
      *
      * @return $this
      */
