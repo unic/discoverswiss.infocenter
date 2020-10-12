@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **sku** | **string** |  | [optional] 
 **price_list** | [**\Infocenter\Client\Model\DsProductPrice[]**](DsProductPrice.md) |  | [optional] 
 **tax_rate** | **double** |  | [optional] 
-**contains_translated_data** | **bool** |  | [optional] 
+**auto_translated_data** | **bool** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

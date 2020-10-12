@@ -66,7 +66,7 @@ class DsCategory implements ModelInterface, ArrayAccess
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
 'name_plural' => 'string',
-'contains_translated_data' => 'bool',
+'auto_translated_data' => 'bool',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -86,7 +86,7 @@ class DsCategory implements ModelInterface, ArrayAccess
 'last_modified' => 'date-time',
 'available_data_language' => null,
 'name_plural' => null,
-'contains_translated_data' => null,
+'auto_translated_data' => null,
 'name' => null,
 'type' => null    ];
 
@@ -127,7 +127,7 @@ class DsCategory implements ModelInterface, ArrayAccess
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
 'name_plural' => 'namePlural',
-'contains_translated_data' => 'containsTranslatedData',
+'auto_translated_data' => 'autoTranslatedData',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -147,7 +147,7 @@ class DsCategory implements ModelInterface, ArrayAccess
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
 'name_plural' => 'setNamePlural',
-'contains_translated_data' => 'setContainsTranslatedData',
+'auto_translated_data' => 'setAutoTranslatedData',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -167,7 +167,7 @@ class DsCategory implements ModelInterface, ArrayAccess
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
 'name_plural' => 'getNamePlural',
-'contains_translated_data' => 'getContainsTranslatedData',
+'auto_translated_data' => 'getAutoTranslatedData',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -239,7 +239,7 @@ class DsCategory implements ModelInterface, ArrayAccess
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
         $this->container['name_plural'] = isset($data['name_plural']) ? $data['name_plural'] : null;
-        $this->container['contains_translated_data'] = isset($data['contains_translated_data']) ? $data['contains_translated_data'] : null;
+        $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -509,25 +509,25 @@ class DsCategory implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets contains_translated_data
+     * Gets auto_translated_data
      *
      * @return bool
      */
-    public function getContainsTranslatedData()
+    public function getAutoTranslatedData()
     {
-        return $this->container['contains_translated_data'];
+        return $this->container['auto_translated_data'];
     }
 
     /**
-     * Sets contains_translated_data
+     * Sets auto_translated_data
      *
-     * @param bool $contains_translated_data contains_translated_data
+     * @param bool $auto_translated_data auto_translated_data
      *
      * @return $this
      */
-    public function setContainsTranslatedData($contains_translated_data)
+    public function setAutoTranslatedData($auto_translated_data)
     {
-        $this->container['contains_translated_data'] = $contains_translated_data;
+        $this->container['auto_translated_data'] = $auto_translated_data;
 
         return $this;
     }

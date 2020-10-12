@@ -92,10 +92,10 @@ class DefaultApi
      * AdministrativeArea (Region)
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -113,10 +113,10 @@ class DefaultApi
      * AdministrativeArea (Region)
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -192,10 +192,10 @@ class DefaultApi
      * AdministrativeArea (Region)
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -216,10 +216,10 @@ class DefaultApi
      * AdministrativeArea (Region)
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -270,10 +270,10 @@ class DefaultApi
      * Create request for operation 'administrativeAreaRegion'
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -395,15 +395,975 @@ class DefaultApi
     }
 
     /**
+     * Operation administrativeAreaRegionDailyForecast
+     *
+     * AdministrativeArea (Region) daily forecast
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     */
+    public function administrativeAreaRegionDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->administrativeAreaRegionDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation administrativeAreaRegionDailyForecastWithHttpInfo
+     *
+     * AdministrativeArea (Region) daily forecast
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function administrativeAreaRegionDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->administrativeAreaRegionDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation administrativeAreaRegionDailyForecastAsync
+     *
+     * AdministrativeArea (Region) daily forecast
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function administrativeAreaRegionDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->administrativeAreaRegionDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation administrativeAreaRegionDailyForecastAsyncWithHttpInfo
+     *
+     * AdministrativeArea (Region) daily forecast
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function administrativeAreaRegionDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->administrativeAreaRegionDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'administrativeAreaRegionDailyForecast'
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function administrativeAreaRegionDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling administrativeAreaRegionDailyForecast'
+            );
+        }
+
+        $resourcePath = '/areas/{id}/weather/forecast/daily';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation administrativeAreaRegionHourlyForecast
+     *
+     * AdministrativeArea (Region) hourly forecast
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsHourlyForecastArray
+     */
+    public function administrativeAreaRegionHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->administrativeAreaRegionHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation administrativeAreaRegionHourlyForecastWithHttpInfo
+     *
+     * AdministrativeArea (Region) hourly forecast
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function administrativeAreaRegionHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->administrativeAreaRegionHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsHourlyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation administrativeAreaRegionHourlyForecastAsync
+     *
+     * AdministrativeArea (Region) hourly forecast
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function administrativeAreaRegionHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->administrativeAreaRegionHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation administrativeAreaRegionHourlyForecastAsyncWithHttpInfo
+     *
+     * AdministrativeArea (Region) hourly forecast
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function administrativeAreaRegionHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->administrativeAreaRegionHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'administrativeAreaRegionHourlyForecast'
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function administrativeAreaRegionHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling administrativeAreaRegionHourlyForecast'
+            );
+        }
+
+        $resourcePath = '/areas/{id}/weather/forecast/hourly';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation administrativeAreaRegionWeather
+     *
+     * AdministrativeArea (Region) weather
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsWeatherArray
+     */
+    public function administrativeAreaRegionWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->administrativeAreaRegionWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation administrativeAreaRegionWeatherWithHttpInfo
+     *
+     * AdministrativeArea (Region) weather
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function administrativeAreaRegionWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->administrativeAreaRegionWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsWeatherArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation administrativeAreaRegionWeatherAsync
+     *
+     * AdministrativeArea (Region) weather
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function administrativeAreaRegionWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->administrativeAreaRegionWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation administrativeAreaRegionWeatherAsyncWithHttpInfo
+     *
+     * AdministrativeArea (Region) weather
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function administrativeAreaRegionWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->administrativeAreaRegionWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'administrativeAreaRegionWeather'
+     *
+     * @param  string $id Use property identifier of AdministrativeArea to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function administrativeAreaRegionWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling administrativeAreaRegionWeather'
+            );
+        }
+
+        $resourcePath = '/areas/{id}/weather';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // query params
+        if ($details !== null) {
+            $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation category
      *
      * Category
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -421,10 +1381,10 @@ class DefaultApi
      * Category
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -500,10 +1460,10 @@ class DefaultApi
      * Category
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -524,10 +1484,10 @@ class DefaultApi
      * Category
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -578,10 +1538,10 @@ class DefaultApi
      * Create request for operation 'category'
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -708,8 +1668,8 @@ class DefaultApi
      * Category Tree
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -727,8 +1687,8 @@ class DefaultApi
      * Category Tree
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -804,8 +1764,8 @@ class DefaultApi
      * Category Tree
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -826,8 +1786,8 @@ class DefaultApi
      * Category Tree
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -878,8 +1838,8 @@ class DefaultApi
      * Create request for operation 'categoryTree'
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -998,10 +1958,10 @@ class DefaultApi
      * CivicStructure
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1019,10 +1979,10 @@ class DefaultApi
      * CivicStructure
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1098,10 +2058,10 @@ class DefaultApi
      * CivicStructure
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1122,10 +2082,10 @@ class DefaultApi
      * CivicStructure
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1176,10 +2136,10 @@ class DefaultApi
      * Create request for operation 'civicStructure'
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1301,15 +2261,975 @@ class DefaultApi
     }
 
     /**
+     * Operation civicStructureDailyForecast
+     *
+     * CivicStructure daily forecast
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     */
+    public function civicStructureDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->civicStructureDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation civicStructureDailyForecastWithHttpInfo
+     *
+     * CivicStructure daily forecast
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function civicStructureDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->civicStructureDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation civicStructureDailyForecastAsync
+     *
+     * CivicStructure daily forecast
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function civicStructureDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->civicStructureDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation civicStructureDailyForecastAsyncWithHttpInfo
+     *
+     * CivicStructure daily forecast
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function civicStructureDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->civicStructureDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'civicStructureDailyForecast'
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function civicStructureDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling civicStructureDailyForecast'
+            );
+        }
+
+        $resourcePath = '/civicStructures/{id}/weather/forecast/daily';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation civicStructureHourlyForecast
+     *
+     * CivicStructure hourly forecast
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsHourlyForecastArray
+     */
+    public function civicStructureHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->civicStructureHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation civicStructureHourlyForecastWithHttpInfo
+     *
+     * CivicStructure hourly forecast
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function civicStructureHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->civicStructureHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsHourlyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation civicStructureHourlyForecastAsync
+     *
+     * CivicStructure hourly forecast
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function civicStructureHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->civicStructureHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation civicStructureHourlyForecastAsyncWithHttpInfo
+     *
+     * CivicStructure hourly forecast
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function civicStructureHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->civicStructureHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'civicStructureHourlyForecast'
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function civicStructureHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling civicStructureHourlyForecast'
+            );
+        }
+
+        $resourcePath = '/civicStructures/{id}/weather/forecast/hourly';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation civicStructureWeather
+     *
+     * CivicStructure weather
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsWeatherArray
+     */
+    public function civicStructureWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->civicStructureWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation civicStructureWeatherWithHttpInfo
+     *
+     * CivicStructure weather
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function civicStructureWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->civicStructureWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsWeatherArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation civicStructureWeatherAsync
+     *
+     * CivicStructure weather
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function civicStructureWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->civicStructureWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation civicStructureWeatherAsyncWithHttpInfo
+     *
+     * CivicStructure weather
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function civicStructureWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->civicStructureWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'civicStructureWeather'
+     *
+     * @param  string $id Use property identifier of CivicStructure to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function civicStructureWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling civicStructureWeather'
+            );
+        }
+
+        $resourcePath = '/civicStructures/{id}/weather';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // query params
+        if ($details !== null) {
+            $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation condition
      *
      * Condition
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1327,10 +3247,10 @@ class DefaultApi
      * Condition
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1406,10 +3326,10 @@ class DefaultApi
      * Condition
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1430,10 +3350,10 @@ class DefaultApi
      * Condition
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1484,10 +3404,10 @@ class DefaultApi
      * Create request for operation 'condition'
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1609,19 +3529,979 @@ class DefaultApi
     }
 
     /**
+     * Operation conditionDailyForecast
+     *
+     * Condition daily forecast
+     *
+     * @param  string $id Use property identifier of Condition to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     */
+    public function conditionDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->conditionDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation conditionDailyForecastWithHttpInfo
+     *
+     * Condition daily forecast
+     *
+     * @param  string $id Use property identifier of Condition to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function conditionDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->conditionDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation conditionDailyForecastAsync
+     *
+     * Condition daily forecast
+     *
+     * @param  string $id Use property identifier of Condition to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function conditionDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->conditionDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation conditionDailyForecastAsyncWithHttpInfo
+     *
+     * Condition daily forecast
+     *
+     * @param  string $id Use property identifier of Condition to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function conditionDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->conditionDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'conditionDailyForecast'
+     *
+     * @param  string $id Use property identifier of Condition to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function conditionDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling conditionDailyForecast'
+            );
+        }
+
+        $resourcePath = '/conditions/{id}/weather/forecast/daily';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation conditionHourlyForecast
+     *
+     * Condition hourly forecast
+     *
+     * @param  string $id Use property identifier of Condition to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsHourlyForecastArray
+     */
+    public function conditionHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->conditionHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation conditionHourlyForecastWithHttpInfo
+     *
+     * Condition hourly forecast
+     *
+     * @param  string $id Use property identifier of Condition to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function conditionHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->conditionHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsHourlyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation conditionHourlyForecastAsync
+     *
+     * Condition hourly forecast
+     *
+     * @param  string $id Use property identifier of Condition to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function conditionHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->conditionHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation conditionHourlyForecastAsyncWithHttpInfo
+     *
+     * Condition hourly forecast
+     *
+     * @param  string $id Use property identifier of Condition to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function conditionHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->conditionHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'conditionHourlyForecast'
+     *
+     * @param  string $id Use property identifier of Condition to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function conditionHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling conditionHourlyForecast'
+            );
+        }
+
+        $resourcePath = '/conditions/{id}/weather/forecast/hourly';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation conditionWeather
+     *
+     * Condition weather
+     *
+     * @param  string $id Use property identifier of Condition to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsWeatherArray
+     */
+    public function conditionWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->conditionWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation conditionWeatherWithHttpInfo
+     *
+     * Condition weather
+     *
+     * @param  string $id Use property identifier of Condition to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function conditionWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->conditionWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsWeatherArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation conditionWeatherAsync
+     *
+     * Condition weather
+     *
+     * @param  string $id Use property identifier of Condition to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function conditionWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->conditionWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation conditionWeatherAsyncWithHttpInfo
+     *
+     * Condition weather
+     *
+     * @param  string $id Use property identifier of Condition to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function conditionWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->conditionWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'conditionWeather'
+     *
+     * @param  string $id Use property identifier of Condition to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function conditionWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling conditionWeather'
+            );
+        }
+
+        $resourcePath = '/conditions/{id}/weather';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // query params
+        if ($details !== null) {
+            $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation creativeWork
      *
      * CreativeWork
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsCreativeWork
+     * @return \Infocenter\Client\Model\DsWeatherArray
      */
     public function creativeWork($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
     {
@@ -1635,18 +4515,18 @@ class DefaultApi
      * CreativeWork
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsCreativeWork, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function creativeWorkWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsCreativeWork';
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
         $request = $this->creativeWorkRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
 
         try {
@@ -1698,7 +4578,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsCreativeWork',
+                        '\Infocenter\Client\Model\DsWeatherArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1714,10 +4594,10 @@ class DefaultApi
      * CreativeWork
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1738,17 +4618,17 @@ class DefaultApi
      * CreativeWork
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function creativeWorkAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsCreativeWork';
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
         $request = $this->creativeWorkRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
 
         return $this->client
@@ -1792,10 +4672,10 @@ class DefaultApi
      * Create request for operation 'creativeWork'
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1922,8 +4802,8 @@ class DefaultApi
      * Current TermVersion
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
-     * @param  string $accept_language Supply this header to select the term version in the correct language and deliver localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1941,8 +4821,8 @@ class DefaultApi
      * Current TermVersion
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
-     * @param  string $accept_language Supply this header to select the term version in the correct language and deliver localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2018,8 +4898,8 @@ class DefaultApi
      * Current TermVersion
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
-     * @param  string $accept_language Supply this header to select the term version in the correct language and deliver localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2040,8 +4920,8 @@ class DefaultApi
      * Current TermVersion
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
-     * @param  string $accept_language Supply this header to select the term version in the correct language and deliver localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2092,8 +4972,8 @@ class DefaultApi
      * Create request for operation 'currentTermVersion'
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
-     * @param  string $accept_language Supply this header to select the term version in the correct language and deliver localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2212,10 +5092,10 @@ class DefaultApi
      * Event
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2233,10 +5113,10 @@ class DefaultApi
      * Event
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2312,10 +5192,10 @@ class DefaultApi
      * Event
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2336,10 +5216,10 @@ class DefaultApi
      * Event
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2390,10 +5270,10 @@ class DefaultApi
      * Create request for operation 'event'
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2515,15 +5395,975 @@ class DefaultApi
     }
 
     /**
+     * Operation eventDailyForecast
+     *
+     * Event daily forecast
+     *
+     * @param  string $id Use property identifier of Event to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     */
+    public function eventDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->eventDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation eventDailyForecastWithHttpInfo
+     *
+     * Event daily forecast
+     *
+     * @param  string $id Use property identifier of Event to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function eventDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->eventDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation eventDailyForecastAsync
+     *
+     * Event daily forecast
+     *
+     * @param  string $id Use property identifier of Event to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function eventDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->eventDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation eventDailyForecastAsyncWithHttpInfo
+     *
+     * Event daily forecast
+     *
+     * @param  string $id Use property identifier of Event to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function eventDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->eventDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'eventDailyForecast'
+     *
+     * @param  string $id Use property identifier of Event to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function eventDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling eventDailyForecast'
+            );
+        }
+
+        $resourcePath = '/events/{id}/weather/forecast/daily';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation eventHourlyForecast
+     *
+     * Event hourly forecast
+     *
+     * @param  string $id Use property identifier of Event to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsHourlyForecastArray
+     */
+    public function eventHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->eventHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation eventHourlyForecastWithHttpInfo
+     *
+     * Event hourly forecast
+     *
+     * @param  string $id Use property identifier of Event to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function eventHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->eventHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsHourlyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation eventHourlyForecastAsync
+     *
+     * Event hourly forecast
+     *
+     * @param  string $id Use property identifier of Event to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function eventHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->eventHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation eventHourlyForecastAsyncWithHttpInfo
+     *
+     * Event hourly forecast
+     *
+     * @param  string $id Use property identifier of Event to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function eventHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->eventHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'eventHourlyForecast'
+     *
+     * @param  string $id Use property identifier of Event to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function eventHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling eventHourlyForecast'
+            );
+        }
+
+        $resourcePath = '/events/{id}/weather/forecast/hourly';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation eventWeather
+     *
+     * Event weather
+     *
+     * @param  string $id Use property identifier of Event to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsWeatherArray
+     */
+    public function eventWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->eventWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation eventWeatherWithHttpInfo
+     *
+     * Event weather
+     *
+     * @param  string $id Use property identifier of Event to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function eventWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->eventWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsWeatherArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation eventWeatherAsync
+     *
+     * Event weather
+     *
+     * @param  string $id Use property identifier of Event to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function eventWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->eventWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation eventWeatherAsyncWithHttpInfo
+     *
+     * Event weather
+     *
+     * @param  string $id Use property identifier of Event to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function eventWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->eventWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'eventWeather'
+     *
+     * @param  string $id Use property identifier of Event to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function eventWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling eventWeather'
+            );
+        }
+
+        $resourcePath = '/events/{id}/weather';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // query params
+        if ($details !== null) {
+            $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation foodEstablishment
      *
      * FoodEstablishment
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2541,10 +6381,10 @@ class DefaultApi
      * FoodEstablishment
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2620,10 +6460,10 @@ class DefaultApi
      * FoodEstablishment
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2644,10 +6484,10 @@ class DefaultApi
      * FoodEstablishment
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2698,10 +6538,10 @@ class DefaultApi
      * Create request for operation 'foodEstablishment'
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2729,6 +6569,966 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation foodEstablishmentWeather
+     *
+     * FoodEstablishment weather
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsWeatherArray
+     */
+    public function foodEstablishmentWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->foodEstablishmentWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation foodEstablishmentWeatherWithHttpInfo
+     *
+     * FoodEstablishment weather
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function foodEstablishmentWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->foodEstablishmentWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsWeatherArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation foodEstablishmentWeatherAsync
+     *
+     * FoodEstablishment weather
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function foodEstablishmentWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->foodEstablishmentWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation foodEstablishmentWeatherAsyncWithHttpInfo
+     *
+     * FoodEstablishment weather
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function foodEstablishmentWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->foodEstablishmentWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'foodEstablishmentWeather'
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function foodEstablishmentWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling foodEstablishmentWeather'
+            );
+        }
+
+        $resourcePath = '/foodEstablishments/{id}/weather';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // query params
+        if ($details !== null) {
+            $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation foodEstablishmentWeatherDailyForecast
+     *
+     * FoodEstablishment weather daily forecast
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     */
+    public function foodEstablishmentWeatherDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->foodEstablishmentWeatherDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation foodEstablishmentWeatherDailyForecastWithHttpInfo
+     *
+     * FoodEstablishment weather daily forecast
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function foodEstablishmentWeatherDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->foodEstablishmentWeatherDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation foodEstablishmentWeatherDailyForecastAsync
+     *
+     * FoodEstablishment weather daily forecast
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function foodEstablishmentWeatherDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->foodEstablishmentWeatherDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation foodEstablishmentWeatherDailyForecastAsyncWithHttpInfo
+     *
+     * FoodEstablishment weather daily forecast
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function foodEstablishmentWeatherDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->foodEstablishmentWeatherDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'foodEstablishmentWeatherDailyForecast'
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function foodEstablishmentWeatherDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling foodEstablishmentWeatherDailyForecast'
+            );
+        }
+
+        $resourcePath = '/foodEstablishments/{id}/weather/forecast/daily';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation foodEstablishmentWeatherHourlyForecast
+     *
+     * FoodEstablishment weather hourly forecast
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsHourlyForecastArray
+     */
+    public function foodEstablishmentWeatherHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->foodEstablishmentWeatherHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation foodEstablishmentWeatherHourlyForecastWithHttpInfo
+     *
+     * FoodEstablishment weather hourly forecast
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function foodEstablishmentWeatherHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->foodEstablishmentWeatherHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsHourlyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation foodEstablishmentWeatherHourlyForecastAsync
+     *
+     * FoodEstablishment weather hourly forecast
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function foodEstablishmentWeatherHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->foodEstablishmentWeatherHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation foodEstablishmentWeatherHourlyForecastAsyncWithHttpInfo
+     *
+     * FoodEstablishment weather hourly forecast
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function foodEstablishmentWeatherHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->foodEstablishmentWeatherHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'foodEstablishmentWeatherHourlyForecast'
+     *
+     * @param  string $id Use property identifier of FoodEstablishment to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function foodEstablishmentWeatherHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling foodEstablishmentWeatherHourlyForecast'
+            );
+        }
+
+        $resourcePath = '/foodEstablishments/{id}/weather/forecast/hourly';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
         }
         // header params
         if ($accept_language !== null) {
@@ -3334,10 +8134,10 @@ class DefaultApi
      * ImageObject
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3355,10 +8155,10 @@ class DefaultApi
      * ImageObject
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3434,10 +8234,10 @@ class DefaultApi
      * ImageObject
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3458,10 +8258,10 @@ class DefaultApi
      * ImageObject
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3512,10 +8312,10 @@ class DefaultApi
      * Create request for operation 'imageObject'
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3647,13 +8447,13 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3676,13 +8476,13 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3763,13 +8563,13 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3795,13 +8595,13 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3857,13 +8657,13 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4016,11 +8816,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4042,11 +8842,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4126,11 +8926,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4155,11 +8955,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4214,11 +9014,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4360,11 +9160,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4387,11 +9187,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4472,11 +9272,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4502,11 +9302,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4562,11 +9362,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4712,11 +9512,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4739,11 +9539,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4824,11 +9624,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4854,11 +9654,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4914,11 +9714,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5062,11 +9862,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5087,11 +9887,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5170,11 +9970,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5198,11 +9998,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5256,11 +10056,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5397,13 +10197,13 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $contained_in_place Use property identifier of place to filter by the region (administrative area). (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5425,13 +10225,13 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $contained_in_place Use property identifier of place to filter by the region (administrative area). (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5511,13 +10311,13 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $contained_in_place Use property identifier of place to filter by the region (administrative area). (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5542,13 +10342,13 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $contained_in_place Use property identifier of place to filter by the region (administrative area). (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5603,13 +10403,13 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $contained_in_place Use property identifier of place to filter by the region (administrative area). (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  string $location Use property identifier of place to filter by the location (business). (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5759,11 +10559,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5786,11 +10586,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5871,11 +10671,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5901,11 +10701,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5961,11 +10761,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6109,11 +10909,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6134,11 +10934,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6217,11 +11017,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6245,11 +11045,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6303,11 +11103,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6445,11 +11245,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6472,11 +11272,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6557,11 +11357,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6587,11 +11387,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6647,11 +11447,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6797,11 +11597,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6824,11 +11624,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6909,11 +11709,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6939,11 +11739,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6999,11 +11799,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -7147,11 +11947,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7172,11 +11972,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7255,11 +12055,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7283,11 +12083,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7341,11 +12141,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -7483,11 +12283,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7510,11 +12310,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7595,11 +12395,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7625,11 +12425,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7685,11 +12485,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -7830,12 +12630,12 @@ class DefaultApi
      * List Products
      *
      * @param  string $datasource Use datasource to filter. (optional)
-     * @param  string $continuation_token Use it for get next set of Data. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7853,12 +12653,12 @@ class DefaultApi
      * List Products
      *
      * @param  string $datasource Use datasource to filter. (optional)
-     * @param  string $continuation_token Use it for get next set of Data. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7934,12 +12734,12 @@ class DefaultApi
      * List Products
      *
      * @param  string $datasource Use datasource to filter. (optional)
-     * @param  string $continuation_token Use it for get next set of Data. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7960,12 +12760,12 @@ class DefaultApi
      * List Products
      *
      * @param  string $datasource Use datasource to filter. (optional)
-     * @param  string $continuation_token Use it for get next set of Data. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8016,12 +12816,12 @@ class DefaultApi
      * Create request for operation 'listProducts'
      *
      * @param  string $datasource Use datasource to filter. (optional)
-     * @param  string $continuation_token Use it for get next set of Data. (optional)
+     * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -8149,11 +12949,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8174,11 +12974,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8257,11 +13057,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8285,11 +13085,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8343,11 +13143,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -8738,11 +13538,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8765,11 +13565,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8850,11 +13650,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8880,11 +13680,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8940,11 +13740,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -9090,11 +13890,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9117,11 +13917,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9202,11 +14002,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9232,11 +14032,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9292,11 +14092,11 @@ class DefaultApi
      * @param  string $datasource Use datasource to filter. (optional)
      * @param  string $continuation_token Use it for get next set of data. (optional)
      * @param  int $top Format - int32. Number of next set of entities. (optional)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -9437,10 +14237,10 @@ class DefaultApi
      * LocalBusiness
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9458,10 +14258,10 @@ class DefaultApi
      * LocalBusiness
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9537,10 +14337,10 @@ class DefaultApi
      * LocalBusiness
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9561,10 +14361,10 @@ class DefaultApi
      * LocalBusiness
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9615,10 +14415,10 @@ class DefaultApi
      * Create request for operation 'localBusiness'
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -9740,15 +14540,975 @@ class DefaultApi
     }
 
     /**
+     * Operation localBusinessDailyForecast
+     *
+     * LocalBusiness daily forecast
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     */
+    public function localBusinessDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->localBusinessDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation localBusinessDailyForecastWithHttpInfo
+     *
+     * LocalBusiness daily forecast
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function localBusinessDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->localBusinessDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation localBusinessDailyForecastAsync
+     *
+     * LocalBusiness daily forecast
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function localBusinessDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->localBusinessDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation localBusinessDailyForecastAsyncWithHttpInfo
+     *
+     * LocalBusiness daily forecast
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function localBusinessDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->localBusinessDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'localBusinessDailyForecast'
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function localBusinessDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling localBusinessDailyForecast'
+            );
+        }
+
+        $resourcePath = '/localbusinesses/{id}/weather/forecast/daily';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation localBusinessHourlyForecast
+     *
+     * LocalBusiness hourly forecast
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsHourlyForecastArray
+     */
+    public function localBusinessHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->localBusinessHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation localBusinessHourlyForecastWithHttpInfo
+     *
+     * LocalBusiness hourly forecast
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function localBusinessHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->localBusinessHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsHourlyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation localBusinessHourlyForecastAsync
+     *
+     * LocalBusiness hourly forecast
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function localBusinessHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->localBusinessHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation localBusinessHourlyForecastAsyncWithHttpInfo
+     *
+     * LocalBusiness hourly forecast
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function localBusinessHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->localBusinessHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'localBusinessHourlyForecast'
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function localBusinessHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling localBusinessHourlyForecast'
+            );
+        }
+
+        $resourcePath = '/localbusinesses/{id}/weather/forecast/hourly';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation localBusinessWeather
+     *
+     * LocalBusiness weather
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsWeatherArray
+     */
+    public function localBusinessWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->localBusinessWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation localBusinessWeatherWithHttpInfo
+     *
+     * LocalBusiness weather
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function localBusinessWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->localBusinessWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsWeatherArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation localBusinessWeatherAsync
+     *
+     * LocalBusiness weather
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function localBusinessWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->localBusinessWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation localBusinessWeatherAsyncWithHttpInfo
+     *
+     * LocalBusiness weather
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function localBusinessWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->localBusinessWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'localBusinessWeather'
+     *
+     * @param  string $id Use property identifier of LocalBusiness to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function localBusinessWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling localBusinessWeather'
+            );
+        }
+
+        $resourcePath = '/localbusinesses/{id}/weather';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // query params
+        if ($details !== null) {
+            $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation lodgingBusiness
      *
      * LodgingBusiness
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9766,10 +15526,10 @@ class DefaultApi
      * LodgingBusiness
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9845,10 +15605,10 @@ class DefaultApi
      * LodgingBusiness
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9869,10 +15629,10 @@ class DefaultApi
      * LodgingBusiness
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9923,10 +15683,10 @@ class DefaultApi
      * Create request for operation 'lodgingBusiness'
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -10048,19 +15808,979 @@ class DefaultApi
     }
 
     /**
+     * Operation lodgingBusinessDailyForecast
+     *
+     * LodgingBusiness daily forecast
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     */
+    public function lodgingBusinessDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->lodgingBusinessDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation lodgingBusinessDailyForecastWithHttpInfo
+     *
+     * LodgingBusiness daily forecast
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function lodgingBusinessDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->lodgingBusinessDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation lodgingBusinessDailyForecastAsync
+     *
+     * LodgingBusiness daily forecast
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function lodgingBusinessDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->lodgingBusinessDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation lodgingBusinessDailyForecastAsyncWithHttpInfo
+     *
+     * LodgingBusiness daily forecast
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function lodgingBusinessDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->lodgingBusinessDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'lodgingBusinessDailyForecast'
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function lodgingBusinessDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling lodgingBusinessDailyForecast'
+            );
+        }
+
+        $resourcePath = '/lodgingbusinesses/{id}/weather/forecast/daily';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation lodgingBusinessHourlyForecast
+     *
+     * LodgingBusiness hourly forecast
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsHourlyForecastArray
+     */
+    public function lodgingBusinessHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->lodgingBusinessHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation lodgingBusinessHourlyForecastWithHttpInfo
+     *
+     * LodgingBusiness hourly forecast
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function lodgingBusinessHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->lodgingBusinessHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsHourlyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation lodgingBusinessHourlyForecastAsync
+     *
+     * LodgingBusiness hourly forecast
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function lodgingBusinessHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->lodgingBusinessHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation lodgingBusinessHourlyForecastAsyncWithHttpInfo
+     *
+     * LodgingBusiness hourly forecast
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function lodgingBusinessHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->lodgingBusinessHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'lodgingBusinessHourlyForecast'
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function lodgingBusinessHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling lodgingBusinessHourlyForecast'
+            );
+        }
+
+        $resourcePath = '/lodgingbusinesses/{id}/weather/forecast/hourly';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation lodgingBusinessWeather
+     *
+     * LodgingBusiness weather
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsWeatherArray
+     */
+    public function lodgingBusinessWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->lodgingBusinessWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation lodgingBusinessWeatherWithHttpInfo
+     *
+     * LodgingBusiness weather
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function lodgingBusinessWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->lodgingBusinessWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsWeatherArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation lodgingBusinessWeatherAsync
+     *
+     * LodgingBusiness weather
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function lodgingBusinessWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->lodgingBusinessWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation lodgingBusinessWeatherAsyncWithHttpInfo
+     *
+     * LodgingBusiness weather
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function lodgingBusinessWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->lodgingBusinessWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'lodgingBusinessWeather'
+     *
+     * @param  string $id Use property identifier of LodgingBusiness to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function lodgingBusinessWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling lodgingBusinessWeather'
+            );
+        }
+
+        $resourcePath = '/lodgingbusinesses/{id}/weather';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // query params
+        if ($details !== null) {
+            $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation mediaObject
      *
      * MediaObject
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsMediaObject
+     * @return \Infocenter\Client\Model\DsWeatherArray
      */
     public function mediaObject($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
     {
@@ -10074,18 +16794,18 @@ class DefaultApi
      * MediaObject
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsMediaObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function mediaObjectWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsMediaObject';
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
         $request = $this->mediaObjectRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
 
         try {
@@ -10137,7 +16857,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsMediaObject',
+                        '\Infocenter\Client\Model\DsWeatherArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10153,10 +16873,10 @@ class DefaultApi
      * MediaObject
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10177,17 +16897,17 @@ class DefaultApi
      * MediaObject
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function mediaObjectAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsMediaObject';
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
         $request = $this->mediaObjectRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
 
         return $this->client
@@ -10231,10 +16951,10 @@ class DefaultApi
      * Create request for operation 'mediaObject'
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -10361,10 +17081,10 @@ class DefaultApi
      * Place
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -10382,10 +17102,10 @@ class DefaultApi
      * Place
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -10461,10 +17181,10 @@ class DefaultApi
      * Place
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10485,10 +17205,10 @@ class DefaultApi
      * Place
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10539,10 +17259,10 @@ class DefaultApi
      * Create request for operation 'place'
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -10664,15 +17384,975 @@ class DefaultApi
     }
 
     /**
+     * Operation placeDailyForecast
+     *
+     * Place daily forecast
+     *
+     * @param  string $id Use property identifier of Place to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     */
+    public function placeDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->placeDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation placeDailyForecastWithHttpInfo
+     *
+     * Place daily forecast
+     *
+     * @param  string $id Use property identifier of Place to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function placeDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->placeDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation placeDailyForecastAsync
+     *
+     * Place daily forecast
+     *
+     * @param  string $id Use property identifier of Place to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function placeDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->placeDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation placeDailyForecastAsyncWithHttpInfo
+     *
+     * Place daily forecast
+     *
+     * @param  string $id Use property identifier of Place to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function placeDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->placeDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'placeDailyForecast'
+     *
+     * @param  string $id Use property identifier of Place to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function placeDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling placeDailyForecast'
+            );
+        }
+
+        $resourcePath = '/places/{id}/weather/forecast/daily';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation placeHourlyForecast
+     *
+     * Place hourly forecast
+     *
+     * @param  string $id Use property identifier of Place to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsHourlyForecastArray
+     */
+    public function placeHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->placeHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation placeHourlyForecastWithHttpInfo
+     *
+     * Place hourly forecast
+     *
+     * @param  string $id Use property identifier of Place to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function placeHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->placeHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsHourlyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation placeHourlyForecastAsync
+     *
+     * Place hourly forecast
+     *
+     * @param  string $id Use property identifier of Place to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function placeHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->placeHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation placeHourlyForecastAsyncWithHttpInfo
+     *
+     * Place hourly forecast
+     *
+     * @param  string $id Use property identifier of Place to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function placeHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->placeHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'placeHourlyForecast'
+     *
+     * @param  string $id Use property identifier of Place to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function placeHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling placeHourlyForecast'
+            );
+        }
+
+        $resourcePath = '/places/{id}/weather/forecast/hourly';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation placeWeather
+     *
+     * Place weather
+     *
+     * @param  string $id Use property identifier of Place to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsWeatherArray
+     */
+    public function placeWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->placeWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation placeWeatherWithHttpInfo
+     *
+     * Place weather
+     *
+     * @param  string $id Use property identifier of Place to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function placeWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->placeWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsWeatherArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation placeWeatherAsync
+     *
+     * Place weather
+     *
+     * @param  string $id Use property identifier of Place to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function placeWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->placeWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation placeWeatherAsyncWithHttpInfo
+     *
+     * Place weather
+     *
+     * @param  string $id Use property identifier of Place to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function placeWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->placeWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'placeWeather'
+     *
+     * @param  string $id Use property identifier of Place to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function placeWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling placeWeather'
+            );
+        }
+
+        $resourcePath = '/places/{id}/weather';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // query params
+        if ($details !== null) {
+            $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation product
      *
      * Product
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -10690,10 +18370,10 @@ class DefaultApi
      * Product
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -10769,10 +18449,10 @@ class DefaultApi
      * Product
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10793,10 +18473,10 @@ class DefaultApi
      * Product
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10847,10 +18527,10 @@ class DefaultApi
      * Create request for operation 'product'
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -10977,8 +18657,8 @@ class DefaultApi
      * Search
      *
      * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body body (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -10996,8 +18676,8 @@ class DefaultApi
      * Search
      *
      * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -11073,8 +18753,8 @@ class DefaultApi
      * Search
      *
      * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11095,8 +18775,8 @@ class DefaultApi
      * Search
      *
      * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11147,8 +18827,8 @@ class DefaultApi
      * Create request for operation 'search'
      *
      * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -11256,20 +18936,27 @@ class DefaultApi
      * Search by GET
      *
      * @param  string $search_text Use property for search request text (optional)
+     * @param  string $search_fields Use property for selecting of search fields by which necessary to search (optional)
+     * @param  string $select Use property for selecting fields which necessary to return in response (optional)
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
      * @param  string $filters Use property for odata filters (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $type Use property for type filters (optional)
+     * @param  string $datasource Use property for datasource filters (optional)
+     * @param  string $project Use property for project filters (optional)
+     * @param  string $parent_type Use property for parentType filters (optional)
+     * @param  string $campaign_tag Use property for campaignTag filters (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsSearchResponse
      */
-    public function searchByGET($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGET($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->searchByGETWithHttpInfo($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone);
+        list($response) = $this->searchByGETWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -11279,21 +18966,28 @@ class DefaultApi
      * Search by GET
      *
      * @param  string $search_text Use property for search request text (optional)
+     * @param  string $search_fields Use property for selecting of search fields by which necessary to search (optional)
+     * @param  string $select Use property for selecting fields which necessary to return in response (optional)
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
      * @param  string $filters Use property for odata filters (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $type Use property for type filters (optional)
+     * @param  string $datasource Use property for datasource filters (optional)
+     * @param  string $project Use property for project filters (optional)
+     * @param  string $parent_type Use property for parentType filters (optional)
+     * @param  string $campaign_tag Use property for campaignTag filters (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsSearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchByGETWithHttpInfo($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone);
+        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11360,19 +19054,26 @@ class DefaultApi
      * Search by GET
      *
      * @param  string $search_text Use property for search request text (optional)
+     * @param  string $search_fields Use property for selecting of search fields by which necessary to search (optional)
+     * @param  string $select Use property for selecting fields which necessary to return in response (optional)
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
      * @param  string $filters Use property for odata filters (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $type Use property for type filters (optional)
+     * @param  string $datasource Use property for datasource filters (optional)
+     * @param  string $project Use property for project filters (optional)
+     * @param  string $parent_type Use property for parentType filters (optional)
+     * @param  string $campaign_tag Use property for campaignTag filters (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsync($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETAsync($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->searchByGETAsyncWithHttpInfo($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone)
+        return $this->searchByGETAsyncWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11386,20 +19087,27 @@ class DefaultApi
      * Search by GET
      *
      * @param  string $search_text Use property for search request text (optional)
+     * @param  string $search_fields Use property for selecting of search fields by which necessary to search (optional)
+     * @param  string $select Use property for selecting fields which necessary to return in response (optional)
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
      * @param  string $filters Use property for odata filters (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $type Use property for type filters (optional)
+     * @param  string $datasource Use property for datasource filters (optional)
+     * @param  string $project Use property for project filters (optional)
+     * @param  string $parent_type Use property for parentType filters (optional)
+     * @param  string $campaign_tag Use property for campaignTag filters (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsyncWithHttpInfo($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETAsyncWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone);
+        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11442,17 +19150,24 @@ class DefaultApi
      * Create request for operation 'searchByGET'
      *
      * @param  string $search_text Use property for search request text (optional)
+     * @param  string $search_fields Use property for selecting of search fields by which necessary to search (optional)
+     * @param  string $select Use property for selecting fields which necessary to return in response (optional)
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
      * @param  string $filters Use property for odata filters (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $type Use property for type filters (optional)
+     * @param  string $datasource Use property for datasource filters (optional)
+     * @param  string $project Use property for project filters (optional)
+     * @param  string $parent_type Use property for parentType filters (optional)
+     * @param  string $campaign_tag Use property for campaignTag filters (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchByGETRequest($search_text = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $accept_language = null, $accept_timezone = null)
+    protected function searchByGETRequest($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/search';
@@ -11465,6 +19180,14 @@ class DefaultApi
         // query params
         if ($search_text !== null) {
             $queryParams['searchText'] = ObjectSerializer::toQueryValue($search_text);
+        }
+        // query params
+        if ($search_fields !== null) {
+            $queryParams['searchFields'] = ObjectSerializer::toQueryValue($search_fields);
+        }
+        // query params
+        if ($select !== null) {
+            $queryParams['select'] = ObjectSerializer::toQueryValue($select);
         }
         // query params
         if ($current_page !== null) {
@@ -11481,6 +19204,26 @@ class DefaultApi
         // query params
         if ($filters !== null) {
             $queryParams['filters'] = ObjectSerializer::toQueryValue($filters);
+        }
+        // query params
+        if ($type !== null) {
+            $queryParams['type'] = ObjectSerializer::toQueryValue($type);
+        }
+        // query params
+        if ($datasource !== null) {
+            $queryParams['datasource'] = ObjectSerializer::toQueryValue($datasource);
+        }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($parent_type !== null) {
+            $queryParams['parentType'] = ObjectSerializer::toQueryValue($parent_type);
+        }
+        // query params
+        if ($campaign_tag !== null) {
+            $queryParams['campaignTag'] = ObjectSerializer::toQueryValue($campaign_tag);
         }
         // header params
         if ($accept_language !== null) {
@@ -11572,9 +19315,9 @@ class DefaultApi
      * Tag
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -11592,9 +19335,9 @@ class DefaultApi
      * Tag
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -11670,9 +19413,9 @@ class DefaultApi
      * Tag
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11693,9 +19436,9 @@ class DefaultApi
      * Tag
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11746,9 +19489,9 @@ class DefaultApi
      * Create request for operation 'tag'
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -11871,8 +19614,8 @@ class DefaultApi
      * TermVersion
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -11890,8 +19633,8 @@ class DefaultApi
      * TermVersion
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -11967,8 +19710,8 @@ class DefaultApi
      * TermVersion
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11989,8 +19732,8 @@ class DefaultApi
      * TermVersion
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12041,8 +19784,8 @@ class DefaultApi
      * Create request for operation 'termVersion'
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -12161,10 +19904,10 @@ class DefaultApi
      * Tour
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -12182,10 +19925,10 @@ class DefaultApi
      * Tour
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -12261,10 +20004,10 @@ class DefaultApi
      * Tour
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12285,10 +20028,10 @@ class DefaultApi
      * Tour
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12339,10 +20082,10 @@ class DefaultApi
      * Create request for operation 'tour'
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -12464,6 +20207,966 @@ class DefaultApi
     }
 
     /**
+     * Operation tourDailyForecast
+     *
+     * Tour daily forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     */
+    public function tourDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->tourDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation tourDailyForecastWithHttpInfo
+     *
+     * Tour daily forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function tourDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->tourDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation tourDailyForecastAsync
+     *
+     * Tour daily forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function tourDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->tourDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation tourDailyForecastAsyncWithHttpInfo
+     *
+     * Tour daily forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function tourDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->tourDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'tourDailyForecast'
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function tourDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling tourDailyForecast'
+            );
+        }
+
+        $resourcePath = '/tours/{id}/weather/forecast/daily';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation tourHourlyForecast
+     *
+     * Tour hourly forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsHourlyForecastArray
+     */
+    public function tourHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->tourHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation tourHourlyForecastWithHttpInfo
+     *
+     * Tour hourly forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function tourHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->tourHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsHourlyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation tourHourlyForecastAsync
+     *
+     * Tour hourly forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function tourHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->tourHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation tourHourlyForecastAsyncWithHttpInfo
+     *
+     * Tour hourly forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function tourHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->tourHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'tourHourlyForecast'
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather hourly forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function tourHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling tourHourlyForecast'
+            );
+        }
+
+        $resourcePath = '/tours/{id}/weather/forecast/hourly';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation tourWeather
+     *
+     * Tour weather
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsWeatherArray
+     */
+    public function tourWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->tourWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation tourWeatherWithHttpInfo
+     *
+     * Tour weather
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function tourWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->tourWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsWeatherArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation tourWeatherAsync
+     *
+     * Tour weather
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function tourWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->tourWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation tourWeatherAsyncWithHttpInfo
+     *
+     * Tour weather
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function tourWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->tourWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'tourWeather'
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function tourWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling tourWeather'
+            );
+        }
+
+        $resourcePath = '/tours/{id}/weather';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // query params
+        if ($details !== null) {
+            $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation treeAdministrativeAreaRegion
      *
      * Tree AdministrativeArea (Region)
@@ -12471,8 +21174,8 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -12492,8 +21195,8 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -12571,8 +21274,8 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12595,8 +21298,8 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12649,8 +21352,8 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
-     * @param  string $accept_language Localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -12777,10 +21480,10 @@ class DefaultApi
      * Webcam
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -12798,10 +21501,10 @@ class DefaultApi
      * Webcam
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -12877,10 +21580,10 @@ class DefaultApi
      * Webcam
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12901,10 +21604,10 @@ class DefaultApi
      * Webcam
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12955,10 +21658,10 @@ class DefaultApi
      * Create request for operation 'webcam'
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
-     * @param  string $project Use this property to filter objects by project (optional)
+     * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
-     * @param  string $accept_language Localized properties. (optional)
-     * @param  string $accept_timezone Time zone ID for response dates and times (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -12986,6 +21689,966 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation webcamDailyForecast
+     *
+     * Webcam daily forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     */
+    public function webcamDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->webcamDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation webcamDailyForecastWithHttpInfo
+     *
+     * Webcam daily forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function webcamDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->webcamDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation webcamDailyForecastAsync
+     *
+     * Webcam daily forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function webcamDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->webcamDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation webcamDailyForecastAsyncWithHttpInfo
+     *
+     * Webcam daily forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function webcamDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $request = $this->webcamDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'webcamDailyForecast'
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function webcamDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling webcamDailyForecast'
+            );
+        }
+
+        $resourcePath = '/webcams/{id}/weather/forecast/daily';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation webcamHourlyForecast
+     *
+     * Webcam hourly forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsHourlyForecastArray
+     */
+    public function webcamHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->webcamHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation webcamHourlyForecastWithHttpInfo
+     *
+     * Webcam hourly forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function webcamHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->webcamHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsHourlyForecastArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation webcamHourlyForecastAsync
+     *
+     * Webcam hourly forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function webcamHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->webcamHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation webcamHourlyForecastAsyncWithHttpInfo
+     *
+     * Webcam hourly forecast
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function webcamHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
+        $request = $this->webcamHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'webcamHourlyForecast'
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function webcamHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling webcamHourlyForecast'
+            );
+        }
+
+        $resourcePath = '/webcams/{id}/weather/forecast/hourly';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation webcamWeather
+     *
+     * Webcam weather
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsWeatherArray
+     */
+    public function webcamWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->webcamWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation webcamWeatherWithHttpInfo
+     *
+     * Webcam weather
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function webcamWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->webcamWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsWeatherArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation webcamWeatherAsync
+     *
+     * Webcam weather
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function webcamWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->webcamWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation webcamWeatherAsyncWithHttpInfo
+     *
+     * Webcam weather
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function webcamWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsWeatherArray';
+        $request = $this->webcamWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'webcamWeather'
+     *
+     * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function webcamWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling webcamWeather'
+            );
+        }
+
+        $resourcePath = '/webcams/{id}/weather';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($duration !== null) {
+            $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // query params
+        if ($details !== null) {
+            $queryParams['details'] = ObjectSerializer::toQueryValue($details);
         }
         // header params
         if ($accept_language !== null) {

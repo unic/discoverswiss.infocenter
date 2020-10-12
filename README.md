@@ -72,10 +72,10 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Region to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->administrativeAreaRegion($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -99,11 +99,99 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Use property identifier of Category to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$id = "id_example"; // string | Use property identifier of AdministrativeArea to get the weather daily forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->administrativeAreaRegionDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->administrativeAreaRegionDailyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of AdministrativeArea to get the weather hourly forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->administrativeAreaRegionHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->administrativeAreaRegionHourlyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of AdministrativeArea to get the weather information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->administrativeAreaRegionWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->administrativeAreaRegionWeather: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Category to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->category($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -128,8 +216,8 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Category to set root category.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->categoryTree($id, $accept_language, $accept_timezone);
@@ -154,10 +242,10 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of CivicStructure to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->civicStructure($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -181,11 +269,99 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Use property identifier of Condition to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$id = "id_example"; // string | Use property identifier of CivicStructure to get the weather daily forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->civicStructureDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->civicStructureDailyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of CivicStructure to get the weather hourly forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->civicStructureHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->civicStructureHourlyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of CivicStructure to get the weather information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->civicStructureWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->civicStructureWeather: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Condition to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->condition($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -209,11 +385,99 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Use property identifier of CreativeWork to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$id = "id_example"; // string | Use property identifier of Condition to get the weather daily forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->conditionDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->conditionDailyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Condition to get the weather hourly forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->conditionHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->conditionHourlyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Condition to get the weather information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->conditionWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->conditionWeather: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of CreativeWork to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->creativeWork($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -238,8 +502,8 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $term_code = "term_code_example"; // string | Use property code of a term to get the current term version.
-$accept_language = "accept_language_example"; // string | Supply this header to select the term version in the correct language and deliver localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->currentTermVersion($term_code, $accept_language, $accept_timezone);
@@ -264,10 +528,10 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Event to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->event($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -291,17 +555,193 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Use property identifier of FoodEstablishment to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$id = "id_example"; // string | Use property identifier of Event to get the weather daily forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->eventDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->eventDailyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Event to get the weather hourly forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->eventHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->eventHourlyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Event to get the weather information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->eventWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->eventWeather: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of FoodEstablishment to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->foodEstablishment($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->foodEstablishment: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of FoodEstablishment to get the weather information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->foodEstablishmentWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->foodEstablishmentWeather: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of FoodEstablishment to get the weather daily forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->foodEstablishmentWeatherDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->foodEstablishmentWeatherDailyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of FoodEstablishment to get the weather hourly forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->foodEstablishmentWeatherHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->foodEstablishmentWeatherHourlyForecast: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiKeyHeader
@@ -366,10 +806,10 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of ImageObject to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->imageObject($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -399,13 +839,13 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $admin_areas_only = "admin_areas_only_example"; // string | set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default = false (works only in combination with rootObjectsOnly).
 $root_objects_only = true; // bool | Pass 'true' if you want to get only root areas.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
-$accept_language = "accept_language_example"; // string | Localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
     $result = $apiInstance->listAdministrativeAreaRegion($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language);
@@ -434,11 +874,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $root_objects_only = true; // bool | Pass 'true' if you want to get only root categories.
-$accept_language = "accept_language_example"; // string | Localized properties.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
     $result = $apiInstance->listCategory($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language);
@@ -468,11 +908,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->listCivicStructure($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
@@ -502,11 +942,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
-$accept_language = "accept_language_example"; // string | Localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
     $result = $apiInstance->listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language);
@@ -534,11 +974,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->listCreativeWork($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
@@ -567,13 +1007,13 @@ $category = "category_example"; // string | Use property identifier of category 
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter by the region (administrative area).
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $location = "location_example"; // string | Use property identifier of place to filter by the location (business).
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
-$accept_language = "accept_language_example"; // string | Localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
     $result = $apiInstance->listEvents($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language);
@@ -603,11 +1043,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->listFoodEstablishment($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
@@ -635,11 +1075,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->listImageObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
@@ -669,11 +1109,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->listLocalBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
@@ -703,11 +1143,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->listLodgingBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
@@ -735,11 +1175,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->listMediaObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
@@ -769,11 +1209,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->listPlace($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
@@ -798,12 +1238,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of Data.
+$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_language = "accept_language_example"; // string | Localized properties.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
     $result = $apiInstance->listProducts($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language);
@@ -831,11 +1271,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
@@ -888,11 +1328,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->listTour($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
@@ -922,11 +1362,11 @@ $updated_since = "updated_since_example"; // string | Format - date-time (as dat
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
@@ -951,10 +1391,10 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of LocalBusiness to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->localBusiness($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -978,11 +1418,99 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Use property identifier of LodgingBusiness to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$id = "id_example"; // string | Use property identifier of LocalBusiness to get the weather daily forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->localBusinessDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->localBusinessDailyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of LocalBusiness to get the weather hourly forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->localBusinessHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->localBusinessHourlyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of LocalBusiness to get the weather information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->localBusinessWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->localBusinessWeather: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of LodgingBusiness to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->lodgingBusiness($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -1006,11 +1534,99 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Use property identifier of MediaObject to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$id = "id_example"; // string | Use property identifier of LodgingBusiness to get the weather daily forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->lodgingBusinessDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->lodgingBusinessDailyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of LodgingBusiness to get the weather hourly forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->lodgingBusinessHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->lodgingBusinessHourlyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of LodgingBusiness to get the weather information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->lodgingBusinessWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->lodgingBusinessWeather: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of MediaObject to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->mediaObject($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -1035,10 +1651,10 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Place to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->place($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -1062,11 +1678,99 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | Use property identifier of Product to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$id = "id_example"; // string | Use property identifier of Place to get the weather daily forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->placeDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->placeDailyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Place to get the weather hourly forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->placeHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->placeHourlyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Place to get the weather information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->placeWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->placeWeather: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Product to get single object.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->product($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -1091,8 +1795,8 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $body = new \Infocenter\Client\Model\DsExtendedSearchRequest(); // \Infocenter\Client\Model\DsExtendedSearchRequest | 
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->search($body, $accept_language, $accept_timezone);
@@ -1117,15 +1821,22 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $search_text = "search_text_example"; // string | Use property for search request text
+$search_fields = "search_fields_example"; // string | Use property for selecting of search fields by which necessary to search
+$select = "select_example"; // string | Use property for selecting fields which necessary to return in response
 $current_page = 56; // int | Format - int32. Use property to set number of page
 $results_per_page = 56; // int | Format - int32. Use property to set count of results per page
 $order_by = "order_by_example"; // string | Use property for ordering
 $filters = "filters_example"; // string | Use property for odata filters
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$type = "type_example"; // string | Use property for type filters
+$datasource = "datasource_example"; // string | Use property for datasource filters
+$project = "project_example"; // string | Use property for project filters
+$parent_type = "parent_type_example"; // string | Use property for parentType filters
+$campaign_tag = "campaign_tag_example"; // string | Use property for campaignTag filters
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->searchByGET($search_text, $current_page, $results_per_page, $order_by, $filters, $accept_language, $accept_timezone);
+    $result = $apiInstance->searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGET: ', $e->getMessage(), PHP_EOL;
@@ -1147,9 +1858,9 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Tag to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$project = "project_example"; // string | Use this property to filter objects by project.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->tag($id, $project, $accept_language, $accept_timezone);
@@ -1174,8 +1885,8 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $code = "code_example"; // string | Use property code of TermVersion to get single object.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->termVersion($code, $accept_language, $accept_timezone);
@@ -1200,10 +1911,10 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Tour to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->tour($id, $project, $contained_in_place, $accept_language, $accept_timezone);
@@ -1227,11 +1938,99 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$id = "id_example"; // string | Use property identifier of Webcam to get the weather daily forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->tourDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->tourDailyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Webcam to get the weather hourly forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->tourHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->tourHourlyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Webcam to get the weather information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->tourWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->tourWeather: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Use property identifier of Region to set root Region.
 $levels = "levels_example"; // string | controls how deep the tree should go. default = 1
 $admin_areas_only = "admin_areas_only_example"; // string | set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default = false
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
-$accept_language = "accept_language_example"; // string | Localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
     $result = $apiInstance->treeAdministrativeAreaRegion($id, $levels, $admin_areas_only, $accept_timezone, $accept_language);
@@ -1256,16 +2055,104 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Webcam to get single object.
-$project = "project_example"; // string | Use this property to filter objects by project
+$project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$accept_language = "accept_language_example"; // string | Localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID for response dates and times
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
     $result = $apiInstance->webcam($id, $project, $contained_in_place, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->webcam: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Webcam to get the weather daily forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->webcamDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->webcamDailyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Webcam to get the weather daily forecast information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->webcamHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->webcamHourlyForecast: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Webcam to get the weather information for it.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->webcamWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->webcamWeather: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1277,14 +2164,29 @@ All URIs are relative to *https://api.discover.swiss/test/info/v2*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultApi* | [**administrativeAreaRegion**](docs/Api/DefaultApi.md#administrativearearegion) | **GET** /areas/{id} | AdministrativeArea (Region)
+*DefaultApi* | [**administrativeAreaRegionDailyForecast**](docs/Api/DefaultApi.md#administrativearearegiondailyforecast) | **GET** /areas/{id}/weather/forecast/daily | AdministrativeArea (Region) daily forecast
+*DefaultApi* | [**administrativeAreaRegionHourlyForecast**](docs/Api/DefaultApi.md#administrativearearegionhourlyforecast) | **GET** /areas/{id}/weather/forecast/hourly | AdministrativeArea (Region) hourly forecast
+*DefaultApi* | [**administrativeAreaRegionWeather**](docs/Api/DefaultApi.md#administrativearearegionweather) | **GET** /areas/{id}/weather | AdministrativeArea (Region) weather
 *DefaultApi* | [**category**](docs/Api/DefaultApi.md#category) | **GET** /categories/{id} | Category
 *DefaultApi* | [**categoryTree**](docs/Api/DefaultApi.md#categorytree) | **GET** /categories/{id}/tree | Category Tree
 *DefaultApi* | [**civicStructure**](docs/Api/DefaultApi.md#civicstructure) | **GET** /civicStructures/{id} | CivicStructure
+*DefaultApi* | [**civicStructureDailyForecast**](docs/Api/DefaultApi.md#civicstructuredailyforecast) | **GET** /civicStructures/{id}/weather/forecast/daily | CivicStructure daily forecast
+*DefaultApi* | [**civicStructureHourlyForecast**](docs/Api/DefaultApi.md#civicstructurehourlyforecast) | **GET** /civicStructures/{id}/weather/forecast/hourly | CivicStructure hourly forecast
+*DefaultApi* | [**civicStructureWeather**](docs/Api/DefaultApi.md#civicstructureweather) | **GET** /civicStructures/{id}/weather | CivicStructure weather
 *DefaultApi* | [**condition**](docs/Api/DefaultApi.md#condition) | **GET** /conditions/{id} | Condition
+*DefaultApi* | [**conditionDailyForecast**](docs/Api/DefaultApi.md#conditiondailyforecast) | **GET** /conditions/{id}/weather/forecast/daily | Condition daily forecast
+*DefaultApi* | [**conditionHourlyForecast**](docs/Api/DefaultApi.md#conditionhourlyforecast) | **GET** /conditions/{id}/weather/forecast/hourly | Condition hourly forecast
+*DefaultApi* | [**conditionWeather**](docs/Api/DefaultApi.md#conditionweather) | **GET** /conditions/{id}/weather | Condition weather
 *DefaultApi* | [**creativeWork**](docs/Api/DefaultApi.md#creativework) | **GET** /creativeWorks/{id} | CreativeWork
 *DefaultApi* | [**currentTermVersion**](docs/Api/DefaultApi.md#currenttermversion) | **GET** /termversions/{termCode}/currentVersion | Current TermVersion
 *DefaultApi* | [**event**](docs/Api/DefaultApi.md#event) | **GET** /events/{id} | Event
+*DefaultApi* | [**eventDailyForecast**](docs/Api/DefaultApi.md#eventdailyforecast) | **GET** /events/{id}/weather/forecast/daily | Event daily forecast
+*DefaultApi* | [**eventHourlyForecast**](docs/Api/DefaultApi.md#eventhourlyforecast) | **GET** /events/{id}/weather/forecast/hourly | Event hourly forecast
+*DefaultApi* | [**eventWeather**](docs/Api/DefaultApi.md#eventweather) | **GET** /events/{id}/weather | Event weather
 *DefaultApi* | [**foodEstablishment**](docs/Api/DefaultApi.md#foodestablishment) | **GET** /foodEstablishments/{id} | FoodEstablishment
+*DefaultApi* | [**foodEstablishmentWeather**](docs/Api/DefaultApi.md#foodestablishmentweather) | **GET** /foodEstablishments/{id}/weather | FoodEstablishment weather
+*DefaultApi* | [**foodEstablishmentWeatherDailyForecast**](docs/Api/DefaultApi.md#foodestablishmentweatherdailyforecast) | **GET** /foodEstablishments/{id}/weather/forecast/daily | FoodEstablishment weather daily forecast
+*DefaultApi* | [**foodEstablishmentWeatherHourlyForecast**](docs/Api/DefaultApi.md#foodestablishmentweatherhourlyforecast) | **GET** /foodEstablishments/{id}/weather/forecast/hourly | FoodEstablishment weather hourly forecast
 *DefaultApi* | [**getStatus**](docs/Api/DefaultApi.md#getstatus) | **GET** /status | GetStatus
 *DefaultApi* | [**getStatusAbout**](docs/Api/DefaultApi.md#getstatusabout) | **GET** /status/about | GetStatusAbout
 *DefaultApi* | [**imageObject**](docs/Api/DefaultApi.md#imageobject) | **GET** /imageObjects/{id} | ImageObject
@@ -1306,17 +2208,32 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**listTour**](docs/Api/DefaultApi.md#listtour) | **GET** /tours | List Tour
 *DefaultApi* | [**listWebcams**](docs/Api/DefaultApi.md#listwebcams) | **GET** /webcams | List Webcams
 *DefaultApi* | [**localBusiness**](docs/Api/DefaultApi.md#localbusiness) | **GET** /localbusinesses/{id} | LocalBusiness
+*DefaultApi* | [**localBusinessDailyForecast**](docs/Api/DefaultApi.md#localbusinessdailyforecast) | **GET** /localbusinesses/{id}/weather/forecast/daily | LocalBusiness daily forecast
+*DefaultApi* | [**localBusinessHourlyForecast**](docs/Api/DefaultApi.md#localbusinesshourlyforecast) | **GET** /localbusinesses/{id}/weather/forecast/hourly | LocalBusiness hourly forecast
+*DefaultApi* | [**localBusinessWeather**](docs/Api/DefaultApi.md#localbusinessweather) | **GET** /localbusinesses/{id}/weather | LocalBusiness weather
 *DefaultApi* | [**lodgingBusiness**](docs/Api/DefaultApi.md#lodgingbusiness) | **GET** /lodgingbusinesses/{id} | LodgingBusiness
+*DefaultApi* | [**lodgingBusinessDailyForecast**](docs/Api/DefaultApi.md#lodgingbusinessdailyforecast) | **GET** /lodgingbusinesses/{id}/weather/forecast/daily | LodgingBusiness daily forecast
+*DefaultApi* | [**lodgingBusinessHourlyForecast**](docs/Api/DefaultApi.md#lodgingbusinesshourlyforecast) | **GET** /lodgingbusinesses/{id}/weather/forecast/hourly | LodgingBusiness hourly forecast
+*DefaultApi* | [**lodgingBusinessWeather**](docs/Api/DefaultApi.md#lodgingbusinessweather) | **GET** /lodgingbusinesses/{id}/weather | LodgingBusiness weather
 *DefaultApi* | [**mediaObject**](docs/Api/DefaultApi.md#mediaobject) | **GET** /mediaObjects/{id} | MediaObject
 *DefaultApi* | [**place**](docs/Api/DefaultApi.md#place) | **GET** /places/{id} | Place
+*DefaultApi* | [**placeDailyForecast**](docs/Api/DefaultApi.md#placedailyforecast) | **GET** /places/{id}/weather/forecast/daily | Place daily forecast
+*DefaultApi* | [**placeHourlyForecast**](docs/Api/DefaultApi.md#placehourlyforecast) | **GET** /places/{id}/weather/forecast/hourly | Place hourly forecast
+*DefaultApi* | [**placeWeather**](docs/Api/DefaultApi.md#placeweather) | **GET** /places/{id}/weather | Place weather
 *DefaultApi* | [**product**](docs/Api/DefaultApi.md#product) | **GET** /products/{id} | Product
 *DefaultApi* | [**search**](docs/Api/DefaultApi.md#search) | **POST** /search | Search
 *DefaultApi* | [**searchByGET**](docs/Api/DefaultApi.md#searchbyget) | **GET** /search | Search by GET
 *DefaultApi* | [**tag**](docs/Api/DefaultApi.md#tag) | **GET** /tags/{id} | Tag
 *DefaultApi* | [**termVersion**](docs/Api/DefaultApi.md#termversion) | **GET** /termversions/{code} | TermVersion
 *DefaultApi* | [**tour**](docs/Api/DefaultApi.md#tour) | **GET** /tours/{id} | Tour
+*DefaultApi* | [**tourDailyForecast**](docs/Api/DefaultApi.md#tourdailyforecast) | **GET** /tours/{id}/weather/forecast/daily | Tour daily forecast
+*DefaultApi* | [**tourHourlyForecast**](docs/Api/DefaultApi.md#tourhourlyforecast) | **GET** /tours/{id}/weather/forecast/hourly | Tour hourly forecast
+*DefaultApi* | [**tourWeather**](docs/Api/DefaultApi.md#tourweather) | **GET** /tours/{id}/weather | Tour weather
 *DefaultApi* | [**treeAdministrativeAreaRegion**](docs/Api/DefaultApi.md#treeadministrativearearegion) | **GET** /areas/{id}/tree | Tree AdministrativeArea (Region)
 *DefaultApi* | [**webcam**](docs/Api/DefaultApi.md#webcam) | **GET** /webcams/{id} | Webcam
+*DefaultApi* | [**webcamDailyForecast**](docs/Api/DefaultApi.md#webcamdailyforecast) | **GET** /webcams/{id}/weather/forecast/daily | Webcam daily forecast
+*DefaultApi* | [**webcamHourlyForecast**](docs/Api/DefaultApi.md#webcamhourlyforecast) | **GET** /webcams/{id}/weather/forecast/hourly | Webcam hourly forecast
+*DefaultApi* | [**webcamWeather**](docs/Api/DefaultApi.md#webcamweather) | **GET** /webcams/{id}/weather | Webcam weather
 
 ## Documentation For Models
 
@@ -1324,6 +2241,7 @@ Class | Method | HTTP request | Description
  - [DsAdministrativeAreaTreeItem](docs/Model/DsAdministrativeAreaTreeItem.md)
  - [DsAdministrativeAreasResponse](docs/Model/DsAdministrativeAreasResponse.md)
  - [DsAggregateRating](docs/Model/DsAggregateRating.md)
+ - [DsAirAndPollen](docs/Model/DsAirAndPollen.md)
  - [DsCategoriesResponse](docs/Model/DsCategoriesResponse.md)
  - [DsCategory](docs/Model/DsCategory.md)
  - [DsCategoryIcon](docs/Model/DsCategoryIcon.md)
@@ -1334,9 +2252,12 @@ Class | Method | HTTP request | Description
  - [DsCondition](docs/Model/DsCondition.md)
  - [DsConditionsResponse](docs/Model/DsConditionsResponse.md)
  - [DsContactPoint](docs/Model/DsContactPoint.md)
- - [DsCreativeWork](docs/Model/DsCreativeWork.md)
  - [DsCreativeWorksResponse](docs/Model/DsCreativeWorksResponse.md)
+ - [DsDailyForecast](docs/Model/DsDailyForecast.md)
+ - [DsDailyForecastArray](docs/Model/DsDailyForecastArray.md)
  - [DsDataGovernance](docs/Model/DsDataGovernance.md)
+ - [DsDaySummary](docs/Model/DsDaySummary.md)
+ - [DsDirection](docs/Model/DsDirection.md)
  - [DsEvent](docs/Model/DsEvent.md)
  - [DsEventsResponse](docs/Model/DsEventsResponse.md)
  - [DsExpandoObject](docs/Model/DsExpandoObject.md)
@@ -1351,6 +2272,8 @@ Class | Method | HTTP request | Description
  - [DsFoodEstablishmentsResponse](docs/Model/DsFoodEstablishmentsResponse.md)
  - [DsGeoCoordinates](docs/Model/DsGeoCoordinates.md)
  - [DsGeoShape](docs/Model/DsGeoShape.md)
+ - [DsHourlyForecast](docs/Model/DsHourlyForecast.md)
+ - [DsHourlyForecastArray](docs/Model/DsHourlyForecastArray.md)
  - [DsImageObject](docs/Model/DsImageObject.md)
  - [DsImageObjectSimplex](docs/Model/DsImageObjectSimplex.md)
  - [DsImageObjectsResponse](docs/Model/DsImageObjectsResponse.md)
@@ -1362,18 +2285,21 @@ Class | Method | HTTP request | Description
  - [DsLodgingBusiness](docs/Model/DsLodgingBusiness.md)
  - [DsLodgingBusinessesResponse](docs/Model/DsLodgingBusinessesResponse.md)
  - [DsLogoImageObject](docs/Model/DsLogoImageObject.md)
- - [DsMediaObject](docs/Model/DsMediaObject.md)
  - [DsMediaObjectSimplex](docs/Model/DsMediaObjectSimplex.md)
  - [DsMediaObjectsResponse](docs/Model/DsMediaObjectsResponse.md)
  - [DsObject](docs/Model/DsObject.md)
  - [DsOpeningHoursSpecification](docs/Model/DsOpeningHoursSpecification.md)
  - [DsOrganization](docs/Model/DsOrganization.md)
  - [DsPartnerSimplex](docs/Model/DsPartnerSimplex.md)
+ - [DsPastHours](docs/Model/DsPastHours.md)
+ - [DsPeriod](docs/Model/DsPeriod.md)
  - [DsPlace](docs/Model/DsPlace.md)
  - [DsPlaceMember](docs/Model/DsPlaceMember.md)
  - [DsPlaceSimplex](docs/Model/DsPlaceSimplex.md)
  - [DsPlacesResponse](docs/Model/DsPlacesResponse.md)
  - [DsPostalAddress](docs/Model/DsPostalAddress.md)
+ - [DsPrecipitationSummary](docs/Model/DsPrecipitationSummary.md)
+ - [DsPressureTendency](docs/Model/DsPressureTendency.md)
  - [DsProduct](docs/Model/DsProduct.md)
  - [DsProductPrice](docs/Model/DsProductPrice.md)
  - [DsProductsResponse](docs/Model/DsProductsResponse.md)
@@ -1388,6 +2314,8 @@ Class | Method | HTTP request | Description
  - [DsTag](docs/Model/DsTag.md)
  - [DsTagSimplex](docs/Model/DsTagSimplex.md)
  - [DsTagsResponse](docs/Model/DsTagsResponse.md)
+ - [DsTemperature](docs/Model/DsTemperature.md)
+ - [DsTemperatureSummary](docs/Model/DsTemperatureSummary.md)
  - [DsTerm](docs/Model/DsTerm.md)
  - [DsTermVersion](docs/Model/DsTermVersion.md)
  - [DsTimeZoneResponse](docs/Model/DsTimeZoneResponse.md)
@@ -1396,8 +2324,12 @@ Class | Method | HTTP request | Description
  - [DsTourElevation](docs/Model/DsTourElevation.md)
  - [DsTourRating](docs/Model/DsTourRating.md)
  - [DsToursResponse](docs/Model/DsToursResponse.md)
+ - [DsUnitValue](docs/Model/DsUnitValue.md)
+ - [DsWeather](docs/Model/DsWeather.md)
+ - [DsWeatherArray](docs/Model/DsWeatherArray.md)
  - [DsWebcam](docs/Model/DsWebcam.md)
  - [DsWebcamsResponse](docs/Model/DsWebcamsResponse.md)
+ - [DsWind](docs/Model/DsWind.md)
 
 ## Documentation For Authorization
 

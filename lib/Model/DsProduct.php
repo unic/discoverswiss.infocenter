@@ -66,7 +66,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'sku' => 'string',
 'price_list' => '\Infocenter\Client\Model\DsProductPrice[]',
 'tax_rate' => 'double',
-'contains_translated_data' => 'bool'    ];
+'auto_translated_data' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -84,7 +84,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'sku' => null,
 'price_list' => null,
 'tax_rate' => 'double',
-'contains_translated_data' => null    ];
+'auto_translated_data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -123,7 +123,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'sku' => 'sku',
 'price_list' => 'priceList',
 'tax_rate' => 'taxRate',
-'contains_translated_data' => 'containsTranslatedData'    ];
+'auto_translated_data' => 'autoTranslatedData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -141,7 +141,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'sku' => 'setSku',
 'price_list' => 'setPriceList',
 'tax_rate' => 'setTaxRate',
-'contains_translated_data' => 'setContainsTranslatedData'    ];
+'auto_translated_data' => 'setAutoTranslatedData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -159,7 +159,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'sku' => 'getSku',
 'price_list' => 'getPriceList',
 'tax_rate' => 'getTaxRate',
-'contains_translated_data' => 'getContainsTranslatedData'    ];
+'auto_translated_data' => 'getAutoTranslatedData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -229,7 +229,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['sku'] = isset($data['sku']) ? $data['sku'] : null;
         $this->container['price_list'] = isset($data['price_list']) ? $data['price_list'] : null;
         $this->container['tax_rate'] = isset($data['tax_rate']) ? $data['tax_rate'] : null;
-        $this->container['contains_translated_data'] = isset($data['contains_translated_data']) ? $data['contains_translated_data'] : null;
+        $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
     }
 
     /**
@@ -497,25 +497,25 @@ class DsProduct implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets contains_translated_data
+     * Gets auto_translated_data
      *
      * @return bool
      */
-    public function getContainsTranslatedData()
+    public function getAutoTranslatedData()
     {
-        return $this->container['contains_translated_data'];
+        return $this->container['auto_translated_data'];
     }
 
     /**
-     * Sets contains_translated_data
+     * Sets auto_translated_data
      *
-     * @param bool $contains_translated_data contains_translated_data
+     * @param bool $auto_translated_data auto_translated_data
      *
      * @return $this
      */
-    public function setContainsTranslatedData($contains_translated_data)
+    public function setAutoTranslatedData($auto_translated_data)
     {
-        $this->container['contains_translated_data'] = $contains_translated_data;
+        $this->container['auto_translated_data'] = $auto_translated_data;
 
         return $this;
     }

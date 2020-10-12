@@ -119,6 +119,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
+'auto_translated_data' => 'bool',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -128,7 +129,6 @@ class DsTour implements ModelInterface, ArrayAccess
 'additional_type' => 'string',
 'links' => '\Infocenter\Client\Model\DsLink[]',
 'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
-'contains_translated_data' => 'bool',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -201,6 +201,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
+'auto_translated_data' => null,
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -210,7 +211,6 @@ class DsTour implements ModelInterface, ArrayAccess
 'additional_type' => null,
 'links' => null,
 'tag' => null,
-'contains_translated_data' => null,
 'name' => null,
 'type' => null    ];
 
@@ -304,6 +304,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
+'auto_translated_data' => 'autoTranslatedData',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -313,7 +314,6 @@ class DsTour implements ModelInterface, ArrayAccess
 'additional_type' => 'additionalType',
 'links' => 'links',
 'tag' => 'tag',
-'contains_translated_data' => 'containsTranslatedData',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -386,6 +386,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
+'auto_translated_data' => 'setAutoTranslatedData',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -395,7 +396,6 @@ class DsTour implements ModelInterface, ArrayAccess
 'additional_type' => 'setAdditionalType',
 'links' => 'setLinks',
 'tag' => 'setTag',
-'contains_translated_data' => 'setContainsTranslatedData',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -468,6 +468,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
+'auto_translated_data' => 'getAutoTranslatedData',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -477,7 +478,6 @@ class DsTour implements ModelInterface, ArrayAccess
 'additional_type' => 'getAdditionalType',
 'links' => 'getLinks',
 'tag' => 'getTag',
-'contains_translated_data' => 'getContainsTranslatedData',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -602,6 +602,7 @@ class DsTour implements ModelInterface, ArrayAccess
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
+        $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -611,7 +612,6 @@ class DsTour implements ModelInterface, ArrayAccess
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
-        $this->container['contains_translated_data'] = isset($data['contains_translated_data']) ? $data['contains_translated_data'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -2153,6 +2153,30 @@ class DsTour implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets auto_translated_data
+     *
+     * @return bool
+     */
+    public function getAutoTranslatedData()
+    {
+        return $this->container['auto_translated_data'];
+    }
+
+    /**
+     * Sets auto_translated_data
+     *
+     * @param bool $auto_translated_data auto_translated_data
+     *
+     * @return $this
+     */
+    public function setAutoTranslatedData($auto_translated_data)
+    {
+        $this->container['auto_translated_data'] = $auto_translated_data;
+
+        return $this;
+    }
+
+    /**
      * Gets alternate_name
      *
      * @return string
@@ -2364,30 +2388,6 @@ class DsTour implements ModelInterface, ArrayAccess
     public function setTag($tag)
     {
         $this->container['tag'] = $tag;
-
-        return $this;
-    }
-
-    /**
-     * Gets contains_translated_data
-     *
-     * @return bool
-     */
-    public function getContainsTranslatedData()
-    {
-        return $this->container['contains_translated_data'];
-    }
-
-    /**
-     * Sets contains_translated_data
-     *
-     * @param bool $contains_translated_data contains_translated_data
-     *
-     * @return $this
-     */
-    public function setContainsTranslatedData($contains_translated_data)
-    {
-        $this->container['contains_translated_data'] = $contains_translated_data;
 
         return $this;
     }

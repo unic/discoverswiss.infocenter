@@ -74,7 +74,8 @@ class DsIndex implements ModelInterface, ArrayAccess
 'time' => 'string',
 'rating' => '\Infocenter\Client\Model\DsTourRating',
 'schedule' => '\Infocenter\Client\Model\DsSchedule[]',
-'elevation' => '\Infocenter\Client\Model\DsTourElevation'    ];
+'elevation' => '\Infocenter\Client\Model\DsTourElevation',
+'auto_translated_data' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -100,7 +101,8 @@ class DsIndex implements ModelInterface, ArrayAccess
 'time' => null,
 'rating' => null,
 'schedule' => null,
-'elevation' => null    ];
+'elevation' => null,
+'auto_translated_data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -147,7 +149,8 @@ class DsIndex implements ModelInterface, ArrayAccess
 'time' => 'time',
 'rating' => 'rating',
 'schedule' => 'schedule',
-'elevation' => 'elevation'    ];
+'elevation' => 'elevation',
+'auto_translated_data' => 'autoTranslatedData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -173,7 +176,8 @@ class DsIndex implements ModelInterface, ArrayAccess
 'time' => 'setTime',
 'rating' => 'setRating',
 'schedule' => 'setSchedule',
-'elevation' => 'setElevation'    ];
+'elevation' => 'setElevation',
+'auto_translated_data' => 'setAutoTranslatedData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -199,7 +203,8 @@ class DsIndex implements ModelInterface, ArrayAccess
 'time' => 'getTime',
 'rating' => 'getRating',
 'schedule' => 'getSchedule',
-'elevation' => 'getElevation'    ];
+'elevation' => 'getElevation',
+'auto_translated_data' => 'getAutoTranslatedData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -278,6 +283,7 @@ class DsIndex implements ModelInterface, ArrayAccess
         $this->container['rating'] = isset($data['rating']) ? $data['rating'] : null;
         $this->container['schedule'] = isset($data['schedule']) ? $data['schedule'] : null;
         $this->container['elevation'] = isset($data['elevation']) ? $data['elevation'] : null;
+        $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
     }
 
     /**
@@ -756,6 +762,30 @@ class DsIndex implements ModelInterface, ArrayAccess
     public function setElevation($elevation)
     {
         $this->container['elevation'] = $elevation;
+
+        return $this;
+    }
+
+    /**
+     * Gets auto_translated_data
+     *
+     * @return bool
+     */
+    public function getAutoTranslatedData()
+    {
+        return $this->container['auto_translated_data'];
+    }
+
+    /**
+     * Sets auto_translated_data
+     *
+     * @param bool $auto_translated_data auto_translated_data
+     *
+     * @return $this
+     */
+    public function setAutoTranslatedData($auto_translated_data)
+    {
+        $this->container['auto_translated_data'] = $auto_translated_data;
 
         return $this;
     }
