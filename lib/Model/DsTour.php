@@ -59,13 +59,13 @@ class DsTour implements ModelInterface, ArrayAccess
         'winter_activity' => 'bool',
 'length' => 'double',
 'time' => 'int',
-'elevation_json' => '\Infocenter\Client\Model\DsExpandoObject',
+'elevation_json' => 'object',
 'elevation' => '\Infocenter\Client\Model\DsTourElevation',
-'rating_json' => '\Infocenter\Client\Model\DsExpandoObject',
+'rating_json' => 'object',
 'rating' => '\Infocenter\Client\Model\DsTourRating',
-'season_json' => '\Infocenter\Client\Model\DsExpandoObject',
-'difficulties_json' => '\Infocenter\Client\Model\DsExpandoObject',
-'exposition_json' => '\Infocenter\Client\Model\DsExpandoObject',
+'season_json' => 'object',
+'difficulties_json' => 'object',
+'exposition_json' => 'object',
 'risk_potential' => 'int',
 'titles' => 'string',
 'starting_point_description' => 'string',
@@ -715,7 +715,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Gets elevation_json
      *
-     * @return \Infocenter\Client\Model\DsExpandoObject
+     * @return object
      */
     public function getElevationJson()
     {
@@ -725,7 +725,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets elevation_json
      *
-     * @param \Infocenter\Client\Model\DsExpandoObject $elevation_json elevation_json
+     * @param object $elevation_json elevation_json
      *
      * @return $this
      */
@@ -763,7 +763,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Gets rating_json
      *
-     * @return \Infocenter\Client\Model\DsExpandoObject
+     * @return object
      */
     public function getRatingJson()
     {
@@ -773,7 +773,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets rating_json
      *
-     * @param \Infocenter\Client\Model\DsExpandoObject $rating_json rating_json
+     * @param object $rating_json rating_json
      *
      * @return $this
      */
@@ -811,7 +811,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Gets season_json
      *
-     * @return \Infocenter\Client\Model\DsExpandoObject
+     * @return object
      */
     public function getSeasonJson()
     {
@@ -821,7 +821,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets season_json
      *
-     * @param \Infocenter\Client\Model\DsExpandoObject $season_json season_json
+     * @param object $season_json season_json
      *
      * @return $this
      */
@@ -835,7 +835,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Gets difficulties_json
      *
-     * @return \Infocenter\Client\Model\DsExpandoObject
+     * @return object
      */
     public function getDifficultiesJson()
     {
@@ -845,7 +845,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets difficulties_json
      *
-     * @param \Infocenter\Client\Model\DsExpandoObject $difficulties_json difficulties_json
+     * @param object $difficulties_json difficulties_json
      *
      * @return $this
      */
@@ -859,7 +859,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Gets exposition_json
      *
-     * @return \Infocenter\Client\Model\DsExpandoObject
+     * @return object
      */
     public function getExpositionJson()
     {
@@ -869,7 +869,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets exposition_json
      *
-     * @param \Infocenter\Client\Model\DsExpandoObject $exposition_json exposition_json
+     * @param object $exposition_json exposition_json
      *
      * @return $this
      */
