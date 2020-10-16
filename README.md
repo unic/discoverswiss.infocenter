@@ -1794,7 +1794,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Infocenter\Client\Model\DsExtendedSearchRequest(); // \Infocenter\Client\Model\DsExtendedSearchRequest | 
+$body = new \Infocenter\Client\Model\DsFullSearchRequest(); // \Infocenter\Client\Model\DsFullSearchRequest | 
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
@@ -1826,17 +1826,31 @@ $select = "select_example"; // string | Use property for selecting fields which 
 $current_page = 56; // int | Format - int32. Use property to set number of page
 $results_per_page = 56; // int | Format - int32. Use property to set count of results per page
 $order_by = "order_by_example"; // string | Use property for ordering
-$filters = "filters_example"; // string | Use property for odata filters
-$type = "type_example"; // string | Use property for type filters
-$datasource = "datasource_example"; // string | Use property for datasource filters
-$project = "project_example"; // string | Use property for project filters
-$parent_type = "parent_type_example"; // string | Use property for parentType filters
-$campaign_tag = "campaign_tag_example"; // string | Use property for campaignTag filters
+$filters = "filters_example"; // string | Use property for odata filtering
+$type = "type_example"; // string | Use property for filtering by `type`
+$datasource = "datasource_example"; // string | Use property for filtering by `dataSource`
+$project = "project_example"; // string | Use property for filtering by `project`
+$parent_type = "parent_type_example"; // string | Use property for filtering by `parentType`
+$campaign_tag = "campaign_tag_example"; // string | Use property for filtering by `campaignTag`
+$category = "category_example"; // string | Use property for filtering/facet-filtering by `categoryTree`
+$tag = "tag_example"; // string | Use property for filtering/facet-filtering by `tag/id`
+$contained_in_place = "contained_in_place_example"; // string | Use property for filtering/facet-filtering by `containedInPlace/id`
+$address_locality = "address_locality_example"; // string | Use property for filtering/facet-filtering by `address/addressLocality`
+$address_postal_code = "address_postal_code_example"; // string | Use property for filtering/facet-filtering by `address/postalCode`
+$time = "time_example"; // string | Use property for filtering/facet-filtering by `time`
+$state = "state_example"; // string | Use property for filtering/facet-filtering by `state`
+$rating_condition = "rating_condition_example"; // string | Use property for filtering/facet-filtering by `rating/condition`
+$rating_difficulty = "rating_difficulty_example"; // string | Use property for filtering/facet-filtering by `rating/difficulty`
+$elevation_ascent = "elevation_ascent_example"; // string | Use property for filtering/facet-filtering by `elevation/ascent`
+$elevation_descent = "elevation_descent_example"; // string | Use property for filtering/facet-filtering by `elevation/descent`
+$elevation_min_altitude = "elevation_min_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/minAltitude`
+$elevation_max_altitude = "elevation_max_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/maxAltitude`
+$season = "season_example"; // string | Use property for filtering/facet-filtering by `seasons`
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $accept_language, $accept_timezone);
+    $result = $apiInstance->searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGET: ', $e->getMessage(), PHP_EOL;
@@ -2261,7 +2275,6 @@ Class | Method | HTTP request | Description
  - [DsEvent](docs/Model/DsEvent.md)
  - [DsEventsResponse](docs/Model/DsEventsResponse.md)
  - [DsExpandoObject](docs/Model/DsExpandoObject.md)
- - [DsExtendedSearchRequest](docs/Model/DsExtendedSearchRequest.md)
  - [DsFacetRequest](docs/Model/DsFacetRequest.md)
  - [DsFacetResponse](docs/Model/DsFacetResponse.md)
  - [DsFacetType](docs/Model/DsFacetType.md)
@@ -2270,6 +2283,7 @@ Class | Method | HTTP request | Description
  - [DsFilterValueType](docs/Model/DsFilterValueType.md)
  - [DsFoodEstablishment](docs/Model/DsFoodEstablishment.md)
  - [DsFoodEstablishmentsResponse](docs/Model/DsFoodEstablishmentsResponse.md)
+ - [DsFullSearchRequest](docs/Model/DsFullSearchRequest.md)
  - [DsGeoCoordinates](docs/Model/DsGeoCoordinates.md)
  - [DsGeoShape](docs/Model/DsGeoShape.md)
  - [DsHourlyForecast](docs/Model/DsHourlyForecast.md)

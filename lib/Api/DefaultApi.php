@@ -18656,7 +18656,7 @@ class DefaultApi
      *
      * Search
      *
-     * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body body (optional)
+     * @param  \Infocenter\Client\Model\DsFullSearchRequest $body body (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18675,7 +18675,7 @@ class DefaultApi
      *
      * Search
      *
-     * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body (optional)
+     * @param  \Infocenter\Client\Model\DsFullSearchRequest $body (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18752,7 +18752,7 @@ class DefaultApi
      *
      * Search
      *
-     * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body (optional)
+     * @param  \Infocenter\Client\Model\DsFullSearchRequest $body (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18774,7 +18774,7 @@ class DefaultApi
      *
      * Search
      *
-     * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body (optional)
+     * @param  \Infocenter\Client\Model\DsFullSearchRequest $body (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18826,7 +18826,7 @@ class DefaultApi
     /**
      * Create request for operation 'search'
      *
-     * @param  \Infocenter\Client\Model\DsExtendedSearchRequest $body (optional)
+     * @param  \Infocenter\Client\Model\DsFullSearchRequest $body (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18941,12 +18941,26 @@ class DefaultApi
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
-     * @param  string $filters Use property for odata filters (optional)
-     * @param  string $type Use property for type filters (optional)
-     * @param  string $datasource Use property for datasource filters (optional)
-     * @param  string $project Use property for project filters (optional)
-     * @param  string $parent_type Use property for parentType filters (optional)
-     * @param  string $campaign_tag Use property for campaignTag filters (optional)
+     * @param  string $filters Use property for odata filtering (optional)
+     * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
+     * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
+     * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
+     * @param  string $parent_type Use property for filtering by &#x60;parentType&#x60; (optional)
+     * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
+     * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
+     * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
+     * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
+     * @param  string $time Use property for filtering/facet-filtering by &#x60;time&#x60; (optional)
+     * @param  string $state Use property for filtering/facet-filtering by &#x60;state&#x60; (optional)
+     * @param  string $rating_condition Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; (optional)
+     * @param  string $rating_difficulty Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; (optional)
+     * @param  string $elevation_ascent Use property for filtering/facet-filtering by &#x60;elevation/ascent&#x60; (optional)
+     * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
+     * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
+     * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18954,9 +18968,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsSearchResponse
      */
-    public function searchByGET($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGET($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->searchByGETWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $accept_language, $accept_timezone);
+        list($response) = $this->searchByGETWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -18971,12 +18985,26 @@ class DefaultApi
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
-     * @param  string $filters Use property for odata filters (optional)
-     * @param  string $type Use property for type filters (optional)
-     * @param  string $datasource Use property for datasource filters (optional)
-     * @param  string $project Use property for project filters (optional)
-     * @param  string $parent_type Use property for parentType filters (optional)
-     * @param  string $campaign_tag Use property for campaignTag filters (optional)
+     * @param  string $filters Use property for odata filtering (optional)
+     * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
+     * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
+     * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
+     * @param  string $parent_type Use property for filtering by &#x60;parentType&#x60; (optional)
+     * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
+     * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
+     * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
+     * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
+     * @param  string $time Use property for filtering/facet-filtering by &#x60;time&#x60; (optional)
+     * @param  string $state Use property for filtering/facet-filtering by &#x60;state&#x60; (optional)
+     * @param  string $rating_condition Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; (optional)
+     * @param  string $rating_difficulty Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; (optional)
+     * @param  string $elevation_ascent Use property for filtering/facet-filtering by &#x60;elevation/ascent&#x60; (optional)
+     * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
+     * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
+     * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18984,10 +19012,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsSearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchByGETWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $accept_language, $accept_timezone);
+        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -19059,21 +19087,35 @@ class DefaultApi
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
-     * @param  string $filters Use property for odata filters (optional)
-     * @param  string $type Use property for type filters (optional)
-     * @param  string $datasource Use property for datasource filters (optional)
-     * @param  string $project Use property for project filters (optional)
-     * @param  string $parent_type Use property for parentType filters (optional)
-     * @param  string $campaign_tag Use property for campaignTag filters (optional)
+     * @param  string $filters Use property for odata filtering (optional)
+     * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
+     * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
+     * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
+     * @param  string $parent_type Use property for filtering by &#x60;parentType&#x60; (optional)
+     * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
+     * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
+     * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
+     * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
+     * @param  string $time Use property for filtering/facet-filtering by &#x60;time&#x60; (optional)
+     * @param  string $state Use property for filtering/facet-filtering by &#x60;state&#x60; (optional)
+     * @param  string $rating_condition Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; (optional)
+     * @param  string $rating_difficulty Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; (optional)
+     * @param  string $elevation_ascent Use property for filtering/facet-filtering by &#x60;elevation/ascent&#x60; (optional)
+     * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
+     * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
+     * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsync($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETAsync($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->searchByGETAsyncWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $accept_language, $accept_timezone)
+        return $this->searchByGETAsyncWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -19092,22 +19134,36 @@ class DefaultApi
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
-     * @param  string $filters Use property for odata filters (optional)
-     * @param  string $type Use property for type filters (optional)
-     * @param  string $datasource Use property for datasource filters (optional)
-     * @param  string $project Use property for project filters (optional)
-     * @param  string $parent_type Use property for parentType filters (optional)
-     * @param  string $campaign_tag Use property for campaignTag filters (optional)
+     * @param  string $filters Use property for odata filtering (optional)
+     * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
+     * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
+     * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
+     * @param  string $parent_type Use property for filtering by &#x60;parentType&#x60; (optional)
+     * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
+     * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
+     * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
+     * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
+     * @param  string $time Use property for filtering/facet-filtering by &#x60;time&#x60; (optional)
+     * @param  string $state Use property for filtering/facet-filtering by &#x60;state&#x60; (optional)
+     * @param  string $rating_condition Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; (optional)
+     * @param  string $rating_difficulty Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; (optional)
+     * @param  string $elevation_ascent Use property for filtering/facet-filtering by &#x60;elevation/ascent&#x60; (optional)
+     * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
+     * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
+     * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsyncWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETAsyncWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $accept_language, $accept_timezone);
+        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -19155,19 +19211,33 @@ class DefaultApi
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
-     * @param  string $filters Use property for odata filters (optional)
-     * @param  string $type Use property for type filters (optional)
-     * @param  string $datasource Use property for datasource filters (optional)
-     * @param  string $project Use property for project filters (optional)
-     * @param  string $parent_type Use property for parentType filters (optional)
-     * @param  string $campaign_tag Use property for campaignTag filters (optional)
+     * @param  string $filters Use property for odata filtering (optional)
+     * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
+     * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
+     * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
+     * @param  string $parent_type Use property for filtering by &#x60;parentType&#x60; (optional)
+     * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
+     * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
+     * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
+     * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
+     * @param  string $time Use property for filtering/facet-filtering by &#x60;time&#x60; (optional)
+     * @param  string $state Use property for filtering/facet-filtering by &#x60;state&#x60; (optional)
+     * @param  string $rating_condition Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; (optional)
+     * @param  string $rating_difficulty Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; (optional)
+     * @param  string $elevation_ascent Use property for filtering/facet-filtering by &#x60;elevation/ascent&#x60; (optional)
+     * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
+     * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
+     * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchByGETRequest($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null)
+    protected function searchByGETRequest($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $parent_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/search';
@@ -19224,6 +19294,62 @@ class DefaultApi
         // query params
         if ($campaign_tag !== null) {
             $queryParams['campaignTag'] = ObjectSerializer::toQueryValue($campaign_tag);
+        }
+        // query params
+        if ($category !== null) {
+            $queryParams['category'] = ObjectSerializer::toQueryValue($category);
+        }
+        // query params
+        if ($tag !== null) {
+            $queryParams['tag'] = ObjectSerializer::toQueryValue($tag);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($address_locality !== null) {
+            $queryParams['addressLocality'] = ObjectSerializer::toQueryValue($address_locality);
+        }
+        // query params
+        if ($address_postal_code !== null) {
+            $queryParams['addressPostalCode'] = ObjectSerializer::toQueryValue($address_postal_code);
+        }
+        // query params
+        if ($time !== null) {
+            $queryParams['time'] = ObjectSerializer::toQueryValue($time);
+        }
+        // query params
+        if ($state !== null) {
+            $queryParams['state'] = ObjectSerializer::toQueryValue($state);
+        }
+        // query params
+        if ($rating_condition !== null) {
+            $queryParams['ratingCondition'] = ObjectSerializer::toQueryValue($rating_condition);
+        }
+        // query params
+        if ($rating_difficulty !== null) {
+            $queryParams['ratingDifficulty'] = ObjectSerializer::toQueryValue($rating_difficulty);
+        }
+        // query params
+        if ($elevation_ascent !== null) {
+            $queryParams['elevationAscent'] = ObjectSerializer::toQueryValue($elevation_ascent);
+        }
+        // query params
+        if ($elevation_descent !== null) {
+            $queryParams['elevationDescent'] = ObjectSerializer::toQueryValue($elevation_descent);
+        }
+        // query params
+        if ($elevation_min_altitude !== null) {
+            $queryParams['elevationMinAltitude'] = ObjectSerializer::toQueryValue($elevation_min_altitude);
+        }
+        // query params
+        if ($elevation_max_altitude !== null) {
+            $queryParams['elevationMaxAltitude'] = ObjectSerializer::toQueryValue($elevation_max_altitude);
+        }
+        // query params
+        if ($season !== null) {
+            $queryParams['season'] = ObjectSerializer::toQueryValue($season);
         }
         // header params
         if ($accept_language !== null) {

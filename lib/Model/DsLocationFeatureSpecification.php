@@ -63,7 +63,7 @@ class DsLocationFeatureSpecification implements ModelInterface, ArrayAccess
 'min_value' => 'double',
 'unit_code' => 'string',
 'unit_text' => 'string',
-'value' => '\Infocenter\Client\Model\DsObject',
+'value' => 'object',
 'property_id' => 'string',
 'value_type' => 'string',
 'alternate_name' => 'string',
@@ -487,7 +487,7 @@ class DsLocationFeatureSpecification implements ModelInterface, ArrayAccess
     /**
      * Gets value
      *
-     * @return \Infocenter\Client\Model\DsObject
+     * @return object
      */
     public function getValue()
     {
@@ -497,7 +497,7 @@ class DsLocationFeatureSpecification implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param \Infocenter\Client\Model\DsObject $value value
+     * @param object $value value
      *
      * @return $this
      */

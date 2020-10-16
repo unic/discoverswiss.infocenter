@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **min_value** | **double** |  | [optional] 
 **unit_code** | **string** |  | [optional] 
 **unit_text** | **string** |  | [optional] 
-**value** | [**\Infocenter\Client\Model\DsObject**](DsObject.md) |  | [optional] 
+**value** | **object** |  | [optional] 
 **property_id** | **string** |  | [optional] 
 **value_type** | **string** |  | [optional] 
 **alternate_name** | **string** |  | [optional] 

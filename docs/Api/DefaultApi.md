@@ -4063,7 +4063,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Infocenter\Client\Model\DsExtendedSearchRequest(); // \Infocenter\Client\Model\DsExtendedSearchRequest | 
+$body = new \Infocenter\Client\Model\DsFullSearchRequest(); // \Infocenter\Client\Model\DsFullSearchRequest | 
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
@@ -4080,7 +4080,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Infocenter\Client\Model\DsExtendedSearchRequest**](../Model/DsExtendedSearchRequest.md)|  | [optional]
+ **body** | [**\Infocenter\Client\Model\DsFullSearchRequest**](../Model/DsFullSearchRequest.md)|  | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4100,7 +4100,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByGET**
-> \Infocenter\Client\Model\DsSearchResponse searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsSearchResponse searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone)
 
 Search by GET
 
@@ -4130,17 +4130,31 @@ $select = "select_example"; // string | Use property for selecting fields which 
 $current_page = 56; // int | Format - int32. Use property to set number of page
 $results_per_page = 56; // int | Format - int32. Use property to set count of results per page
 $order_by = "order_by_example"; // string | Use property for ordering
-$filters = "filters_example"; // string | Use property for odata filters
-$type = "type_example"; // string | Use property for type filters
-$datasource = "datasource_example"; // string | Use property for datasource filters
-$project = "project_example"; // string | Use property for project filters
-$parent_type = "parent_type_example"; // string | Use property for parentType filters
-$campaign_tag = "campaign_tag_example"; // string | Use property for campaignTag filters
+$filters = "filters_example"; // string | Use property for odata filtering
+$type = "type_example"; // string | Use property for filtering by `type`
+$datasource = "datasource_example"; // string | Use property for filtering by `dataSource`
+$project = "project_example"; // string | Use property for filtering by `project`
+$parent_type = "parent_type_example"; // string | Use property for filtering by `parentType`
+$campaign_tag = "campaign_tag_example"; // string | Use property for filtering by `campaignTag`
+$category = "category_example"; // string | Use property for filtering/facet-filtering by `categoryTree`
+$tag = "tag_example"; // string | Use property for filtering/facet-filtering by `tag/id`
+$contained_in_place = "contained_in_place_example"; // string | Use property for filtering/facet-filtering by `containedInPlace/id`
+$address_locality = "address_locality_example"; // string | Use property for filtering/facet-filtering by `address/addressLocality`
+$address_postal_code = "address_postal_code_example"; // string | Use property for filtering/facet-filtering by `address/postalCode`
+$time = "time_example"; // string | Use property for filtering/facet-filtering by `time`
+$state = "state_example"; // string | Use property for filtering/facet-filtering by `state`
+$rating_condition = "rating_condition_example"; // string | Use property for filtering/facet-filtering by `rating/condition`
+$rating_difficulty = "rating_difficulty_example"; // string | Use property for filtering/facet-filtering by `rating/difficulty`
+$elevation_ascent = "elevation_ascent_example"; // string | Use property for filtering/facet-filtering by `elevation/ascent`
+$elevation_descent = "elevation_descent_example"; // string | Use property for filtering/facet-filtering by `elevation/descent`
+$elevation_min_altitude = "elevation_min_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/minAltitude`
+$elevation_max_altitude = "elevation_max_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/maxAltitude`
+$season = "season_example"; // string | Use property for filtering/facet-filtering by `seasons`
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $accept_language, $accept_timezone);
+    $result = $apiInstance->searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $parent_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGET: ', $e->getMessage(), PHP_EOL;
@@ -4158,12 +4172,26 @@ Name | Type | Description  | Notes
  **current_page** | **int**| Format - int32. Use property to set number of page | [optional]
  **results_per_page** | **int**| Format - int32. Use property to set count of results per page | [optional]
  **order_by** | **string**| Use property for ordering | [optional]
- **filters** | **string**| Use property for odata filters | [optional]
- **type** | **string**| Use property for type filters | [optional]
- **datasource** | **string**| Use property for datasource filters | [optional]
- **project** | **string**| Use property for project filters | [optional]
- **parent_type** | **string**| Use property for parentType filters | [optional]
- **campaign_tag** | **string**| Use property for campaignTag filters | [optional]
+ **filters** | **string**| Use property for odata filtering | [optional]
+ **type** | **string**| Use property for filtering by &#x60;type&#x60; | [optional]
+ **datasource** | **string**| Use property for filtering by &#x60;dataSource&#x60; | [optional]
+ **project** | **string**| Use property for filtering by &#x60;project&#x60; | [optional]
+ **parent_type** | **string**| Use property for filtering by &#x60;parentType&#x60; | [optional]
+ **campaign_tag** | **string**| Use property for filtering by &#x60;campaignTag&#x60; | [optional]
+ **category** | **string**| Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; | [optional]
+ **tag** | **string**| Use property for filtering/facet-filtering by &#x60;tag/id&#x60; | [optional]
+ **contained_in_place** | **string**| Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; | [optional]
+ **address_locality** | **string**| Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; | [optional]
+ **address_postal_code** | **string**| Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; | [optional]
+ **time** | **string**| Use property for filtering/facet-filtering by &#x60;time&#x60; | [optional]
+ **state** | **string**| Use property for filtering/facet-filtering by &#x60;state&#x60; | [optional]
+ **rating_condition** | **string**| Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; | [optional]
+ **rating_difficulty** | **string**| Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; | [optional]
+ **elevation_ascent** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/ascent&#x60; | [optional]
+ **elevation_descent** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; | [optional]
+ **elevation_min_altitude** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; | [optional]
+ **elevation_max_altitude** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; | [optional]
+ **season** | **string**| Use property for filtering/facet-filtering by &#x60;seasons&#x60; | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 

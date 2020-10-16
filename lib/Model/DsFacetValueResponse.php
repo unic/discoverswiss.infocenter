@@ -59,12 +59,12 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
         'facet_type' => '\Infocenter\Client\Model\DsFacetType',
 'filter_type' => '\Infocenter\Client\Model\DsFilterType',
 'value_type' => '\Infocenter\Client\Model\DsFilterValueType',
-'from' => '\Infocenter\Client\Model\DsObject',
-'to' => '\Infocenter\Client\Model\DsObject',
-'value' => '\Infocenter\Client\Model\DsObject',
+'from' => 'object',
+'to' => 'object',
+'value' => 'object',
 'count' => 'int',
 'query' => 'string',
-'additional_properties' => 'map[string,\Infocenter\Client\Model\DsObject]'    ];
+'additional_properties' => 'map[string,object]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -319,7 +319,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets from
      *
-     * @return \Infocenter\Client\Model\DsObject
+     * @return object
      */
     public function getFrom()
     {
@@ -329,7 +329,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets from
      *
-     * @param \Infocenter\Client\Model\DsObject $from from
+     * @param object $from from
      *
      * @return $this
      */
@@ -343,7 +343,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets to
      *
-     * @return \Infocenter\Client\Model\DsObject
+     * @return object
      */
     public function getTo()
     {
@@ -353,7 +353,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets to
      *
-     * @param \Infocenter\Client\Model\DsObject $to to
+     * @param object $to to
      *
      * @return $this
      */
@@ -367,7 +367,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets value
      *
-     * @return \Infocenter\Client\Model\DsObject
+     * @return object
      */
     public function getValue()
     {
@@ -377,7 +377,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param \Infocenter\Client\Model\DsObject $value value
+     * @param object $value value
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets additional_properties
      *
-     * @return map[string,\Infocenter\Client\Model\DsObject]
+     * @return map[string,object]
      */
     public function getAdditionalProperties()
     {
@@ -449,7 +449,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets additional_properties
      *
-     * @param map[string,\Infocenter\Client\Model\DsObject] $additional_properties additional_properties
+     * @param map[string,object] $additional_properties additional_properties
      *
      * @return $this
      */
