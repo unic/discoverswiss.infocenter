@@ -56,15 +56,16 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'facet_type' => '\Infocenter\Client\Model\DsFacetType',
-'filter_type' => '\Infocenter\Client\Model\DsFilterType',
-'value_type' => '\Infocenter\Client\Model\DsFilterValueType',
+        'facet_type' => 'string',
+'filter_type' => 'string',
+'value_type' => 'string',
 'from' => 'object',
 'to' => 'object',
 'value' => 'object',
 'count' => 'int',
 'query' => 'string',
-'additional_properties' => 'map[string,object]'    ];
+'name' => 'string',
+'name_plural' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -80,7 +81,8 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
 'value' => null,
 'count' => 'int64',
 'query' => null,
-'additional_properties' => null    ];
+'name' => null,
+'name_plural' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -117,7 +119,8 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
 'value' => 'value',
 'count' => 'count',
 'query' => 'query',
-'additional_properties' => 'additionalProperties'    ];
+'name' => 'name',
+'name_plural' => 'namePlural'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -133,7 +136,8 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
 'value' => 'setValue',
 'count' => 'setCount',
 'query' => 'setQuery',
-'additional_properties' => 'setAdditionalProperties'    ];
+'name' => 'setName',
+'name_plural' => 'setNamePlural'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -149,7 +153,8 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
 'value' => 'getValue',
 'count' => 'getCount',
 'query' => 'getQuery',
-'additional_properties' => 'getAdditionalProperties'    ];
+'name' => 'getName',
+'name_plural' => 'getNamePlural'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -217,7 +222,8 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['query'] = isset($data['query']) ? $data['query'] : null;
-        $this->container['additional_properties'] = isset($data['additional_properties']) ? $data['additional_properties'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['name_plural'] = isset($data['name_plural']) ? $data['name_plural'] : null;
     }
 
     /**
@@ -247,7 +253,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets facet_type
      *
-     * @return \Infocenter\Client\Model\DsFacetType
+     * @return string
      */
     public function getFacetType()
     {
@@ -257,7 +263,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets facet_type
      *
-     * @param \Infocenter\Client\Model\DsFacetType $facet_type facet_type
+     * @param string $facet_type facet_type
      *
      * @return $this
      */
@@ -271,7 +277,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets filter_type
      *
-     * @return \Infocenter\Client\Model\DsFilterType
+     * @return string
      */
     public function getFilterType()
     {
@@ -281,7 +287,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets filter_type
      *
-     * @param \Infocenter\Client\Model\DsFilterType $filter_type filter_type
+     * @param string $filter_type filter_type
      *
      * @return $this
      */
@@ -295,7 +301,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets value_type
      *
-     * @return \Infocenter\Client\Model\DsFilterValueType
+     * @return string
      */
     public function getValueType()
     {
@@ -305,7 +311,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets value_type
      *
-     * @param \Infocenter\Client\Model\DsFilterValueType $value_type value_type
+     * @param string $value_type value_type
      *
      * @return $this
      */
@@ -437,25 +443,49 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets additional_properties
+     * Gets name
      *
-     * @return map[string,object]
+     * @return string
      */
-    public function getAdditionalProperties()
+    public function getName()
     {
-        return $this->container['additional_properties'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets additional_properties
+     * Sets name
      *
-     * @param map[string,object] $additional_properties additional_properties
+     * @param string $name name
      *
      * @return $this
      */
-    public function setAdditionalProperties($additional_properties)
+    public function setName($name)
     {
-        $this->container['additional_properties'] = $additional_properties;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets name_plural
+     *
+     * @return string
+     */
+    public function getNamePlural()
+    {
+        return $this->container['name_plural'];
+    }
+
+    /**
+     * Sets name_plural
+     *
+     * @param string $name_plural name_plural
+     *
+     * @return $this
+     */
+    public function setNamePlural($name_plural)
+    {
+        $this->container['name_plural'] = $name_plural;
 
         return $this;
     }

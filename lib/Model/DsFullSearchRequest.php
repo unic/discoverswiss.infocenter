@@ -70,11 +70,11 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'elevation_min_altitude' => 'string[]',
 'elevation_max_altitude' => 'string[]',
 'season' => 'string[]',
-'filters' => 'string[]',
 'type' => 'string[]',
+'parent_type' => 'string[]',
+'filters' => 'string[]',
 'datasource' => 'string[]',
 'project' => 'string[]',
-'parent_type' => 'string[]',
 'campaign_tag' => 'string[]',
 'facets' => '\Infocenter\Client\Model\DsFacetRequest[]',
 'search_text' => 'string',
@@ -104,11 +104,11 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'elevation_min_altitude' => null,
 'elevation_max_altitude' => null,
 'season' => null,
-'filters' => null,
 'type' => null,
+'parent_type' => null,
+'filters' => null,
 'datasource' => null,
 'project' => null,
-'parent_type' => null,
 'campaign_tag' => null,
 'facets' => null,
 'search_text' => null,
@@ -159,11 +159,11 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'elevation_min_altitude' => 'elevationMinAltitude',
 'elevation_max_altitude' => 'elevationMaxAltitude',
 'season' => 'season',
-'filters' => 'filters',
 'type' => 'type',
+'parent_type' => 'parentType',
+'filters' => 'filters',
 'datasource' => 'datasource',
 'project' => 'project',
-'parent_type' => 'parentType',
 'campaign_tag' => 'campaignTag',
 'facets' => 'facets',
 'search_text' => 'searchText',
@@ -193,11 +193,11 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'elevation_min_altitude' => 'setElevationMinAltitude',
 'elevation_max_altitude' => 'setElevationMaxAltitude',
 'season' => 'setSeason',
-'filters' => 'setFilters',
 'type' => 'setType',
+'parent_type' => 'setParentType',
+'filters' => 'setFilters',
 'datasource' => 'setDatasource',
 'project' => 'setProject',
-'parent_type' => 'setParentType',
 'campaign_tag' => 'setCampaignTag',
 'facets' => 'setFacets',
 'search_text' => 'setSearchText',
@@ -227,11 +227,11 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'elevation_min_altitude' => 'getElevationMinAltitude',
 'elevation_max_altitude' => 'getElevationMaxAltitude',
 'season' => 'getSeason',
-'filters' => 'getFilters',
 'type' => 'getType',
+'parent_type' => 'getParentType',
+'filters' => 'getFilters',
 'datasource' => 'getDatasource',
 'project' => 'getProject',
-'parent_type' => 'getParentType',
 'campaign_tag' => 'getCampaignTag',
 'facets' => 'getFacets',
 'search_text' => 'getSearchText',
@@ -313,11 +313,11 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         $this->container['elevation_min_altitude'] = isset($data['elevation_min_altitude']) ? $data['elevation_min_altitude'] : null;
         $this->container['elevation_max_altitude'] = isset($data['elevation_max_altitude']) ? $data['elevation_max_altitude'] : null;
         $this->container['season'] = isset($data['season']) ? $data['season'] : null;
-        $this->container['filters'] = isset($data['filters']) ? $data['filters'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['parent_type'] = isset($data['parent_type']) ? $data['parent_type'] : null;
+        $this->container['filters'] = isset($data['filters']) ? $data['filters'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['project'] = isset($data['project']) ? $data['project'] : null;
-        $this->container['parent_type'] = isset($data['parent_type']) ? $data['parent_type'] : null;
         $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
         $this->container['facets'] = isset($data['facets']) ? $data['facets'] : null;
         $this->container['search_text'] = isset($data['search_text']) ? $data['search_text'] : null;
@@ -689,30 +689,6 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets filters
-     *
-     * @return string[]
-     */
-    public function getFilters()
-    {
-        return $this->container['filters'];
-    }
-
-    /**
-     * Sets filters
-     *
-     * @param string[] $filters filters
-     *
-     * @return $this
-     */
-    public function setFilters($filters)
-    {
-        $this->container['filters'] = $filters;
-
-        return $this;
-    }
-
-    /**
      * Gets type
      *
      * @return string[]
@@ -732,6 +708,54 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent_type
+     *
+     * @return string[]
+     */
+    public function getParentType()
+    {
+        return $this->container['parent_type'];
+    }
+
+    /**
+     * Sets parent_type
+     *
+     * @param string[] $parent_type parent_type
+     *
+     * @return $this
+     */
+    public function setParentType($parent_type)
+    {
+        $this->container['parent_type'] = $parent_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets filters
+     *
+     * @return string[]
+     */
+    public function getFilters()
+    {
+        return $this->container['filters'];
+    }
+
+    /**
+     * Sets filters
+     *
+     * @param string[] $filters filters
+     *
+     * @return $this
+     */
+    public function setFilters($filters)
+    {
+        $this->container['filters'] = $filters;
 
         return $this;
     }
@@ -780,30 +804,6 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     public function setProject($project)
     {
         $this->container['project'] = $project;
-
-        return $this;
-    }
-
-    /**
-     * Gets parent_type
-     *
-     * @return string[]
-     */
-    public function getParentType()
-    {
-        return $this->container['parent_type'];
-    }
-
-    /**
-     * Sets parent_type
-     *
-     * @param string[] $parent_type parent_type
-     *
-     * @return $this
-     */
-    public function setParentType($parent_type)
-    {
-        $this->container['parent_type'] = $parent_type;
 
         return $this;
     }

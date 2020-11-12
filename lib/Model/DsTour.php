@@ -59,9 +59,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'winter_activity' => 'bool',
 'length' => 'double',
 'time' => 'int',
-'elevation_json' => 'object',
 'elevation' => '\Infocenter\Client\Model\DsTourElevation',
-'rating_json' => 'object',
 'rating' => '\Infocenter\Client\Model\DsTourRating',
 'season_json' => 'object',
 'difficulties_json' => 'object',
@@ -141,9 +139,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'winter_activity' => null,
 'length' => 'double',
 'time' => 'int32',
-'elevation_json' => null,
 'elevation' => null,
-'rating_json' => null,
 'rating' => null,
 'season_json' => null,
 'difficulties_json' => null,
@@ -244,9 +240,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'winter_activity' => 'winterActivity',
 'length' => 'length',
 'time' => 'time',
-'elevation_json' => 'elevationJson',
 'elevation' => 'elevation',
-'rating_json' => 'ratingJson',
 'rating' => 'rating',
 'season_json' => 'seasonJson',
 'difficulties_json' => 'difficultiesJson',
@@ -326,9 +320,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'winter_activity' => 'setWinterActivity',
 'length' => 'setLength',
 'time' => 'setTime',
-'elevation_json' => 'setElevationJson',
 'elevation' => 'setElevation',
-'rating_json' => 'setRatingJson',
 'rating' => 'setRating',
 'season_json' => 'setSeasonJson',
 'difficulties_json' => 'setDifficultiesJson',
@@ -408,9 +400,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'winter_activity' => 'getWinterActivity',
 'length' => 'getLength',
 'time' => 'getTime',
-'elevation_json' => 'getElevationJson',
 'elevation' => 'getElevation',
-'rating_json' => 'getRatingJson',
 'rating' => 'getRating',
 'season_json' => 'getSeasonJson',
 'difficulties_json' => 'getDifficultiesJson',
@@ -542,9 +532,7 @@ class DsTour implements ModelInterface, ArrayAccess
         $this->container['winter_activity'] = isset($data['winter_activity']) ? $data['winter_activity'] : null;
         $this->container['length'] = isset($data['length']) ? $data['length'] : null;
         $this->container['time'] = isset($data['time']) ? $data['time'] : null;
-        $this->container['elevation_json'] = isset($data['elevation_json']) ? $data['elevation_json'] : null;
         $this->container['elevation'] = isset($data['elevation']) ? $data['elevation'] : null;
-        $this->container['rating_json'] = isset($data['rating_json']) ? $data['rating_json'] : null;
         $this->container['rating'] = isset($data['rating']) ? $data['rating'] : null;
         $this->container['season_json'] = isset($data['season_json']) ? $data['season_json'] : null;
         $this->container['difficulties_json'] = isset($data['difficulties_json']) ? $data['difficulties_json'] : null;
@@ -713,30 +701,6 @@ class DsTour implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets elevation_json
-     *
-     * @return object
-     */
-    public function getElevationJson()
-    {
-        return $this->container['elevation_json'];
-    }
-
-    /**
-     * Sets elevation_json
-     *
-     * @param object $elevation_json elevation_json
-     *
-     * @return $this
-     */
-    public function setElevationJson($elevation_json)
-    {
-        $this->container['elevation_json'] = $elevation_json;
-
-        return $this;
-    }
-
-    /**
      * Gets elevation
      *
      * @return \Infocenter\Client\Model\DsTourElevation
@@ -756,30 +720,6 @@ class DsTour implements ModelInterface, ArrayAccess
     public function setElevation($elevation)
     {
         $this->container['elevation'] = $elevation;
-
-        return $this;
-    }
-
-    /**
-     * Gets rating_json
-     *
-     * @return object
-     */
-    public function getRatingJson()
-    {
-        return $this->container['rating_json'];
-    }
-
-    /**
-     * Sets rating_json
-     *
-     * @param object $rating_json rating_json
-     *
-     * @return $this
-     */
-    public function setRatingJson($rating_json)
-    {
-        $this->container['rating_json'] = $rating_json;
 
         return $this;
     }
