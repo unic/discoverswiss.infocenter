@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST
+ * Infocenter-TEST-V2
  *
- * Infocenter-TEST
+ * Infocenter API test-v2
  *
  * OpenAPI spec version: v2
  * 
@@ -113,7 +113,7 @@ class DsProduct implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
+        'id' => '@id',
 'identifier' => 'identifier',
 'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',

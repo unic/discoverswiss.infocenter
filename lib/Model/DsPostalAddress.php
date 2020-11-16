@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST
+ * Infocenter-TEST-V2
  *
- * Infocenter-TEST
+ * Infocenter API test-v2
  *
  * OpenAPI spec version: v2
  * 
@@ -78,7 +78,6 @@ class DsPostalAddress implements ModelInterface, ArrayAccess
 'url' => 'string',
 'additional_type' => 'string',
 'links' => '\Infocenter\Client\Model\DsLink[]',
-'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -110,7 +109,6 @@ class DsPostalAddress implements ModelInterface, ArrayAccess
 'url' => null,
 'additional_type' => null,
 'links' => null,
-'tag' => null,
 'name' => null,
 'type' => null    ];
 
@@ -163,7 +161,6 @@ class DsPostalAddress implements ModelInterface, ArrayAccess
 'url' => 'url',
 'additional_type' => 'additionalType',
 'links' => 'links',
-'tag' => 'tag',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -195,7 +192,6 @@ class DsPostalAddress implements ModelInterface, ArrayAccess
 'url' => 'setUrl',
 'additional_type' => 'setAdditionalType',
 'links' => 'setLinks',
-'tag' => 'setTag',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -227,7 +223,6 @@ class DsPostalAddress implements ModelInterface, ArrayAccess
 'url' => 'getUrl',
 'additional_type' => 'getAdditionalType',
 'links' => 'getLinks',
-'tag' => 'getTag',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -311,7 +306,6 @@ class DsPostalAddress implements ModelInterface, ArrayAccess
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -864,30 +858,6 @@ class DsPostalAddress implements ModelInterface, ArrayAccess
     public function setLinks($links)
     {
         $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag
-     *
-     * @return \Infocenter\Client\Model\DsTagSimplex[]
-     */
-    public function getTag()
-    {
-        return $this->container['tag'];
-    }
-
-    /**
-     * Sets tag
-     *
-     * @param \Infocenter\Client\Model\DsTagSimplex[] $tag tag
-     *
-     * @return $this
-     */
-    public function setTag($tag)
-    {
-        $this->container['tag'] = $tag;
 
         return $this;
     }

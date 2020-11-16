@@ -65,6 +65,7 @@ Name | Type | Description | Notes
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **available_data_language** | **string[]** |  | [optional] 
 **auto_translated_data** | **bool** |  | [optional] 
+**tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **disambiguating_description** | **string** |  | [optional] 
@@ -73,7 +74,6 @@ Name | Type | Description | Notes
 **url** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
 **links** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
-**tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST
+ * Infocenter-TEST-V2
  *
- * Infocenter-TEST
+ * Infocenter API test-v2
  *
  * OpenAPI spec version: v2
  * 
@@ -61,6 +61,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'unit_code' => 'string',
 'unit_text' => 'string',
 'value' => 'object',
+'value_str' => 'string',
 'property_id' => 'string',
 'value_type' => 'string',
 'alternate_name' => 'string',
@@ -71,7 +72,6 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'url' => 'string',
 'additional_type' => 'string',
 'links' => '\Infocenter\Client\Model\DsLink[]',
-'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -86,6 +86,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'unit_code' => null,
 'unit_text' => null,
 'value' => null,
+'value_str' => null,
 'property_id' => null,
 'value_type' => null,
 'alternate_name' => null,
@@ -96,7 +97,6 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'url' => null,
 'additional_type' => null,
 'links' => null,
-'tag' => null,
 'name' => null,
 'type' => null    ];
 
@@ -132,6 +132,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'unit_code' => 'unitCode',
 'unit_text' => 'unitText',
 'value' => 'value',
+'value_str' => 'valueStr',
 'property_id' => 'propertyId',
 'value_type' => 'valueType',
 'alternate_name' => 'alternateName',
@@ -142,7 +143,6 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'url' => 'url',
 'additional_type' => 'additionalType',
 'links' => 'links',
-'tag' => 'tag',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -157,6 +157,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'unit_code' => 'setUnitCode',
 'unit_text' => 'setUnitText',
 'value' => 'setValue',
+'value_str' => 'setValueStr',
 'property_id' => 'setPropertyId',
 'value_type' => 'setValueType',
 'alternate_name' => 'setAlternateName',
@@ -167,7 +168,6 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'url' => 'setUrl',
 'additional_type' => 'setAdditionalType',
 'links' => 'setLinks',
-'tag' => 'setTag',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -182,6 +182,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'unit_code' => 'getUnitCode',
 'unit_text' => 'getUnitText',
 'value' => 'getValue',
+'value_str' => 'getValueStr',
 'property_id' => 'getPropertyId',
 'value_type' => 'getValueType',
 'alternate_name' => 'getAlternateName',
@@ -192,7 +193,6 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'url' => 'getUrl',
 'additional_type' => 'getAdditionalType',
 'links' => 'getLinks',
-'tag' => 'getTag',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -259,6 +259,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
         $this->container['unit_code'] = isset($data['unit_code']) ? $data['unit_code'] : null;
         $this->container['unit_text'] = isset($data['unit_text']) ? $data['unit_text'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['value_str'] = isset($data['value_str']) ? $data['value_str'] : null;
         $this->container['property_id'] = isset($data['property_id']) ? $data['property_id'] : null;
         $this->container['value_type'] = isset($data['value_type']) ? $data['value_type'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
@@ -269,7 +270,6 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -414,6 +414,30 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     public function setValue($value)
     {
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets value_str
+     *
+     * @return string
+     */
+    public function getValueStr()
+    {
+        return $this->container['value_str'];
+    }
+
+    /**
+     * Sets value_str
+     *
+     * @param string $value_str value_str
+     *
+     * @return $this
+     */
+    public function setValueStr($value_str)
+    {
+        $this->container['value_str'] = $value_str;
 
         return $this;
     }
@@ -654,30 +678,6 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     public function setLinks($links)
     {
         $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag
-     *
-     * @return \Infocenter\Client\Model\DsTagSimplex[]
-     */
-    public function getTag()
-    {
-        return $this->container['tag'];
-    }
-
-    /**
-     * Sets tag
-     *
-     * @param \Infocenter\Client\Model\DsTagSimplex[] $tag tag
-     *
-     * @return $this
-     */
-    public function setTag($tag)
-    {
-        $this->container['tag'] = $tag;
 
         return $this;
     }

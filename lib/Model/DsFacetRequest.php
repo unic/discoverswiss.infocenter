@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST
+ * Infocenter-TEST-V2
  *
- * Infocenter-TEST
+ * Infocenter API test-v2
  *
  * OpenAPI spec version: v2
  * 
@@ -59,7 +59,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         'name' => 'string',
 'interval' => 'string',
 'values' => 'string',
-'count' => 'int'    ];
+'count' => 'int',
+'scope' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,7 +71,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         'name' => null,
 'interval' => null,
 'values' => null,
-'count' => 'int64'    ];
+'count' => 'int64',
+'scope' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -102,7 +104,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         'name' => 'name',
 'interval' => 'interval',
 'values' => 'values',
-'count' => 'count'    ];
+'count' => 'count',
+'scope' => 'scope'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,7 +116,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         'name' => 'setName',
 'interval' => 'setInterval',
 'values' => 'setValues',
-'count' => 'setCount'    ];
+'count' => 'setCount',
+'scope' => 'setScope'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -124,7 +128,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         'name' => 'getName',
 'interval' => 'getInterval',
 'values' => 'getValues',
-'count' => 'getCount'    ];
+'count' => 'getCount',
+'scope' => 'getScope'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -188,6 +193,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         $this->container['interval'] = isset($data['interval']) ? $data['interval'] : null;
         $this->container['values'] = isset($data['values']) ? $data['values'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['scope'] = isset($data['scope']) ? $data['scope'] : null;
     }
 
     /**
@@ -306,6 +312,30 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     public function setCount($count)
     {
         $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
+     * Gets scope
+     *
+     * @return string
+     */
+    public function getScope()
+    {
+        return $this->container['scope'];
+    }
+
+    /**
+     * Sets scope
+     *
+     * @param string $scope scope
+     *
+     * @return $this
+     */
+    public function setScope($scope)
+    {
+        $this->container['scope'] = $scope;
 
         return $this;
     }

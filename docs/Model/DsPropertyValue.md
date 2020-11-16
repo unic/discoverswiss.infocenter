@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **unit_code** | **string** |  | [optional] 
 **unit_text** | **string** |  | [optional] 
 **value** | **object** |  | [optional] 
+**value_str** | **string** |  | [optional] 
 **property_id** | **string** |  | [optional] 
 **value_type** | **string** |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
@@ -18,7 +19,6 @@ Name | Type | Description | Notes
 **url** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
 **links** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
-**tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

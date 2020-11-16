@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **url** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
 **links** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
-**tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

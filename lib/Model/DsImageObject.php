@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST
+ * Infocenter-TEST-V2
  *
- * Infocenter-TEST
+ * Infocenter API test-v2
  *
  * OpenAPI spec version: v2
  * 
@@ -76,6 +76,8 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
 'auto_translated_data' => 'bool',
+'category' => '\Infocenter\Client\Model\DsCategorySimplex[]',
+'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -84,7 +86,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'url' => 'string',
 'additional_type' => 'string',
 'links' => '\Infocenter\Client\Model\DsLink[]',
-'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -114,6 +115,8 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'last_modified' => 'date-time',
 'available_data_language' => null,
 'auto_translated_data' => null,
+'category' => null,
+'tag' => null,
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -122,7 +125,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'url' => null,
 'additional_type' => null,
 'links' => null,
-'tag' => null,
 'name' => null,
 'type' => null    ];
 
@@ -173,6 +175,8 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
 'auto_translated_data' => 'autoTranslatedData',
+'category' => 'category',
+'tag' => 'tag',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -181,7 +185,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'url' => 'url',
 'additional_type' => 'additionalType',
 'links' => 'links',
-'tag' => 'tag',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -211,6 +214,8 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
 'auto_translated_data' => 'setAutoTranslatedData',
+'category' => 'setCategory',
+'tag' => 'setTag',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -219,7 +224,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'url' => 'setUrl',
 'additional_type' => 'setAdditionalType',
 'links' => 'setLinks',
-'tag' => 'setTag',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -249,6 +253,8 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
 'auto_translated_data' => 'getAutoTranslatedData',
+'category' => 'getCategory',
+'tag' => 'getTag',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -257,7 +263,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'url' => 'getUrl',
 'additional_type' => 'getAdditionalType',
 'links' => 'getLinks',
-'tag' => 'getTag',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -339,6 +344,8 @@ class DsImageObject implements ModelInterface, ArrayAccess
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
         $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
+        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
+        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -347,7 +354,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -857,6 +863,54 @@ class DsImageObject implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets category
+     *
+     * @return \Infocenter\Client\Model\DsCategorySimplex[]
+     */
+    public function getCategory()
+    {
+        return $this->container['category'];
+    }
+
+    /**
+     * Sets category
+     *
+     * @param \Infocenter\Client\Model\DsCategorySimplex[] $category category
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getTag()
+    {
+        return $this->container['tag'];
+    }
+
+    /**
+     * Sets tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $tag tag
+     *
+     * @return $this
+     */
+    public function setTag($tag)
+    {
+        $this->container['tag'] = $tag;
+
+        return $this;
+    }
+
+    /**
      * Gets alternate_name
      *
      * @return string
@@ -1044,30 +1098,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
     public function setLinks($links)
     {
         $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag
-     *
-     * @return \Infocenter\Client\Model\DsTagSimplex[]
-     */
-    public function getTag()
-    {
-        return $this->container['tag'];
-    }
-
-    /**
-     * Sets tag
-     *
-     * @param \Infocenter\Client\Model\DsTagSimplex[] $tag tag
-     *
-     * @return $this
-     */
-    public function setTag($tag)
-    {
-        $this->container['tag'] = $tag;
 
         return $this;
     }
