@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **elevation_max_altitude** | **string[]** |  | [optional] 
 **season** | **string[]** |  | [optional] 
 **type** | **string[]** |  | [optional] 
-**parent_type** | **string[]** |  | [optional] 
+**combined_type** | **string[]** |  | [optional] 
 **filters** | **string[]** |  | [optional] 
 **datasource** | **string[]** |  | [optional] 
 **project** | **string[]** |  | [optional] 

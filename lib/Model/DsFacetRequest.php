@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST-V2
+ * Infocenter-TEST
  *
- * Infocenter API test-v2
+ * Infocenter API
  *
  * OpenAPI spec version: v2
  * 
@@ -59,6 +59,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         'name' => 'string',
 'interval' => 'string',
 'values' => 'string',
+'select_values' => 'string[]',
 'count' => 'int',
 'scope' => 'string'    ];
 
@@ -71,7 +72,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         'name' => null,
 'interval' => null,
 'values' => null,
-'count' => 'int64',
+'select_values' => null,
+'count' => 'int32',
 'scope' => null    ];
 
     /**
@@ -104,6 +106,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         'name' => 'name',
 'interval' => 'interval',
 'values' => 'values',
+'select_values' => 'selectValues',
 'count' => 'count',
 'scope' => 'scope'    ];
 
@@ -116,6 +119,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         'name' => 'setName',
 'interval' => 'setInterval',
 'values' => 'setValues',
+'select_values' => 'setSelectValues',
 'count' => 'setCount',
 'scope' => 'setScope'    ];
 
@@ -128,6 +132,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         'name' => 'getName',
 'interval' => 'getInterval',
 'values' => 'getValues',
+'select_values' => 'getSelectValues',
 'count' => 'getCount',
 'scope' => 'getScope'    ];
 
@@ -192,6 +197,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['interval'] = isset($data['interval']) ? $data['interval'] : null;
         $this->container['values'] = isset($data['values']) ? $data['values'] : null;
+        $this->container['select_values'] = isset($data['select_values']) ? $data['select_values'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['scope'] = isset($data['scope']) ? $data['scope'] : null;
     }
@@ -288,6 +294,30 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     public function setValues($values)
     {
         $this->container['values'] = $values;
+
+        return $this;
+    }
+
+    /**
+     * Gets select_values
+     *
+     * @return string[]
+     */
+    public function getSelectValues()
+    {
+        return $this->container['select_values'];
+    }
+
+    /**
+     * Sets select_values
+     *
+     * @param string[] $select_values select_values
+     *
+     * @return $this
+     */
+    public function setSelectValues($select_values)
+    {
+        $this->container['select_values'] = $select_values;
 
         return $this;
     }

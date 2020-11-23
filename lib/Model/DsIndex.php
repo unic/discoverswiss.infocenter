@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST-V2
+ * Infocenter-TEST
  *
- * Infocenter API test-v2
+ * Infocenter API
  *
  * OpenAPI spec version: v2
  * 
@@ -71,7 +71,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'description' => 'string',
 'contained_in_place' => 'string',
 'state' => 'string',
-'time' => 'string',
+'time' => 'int',
 'rating' => '\Infocenter\Client\Model\DsTourRating',
 'schedule' => '\Infocenter\Client\Model\DsSchedule[]',
 'elevation' => '\Infocenter\Client\Model\DsTourElevation',
@@ -98,7 +98,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'description' => null,
 'contained_in_place' => null,
 'state' => null,
-'time' => null,
+'time' => 'int32',
 'rating' => null,
 'schedule' => null,
 'elevation' => null,
@@ -673,7 +673,7 @@ class DsIndex implements ModelInterface, ArrayAccess
     /**
      * Gets time
      *
-     * @return string
+     * @return int
      */
     public function getTime()
     {
@@ -683,7 +683,7 @@ class DsIndex implements ModelInterface, ArrayAccess
     /**
      * Sets time
      *
-     * @param string $time time
+     * @param int $time time
      *
      * @return $this
      */

@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **description** | **string** |  | [optional] 
 **contained_in_place** | **string** |  | [optional] 
 **state** | **string** |  | [optional] 
-**time** | **string** |  | [optional] 
+**time** | **int** |  | [optional] 
 **rating** | [**\Infocenter\Client\Model\DsTourRating**](DsTourRating.md) |  | [optional] 
 **schedule** | [**\Infocenter\Client\Model\DsSchedule[]**](DsSchedule.md) |  | [optional] 
 **elevation** | [**\Infocenter\Client\Model\DsTourElevation**](DsTourElevation.md) |  | [optional] 

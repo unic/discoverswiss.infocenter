@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST-V2
+ * Infocenter-TEST
  *
- * Infocenter API test-v2
+ * Infocenter API
  *
  * OpenAPI spec version: v2
  * 
@@ -71,7 +71,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'elevation_max_altitude' => 'string[]',
 'season' => 'string[]',
 'type' => 'string[]',
-'parent_type' => 'string[]',
+'combined_type' => 'string[]',
 'filters' => 'string[]',
 'datasource' => 'string[]',
 'project' => 'string[]',
@@ -105,7 +105,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'elevation_max_altitude' => null,
 'season' => null,
 'type' => null,
-'parent_type' => null,
+'combined_type' => null,
 'filters' => null,
 'datasource' => null,
 'project' => null,
@@ -160,7 +160,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'elevation_max_altitude' => 'elevationMaxAltitude',
 'season' => 'season',
 'type' => 'type',
-'parent_type' => 'parentType',
+'combined_type' => 'combinedType',
 'filters' => 'filters',
 'datasource' => 'datasource',
 'project' => 'project',
@@ -194,7 +194,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'elevation_max_altitude' => 'setElevationMaxAltitude',
 'season' => 'setSeason',
 'type' => 'setType',
-'parent_type' => 'setParentType',
+'combined_type' => 'setCombinedType',
 'filters' => 'setFilters',
 'datasource' => 'setDatasource',
 'project' => 'setProject',
@@ -228,7 +228,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'elevation_max_altitude' => 'getElevationMaxAltitude',
 'season' => 'getSeason',
 'type' => 'getType',
-'parent_type' => 'getParentType',
+'combined_type' => 'getCombinedType',
 'filters' => 'getFilters',
 'datasource' => 'getDatasource',
 'project' => 'getProject',
@@ -314,7 +314,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         $this->container['elevation_max_altitude'] = isset($data['elevation_max_altitude']) ? $data['elevation_max_altitude'] : null;
         $this->container['season'] = isset($data['season']) ? $data['season'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['parent_type'] = isset($data['parent_type']) ? $data['parent_type'] : null;
+        $this->container['combined_type'] = isset($data['combined_type']) ? $data['combined_type'] : null;
         $this->container['filters'] = isset($data['filters']) ? $data['filters'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['project'] = isset($data['project']) ? $data['project'] : null;
@@ -713,25 +713,25 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets parent_type
+     * Gets combined_type
      *
      * @return string[]
      */
-    public function getParentType()
+    public function getCombinedType()
     {
-        return $this->container['parent_type'];
+        return $this->container['combined_type'];
     }
 
     /**
-     * Sets parent_type
+     * Sets combined_type
      *
-     * @param string[] $parent_type parent_type
+     * @param string[] $combined_type combined_type
      *
      * @return $this
      */
-    public function setParentType($parent_type)
+    public function setCombinedType($combined_type)
     {
-        $this->container['parent_type'] = $parent_type;
+        $this->container['combined_type'] = $combined_type;
 
         return $this;
     }

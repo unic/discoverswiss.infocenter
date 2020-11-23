@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional] 
 **interval** | **string** |  | [optional] 
 **values** | **string** |  | [optional] 
+**select_values** | **string[]** |  | [optional] 
 **count** | **int** |  | [optional] 
 **scope** | **string** |  | [optional] 
 

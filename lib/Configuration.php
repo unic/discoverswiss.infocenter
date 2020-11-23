@@ -10,9 +10,9 @@
  */
 
 /**
- * Infocenter-TEST-V2
+ * Infocenter-TEST
  *
- * Infocenter API test-v2
+ * Infocenter API
  *
  * OpenAPI spec version: v2
  * 
