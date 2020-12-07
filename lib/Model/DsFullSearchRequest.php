@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST
+ * Infocenter-TEST-V2
  *
- * Infocenter API
+ * Infocenter API test-v2
  *
  * OpenAPI spec version: v2
  * 
@@ -56,8 +56,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'category' => 'string[]',
-'tag' => 'string[]',
+        'tag' => 'string[]',
 'contained_in_place' => 'string[]',
 'address_locality' => 'string[]',
 'address_postal_code' => 'string[]',
@@ -72,10 +71,12 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'season' => 'string[]',
 'type' => 'string[]',
 'combined_type' => 'string[]',
+'leaf_type' => 'string[]',
 'filters' => 'string[]',
 'datasource' => 'string[]',
 'project' => 'string[]',
 'campaign_tag' => 'string[]',
+'category' => 'string[]',
 'facets' => '\Infocenter\Client\Model\DsFacetRequest[]',
 'search_text' => 'string',
 'search_fields' => 'string',
@@ -90,8 +91,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'category' => null,
-'tag' => null,
+        'tag' => null,
 'contained_in_place' => null,
 'address_locality' => null,
 'address_postal_code' => null,
@@ -106,10 +106,12 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'season' => null,
 'type' => null,
 'combined_type' => null,
+'leaf_type' => null,
 'filters' => null,
 'datasource' => null,
 'project' => null,
 'campaign_tag' => null,
+'category' => null,
 'facets' => null,
 'search_text' => null,
 'search_fields' => null,
@@ -145,8 +147,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'category' => 'category',
-'tag' => 'tag',
+        'tag' => 'tag',
 'contained_in_place' => 'containedInPlace',
 'address_locality' => 'addressLocality',
 'address_postal_code' => 'addressPostalCode',
@@ -161,10 +162,12 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'season' => 'season',
 'type' => 'type',
 'combined_type' => 'combinedType',
+'leaf_type' => 'leafType',
 'filters' => 'filters',
 'datasource' => 'datasource',
 'project' => 'project',
 'campaign_tag' => 'campaignTag',
+'category' => 'category',
 'facets' => 'facets',
 'search_text' => 'searchText',
 'search_fields' => 'searchFields',
@@ -179,8 +182,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'category' => 'setCategory',
-'tag' => 'setTag',
+        'tag' => 'setTag',
 'contained_in_place' => 'setContainedInPlace',
 'address_locality' => 'setAddressLocality',
 'address_postal_code' => 'setAddressPostalCode',
@@ -195,10 +197,12 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'season' => 'setSeason',
 'type' => 'setType',
 'combined_type' => 'setCombinedType',
+'leaf_type' => 'setLeafType',
 'filters' => 'setFilters',
 'datasource' => 'setDatasource',
 'project' => 'setProject',
 'campaign_tag' => 'setCampaignTag',
+'category' => 'setCategory',
 'facets' => 'setFacets',
 'search_text' => 'setSearchText',
 'search_fields' => 'setSearchFields',
@@ -213,8 +217,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'category' => 'getCategory',
-'tag' => 'getTag',
+        'tag' => 'getTag',
 'contained_in_place' => 'getContainedInPlace',
 'address_locality' => 'getAddressLocality',
 'address_postal_code' => 'getAddressPostalCode',
@@ -229,10 +232,12 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'season' => 'getSeason',
 'type' => 'getType',
 'combined_type' => 'getCombinedType',
+'leaf_type' => 'getLeafType',
 'filters' => 'getFilters',
 'datasource' => 'getDatasource',
 'project' => 'getProject',
 'campaign_tag' => 'getCampaignTag',
+'category' => 'getCategory',
 'facets' => 'getFacets',
 'search_text' => 'getSearchText',
 'search_fields' => 'getSearchFields',
@@ -299,7 +304,6 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
         $this->container['address_locality'] = isset($data['address_locality']) ? $data['address_locality'] : null;
@@ -315,10 +319,12 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         $this->container['season'] = isset($data['season']) ? $data['season'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['combined_type'] = isset($data['combined_type']) ? $data['combined_type'] : null;
+        $this->container['leaf_type'] = isset($data['leaf_type']) ? $data['leaf_type'] : null;
         $this->container['filters'] = isset($data['filters']) ? $data['filters'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['project'] = isset($data['project']) ? $data['project'] : null;
         $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
+        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['facets'] = isset($data['facets']) ? $data['facets'] : null;
         $this->container['search_text'] = isset($data['search_text']) ? $data['search_text'] : null;
         $this->container['search_fields'] = isset($data['search_fields']) ? $data['search_fields'] : null;
@@ -351,30 +357,6 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets category
-     *
-     * @return string[]
-     */
-    public function getCategory()
-    {
-        return $this->container['category'];
-    }
-
-    /**
-     * Sets category
-     *
-     * @param string[] $category category
-     *
-     * @return $this
-     */
-    public function setCategory($category)
-    {
-        $this->container['category'] = $category;
-
-        return $this;
-    }
 
     /**
      * Gets tag
@@ -737,6 +719,30 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets leaf_type
+     *
+     * @return string[]
+     */
+    public function getLeafType()
+    {
+        return $this->container['leaf_type'];
+    }
+
+    /**
+     * Sets leaf_type
+     *
+     * @param string[] $leaf_type leaf_type
+     *
+     * @return $this
+     */
+    public function setLeafType($leaf_type)
+    {
+        $this->container['leaf_type'] = $leaf_type;
+
+        return $this;
+    }
+
+    /**
      * Gets filters
      *
      * @return string[]
@@ -828,6 +834,30 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     public function setCampaignTag($campaign_tag)
     {
         $this->container['campaign_tag'] = $campaign_tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets category
+     *
+     * @return string[]
+     */
+    public function getCategory()
+    {
+        return $this->container['category'];
+    }
+
+    /**
+     * Sets category
+     *
+     * @param string[] $category category
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->container['category'] = $category;
 
         return $this;
     }

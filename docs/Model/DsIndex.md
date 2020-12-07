@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional] 
 **oua_id** | **int** |  | [optional] 
+**source_id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **datasource** | **string** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\DsDataGovernance**](DsDataGovernance.md) |  | [optional] 

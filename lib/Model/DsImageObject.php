@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST
+ * Infocenter-TEST-V2
  *
- * Infocenter API
+ * Infocenter API test-v2
  *
  * OpenAPI spec version: v2
  * 
@@ -63,8 +63,9 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'embed_url' => 'string',
 'height' => 'string',
 'width' => 'string',
+'additional_property' => '\Infocenter\Client\Model\DsPropertyValue[]',
 'content_reference_time' => '\DateTime',
-'copyright_year' => 'double',
+'copyright_year' => 'int',
 'encoding_format' => 'string',
 'is_accessible_for_free' => 'bool',
 'thumbnail_url' => 'string',
@@ -85,7 +86,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'same_as' => 'string',
 'url' => 'string',
 'additional_type' => 'string',
-'links' => '\Infocenter\Client\Model\DsLink[]',
+'link' => '\Infocenter\Client\Model\DsLink[]',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -102,8 +103,9 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'embed_url' => null,
 'height' => null,
 'width' => null,
+'additional_property' => null,
 'content_reference_time' => 'date-time',
-'copyright_year' => 'double',
+'copyright_year' => 'int32',
 'encoding_format' => null,
 'is_accessible_for_free' => null,
 'thumbnail_url' => null,
@@ -124,7 +126,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'same_as' => null,
 'url' => null,
 'additional_type' => null,
-'links' => null,
+'link' => null,
 'name' => null,
 'type' => null    ];
 
@@ -162,6 +164,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'embed_url' => 'embedUrl',
 'height' => 'height',
 'width' => 'width',
+'additional_property' => 'additionalProperty',
 'content_reference_time' => 'contentReferenceTime',
 'copyright_year' => 'copyrightYear',
 'encoding_format' => 'encodingFormat',
@@ -184,7 +187,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'same_as' => 'sameAs',
 'url' => 'url',
 'additional_type' => 'additionalType',
-'links' => 'links',
+'link' => 'link',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -201,6 +204,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'embed_url' => 'setEmbedUrl',
 'height' => 'setHeight',
 'width' => 'setWidth',
+'additional_property' => 'setAdditionalProperty',
 'content_reference_time' => 'setContentReferenceTime',
 'copyright_year' => 'setCopyrightYear',
 'encoding_format' => 'setEncodingFormat',
@@ -223,7 +227,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'same_as' => 'setSameAs',
 'url' => 'setUrl',
 'additional_type' => 'setAdditionalType',
-'links' => 'setLinks',
+'link' => 'setLink',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -240,6 +244,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'embed_url' => 'getEmbedUrl',
 'height' => 'getHeight',
 'width' => 'getWidth',
+'additional_property' => 'getAdditionalProperty',
 'content_reference_time' => 'getContentReferenceTime',
 'copyright_year' => 'getCopyrightYear',
 'encoding_format' => 'getEncodingFormat',
@@ -262,7 +267,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'same_as' => 'getSameAs',
 'url' => 'getUrl',
 'additional_type' => 'getAdditionalType',
-'links' => 'getLinks',
+'link' => 'getLink',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -331,6 +336,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
         $this->container['embed_url'] = isset($data['embed_url']) ? $data['embed_url'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
+        $this->container['additional_property'] = isset($data['additional_property']) ? $data['additional_property'] : null;
         $this->container['content_reference_time'] = isset($data['content_reference_time']) ? $data['content_reference_time'] : null;
         $this->container['copyright_year'] = isset($data['copyright_year']) ? $data['copyright_year'] : null;
         $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
@@ -353,7 +359,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
         $this->container['same_as'] = isset($data['same_as']) ? $data['same_as'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -551,6 +557,30 @@ class DsImageObject implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets additional_property
+     *
+     * @return \Infocenter\Client\Model\DsPropertyValue[]
+     */
+    public function getAdditionalProperty()
+    {
+        return $this->container['additional_property'];
+    }
+
+    /**
+     * Sets additional_property
+     *
+     * @param \Infocenter\Client\Model\DsPropertyValue[] $additional_property additional_property
+     *
+     * @return $this
+     */
+    public function setAdditionalProperty($additional_property)
+    {
+        $this->container['additional_property'] = $additional_property;
+
+        return $this;
+    }
+
+    /**
      * Gets content_reference_time
      *
      * @return \DateTime
@@ -577,7 +607,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
     /**
      * Gets copyright_year
      *
-     * @return double
+     * @return int
      */
     public function getCopyrightYear()
     {
@@ -587,7 +617,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
     /**
      * Sets copyright_year
      *
-     * @param double $copyright_year copyright_year
+     * @param int $copyright_year copyright_year
      *
      * @return $this
      */
@@ -1079,25 +1109,25 @@ class DsImageObject implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets links
+     * Gets link
      *
      * @return \Infocenter\Client\Model\DsLink[]
      */
-    public function getLinks()
+    public function getLink()
     {
-        return $this->container['links'];
+        return $this->container['link'];
     }
 
     /**
-     * Sets links
+     * Sets link
      *
-     * @param \Infocenter\Client\Model\DsLink[] $links links
+     * @param \Infocenter\Client\Model\DsLink[] $link link
      *
      * @return $this
      */
-    public function setLinks($links)
+    public function setLink($link)
     {
-        $this->container['links'] = $links;
+        $this->container['link'] = $link;
 
         return $this;
     }

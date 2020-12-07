@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST
+ * Infocenter-TEST-V2
  *
- * Infocenter API
+ * Infocenter API test-v2
  *
  * OpenAPI spec version: v2
  * 
@@ -58,6 +58,7 @@ class DsLink implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'url' => 'string',
 'is_recommendation' => 'bool',
+'in_language' => 'string',
 'title' => 'string',
 'name' => 'string',
 'type' => 'string'    ];
@@ -70,6 +71,7 @@ class DsLink implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'url' => null,
 'is_recommendation' => null,
+'in_language' => null,
 'title' => null,
 'name' => null,
 'type' => null    ];
@@ -103,6 +105,7 @@ class DsLink implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'url' => 'url',
 'is_recommendation' => 'isRecommendation',
+'in_language' => 'inLanguage',
 'title' => 'title',
 'name' => 'name',
 'type' => 'type'    ];
@@ -115,6 +118,7 @@ class DsLink implements ModelInterface, ArrayAccess
     protected static $setters = [
         'url' => 'setUrl',
 'is_recommendation' => 'setIsRecommendation',
+'in_language' => 'setInLanguage',
 'title' => 'setTitle',
 'name' => 'setName',
 'type' => 'setType'    ];
@@ -127,6 +131,7 @@ class DsLink implements ModelInterface, ArrayAccess
     protected static $getters = [
         'url' => 'getUrl',
 'is_recommendation' => 'getIsRecommendation',
+'in_language' => 'getInLanguage',
 'title' => 'getTitle',
 'name' => 'getName',
 'type' => 'getType'    ];
@@ -191,6 +196,7 @@ class DsLink implements ModelInterface, ArrayAccess
     {
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['is_recommendation'] = isset($data['is_recommendation']) ? $data['is_recommendation'] : null;
+        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
@@ -264,6 +270,30 @@ class DsLink implements ModelInterface, ArrayAccess
     public function setIsRecommendation($is_recommendation)
     {
         $this->container['is_recommendation'] = $is_recommendation;
+
+        return $this;
+    }
+
+    /**
+     * Gets in_language
+     *
+     * @return string
+     */
+    public function getInLanguage()
+    {
+        return $this->container['in_language'];
+    }
+
+    /**
+     * Sets in_language
+     *
+     * @param string $in_language in_language
+     *
+     * @return $this
+     */
+    public function setInLanguage($in_language)
+    {
+        $this->container['in_language'] = $in_language;
 
         return $this;
     }

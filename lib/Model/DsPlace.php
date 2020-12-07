@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST
+ * Infocenter-TEST-V2
  *
- * Infocenter API
+ * Infocenter API test-v2
  *
  * OpenAPI spec version: v2
  * 
@@ -106,7 +106,7 @@ class DsPlace implements ModelInterface, ArrayAccess
 'same_as' => 'string',
 'url' => 'string',
 'additional_type' => 'string',
-'links' => '\Infocenter\Client\Model\DsLink[]',
+'link' => '\Infocenter\Client\Model\DsLink[]',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -166,7 +166,7 @@ class DsPlace implements ModelInterface, ArrayAccess
 'same_as' => null,
 'url' => null,
 'additional_type' => null,
-'links' => null,
+'link' => null,
 'name' => null,
 'type' => null    ];
 
@@ -247,7 +247,7 @@ class DsPlace implements ModelInterface, ArrayAccess
 'same_as' => 'sameAs',
 'url' => 'url',
 'additional_type' => 'additionalType',
-'links' => 'links',
+'link' => 'link',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -307,7 +307,7 @@ class DsPlace implements ModelInterface, ArrayAccess
 'same_as' => 'setSameAs',
 'url' => 'setUrl',
 'additional_type' => 'setAdditionalType',
-'links' => 'setLinks',
+'link' => 'setLink',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -367,7 +367,7 @@ class DsPlace implements ModelInterface, ArrayAccess
 'same_as' => 'getSameAs',
 'url' => 'getUrl',
 'additional_type' => 'getAdditionalType',
-'links' => 'getLinks',
+'link' => 'getLink',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -479,7 +479,7 @@ class DsPlace implements ModelInterface, ArrayAccess
         $this->container['same_as'] = isset($data['same_as']) ? $data['same_as'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -1709,25 +1709,25 @@ class DsPlace implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets links
+     * Gets link
      *
      * @return \Infocenter\Client\Model\DsLink[]
      */
-    public function getLinks()
+    public function getLink()
     {
-        return $this->container['links'];
+        return $this->container['link'];
     }
 
     /**
-     * Sets links
+     * Sets link
      *
-     * @param \Infocenter\Client\Model\DsLink[] $links links
+     * @param \Infocenter\Client\Model\DsLink[] $link link
      *
      * @return $this
      */
-    public function setLinks($links)
+    public function setLink($link)
     {
-        $this->container['links'] = $links;
+        $this->container['link'] = $link;
 
         return $this;
     }

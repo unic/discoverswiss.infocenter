@@ -10,9 +10,9 @@
  */
 
 /**
- * Infocenter-TEST
+ * Infocenter-TEST-V2
  *
- * Infocenter API
+ * Infocenter API test-v2
  *
  * OpenAPI spec version: v2
  * 
@@ -94,6 +94,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -101,9 +102,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsAdministrativeArea
      */
-    public function administrativeAreaRegion($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegion($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->administrativeAreaRegionWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->administrativeAreaRegionWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -115,6 +116,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -122,10 +124,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsAdministrativeArea, HTTP status code, HTTP response headers (array of strings)
      */
-    public function administrativeAreaRegionWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsAdministrativeArea';
-        $request = $this->administrativeAreaRegionRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->administrativeAreaRegionRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -194,15 +196,16 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function administrativeAreaRegionAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->administrativeAreaRegionAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->administrativeAreaRegionAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -218,16 +221,17 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function administrativeAreaRegionAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsAdministrativeArea';
-        $request = $this->administrativeAreaRegionRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->administrativeAreaRegionRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -272,13 +276,14 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function administrativeAreaRegionRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function administrativeAreaRegionRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -301,6 +306,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -403,6 +412,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -410,9 +420,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
-    public function administrativeAreaRegionDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->administrativeAreaRegionDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->administrativeAreaRegionDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -425,6 +435,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -432,10 +443,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function administrativeAreaRegionDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->administrativeAreaRegionDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->administrativeAreaRegionDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -505,15 +516,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function administrativeAreaRegionDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->administrativeAreaRegionDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->administrativeAreaRegionDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -530,16 +542,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function administrativeAreaRegionDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->administrativeAreaRegionDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->administrativeAreaRegionDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -585,13 +598,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function administrativeAreaRegionDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function administrativeAreaRegionDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -618,6 +632,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -720,6 +738,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -727,9 +746,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsHourlyForecastArray
      */
-    public function administrativeAreaRegionHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->administrativeAreaRegionHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->administrativeAreaRegionHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -742,6 +761,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -749,10 +769,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function administrativeAreaRegionHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->administrativeAreaRegionHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->administrativeAreaRegionHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -822,15 +842,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function administrativeAreaRegionHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->administrativeAreaRegionHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->administrativeAreaRegionHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -847,16 +868,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function administrativeAreaRegionHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->administrativeAreaRegionHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->administrativeAreaRegionHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -902,13 +924,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function administrativeAreaRegionHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function administrativeAreaRegionHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -935,6 +958,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -1038,6 +1065,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -1045,9 +1073,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWeatherArray
      */
-    public function administrativeAreaRegionWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->administrativeAreaRegionWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        list($response) = $this->administrativeAreaRegionWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -1061,6 +1089,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -1068,10 +1097,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function administrativeAreaRegionWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->administrativeAreaRegionWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->administrativeAreaRegionWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1142,15 +1171,16 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function administrativeAreaRegionWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->administrativeAreaRegionWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+        return $this->administrativeAreaRegionWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1168,16 +1198,17 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function administrativeAreaRegionWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function administrativeAreaRegionWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->administrativeAreaRegionWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->administrativeAreaRegionWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1224,13 +1255,14 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function administrativeAreaRegionWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    protected function administrativeAreaRegionWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1261,6 +1293,10 @@ class DefaultApi
         // query params
         if ($details !== null) {
             $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -1362,6 +1398,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -1369,9 +1406,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsCategory
      */
-    public function category($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function category($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->categoryWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->categoryWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -1383,6 +1420,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -1390,10 +1428,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsCategory, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function categoryWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCategory';
-        $request = $this->categoryRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->categoryRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1462,15 +1500,16 @@ class DefaultApi
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function categoryAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->categoryAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->categoryAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1486,16 +1525,17 @@ class DefaultApi
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function categoryAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCategory';
-        $request = $this->categoryRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->categoryRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1540,13 +1580,14 @@ class DefaultApi
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function categoryRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function categoryRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1569,6 +1610,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -1668,6 +1713,7 @@ class DefaultApi
      * Category Tree
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -1675,9 +1721,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsCategoryTreeItem
      */
-    public function categoryTree($id, $accept_language = null, $accept_timezone = null)
+    public function categoryTree($id, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->categoryTreeWithHttpInfo($id, $accept_language, $accept_timezone);
+        list($response) = $this->categoryTreeWithHttpInfo($id, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -1687,6 +1733,7 @@ class DefaultApi
      * Category Tree
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -1694,10 +1741,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsCategoryTreeItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryTreeWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
+    public function categoryTreeWithHttpInfo($id, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCategoryTreeItem';
-        $request = $this->categoryTreeRequest($id, $accept_language, $accept_timezone);
+        $request = $this->categoryTreeRequest($id, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1764,15 +1811,16 @@ class DefaultApi
      * Category Tree
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryTreeAsync($id, $accept_language = null, $accept_timezone = null)
+    public function categoryTreeAsync($id, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->categoryTreeAsyncWithHttpInfo($id, $accept_language, $accept_timezone)
+        return $this->categoryTreeAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1786,16 +1834,17 @@ class DefaultApi
      * Category Tree
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryTreeAsyncWithHttpInfo($id, $accept_language = null, $accept_timezone = null)
+    public function categoryTreeAsyncWithHttpInfo($id, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCategoryTreeItem';
-        $request = $this->categoryTreeRequest($id, $accept_language, $accept_timezone);
+        $request = $this->categoryTreeRequest($id, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1838,13 +1887,14 @@ class DefaultApi
      * Create request for operation 'categoryTree'
      *
      * @param  string $id Use property identifier of Category to set root category. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function categoryTreeRequest($id, $accept_language = null, $accept_timezone = null)
+    protected function categoryTreeRequest($id, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1860,6 +1910,10 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
@@ -1960,6 +2014,7 @@ class DefaultApi
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -1967,9 +2022,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsCivicStructure
      */
-    public function civicStructure($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructure($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->civicStructureWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->civicStructureWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -1981,6 +2036,7 @@ class DefaultApi
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -1988,10 +2044,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsCivicStructure, HTTP status code, HTTP response headers (array of strings)
      */
-    public function civicStructureWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCivicStructure';
-        $request = $this->civicStructureRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->civicStructureRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2060,15 +2116,16 @@ class DefaultApi
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function civicStructureAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->civicStructureAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->civicStructureAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2084,16 +2141,17 @@ class DefaultApi
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function civicStructureAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCivicStructure';
-        $request = $this->civicStructureRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->civicStructureRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2138,13 +2196,14 @@ class DefaultApi
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function civicStructureRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function civicStructureRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -2167,6 +2226,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -2269,6 +2332,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -2276,9 +2340,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
-    public function civicStructureDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->civicStructureDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->civicStructureDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -2291,6 +2355,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -2298,10 +2363,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function civicStructureDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->civicStructureDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->civicStructureDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2371,15 +2436,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function civicStructureDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->civicStructureDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->civicStructureDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2396,16 +2462,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function civicStructureDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->civicStructureDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->civicStructureDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2451,13 +2518,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function civicStructureDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function civicStructureDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -2484,6 +2552,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -2586,6 +2658,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -2593,9 +2666,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsHourlyForecastArray
      */
-    public function civicStructureHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->civicStructureHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->civicStructureHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -2608,6 +2681,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -2615,10 +2689,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function civicStructureHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->civicStructureHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->civicStructureHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2688,15 +2762,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function civicStructureHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->civicStructureHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->civicStructureHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2713,16 +2788,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function civicStructureHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->civicStructureHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->civicStructureHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2768,13 +2844,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function civicStructureHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function civicStructureHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -2801,6 +2878,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -2904,6 +2985,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -2911,9 +2993,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWeatherArray
      */
-    public function civicStructureWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->civicStructureWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        list($response) = $this->civicStructureWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -2927,6 +3009,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -2934,10 +3017,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function civicStructureWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->civicStructureWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->civicStructureWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3008,15 +3091,16 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function civicStructureWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->civicStructureWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+        return $this->civicStructureWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3034,16 +3118,17 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function civicStructureWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function civicStructureWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->civicStructureWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->civicStructureWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3090,13 +3175,14 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function civicStructureWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    protected function civicStructureWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -3127,6 +3213,10 @@ class DefaultApi
         // query params
         if ($details !== null) {
             $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -3228,6 +3318,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -3235,9 +3326,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsCondition
      */
-    public function condition($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function condition($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->conditionWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->conditionWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -3249,6 +3340,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -3256,10 +3348,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsCondition, HTTP status code, HTTP response headers (array of strings)
      */
-    public function conditionWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function conditionWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCondition';
-        $request = $this->conditionRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->conditionRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3328,15 +3420,16 @@ class DefaultApi
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function conditionAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function conditionAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->conditionAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->conditionAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3352,16 +3445,17 @@ class DefaultApi
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function conditionAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function conditionAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCondition';
-        $request = $this->conditionRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->conditionRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3406,13 +3500,14 @@ class DefaultApi
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function conditionRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function conditionRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -3435,6 +3530,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -3537,6 +3636,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -3544,9 +3644,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
-    public function conditionDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function conditionDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->conditionDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->conditionDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -3559,6 +3659,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -3566,10 +3667,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function conditionDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function conditionDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->conditionDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->conditionDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3639,15 +3740,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function conditionDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function conditionDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->conditionDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->conditionDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3664,16 +3766,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function conditionDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function conditionDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->conditionDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->conditionDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3719,13 +3822,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function conditionDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function conditionDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -3752,6 +3856,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -3854,6 +3962,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -3861,9 +3970,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsHourlyForecastArray
      */
-    public function conditionHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function conditionHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->conditionHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->conditionHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -3876,6 +3985,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -3883,10 +3993,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function conditionHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function conditionHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->conditionHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->conditionHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3956,15 +4066,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function conditionHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function conditionHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->conditionHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->conditionHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3981,16 +4092,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function conditionHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function conditionHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->conditionHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->conditionHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4036,13 +4148,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function conditionHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function conditionHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -4069,6 +4182,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -4172,6 +4289,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -4179,9 +4297,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWeatherArray
      */
-    public function conditionWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function conditionWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->conditionWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        list($response) = $this->conditionWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -4195,6 +4313,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -4202,10 +4321,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function conditionWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function conditionWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->conditionWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->conditionWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4276,15 +4395,16 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function conditionWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function conditionWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->conditionWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+        return $this->conditionWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4302,16 +4422,17 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function conditionWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function conditionWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->conditionWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->conditionWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4358,13 +4479,14 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function conditionWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    protected function conditionWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -4395,6 +4517,10 @@ class DefaultApi
         // query params
         if ($details !== null) {
             $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -4496,6 +4622,7 @@ class DefaultApi
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -4503,9 +4630,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWeatherArray
      */
-    public function creativeWork($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function creativeWork($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->creativeWorkWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->creativeWorkWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -4517,6 +4644,7 @@ class DefaultApi
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -4524,10 +4652,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function creativeWorkWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function creativeWorkWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->creativeWorkRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->creativeWorkRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4596,15 +4724,16 @@ class DefaultApi
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function creativeWorkAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function creativeWorkAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->creativeWorkAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->creativeWorkAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4620,16 +4749,17 @@ class DefaultApi
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function creativeWorkAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function creativeWorkAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->creativeWorkRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->creativeWorkRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4674,13 +4804,14 @@ class DefaultApi
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function creativeWorkRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function creativeWorkRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -4703,6 +4834,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -4802,6 +4937,7 @@ class DefaultApi
      * Current TermVersion
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -4809,9 +4945,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsTermVersion
      */
-    public function currentTermVersion($term_code, $accept_language = null, $accept_timezone = null)
+    public function currentTermVersion($term_code, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->currentTermVersionWithHttpInfo($term_code, $accept_language, $accept_timezone);
+        list($response) = $this->currentTermVersionWithHttpInfo($term_code, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -4821,6 +4957,7 @@ class DefaultApi
      * Current TermVersion
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -4828,10 +4965,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsTermVersion, HTTP status code, HTTP response headers (array of strings)
      */
-    public function currentTermVersionWithHttpInfo($term_code, $accept_language = null, $accept_timezone = null)
+    public function currentTermVersionWithHttpInfo($term_code, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTermVersion';
-        $request = $this->currentTermVersionRequest($term_code, $accept_language, $accept_timezone);
+        $request = $this->currentTermVersionRequest($term_code, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4898,15 +5035,16 @@ class DefaultApi
      * Current TermVersion
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function currentTermVersionAsync($term_code, $accept_language = null, $accept_timezone = null)
+    public function currentTermVersionAsync($term_code, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->currentTermVersionAsyncWithHttpInfo($term_code, $accept_language, $accept_timezone)
+        return $this->currentTermVersionAsyncWithHttpInfo($term_code, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4920,16 +5058,17 @@ class DefaultApi
      * Current TermVersion
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function currentTermVersionAsyncWithHttpInfo($term_code, $accept_language = null, $accept_timezone = null)
+    public function currentTermVersionAsyncWithHttpInfo($term_code, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTermVersion';
-        $request = $this->currentTermVersionRequest($term_code, $accept_language, $accept_timezone);
+        $request = $this->currentTermVersionRequest($term_code, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4972,13 +5111,14 @@ class DefaultApi
      * Create request for operation 'currentTermVersion'
      *
      * @param  string $term_code Use property code of a term to get the current term version. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function currentTermVersionRequest($term_code, $accept_language = null, $accept_timezone = null)
+    protected function currentTermVersionRequest($term_code, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'term_code' is set
         if ($term_code === null || (is_array($term_code) && count($term_code) === 0)) {
@@ -4994,6 +5134,10 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
@@ -5094,6 +5238,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -5101,9 +5246,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsEvent
      */
-    public function event($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function event($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->eventWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->eventWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -5115,6 +5260,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -5122,10 +5268,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsEvent, HTTP status code, HTTP response headers (array of strings)
      */
-    public function eventWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function eventWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsEvent';
-        $request = $this->eventRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->eventRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5194,15 +5340,16 @@ class DefaultApi
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eventAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function eventAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->eventAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->eventAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5218,16 +5365,17 @@ class DefaultApi
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eventAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function eventAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsEvent';
-        $request = $this->eventRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->eventRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5272,13 +5420,14 @@ class DefaultApi
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function eventRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function eventRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -5301,6 +5450,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -5403,6 +5556,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -5410,9 +5564,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
-    public function eventDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function eventDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->eventDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->eventDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -5425,6 +5579,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -5432,10 +5587,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function eventDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function eventDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->eventDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->eventDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5505,15 +5660,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eventDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function eventDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->eventDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->eventDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5530,16 +5686,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eventDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function eventDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->eventDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->eventDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5585,13 +5742,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function eventDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function eventDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -5618,6 +5776,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -5720,6 +5882,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -5727,9 +5890,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsHourlyForecastArray
      */
-    public function eventHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function eventHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->eventHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->eventHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -5742,6 +5905,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -5749,10 +5913,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function eventHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function eventHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->eventHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->eventHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5822,15 +5986,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eventHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function eventHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->eventHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->eventHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5847,16 +6012,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eventHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function eventHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->eventHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->eventHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5902,13 +6068,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function eventHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function eventHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -5935,6 +6102,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -6038,6 +6209,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -6045,9 +6217,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWeatherArray
      */
-    public function eventWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function eventWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->eventWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        list($response) = $this->eventWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -6061,6 +6233,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -6068,10 +6241,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function eventWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function eventWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->eventWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->eventWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6142,15 +6315,16 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eventWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function eventWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->eventWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+        return $this->eventWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6168,16 +6342,17 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eventWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function eventWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->eventWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->eventWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6224,13 +6399,14 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function eventWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    protected function eventWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -6261,6 +6437,10 @@ class DefaultApi
         // query params
         if ($details !== null) {
             $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -6362,6 +6542,7 @@ class DefaultApi
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -6369,9 +6550,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsFoodEstablishment
      */
-    public function foodEstablishment($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishment($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->foodEstablishmentWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->foodEstablishmentWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -6383,6 +6564,7 @@ class DefaultApi
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -6390,10 +6572,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsFoodEstablishment, HTTP status code, HTTP response headers (array of strings)
      */
-    public function foodEstablishmentWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsFoodEstablishment';
-        $request = $this->foodEstablishmentRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->foodEstablishmentRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6462,15 +6644,16 @@ class DefaultApi
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function foodEstablishmentAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->foodEstablishmentAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->foodEstablishmentAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6486,16 +6669,17 @@ class DefaultApi
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function foodEstablishmentAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsFoodEstablishment';
-        $request = $this->foodEstablishmentRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->foodEstablishmentRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6540,13 +6724,14 @@ class DefaultApi
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function foodEstablishmentRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function foodEstablishmentRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -6569,6 +6754,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -6672,6 +6861,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -6679,9 +6869,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWeatherArray
      */
-    public function foodEstablishmentWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->foodEstablishmentWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        list($response) = $this->foodEstablishmentWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -6695,6 +6885,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -6702,10 +6893,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function foodEstablishmentWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->foodEstablishmentWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->foodEstablishmentWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6776,15 +6967,16 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function foodEstablishmentWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->foodEstablishmentWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+        return $this->foodEstablishmentWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6802,16 +6994,17 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function foodEstablishmentWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->foodEstablishmentWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->foodEstablishmentWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6858,13 +7051,14 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function foodEstablishmentWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    protected function foodEstablishmentWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -6895,6 +7089,10 @@ class DefaultApi
         // query params
         if ($details !== null) {
             $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -6997,6 +7195,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -7004,9 +7203,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
-    public function foodEstablishmentWeatherDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWeatherDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->foodEstablishmentWeatherDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->foodEstablishmentWeatherDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -7019,6 +7218,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -7026,10 +7226,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function foodEstablishmentWeatherDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWeatherDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->foodEstablishmentWeatherDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->foodEstablishmentWeatherDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7099,15 +7299,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function foodEstablishmentWeatherDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWeatherDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->foodEstablishmentWeatherDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->foodEstablishmentWeatherDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7124,16 +7325,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function foodEstablishmentWeatherDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWeatherDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->foodEstablishmentWeatherDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->foodEstablishmentWeatherDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7179,13 +7381,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function foodEstablishmentWeatherDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function foodEstablishmentWeatherDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -7212,6 +7415,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -7314,6 +7521,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -7321,9 +7529,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsHourlyForecastArray
      */
-    public function foodEstablishmentWeatherHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWeatherHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->foodEstablishmentWeatherHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->foodEstablishmentWeatherHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -7336,6 +7544,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -7343,10 +7552,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function foodEstablishmentWeatherHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWeatherHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->foodEstablishmentWeatherHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->foodEstablishmentWeatherHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7416,15 +7625,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function foodEstablishmentWeatherHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWeatherHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->foodEstablishmentWeatherHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->foodEstablishmentWeatherHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7441,16 +7651,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function foodEstablishmentWeatherHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function foodEstablishmentWeatherHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->foodEstablishmentWeatherHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->foodEstablishmentWeatherHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7496,13 +7707,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function foodEstablishmentWeatherHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function foodEstablishmentWeatherHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -7529,6 +7741,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -7627,14 +7843,15 @@ class DefaultApi
      *
      * GetStatus
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsStatusGet200TextPlainResponse
      */
-    public function getStatus()
+    public function getStatus($ocp_apim_subscription_key = null)
     {
-        list($response) = $this->getStatusWithHttpInfo();
+        list($response) = $this->getStatusWithHttpInfo($ocp_apim_subscription_key);
         return $response;
     }
 
@@ -7643,15 +7860,16 @@ class DefaultApi
      *
      * GetStatus
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsStatusGet200TextPlainResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStatusWithHttpInfo()
+    public function getStatusWithHttpInfo($ocp_apim_subscription_key = null)
     {
         $returnType = '\Infocenter\Client\Model\DsStatusGet200TextPlainResponse';
-        $request = $this->getStatusRequest();
+        $request = $this->getStatusRequest($ocp_apim_subscription_key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7717,13 +7935,14 @@ class DefaultApi
      *
      * GetStatus
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStatusAsync()
+    public function getStatusAsync($ocp_apim_subscription_key = null)
     {
-        return $this->getStatusAsyncWithHttpInfo()
+        return $this->getStatusAsyncWithHttpInfo($ocp_apim_subscription_key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7736,14 +7955,15 @@ class DefaultApi
      *
      * GetStatus
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStatusAsyncWithHttpInfo()
+    public function getStatusAsyncWithHttpInfo($ocp_apim_subscription_key = null)
     {
         $returnType = '\Infocenter\Client\Model\DsStatusGet200TextPlainResponse';
-        $request = $this->getStatusRequest();
+        $request = $this->getStatusRequest($ocp_apim_subscription_key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7785,11 +8005,12 @@ class DefaultApi
     /**
      * Create request for operation 'getStatus'
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getStatusRequest()
+    protected function getStatusRequest($ocp_apim_subscription_key = null)
     {
 
         $resourcePath = '/status';
@@ -7799,6 +8020,10 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
 
 
         // body params
@@ -7880,14 +8105,15 @@ class DefaultApi
      *
      * GetStatusAbout
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsStatusResponse
      */
-    public function getStatusAbout()
+    public function getStatusAbout($ocp_apim_subscription_key = null)
     {
-        list($response) = $this->getStatusAboutWithHttpInfo();
+        list($response) = $this->getStatusAboutWithHttpInfo($ocp_apim_subscription_key);
         return $response;
     }
 
@@ -7896,15 +8122,16 @@ class DefaultApi
      *
      * GetStatusAbout
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsStatusResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStatusAboutWithHttpInfo()
+    public function getStatusAboutWithHttpInfo($ocp_apim_subscription_key = null)
     {
         $returnType = '\Infocenter\Client\Model\DsStatusResponse';
-        $request = $this->getStatusAboutRequest();
+        $request = $this->getStatusAboutRequest($ocp_apim_subscription_key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7970,13 +8197,14 @@ class DefaultApi
      *
      * GetStatusAbout
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStatusAboutAsync()
+    public function getStatusAboutAsync($ocp_apim_subscription_key = null)
     {
-        return $this->getStatusAboutAsyncWithHttpInfo()
+        return $this->getStatusAboutAsyncWithHttpInfo($ocp_apim_subscription_key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7989,14 +8217,15 @@ class DefaultApi
      *
      * GetStatusAbout
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStatusAboutAsyncWithHttpInfo()
+    public function getStatusAboutAsyncWithHttpInfo($ocp_apim_subscription_key = null)
     {
         $returnType = '\Infocenter\Client\Model\DsStatusResponse';
-        $request = $this->getStatusAboutRequest();
+        $request = $this->getStatusAboutRequest($ocp_apim_subscription_key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8038,11 +8267,12 @@ class DefaultApi
     /**
      * Create request for operation 'getStatusAbout'
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getStatusAboutRequest()
+    protected function getStatusAboutRequest($ocp_apim_subscription_key = null)
     {
 
         $resourcePath = '/status/about';
@@ -8052,6 +8282,10 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
 
 
         // body params
@@ -8136,6 +8370,7 @@ class DefaultApi
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -8143,9 +8378,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsImageObject
      */
-    public function imageObject($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function imageObject($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->imageObjectWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->imageObjectWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -8157,6 +8392,7 @@ class DefaultApi
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -8164,10 +8400,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsImageObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function imageObjectWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function imageObjectWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsImageObject';
-        $request = $this->imageObjectRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->imageObjectRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8236,15 +8472,16 @@ class DefaultApi
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function imageObjectAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function imageObjectAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->imageObjectAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->imageObjectAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8260,16 +8497,17 @@ class DefaultApi
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function imageObjectAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function imageObjectAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsImageObject';
-        $request = $this->imageObjectRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->imageObjectRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8314,13 +8552,14 @@ class DefaultApi
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function imageObjectRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function imageObjectRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -8343,6 +8582,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -8452,6 +8695,7 @@ class DefaultApi
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
@@ -8459,9 +8703,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsAdministrativeAreasResponse
      */
-    public function listAdministrativeAreaRegion($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
+    public function listAdministrativeAreaRegion($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
-        list($response) = $this->listAdministrativeAreaRegionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language);
+        list($response) = $this->listAdministrativeAreaRegionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
         return $response;
     }
 
@@ -8481,6 +8725,7 @@ class DefaultApi
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
@@ -8488,10 +8733,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsAdministrativeAreasResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAdministrativeAreaRegionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
+    public function listAdministrativeAreaRegionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\DsAdministrativeAreasResponse';
-        $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language);
+        $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8568,15 +8813,16 @@ class DefaultApi
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAdministrativeAreaRegionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
+    public function listAdministrativeAreaRegionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
-        return $this->listAdministrativeAreaRegionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language)
+        return $this->listAdministrativeAreaRegionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $ocp_apim_subscription_key, $accept_timezone, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8600,16 +8846,17 @@ class DefaultApi
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAdministrativeAreaRegionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
+    public function listAdministrativeAreaRegionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\DsAdministrativeAreasResponse';
-        $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language);
+        $request = $this->listAdministrativeAreaRegionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8662,13 +8909,14 @@ class DefaultApi
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listAdministrativeAreaRegionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $accept_timezone = null, $accept_language = null)
+    protected function listAdministrativeAreaRegionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $admin_areas_only = null, $root_objects_only = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
 
         $resourcePath = '/areas';
@@ -8721,6 +8969,10 @@ class DefaultApi
         // query params
         if ($root_objects_only !== null) {
             $queryParams['rootObjectsOnly'] = ObjectSerializer::toQueryValue($root_objects_only);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_timezone !== null) {
@@ -8820,15 +9072,16 @@ class DefaultApi
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsCategoriesResponse
      */
-    public function listCategory($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
+    public function listCategory($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $ocp_apim_subscription_key = null, $accept_language = null)
     {
-        list($response) = $this->listCategoryWithHttpInfo($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language);
+        list($response) = $this->listCategoryWithHttpInfo($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $ocp_apim_subscription_key, $accept_language);
         return $response;
     }
 
@@ -8846,16 +9099,17 @@ class DefaultApi
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsCategoriesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCategoryWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
+    public function listCategoryWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $ocp_apim_subscription_key = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCategoriesResponse';
-        $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language);
+        $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $ocp_apim_subscription_key, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8930,14 +9184,15 @@ class DefaultApi
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCategoryAsync($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
+    public function listCategoryAsync($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $ocp_apim_subscription_key = null, $accept_language = null)
     {
-        return $this->listCategoryAsyncWithHttpInfo($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language)
+        return $this->listCategoryAsyncWithHttpInfo($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $ocp_apim_subscription_key, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8959,15 +9214,16 @@ class DefaultApi
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCategoryAsyncWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
+    public function listCategoryAsyncWithHttpInfo($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $ocp_apim_subscription_key = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCategoriesResponse';
-        $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language);
+        $request = $this->listCategoryRequest($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $ocp_apim_subscription_key, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9018,12 +9274,13 @@ class DefaultApi
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listCategoryRequest($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $accept_language = null)
+    protected function listCategoryRequest($parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $ocp_apim_subscription_key = null, $accept_language = null)
     {
 
         $resourcePath = '/categories';
@@ -9068,6 +9325,10 @@ class DefaultApi
         // query params
         if ($root_objects_only !== null) {
             $queryParams['rootObjectsOnly'] = ObjectSerializer::toQueryValue($root_objects_only);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -9163,6 +9424,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -9170,9 +9432,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsCivicStructuresResponse
      */
-    public function listCivicStructure($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listCivicStructure($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listCivicStructureWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        list($response) = $this->listCivicStructureWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -9190,6 +9452,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -9197,10 +9460,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsCivicStructuresResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCivicStructureWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listCivicStructureWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCivicStructuresResponse';
-        $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9275,15 +9538,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCivicStructureAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listCivicStructureAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listCivicStructureAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+        return $this->listCivicStructureAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9305,16 +9569,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCivicStructureAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listCivicStructureAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCivicStructuresResponse';
-        $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listCivicStructureRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9365,13 +9630,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listCivicStructureRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    protected function listCivicStructureRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/civicStructures';
@@ -9416,6 +9682,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -9515,6 +9785,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
@@ -9522,9 +9793,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsConditionsResponse
      */
-    public function listCondition($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
+    public function listCondition($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
-        list($response) = $this->listConditionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language);
+        list($response) = $this->listConditionWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
         return $response;
     }
 
@@ -9542,6 +9813,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
@@ -9549,10 +9821,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsConditionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listConditionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
+    public function listConditionWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\DsConditionsResponse';
-        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language);
+        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9627,15 +9899,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listConditionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
+    public function listConditionAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
-        return $this->listConditionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language)
+        return $this->listConditionAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_timezone, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9657,16 +9930,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listConditionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
+    public function listConditionAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\DsConditionsResponse';
-        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language);
+        $request = $this->listConditionRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9717,13 +9991,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listConditionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
+    protected function listConditionRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
 
         $resourcePath = '/conditions';
@@ -9768,6 +10043,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_timezone !== null) {
@@ -9865,6 +10144,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -9872,9 +10152,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsCreativeWorksResponse
      */
-    public function listCreativeWork($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listCreativeWork($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listCreativeWorkWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        list($response) = $this->listCreativeWorkWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -9890,6 +10170,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -9897,10 +10178,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsCreativeWorksResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCreativeWorkWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listCreativeWorkWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCreativeWorksResponse';
-        $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9973,15 +10254,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCreativeWorkAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listCreativeWorkAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listCreativeWorkAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+        return $this->listCreativeWorkAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10001,16 +10283,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCreativeWorkAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listCreativeWorkAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCreativeWorksResponse';
-        $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listCreativeWorkRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10059,13 +10342,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listCreativeWorkRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    protected function listCreativeWorkRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/creativeWorks';
@@ -10102,6 +10386,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -10202,6 +10490,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
@@ -10209,9 +10498,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsEventsResponse
      */
-    public function listEvents($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
+    public function listEvents($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
-        list($response) = $this->listEventsWithHttpInfo($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language);
+        list($response) = $this->listEventsWithHttpInfo($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
         return $response;
     }
 
@@ -10230,6 +10519,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
@@ -10237,10 +10527,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsEventsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listEventsWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
+    public function listEventsWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\DsEventsResponse';
-        $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language);
+        $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10316,15 +10606,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listEventsAsync($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
+    public function listEventsAsync($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
-        return $this->listEventsAsyncWithHttpInfo($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language)
+        return $this->listEventsAsyncWithHttpInfo($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_timezone, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10347,16 +10638,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listEventsAsyncWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
+    public function listEventsAsyncWithHttpInfo($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\DsEventsResponse';
-        $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language);
+        $request = $this->listEventsRequest($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10408,13 +10700,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listEventsRequest($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $accept_timezone = null, $accept_language = null)
+    protected function listEventsRequest($updated_since = null, $category = null, $datasource = null, $continuation_token = null, $top = null, $contained_in_place = null, $location = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
 
         $resourcePath = '/events';
@@ -10463,6 +10756,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_timezone !== null) {
@@ -10562,6 +10859,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -10569,9 +10867,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsFoodEstablishmentsResponse
      */
-    public function listFoodEstablishment($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listFoodEstablishment($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listFoodEstablishmentWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        list($response) = $this->listFoodEstablishmentWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -10589,6 +10887,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -10596,10 +10895,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsFoodEstablishmentsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listFoodEstablishmentWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listFoodEstablishmentWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsFoodEstablishmentsResponse';
-        $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10674,15 +10973,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listFoodEstablishmentAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listFoodEstablishmentAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listFoodEstablishmentAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+        return $this->listFoodEstablishmentAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10704,16 +11004,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listFoodEstablishmentAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listFoodEstablishmentAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsFoodEstablishmentsResponse';
-        $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listFoodEstablishmentRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10764,13 +11065,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listFoodEstablishmentRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    protected function listFoodEstablishmentRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/foodEstablishments';
@@ -10815,6 +11117,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -10912,6 +11218,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -10919,9 +11226,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsImageObjectsResponse
      */
-    public function listImageObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listImageObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listImageObjectWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        list($response) = $this->listImageObjectWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -10937,6 +11244,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -10944,10 +11252,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsImageObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listImageObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listImageObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsImageObjectsResponse';
-        $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11020,15 +11328,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listImageObjectAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listImageObjectAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listImageObjectAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+        return $this->listImageObjectAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11048,16 +11357,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listImageObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listImageObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsImageObjectsResponse';
-        $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listImageObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11106,13 +11416,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listImageObjectRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    protected function listImageObjectRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/imageObjects';
@@ -11149,6 +11460,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -11248,6 +11563,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -11255,9 +11571,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsLocalBusinessesResponse
      */
-    public function listLocalBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listLocalBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listLocalBusinessWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        list($response) = $this->listLocalBusinessWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -11275,6 +11591,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -11282,10 +11599,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsLocalBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLocalBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listLocalBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsLocalBusinessesResponse';
-        $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11360,15 +11677,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLocalBusinessAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listLocalBusinessAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listLocalBusinessAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+        return $this->listLocalBusinessAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11390,16 +11708,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLocalBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listLocalBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsLocalBusinessesResponse';
-        $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listLocalBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11450,13 +11769,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listLocalBusinessRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    protected function listLocalBusinessRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/localbusinesses';
@@ -11501,6 +11821,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -11600,6 +11924,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -11607,9 +11932,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsLodgingBusinessesResponse
      */
-    public function listLodgingBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listLodgingBusiness($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listLodgingBusinessWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        list($response) = $this->listLodgingBusinessWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -11627,6 +11952,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -11634,10 +11960,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsLodgingBusinessesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLodgingBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listLodgingBusinessWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsLodgingBusinessesResponse';
-        $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11712,15 +12038,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLodgingBusinessAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listLodgingBusinessAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listLodgingBusinessAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+        return $this->listLodgingBusinessAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11742,16 +12069,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLodgingBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listLodgingBusinessAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsLodgingBusinessesResponse';
-        $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listLodgingBusinessRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11802,13 +12130,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listLodgingBusinessRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    protected function listLodgingBusinessRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/lodgingbusinesses';
@@ -11853,6 +12182,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -11950,6 +12283,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -11957,9 +12291,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsMediaObjectsResponse
      */
-    public function listMediaObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listMediaObject($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listMediaObjectWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        list($response) = $this->listMediaObjectWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -11975,6 +12309,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -11982,10 +12317,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsMediaObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listMediaObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listMediaObjectWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsMediaObjectsResponse';
-        $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12058,15 +12393,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMediaObjectAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listMediaObjectAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listMediaObjectAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+        return $this->listMediaObjectAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12086,16 +12422,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMediaObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listMediaObjectAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsMediaObjectsResponse';
-        $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listMediaObjectRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12144,13 +12481,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listMediaObjectRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    protected function listMediaObjectRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/mediaObjects';
@@ -12187,6 +12525,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -12286,6 +12628,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -12293,9 +12636,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsPlacesResponse
      */
-    public function listPlace($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listPlace($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listPlaceWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        list($response) = $this->listPlaceWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -12313,6 +12656,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -12320,10 +12664,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsPlacesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listPlaceWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listPlaceWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsPlacesResponse';
-        $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12398,15 +12742,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPlaceAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listPlaceAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listPlaceAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+        return $this->listPlaceAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12428,16 +12773,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPlaceAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listPlaceAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsPlacesResponse';
-        $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listPlaceRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12488,13 +12834,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listPlaceRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    protected function listPlaceRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/places';
@@ -12539,6 +12886,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -12635,15 +12986,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsProductsResponse
      */
-    public function listProducts($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
+    public function listProducts($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null)
     {
-        list($response) = $this->listProductsWithHttpInfo($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language);
+        list($response) = $this->listProductsWithHttpInfo($datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language);
         return $response;
     }
 
@@ -12658,16 +13010,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsProductsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listProductsWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
+    public function listProductsWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\DsProductsResponse';
-        $request = $this->listProductsRequest($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language);
+        $request = $this->listProductsRequest($datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12739,14 +13092,15 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProductsAsync($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
+    public function listProductsAsync($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null)
     {
-        return $this->listProductsAsyncWithHttpInfo($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language)
+        return $this->listProductsAsyncWithHttpInfo($datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12765,15 +13119,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProductsAsyncWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
+    public function listProductsAsyncWithHttpInfo($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\DsProductsResponse';
-        $request = $this->listProductsRequest($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language);
+        $request = $this->listProductsRequest($datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12821,12 +13176,13 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listProductsRequest($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null)
+    protected function listProductsRequest($datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null)
     {
 
         $resourcePath = '/products';
@@ -12859,6 +13215,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -12952,6 +13312,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -12959,9 +13320,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsTagsResponse
      */
-    public function listTag($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listTag($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listTagWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        list($response) = $this->listTagWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -12977,6 +13338,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -12984,10 +13346,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsTagsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listTagWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listTagWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTagsResponse';
-        $request = $this->listTagRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listTagRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13060,15 +13422,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTagAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listTagAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listTagAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+        return $this->listTagAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13088,16 +13451,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTagAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listTagAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTagsResponse';
-        $request = $this->listTagRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listTagRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13146,13 +13510,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listTagRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    protected function listTagRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/tags';
@@ -13189,6 +13554,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -13279,14 +13648,15 @@ class DefaultApi
      *
      * List Timezones
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsTimeZoneResponseArray
      */
-    public function listTimezones()
+    public function listTimezones($ocp_apim_subscription_key = null)
     {
-        list($response) = $this->listTimezonesWithHttpInfo();
+        list($response) = $this->listTimezonesWithHttpInfo($ocp_apim_subscription_key);
         return $response;
     }
 
@@ -13295,15 +13665,16 @@ class DefaultApi
      *
      * List Timezones
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsTimeZoneResponseArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listTimezonesWithHttpInfo()
+    public function listTimezonesWithHttpInfo($ocp_apim_subscription_key = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTimeZoneResponseArray';
-        $request = $this->listTimezonesRequest();
+        $request = $this->listTimezonesRequest($ocp_apim_subscription_key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13369,13 +13740,14 @@ class DefaultApi
      *
      * List Timezones
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTimezonesAsync()
+    public function listTimezonesAsync($ocp_apim_subscription_key = null)
     {
-        return $this->listTimezonesAsyncWithHttpInfo()
+        return $this->listTimezonesAsyncWithHttpInfo($ocp_apim_subscription_key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13388,14 +13760,15 @@ class DefaultApi
      *
      * List Timezones
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTimezonesAsyncWithHttpInfo()
+    public function listTimezonesAsyncWithHttpInfo($ocp_apim_subscription_key = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTimeZoneResponseArray';
-        $request = $this->listTimezonesRequest();
+        $request = $this->listTimezonesRequest($ocp_apim_subscription_key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13437,11 +13810,12 @@ class DefaultApi
     /**
      * Create request for operation 'listTimezones'
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listTimezonesRequest()
+    protected function listTimezonesRequest($ocp_apim_subscription_key = null)
     {
 
         $resourcePath = '/timezones';
@@ -13451,6 +13825,10 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
 
 
         // body params
@@ -13541,6 +13919,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -13548,9 +13927,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsToursResponse
      */
-    public function listTour($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listTour($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listTourWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        list($response) = $this->listTourWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -13568,6 +13947,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -13575,10 +13955,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsToursResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listTourWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listTourWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsToursResponse';
-        $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13653,15 +14033,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTourAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listTourAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listTourAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+        return $this->listTourAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13683,16 +14064,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTourAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listTourAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsToursResponse';
-        $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listTourRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13743,13 +14125,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listTourRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    protected function listTourRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/tours';
@@ -13794,6 +14177,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -13893,6 +14280,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -13900,9 +14288,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWebcamsResponse
      */
-    public function listWebcams($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listWebcams($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listWebcamsWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        list($response) = $this->listWebcamsWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -13920,6 +14308,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -13927,10 +14316,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWebcamsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listWebcamsWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listWebcamsWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWebcamsResponse';
-        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -14005,15 +14394,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listWebcamsAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listWebcamsAsync($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listWebcamsAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+        return $this->listWebcamsAsyncWithHttpInfo($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14035,16 +14425,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listWebcamsAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    public function listWebcamsAsyncWithHttpInfo($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWebcamsResponse';
-        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+        $request = $this->listWebcamsRequest($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14095,13 +14486,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listWebcamsRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $accept_language = null, $accept_timezone = null)
+    protected function listWebcamsRequest($category = null, $contained_in_place = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/webcams';
@@ -14146,6 +14538,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -14239,6 +14635,7 @@ class DefaultApi
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -14246,9 +14643,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsLocalBusiness
      */
-    public function localBusiness($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function localBusiness($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->localBusinessWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->localBusinessWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -14260,6 +14657,7 @@ class DefaultApi
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -14267,10 +14665,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsLocalBusiness, HTTP status code, HTTP response headers (array of strings)
      */
-    public function localBusinessWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsLocalBusiness';
-        $request = $this->localBusinessRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->localBusinessRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -14339,15 +14737,16 @@ class DefaultApi
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function localBusinessAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->localBusinessAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->localBusinessAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14363,16 +14762,17 @@ class DefaultApi
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function localBusinessAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsLocalBusiness';
-        $request = $this->localBusinessRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->localBusinessRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14417,13 +14817,14 @@ class DefaultApi
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function localBusinessRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function localBusinessRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -14446,6 +14847,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -14548,6 +14953,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -14555,9 +14961,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
-    public function localBusinessDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->localBusinessDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->localBusinessDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -14570,6 +14976,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -14577,10 +14984,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function localBusinessDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->localBusinessDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->localBusinessDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -14650,15 +15057,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function localBusinessDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->localBusinessDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->localBusinessDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14675,16 +15083,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function localBusinessDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->localBusinessDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->localBusinessDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14730,13 +15139,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function localBusinessDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function localBusinessDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -14763,6 +15173,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -14865,6 +15279,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -14872,9 +15287,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsHourlyForecastArray
      */
-    public function localBusinessHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->localBusinessHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->localBusinessHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -14887,6 +15302,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -14894,10 +15310,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function localBusinessHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->localBusinessHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->localBusinessHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -14967,15 +15383,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function localBusinessHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->localBusinessHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->localBusinessHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14992,16 +15409,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function localBusinessHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->localBusinessHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->localBusinessHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15047,13 +15465,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function localBusinessHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function localBusinessHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -15080,6 +15499,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -15183,6 +15606,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -15190,9 +15614,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWeatherArray
      */
-    public function localBusinessWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->localBusinessWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        list($response) = $this->localBusinessWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -15206,6 +15630,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -15213,10 +15638,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function localBusinessWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->localBusinessWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->localBusinessWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -15287,15 +15712,16 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function localBusinessWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->localBusinessWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+        return $this->localBusinessWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -15313,16 +15739,17 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function localBusinessWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function localBusinessWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->localBusinessWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->localBusinessWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15369,13 +15796,14 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function localBusinessWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    protected function localBusinessWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -15406,6 +15834,10 @@ class DefaultApi
         // query params
         if ($details !== null) {
             $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -15507,6 +15939,7 @@ class DefaultApi
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -15514,9 +15947,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsLodgingBusiness
      */
-    public function lodgingBusiness($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusiness($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->lodgingBusinessWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->lodgingBusinessWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -15528,6 +15961,7 @@ class DefaultApi
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -15535,10 +15969,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsLodgingBusiness, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lodgingBusinessWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsLodgingBusiness';
-        $request = $this->lodgingBusinessRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->lodgingBusinessRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -15607,15 +16041,16 @@ class DefaultApi
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lodgingBusinessAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->lodgingBusinessAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->lodgingBusinessAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -15631,16 +16066,17 @@ class DefaultApi
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lodgingBusinessAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsLodgingBusiness';
-        $request = $this->lodgingBusinessRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->lodgingBusinessRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15685,13 +16121,14 @@ class DefaultApi
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function lodgingBusinessRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function lodgingBusinessRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -15714,6 +16151,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -15816,6 +16257,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -15823,9 +16265,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
-    public function lodgingBusinessDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->lodgingBusinessDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->lodgingBusinessDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -15838,6 +16280,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -15845,10 +16288,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lodgingBusinessDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->lodgingBusinessDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->lodgingBusinessDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -15918,15 +16361,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lodgingBusinessDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->lodgingBusinessDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->lodgingBusinessDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -15943,16 +16387,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lodgingBusinessDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->lodgingBusinessDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->lodgingBusinessDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15998,13 +16443,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function lodgingBusinessDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function lodgingBusinessDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -16031,6 +16477,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -16133,6 +16583,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -16140,9 +16591,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsHourlyForecastArray
      */
-    public function lodgingBusinessHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->lodgingBusinessHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->lodgingBusinessHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -16155,6 +16606,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -16162,10 +16614,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lodgingBusinessHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->lodgingBusinessHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->lodgingBusinessHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -16235,15 +16687,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lodgingBusinessHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->lodgingBusinessHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->lodgingBusinessHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -16260,16 +16713,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lodgingBusinessHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->lodgingBusinessHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->lodgingBusinessHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -16315,13 +16769,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function lodgingBusinessHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function lodgingBusinessHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -16348,6 +16803,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -16451,6 +16910,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -16458,9 +16918,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWeatherArray
      */
-    public function lodgingBusinessWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->lodgingBusinessWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        list($response) = $this->lodgingBusinessWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -16474,6 +16934,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -16481,10 +16942,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lodgingBusinessWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->lodgingBusinessWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->lodgingBusinessWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -16555,15 +17016,16 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lodgingBusinessWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->lodgingBusinessWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+        return $this->lodgingBusinessWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -16581,16 +17043,17 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lodgingBusinessWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function lodgingBusinessWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->lodgingBusinessWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->lodgingBusinessWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -16637,13 +17100,14 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function lodgingBusinessWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    protected function lodgingBusinessWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -16674,6 +17138,10 @@ class DefaultApi
         // query params
         if ($details !== null) {
             $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -16775,6 +17243,7 @@ class DefaultApi
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -16782,9 +17251,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWeatherArray
      */
-    public function mediaObject($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function mediaObject($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->mediaObjectWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->mediaObjectWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -16796,6 +17265,7 @@ class DefaultApi
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -16803,10 +17273,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mediaObjectWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function mediaObjectWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->mediaObjectRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->mediaObjectRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -16875,15 +17345,16 @@ class DefaultApi
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mediaObjectAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function mediaObjectAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->mediaObjectAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->mediaObjectAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -16899,16 +17370,17 @@ class DefaultApi
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mediaObjectAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function mediaObjectAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->mediaObjectRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->mediaObjectRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -16953,13 +17425,14 @@ class DefaultApi
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mediaObjectRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function mediaObjectRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -16982,6 +17455,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -17083,6 +17560,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -17090,9 +17568,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsPlace
      */
-    public function place($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function place($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->placeWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->placeWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -17104,6 +17582,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -17111,10 +17590,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsPlace, HTTP status code, HTTP response headers (array of strings)
      */
-    public function placeWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function placeWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsPlace';
-        $request = $this->placeRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->placeRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -17183,15 +17662,16 @@ class DefaultApi
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function placeAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function placeAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->placeAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->placeAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -17207,16 +17687,17 @@ class DefaultApi
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function placeAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function placeAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsPlace';
-        $request = $this->placeRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->placeRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -17261,13 +17742,14 @@ class DefaultApi
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function placeRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function placeRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -17290,6 +17772,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -17392,6 +17878,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -17399,9 +17886,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
-    public function placeDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function placeDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->placeDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->placeDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -17414,6 +17901,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -17421,10 +17909,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function placeDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function placeDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->placeDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->placeDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -17494,15 +17982,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function placeDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function placeDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->placeDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->placeDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -17519,16 +18008,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function placeDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function placeDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->placeDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->placeDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -17574,13 +18064,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function placeDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function placeDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -17607,6 +18098,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -17709,6 +18204,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -17716,9 +18212,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsHourlyForecastArray
      */
-    public function placeHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function placeHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->placeHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->placeHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -17731,6 +18227,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -17738,10 +18235,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function placeHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function placeHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->placeHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->placeHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -17811,15 +18308,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function placeHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function placeHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->placeHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->placeHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -17836,16 +18334,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function placeHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function placeHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->placeHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->placeHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -17891,13 +18390,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function placeHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function placeHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -17924,6 +18424,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -18027,6 +18531,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18034,9 +18539,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWeatherArray
      */
-    public function placeWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function placeWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->placeWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        list($response) = $this->placeWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -18050,6 +18555,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18057,10 +18563,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function placeWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function placeWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->placeWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->placeWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -18131,15 +18637,16 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function placeWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function placeWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->placeWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+        return $this->placeWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -18157,16 +18664,17 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function placeWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function placeWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->placeWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->placeWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -18213,13 +18721,14 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function placeWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    protected function placeWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -18250,6 +18759,10 @@ class DefaultApi
         // query params
         if ($details !== null) {
             $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -18351,6 +18864,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18358,9 +18872,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsProduct
      */
-    public function product($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function product($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->productWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->productWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -18372,6 +18886,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18379,10 +18894,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsProduct, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function productWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsProduct';
-        $request = $this->productRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->productRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -18451,15 +18966,16 @@ class DefaultApi
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function productAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->productAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->productAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -18475,16 +18991,17 @@ class DefaultApi
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function productAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsProduct';
-        $request = $this->productRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->productRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -18529,13 +19046,14 @@ class DefaultApi
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function productRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function productRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -18558,6 +19076,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -18657,6 +19179,7 @@ class DefaultApi
      * Search
      *
      * @param  \Infocenter\Client\Model\DsFullSearchRequest $body body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18664,9 +19187,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsSearchResponse
      */
-    public function search($body = null, $accept_language = null, $accept_timezone = null)
+    public function search($body = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->searchWithHttpInfo($body, $accept_language, $accept_timezone);
+        list($response) = $this->searchWithHttpInfo($body, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -18676,6 +19199,7 @@ class DefaultApi
      * Search
      *
      * @param  \Infocenter\Client\Model\DsFullSearchRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18683,10 +19207,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsSearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchWithHttpInfo($body = null, $accept_language = null, $accept_timezone = null)
+    public function searchWithHttpInfo($body = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchRequest($body, $accept_language, $accept_timezone);
+        $request = $this->searchRequest($body, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -18753,15 +19277,16 @@ class DefaultApi
      * Search
      *
      * @param  \Infocenter\Client\Model\DsFullSearchRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAsync($body = null, $accept_language = null, $accept_timezone = null)
+    public function searchAsync($body = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->searchAsyncWithHttpInfo($body, $accept_language, $accept_timezone)
+        return $this->searchAsyncWithHttpInfo($body, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -18775,16 +19300,17 @@ class DefaultApi
      * Search
      *
      * @param  \Infocenter\Client\Model\DsFullSearchRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAsyncWithHttpInfo($body = null, $accept_language = null, $accept_timezone = null)
+    public function searchAsyncWithHttpInfo($body = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchRequest($body, $accept_language, $accept_timezone);
+        $request = $this->searchRequest($body, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -18827,13 +19353,14 @@ class DefaultApi
      * Create request for operation 'search'
      *
      * @param  \Infocenter\Client\Model\DsFullSearchRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchRequest($body = null, $accept_language = null, $accept_timezone = null)
+    protected function searchRequest($body = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/search';
@@ -18843,6 +19370,10 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
@@ -18946,6 +19477,7 @@ class DefaultApi
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
      * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
      * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
+     * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
      * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
@@ -18961,6 +19493,7 @@ class DefaultApi
      * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
      * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
      * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -18968,9 +19501,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsSearchResponse
      */
-    public function searchByGET($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGET($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->searchByGETWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone);
+        list($response) = $this->searchByGETWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -18990,6 +19523,7 @@ class DefaultApi
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
      * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
      * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
+     * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
      * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
@@ -19005,6 +19539,7 @@ class DefaultApi
      * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
      * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
      * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -19012,10 +19547,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsSearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchByGETWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone);
+        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -19092,6 +19627,7 @@ class DefaultApi
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
      * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
      * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
+     * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
      * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
@@ -19107,15 +19643,16 @@ class DefaultApi
      * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
      * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
      * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsync($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETAsync($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->searchByGETAsyncWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone)
+        return $this->searchByGETAsyncWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -19139,6 +19676,7 @@ class DefaultApi
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
      * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
      * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
+     * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
      * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
@@ -19154,16 +19692,17 @@ class DefaultApi
      * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
      * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
      * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsyncWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETAsyncWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone);
+        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -19216,6 +19755,7 @@ class DefaultApi
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
      * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
      * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
+     * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
      * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
@@ -19231,13 +19771,14 @@ class DefaultApi
      * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
      * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
      * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchByGETRequest($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $accept_language = null, $accept_timezone = null)
+    protected function searchByGETRequest($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/search';
@@ -19290,6 +19831,10 @@ class DefaultApi
         // query params
         if ($combined_type !== null) {
             $queryParams['combinedType'] = ObjectSerializer::toQueryValue($combined_type);
+        }
+        // query params
+        if ($leaf_type !== null) {
+            $queryParams['leafType'] = ObjectSerializer::toQueryValue($leaf_type);
         }
         // query params
         if ($campaign_tag !== null) {
@@ -19350,6 +19895,10 @@ class DefaultApi
         // query params
         if ($season !== null) {
             $queryParams['season'] = ObjectSerializer::toQueryValue($season);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -19442,6 +19991,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -19449,9 +19999,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsTag
      */
-    public function tag($id, $project = null, $accept_language = null, $accept_timezone = null)
+    public function tag($id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->tagWithHttpInfo($id, $project, $accept_language, $accept_timezone);
+        list($response) = $this->tagWithHttpInfo($id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -19462,6 +20012,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -19469,10 +20020,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsTag, HTTP status code, HTTP response headers (array of strings)
      */
-    public function tagWithHttpInfo($id, $project = null, $accept_language = null, $accept_timezone = null)
+    public function tagWithHttpInfo($id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTag';
-        $request = $this->tagRequest($id, $project, $accept_language, $accept_timezone);
+        $request = $this->tagRequest($id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -19540,15 +20091,16 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tagAsync($id, $project = null, $accept_language = null, $accept_timezone = null)
+    public function tagAsync($id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->tagAsyncWithHttpInfo($id, $project, $accept_language, $accept_timezone)
+        return $this->tagAsyncWithHttpInfo($id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -19563,16 +20115,17 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tagAsyncWithHttpInfo($id, $project = null, $accept_language = null, $accept_timezone = null)
+    public function tagAsyncWithHttpInfo($id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTag';
-        $request = $this->tagRequest($id, $project, $accept_language, $accept_timezone);
+        $request = $this->tagRequest($id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -19616,13 +20169,14 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function tagRequest($id, $project = null, $accept_language = null, $accept_timezone = null)
+    protected function tagRequest($id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -19641,6 +20195,10 @@ class DefaultApi
         // query params
         if ($project !== null) {
             $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -19740,6 +20298,7 @@ class DefaultApi
      * TermVersion
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -19747,9 +20306,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsTermVersion
      */
-    public function termVersion($code, $accept_language = null, $accept_timezone = null)
+    public function termVersion($code, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->termVersionWithHttpInfo($code, $accept_language, $accept_timezone);
+        list($response) = $this->termVersionWithHttpInfo($code, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -19759,6 +20318,7 @@ class DefaultApi
      * TermVersion
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -19766,10 +20326,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsTermVersion, HTTP status code, HTTP response headers (array of strings)
      */
-    public function termVersionWithHttpInfo($code, $accept_language = null, $accept_timezone = null)
+    public function termVersionWithHttpInfo($code, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTermVersion';
-        $request = $this->termVersionRequest($code, $accept_language, $accept_timezone);
+        $request = $this->termVersionRequest($code, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -19836,15 +20396,16 @@ class DefaultApi
      * TermVersion
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function termVersionAsync($code, $accept_language = null, $accept_timezone = null)
+    public function termVersionAsync($code, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->termVersionAsyncWithHttpInfo($code, $accept_language, $accept_timezone)
+        return $this->termVersionAsyncWithHttpInfo($code, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -19858,16 +20419,17 @@ class DefaultApi
      * TermVersion
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function termVersionAsyncWithHttpInfo($code, $accept_language = null, $accept_timezone = null)
+    public function termVersionAsyncWithHttpInfo($code, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTermVersion';
-        $request = $this->termVersionRequest($code, $accept_language, $accept_timezone);
+        $request = $this->termVersionRequest($code, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -19910,13 +20472,14 @@ class DefaultApi
      * Create request for operation 'termVersion'
      *
      * @param  string $code Use property code of TermVersion to get single object. (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function termVersionRequest($code, $accept_language = null, $accept_timezone = null)
+    protected function termVersionRequest($code, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'code' is set
         if ($code === null || (is_array($code) && count($code) === 0)) {
@@ -19932,6 +20495,10 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
@@ -20032,6 +20599,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -20039,9 +20607,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsTour
      */
-    public function tour($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function tour($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->tourWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->tourWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -20053,6 +20621,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -20060,10 +20629,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsTour, HTTP status code, HTTP response headers (array of strings)
      */
-    public function tourWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function tourWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTour';
-        $request = $this->tourRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->tourRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -20132,15 +20701,16 @@ class DefaultApi
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tourAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function tourAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->tourAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->tourAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -20156,16 +20726,17 @@ class DefaultApi
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tourAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function tourAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTour';
-        $request = $this->tourRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->tourRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -20210,13 +20781,14 @@ class DefaultApi
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function tourRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function tourRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -20239,6 +20811,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -20341,6 +20917,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -20348,9 +20925,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
-    public function tourDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function tourDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->tourDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->tourDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -20363,6 +20940,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -20370,10 +20948,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function tourDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function tourDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->tourDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->tourDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -20443,15 +21021,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tourDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function tourDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->tourDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->tourDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -20468,16 +21047,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tourDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function tourDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->tourDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->tourDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -20523,13 +21103,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function tourDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function tourDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -20556,6 +21137,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -20650,6 +21235,306 @@ class DefaultApi
     }
 
     /**
+     * Operation tourDownload
+     *
+     * Tour download
+     *
+     * @param  string $id Use property identifier of Tour to get the map file with given extension. (required)
+     * @param  string $extension Tour map format (kml or gpx). (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse
+     */
+    public function tourDownload($id, $extension, $ocp_apim_subscription_key = null)
+    {
+        list($response) = $this->tourDownloadWithHttpInfo($id, $extension, $ocp_apim_subscription_key);
+        return $response;
+    }
+
+    /**
+     * Operation tourDownloadWithHttpInfo
+     *
+     * Tour download
+     *
+     * @param  string $id Use property identifier of Tour to get the map file with given extension. (required)
+     * @param  string $extension Tour map format (kml or gpx). (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function tourDownloadWithHttpInfo($id, $extension, $ocp_apim_subscription_key = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse';
+        $request = $this->tourDownloadRequest($id, $extension, $ocp_apim_subscription_key);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation tourDownloadAsync
+     *
+     * Tour download
+     *
+     * @param  string $id Use property identifier of Tour to get the map file with given extension. (required)
+     * @param  string $extension Tour map format (kml or gpx). (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function tourDownloadAsync($id, $extension, $ocp_apim_subscription_key = null)
+    {
+        return $this->tourDownloadAsyncWithHttpInfo($id, $extension, $ocp_apim_subscription_key)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation tourDownloadAsyncWithHttpInfo
+     *
+     * Tour download
+     *
+     * @param  string $id Use property identifier of Tour to get the map file with given extension. (required)
+     * @param  string $extension Tour map format (kml or gpx). (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function tourDownloadAsyncWithHttpInfo($id, $extension, $ocp_apim_subscription_key = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse';
+        $request = $this->tourDownloadRequest($id, $extension, $ocp_apim_subscription_key);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'tourDownload'
+     *
+     * @param  string $id Use property identifier of Tour to get the map file with given extension. (required)
+     * @param  string $extension Tour map format (kml or gpx). (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function tourDownloadRequest($id, $extension, $ocp_apim_subscription_key = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling tourDownload'
+            );
+        }
+        // verify the required parameter 'extension' is set
+        if ($extension === null || (is_array($extension) && count($extension) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $extension when calling tourDownload'
+            );
+        }
+
+        $resourcePath = '/tours/{id}/download/{extension}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($extension !== null) {
+            $resourcePath = str_replace(
+                '{' . 'extension' . '}',
+                ObjectSerializer::toPathValue($extension),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation tourHourlyForecast
      *
      * Tour hourly forecast
@@ -20658,6 +21543,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -20665,9 +21551,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsHourlyForecastArray
      */
-    public function tourHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function tourHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->tourHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->tourHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -20680,6 +21566,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -20687,10 +21574,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function tourHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function tourHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->tourHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->tourHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -20760,15 +21647,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tourHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function tourHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->tourHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->tourHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -20785,16 +21673,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tourHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function tourHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->tourHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->tourHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -20840,13 +21729,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function tourHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function tourHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -20873,6 +21763,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -20976,6 +21870,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -20983,9 +21878,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWeatherArray
      */
-    public function tourWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function tourWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->tourWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        list($response) = $this->tourWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -20999,6 +21894,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -21006,10 +21902,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function tourWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function tourWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->tourWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->tourWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -21080,15 +21976,16 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tourWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function tourWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->tourWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+        return $this->tourWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -21106,16 +22003,17 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tourWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function tourWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->tourWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->tourWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -21162,13 +22060,14 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function tourWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    protected function tourWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -21199,6 +22098,10 @@ class DefaultApi
         // query params
         if ($details !== null) {
             $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -21300,6 +22203,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
@@ -21307,9 +22211,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsAdministrativeAreaTreeItem
      */
-    public function treeAdministrativeAreaRegion($id, $levels = null, $admin_areas_only = null, $accept_timezone = null, $accept_language = null)
+    public function treeAdministrativeAreaRegion($id, $levels = null, $admin_areas_only = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
-        list($response) = $this->treeAdministrativeAreaRegionWithHttpInfo($id, $levels, $admin_areas_only, $accept_timezone, $accept_language);
+        list($response) = $this->treeAdministrativeAreaRegionWithHttpInfo($id, $levels, $admin_areas_only, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
         return $response;
     }
 
@@ -21321,6 +22225,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
@@ -21328,10 +22233,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsAdministrativeAreaTreeItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function treeAdministrativeAreaRegionWithHttpInfo($id, $levels = null, $admin_areas_only = null, $accept_timezone = null, $accept_language = null)
+    public function treeAdministrativeAreaRegionWithHttpInfo($id, $levels = null, $admin_areas_only = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\DsAdministrativeAreaTreeItem';
-        $request = $this->treeAdministrativeAreaRegionRequest($id, $levels, $admin_areas_only, $accept_timezone, $accept_language);
+        $request = $this->treeAdministrativeAreaRegionRequest($id, $levels, $admin_areas_only, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -21400,15 +22305,16 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function treeAdministrativeAreaRegionAsync($id, $levels = null, $admin_areas_only = null, $accept_timezone = null, $accept_language = null)
+    public function treeAdministrativeAreaRegionAsync($id, $levels = null, $admin_areas_only = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
-        return $this->treeAdministrativeAreaRegionAsyncWithHttpInfo($id, $levels, $admin_areas_only, $accept_timezone, $accept_language)
+        return $this->treeAdministrativeAreaRegionAsyncWithHttpInfo($id, $levels, $admin_areas_only, $ocp_apim_subscription_key, $accept_timezone, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -21424,16 +22330,17 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function treeAdministrativeAreaRegionAsyncWithHttpInfo($id, $levels = null, $admin_areas_only = null, $accept_timezone = null, $accept_language = null)
+    public function treeAdministrativeAreaRegionAsyncWithHttpInfo($id, $levels = null, $admin_areas_only = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
         $returnType = '\Infocenter\Client\Model\DsAdministrativeAreaTreeItem';
-        $request = $this->treeAdministrativeAreaRegionRequest($id, $levels, $admin_areas_only, $accept_timezone, $accept_language);
+        $request = $this->treeAdministrativeAreaRegionRequest($id, $levels, $admin_areas_only, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -21478,13 +22385,14 @@ class DefaultApi
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function treeAdministrativeAreaRegionRequest($id, $levels = null, $admin_areas_only = null, $accept_timezone = null, $accept_language = null)
+    protected function treeAdministrativeAreaRegionRequest($id, $levels = null, $admin_areas_only = null, $ocp_apim_subscription_key = null, $accept_timezone = null, $accept_language = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -21507,6 +22415,10 @@ class DefaultApi
         // query params
         if ($admin_areas_only !== null) {
             $queryParams['adminAreasOnly'] = ObjectSerializer::toQueryValue($admin_areas_only);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_timezone !== null) {
@@ -21608,6 +22520,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -21615,9 +22528,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWebcam
      */
-    public function webcam($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function webcam($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->webcamWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        list($response) = $this->webcamWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -21629,6 +22542,7 @@ class DefaultApi
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -21636,10 +22550,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWebcam, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webcamWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function webcamWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWebcam';
-        $request = $this->webcamRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->webcamRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -21708,15 +22622,16 @@ class DefaultApi
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webcamAsync($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function webcamAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->webcamAsyncWithHttpInfo($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+        return $this->webcamAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -21732,16 +22647,17 @@ class DefaultApi
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webcamAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    public function webcamAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWebcam';
-        $request = $this->webcamRequest($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+        $request = $this->webcamRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -21786,13 +22702,14 @@ class DefaultApi
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function webcamRequest($id, $project = null, $contained_in_place = null, $accept_language = null, $accept_timezone = null)
+    protected function webcamRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -21815,6 +22732,10 @@ class DefaultApi
         // query params
         if ($contained_in_place !== null) {
             $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -21917,6 +22838,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -21924,9 +22846,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
-    public function webcamDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function webcamDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->webcamDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->webcamDailyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -21939,6 +22861,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -21946,10 +22869,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webcamDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function webcamDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->webcamDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->webcamDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -22019,15 +22942,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webcamDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function webcamDailyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->webcamDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->webcamDailyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -22044,16 +22968,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webcamDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function webcamDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
-        $request = $this->webcamDailyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->webcamDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -22099,13 +23024,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function webcamDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function webcamDailyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -22132,6 +23058,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -22234,6 +23164,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -22241,9 +23172,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsHourlyForecastArray
      */
-    public function webcamHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function webcamHourlyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->webcamHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        list($response) = $this->webcamHourlyForecastWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -22256,6 +23187,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -22263,10 +23195,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsHourlyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webcamHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function webcamHourlyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->webcamHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->webcamHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -22336,15 +23268,16 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webcamHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function webcamHourlyForecastAsync($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->webcamHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+        return $this->webcamHourlyForecastAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -22361,16 +23294,17 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webcamHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    public function webcamHourlyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsHourlyForecastArray';
-        $request = $this->webcamHourlyForecastRequest($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+        $request = $this->webcamHourlyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -22416,13 +23350,14 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function webcamHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
+    protected function webcamHourlyForecastRequest($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -22449,6 +23384,10 @@ class DefaultApi
         // query params
         if ($duration !== null) {
             $queryParams['duration'] = ObjectSerializer::toQueryValue($duration);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {
@@ -22552,6 +23491,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -22559,9 +23499,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsWeatherArray
      */
-    public function webcamWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function webcamWeather($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->webcamWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        list($response) = $this->webcamWeatherWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -22575,6 +23515,7 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
@@ -22582,10 +23523,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsWeatherArray, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webcamWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function webcamWeatherWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->webcamWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->webcamWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -22656,15 +23597,16 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webcamWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function webcamWeatherAsync($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->webcamWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+        return $this->webcamWeatherAsyncWithHttpInfo($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -22682,16 +23624,17 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webcamWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    public function webcamWeatherAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsWeatherArray';
-        $request = $this->webcamWeatherRequest($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+        $request = $this->webcamWeatherRequest($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -22738,13 +23681,14 @@ class DefaultApi
      * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  int $duration Format - int32. Supply number of past hours to get data for (optional)
      * @param  bool $details Supply &#x27;true&#x27; if you want to get detailed information about the weather (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function webcamWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $accept_language = null, $accept_timezone = null)
+    protected function webcamWeatherRequest($id, $project = null, $contained_in_place = null, $duration = null, $details = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -22775,6 +23719,10 @@ class DefaultApi
         // query params
         if ($details !== null) {
             $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
         }
         // header params
         if ($accept_language !== null) {

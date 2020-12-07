@@ -54,7 +54,7 @@ Name | Type | Description | Notes
 **same_as** | **string** |  | [optional] 
 **url** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
-**links** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
+**link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

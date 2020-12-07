@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **string[]** |  | [optional] 
 **tag** | **string[]** |  | [optional] 
 **contained_in_place** | **string[]** |  | [optional] 
 **address_locality** | **string[]** |  | [optional] 
@@ -19,10 +18,12 @@ Name | Type | Description | Notes
 **season** | **string[]** |  | [optional] 
 **type** | **string[]** |  | [optional] 
 **combined_type** | **string[]** |  | [optional] 
+**leaf_type** | **string[]** |  | [optional] 
 **filters** | **string[]** |  | [optional] 
 **datasource** | **string[]** |  | [optional] 
 **project** | **string[]** |  | [optional] 
 **campaign_tag** | **string[]** |  | [optional] 
+**category** | **string[]** |  | [optional] 
 **facets** | [**\Infocenter\Client\Model\DsFacetRequest[]**](DsFacetRequest.md) |  | [optional] 
 **search_text** | **string** |  | [optional] 
 **search_fields** | **string** |  | [optional] 

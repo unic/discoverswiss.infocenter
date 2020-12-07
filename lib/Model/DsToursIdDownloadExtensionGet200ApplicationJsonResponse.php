@@ -1,6 +1,6 @@
 <?php
 /**
- * DsUnitValue
+ * DsToursIdDownloadExtensionGet200ApplicationJsonResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsUnitValue Class Doc Comment
+ * DsToursIdDownloadExtensionGet200ApplicationJsonResponse Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsUnitValue implements ModelInterface, ArrayAccess
+class DsToursIdDownloadExtensionGet200ApplicationJsonResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsUnitValue implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'UnitValue';
+    protected static $swaggerModelName = 'ToursIdDownloadExtensionGet200ApplicationJsonResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,7 @@ class DsUnitValue implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'value' => 'double',
-'unit' => 'string',
-'unit_type' => 'int'    ];
+            ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +64,7 @@ class DsUnitValue implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'value' => 'double',
-'unit' => null,
-'unit_type' => 'int32'    ];
+            ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +93,7 @@ class DsUnitValue implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value',
-'unit' => 'unit',
-'unit_type' => 'unitType'    ];
+            ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +101,7 @@ class DsUnitValue implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue',
-'unit' => 'setUnit',
-'unit_type' => 'setUnitType'    ];
+            ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +109,7 @@ class DsUnitValue implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue',
-'unit' => 'getUnit',
-'unit_type' => 'getUnitType'    ];
+            ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +169,6 @@ class DsUnitValue implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
-        $this->container['unit_type'] = isset($data['unit_type']) ? $data['unit_type'] : null;
     }
 
     /**
@@ -207,78 +194,6 @@ class DsUnitValue implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets value
-     *
-     * @return double
-     */
-    public function getValue()
-    {
-        return $this->container['value'];
-    }
-
-    /**
-     * Sets value
-     *
-     * @param double $value value
-     *
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets unit
-     *
-     * @return string
-     */
-    public function getUnit()
-    {
-        return $this->container['unit'];
-    }
-
-    /**
-     * Sets unit
-     *
-     * @param string $unit unit
-     *
-     * @return $this
-     */
-    public function setUnit($unit)
-    {
-        $this->container['unit'] = $unit;
-
-        return $this;
-    }
-
-    /**
-     * Gets unit_type
-     *
-     * @return int
-     */
-    public function getUnitType()
-    {
-        return $this->container['unit_type'];
-    }
-
-    /**
-     * Sets unit_type
-     *
-     * @param int $unit_type unit_type
-     *
-     * @return $this
-     */
-    public function setUnitType($unit_type)
-    {
-        $this->container['unit_type'] = $unit_type;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

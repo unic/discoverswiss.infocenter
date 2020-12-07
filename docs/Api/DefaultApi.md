@@ -68,6 +68,7 @@ Method | HTTP request | Description
 [**termVersion**](DefaultApi.md#termversion) | **GET** /termversions/{code} | TermVersion
 [**tour**](DefaultApi.md#tour) | **GET** /tours/{id} | Tour
 [**tourDailyForecast**](DefaultApi.md#tourdailyforecast) | **GET** /tours/{id}/weather/forecast/daily | Tour daily forecast
+[**tourDownload**](DefaultApi.md#tourdownload) | **GET** /tours/{id}/download/{extension} | Tour download
 [**tourHourlyForecast**](DefaultApi.md#tourhourlyforecast) | **GET** /tours/{id}/weather/forecast/hourly | Tour hourly forecast
 [**tourWeather**](DefaultApi.md#tourweather) | **GET** /tours/{id}/weather | Tour weather
 [**treeAdministrativeAreaRegion**](DefaultApi.md#treeadministrativearearegion) | **GET** /areas/{id}/tree | Tree AdministrativeArea (Region)
@@ -77,7 +78,7 @@ Method | HTTP request | Description
 [**webcamWeather**](DefaultApi.md#webcamweather) | **GET** /webcams/{id}/weather | Webcam weather
 
 # **administrativeAreaRegion**
-> \Infocenter\Client\Model\DsAdministrativeArea administrativeAreaRegion($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsAdministrativeArea administrativeAreaRegion($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 AdministrativeArea (Region)
 
@@ -104,11 +105,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of Region to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->administrativeAreaRegion($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->administrativeAreaRegion($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->administrativeAreaRegion: ', $e->getMessage(), PHP_EOL;
@@ -123,6 +125,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of Region to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -142,7 +145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **administrativeAreaRegionDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray administrativeAreaRegionDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray administrativeAreaRegionDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 AdministrativeArea (Region) daily forecast
 
@@ -170,11 +173,12 @@ $id = "id_example"; // string | Use property identifier of AdministrativeArea to
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->administrativeAreaRegionDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->administrativeAreaRegionDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->administrativeAreaRegionDailyForecast: ', $e->getMessage(), PHP_EOL;
@@ -190,6 +194,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -209,7 +214,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **administrativeAreaRegionHourlyForecast**
-> \Infocenter\Client\Model\DsHourlyForecastArray administrativeAreaRegionHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsHourlyForecastArray administrativeAreaRegionHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 AdministrativeArea (Region) hourly forecast
 
@@ -237,11 +242,12 @@ $id = "id_example"; // string | Use property identifier of AdministrativeArea to
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->administrativeAreaRegionHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->administrativeAreaRegionHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->administrativeAreaRegionHourlyForecast: ', $e->getMessage(), PHP_EOL;
@@ -257,6 +263,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -276,7 +283,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **administrativeAreaRegionWeather**
-> \Infocenter\Client\Model\DsWeatherArray administrativeAreaRegionWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWeatherArray administrativeAreaRegionWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 AdministrativeArea (Region) weather
 
@@ -305,11 +312,12 @@ $project = "project_example"; // string | Use this property to filter objects by
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
 $details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->administrativeAreaRegionWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    $result = $apiInstance->administrativeAreaRegionWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->administrativeAreaRegionWeather: ', $e->getMessage(), PHP_EOL;
@@ -326,6 +334,7 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
  **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -345,7 +354,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **category**
-> \Infocenter\Client\Model\DsCategory category($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCategory category($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Category
 
@@ -372,11 +381,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of Category to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->category($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->category($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->category: ', $e->getMessage(), PHP_EOL;
@@ -391,6 +401,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of Category to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -410,7 +421,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **categoryTree**
-> \Infocenter\Client\Model\DsCategoryTreeItem categoryTree($id, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCategoryTreeItem categoryTree($id, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Category Tree
 
@@ -435,11 +446,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Category to set root category.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->categoryTree($id, $accept_language, $accept_timezone);
+    $result = $apiInstance->categoryTree($id, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->categoryTree: ', $e->getMessage(), PHP_EOL;
@@ -452,6 +464,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Category to set root category. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -471,7 +484,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **civicStructure**
-> \Infocenter\Client\Model\DsCivicStructure civicStructure($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCivicStructure civicStructure($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 CivicStructure
 
@@ -498,11 +511,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of CivicStructure to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->civicStructure($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->civicStructure($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->civicStructure: ', $e->getMessage(), PHP_EOL;
@@ -517,6 +531,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of CivicStructure to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -536,7 +551,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **civicStructureDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray civicStructureDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray civicStructureDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 CivicStructure daily forecast
 
@@ -564,11 +579,12 @@ $id = "id_example"; // string | Use property identifier of CivicStructure to get
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->civicStructureDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->civicStructureDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->civicStructureDailyForecast: ', $e->getMessage(), PHP_EOL;
@@ -584,6 +600,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -603,7 +620,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **civicStructureHourlyForecast**
-> \Infocenter\Client\Model\DsHourlyForecastArray civicStructureHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsHourlyForecastArray civicStructureHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 CivicStructure hourly forecast
 
@@ -631,11 +648,12 @@ $id = "id_example"; // string | Use property identifier of CivicStructure to get
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->civicStructureHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->civicStructureHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->civicStructureHourlyForecast: ', $e->getMessage(), PHP_EOL;
@@ -651,6 +669,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -670,7 +689,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **civicStructureWeather**
-> \Infocenter\Client\Model\DsWeatherArray civicStructureWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWeatherArray civicStructureWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 CivicStructure weather
 
@@ -699,11 +718,12 @@ $project = "project_example"; // string | Use this property to filter objects by
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
 $details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->civicStructureWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    $result = $apiInstance->civicStructureWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->civicStructureWeather: ', $e->getMessage(), PHP_EOL;
@@ -720,6 +740,7 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
  **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -739,7 +760,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **condition**
-> \Infocenter\Client\Model\DsCondition condition($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCondition condition($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Condition
 
@@ -766,11 +787,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of Condition to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->condition($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->condition($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->condition: ', $e->getMessage(), PHP_EOL;
@@ -785,6 +807,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of Condition to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -804,7 +827,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **conditionDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray conditionDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray conditionDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Condition daily forecast
 
@@ -832,11 +855,12 @@ $id = "id_example"; // string | Use property identifier of Condition to get the 
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->conditionDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->conditionDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->conditionDailyForecast: ', $e->getMessage(), PHP_EOL;
@@ -852,6 +876,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -871,7 +896,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **conditionHourlyForecast**
-> \Infocenter\Client\Model\DsHourlyForecastArray conditionHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsHourlyForecastArray conditionHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Condition hourly forecast
 
@@ -899,11 +924,12 @@ $id = "id_example"; // string | Use property identifier of Condition to get the 
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->conditionHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->conditionHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->conditionHourlyForecast: ', $e->getMessage(), PHP_EOL;
@@ -919,6 +945,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -938,7 +965,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **conditionWeather**
-> \Infocenter\Client\Model\DsWeatherArray conditionWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWeatherArray conditionWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Condition weather
 
@@ -967,11 +994,12 @@ $project = "project_example"; // string | Use this property to filter objects by
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
 $details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->conditionWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    $result = $apiInstance->conditionWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->conditionWeather: ', $e->getMessage(), PHP_EOL;
@@ -988,6 +1016,7 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
  **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -1007,7 +1036,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **creativeWork**
-> \Infocenter\Client\Model\DsWeatherArray creativeWork($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWeatherArray creativeWork($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 CreativeWork
 
@@ -1034,11 +1063,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of CreativeWork to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->creativeWork($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->creativeWork($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->creativeWork: ', $e->getMessage(), PHP_EOL;
@@ -1053,6 +1083,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of CreativeWork to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -1072,7 +1103,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **currentTermVersion**
-> \Infocenter\Client\Model\DsTermVersion currentTermVersion($term_code, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTermVersion currentTermVersion($term_code, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Current TermVersion
 
@@ -1097,11 +1128,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $term_code = "term_code_example"; // string | Use property code of a term to get the current term version.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->currentTermVersion($term_code, $accept_language, $accept_timezone);
+    $result = $apiInstance->currentTermVersion($term_code, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->currentTermVersion: ', $e->getMessage(), PHP_EOL;
@@ -1114,6 +1146,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **term_code** | **string**| Use property code of a term to get the current term version. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -1133,7 +1166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **event**
-> \Infocenter\Client\Model\DsEvent event($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsEvent event($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Event
 
@@ -1160,11 +1193,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of Event to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->event($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->event($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->event: ', $e->getMessage(), PHP_EOL;
@@ -1179,6 +1213,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of Event to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -1198,7 +1233,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **eventDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray eventDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray eventDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Event daily forecast
 
@@ -1226,11 +1261,12 @@ $id = "id_example"; // string | Use property identifier of Event to get the weat
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->eventDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->eventDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->eventDailyForecast: ', $e->getMessage(), PHP_EOL;
@@ -1246,6 +1282,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -1265,7 +1302,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **eventHourlyForecast**
-> \Infocenter\Client\Model\DsHourlyForecastArray eventHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsHourlyForecastArray eventHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Event hourly forecast
 
@@ -1293,11 +1330,12 @@ $id = "id_example"; // string | Use property identifier of Event to get the weat
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->eventHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->eventHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->eventHourlyForecast: ', $e->getMessage(), PHP_EOL;
@@ -1313,6 +1351,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -1332,7 +1371,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **eventWeather**
-> \Infocenter\Client\Model\DsWeatherArray eventWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWeatherArray eventWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Event weather
 
@@ -1361,11 +1400,12 @@ $project = "project_example"; // string | Use this property to filter objects by
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
 $details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->eventWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    $result = $apiInstance->eventWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->eventWeather: ', $e->getMessage(), PHP_EOL;
@@ -1382,6 +1422,7 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
  **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -1401,7 +1442,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **foodEstablishment**
-> \Infocenter\Client\Model\DsFoodEstablishment foodEstablishment($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsFoodEstablishment foodEstablishment($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 FoodEstablishment
 
@@ -1428,11 +1469,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of FoodEstablishment to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->foodEstablishment($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->foodEstablishment($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->foodEstablishment: ', $e->getMessage(), PHP_EOL;
@@ -1447,6 +1489,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of FoodEstablishment to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -1466,7 +1509,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **foodEstablishmentWeather**
-> \Infocenter\Client\Model\DsWeatherArray foodEstablishmentWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWeatherArray foodEstablishmentWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 FoodEstablishment weather
 
@@ -1495,11 +1538,12 @@ $project = "project_example"; // string | Use this property to filter objects by
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
 $details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->foodEstablishmentWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    $result = $apiInstance->foodEstablishmentWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->foodEstablishmentWeather: ', $e->getMessage(), PHP_EOL;
@@ -1516,6 +1560,7 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
  **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -1535,7 +1580,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **foodEstablishmentWeatherDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray foodEstablishmentWeatherDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray foodEstablishmentWeatherDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 FoodEstablishment weather daily forecast
 
@@ -1563,11 +1608,12 @@ $id = "id_example"; // string | Use property identifier of FoodEstablishment to 
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->foodEstablishmentWeatherDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->foodEstablishmentWeatherDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->foodEstablishmentWeatherDailyForecast: ', $e->getMessage(), PHP_EOL;
@@ -1583,6 +1629,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -1602,7 +1649,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **foodEstablishmentWeatherHourlyForecast**
-> \Infocenter\Client\Model\DsHourlyForecastArray foodEstablishmentWeatherHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsHourlyForecastArray foodEstablishmentWeatherHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 FoodEstablishment weather hourly forecast
 
@@ -1630,11 +1677,12 @@ $id = "id_example"; // string | Use property identifier of FoodEstablishment to 
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->foodEstablishmentWeatherHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->foodEstablishmentWeatherHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->foodEstablishmentWeatherHourlyForecast: ', $e->getMessage(), PHP_EOL;
@@ -1650,6 +1698,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -1669,7 +1718,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getStatus**
-> \Infocenter\Client\Model\DsStatusGet200TextPlainResponse getStatus()
+> \Infocenter\Client\Model\DsStatusGet200TextPlainResponse getStatus($ocp_apim_subscription_key)
 
 GetStatus
 
@@ -1693,9 +1742,10 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->getStatus();
+    $result = $apiInstance->getStatus($ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStatus: ', $e->getMessage(), PHP_EOL;
@@ -1704,7 +1754,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
 
 ### Return type
 
@@ -1722,7 +1775,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getStatusAbout**
-> \Infocenter\Client\Model\DsStatusResponse getStatusAbout()
+> \Infocenter\Client\Model\DsStatusResponse getStatusAbout($ocp_apim_subscription_key)
 
 GetStatusAbout
 
@@ -1746,9 +1799,10 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->getStatusAbout();
+    $result = $apiInstance->getStatusAbout($ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStatusAbout: ', $e->getMessage(), PHP_EOL;
@@ -1757,7 +1811,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
 
 ### Return type
 
@@ -1775,7 +1832,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **imageObject**
-> \Infocenter\Client\Model\DsImageObject imageObject($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsImageObject imageObject($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 ImageObject
 
@@ -1802,11 +1859,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of ImageObject to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->imageObject($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->imageObject($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->imageObject: ', $e->getMessage(), PHP_EOL;
@@ -1821,6 +1879,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of ImageObject to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -1840,7 +1899,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAdministrativeAreaRegion**
-> \Infocenter\Client\Model\DsAdministrativeAreasResponse listAdministrativeAreaRegion($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language)
+> \Infocenter\Client\Model\DsAdministrativeAreasResponse listAdministrativeAreaRegion($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $ocp_apim_subscription_key, $accept_timezone, $accept_language)
 
 List AdministrativeArea (Region)
 
@@ -1875,11 +1934,12 @@ $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $admin_areas_only = "admin_areas_only_example"; // string | set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default = false (works only in combination with rootObjectsOnly).
 $root_objects_only = true; // bool | Pass 'true' if you want to get only root areas.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
-    $result = $apiInstance->listAdministrativeAreaRegion($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $accept_timezone, $accept_language);
+    $result = $apiInstance->listAdministrativeAreaRegion($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listAdministrativeAreaRegion: ', $e->getMessage(), PHP_EOL;
@@ -1902,6 +1962,7 @@ Name | Type | Description  | Notes
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **admin_areas_only** | **string**| set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). | [optional]
  **root_objects_only** | **bool**| Pass &#x27;true&#x27; if you want to get only root areas. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
 
@@ -1921,7 +1982,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCategory**
-> \Infocenter\Client\Model\DsCategoriesResponse listCategory($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language)
+> \Infocenter\Client\Model\DsCategoriesResponse listCategory($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $ocp_apim_subscription_key, $accept_language)
 
 List Category
 
@@ -1954,10 +2015,11 @@ $project = "project_example"; // string | Use this property to filter objects by
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $root_objects_only = true; // bool | Pass 'true' if you want to get only root categories.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
-    $result = $apiInstance->listCategory($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $accept_language);
+    $result = $apiInstance->listCategory($parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $ocp_apim_subscription_key, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCategory: ', $e->getMessage(), PHP_EOL;
@@ -1978,6 +2040,7 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **root_objects_only** | **bool**| Pass &#x27;true&#x27; if you want to get only root categories. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
 
 ### Return type
@@ -1996,7 +2059,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCivicStructure**
-> \Infocenter\Client\Model\DsCivicStructuresResponse listCivicStructure($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCivicStructuresResponse listCivicStructure($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List CivicStructure
 
@@ -2029,11 +2092,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listCivicStructure($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+    $result = $apiInstance->listCivicStructure($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCivicStructure: ', $e->getMessage(), PHP_EOL;
@@ -2054,6 +2118,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -2073,7 +2138,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCondition**
-> \Infocenter\Client\Model\DsConditionsResponse listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language)
+> \Infocenter\Client\Model\DsConditionsResponse listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_timezone, $accept_language)
 
 List Condition
 
@@ -2106,11 +2171,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
-    $result = $apiInstance->listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_timezone, $accept_language);
+    $result = $apiInstance->listCondition($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCondition: ', $e->getMessage(), PHP_EOL;
@@ -2131,6 +2197,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
 
@@ -2150,7 +2217,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCreativeWork**
-> \Infocenter\Client\Model\DsCreativeWorksResponse listCreativeWork($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCreativeWorksResponse listCreativeWork($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List CreativeWork
 
@@ -2181,11 +2248,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listCreativeWork($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+    $result = $apiInstance->listCreativeWork($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCreativeWork: ', $e->getMessage(), PHP_EOL;
@@ -2204,6 +2272,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -2223,7 +2292,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listEvents**
-> \Infocenter\Client\Model\DsEventsResponse listEvents($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language)
+> \Infocenter\Client\Model\DsEventsResponse listEvents($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_timezone, $accept_language)
 
 List Events
 
@@ -2257,11 +2326,12 @@ $location = "location_example"; // string | Use property identifier of place to 
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
-    $result = $apiInstance->listEvents($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $accept_timezone, $accept_language);
+    $result = $apiInstance->listEvents($updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listEvents: ', $e->getMessage(), PHP_EOL;
@@ -2283,6 +2353,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
 
@@ -2302,7 +2373,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listFoodEstablishment**
-> \Infocenter\Client\Model\DsFoodEstablishmentsResponse listFoodEstablishment($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsFoodEstablishmentsResponse listFoodEstablishment($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List FoodEstablishment
 
@@ -2335,11 +2406,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listFoodEstablishment($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+    $result = $apiInstance->listFoodEstablishment($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listFoodEstablishment: ', $e->getMessage(), PHP_EOL;
@@ -2360,6 +2432,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -2379,7 +2452,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listImageObject**
-> \Infocenter\Client\Model\DsImageObjectsResponse listImageObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsImageObjectsResponse listImageObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List ImageObject
 
@@ -2410,11 +2483,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listImageObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+    $result = $apiInstance->listImageObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listImageObject: ', $e->getMessage(), PHP_EOL;
@@ -2433,6 +2507,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -2452,7 +2527,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listLocalBusiness**
-> \Infocenter\Client\Model\DsLocalBusinessesResponse listLocalBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsLocalBusinessesResponse listLocalBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List LocalBusiness
 
@@ -2485,11 +2560,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listLocalBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+    $result = $apiInstance->listLocalBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listLocalBusiness: ', $e->getMessage(), PHP_EOL;
@@ -2510,6 +2586,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -2529,7 +2606,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listLodgingBusiness**
-> \Infocenter\Client\Model\DsLodgingBusinessesResponse listLodgingBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsLodgingBusinessesResponse listLodgingBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List LodgingBusiness
 
@@ -2562,11 +2639,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listLodgingBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+    $result = $apiInstance->listLodgingBusiness($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listLodgingBusiness: ', $e->getMessage(), PHP_EOL;
@@ -2587,6 +2665,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -2606,7 +2685,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMediaObject**
-> \Infocenter\Client\Model\DsMediaObjectsResponse listMediaObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsMediaObjectsResponse listMediaObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List MediaObject
 
@@ -2637,11 +2716,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listMediaObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+    $result = $apiInstance->listMediaObject($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listMediaObject: ', $e->getMessage(), PHP_EOL;
@@ -2660,6 +2740,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -2679,7 +2760,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listPlace**
-> \Infocenter\Client\Model\DsPlacesResponse listPlace($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsPlacesResponse listPlace($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List Place
 
@@ -2712,11 +2793,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listPlace($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+    $result = $apiInstance->listPlace($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listPlace: ', $e->getMessage(), PHP_EOL;
@@ -2737,6 +2819,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -2756,7 +2839,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listProducts**
-> \Infocenter\Client\Model\DsProductsResponse listProducts($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language)
+> \Infocenter\Client\Model\DsProductsResponse listProducts($datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language)
 
 List Products
 
@@ -2786,10 +2869,11 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
-    $result = $apiInstance->listProducts($datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language);
+    $result = $apiInstance->listProducts($datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listProducts: ', $e->getMessage(), PHP_EOL;
@@ -2807,6 +2891,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
 
 ### Return type
@@ -2825,7 +2910,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTag**
-> \Infocenter\Client\Model\DsTagsResponse listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTagsResponse listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List Tag
 
@@ -2856,11 +2941,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+    $result = $apiInstance->listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listTag: ', $e->getMessage(), PHP_EOL;
@@ -2879,6 +2965,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -2898,7 +2985,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTimezones**
-> \Infocenter\Client\Model\DsTimeZoneResponseArray listTimezones()
+> \Infocenter\Client\Model\DsTimeZoneResponseArray listTimezones($ocp_apim_subscription_key)
 
 List Timezones
 
@@ -2922,9 +3009,10 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->listTimezones();
+    $result = $apiInstance->listTimezones($ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listTimezones: ', $e->getMessage(), PHP_EOL;
@@ -2933,7 +3021,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
 
 ### Return type
 
@@ -2951,7 +3042,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTour**
-> \Infocenter\Client\Model\DsToursResponse listTour($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsToursResponse listTour($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List Tour
 
@@ -2984,11 +3075,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listTour($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+    $result = $apiInstance->listTour($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listTour: ', $e->getMessage(), PHP_EOL;
@@ -3009,6 +3101,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3028,7 +3121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listWebcams**
-> \Infocenter\Client\Model\DsWebcamsResponse listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWebcamsResponse listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List Webcams
 
@@ -3061,11 +3154,12 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $accept_language, $accept_timezone);
+    $result = $apiInstance->listWebcams($category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listWebcams: ', $e->getMessage(), PHP_EOL;
@@ -3086,6 +3180,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3105,7 +3200,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **localBusiness**
-> \Infocenter\Client\Model\DsLocalBusiness localBusiness($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsLocalBusiness localBusiness($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 LocalBusiness
 
@@ -3132,11 +3227,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of LocalBusiness to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->localBusiness($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->localBusiness($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->localBusiness: ', $e->getMessage(), PHP_EOL;
@@ -3151,6 +3247,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of LocalBusiness to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3170,7 +3267,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **localBusinessDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray localBusinessDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray localBusinessDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 LocalBusiness daily forecast
 
@@ -3198,11 +3295,12 @@ $id = "id_example"; // string | Use property identifier of LocalBusiness to get 
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->localBusinessDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->localBusinessDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->localBusinessDailyForecast: ', $e->getMessage(), PHP_EOL;
@@ -3218,6 +3316,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3237,7 +3336,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **localBusinessHourlyForecast**
-> \Infocenter\Client\Model\DsHourlyForecastArray localBusinessHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsHourlyForecastArray localBusinessHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 LocalBusiness hourly forecast
 
@@ -3265,11 +3364,12 @@ $id = "id_example"; // string | Use property identifier of LocalBusiness to get 
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->localBusinessHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->localBusinessHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->localBusinessHourlyForecast: ', $e->getMessage(), PHP_EOL;
@@ -3285,6 +3385,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3304,7 +3405,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **localBusinessWeather**
-> \Infocenter\Client\Model\DsWeatherArray localBusinessWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWeatherArray localBusinessWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 LocalBusiness weather
 
@@ -3333,11 +3434,12 @@ $project = "project_example"; // string | Use this property to filter objects by
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
 $details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->localBusinessWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    $result = $apiInstance->localBusinessWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->localBusinessWeather: ', $e->getMessage(), PHP_EOL;
@@ -3354,6 +3456,7 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
  **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3373,7 +3476,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lodgingBusiness**
-> \Infocenter\Client\Model\DsLodgingBusiness lodgingBusiness($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsLodgingBusiness lodgingBusiness($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 LodgingBusiness
 
@@ -3400,11 +3503,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of LodgingBusiness to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->lodgingBusiness($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->lodgingBusiness($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->lodgingBusiness: ', $e->getMessage(), PHP_EOL;
@@ -3419,6 +3523,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of LodgingBusiness to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3438,7 +3543,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lodgingBusinessDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray lodgingBusinessDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray lodgingBusinessDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 LodgingBusiness daily forecast
 
@@ -3466,11 +3571,12 @@ $id = "id_example"; // string | Use property identifier of LodgingBusiness to ge
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->lodgingBusinessDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->lodgingBusinessDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->lodgingBusinessDailyForecast: ', $e->getMessage(), PHP_EOL;
@@ -3486,6 +3592,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3505,7 +3612,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lodgingBusinessHourlyForecast**
-> \Infocenter\Client\Model\DsHourlyForecastArray lodgingBusinessHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsHourlyForecastArray lodgingBusinessHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 LodgingBusiness hourly forecast
 
@@ -3533,11 +3640,12 @@ $id = "id_example"; // string | Use property identifier of LodgingBusiness to ge
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->lodgingBusinessHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->lodgingBusinessHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->lodgingBusinessHourlyForecast: ', $e->getMessage(), PHP_EOL;
@@ -3553,6 +3661,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3572,7 +3681,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lodgingBusinessWeather**
-> \Infocenter\Client\Model\DsWeatherArray lodgingBusinessWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWeatherArray lodgingBusinessWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 LodgingBusiness weather
 
@@ -3601,11 +3710,12 @@ $project = "project_example"; // string | Use this property to filter objects by
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
 $details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->lodgingBusinessWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    $result = $apiInstance->lodgingBusinessWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->lodgingBusinessWeather: ', $e->getMessage(), PHP_EOL;
@@ -3622,6 +3732,7 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
  **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3641,7 +3752,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **mediaObject**
-> \Infocenter\Client\Model\DsWeatherArray mediaObject($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWeatherArray mediaObject($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 MediaObject
 
@@ -3668,11 +3779,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of MediaObject to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->mediaObject($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->mediaObject($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->mediaObject: ', $e->getMessage(), PHP_EOL;
@@ -3687,6 +3799,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of MediaObject to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3706,7 +3819,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **place**
-> \Infocenter\Client\Model\DsPlace place($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsPlace place($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Place
 
@@ -3733,11 +3846,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of Place to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->place($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->place($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->place: ', $e->getMessage(), PHP_EOL;
@@ -3752,6 +3866,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of Place to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3771,7 +3886,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **placeDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray placeDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray placeDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Place daily forecast
 
@@ -3799,11 +3914,12 @@ $id = "id_example"; // string | Use property identifier of Place to get the weat
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->placeDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->placeDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->placeDailyForecast: ', $e->getMessage(), PHP_EOL;
@@ -3819,6 +3935,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3838,7 +3955,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **placeHourlyForecast**
-> \Infocenter\Client\Model\DsHourlyForecastArray placeHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsHourlyForecastArray placeHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Place hourly forecast
 
@@ -3866,11 +3983,12 @@ $id = "id_example"; // string | Use property identifier of Place to get the weat
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->placeHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->placeHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->placeHourlyForecast: ', $e->getMessage(), PHP_EOL;
@@ -3886,6 +4004,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3905,7 +4024,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **placeWeather**
-> \Infocenter\Client\Model\DsWeatherArray placeWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWeatherArray placeWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Place weather
 
@@ -3934,11 +4053,12 @@ $project = "project_example"; // string | Use this property to filter objects by
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
 $details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->placeWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    $result = $apiInstance->placeWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->placeWeather: ', $e->getMessage(), PHP_EOL;
@@ -3955,6 +4075,7 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
  **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -3974,7 +4095,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **product**
-> \Infocenter\Client\Model\DsProduct product($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsProduct product($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Product
 
@@ -4001,11 +4122,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of Product to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->product($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->product($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->product: ', $e->getMessage(), PHP_EOL;
@@ -4020,6 +4142,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of Product to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4039,7 +4162,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **search**
-> \Infocenter\Client\Model\DsSearchResponse search($body, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsSearchResponse search($body, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Search
 
@@ -4064,11 +4187,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $body = new \Infocenter\Client\Model\DsFullSearchRequest(); // \Infocenter\Client\Model\DsFullSearchRequest | 
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->search($body, $accept_language, $accept_timezone);
+    $result = $apiInstance->search($body, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->search: ', $e->getMessage(), PHP_EOL;
@@ -4081,6 +4205,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Infocenter\Client\Model\DsFullSearchRequest**](../Model/DsFullSearchRequest.md)|  | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4100,7 +4225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByGET**
-> \Infocenter\Client\Model\DsSearchResponse searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsSearchResponse searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Search by GET
 
@@ -4135,6 +4260,7 @@ $type = "type_example"; // string | Use property for filtering by `type`
 $datasource = "datasource_example"; // string | Use property for filtering by `dataSource`
 $project = "project_example"; // string | Use property for filtering by `project`
 $combined_type = "combined_type_example"; // string | Use property for filtering by `combinedType` which contains parentType and additionalType
+$leaf_type = "leaf_type_example"; // string | Use property for filtering by `leafType` which contains additionalType or type
 $campaign_tag = "campaign_tag_example"; // string | Use property for filtering by `campaignTag`
 $category = "category_example"; // string | Use property for filtering/facet-filtering by `categoryTree`
 $tag = "tag_example"; // string | Use property for filtering/facet-filtering by `tag/id`
@@ -4150,11 +4276,12 @@ $elevation_descent = "elevation_descent_example"; // string | Use property for f
 $elevation_min_altitude = "elevation_min_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/minAltitude`
 $elevation_max_altitude = "elevation_max_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/maxAltitude`
 $season = "season_example"; // string | Use property for filtering/facet-filtering by `seasons`
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $accept_language, $accept_timezone);
+    $result = $apiInstance->searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGET: ', $e->getMessage(), PHP_EOL;
@@ -4177,6 +4304,7 @@ Name | Type | Description  | Notes
  **datasource** | **string**| Use property for filtering by &#x60;dataSource&#x60; | [optional]
  **project** | **string**| Use property for filtering by &#x60;project&#x60; | [optional]
  **combined_type** | **string**| Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType | [optional]
+ **leaf_type** | **string**| Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type | [optional]
  **campaign_tag** | **string**| Use property for filtering by &#x60;campaignTag&#x60; | [optional]
  **category** | **string**| Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; | [optional]
  **tag** | **string**| Use property for filtering/facet-filtering by &#x60;tag/id&#x60; | [optional]
@@ -4192,6 +4320,7 @@ Name | Type | Description  | Notes
  **elevation_min_altitude** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; | [optional]
  **elevation_max_altitude** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; | [optional]
  **season** | **string**| Use property for filtering/facet-filtering by &#x60;seasons&#x60; | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4211,7 +4340,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tag**
-> \Infocenter\Client\Model\DsTag tag($id, $project, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTag tag($id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Tag
 
@@ -4237,11 +4366,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Tag to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->tag($id, $project, $accept_language, $accept_timezone);
+    $result = $apiInstance->tag($id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->tag: ', $e->getMessage(), PHP_EOL;
@@ -4255,6 +4385,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Tag to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4274,7 +4405,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **termVersion**
-> \Infocenter\Client\Model\DsTermVersion termVersion($code, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTermVersion termVersion($code, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 TermVersion
 
@@ -4299,11 +4430,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $code = "code_example"; // string | Use property code of TermVersion to get single object.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->termVersion($code, $accept_language, $accept_timezone);
+    $result = $apiInstance->termVersion($code, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->termVersion: ', $e->getMessage(), PHP_EOL;
@@ -4316,6 +4448,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **code** | **string**| Use property code of TermVersion to get single object. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4335,7 +4468,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tour**
-> \Infocenter\Client\Model\DsTour tour($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTour tour($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Tour
 
@@ -4362,11 +4495,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of Tour to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->tour($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->tour($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->tour: ', $e->getMessage(), PHP_EOL;
@@ -4381,6 +4515,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of Tour to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4400,7 +4535,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tourDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray tourDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray tourDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Tour daily forecast
 
@@ -4428,11 +4563,12 @@ $id = "id_example"; // string | Use property identifier of Webcam to get the wea
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->tourDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->tourDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->tourDailyForecast: ', $e->getMessage(), PHP_EOL;
@@ -4448,6 +4584,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4466,8 +4603,69 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **tourDownload**
+> \Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse tourDownload($id, $extension, $ocp_apim_subscription_key)
+
+Tour download
+
+Get the map file with given extension.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Tour to get the map file with given extension.
+$extension = "extension_example"; // string | Tour map format (kml or gpx).
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+
+try {
+    $result = $apiInstance->tourDownload($id, $extension, $ocp_apim_subscription_key);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->tourDownload: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of Tour to get the map file with given extension. |
+ **extension** | **string**| Tour map format (kml or gpx). |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse**](../Model/DsToursIdDownloadExtensionGet200ApplicationJsonResponse.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **tourHourlyForecast**
-> \Infocenter\Client\Model\DsHourlyForecastArray tourHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsHourlyForecastArray tourHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Tour hourly forecast
 
@@ -4495,11 +4693,12 @@ $id = "id_example"; // string | Use property identifier of Webcam to get the wea
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->tourHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->tourHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->tourHourlyForecast: ', $e->getMessage(), PHP_EOL;
@@ -4515,6 +4714,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4534,7 +4734,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tourWeather**
-> \Infocenter\Client\Model\DsWeatherArray tourWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWeatherArray tourWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Tour weather
 
@@ -4563,11 +4763,12 @@ $project = "project_example"; // string | Use this property to filter objects by
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
 $details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->tourWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    $result = $apiInstance->tourWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->tourWeather: ', $e->getMessage(), PHP_EOL;
@@ -4584,6 +4785,7 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
  **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4603,7 +4805,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **treeAdministrativeAreaRegion**
-> \Infocenter\Client\Model\DsAdministrativeAreaTreeItem treeAdministrativeAreaRegion($id, $levels, $admin_areas_only, $accept_timezone, $accept_language)
+> \Infocenter\Client\Model\DsAdministrativeAreaTreeItem treeAdministrativeAreaRegion($id, $levels, $admin_areas_only, $ocp_apim_subscription_key, $accept_timezone, $accept_language)
 
 Tree AdministrativeArea (Region)
 
@@ -4630,11 +4832,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of Region to set root Region.
 $levels = "levels_example"; // string | controls how deep the tree should go. default = 1
 $admin_areas_only = "admin_areas_only_example"; // string | set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default = false
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
-    $result = $apiInstance->treeAdministrativeAreaRegion($id, $levels, $admin_areas_only, $accept_timezone, $accept_language);
+    $result = $apiInstance->treeAdministrativeAreaRegion($id, $levels, $admin_areas_only, $ocp_apim_subscription_key, $accept_timezone, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->treeAdministrativeAreaRegion: ', $e->getMessage(), PHP_EOL;
@@ -4649,6 +4852,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of Region to set root Region. |
  **levels** | **string**| controls how deep the tree should go. default &#x3D; 1 | [optional]
  **admin_areas_only** | **string**| set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
 
@@ -4668,7 +4872,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **webcam**
-> \Infocenter\Client\Model\DsWebcam webcam($id, $project, $contained_in_place, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWebcam webcam($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Webcam
 
@@ -4695,11 +4899,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $id = "id_example"; // string | Use property identifier of Webcam to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->webcam($id, $project, $contained_in_place, $accept_language, $accept_timezone);
+    $result = $apiInstance->webcam($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->webcam: ', $e->getMessage(), PHP_EOL;
@@ -4714,6 +4919,7 @@ Name | Type | Description  | Notes
  **id** | **string**| Use property identifier of Webcam to get single object. |
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4733,7 +4939,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **webcamDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray webcamDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray webcamDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Webcam daily forecast
 
@@ -4761,11 +4967,12 @@ $id = "id_example"; // string | Use property identifier of Webcam to get the wea
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->webcamDailyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->webcamDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->webcamDailyForecast: ', $e->getMessage(), PHP_EOL;
@@ -4781,6 +4988,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4800,7 +5008,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **webcamHourlyForecast**
-> \Infocenter\Client\Model\DsHourlyForecastArray webcamHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsHourlyForecastArray webcamHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Webcam hourly forecast
 
@@ -4828,11 +5036,12 @@ $id = "id_example"; // string | Use property identifier of Webcam to get the wea
 $project = "project_example"; // string | Use this property to filter objects by project.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->webcamHourlyForecast($id, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    $result = $apiInstance->webcamHourlyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->webcamHourlyForecast: ', $e->getMessage(), PHP_EOL;
@@ -4848,6 +5057,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -4867,7 +5077,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **webcamWeather**
-> \Infocenter\Client\Model\DsWeatherArray webcamWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsWeatherArray webcamWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Webcam weather
 
@@ -4896,11 +5106,12 @@ $project = "project_example"; // string | Use this property to filter objects by
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $duration = 56; // int | Format - int32. Supply number of past hours to get data for
 $details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->webcamWeather($id, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    $result = $apiInstance->webcamWeather($id, $project, $contained_in_place, $duration, $details, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->webcamWeather: ', $e->getMessage(), PHP_EOL;
@@ -4917,6 +5128,7 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
  **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 

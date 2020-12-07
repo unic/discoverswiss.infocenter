@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST
+ * Infocenter-TEST-V2
  *
- * Infocenter API
+ * Infocenter API test-v2
  *
  * OpenAPI spec version: v2
  * 
@@ -58,6 +58,7 @@ class DsIndex implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
 'oua_id' => 'int',
+'source_id' => 'string',
 'identifier' => 'string',
 'datasource' => 'string',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
@@ -85,6 +86,7 @@ class DsIndex implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
 'oua_id' => 'int32',
+'source_id' => null,
 'identifier' => null,
 'datasource' => null,
 'data_governance' => null,
@@ -133,6 +135,7 @@ class DsIndex implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => '@id',
 'oua_id' => 'ouaId',
+'source_id' => 'sourceId',
 'identifier' => 'identifier',
 'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
@@ -160,6 +163,7 @@ class DsIndex implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
 'oua_id' => 'setOuaId',
+'source_id' => 'setSourceId',
 'identifier' => 'setIdentifier',
 'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
@@ -187,6 +191,7 @@ class DsIndex implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
 'oua_id' => 'getOuaId',
+'source_id' => 'getSourceId',
 'identifier' => 'getIdentifier',
 'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
@@ -266,6 +271,7 @@ class DsIndex implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['oua_id'] = isset($data['oua_id']) ? $data['oua_id'] : null;
+        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
@@ -354,6 +360,30 @@ class DsIndex implements ModelInterface, ArrayAccess
     public function setOuaId($oua_id)
     {
         $this->container['oua_id'] = $oua_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_id
+     *
+     * @return string
+     */
+    public function getSourceId()
+    {
+        return $this->container['source_id'];
+    }
+
+    /**
+     * Sets source_id
+     *
+     * @param string $source_id source_id
+     *
+     * @return $this
+     */
+    public function setSourceId($source_id)
+    {
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }
