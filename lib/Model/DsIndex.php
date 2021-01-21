@@ -76,6 +76,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'rating' => '\Infocenter\Client\Model\DsTourRating',
 'schedule' => '\Infocenter\Client\Model\DsSchedule[]',
 'elevation' => '\Infocenter\Client\Model\DsTourElevation',
+'link' => '\Infocenter\Client\Model\DsLink[]',
 'auto_translated_data' => 'bool'    ];
 
     /**
@@ -104,6 +105,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'rating' => null,
 'schedule' => null,
 'elevation' => null,
+'link' => null,
 'auto_translated_data' => null    ];
 
     /**
@@ -153,6 +155,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'rating' => 'rating',
 'schedule' => 'schedule',
 'elevation' => 'elevation',
+'link' => 'link',
 'auto_translated_data' => 'autoTranslatedData'    ];
 
     /**
@@ -181,6 +184,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'rating' => 'setRating',
 'schedule' => 'setSchedule',
 'elevation' => 'setElevation',
+'link' => 'setLink',
 'auto_translated_data' => 'setAutoTranslatedData'    ];
 
     /**
@@ -209,6 +213,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'rating' => 'getRating',
 'schedule' => 'getSchedule',
 'elevation' => 'getElevation',
+'link' => 'getLink',
 'auto_translated_data' => 'getAutoTranslatedData'    ];
 
     /**
@@ -289,6 +294,7 @@ class DsIndex implements ModelInterface, ArrayAccess
         $this->container['rating'] = isset($data['rating']) ? $data['rating'] : null;
         $this->container['schedule'] = isset($data['schedule']) ? $data['schedule'] : null;
         $this->container['elevation'] = isset($data['elevation']) ? $data['elevation'] : null;
+        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
     }
 
@@ -792,6 +798,30 @@ class DsIndex implements ModelInterface, ArrayAccess
     public function setElevation($elevation)
     {
         $this->container['elevation'] = $elevation;
+
+        return $this;
+    }
+
+    /**
+     * Gets link
+     *
+     * @return \Infocenter\Client\Model\DsLink[]
+     */
+    public function getLink()
+    {
+        return $this->container['link'];
+    }
+
+    /**
+     * Sets link
+     *
+     * @param \Infocenter\Client\Model\DsLink[] $link link
+     *
+     * @return $this
+     */
+    public function setLink($link)
+    {
+        $this->container['link'] = $link;
 
         return $this;
     }

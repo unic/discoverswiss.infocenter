@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **rating** | [**\Infocenter\Client\Model\DsTourRating**](DsTourRating.md) |  | [optional] 
 **schedule** | [**\Infocenter\Client\Model\DsSchedule[]**](DsSchedule.md) |  | [optional] 
 **elevation** | [**\Infocenter\Client\Model\DsTourElevation**](DsTourElevation.md) |  | [optional] 
+**link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
 **auto_translated_data** | **bool** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

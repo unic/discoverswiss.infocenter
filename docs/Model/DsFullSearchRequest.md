@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**category_tree** | **string[]** |  | [optional] 
 **tag** | **string[]** |  | [optional] 
 **contained_in_place** | **string[]** |  | [optional] 
 **address_locality** | **string[]** |  | [optional] 

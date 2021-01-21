@@ -56,7 +56,8 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'tag' => 'string[]',
+        'category_tree' => 'string[]',
+'tag' => 'string[]',
 'contained_in_place' => 'string[]',
 'address_locality' => 'string[]',
 'address_postal_code' => 'string[]',
@@ -91,7 +92,8 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'tag' => null,
+        'category_tree' => null,
+'tag' => null,
 'contained_in_place' => null,
 'address_locality' => null,
 'address_postal_code' => null,
@@ -147,7 +149,8 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'tag' => 'tag',
+        'category_tree' => 'categoryTree',
+'tag' => 'tag',
 'contained_in_place' => 'containedInPlace',
 'address_locality' => 'addressLocality',
 'address_postal_code' => 'addressPostalCode',
@@ -182,7 +185,8 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'tag' => 'setTag',
+        'category_tree' => 'setCategoryTree',
+'tag' => 'setTag',
 'contained_in_place' => 'setContainedInPlace',
 'address_locality' => 'setAddressLocality',
 'address_postal_code' => 'setAddressPostalCode',
@@ -217,7 +221,8 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'tag' => 'getTag',
+        'category_tree' => 'getCategoryTree',
+'tag' => 'getTag',
 'contained_in_place' => 'getContainedInPlace',
 'address_locality' => 'getAddressLocality',
 'address_postal_code' => 'getAddressPostalCode',
@@ -304,6 +309,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['category_tree'] = isset($data['category_tree']) ? $data['category_tree'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
         $this->container['address_locality'] = isset($data['address_locality']) ? $data['address_locality'] : null;
@@ -357,6 +363,30 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets category_tree
+     *
+     * @return string[]
+     */
+    public function getCategoryTree()
+    {
+        return $this->container['category_tree'];
+    }
+
+    /**
+     * Sets category_tree
+     *
+     * @param string[] $category_tree category_tree
+     *
+     * @return $this
+     */
+    public function setCategoryTree($category_tree)
+    {
+        $this->container['category_tree'] = $category_tree;
+
+        return $this;
+    }
 
     /**
      * Gets tag

@@ -4225,7 +4225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByGET**
-> \Infocenter\Client\Model\DsSearchResponse searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsSearchResponse searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Search by GET
 
@@ -4255,6 +4255,7 @@ $select = "select_example"; // string | Use property for selecting fields which 
 $current_page = 56; // int | Format - int32. Use property to set number of page
 $results_per_page = 56; // int | Format - int32. Use property to set count of results per page
 $order_by = "order_by_example"; // string | Use property for ordering
+$category = "category_example"; // string | Use property for filtering by `category`
 $filters = "filters_example"; // string | Use property for odata filtering
 $type = "type_example"; // string | Use property for filtering by `type`
 $datasource = "datasource_example"; // string | Use property for filtering by `dataSource`
@@ -4262,7 +4263,7 @@ $project = "project_example"; // string | Use property for filtering by `project
 $combined_type = "combined_type_example"; // string | Use property for filtering by `combinedType` which contains parentType and additionalType
 $leaf_type = "leaf_type_example"; // string | Use property for filtering by `leafType` which contains additionalType or type
 $campaign_tag = "campaign_tag_example"; // string | Use property for filtering by `campaignTag`
-$category = "category_example"; // string | Use property for filtering/facet-filtering by `categoryTree`
+$category_tree = "category_tree_example"; // string | Use property for filtering/facet-filtering by `categoryTree`
 $tag = "tag_example"; // string | Use property for filtering/facet-filtering by `tag/id`
 $contained_in_place = "contained_in_place_example"; // string | Use property for filtering/facet-filtering by `containedInPlace/id`
 $address_locality = "address_locality_example"; // string | Use property for filtering/facet-filtering by `address/addressLocality`
@@ -4281,7 +4282,7 @@ $accept_language = "accept_language_example"; // string | Two-letter language co
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    $result = $apiInstance->searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGET: ', $e->getMessage(), PHP_EOL;
@@ -4299,6 +4300,7 @@ Name | Type | Description  | Notes
  **current_page** | **int**| Format - int32. Use property to set number of page | [optional]
  **results_per_page** | **int**| Format - int32. Use property to set count of results per page | [optional]
  **order_by** | **string**| Use property for ordering | [optional]
+ **category** | **string**| Use property for filtering by &#x60;category&#x60; | [optional]
  **filters** | **string**| Use property for odata filtering | [optional]
  **type** | **string**| Use property for filtering by &#x60;type&#x60; | [optional]
  **datasource** | **string**| Use property for filtering by &#x60;dataSource&#x60; | [optional]
@@ -4306,7 +4308,7 @@ Name | Type | Description  | Notes
  **combined_type** | **string**| Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType | [optional]
  **leaf_type** | **string**| Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type | [optional]
  **campaign_tag** | **string**| Use property for filtering by &#x60;campaignTag&#x60; | [optional]
- **category** | **string**| Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; | [optional]
+ **category_tree** | **string**| Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; | [optional]
  **tag** | **string**| Use property for filtering/facet-filtering by &#x60;tag/id&#x60; | [optional]
  **contained_in_place** | **string**| Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; | [optional]
  **address_locality** | **string**| Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; | [optional]

@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **is_recommendation** | **bool** |  | [optional] 
 **in_language** | **string** |  | [optional] 
 **title** | **string** |  | [optional] 
+**ordering_number** | **int** |  | [optional] 
+**target** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

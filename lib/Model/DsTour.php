@@ -61,6 +61,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'time' => 'int',
 'elevation' => '\Infocenter\Client\Model\DsTourElevation',
 'rating' => '\Infocenter\Client\Model\DsTourRating',
+'season' => '\Infocenter\Client\Model\DsTourSeason',
 'season_json' => 'object',
 'difficulties_json' => 'object',
 'exposition_json' => 'object',
@@ -141,6 +142,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'time' => 'int32',
 'elevation' => null,
 'rating' => null,
+'season' => null,
 'season_json' => null,
 'difficulties_json' => null,
 'exposition_json' => null,
@@ -242,6 +244,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'time' => 'time',
 'elevation' => 'elevation',
 'rating' => 'rating',
+'season' => 'season',
 'season_json' => 'seasonJson',
 'difficulties_json' => 'difficultiesJson',
 'exposition_json' => 'expositionJson',
@@ -322,6 +325,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'time' => 'setTime',
 'elevation' => 'setElevation',
 'rating' => 'setRating',
+'season' => 'setSeason',
 'season_json' => 'setSeasonJson',
 'difficulties_json' => 'setDifficultiesJson',
 'exposition_json' => 'setExpositionJson',
@@ -402,6 +406,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'time' => 'getTime',
 'elevation' => 'getElevation',
 'rating' => 'getRating',
+'season' => 'getSeason',
 'season_json' => 'getSeasonJson',
 'difficulties_json' => 'getDifficultiesJson',
 'exposition_json' => 'getExpositionJson',
@@ -534,6 +539,7 @@ class DsTour implements ModelInterface, ArrayAccess
         $this->container['time'] = isset($data['time']) ? $data['time'] : null;
         $this->container['elevation'] = isset($data['elevation']) ? $data['elevation'] : null;
         $this->container['rating'] = isset($data['rating']) ? $data['rating'] : null;
+        $this->container['season'] = isset($data['season']) ? $data['season'] : null;
         $this->container['season_json'] = isset($data['season_json']) ? $data['season_json'] : null;
         $this->container['difficulties_json'] = isset($data['difficulties_json']) ? $data['difficulties_json'] : null;
         $this->container['exposition_json'] = isset($data['exposition_json']) ? $data['exposition_json'] : null;
@@ -744,6 +750,30 @@ class DsTour implements ModelInterface, ArrayAccess
     public function setRating($rating)
     {
         $this->container['rating'] = $rating;
+
+        return $this;
+    }
+
+    /**
+     * Gets season
+     *
+     * @return \Infocenter\Client\Model\DsTourSeason
+     */
+    public function getSeason()
+    {
+        return $this->container['season'];
+    }
+
+    /**
+     * Sets season
+     *
+     * @param \Infocenter\Client\Model\DsTourSeason $season season
+     *
+     * @return $this
+     */
+    public function setSeason($season)
+    {
+        $this->container['season'] = $season;
 
         return $this;
     }

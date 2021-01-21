@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **time** | **int** |  | [optional] 
 **elevation** | [**\Infocenter\Client\Model\DsTourElevation**](DsTourElevation.md) |  | [optional] 
 **rating** | [**\Infocenter\Client\Model\DsTourRating**](DsTourRating.md) |  | [optional] 
+**season** | [**\Infocenter\Client\Model\DsTourSeason**](DsTourSeason.md) |  | [optional] 
 **season_json** | **object** |  | [optional] 
 **difficulties_json** | **object** |  | [optional] 
 **exposition_json** | **object** |  | [optional] 

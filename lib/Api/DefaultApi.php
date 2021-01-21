@@ -19472,6 +19472,7 @@ class DefaultApi
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
+     * @param  string $category Use property for filtering by &#x60;category&#x60; (optional)
      * @param  string $filters Use property for odata filtering (optional)
      * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
@@ -19479,7 +19480,7 @@ class DefaultApi
      * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
      * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
-     * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
      * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
@@ -19501,9 +19502,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsSearchResponse
      */
-    public function searchByGET($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGET($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->searchByGETWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        list($response) = $this->searchByGETWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -19518,6 +19519,7 @@ class DefaultApi
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
+     * @param  string $category Use property for filtering by &#x60;category&#x60; (optional)
      * @param  string $filters Use property for odata filtering (optional)
      * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
@@ -19525,7 +19527,7 @@ class DefaultApi
      * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
      * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
-     * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
      * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
@@ -19547,10 +19549,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsSearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchByGETWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -19622,6 +19624,7 @@ class DefaultApi
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
+     * @param  string $category Use property for filtering by &#x60;category&#x60; (optional)
      * @param  string $filters Use property for odata filtering (optional)
      * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
@@ -19629,7 +19632,7 @@ class DefaultApi
      * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
      * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
-     * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
      * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
@@ -19650,9 +19653,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsync($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETAsync($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->searchByGETAsyncWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+        return $this->searchByGETAsyncWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -19671,6 +19674,7 @@ class DefaultApi
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
+     * @param  string $category Use property for filtering by &#x60;category&#x60; (optional)
      * @param  string $filters Use property for odata filtering (optional)
      * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
@@ -19678,7 +19682,7 @@ class DefaultApi
      * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
      * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
-     * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
      * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
@@ -19699,10 +19703,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsyncWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETAsyncWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -19750,6 +19754,7 @@ class DefaultApi
      * @param  int $current_page Format - int32. Use property to set number of page (optional)
      * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
      * @param  string $order_by Use property for ordering (optional)
+     * @param  string $category Use property for filtering by &#x60;category&#x60; (optional)
      * @param  string $filters Use property for odata filtering (optional)
      * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
@@ -19757,7 +19762,7 @@ class DefaultApi
      * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
      * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
-     * @param  string $category Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
      * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
@@ -19778,7 +19783,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchByGETRequest($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    protected function searchByGETRequest($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/search';
@@ -19813,6 +19818,10 @@ class DefaultApi
             $queryParams['orderBy'] = ObjectSerializer::toQueryValue($order_by);
         }
         // query params
+        if ($category !== null) {
+            $queryParams['category'] = ObjectSerializer::toQueryValue($category);
+        }
+        // query params
         if ($filters !== null) {
             $queryParams['filters'] = ObjectSerializer::toQueryValue($filters);
         }
@@ -19841,8 +19850,8 @@ class DefaultApi
             $queryParams['campaignTag'] = ObjectSerializer::toQueryValue($campaign_tag);
         }
         // query params
-        if ($category !== null) {
-            $queryParams['category'] = ObjectSerializer::toQueryValue($category);
+        if ($category_tree !== null) {
+            $queryParams['categoryTree'] = ObjectSerializer::toQueryValue($category_tree);
         }
         // query params
         if ($tag !== null) {
