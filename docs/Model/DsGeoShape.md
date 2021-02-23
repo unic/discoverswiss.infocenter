@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **box** | **string** |  | [optional] 
 **circle** | **string** |  | [optional] 
 **line** | **string** |  | [optional] 
+**point** | **string** |  | [optional] 
 **polygon** | **string** |  | [optional] 
 **multiline** | **string** |  | [optional] 
 **alternate_name** | **string** |  | [optional] 

@@ -72,13 +72,17 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'season' => 'string[]',
 'type' => 'string[]',
 'combined_type' => 'string[]',
+'combined_type_tree' => 'string[]',
 'leaf_type' => 'string[]',
 'filters' => 'string[]',
 'datasource' => 'string[]',
 'project' => 'string[]',
 'campaign_tag' => 'string[]',
+'profile_tag' => 'string[]',
+'all_tag' => 'string[]',
 'category' => 'string[]',
 'facets' => '\Infocenter\Client\Model\DsFacetRequest[]',
+'scoring_tag' => 'string[]',
 'search_text' => 'string',
 'search_fields' => 'string',
 'select' => 'string',
@@ -108,13 +112,17 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'season' => null,
 'type' => null,
 'combined_type' => null,
+'combined_type_tree' => null,
 'leaf_type' => null,
 'filters' => null,
 'datasource' => null,
 'project' => null,
 'campaign_tag' => null,
+'profile_tag' => null,
+'all_tag' => null,
 'category' => null,
 'facets' => null,
+'scoring_tag' => null,
 'search_text' => null,
 'search_fields' => null,
 'select' => null,
@@ -165,13 +173,17 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'season' => 'season',
 'type' => 'type',
 'combined_type' => 'combinedType',
+'combined_type_tree' => 'combinedTypeTree',
 'leaf_type' => 'leafType',
 'filters' => 'filters',
 'datasource' => 'datasource',
 'project' => 'project',
 'campaign_tag' => 'campaignTag',
+'profile_tag' => 'profileTag',
+'all_tag' => 'allTag',
 'category' => 'category',
 'facets' => 'facets',
+'scoring_tag' => 'scoringTag',
 'search_text' => 'searchText',
 'search_fields' => 'searchFields',
 'select' => 'select',
@@ -201,13 +213,17 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'season' => 'setSeason',
 'type' => 'setType',
 'combined_type' => 'setCombinedType',
+'combined_type_tree' => 'setCombinedTypeTree',
 'leaf_type' => 'setLeafType',
 'filters' => 'setFilters',
 'datasource' => 'setDatasource',
 'project' => 'setProject',
 'campaign_tag' => 'setCampaignTag',
+'profile_tag' => 'setProfileTag',
+'all_tag' => 'setAllTag',
 'category' => 'setCategory',
 'facets' => 'setFacets',
+'scoring_tag' => 'setScoringTag',
 'search_text' => 'setSearchText',
 'search_fields' => 'setSearchFields',
 'select' => 'setSelect',
@@ -237,13 +253,17 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'season' => 'getSeason',
 'type' => 'getType',
 'combined_type' => 'getCombinedType',
+'combined_type_tree' => 'getCombinedTypeTree',
 'leaf_type' => 'getLeafType',
 'filters' => 'getFilters',
 'datasource' => 'getDatasource',
 'project' => 'getProject',
 'campaign_tag' => 'getCampaignTag',
+'profile_tag' => 'getProfileTag',
+'all_tag' => 'getAllTag',
 'category' => 'getCategory',
 'facets' => 'getFacets',
+'scoring_tag' => 'getScoringTag',
 'search_text' => 'getSearchText',
 'search_fields' => 'getSearchFields',
 'select' => 'getSelect',
@@ -325,13 +345,17 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         $this->container['season'] = isset($data['season']) ? $data['season'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['combined_type'] = isset($data['combined_type']) ? $data['combined_type'] : null;
+        $this->container['combined_type_tree'] = isset($data['combined_type_tree']) ? $data['combined_type_tree'] : null;
         $this->container['leaf_type'] = isset($data['leaf_type']) ? $data['leaf_type'] : null;
         $this->container['filters'] = isset($data['filters']) ? $data['filters'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['project'] = isset($data['project']) ? $data['project'] : null;
         $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
+        $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
+        $this->container['all_tag'] = isset($data['all_tag']) ? $data['all_tag'] : null;
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['facets'] = isset($data['facets']) ? $data['facets'] : null;
+        $this->container['scoring_tag'] = isset($data['scoring_tag']) ? $data['scoring_tag'] : null;
         $this->container['search_text'] = isset($data['search_text']) ? $data['search_text'] : null;
         $this->container['search_fields'] = isset($data['search_fields']) ? $data['search_fields'] : null;
         $this->container['select'] = isset($data['select']) ? $data['select'] : null;
@@ -749,6 +773,30 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets combined_type_tree
+     *
+     * @return string[]
+     */
+    public function getCombinedTypeTree()
+    {
+        return $this->container['combined_type_tree'];
+    }
+
+    /**
+     * Sets combined_type_tree
+     *
+     * @param string[] $combined_type_tree combined_type_tree
+     *
+     * @return $this
+     */
+    public function setCombinedTypeTree($combined_type_tree)
+    {
+        $this->container['combined_type_tree'] = $combined_type_tree;
+
+        return $this;
+    }
+
+    /**
      * Gets leaf_type
      *
      * @return string[]
@@ -869,6 +917,54 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets profile_tag
+     *
+     * @return string[]
+     */
+    public function getProfileTag()
+    {
+        return $this->container['profile_tag'];
+    }
+
+    /**
+     * Sets profile_tag
+     *
+     * @param string[] $profile_tag profile_tag
+     *
+     * @return $this
+     */
+    public function setProfileTag($profile_tag)
+    {
+        $this->container['profile_tag'] = $profile_tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets all_tag
+     *
+     * @return string[]
+     */
+    public function getAllTag()
+    {
+        return $this->container['all_tag'];
+    }
+
+    /**
+     * Sets all_tag
+     *
+     * @param string[] $all_tag all_tag
+     *
+     * @return $this
+     */
+    public function setAllTag($all_tag)
+    {
+        $this->container['all_tag'] = $all_tag;
+
+        return $this;
+    }
+
+    /**
      * Gets category
      *
      * @return string[]
@@ -912,6 +1008,30 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     public function setFacets($facets)
     {
         $this->container['facets'] = $facets;
+
+        return $this;
+    }
+
+    /**
+     * Gets scoring_tag
+     *
+     * @return string[]
+     */
+    public function getScoringTag()
+    {
+        return $this->container['scoring_tag'];
+    }
+
+    /**
+     * Sets scoring_tag
+     *
+     * @param string[] $scoring_tag scoring_tag
+     *
+     * @return $this
+     */
+    public function setScoringTag($scoring_tag)
+    {
+        $this->container['scoring_tag'] = $scoring_tag;
 
         return $this;
     }

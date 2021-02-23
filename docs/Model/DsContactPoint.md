@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **email** | **string** |  | [optional] 
 **fax_number** | **string** |  | [optional] 
 **telephone** | **string** |  | [optional] 
-**source** | [**\Infocenter\Client\Model\DsPartnerSimplex**](DsPartnerSimplex.md) |  | [optional] 
 **hours_available** | [**\Infocenter\Client\Model\DsOpeningHoursSpecification[]**](DsOpeningHoursSpecification.md) |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 

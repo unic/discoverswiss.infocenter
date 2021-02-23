@@ -1,6 +1,6 @@
 <?php
 /**
- * DsTermVersion
+ * DsTourExposition
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsTermVersion Class Doc Comment
+ * DsTourExposition Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsTermVersion implements ModelInterface, ArrayAccess
+class DsTourExposition implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsTermVersion implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TermVersion';
+    protected static $swaggerModelName = 'TourExposition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,13 +56,14 @@ class DsTermVersion implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-'code' => 'string',
-'name' => 'string',
-'partner_name' => 'string',
-'term_document' => 'string',
-'valid_from' => '\DateTime',
-'term_code' => 'string'    ];
+        'nn' => 'bool',
+'ne' => 'bool',
+'nw' => 'bool',
+'ee' => 'bool',
+'ss' => 'bool',
+'se' => 'bool',
+'sw' => 'bool',
+'ww' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,13 +71,14 @@ class DsTermVersion implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-'code' => null,
-'name' => null,
-'partner_name' => null,
-'term_document' => null,
-'valid_from' => 'date-time',
-'term_code' => null    ];
+        'nn' => null,
+'ne' => null,
+'nw' => null,
+'ee' => null,
+'ss' => null,
+'se' => null,
+'sw' => null,
+'ww' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -105,13 +107,14 @@ class DsTermVersion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => '@id',
-'code' => 'code',
-'name' => 'name',
-'partner_name' => 'partnerName',
-'term_document' => 'termDocument',
-'valid_from' => 'validFrom',
-'term_code' => 'termCode'    ];
+        'nn' => 'nn',
+'ne' => 'ne',
+'nw' => 'nw',
+'ee' => 'ee',
+'ss' => 'ss',
+'se' => 'se',
+'sw' => 'sw',
+'ww' => 'ww'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -119,13 +122,14 @@ class DsTermVersion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-'code' => 'setCode',
-'name' => 'setName',
-'partner_name' => 'setPartnerName',
-'term_document' => 'setTermDocument',
-'valid_from' => 'setValidFrom',
-'term_code' => 'setTermCode'    ];
+        'nn' => 'setNn',
+'ne' => 'setNe',
+'nw' => 'setNw',
+'ee' => 'setEe',
+'ss' => 'setSs',
+'se' => 'setSe',
+'sw' => 'setSw',
+'ww' => 'setWw'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -133,13 +137,14 @@ class DsTermVersion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-'code' => 'getCode',
-'name' => 'getName',
-'partner_name' => 'getPartnerName',
-'term_document' => 'getTermDocument',
-'valid_from' => 'getValidFrom',
-'term_code' => 'getTermCode'    ];
+        'nn' => 'getNn',
+'ne' => 'getNe',
+'nw' => 'getNw',
+'ee' => 'getEe',
+'ss' => 'getSs',
+'se' => 'getSe',
+'sw' => 'getSw',
+'ww' => 'getWw'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -199,13 +204,14 @@ class DsTermVersion implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['partner_name'] = isset($data['partner_name']) ? $data['partner_name'] : null;
-        $this->container['term_document'] = isset($data['term_document']) ? $data['term_document'] : null;
-        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
-        $this->container['term_code'] = isset($data['term_code']) ? $data['term_code'] : null;
+        $this->container['nn'] = isset($data['nn']) ? $data['nn'] : null;
+        $this->container['ne'] = isset($data['ne']) ? $data['ne'] : null;
+        $this->container['nw'] = isset($data['nw']) ? $data['nw'] : null;
+        $this->container['ee'] = isset($data['ee']) ? $data['ee'] : null;
+        $this->container['ss'] = isset($data['ss']) ? $data['ss'] : null;
+        $this->container['se'] = isset($data['se']) ? $data['se'] : null;
+        $this->container['sw'] = isset($data['sw']) ? $data['sw'] : null;
+        $this->container['ww'] = isset($data['ww']) ? $data['ww'] : null;
     }
 
     /**
@@ -233,169 +239,193 @@ class DsTermVersion implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets nn
      *
-     * @return string
+     * @return bool
      */
-    public function getId()
+    public function getNn()
     {
-        return $this->container['id'];
+        return $this->container['nn'];
     }
 
     /**
-     * Sets id
+     * Sets nn
      *
-     * @param string $id id
+     * @param bool $nn nn
      *
      * @return $this
      */
-    public function setId($id)
+    public function setNn($nn)
     {
-        $this->container['id'] = $id;
+        $this->container['nn'] = $nn;
 
         return $this;
     }
 
     /**
-     * Gets code
+     * Gets ne
      *
-     * @return string
+     * @return bool
      */
-    public function getCode()
+    public function getNe()
     {
-        return $this->container['code'];
+        return $this->container['ne'];
     }
 
     /**
-     * Sets code
+     * Sets ne
      *
-     * @param string $code code
+     * @param bool $ne ne
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setNe($ne)
     {
-        $this->container['code'] = $code;
+        $this->container['ne'] = $ne;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets nw
      *
-     * @return string
+     * @return bool
      */
-    public function getName()
+    public function getNw()
     {
-        return $this->container['name'];
+        return $this->container['nw'];
     }
 
     /**
-     * Sets name
+     * Sets nw
      *
-     * @param string $name name
+     * @param bool $nw nw
      *
      * @return $this
      */
-    public function setName($name)
+    public function setNw($nw)
     {
-        $this->container['name'] = $name;
+        $this->container['nw'] = $nw;
 
         return $this;
     }
 
     /**
-     * Gets partner_name
+     * Gets ee
      *
-     * @return string
+     * @return bool
      */
-    public function getPartnerName()
+    public function getEe()
     {
-        return $this->container['partner_name'];
+        return $this->container['ee'];
     }
 
     /**
-     * Sets partner_name
+     * Sets ee
      *
-     * @param string $partner_name partner_name
+     * @param bool $ee ee
      *
      * @return $this
      */
-    public function setPartnerName($partner_name)
+    public function setEe($ee)
     {
-        $this->container['partner_name'] = $partner_name;
+        $this->container['ee'] = $ee;
 
         return $this;
     }
 
     /**
-     * Gets term_document
+     * Gets ss
      *
-     * @return string
+     * @return bool
      */
-    public function getTermDocument()
+    public function getSs()
     {
-        return $this->container['term_document'];
+        return $this->container['ss'];
     }
 
     /**
-     * Sets term_document
+     * Sets ss
      *
-     * @param string $term_document term_document
+     * @param bool $ss ss
      *
      * @return $this
      */
-    public function setTermDocument($term_document)
+    public function setSs($ss)
     {
-        $this->container['term_document'] = $term_document;
+        $this->container['ss'] = $ss;
 
         return $this;
     }
 
     /**
-     * Gets valid_from
+     * Gets se
      *
-     * @return \DateTime
+     * @return bool
      */
-    public function getValidFrom()
+    public function getSe()
     {
-        return $this->container['valid_from'];
+        return $this->container['se'];
     }
 
     /**
-     * Sets valid_from
+     * Sets se
      *
-     * @param \DateTime $valid_from valid_from
+     * @param bool $se se
      *
      * @return $this
      */
-    public function setValidFrom($valid_from)
+    public function setSe($se)
     {
-        $this->container['valid_from'] = $valid_from;
+        $this->container['se'] = $se;
 
         return $this;
     }
 
     /**
-     * Gets term_code
+     * Gets sw
      *
-     * @return string
+     * @return bool
      */
-    public function getTermCode()
+    public function getSw()
     {
-        return $this->container['term_code'];
+        return $this->container['sw'];
     }
 
     /**
-     * Sets term_code
+     * Sets sw
      *
-     * @param string $term_code term_code
+     * @param bool $sw sw
      *
      * @return $this
      */
-    public function setTermCode($term_code)
+    public function setSw($sw)
     {
-        $this->container['term_code'] = $term_code;
+        $this->container['sw'] = $sw;
+
+        return $this;
+    }
+
+    /**
+     * Gets ww
+     *
+     * @return bool
+     */
+    public function getWw()
+    {
+        return $this->container['ww'];
+    }
+
+    /**
+     * Sets ww
+     *
+     * @param bool $ww ww
+     *
+     * @return $this
+     */
+    public function setWw($ww)
+    {
+        $this->container['ww'] = $ww;
 
         return $this;
     }

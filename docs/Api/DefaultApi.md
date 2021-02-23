@@ -30,6 +30,7 @@ Method | HTTP request | Description
 [**foodEstablishmentWeatherHourlyForecast**](DefaultApi.md#foodestablishmentweatherhourlyforecast) | **GET** /foodEstablishments/{id}/weather/forecast/hourly | FoodEstablishment weather hourly forecast
 [**getStatus**](DefaultApi.md#getstatus) | **GET** /status | GetStatus
 [**getStatusAbout**](DefaultApi.md#getstatusabout) | **GET** /status/about | GetStatusAbout
+[**getTheCurrentTermVersionsOfThePartner**](DefaultApi.md#getthecurrenttermversionsofthepartner) | **GET** /partners/{partnerAcronym}/terms/currentVersion | Get the current TermVersions of the partner
 [**imageObject**](DefaultApi.md#imageobject) | **GET** /imageObjects/{id} | ImageObject
 [**listAdministrativeAreaRegion**](DefaultApi.md#listadministrativearearegion) | **GET** /areas | List AdministrativeArea (Region)
 [**listCategory**](DefaultApi.md#listcategory) | **GET** /categories | List Category
@@ -68,7 +69,6 @@ Method | HTTP request | Description
 [**termVersion**](DefaultApi.md#termversion) | **GET** /termversions/{code} | TermVersion
 [**tour**](DefaultApi.md#tour) | **GET** /tours/{id} | Tour
 [**tourDailyForecast**](DefaultApi.md#tourdailyforecast) | **GET** /tours/{id}/weather/forecast/daily | Tour daily forecast
-[**tourDownload**](DefaultApi.md#tourdownload) | **GET** /tours/{id}/download/{extension} | Tour download
 [**tourHourlyForecast**](DefaultApi.md#tourhourlyforecast) | **GET** /tours/{id}/weather/forecast/hourly | Tour hourly forecast
 [**tourWeather**](DefaultApi.md#tourweather) | **GET** /tours/{id}/weather | Tour weather
 [**treeAdministrativeAreaRegion**](DefaultApi.md#treeadministrativearearegion) | **GET** /areas/{id}/tree | Tree AdministrativeArea (Region)
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **administrativeAreaRegionDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray administrativeAreaRegionDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecast[] administrativeAreaRegionDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 AdministrativeArea (Region) daily forecast
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
+[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
 
 ### Authorization
 
@@ -1831,6 +1831,71 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getTheCurrentTermVersionsOfThePartner**
+> \Infocenter\Client\Model\DsTermVersionArray getTheCurrentTermVersionsOfThePartner($partner_acronym, $scope, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+
+Get the current TermVersions of the partner
+
+Get the full detailed information of a Partner current TermVersion object and the language (Accept-Language header)
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$partner_acronym = "partner_acronym_example"; // string | Use partner acronym to set the partner which should be used in the request.
+$scope = "scope_example"; // string | The scope of the term definition ('profile' or null)
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->getTheCurrentTermVersionsOfThePartner($partner_acronym, $scope, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTheCurrentTermVersionsOfThePartner: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **partner_acronym** | **string**| Use partner acronym to set the partner which should be used in the request. |
+ **scope** | **string**| The scope of the term definition (&#x27;profile&#x27; or null) | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsTermVersionArray**](../Model/DsTermVersionArray.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **imageObject**
 > \Infocenter\Client\Model\DsImageObject imageObject($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
@@ -2910,7 +2975,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTag**
-> \Infocenter\Client\Model\DsTagsResponse listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTagsResponse listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List Tag
 
@@ -2940,13 +3005,14 @@ $continuation_token = "continuation_token_example"; // string | Use it for get n
 $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
+$additional_type = "additional_type_example"; // string | Filter by the additional type property
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    $result = $apiInstance->listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listTag: ', $e->getMessage(), PHP_EOL;
@@ -2964,6 +3030,7 @@ Name | Type | Description  | Notes
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
+ **additional_type** | **string**| Filter by the additional type property | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
@@ -4225,7 +4292,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByGET**
-> \Infocenter\Client\Model\DsSearchResponse searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsSearchResponse searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Search by GET
 
@@ -4260,11 +4327,15 @@ $filters = "filters_example"; // string | Use property for odata filtering
 $type = "type_example"; // string | Use property for filtering by `type`
 $datasource = "datasource_example"; // string | Use property for filtering by `dataSource`
 $project = "project_example"; // string | Use property for filtering by `project`
-$combined_type = "combined_type_example"; // string | Use property for filtering by `combinedType` which contains parentType and additionalType
+$combined_type = "combined_type_example"; // string | Use property for filtering by `combinedType` which contains parentType and parentAdditionalType
+$combined_type_tree = "combined_type_tree_example"; // string | Use property for filtering by `combinedTypeTree`
 $leaf_type = "leaf_type_example"; // string | Use property for filtering by `leafType` which contains additionalType or type
 $campaign_tag = "campaign_tag_example"; // string | Use property for filtering by `campaignTag`
+$profile_tag = "profile_tag_example"; // string | Use property for filtering by `profileTag`
+$all_tag = "all_tag_example"; // string | Use property for filtering by `allTag` which contains values from `tag`, `campaignTag` and `profileTag`
+$scoring_tag = "scoring_tag_example"; // string | Use property to score results by profile-tags
 $category_tree = "category_tree_example"; // string | Use property for filtering/facet-filtering by `categoryTree`
-$tag = "tag_example"; // string | Use property for filtering/facet-filtering by `tag/id`
+$tag = "tag_example"; // string | Use property for filtering/facet-filtering by `tag`
 $contained_in_place = "contained_in_place_example"; // string | Use property for filtering/facet-filtering by `containedInPlace/id`
 $address_locality = "address_locality_example"; // string | Use property for filtering/facet-filtering by `address/addressLocality`
 $address_postal_code = "address_postal_code_example"; // string | Use property for filtering/facet-filtering by `address/postalCode`
@@ -4276,13 +4347,13 @@ $elevation_ascent = "elevation_ascent_example"; // string | Use property for fil
 $elevation_descent = "elevation_descent_example"; // string | Use property for filtering/facet-filtering by `elevation/descent`
 $elevation_min_altitude = "elevation_min_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/minAltitude`
 $elevation_max_altitude = "elevation_max_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/maxAltitude`
-$season = "season_example"; // string | Use property for filtering/facet-filtering by `seasons`
+$season = "season_example"; // string | Use property for filtering/facet-filtering by `season`
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    $result = $apiInstance->searchByGET($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGET: ', $e->getMessage(), PHP_EOL;
@@ -4305,11 +4376,15 @@ Name | Type | Description  | Notes
  **type** | **string**| Use property for filtering by &#x60;type&#x60; | [optional]
  **datasource** | **string**| Use property for filtering by &#x60;dataSource&#x60; | [optional]
  **project** | **string**| Use property for filtering by &#x60;project&#x60; | [optional]
- **combined_type** | **string**| Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType | [optional]
+ **combined_type** | **string**| Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType | [optional]
+ **combined_type_tree** | **string**| Use property for filtering by &#x60;combinedTypeTree&#x60; | [optional]
  **leaf_type** | **string**| Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type | [optional]
  **campaign_tag** | **string**| Use property for filtering by &#x60;campaignTag&#x60; | [optional]
+ **profile_tag** | **string**| Use property for filtering by &#x60;profileTag&#x60; | [optional]
+ **all_tag** | **string**| Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; | [optional]
+ **scoring_tag** | **string**| Use property to score results by profile-tags | [optional]
  **category_tree** | **string**| Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; | [optional]
- **tag** | **string**| Use property for filtering/facet-filtering by &#x60;tag/id&#x60; | [optional]
+ **tag** | **string**| Use property for filtering/facet-filtering by &#x60;tag&#x60; | [optional]
  **contained_in_place** | **string**| Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; | [optional]
  **address_locality** | **string**| Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; | [optional]
  **address_postal_code** | **string**| Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; | [optional]
@@ -4321,7 +4396,7 @@ Name | Type | Description  | Notes
  **elevation_descent** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; | [optional]
  **elevation_min_altitude** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; | [optional]
  **elevation_max_altitude** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; | [optional]
- **season** | **string**| Use property for filtering/facet-filtering by &#x60;seasons&#x60; | [optional]
+ **season** | **string**| Use property for filtering/facet-filtering by &#x60;season&#x60; | [optional]
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
@@ -4593,67 +4668,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
-
-### Authorization
-
-[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **tourDownload**
-> \Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse tourDownload($id, $extension, $ocp_apim_subscription_key)
-
-Tour download
-
-Get the map file with given extension.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: apiKeyHeader
-$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
-$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-$apiInstance = new Infocenter\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = "id_example"; // string | Use property identifier of Tour to get the map file with given extension.
-$extension = "extension_example"; // string | Tour map format (kml or gpx).
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-
-try {
-    $result = $apiInstance->tourDownload($id, $extension, $ocp_apim_subscription_key);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->tourDownload: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Use property identifier of Tour to get the map file with given extension. |
- **extension** | **string**| Tour map format (kml or gpx). |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
-
-### Return type
-
-[**\Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse**](../Model/DsToursIdDownloadExtensionGet200ApplicationJsonResponse.md)
 
 ### Authorization
 

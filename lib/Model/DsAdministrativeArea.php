@@ -68,7 +68,6 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'photo' => '\Infocenter\Client\Model\DsImageObjectSimplex[]',
 'public_access' => 'bool',
 'smoking_allowed' => 'bool',
-'source' => '\Infocenter\Client\Model\DsPartnerSimplex',
 'special_opening_hours_specification' => '\Infocenter\Client\Model\DsOpeningHoursSpecification[]',
 'telephone' => 'string',
 'tourist_type' => 'string',
@@ -129,7 +128,6 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'photo' => null,
 'public_access' => null,
 'smoking_allowed' => null,
-'source' => null,
 'special_opening_hours_specification' => null,
 'telephone' => null,
 'tourist_type' => null,
@@ -211,7 +209,6 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'photo' => 'photo',
 'public_access' => 'publicAccess',
 'smoking_allowed' => 'smokingAllowed',
-'source' => 'source',
 'special_opening_hours_specification' => 'specialOpeningHoursSpecification',
 'telephone' => 'telephone',
 'tourist_type' => 'touristType',
@@ -272,7 +269,6 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'photo' => 'setPhoto',
 'public_access' => 'setPublicAccess',
 'smoking_allowed' => 'setSmokingAllowed',
-'source' => 'setSource',
 'special_opening_hours_specification' => 'setSpecialOpeningHoursSpecification',
 'telephone' => 'setTelephone',
 'tourist_type' => 'setTouristType',
@@ -333,7 +329,6 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'photo' => 'getPhoto',
 'public_access' => 'getPublicAccess',
 'smoking_allowed' => 'getSmokingAllowed',
-'source' => 'getSource',
 'special_opening_hours_specification' => 'getSpecialOpeningHoursSpecification',
 'telephone' => 'getTelephone',
 'tourist_type' => 'getTouristType',
@@ -446,7 +441,6 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
         $this->container['photo'] = isset($data['photo']) ? $data['photo'] : null;
         $this->container['public_access'] = isset($data['public_access']) ? $data['public_access'] : null;
         $this->container['smoking_allowed'] = isset($data['smoking_allowed']) ? $data['smoking_allowed'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['special_opening_hours_specification'] = isset($data['special_opening_hours_specification']) ? $data['special_opening_hours_specification'] : null;
         $this->container['telephone'] = isset($data['telephone']) ? $data['telephone'] : null;
         $this->container['tourist_type'] = isset($data['tourist_type']) ? $data['tourist_type'] : null;
@@ -798,30 +792,6 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     public function setSmokingAllowed($smoking_allowed)
     {
         $this->container['smoking_allowed'] = $smoking_allowed;
-
-        return $this;
-    }
-
-    /**
-     * Gets source
-     *
-     * @return \Infocenter\Client\Model\DsPartnerSimplex
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     *
-     * @param \Infocenter\Client\Model\DsPartnerSimplex $source source
-     *
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $this->container['source'] = $source;
 
         return $this;
     }

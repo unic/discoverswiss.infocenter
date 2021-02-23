@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **photo** | [**\Infocenter\Client\Model\DsImageObjectSimplex[]**](DsImageObjectSimplex.md) |  | [optional] 
 **public_access** | **bool** |  | [optional] 
 **smoking_allowed** | **bool** |  | [optional] 
-**source** | [**\Infocenter\Client\Model\DsPartnerSimplex**](DsPartnerSimplex.md) |  | [optional] 
 **special_opening_hours_specification** | [**\Infocenter\Client\Model\DsOpeningHoursSpecification[]**](DsOpeningHoursSpecification.md) |  | [optional] 
 **telephone** | **string** |  | [optional] 
 **tourist_type** | **string** |  | [optional] 

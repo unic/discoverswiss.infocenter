@@ -61,7 +61,6 @@ class DsContactPoint implements ModelInterface, ArrayAccess
 'email' => 'string',
 'fax_number' => 'string',
 'telephone' => 'string',
-'source' => '\Infocenter\Client\Model\DsPartnerSimplex',
 'hours_available' => '\Infocenter\Client\Model\DsOpeningHoursSpecification[]',
 'alternate_name' => 'string',
 'description' => 'string',
@@ -85,7 +84,6 @@ class DsContactPoint implements ModelInterface, ArrayAccess
 'email' => null,
 'fax_number' => null,
 'telephone' => null,
-'source' => null,
 'hours_available' => null,
 'alternate_name' => null,
 'description' => null,
@@ -130,7 +128,6 @@ class DsContactPoint implements ModelInterface, ArrayAccess
 'email' => 'email',
 'fax_number' => 'faxNumber',
 'telephone' => 'telephone',
-'source' => 'source',
 'hours_available' => 'hoursAvailable',
 'alternate_name' => 'alternateName',
 'description' => 'description',
@@ -154,7 +151,6 @@ class DsContactPoint implements ModelInterface, ArrayAccess
 'email' => 'setEmail',
 'fax_number' => 'setFaxNumber',
 'telephone' => 'setTelephone',
-'source' => 'setSource',
 'hours_available' => 'setHoursAvailable',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
@@ -178,7 +174,6 @@ class DsContactPoint implements ModelInterface, ArrayAccess
 'email' => 'getEmail',
 'fax_number' => 'getFaxNumber',
 'telephone' => 'getTelephone',
-'source' => 'getSource',
 'hours_available' => 'getHoursAvailable',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
@@ -254,7 +249,6 @@ class DsContactPoint implements ModelInterface, ArrayAccess
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['fax_number'] = isset($data['fax_number']) ? $data['fax_number'] : null;
         $this->container['telephone'] = isset($data['telephone']) ? $data['telephone'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['hours_available'] = isset($data['hours_available']) ? $data['hours_available'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
@@ -408,30 +402,6 @@ class DsContactPoint implements ModelInterface, ArrayAccess
     public function setTelephone($telephone)
     {
         $this->container['telephone'] = $telephone;
-
-        return $this;
-    }
-
-    /**
-     * Gets source
-     *
-     * @return \Infocenter\Client\Model\DsPartnerSimplex
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     *
-     * @param \Infocenter\Client\Model\DsPartnerSimplex $source source
-     *
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $this->container['source'] = $source;
 
         return $this;
     }

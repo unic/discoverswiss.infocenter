@@ -74,6 +74,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'state' => 'string',
 'time' => 'int',
 'rating' => '\Infocenter\Client\Model\DsTourRating',
+'profile_tag' => 'string[]',
 'schedule' => '\Infocenter\Client\Model\DsSchedule[]',
 'elevation' => '\Infocenter\Client\Model\DsTourElevation',
 'link' => '\Infocenter\Client\Model\DsLink[]',
@@ -103,6 +104,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'state' => null,
 'time' => 'int32',
 'rating' => null,
+'profile_tag' => null,
 'schedule' => null,
 'elevation' => null,
 'link' => null,
@@ -153,6 +155,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'state' => 'state',
 'time' => 'time',
 'rating' => 'rating',
+'profile_tag' => 'profileTag',
 'schedule' => 'schedule',
 'elevation' => 'elevation',
 'link' => 'link',
@@ -182,6 +185,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'state' => 'setState',
 'time' => 'setTime',
 'rating' => 'setRating',
+'profile_tag' => 'setProfileTag',
 'schedule' => 'setSchedule',
 'elevation' => 'setElevation',
 'link' => 'setLink',
@@ -211,6 +215,7 @@ class DsIndex implements ModelInterface, ArrayAccess
 'state' => 'getState',
 'time' => 'getTime',
 'rating' => 'getRating',
+'profile_tag' => 'getProfileTag',
 'schedule' => 'getSchedule',
 'elevation' => 'getElevation',
 'link' => 'getLink',
@@ -292,6 +297,7 @@ class DsIndex implements ModelInterface, ArrayAccess
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['time'] = isset($data['time']) ? $data['time'] : null;
         $this->container['rating'] = isset($data['rating']) ? $data['rating'] : null;
+        $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['schedule'] = isset($data['schedule']) ? $data['schedule'] : null;
         $this->container['elevation'] = isset($data['elevation']) ? $data['elevation'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
@@ -750,6 +756,30 @@ class DsIndex implements ModelInterface, ArrayAccess
     public function setRating($rating)
     {
         $this->container['rating'] = $rating;
+
+        return $this;
+    }
+
+    /**
+     * Gets profile_tag
+     *
+     * @return string[]
+     */
+    public function getProfileTag()
+    {
+        return $this->container['profile_tag'];
+    }
+
+    /**
+     * Sets profile_tag
+     *
+     * @param string[] $profile_tag profile_tag
+     *
+     * @return $this
+     */
+    public function setProfileTag($profile_tag)
+    {
+        $this->container['profile_tag'] = $profile_tag;
 
         return $this;
     }

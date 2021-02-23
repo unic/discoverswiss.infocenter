@@ -63,6 +63,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
 'box' => 'string',
 'circle' => 'string',
 'line' => 'string',
+'point' => 'string',
 'polygon' => 'string',
 'multiline' => 'string',
 'alternate_name' => 'string',
@@ -89,6 +90,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
 'box' => null,
 'circle' => null,
 'line' => null,
+'point' => null,
 'polygon' => null,
 'multiline' => null,
 'alternate_name' => null,
@@ -136,6 +138,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
 'box' => 'box',
 'circle' => 'circle',
 'line' => 'line',
+'point' => 'point',
 'polygon' => 'polygon',
 'multiline' => 'multiline',
 'alternate_name' => 'alternateName',
@@ -162,6 +165,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
 'box' => 'setBox',
 'circle' => 'setCircle',
 'line' => 'setLine',
+'point' => 'setPoint',
 'polygon' => 'setPolygon',
 'multiline' => 'setMultiline',
 'alternate_name' => 'setAlternateName',
@@ -188,6 +192,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
 'box' => 'getBox',
 'circle' => 'getCircle',
 'line' => 'getLine',
+'point' => 'getPoint',
 'polygon' => 'getPolygon',
 'multiline' => 'getMultiline',
 'alternate_name' => 'getAlternateName',
@@ -266,6 +271,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
         $this->container['box'] = isset($data['box']) ? $data['box'] : null;
         $this->container['circle'] = isset($data['circle']) ? $data['circle'] : null;
         $this->container['line'] = isset($data['line']) ? $data['line'] : null;
+        $this->container['point'] = isset($data['point']) ? $data['point'] : null;
         $this->container['polygon'] = isset($data['polygon']) ? $data['polygon'] : null;
         $this->container['multiline'] = isset($data['multiline']) ? $data['multiline'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
@@ -468,6 +474,30 @@ class DsGeoShape implements ModelInterface, ArrayAccess
     public function setLine($line)
     {
         $this->container['line'] = $line;
+
+        return $this;
+    }
+
+    /**
+     * Gets point
+     *
+     * @return string
+     */
+    public function getPoint()
+    {
+        return $this->container['point'];
+    }
+
+    /**
+     * Sets point
+     *
+     * @param string $point point
+     *
+     * @return $this
+     */
+    public function setPoint($point)
+    {
+        $this->container['point'] = $point;
 
         return $this;
     }

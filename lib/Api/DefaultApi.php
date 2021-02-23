@@ -418,7 +418,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function administrativeAreaRegionDailyForecast($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
@@ -441,11 +441,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function administrativeAreaRegionDailyForecastWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->administrativeAreaRegionDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
@@ -497,7 +497,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -551,7 +551,7 @@ class DefaultApi
      */
     public function administrativeAreaRegionDailyForecastAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $duration = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->administrativeAreaRegionDailyForecastRequest($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
@@ -8363,6 +8363,314 @@ class DefaultApi
     }
 
     /**
+     * Operation getTheCurrentTermVersionsOfThePartner
+     *
+     * Get the current TermVersions of the partner
+     *
+     * @param  string $partner_acronym Use partner acronym to set the partner which should be used in the request. (required)
+     * @param  string $scope The scope of the term definition (&#x27;profile&#x27; or null) (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsTermVersionArray
+     */
+    public function getTheCurrentTermVersionsOfThePartner($partner_acronym, $scope = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->getTheCurrentTermVersionsOfThePartnerWithHttpInfo($partner_acronym, $scope, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation getTheCurrentTermVersionsOfThePartnerWithHttpInfo
+     *
+     * Get the current TermVersions of the partner
+     *
+     * @param  string $partner_acronym Use partner acronym to set the partner which should be used in the request. (required)
+     * @param  string $scope The scope of the term definition (&#x27;profile&#x27; or null) (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsTermVersionArray, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getTheCurrentTermVersionsOfThePartnerWithHttpInfo($partner_acronym, $scope = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsTermVersionArray';
+        $request = $this->getTheCurrentTermVersionsOfThePartnerRequest($partner_acronym, $scope, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsTermVersionArray',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getTheCurrentTermVersionsOfThePartnerAsync
+     *
+     * Get the current TermVersions of the partner
+     *
+     * @param  string $partner_acronym Use partner acronym to set the partner which should be used in the request. (required)
+     * @param  string $scope The scope of the term definition (&#x27;profile&#x27; or null) (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTheCurrentTermVersionsOfThePartnerAsync($partner_acronym, $scope = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->getTheCurrentTermVersionsOfThePartnerAsyncWithHttpInfo($partner_acronym, $scope, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getTheCurrentTermVersionsOfThePartnerAsyncWithHttpInfo
+     *
+     * Get the current TermVersions of the partner
+     *
+     * @param  string $partner_acronym Use partner acronym to set the partner which should be used in the request. (required)
+     * @param  string $scope The scope of the term definition (&#x27;profile&#x27; or null) (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTheCurrentTermVersionsOfThePartnerAsyncWithHttpInfo($partner_acronym, $scope = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsTermVersionArray';
+        $request = $this->getTheCurrentTermVersionsOfThePartnerRequest($partner_acronym, $scope, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getTheCurrentTermVersionsOfThePartner'
+     *
+     * @param  string $partner_acronym Use partner acronym to set the partner which should be used in the request. (required)
+     * @param  string $scope The scope of the term definition (&#x27;profile&#x27; or null) (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getTheCurrentTermVersionsOfThePartnerRequest($partner_acronym, $scope = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'partner_acronym' is set
+        if ($partner_acronym === null || (is_array($partner_acronym) && count($partner_acronym) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $partner_acronym when calling getTheCurrentTermVersionsOfThePartner'
+            );
+        }
+
+        $resourcePath = '/partners/{partnerAcronym}/terms/currentVersion';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($scope !== null) {
+            $queryParams['scope'] = ObjectSerializer::toQueryValue($scope);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($partner_acronym !== null) {
+            $resourcePath = str_replace(
+                '{' . 'partnerAcronym' . '}',
+                ObjectSerializer::toPathValue($partner_acronym),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation imageObject
      *
      * ImageObject
@@ -13311,6 +13619,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  string $additional_type Filter by the additional type property (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -13320,9 +13629,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsTagsResponse
      */
-    public function listTag($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function listTag($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listTagWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        list($response) = $this->listTagWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -13337,6 +13646,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  string $additional_type Filter by the additional type property (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -13346,10 +13656,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsTagsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listTagWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function listTagWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTagsResponse';
-        $request = $this->listTagRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        $request = $this->listTagRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13421,6 +13731,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  string $additional_type Filter by the additional type property (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -13429,9 +13740,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTagAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function listTagAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listTagAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+        return $this->listTagAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13450,6 +13761,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  string $additional_type Filter by the additional type property (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -13458,10 +13770,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTagAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function listTagAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTagsResponse';
-        $request = $this->listTagRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        $request = $this->listTagRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13509,6 +13821,7 @@ class DefaultApi
      * @param  int $top Format - int32. Number of next set of entities. (optional)
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
+     * @param  string $additional_type Filter by the additional type property (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -13517,7 +13830,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listTagRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    protected function listTagRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/tags';
@@ -13550,6 +13863,10 @@ class DefaultApi
         // query params
         if ($select !== null) {
             $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($additional_type !== null) {
+            $queryParams['additionalType'] = ObjectSerializer::toQueryValue($additional_type);
         }
         // query params
         if ($include_count !== null) {
@@ -19477,11 +19794,15 @@ class DefaultApi
      * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
      * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
-     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
+     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType (optional)
+     * @param  string $combined_type_tree Use property for filtering by &#x60;combinedTypeTree&#x60; (optional)
      * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $profile_tag Use property for filtering by &#x60;profileTag&#x60; (optional)
+     * @param  string $all_tag Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; (optional)
+     * @param  string $scoring_tag Use property to score results by profile-tags (optional)
      * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
-     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
      * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
      * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
@@ -19493,7 +19814,7 @@ class DefaultApi
      * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
      * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
      * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
-     * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;season&#x60; (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -19502,9 +19823,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsSearchResponse
      */
-    public function searchByGET($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGET($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->searchByGETWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        list($response) = $this->searchByGETWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -19524,11 +19845,15 @@ class DefaultApi
      * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
      * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
-     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
+     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType (optional)
+     * @param  string $combined_type_tree Use property for filtering by &#x60;combinedTypeTree&#x60; (optional)
      * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $profile_tag Use property for filtering by &#x60;profileTag&#x60; (optional)
+     * @param  string $all_tag Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; (optional)
+     * @param  string $scoring_tag Use property to score results by profile-tags (optional)
      * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
-     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
      * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
      * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
@@ -19540,7 +19865,7 @@ class DefaultApi
      * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
      * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
      * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
-     * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;season&#x60; (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -19549,10 +19874,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsSearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchByGETWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -19629,11 +19954,15 @@ class DefaultApi
      * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
      * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
-     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
+     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType (optional)
+     * @param  string $combined_type_tree Use property for filtering by &#x60;combinedTypeTree&#x60; (optional)
      * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $profile_tag Use property for filtering by &#x60;profileTag&#x60; (optional)
+     * @param  string $all_tag Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; (optional)
+     * @param  string $scoring_tag Use property to score results by profile-tags (optional)
      * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
-     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
      * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
      * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
@@ -19645,7 +19974,7 @@ class DefaultApi
      * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
      * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
      * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
-     * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;season&#x60; (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -19653,9 +19982,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsync($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETAsync($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->searchByGETAsyncWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+        return $this->searchByGETAsyncWithHttpInfo($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -19679,11 +20008,15 @@ class DefaultApi
      * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
      * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
-     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
+     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType (optional)
+     * @param  string $combined_type_tree Use property for filtering by &#x60;combinedTypeTree&#x60; (optional)
      * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $profile_tag Use property for filtering by &#x60;profileTag&#x60; (optional)
+     * @param  string $all_tag Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; (optional)
+     * @param  string $scoring_tag Use property to score results by profile-tags (optional)
      * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
-     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
      * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
      * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
@@ -19695,7 +20028,7 @@ class DefaultApi
      * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
      * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
      * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
-     * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;season&#x60; (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -19703,10 +20036,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsyncWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function searchByGETAsyncWithHttpInfo($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $leaf_type, $campaign_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        $request = $this->searchByGETRequest($search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -19759,11 +20092,15 @@ class DefaultApi
      * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
      * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
      * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
-     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and additionalType (optional)
+     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType (optional)
+     * @param  string $combined_type_tree Use property for filtering by &#x60;combinedTypeTree&#x60; (optional)
      * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
      * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $profile_tag Use property for filtering by &#x60;profileTag&#x60; (optional)
+     * @param  string $all_tag Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; (optional)
+     * @param  string $scoring_tag Use property to score results by profile-tags (optional)
      * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
-     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag/id&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
      * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
      * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
@@ -19775,7 +20112,7 @@ class DefaultApi
      * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
      * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
      * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
-     * @param  string $season Use property for filtering/facet-filtering by &#x60;seasons&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;season&#x60; (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -19783,7 +20120,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchByGETRequest($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $leaf_type = null, $campaign_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    protected function searchByGETRequest($search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/search';
@@ -19842,12 +20179,28 @@ class DefaultApi
             $queryParams['combinedType'] = ObjectSerializer::toQueryValue($combined_type);
         }
         // query params
+        if ($combined_type_tree !== null) {
+            $queryParams['combinedTypeTree'] = ObjectSerializer::toQueryValue($combined_type_tree);
+        }
+        // query params
         if ($leaf_type !== null) {
             $queryParams['leafType'] = ObjectSerializer::toQueryValue($leaf_type);
         }
         // query params
         if ($campaign_tag !== null) {
             $queryParams['campaignTag'] = ObjectSerializer::toQueryValue($campaign_tag);
+        }
+        // query params
+        if ($profile_tag !== null) {
+            $queryParams['profileTag'] = ObjectSerializer::toQueryValue($profile_tag);
+        }
+        // query params
+        if ($all_tag !== null) {
+            $queryParams['allTag'] = ObjectSerializer::toQueryValue($all_tag);
+        }
+        // query params
+        if ($scoring_tag !== null) {
+            $queryParams['scoringTag'] = ObjectSerializer::toQueryValue($scoring_tag);
         }
         // query params
         if ($category_tree !== null) {
@@ -21165,306 +21518,6 @@ class DefaultApi
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
                 ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
-        if ($apiKey !== null) {
-            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
-        if ($apiKey !== null) {
-            $queryParams['subscription-key'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation tourDownload
-     *
-     * Tour download
-     *
-     * @param  string $id Use property identifier of Tour to get the map file with given extension. (required)
-     * @param  string $extension Tour map format (kml or gpx). (required)
-     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
-     *
-     * @throws \Infocenter\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse
-     */
-    public function tourDownload($id, $extension, $ocp_apim_subscription_key = null)
-    {
-        list($response) = $this->tourDownloadWithHttpInfo($id, $extension, $ocp_apim_subscription_key);
-        return $response;
-    }
-
-    /**
-     * Operation tourDownloadWithHttpInfo
-     *
-     * Tour download
-     *
-     * @param  string $id Use property identifier of Tour to get the map file with given extension. (required)
-     * @param  string $extension Tour map format (kml or gpx). (required)
-     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
-     *
-     * @throws \Infocenter\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function tourDownloadWithHttpInfo($id, $extension, $ocp_apim_subscription_key = null)
-    {
-        $returnType = '\Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse';
-        $request = $this->tourDownloadRequest($id, $extension, $ocp_apim_subscription_key);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation tourDownloadAsync
-     *
-     * Tour download
-     *
-     * @param  string $id Use property identifier of Tour to get the map file with given extension. (required)
-     * @param  string $extension Tour map format (kml or gpx). (required)
-     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function tourDownloadAsync($id, $extension, $ocp_apim_subscription_key = null)
-    {
-        return $this->tourDownloadAsyncWithHttpInfo($id, $extension, $ocp_apim_subscription_key)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation tourDownloadAsyncWithHttpInfo
-     *
-     * Tour download
-     *
-     * @param  string $id Use property identifier of Tour to get the map file with given extension. (required)
-     * @param  string $extension Tour map format (kml or gpx). (required)
-     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function tourDownloadAsyncWithHttpInfo($id, $extension, $ocp_apim_subscription_key = null)
-    {
-        $returnType = '\Infocenter\Client\Model\DsToursIdDownloadExtensionGet200ApplicationJsonResponse';
-        $request = $this->tourDownloadRequest($id, $extension, $ocp_apim_subscription_key);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'tourDownload'
-     *
-     * @param  string $id Use property identifier of Tour to get the map file with given extension. (required)
-     * @param  string $extension Tour map format (kml or gpx). (required)
-     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function tourDownloadRequest($id, $extension, $ocp_apim_subscription_key = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling tourDownload'
-            );
-        }
-        // verify the required parameter 'extension' is set
-        if ($extension === null || (is_array($extension) && count($extension) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $extension when calling tourDownload'
-            );
-        }
-
-        $resourcePath = '/tours/{id}/download/{extension}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // header params
-        if ($ocp_apim_subscription_key !== null) {
-            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
-        }
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($extension !== null) {
-            $resourcePath = str_replace(
-                '{' . 'extension' . '}',
-                ObjectSerializer::toPathValue($extension),
                 $resourcePath
             );
         }

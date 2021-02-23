@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **state** | **string** |  | [optional] 
 **time** | **int** |  | [optional] 
 **rating** | [**\Infocenter\Client\Model\DsTourRating**](DsTourRating.md) |  | [optional] 
+**profile_tag** | **string[]** |  | [optional] 
 **schedule** | [**\Infocenter\Client\Model\DsSchedule[]**](DsSchedule.md) |  | [optional] 
 **elevation** | [**\Infocenter\Client\Model\DsTourElevation**](DsTourElevation.md) |  | [optional] 
 **link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 

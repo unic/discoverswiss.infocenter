@@ -62,9 +62,8 @@ class DsTour implements ModelInterface, ArrayAccess
 'elevation' => '\Infocenter\Client\Model\DsTourElevation',
 'rating' => '\Infocenter\Client\Model\DsTourRating',
 'season' => '\Infocenter\Client\Model\DsTourSeason',
-'season_json' => 'object',
-'difficulties_json' => 'object',
-'exposition_json' => 'object',
+'difficulties' => '\Infocenter\Client\Model\DsTourDifficulties',
+'exposition' => '\Infocenter\Client\Model\DsTourExposition',
 'risk_potential' => 'int',
 'titles' => 'string',
 'starting_point_description' => 'string',
@@ -88,7 +87,6 @@ class DsTour implements ModelInterface, ArrayAccess
 'photo' => '\Infocenter\Client\Model\DsImageObjectSimplex[]',
 'public_access' => 'bool',
 'smoking_allowed' => 'bool',
-'source' => '\Infocenter\Client\Model\DsPartnerSimplex',
 'special_opening_hours_specification' => '\Infocenter\Client\Model\DsOpeningHoursSpecification[]',
 'telephone' => 'string',
 'tourist_type' => 'string',
@@ -143,9 +141,8 @@ class DsTour implements ModelInterface, ArrayAccess
 'elevation' => null,
 'rating' => null,
 'season' => null,
-'season_json' => null,
-'difficulties_json' => null,
-'exposition_json' => null,
+'difficulties' => null,
+'exposition' => null,
 'risk_potential' => 'int32',
 'titles' => null,
 'starting_point_description' => null,
@@ -169,7 +166,6 @@ class DsTour implements ModelInterface, ArrayAccess
 'photo' => null,
 'public_access' => null,
 'smoking_allowed' => null,
-'source' => null,
 'special_opening_hours_specification' => null,
 'telephone' => null,
 'tourist_type' => null,
@@ -245,9 +241,8 @@ class DsTour implements ModelInterface, ArrayAccess
 'elevation' => 'elevation',
 'rating' => 'rating',
 'season' => 'season',
-'season_json' => 'seasonJson',
-'difficulties_json' => 'difficultiesJson',
-'exposition_json' => 'expositionJson',
+'difficulties' => 'difficulties',
+'exposition' => 'exposition',
 'risk_potential' => 'riskPotential',
 'titles' => 'titles',
 'starting_point_description' => 'startingPointDescription',
@@ -271,7 +266,6 @@ class DsTour implements ModelInterface, ArrayAccess
 'photo' => 'photo',
 'public_access' => 'publicAccess',
 'smoking_allowed' => 'smokingAllowed',
-'source' => 'source',
 'special_opening_hours_specification' => 'specialOpeningHoursSpecification',
 'telephone' => 'telephone',
 'tourist_type' => 'touristType',
@@ -326,9 +320,8 @@ class DsTour implements ModelInterface, ArrayAccess
 'elevation' => 'setElevation',
 'rating' => 'setRating',
 'season' => 'setSeason',
-'season_json' => 'setSeasonJson',
-'difficulties_json' => 'setDifficultiesJson',
-'exposition_json' => 'setExpositionJson',
+'difficulties' => 'setDifficulties',
+'exposition' => 'setExposition',
 'risk_potential' => 'setRiskPotential',
 'titles' => 'setTitles',
 'starting_point_description' => 'setStartingPointDescription',
@@ -352,7 +345,6 @@ class DsTour implements ModelInterface, ArrayAccess
 'photo' => 'setPhoto',
 'public_access' => 'setPublicAccess',
 'smoking_allowed' => 'setSmokingAllowed',
-'source' => 'setSource',
 'special_opening_hours_specification' => 'setSpecialOpeningHoursSpecification',
 'telephone' => 'setTelephone',
 'tourist_type' => 'setTouristType',
@@ -407,9 +399,8 @@ class DsTour implements ModelInterface, ArrayAccess
 'elevation' => 'getElevation',
 'rating' => 'getRating',
 'season' => 'getSeason',
-'season_json' => 'getSeasonJson',
-'difficulties_json' => 'getDifficultiesJson',
-'exposition_json' => 'getExpositionJson',
+'difficulties' => 'getDifficulties',
+'exposition' => 'getExposition',
 'risk_potential' => 'getRiskPotential',
 'titles' => 'getTitles',
 'starting_point_description' => 'getStartingPointDescription',
@@ -433,7 +424,6 @@ class DsTour implements ModelInterface, ArrayAccess
 'photo' => 'getPhoto',
 'public_access' => 'getPublicAccess',
 'smoking_allowed' => 'getSmokingAllowed',
-'source' => 'getSource',
 'special_opening_hours_specification' => 'getSpecialOpeningHoursSpecification',
 'telephone' => 'getTelephone',
 'tourist_type' => 'getTouristType',
@@ -540,9 +530,8 @@ class DsTour implements ModelInterface, ArrayAccess
         $this->container['elevation'] = isset($data['elevation']) ? $data['elevation'] : null;
         $this->container['rating'] = isset($data['rating']) ? $data['rating'] : null;
         $this->container['season'] = isset($data['season']) ? $data['season'] : null;
-        $this->container['season_json'] = isset($data['season_json']) ? $data['season_json'] : null;
-        $this->container['difficulties_json'] = isset($data['difficulties_json']) ? $data['difficulties_json'] : null;
-        $this->container['exposition_json'] = isset($data['exposition_json']) ? $data['exposition_json'] : null;
+        $this->container['difficulties'] = isset($data['difficulties']) ? $data['difficulties'] : null;
+        $this->container['exposition'] = isset($data['exposition']) ? $data['exposition'] : null;
         $this->container['risk_potential'] = isset($data['risk_potential']) ? $data['risk_potential'] : null;
         $this->container['titles'] = isset($data['titles']) ? $data['titles'] : null;
         $this->container['starting_point_description'] = isset($data['starting_point_description']) ? $data['starting_point_description'] : null;
@@ -566,7 +555,6 @@ class DsTour implements ModelInterface, ArrayAccess
         $this->container['photo'] = isset($data['photo']) ? $data['photo'] : null;
         $this->container['public_access'] = isset($data['public_access']) ? $data['public_access'] : null;
         $this->container['smoking_allowed'] = isset($data['smoking_allowed']) ? $data['smoking_allowed'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['special_opening_hours_specification'] = isset($data['special_opening_hours_specification']) ? $data['special_opening_hours_specification'] : null;
         $this->container['telephone'] = isset($data['telephone']) ? $data['telephone'] : null;
         $this->container['tourist_type'] = isset($data['tourist_type']) ? $data['tourist_type'] : null;
@@ -779,73 +767,49 @@ class DsTour implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets season_json
+     * Gets difficulties
      *
-     * @return object
+     * @return \Infocenter\Client\Model\DsTourDifficulties
      */
-    public function getSeasonJson()
+    public function getDifficulties()
     {
-        return $this->container['season_json'];
+        return $this->container['difficulties'];
     }
 
     /**
-     * Sets season_json
+     * Sets difficulties
      *
-     * @param object $season_json season_json
+     * @param \Infocenter\Client\Model\DsTourDifficulties $difficulties difficulties
      *
      * @return $this
      */
-    public function setSeasonJson($season_json)
+    public function setDifficulties($difficulties)
     {
-        $this->container['season_json'] = $season_json;
+        $this->container['difficulties'] = $difficulties;
 
         return $this;
     }
 
     /**
-     * Gets difficulties_json
+     * Gets exposition
      *
-     * @return object
+     * @return \Infocenter\Client\Model\DsTourExposition
      */
-    public function getDifficultiesJson()
+    public function getExposition()
     {
-        return $this->container['difficulties_json'];
+        return $this->container['exposition'];
     }
 
     /**
-     * Sets difficulties_json
+     * Sets exposition
      *
-     * @param object $difficulties_json difficulties_json
+     * @param \Infocenter\Client\Model\DsTourExposition $exposition exposition
      *
      * @return $this
      */
-    public function setDifficultiesJson($difficulties_json)
+    public function setExposition($exposition)
     {
-        $this->container['difficulties_json'] = $difficulties_json;
-
-        return $this;
-    }
-
-    /**
-     * Gets exposition_json
-     *
-     * @return object
-     */
-    public function getExpositionJson()
-    {
-        return $this->container['exposition_json'];
-    }
-
-    /**
-     * Sets exposition_json
-     *
-     * @param object $exposition_json exposition_json
-     *
-     * @return $this
-     */
-    public function setExpositionJson($exposition_json)
-    {
-        $this->container['exposition_json'] = $exposition_json;
+        $this->container['exposition'] = $exposition;
 
         return $this;
     }
@@ -1398,30 +1362,6 @@ class DsTour implements ModelInterface, ArrayAccess
     public function setSmokingAllowed($smoking_allowed)
     {
         $this->container['smoking_allowed'] = $smoking_allowed;
-
-        return $this;
-    }
-
-    /**
-     * Gets source
-     *
-     * @return \Infocenter\Client\Model\DsPartnerSimplex
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     *
-     * @param \Infocenter\Client\Model\DsPartnerSimplex $source source
-     *
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $this->container['source'] = $source;
 
         return $this;
     }
