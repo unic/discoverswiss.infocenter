@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **civicStructureDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray civicStructureDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecast[] civicStructureDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 CivicStructure daily forecast
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
+[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
 
 ### Authorization
 
@@ -827,7 +827,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **conditionDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray conditionDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecast[] conditionDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Condition daily forecast
 
@@ -882,7 +882,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
+[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
 
 ### Authorization
 
@@ -1036,7 +1036,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **creativeWork**
-> \Infocenter\Client\Model\DsWeatherArray creativeWork($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsCreativeWork creativeWork($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 CreativeWork
 
@@ -1089,7 +1089,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsWeatherArray**](../Model/DsWeatherArray.md)
+[**\Infocenter\Client\Model\DsCreativeWork**](../Model/DsCreativeWork.md)
 
 ### Authorization
 
@@ -1233,7 +1233,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **eventDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray eventDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecast[] eventDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Event daily forecast
 
@@ -1288,7 +1288,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
+[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
 
 ### Authorization
 
@@ -1580,7 +1580,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **foodEstablishmentWeatherDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray foodEstablishmentWeatherDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecast[] foodEstablishmentWeatherDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 FoodEstablishment weather daily forecast
 
@@ -1635,7 +1635,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
+[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
 
 ### Authorization
 
@@ -3334,7 +3334,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **localBusinessDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray localBusinessDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecast[] localBusinessDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 LocalBusiness daily forecast
 
@@ -3389,7 +3389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
+[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
 
 ### Authorization
 
@@ -3610,7 +3610,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lodgingBusinessDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray lodgingBusinessDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecast[] lodgingBusinessDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 LodgingBusiness daily forecast
 
@@ -3665,7 +3665,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
+[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
 
 ### Authorization
 
@@ -3953,7 +3953,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **placeDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray placeDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecast[] placeDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Place daily forecast
 
@@ -4008,7 +4008,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
+[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
 
 ### Authorization
 
@@ -4612,7 +4612,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tourDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray tourDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecast[] tourDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Tour daily forecast
 
@@ -4667,7 +4667,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
+[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
 
 ### Authorization
 
@@ -4955,7 +4955,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **webcamDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray webcamDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecast[] webcamDailyForecast($id, $project, $contained_in_place, $duration, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Webcam daily forecast
 
@@ -5010,7 +5010,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
+[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
 
 ### Authorization
 

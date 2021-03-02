@@ -60,6 +60,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'interval' => 'string',
 'values' => 'string',
 'select_values' => 'string[]',
+'filter_values' => 'string[]',
 'count' => 'int',
 'scope' => 'string'    ];
 
@@ -73,6 +74,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'interval' => null,
 'values' => null,
 'select_values' => null,
+'filter_values' => null,
 'count' => 'int32',
 'scope' => null    ];
 
@@ -107,6 +109,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'interval' => 'interval',
 'values' => 'values',
 'select_values' => 'selectValues',
+'filter_values' => 'filterValues',
 'count' => 'count',
 'scope' => 'scope'    ];
 
@@ -120,6 +123,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'interval' => 'setInterval',
 'values' => 'setValues',
 'select_values' => 'setSelectValues',
+'filter_values' => 'setFilterValues',
 'count' => 'setCount',
 'scope' => 'setScope'    ];
 
@@ -133,6 +137,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'interval' => 'getInterval',
 'values' => 'getValues',
 'select_values' => 'getSelectValues',
+'filter_values' => 'getFilterValues',
 'count' => 'getCount',
 'scope' => 'getScope'    ];
 
@@ -198,6 +203,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         $this->container['interval'] = isset($data['interval']) ? $data['interval'] : null;
         $this->container['values'] = isset($data['values']) ? $data['values'] : null;
         $this->container['select_values'] = isset($data['select_values']) ? $data['select_values'] : null;
+        $this->container['filter_values'] = isset($data['filter_values']) ? $data['filter_values'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['scope'] = isset($data['scope']) ? $data['scope'] : null;
     }
@@ -318,6 +324,30 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     public function setSelectValues($select_values)
     {
         $this->container['select_values'] = $select_values;
+
+        return $this;
+    }
+
+    /**
+     * Gets filter_values
+     *
+     * @return string[]
+     */
+    public function getFilterValues()
+    {
+        return $this->container['filter_values'];
+    }
+
+    /**
+     * Sets filter_values
+     *
+     * @param string[] $filter_values filter_values
+     *
+     * @return $this
+     */
+    public function setFilterValues($filter_values)
+    {
+        $this->container['filter_values'] = $filter_values;
 
         return $this;
     }
