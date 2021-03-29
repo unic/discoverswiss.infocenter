@@ -8,12 +8,12 @@ Name | Type | Description | Notes
 **icons** | [**\Infocenter\Client\Model\DsCategoryIcon[]**](DsCategoryIcon.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
-**datasource** | **string** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\DsDataGovernance**](DsDataGovernance.md) |  | [optional] 
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **available_data_language** | **string[]** |  | [optional] 
 **name_plural** | **string** |  | [optional] 
 **auto_translated_data** | **bool** |  | [optional] 
+**license** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

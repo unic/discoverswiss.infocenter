@@ -58,7 +58,6 @@ class DsProduct implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
 'identifier' => 'string',
-'datasource' => 'string',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
@@ -66,7 +65,9 @@ class DsProduct implements ModelInterface, ArrayAccess
 'sku' => 'string',
 'price_list' => '\Infocenter\Client\Model\DsProductPrice[]',
 'tax_rate' => 'double',
-'auto_translated_data' => 'bool'    ];
+'auto_translated_data' => 'bool',
+'service' => 'string',
+'license' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -76,7 +77,6 @@ class DsProduct implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
 'identifier' => null,
-'datasource' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
@@ -84,7 +84,9 @@ class DsProduct implements ModelInterface, ArrayAccess
 'sku' => null,
 'price_list' => null,
 'tax_rate' => 'double',
-'auto_translated_data' => null    ];
+'auto_translated_data' => null,
+'service' => null,
+'license' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -115,7 +117,6 @@ class DsProduct implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => '@id',
 'identifier' => 'identifier',
-'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
@@ -123,7 +124,9 @@ class DsProduct implements ModelInterface, ArrayAccess
 'sku' => 'sku',
 'price_list' => 'priceList',
 'tax_rate' => 'taxRate',
-'auto_translated_data' => 'autoTranslatedData'    ];
+'auto_translated_data' => 'autoTranslatedData',
+'service' => 'service',
+'license' => 'license'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -133,7 +136,6 @@ class DsProduct implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
 'identifier' => 'setIdentifier',
-'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
@@ -141,7 +143,9 @@ class DsProduct implements ModelInterface, ArrayAccess
 'sku' => 'setSku',
 'price_list' => 'setPriceList',
 'tax_rate' => 'setTaxRate',
-'auto_translated_data' => 'setAutoTranslatedData'    ];
+'auto_translated_data' => 'setAutoTranslatedData',
+'service' => 'setService',
+'license' => 'setLicense'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -151,7 +155,6 @@ class DsProduct implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
 'identifier' => 'getIdentifier',
-'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
@@ -159,7 +162,9 @@ class DsProduct implements ModelInterface, ArrayAccess
 'sku' => 'getSku',
 'price_list' => 'getPriceList',
 'tax_rate' => 'getTaxRate',
-'auto_translated_data' => 'getAutoTranslatedData'    ];
+'auto_translated_data' => 'getAutoTranslatedData',
+'service' => 'getService',
+'license' => 'getLicense'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -221,7 +226,6 @@ class DsProduct implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
-        $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
@@ -230,6 +234,8 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['price_list'] = isset($data['price_list']) ? $data['price_list'] : null;
         $this->container['tax_rate'] = isset($data['tax_rate']) ? $data['tax_rate'] : null;
         $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
+        $this->container['service'] = isset($data['service']) ? $data['service'] : null;
+        $this->container['license'] = isset($data['license']) ? $data['license'] : null;
     }
 
     /**
@@ -300,30 +306,6 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
-
-        return $this;
-    }
-
-    /**
-     * Gets datasource
-     *
-     * @return string
-     */
-    public function getDatasource()
-    {
-        return $this->container['datasource'];
-    }
-
-    /**
-     * Sets datasource
-     *
-     * @param string $datasource datasource
-     *
-     * @return $this
-     */
-    public function setDatasource($datasource)
-    {
-        $this->container['datasource'] = $datasource;
 
         return $this;
     }
@@ -516,6 +498,54 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setAutoTranslatedData($auto_translated_data)
     {
         $this->container['auto_translated_data'] = $auto_translated_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets service
+     *
+     * @return string
+     */
+    public function getService()
+    {
+        return $this->container['service'];
+    }
+
+    /**
+     * Sets service
+     *
+     * @param string $service service
+     *
+     * @return $this
+     */
+    public function setService($service)
+    {
+        $this->container['service'] = $service;
+
+        return $this;
+    }
+
+    /**
+     * Gets license
+     *
+     * @return string
+     */
+    public function getLicense()
+    {
+        return $this->container['license'];
+    }
+
+    /**
+     * Sets license
+     *
+     * @param string $license license
+     *
+     * @return $this
+     */
+    public function setLicense($license)
+    {
+        $this->container['license'] = $license;
 
         return $this;
     }

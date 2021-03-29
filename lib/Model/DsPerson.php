@@ -1,6 +1,6 @@
 <?php
 /**
- * DsLink
+ * DsPerson
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsLink Class Doc Comment
+ * DsPerson Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsLink implements ModelInterface, ArrayAccess
+class DsPerson implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsLink implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Link';
+    protected static $swaggerModelName = 'Person';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,14 +56,10 @@ class DsLink implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'url' => 'string',
-'is_recommendation' => 'bool',
-'in_language' => 'string',
-'title' => 'string',
-'ordering_number' => 'int',
-'target' => '\Infocenter\Client\Model\DsBaseSimplex',
-'name' => 'string',
-'type' => 'string'    ];
+        'given_name' => 'string',
+'family_name' => 'string',
+'email' => 'string',
+'gender' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,14 +67,10 @@ class DsLink implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'url' => null,
-'is_recommendation' => null,
-'in_language' => null,
-'title' => null,
-'ordering_number' => 'int32',
-'target' => null,
-'name' => null,
-'type' => null    ];
+        'given_name' => null,
+'family_name' => null,
+'email' => null,
+'gender' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -107,14 +99,10 @@ class DsLink implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'url',
-'is_recommendation' => 'isRecommendation',
-'in_language' => 'inLanguage',
-'title' => 'title',
-'ordering_number' => 'orderingNumber',
-'target' => 'target',
-'name' => 'name',
-'type' => 'type'    ];
+        'given_name' => 'givenName',
+'family_name' => 'familyName',
+'email' => 'email',
+'gender' => 'gender'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -122,14 +110,10 @@ class DsLink implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl',
-'is_recommendation' => 'setIsRecommendation',
-'in_language' => 'setInLanguage',
-'title' => 'setTitle',
-'ordering_number' => 'setOrderingNumber',
-'target' => 'setTarget',
-'name' => 'setName',
-'type' => 'setType'    ];
+        'given_name' => 'setGivenName',
+'family_name' => 'setFamilyName',
+'email' => 'setEmail',
+'gender' => 'setGender'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -137,14 +121,10 @@ class DsLink implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl',
-'is_recommendation' => 'getIsRecommendation',
-'in_language' => 'getInLanguage',
-'title' => 'getTitle',
-'ordering_number' => 'getOrderingNumber',
-'target' => 'getTarget',
-'name' => 'getName',
-'type' => 'getType'    ];
+        'given_name' => 'getGivenName',
+'family_name' => 'getFamilyName',
+'email' => 'getEmail',
+'gender' => 'getGender'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -204,14 +184,10 @@ class DsLink implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['is_recommendation'] = isset($data['is_recommendation']) ? $data['is_recommendation'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['ordering_number'] = isset($data['ordering_number']) ? $data['ordering_number'] : null;
-        $this->container['target'] = isset($data['target']) ? $data['target'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['given_name'] = isset($data['given_name']) ? $data['given_name'] : null;
+        $this->container['family_name'] = isset($data['family_name']) ? $data['family_name'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
     }
 
     /**
@@ -239,193 +215,97 @@ class DsLink implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets url
+     * Gets given_name
      *
      * @return string
      */
-    public function getUrl()
+    public function getGivenName()
     {
-        return $this->container['url'];
+        return $this->container['given_name'];
     }
 
     /**
-     * Sets url
+     * Sets given_name
      *
-     * @param string $url url
+     * @param string $given_name given_name
      *
      * @return $this
      */
-    public function setUrl($url)
+    public function setGivenName($given_name)
     {
-        $this->container['url'] = $url;
+        $this->container['given_name'] = $given_name;
 
         return $this;
     }
 
     /**
-     * Gets is_recommendation
-     *
-     * @return bool
-     */
-    public function getIsRecommendation()
-    {
-        return $this->container['is_recommendation'];
-    }
-
-    /**
-     * Sets is_recommendation
-     *
-     * @param bool $is_recommendation is_recommendation
-     *
-     * @return $this
-     */
-    public function setIsRecommendation($is_recommendation)
-    {
-        $this->container['is_recommendation'] = $is_recommendation;
-
-        return $this;
-    }
-
-    /**
-     * Gets in_language
+     * Gets family_name
      *
      * @return string
      */
-    public function getInLanguage()
+    public function getFamilyName()
     {
-        return $this->container['in_language'];
+        return $this->container['family_name'];
     }
 
     /**
-     * Sets in_language
+     * Sets family_name
      *
-     * @param string $in_language in_language
+     * @param string $family_name family_name
      *
      * @return $this
      */
-    public function setInLanguage($in_language)
+    public function setFamilyName($family_name)
     {
-        $this->container['in_language'] = $in_language;
+        $this->container['family_name'] = $family_name;
 
         return $this;
     }
 
     /**
-     * Gets title
+     * Gets email
      *
      * @return string
      */
-    public function getTitle()
+    public function getEmail()
     {
-        return $this->container['title'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets title
+     * Sets email
      *
-     * @param string $title title
+     * @param string $email email
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setEmail($email)
     {
-        $this->container['title'] = $title;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets ordering_number
-     *
-     * @return int
-     */
-    public function getOrderingNumber()
-    {
-        return $this->container['ordering_number'];
-    }
-
-    /**
-     * Sets ordering_number
-     *
-     * @param int $ordering_number ordering_number
-     *
-     * @return $this
-     */
-    public function setOrderingNumber($ordering_number)
-    {
-        $this->container['ordering_number'] = $ordering_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets target
-     *
-     * @return \Infocenter\Client\Model\DsBaseSimplex
-     */
-    public function getTarget()
-    {
-        return $this->container['target'];
-    }
-
-    /**
-     * Sets target
-     *
-     * @param \Infocenter\Client\Model\DsBaseSimplex $target target
-     *
-     * @return $this
-     */
-    public function setTarget($target)
-    {
-        $this->container['target'] = $target;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
+     * Gets gender
      *
      * @return string
      */
-    public function getName()
+    public function getGender()
     {
-        return $this->container['name'];
+        return $this->container['gender'];
     }
 
     /**
-     * Sets name
+     * Sets gender
      *
-     * @param string $name name
+     * @param string $gender gender
      *
      * @return $this
      */
-    public function setName($name)
+    public function setGender($gender)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
+        $this->container['gender'] = $gender;
 
         return $this;
     }

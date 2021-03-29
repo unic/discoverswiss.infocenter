@@ -1,6 +1,6 @@
 <?php
 /**
- * DsLink
+ * DsBaseSimplex
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsLink Class Doc Comment
+ * DsBaseSimplex Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsLink implements ModelInterface, ArrayAccess
+class DsBaseSimplex implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsLink implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Link';
+    protected static $swaggerModelName = 'BaseSimplex';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,14 +56,8 @@ class DsLink implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'url' => 'string',
-'is_recommendation' => 'bool',
-'in_language' => 'string',
-'title' => 'string',
-'ordering_number' => 'int',
-'target' => '\Infocenter\Client\Model\DsBaseSimplex',
-'name' => 'string',
-'type' => 'string'    ];
+        'id' => 'string',
+'identifier' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,14 +65,8 @@ class DsLink implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'url' => null,
-'is_recommendation' => null,
-'in_language' => null,
-'title' => null,
-'ordering_number' => 'int32',
-'target' => null,
-'name' => null,
-'type' => null    ];
+        'id' => null,
+'identifier' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -107,14 +95,8 @@ class DsLink implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'url',
-'is_recommendation' => 'isRecommendation',
-'in_language' => 'inLanguage',
-'title' => 'title',
-'ordering_number' => 'orderingNumber',
-'target' => 'target',
-'name' => 'name',
-'type' => 'type'    ];
+        'id' => 'id',
+'identifier' => 'identifier'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -122,14 +104,8 @@ class DsLink implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl',
-'is_recommendation' => 'setIsRecommendation',
-'in_language' => 'setInLanguage',
-'title' => 'setTitle',
-'ordering_number' => 'setOrderingNumber',
-'target' => 'setTarget',
-'name' => 'setName',
-'type' => 'setType'    ];
+        'id' => 'setId',
+'identifier' => 'setIdentifier'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -137,14 +113,8 @@ class DsLink implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl',
-'is_recommendation' => 'getIsRecommendation',
-'in_language' => 'getInLanguage',
-'title' => 'getTitle',
-'ordering_number' => 'getOrderingNumber',
-'target' => 'getTarget',
-'name' => 'getName',
-'type' => 'getType'    ];
+        'id' => 'getId',
+'identifier' => 'getIdentifier'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -204,14 +174,8 @@ class DsLink implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['is_recommendation'] = isset($data['is_recommendation']) ? $data['is_recommendation'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['ordering_number'] = isset($data['ordering_number']) ? $data['ordering_number'] : null;
-        $this->container['target'] = isset($data['target']) ? $data['target'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
     }
 
     /**
@@ -239,193 +203,49 @@ class DsLink implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets url
+     * Gets id
      *
      * @return string
      */
-    public function getUrl()
+    public function getId()
     {
-        return $this->container['url'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets url
+     * Sets id
      *
-     * @param string $url url
+     * @param string $id id
      *
      * @return $this
      */
-    public function setUrl($url)
+    public function setId($id)
     {
-        $this->container['url'] = $url;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets is_recommendation
-     *
-     * @return bool
-     */
-    public function getIsRecommendation()
-    {
-        return $this->container['is_recommendation'];
-    }
-
-    /**
-     * Sets is_recommendation
-     *
-     * @param bool $is_recommendation is_recommendation
-     *
-     * @return $this
-     */
-    public function setIsRecommendation($is_recommendation)
-    {
-        $this->container['is_recommendation'] = $is_recommendation;
-
-        return $this;
-    }
-
-    /**
-     * Gets in_language
+     * Gets identifier
      *
      * @return string
      */
-    public function getInLanguage()
+    public function getIdentifier()
     {
-        return $this->container['in_language'];
+        return $this->container['identifier'];
     }
 
     /**
-     * Sets in_language
+     * Sets identifier
      *
-     * @param string $in_language in_language
+     * @param string $identifier identifier
      *
      * @return $this
      */
-    public function setInLanguage($in_language)
+    public function setIdentifier($identifier)
     {
-        $this->container['in_language'] = $in_language;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string $title title
-     *
-     * @return $this
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets ordering_number
-     *
-     * @return int
-     */
-    public function getOrderingNumber()
-    {
-        return $this->container['ordering_number'];
-    }
-
-    /**
-     * Sets ordering_number
-     *
-     * @param int $ordering_number ordering_number
-     *
-     * @return $this
-     */
-    public function setOrderingNumber($ordering_number)
-    {
-        $this->container['ordering_number'] = $ordering_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets target
-     *
-     * @return \Infocenter\Client\Model\DsBaseSimplex
-     */
-    public function getTarget()
-    {
-        return $this->container['target'];
-    }
-
-    /**
-     * Sets target
-     *
-     * @param \Infocenter\Client\Model\DsBaseSimplex $target target
-     *
-     * @return $this
-     */
-    public function setTarget($target)
-    {
-        $this->container['target'] = $target;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
+        $this->container['identifier'] = $identifier;
 
         return $this;
     }

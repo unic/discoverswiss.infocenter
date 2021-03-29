@@ -92,16 +92,16 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'parking' => 'string',
 'directions' => 'string',
 'fees' => 'string',
-'zurichcard' => 'string',
+'zurichcard' => 'bool',
 'zurichcard_description' => 'string',
 'osm_id' => 'string',
 'aggregate_rating' => '\Infocenter\Client\Model\DsAggregateRating',
 'opening_hours' => 'string',
+'license' => 'string',
 'category' => '\Infocenter\Client\Model\DsCategorySimplex[]',
 'contained_in_place' => '\Infocenter\Client\Model\DsPlaceSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
-'datasource' => 'string',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
@@ -165,11 +165,11 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'osm_id' => null,
 'aggregate_rating' => null,
 'opening_hours' => null,
+'license' => null,
 'category' => null,
 'contained_in_place' => null,
 'id' => null,
 'identifier' => null,
-'datasource' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
@@ -254,11 +254,11 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'osm_id' => 'osm_id',
 'aggregate_rating' => 'aggregateRating',
 'opening_hours' => 'openingHours',
+'license' => 'license',
 'category' => 'category',
 'contained_in_place' => 'containedInPlace',
 'id' => '@id',
 'identifier' => 'identifier',
-'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
@@ -322,11 +322,11 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'osm_id' => 'setOsmId',
 'aggregate_rating' => 'setAggregateRating',
 'opening_hours' => 'setOpeningHours',
+'license' => 'setLicense',
 'category' => 'setCategory',
 'contained_in_place' => 'setContainedInPlace',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
-'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
@@ -390,11 +390,11 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'osm_id' => 'getOsmId',
 'aggregate_rating' => 'getAggregateRating',
 'opening_hours' => 'getOpeningHours',
+'license' => 'getLicense',
 'category' => 'getCategory',
 'contained_in_place' => 'getContainedInPlace',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
-'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
@@ -510,11 +510,11 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
         $this->container['osm_id'] = isset($data['osm_id']) ? $data['osm_id'] : null;
         $this->container['aggregate_rating'] = isset($data['aggregate_rating']) ? $data['aggregate_rating'] : null;
         $this->container['opening_hours'] = isset($data['opening_hours']) ? $data['opening_hours'] : null;
+        $this->container['license'] = isset($data['license']) ? $data['license'] : null;
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
-        $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
@@ -1423,7 +1423,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
     /**
      * Gets zurichcard
      *
-     * @return string
+     * @return bool
      */
     public function getZurichcard()
     {
@@ -1433,7 +1433,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
     /**
      * Sets zurichcard
      *
-     * @param string $zurichcard zurichcard
+     * @param bool $zurichcard zurichcard
      *
      * @return $this
      */
@@ -1541,6 +1541,30 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets license
+     *
+     * @return string
+     */
+    public function getLicense()
+    {
+        return $this->container['license'];
+    }
+
+    /**
+     * Sets license
+     *
+     * @param string $license license
+     *
+     * @return $this
+     */
+    public function setLicense($license)
+    {
+        $this->container['license'] = $license;
+
+        return $this;
+    }
+
+    /**
      * Gets category
      *
      * @return \Infocenter\Client\Model\DsCategorySimplex[]
@@ -1632,30 +1656,6 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
-
-        return $this;
-    }
-
-    /**
-     * Gets datasource
-     *
-     * @return string
-     */
-    public function getDatasource()
-    {
-        return $this->container['datasource'];
-    }
-
-    /**
-     * Sets datasource
-     *
-     * @param string $datasource datasource
-     *
-     * @return $this
-     */
-    public function setDatasource($datasource)
-    {
-        $this->container['datasource'] = $datasource;
 
         return $this;
     }

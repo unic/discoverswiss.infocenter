@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **additional_type** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
-**datasource** | **string** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\DsDataGovernance**](DsDataGovernance.md) |  | [optional] 
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **available_data_language** | **string[]** |  | [optional] 
 **auto_translated_data** | **bool** |  | [optional] 
+**license** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

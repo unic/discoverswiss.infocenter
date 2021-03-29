@@ -56,11 +56,11 @@ class DsOpeningHoursSpecification implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'opens' => '\DateTime',
+        'opens' => 'string',
 'valid_from' => '\DateTime',
 'day_of_week' => 'string',
 'valid_through' => '\DateTime',
-'closes' => '\DateTime',
+'closes' => 'string',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -78,11 +78,11 @@ class DsOpeningHoursSpecification implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'opens' => 'date-time',
+        'opens' => null,
 'valid_from' => 'date-time',
 'day_of_week' => null,
 'valid_through' => 'date-time',
-'closes' => 'date-time',
+'closes' => null,
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -283,7 +283,7 @@ class DsOpeningHoursSpecification implements ModelInterface, ArrayAccess
     /**
      * Gets opens
      *
-     * @return \DateTime
+     * @return string
      */
     public function getOpens()
     {
@@ -293,7 +293,7 @@ class DsOpeningHoursSpecification implements ModelInterface, ArrayAccess
     /**
      * Sets opens
      *
-     * @param \DateTime $opens opens
+     * @param string $opens opens
      *
      * @return $this
      */
@@ -379,7 +379,7 @@ class DsOpeningHoursSpecification implements ModelInterface, ArrayAccess
     /**
      * Gets closes
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCloses()
     {
@@ -389,7 +389,7 @@ class DsOpeningHoursSpecification implements ModelInterface, ArrayAccess
     /**
      * Sets closes
      *
-     * @param \DateTime $closes closes
+     * @param string $closes closes
      *
      * @return $this
      */

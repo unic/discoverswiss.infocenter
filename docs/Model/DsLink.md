@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **in_language** | **string** |  | [optional] 
 **title** | **string** |  | [optional] 
 **ordering_number** | **int** |  | [optional] 
-**target** | **string** |  | [optional] 
+**target** | [**\Infocenter\Client\Model\DsBaseSimplex**](DsBaseSimplex.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

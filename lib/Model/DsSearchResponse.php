@@ -57,7 +57,7 @@ class DsSearchResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'count' => 'int',
-'values' => '\Infocenter\Client\Model\DsIndex[]',
+'values' => '\Infocenter\Client\Model\DsIndexResponse[]',
 'facets' => 'map[string,\Infocenter\Client\Model\DsFacetResponse]'    ];
 
     /**
@@ -235,7 +235,7 @@ class DsSearchResponse implements ModelInterface, ArrayAccess
     /**
      * Gets values
      *
-     * @return \Infocenter\Client\Model\DsIndex[]
+     * @return \Infocenter\Client\Model\DsIndexResponse[]
      */
     public function getValues()
     {
@@ -245,7 +245,7 @@ class DsSearchResponse implements ModelInterface, ArrayAccess
     /**
      * Sets values
      *
-     * @param \Infocenter\Client\Model\DsIndex[] $values values
+     * @param \Infocenter\Client\Model\DsIndexResponse[] $values values
      *
      * @return $this
      */

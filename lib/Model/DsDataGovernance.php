@@ -56,10 +56,11 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'supplier' => '\Infocenter\Client\Model\DsPartnerSimplex',
+        'origin' => '\Infocenter\Client\Model\DsOrigin[]',
+'provider' => '\Infocenter\Client\Model\DsPartnerSimplex',
 'term' => '\Infocenter\Client\Model\DsTerm',
-'source' => '\Infocenter\Client\Model\DsSource',
-'author' => 'string'    ];
+'source' => '\Infocenter\Client\Model\DsPartnerSimplex',
+'author' => '\Infocenter\Client\Model\DsPerson'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -67,7 +68,8 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'supplier' => null,
+        'origin' => null,
+'provider' => null,
 'term' => null,
 'source' => null,
 'author' => null    ];
@@ -99,7 +101,8 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'supplier' => 'supplier',
+        'origin' => 'origin',
+'provider' => 'provider',
 'term' => 'term',
 'source' => 'source',
 'author' => 'author'    ];
@@ -110,7 +113,8 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'supplier' => 'setSupplier',
+        'origin' => 'setOrigin',
+'provider' => 'setProvider',
 'term' => 'setTerm',
 'source' => 'setSource',
 'author' => 'setAuthor'    ];
@@ -121,7 +125,8 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'supplier' => 'getSupplier',
+        'origin' => 'getOrigin',
+'provider' => 'getProvider',
 'term' => 'getTerm',
 'source' => 'getSource',
 'author' => 'getAuthor'    ];
@@ -184,7 +189,8 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['supplier'] = isset($data['supplier']) ? $data['supplier'] : null;
+        $this->container['origin'] = isset($data['origin']) ? $data['origin'] : null;
+        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
         $this->container['term'] = isset($data['term']) ? $data['term'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['author'] = isset($data['author']) ? $data['author'] : null;
@@ -215,25 +221,49 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets supplier
+     * Gets origin
      *
-     * @return \Infocenter\Client\Model\DsPartnerSimplex
+     * @return \Infocenter\Client\Model\DsOrigin[]
      */
-    public function getSupplier()
+    public function getOrigin()
     {
-        return $this->container['supplier'];
+        return $this->container['origin'];
     }
 
     /**
-     * Sets supplier
+     * Sets origin
      *
-     * @param \Infocenter\Client\Model\DsPartnerSimplex $supplier supplier
+     * @param \Infocenter\Client\Model\DsOrigin[] $origin origin
      *
      * @return $this
      */
-    public function setSupplier($supplier)
+    public function setOrigin($origin)
     {
-        $this->container['supplier'] = $supplier;
+        $this->container['origin'] = $origin;
+
+        return $this;
+    }
+
+    /**
+     * Gets provider
+     *
+     * @return \Infocenter\Client\Model\DsPartnerSimplex
+     */
+    public function getProvider()
+    {
+        return $this->container['provider'];
+    }
+
+    /**
+     * Sets provider
+     *
+     * @param \Infocenter\Client\Model\DsPartnerSimplex $provider provider
+     *
+     * @return $this
+     */
+    public function setProvider($provider)
+    {
+        $this->container['provider'] = $provider;
 
         return $this;
     }
@@ -265,7 +295,7 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
     /**
      * Gets source
      *
-     * @return \Infocenter\Client\Model\DsSource
+     * @return \Infocenter\Client\Model\DsPartnerSimplex
      */
     public function getSource()
     {
@@ -275,7 +305,7 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param \Infocenter\Client\Model\DsSource $source source
+     * @param \Infocenter\Client\Model\DsPartnerSimplex $source source
      *
      * @return $this
      */
@@ -289,7 +319,7 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
     /**
      * Gets author
      *
-     * @return string
+     * @return \Infocenter\Client\Model\DsPerson
      */
     public function getAuthor()
     {
@@ -299,7 +329,7 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
     /**
      * Sets author
      *
-     * @param string $author author
+     * @param \Infocenter\Client\Model\DsPerson $author author
      *
      * @return $this
      */

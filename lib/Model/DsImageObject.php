@@ -72,11 +72,11 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'in_language' => 'string',
 'id' => 'string',
 'identifier' => 'string',
-'datasource' => 'string',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
 'auto_translated_data' => 'bool',
+'license' => 'string',
 'category' => '\Infocenter\Client\Model\DsCategorySimplex[]',
 'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'alternate_name' => 'string',
@@ -112,11 +112,11 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'in_language' => null,
 'id' => null,
 'identifier' => null,
-'datasource' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
 'auto_translated_data' => null,
+'license' => null,
 'category' => null,
 'tag' => null,
 'alternate_name' => null,
@@ -173,11 +173,11 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'in_language' => 'inLanguage',
 'id' => '@id',
 'identifier' => 'identifier',
-'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
 'auto_translated_data' => 'autoTranslatedData',
+'license' => 'license',
 'category' => 'category',
 'tag' => 'tag',
 'alternate_name' => 'alternateName',
@@ -213,11 +213,11 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'in_language' => 'setInLanguage',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
-'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
 'auto_translated_data' => 'setAutoTranslatedData',
+'license' => 'setLicense',
 'category' => 'setCategory',
 'tag' => 'setTag',
 'alternate_name' => 'setAlternateName',
@@ -253,11 +253,11 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'in_language' => 'getInLanguage',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
-'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
 'auto_translated_data' => 'getAutoTranslatedData',
+'license' => 'getLicense',
 'category' => 'getCategory',
 'tag' => 'getTag',
 'alternate_name' => 'getAlternateName',
@@ -345,11 +345,11 @@ class DsImageObject implements ModelInterface, ArrayAccess
         $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
-        $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
         $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
+        $this->container['license'] = isset($data['license']) ? $data['license'] : null;
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
@@ -773,30 +773,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets datasource
-     *
-     * @return string
-     */
-    public function getDatasource()
-    {
-        return $this->container['datasource'];
-    }
-
-    /**
-     * Sets datasource
-     *
-     * @param string $datasource datasource
-     *
-     * @return $this
-     */
-    public function setDatasource($datasource)
-    {
-        $this->container['datasource'] = $datasource;
-
-        return $this;
-    }
-
-    /**
      * Gets data_governance
      *
      * @return \Infocenter\Client\Model\DsDataGovernance
@@ -888,6 +864,30 @@ class DsImageObject implements ModelInterface, ArrayAccess
     public function setAutoTranslatedData($auto_translated_data)
     {
         $this->container['auto_translated_data'] = $auto_translated_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets license
+     *
+     * @return string
+     */
+    public function getLicense()
+    {
+        return $this->container['license'];
+    }
+
+    /**
+     * Sets license
+     *
+     * @param string $license license
+     *
+     * @return $this
+     */
+    public function setLicense($license)
+    {
+        $this->container['license'] = $license;
 
         return $this;
     }

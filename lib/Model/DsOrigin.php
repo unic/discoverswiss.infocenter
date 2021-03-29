@@ -1,6 +1,6 @@
 <?php
 /**
- * DsLink
+ * DsOrigin
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsLink Class Doc Comment
+ * DsOrigin Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsLink implements ModelInterface, ArrayAccess
+class DsOrigin implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsLink implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Link';
+    protected static $swaggerModelName = 'Origin';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,14 +56,15 @@ class DsLink implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'url' => 'string',
-'is_recommendation' => 'bool',
-'in_language' => 'string',
-'title' => 'string',
-'ordering_number' => 'int',
-'target' => '\Infocenter\Client\Model\DsBaseSimplex',
-'name' => 'string',
-'type' => 'string'    ];
+        'datasource' => 'string',
+'source_id' => 'string',
+'created' => '\DateTime',
+'last_modified' => '\DateTime',
+'license' => 'string',
+'provider' => '\Infocenter\Client\Model\DsPartnerSimplex',
+'term' => '\Infocenter\Client\Model\DsTerm',
+'source' => '\Infocenter\Client\Model\DsPartnerSimplex',
+'author' => '\Infocenter\Client\Model\DsPerson'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,14 +72,15 @@ class DsLink implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'url' => null,
-'is_recommendation' => null,
-'in_language' => null,
-'title' => null,
-'ordering_number' => 'int32',
-'target' => null,
-'name' => null,
-'type' => null    ];
+        'datasource' => null,
+'source_id' => null,
+'created' => 'date-time',
+'last_modified' => 'date-time',
+'license' => null,
+'provider' => null,
+'term' => null,
+'source' => null,
+'author' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -107,14 +109,15 @@ class DsLink implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'url',
-'is_recommendation' => 'isRecommendation',
-'in_language' => 'inLanguage',
-'title' => 'title',
-'ordering_number' => 'orderingNumber',
-'target' => 'target',
-'name' => 'name',
-'type' => 'type'    ];
+        'datasource' => 'datasource',
+'source_id' => 'sourceId',
+'created' => 'created',
+'last_modified' => 'lastModified',
+'license' => 'license',
+'provider' => 'provider',
+'term' => 'term',
+'source' => 'source',
+'author' => 'author'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -122,14 +125,15 @@ class DsLink implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl',
-'is_recommendation' => 'setIsRecommendation',
-'in_language' => 'setInLanguage',
-'title' => 'setTitle',
-'ordering_number' => 'setOrderingNumber',
-'target' => 'setTarget',
-'name' => 'setName',
-'type' => 'setType'    ];
+        'datasource' => 'setDatasource',
+'source_id' => 'setSourceId',
+'created' => 'setCreated',
+'last_modified' => 'setLastModified',
+'license' => 'setLicense',
+'provider' => 'setProvider',
+'term' => 'setTerm',
+'source' => 'setSource',
+'author' => 'setAuthor'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -137,14 +141,15 @@ class DsLink implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl',
-'is_recommendation' => 'getIsRecommendation',
-'in_language' => 'getInLanguage',
-'title' => 'getTitle',
-'ordering_number' => 'getOrderingNumber',
-'target' => 'getTarget',
-'name' => 'getName',
-'type' => 'getType'    ];
+        'datasource' => 'getDatasource',
+'source_id' => 'getSourceId',
+'created' => 'getCreated',
+'last_modified' => 'getLastModified',
+'license' => 'getLicense',
+'provider' => 'getProvider',
+'term' => 'getTerm',
+'source' => 'getSource',
+'author' => 'getAuthor'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -204,14 +209,15 @@ class DsLink implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['is_recommendation'] = isset($data['is_recommendation']) ? $data['is_recommendation'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['ordering_number'] = isset($data['ordering_number']) ? $data['ordering_number'] : null;
-        $this->container['target'] = isset($data['target']) ? $data['target'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
+        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
+        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
+        $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
+        $this->container['license'] = isset($data['license']) ? $data['license'] : null;
+        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
+        $this->container['term'] = isset($data['term']) ? $data['term'] : null;
+        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['author'] = isset($data['author']) ? $data['author'] : null;
     }
 
     /**
@@ -239,193 +245,217 @@ class DsLink implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets url
+     * Gets datasource
      *
      * @return string
      */
-    public function getUrl()
+    public function getDatasource()
     {
-        return $this->container['url'];
+        return $this->container['datasource'];
     }
 
     /**
-     * Sets url
+     * Sets datasource
      *
-     * @param string $url url
+     * @param string $datasource datasource
      *
      * @return $this
      */
-    public function setUrl($url)
+    public function setDatasource($datasource)
     {
-        $this->container['url'] = $url;
+        $this->container['datasource'] = $datasource;
 
         return $this;
     }
 
     /**
-     * Gets is_recommendation
-     *
-     * @return bool
-     */
-    public function getIsRecommendation()
-    {
-        return $this->container['is_recommendation'];
-    }
-
-    /**
-     * Sets is_recommendation
-     *
-     * @param bool $is_recommendation is_recommendation
-     *
-     * @return $this
-     */
-    public function setIsRecommendation($is_recommendation)
-    {
-        $this->container['is_recommendation'] = $is_recommendation;
-
-        return $this;
-    }
-
-    /**
-     * Gets in_language
+     * Gets source_id
      *
      * @return string
      */
-    public function getInLanguage()
+    public function getSourceId()
     {
-        return $this->container['in_language'];
+        return $this->container['source_id'];
     }
 
     /**
-     * Sets in_language
+     * Sets source_id
      *
-     * @param string $in_language in_language
+     * @param string $source_id source_id
      *
      * @return $this
      */
-    public function setInLanguage($in_language)
+    public function setSourceId($source_id)
     {
-        $this->container['in_language'] = $in_language;
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }
 
     /**
-     * Gets title
+     * Gets created
+     *
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->container['created'];
+    }
+
+    /**
+     * Sets created
+     *
+     * @param \DateTime $created created
+     *
+     * @return $this
+     */
+    public function setCreated($created)
+    {
+        $this->container['created'] = $created;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_modified
+     *
+     * @return \DateTime
+     */
+    public function getLastModified()
+    {
+        return $this->container['last_modified'];
+    }
+
+    /**
+     * Sets last_modified
+     *
+     * @param \DateTime $last_modified last_modified
+     *
+     * @return $this
+     */
+    public function setLastModified($last_modified)
+    {
+        $this->container['last_modified'] = $last_modified;
+
+        return $this;
+    }
+
+    /**
+     * Gets license
      *
      * @return string
      */
-    public function getTitle()
+    public function getLicense()
     {
-        return $this->container['title'];
+        return $this->container['license'];
     }
 
     /**
-     * Sets title
+     * Sets license
      *
-     * @param string $title title
+     * @param string $license license
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setLicense($license)
     {
-        $this->container['title'] = $title;
+        $this->container['license'] = $license;
 
         return $this;
     }
 
     /**
-     * Gets ordering_number
+     * Gets provider
      *
-     * @return int
+     * @return \Infocenter\Client\Model\DsPartnerSimplex
      */
-    public function getOrderingNumber()
+    public function getProvider()
     {
-        return $this->container['ordering_number'];
+        return $this->container['provider'];
     }
 
     /**
-     * Sets ordering_number
+     * Sets provider
      *
-     * @param int $ordering_number ordering_number
+     * @param \Infocenter\Client\Model\DsPartnerSimplex $provider provider
      *
      * @return $this
      */
-    public function setOrderingNumber($ordering_number)
+    public function setProvider($provider)
     {
-        $this->container['ordering_number'] = $ordering_number;
+        $this->container['provider'] = $provider;
 
         return $this;
     }
 
     /**
-     * Gets target
+     * Gets term
      *
-     * @return \Infocenter\Client\Model\DsBaseSimplex
+     * @return \Infocenter\Client\Model\DsTerm
      */
-    public function getTarget()
+    public function getTerm()
     {
-        return $this->container['target'];
+        return $this->container['term'];
     }
 
     /**
-     * Sets target
+     * Sets term
      *
-     * @param \Infocenter\Client\Model\DsBaseSimplex $target target
+     * @param \Infocenter\Client\Model\DsTerm $term term
      *
      * @return $this
      */
-    public function setTarget($target)
+    public function setTerm($term)
     {
-        $this->container['target'] = $target;
+        $this->container['term'] = $term;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets source
      *
-     * @return string
+     * @return \Infocenter\Client\Model\DsPartnerSimplex
      */
-    public function getName()
+    public function getSource()
     {
-        return $this->container['name'];
+        return $this->container['source'];
     }
 
     /**
-     * Sets name
+     * Sets source
      *
-     * @param string $name name
+     * @param \Infocenter\Client\Model\DsPartnerSimplex $source source
      *
      * @return $this
      */
-    public function setName($name)
+    public function setSource($source)
     {
-        $this->container['name'] = $name;
+        $this->container['source'] = $source;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets author
      *
-     * @return string
+     * @return \Infocenter\Client\Model\DsPerson
      */
-    public function getType()
+    public function getAuthor()
     {
-        return $this->container['type'];
+        return $this->container['author'];
     }
 
     /**
-     * Sets type
+     * Sets author
      *
-     * @param string $type type
+     * @param \Infocenter\Client\Model\DsPerson $author author
      *
      * @return $this
      */
-    public function setType($type)
+    public function setAuthor($author)
     {
-        $this->container['type'] = $type;
+        $this->container['author'] = $author;
 
         return $this;
     }

@@ -60,11 +60,11 @@ class DsTag implements ModelInterface, ArrayAccess
 'additional_type' => 'string',
 'id' => 'string',
 'identifier' => 'string',
-'datasource' => 'string',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
 'auto_translated_data' => 'bool',
+'license' => 'string',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -78,11 +78,11 @@ class DsTag implements ModelInterface, ArrayAccess
 'additional_type' => null,
 'id' => null,
 'identifier' => null,
-'datasource' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
 'auto_translated_data' => null,
+'license' => null,
 'name' => null,
 'type' => null    ];
 
@@ -117,11 +117,11 @@ class DsTag implements ModelInterface, ArrayAccess
 'additional_type' => 'additionalType',
 'id' => '@id',
 'identifier' => 'identifier',
-'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
 'auto_translated_data' => 'autoTranslatedData',
+'license' => 'license',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -135,11 +135,11 @@ class DsTag implements ModelInterface, ArrayAccess
 'additional_type' => 'setAdditionalType',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
-'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
 'auto_translated_data' => 'setAutoTranslatedData',
+'license' => 'setLicense',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -153,11 +153,11 @@ class DsTag implements ModelInterface, ArrayAccess
 'additional_type' => 'getAdditionalType',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
-'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
 'auto_translated_data' => 'getAutoTranslatedData',
+'license' => 'getLicense',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -223,11 +223,11 @@ class DsTag implements ModelInterface, ArrayAccess
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
-        $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
         $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
+        $this->container['license'] = isset($data['license']) ? $data['license'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -353,30 +353,6 @@ class DsTag implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets datasource
-     *
-     * @return string
-     */
-    public function getDatasource()
-    {
-        return $this->container['datasource'];
-    }
-
-    /**
-     * Sets datasource
-     *
-     * @param string $datasource datasource
-     *
-     * @return $this
-     */
-    public function setDatasource($datasource)
-    {
-        $this->container['datasource'] = $datasource;
-
-        return $this;
-    }
-
-    /**
      * Gets data_governance
      *
      * @return \Infocenter\Client\Model\DsDataGovernance
@@ -468,6 +444,30 @@ class DsTag implements ModelInterface, ArrayAccess
     public function setAutoTranslatedData($auto_translated_data)
     {
         $this->container['auto_translated_data'] = $auto_translated_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets license
+     *
+     * @return string
+     */
+    public function getLicense()
+    {
+        return $this->container['license'];
+    }
+
+    /**
+     * Sets license
+     *
+     * @param string $license license
+     *
+     * @return $this
+     */
+    public function setLicense($license)
+    {
+        $this->container['license'] = $license;
 
         return $this;
     }

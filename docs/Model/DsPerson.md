@@ -1,11 +1,12 @@
-# DsSearchResponse
+# DsPerson
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **int** |  | [optional] 
-**values** | [**\Infocenter\Client\Model\DsIndexResponse[]**](DsIndexResponse.md) |  | [optional] 
-**facets** | [**map[string,\Infocenter\Client\Model\DsFacetResponse]**](DsFacetResponse.md) |  | [optional] 
+**given_name** | **string** |  | [optional] 
+**family_name** | **string** |  | [optional] 
+**email** | **string** |  | [optional] 
+**gender** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

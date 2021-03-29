@@ -60,6 +60,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'start_date' => '\DateTime',
 'end_date' => '\DateTime',
 'event_schedule' => '\Infocenter\Client\Model\DsSchedule[]',
+'next_occurrence' => '\DateTime',
 'min_start_date' => '\DateTime',
 'max_start_date' => '\DateTime',
 'location' => '\Infocenter\Client\Model\DsPlaceMember',
@@ -73,11 +74,11 @@ class DsEvent implements ModelInterface, ArrayAccess
 'contained_in_place' => '\Infocenter\Client\Model\DsPlaceSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
-'datasource' => 'string',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
 'auto_translated_data' => 'bool',
+'license' => 'string',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -99,6 +100,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'start_date' => 'date-time',
 'end_date' => 'date-time',
 'event_schedule' => null,
+'next_occurrence' => 'date-time',
 'min_start_date' => 'date-time',
 'max_start_date' => 'date-time',
 'location' => null,
@@ -112,11 +114,11 @@ class DsEvent implements ModelInterface, ArrayAccess
 'contained_in_place' => null,
 'id' => null,
 'identifier' => null,
-'datasource' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
 'auto_translated_data' => null,
+'license' => null,
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -159,6 +161,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'start_date' => 'startDate',
 'end_date' => 'endDate',
 'event_schedule' => 'eventSchedule',
+'next_occurrence' => 'nextOccurrence',
 'min_start_date' => 'minStartDate',
 'max_start_date' => 'maxStartDate',
 'location' => 'location',
@@ -172,11 +175,11 @@ class DsEvent implements ModelInterface, ArrayAccess
 'contained_in_place' => 'containedInPlace',
 'id' => '@id',
 'identifier' => 'identifier',
-'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
 'auto_translated_data' => 'autoTranslatedData',
+'license' => 'license',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -198,6 +201,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'start_date' => 'setStartDate',
 'end_date' => 'setEndDate',
 'event_schedule' => 'setEventSchedule',
+'next_occurrence' => 'setNextOccurrence',
 'min_start_date' => 'setMinStartDate',
 'max_start_date' => 'setMaxStartDate',
 'location' => 'setLocation',
@@ -211,11 +215,11 @@ class DsEvent implements ModelInterface, ArrayAccess
 'contained_in_place' => 'setContainedInPlace',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
-'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
 'auto_translated_data' => 'setAutoTranslatedData',
+'license' => 'setLicense',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -237,6 +241,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'start_date' => 'getStartDate',
 'end_date' => 'getEndDate',
 'event_schedule' => 'getEventSchedule',
+'next_occurrence' => 'getNextOccurrence',
 'min_start_date' => 'getMinStartDate',
 'max_start_date' => 'getMaxStartDate',
 'location' => 'getLocation',
@@ -250,11 +255,11 @@ class DsEvent implements ModelInterface, ArrayAccess
 'contained_in_place' => 'getContainedInPlace',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
-'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
 'auto_translated_data' => 'getAutoTranslatedData',
+'license' => 'getLicense',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -328,6 +333,7 @@ class DsEvent implements ModelInterface, ArrayAccess
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['event_schedule'] = isset($data['event_schedule']) ? $data['event_schedule'] : null;
+        $this->container['next_occurrence'] = isset($data['next_occurrence']) ? $data['next_occurrence'] : null;
         $this->container['min_start_date'] = isset($data['min_start_date']) ? $data['min_start_date'] : null;
         $this->container['max_start_date'] = isset($data['max_start_date']) ? $data['max_start_date'] : null;
         $this->container['location'] = isset($data['location']) ? $data['location'] : null;
@@ -341,11 +347,11 @@ class DsEvent implements ModelInterface, ArrayAccess
         $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
-        $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
         $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
+        $this->container['license'] = isset($data['license']) ? $data['license'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -474,6 +480,30 @@ class DsEvent implements ModelInterface, ArrayAccess
     public function setEventSchedule($event_schedule)
     {
         $this->container['event_schedule'] = $event_schedule;
+
+        return $this;
+    }
+
+    /**
+     * Gets next_occurrence
+     *
+     * @return \DateTime
+     */
+    public function getNextOccurrence()
+    {
+        return $this->container['next_occurrence'];
+    }
+
+    /**
+     * Sets next_occurrence
+     *
+     * @param \DateTime $next_occurrence next_occurrence
+     *
+     * @return $this
+     */
+    public function setNextOccurrence($next_occurrence)
+    {
+        $this->container['next_occurrence'] = $next_occurrence;
 
         return $this;
     }
@@ -791,30 +821,6 @@ class DsEvent implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets datasource
-     *
-     * @return string
-     */
-    public function getDatasource()
-    {
-        return $this->container['datasource'];
-    }
-
-    /**
-     * Sets datasource
-     *
-     * @param string $datasource datasource
-     *
-     * @return $this
-     */
-    public function setDatasource($datasource)
-    {
-        $this->container['datasource'] = $datasource;
-
-        return $this;
-    }
-
-    /**
      * Gets data_governance
      *
      * @return \Infocenter\Client\Model\DsDataGovernance
@@ -906,6 +912,30 @@ class DsEvent implements ModelInterface, ArrayAccess
     public function setAutoTranslatedData($auto_translated_data)
     {
         $this->container['auto_translated_data'] = $auto_translated_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets license
+     *
+     * @return string
+     */
+    public function getLicense()
+    {
+        return $this->container['license'];
+    }
+
+    /**
+     * Sets license
+     *
+     * @param string $license license
+     *
+     * @return $this
+     */
+    public function setLicense($license)
+    {
+        $this->container['license'] = $license;
 
         return $this;
     }

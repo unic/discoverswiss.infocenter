@@ -1,9 +1,13 @@
-# DsDataGovernance
+# DsOrigin
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**origin** | [**\Infocenter\Client\Model\DsOrigin[]**](DsOrigin.md) |  | [optional] 
+**datasource** | **string** |  | [optional] 
+**source_id** | **string** |  | [optional] 
+**created** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**license** | **string** |  | [optional] 
 **provider** | [**\Infocenter\Client\Model\DsPartnerSimplex**](DsPartnerSimplex.md) |  | [optional] 
 **term** | [**\Infocenter\Client\Model\DsTerm**](DsTerm.md) |  | [optional] 
 **source** | [**\Infocenter\Client\Model\DsPartnerSimplex**](DsPartnerSimplex.md) |  | [optional] 

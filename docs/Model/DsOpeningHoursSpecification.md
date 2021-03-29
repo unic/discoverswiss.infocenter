@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**opens** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**opens** | **string** |  | [optional] 
 **valid_from** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **day_of_week** | **string** |  | [optional] 
 **valid_through** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**closes** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**closes** | **string** |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **disambiguating_description** | **string** |  | [optional] 
