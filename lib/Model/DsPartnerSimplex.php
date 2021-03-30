@@ -57,6 +57,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'acronym' => 'string',
+'name' => 'string',
 'identifier' => 'string'    ];
 
     /**
@@ -66,6 +67,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'acronym' => null,
+'name' => null,
 'identifier' => null    ];
 
     /**
@@ -96,6 +98,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'acronym' => 'acronym',
+'name' => 'name',
 'identifier' => 'identifier'    ];
 
     /**
@@ -105,6 +108,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'acronym' => 'setAcronym',
+'name' => 'setName',
 'identifier' => 'setIdentifier'    ];
 
     /**
@@ -114,6 +118,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'acronym' => 'getAcronym',
+'name' => 'getName',
 'identifier' => 'getIdentifier'    ];
 
     /**
@@ -175,6 +180,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['acronym'] = isset($data['acronym']) ? $data['acronym'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
     }
 
@@ -222,6 +228,30 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
     public function setAcronym($acronym)
     {
         $this->container['acronym'] = $acronym;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
