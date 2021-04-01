@@ -1,13 +1,13 @@
-# DsPartnerSimplex
+# DsPartnerLink
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**acronym** | **string** |  | [optional] 
+**url** | **string** |  | [optional] 
+**in_language** | **string** |  | [optional] 
+**title** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
-**logo** | [**\Infocenter\Client\Model\DsImageObjectSimplex**](DsImageObjectSimplex.md) |  | [optional] 
-**link** | [**\Infocenter\Client\Model\DsPartnerLink[]**](DsPartnerLink.md) |  | [optional] 
-**identifier** | **string** |  | [optional] 
+**type** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

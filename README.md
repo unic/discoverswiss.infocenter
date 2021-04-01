@@ -2408,6 +2408,7 @@ Class | Method | HTTP request | Description
  - [DsOpeningHoursSpecification](docs/Model/DsOpeningHoursSpecification.md)
  - [DsOrganization](docs/Model/DsOrganization.md)
  - [DsOrigin](docs/Model/DsOrigin.md)
+ - [DsPartnerLink](docs/Model/DsPartnerLink.md)
  - [DsPartnerSimplex](docs/Model/DsPartnerSimplex.md)
  - [DsPastHours](docs/Model/DsPastHours.md)
  - [DsPeriod](docs/Model/DsPeriod.md)

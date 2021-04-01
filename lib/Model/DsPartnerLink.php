@@ -1,6 +1,6 @@
 <?php
 /**
- * DsPartnerSimplex
+ * DsPartnerLink
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsPartnerSimplex Class Doc Comment
+ * DsPartnerLink Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsPartnerSimplex implements ModelInterface, ArrayAccess
+class DsPartnerLink implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PartnerSimplex';
+    protected static $swaggerModelName = 'PartnerLink';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,11 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'acronym' => 'string',
+        'url' => 'string',
+'in_language' => 'string',
+'title' => 'string',
 'name' => 'string',
-'logo' => '\Infocenter\Client\Model\DsImageObjectSimplex',
-'link' => '\Infocenter\Client\Model\DsPartnerLink[]',
-'identifier' => 'string'    ];
+'type' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +68,11 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'acronym' => null,
+        'url' => null,
+'in_language' => null,
+'title' => null,
 'name' => null,
-'logo' => null,
-'link' => null,
-'identifier' => null    ];
+'type' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +101,11 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'acronym' => 'acronym',
+        'url' => 'url',
+'in_language' => 'inLanguage',
+'title' => 'title',
 'name' => 'name',
-'logo' => 'logo',
-'link' => 'link',
-'identifier' => 'identifier'    ];
+'type' => 'type'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +113,11 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'acronym' => 'setAcronym',
+        'url' => 'setUrl',
+'in_language' => 'setInLanguage',
+'title' => 'setTitle',
 'name' => 'setName',
-'logo' => 'setLogo',
-'link' => 'setLink',
-'identifier' => 'setIdentifier'    ];
+'type' => 'setType'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +125,11 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'acronym' => 'getAcronym',
+        'url' => 'getUrl',
+'in_language' => 'getInLanguage',
+'title' => 'getTitle',
 'name' => 'getName',
-'logo' => 'getLogo',
-'link' => 'getLink',
-'identifier' => 'getIdentifier'    ];
+'type' => 'getType'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +189,11 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['acronym'] = isset($data['acronym']) ? $data['acronym'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['logo'] = isset($data['logo']) ? $data['logo'] : null;
-        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -221,25 +221,73 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets acronym
+     * Gets url
      *
      * @return string
      */
-    public function getAcronym()
+    public function getUrl()
     {
-        return $this->container['acronym'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets acronym
+     * Sets url
      *
-     * @param string $acronym acronym
+     * @param string $url url
      *
      * @return $this
      */
-    public function setAcronym($acronym)
+    public function setUrl($url)
     {
-        $this->container['acronym'] = $acronym;
+        $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets in_language
+     *
+     * @return string
+     */
+    public function getInLanguage()
+    {
+        return $this->container['in_language'];
+    }
+
+    /**
+     * Sets in_language
+     *
+     * @param string $in_language in_language
+     *
+     * @return $this
+     */
+    public function setInLanguage($in_language)
+    {
+        $this->container['in_language'] = $in_language;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string $title title
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
 
         return $this;
     }
@@ -269,73 +317,25 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets logo
-     *
-     * @return \Infocenter\Client\Model\DsImageObjectSimplex
-     */
-    public function getLogo()
-    {
-        return $this->container['logo'];
-    }
-
-    /**
-     * Sets logo
-     *
-     * @param \Infocenter\Client\Model\DsImageObjectSimplex $logo logo
-     *
-     * @return $this
-     */
-    public function setLogo($logo)
-    {
-        $this->container['logo'] = $logo;
-
-        return $this;
-    }
-
-    /**
-     * Gets link
-     *
-     * @return \Infocenter\Client\Model\DsPartnerLink[]
-     */
-    public function getLink()
-    {
-        return $this->container['link'];
-    }
-
-    /**
-     * Sets link
-     *
-     * @param \Infocenter\Client\Model\DsPartnerLink[] $link link
-     *
-     * @return $this
-     */
-    public function setLink($link)
-    {
-        $this->container['link'] = $link;
-
-        return $this;
-    }
-
-    /**
-     * Gets identifier
+     * Gets type
      *
      * @return string
      */
-    public function getIdentifier()
+    public function getType()
     {
-        return $this->container['identifier'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets identifier
+     * Sets type
      *
-     * @param string $identifier identifier
+     * @param string $type type
      *
      * @return $this
      */
-    public function setIdentifier($identifier)
+    public function setType($type)
     {
-        $this->container['identifier'] = $identifier;
+        $this->container['type'] = $type;
 
         return $this;
     }
