@@ -897,7 +897,7 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$admin_areas_only = "admin_areas_only_example"; // string | set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default = false (works only in combination with rootObjectsOnly).
+$admin_areas_only = "admin_areas_only_example"; // string | set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default = false (works only in combination with rootObjectsOnly).
 $root_objects_only = true; // bool | Pass 'true' if you want to get only root areas.
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
@@ -1343,12 +1343,13 @@ $project = "project_example"; // string | Use this property to filter objects by
 $select = "select_example"; // string | Pass list of object properties to query
 $additional_type = "additional_type_example"; // string | Filter by the additional type property
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$usage = "usage_example"; // string | usage
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    $result = $apiInstance->listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $usage, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listTag: ', $e->getMessage(), PHP_EOL;
@@ -2143,7 +2144,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Region to set root Region.
 $levels = "levels_example"; // string | controls how deep the tree should go. default = 1
-$admin_areas_only = "admin_areas_only_example"; // string | set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default = false
+$admin_areas_only = "admin_areas_only_example"; // string | set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default = false
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
@@ -2403,12 +2404,12 @@ Class | Method | HTTP request | Description
  - [DsLocationFeatureSpecification](docs/Model/DsLocationFeatureSpecification.md)
  - [DsLodgingBusiness](docs/Model/DsLodgingBusiness.md)
  - [DsLodgingBusinessesResponse](docs/Model/DsLodgingBusinessesResponse.md)
+ - [DsLogoImageObject](docs/Model/DsLogoImageObject.md)
  - [DsMediaObjectSimplex](docs/Model/DsMediaObjectSimplex.md)
  - [DsMediaObjectsResponse](docs/Model/DsMediaObjectsResponse.md)
  - [DsOpeningHoursSpecification](docs/Model/DsOpeningHoursSpecification.md)
  - [DsOrganization](docs/Model/DsOrganization.md)
  - [DsOrigin](docs/Model/DsOrigin.md)
- - [DsPartnerLink](docs/Model/DsPartnerLink.md)
  - [DsPartnerSimplex](docs/Model/DsPartnerSimplex.md)
  - [DsPastHours](docs/Model/DsPastHours.md)
  - [DsPeriod](docs/Model/DsPeriod.md)

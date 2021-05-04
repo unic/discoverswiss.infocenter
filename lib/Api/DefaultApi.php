@@ -9001,7 +9001,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
+     * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -9031,7 +9031,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
+     * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -9119,7 +9119,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
+     * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -9152,7 +9152,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
+     * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -9215,7 +9215,7 @@ class DefaultApi
      * @param  string $project Use this property to filter objects by project. (optional)
      * @param  string $select Pass list of object properties to query (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
-     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
+     * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root areas. (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -13621,6 +13621,7 @@ class DefaultApi
      * @param  string $select Pass list of object properties to query (optional)
      * @param  string $additional_type Filter by the additional type property (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $usage usage (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -13629,9 +13630,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsTagsResponse
      */
-    public function listTag($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function listTag($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $usage = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->listTagWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        list($response) = $this->listTagWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $usage, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -13648,6 +13649,7 @@ class DefaultApi
      * @param  string $select Pass list of object properties to query (optional)
      * @param  string $additional_type Filter by the additional type property (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $usage usage (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -13656,10 +13658,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsTagsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listTagWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function listTagWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $usage = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTagsResponse';
-        $request = $this->listTagRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        $request = $this->listTagRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $usage, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13733,6 +13735,7 @@ class DefaultApi
      * @param  string $select Pass list of object properties to query (optional)
      * @param  string $additional_type Filter by the additional type property (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $usage usage (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -13740,9 +13743,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTagAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function listTagAsync($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $usage = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->listTagAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+        return $this->listTagAsyncWithHttpInfo($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $usage, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13763,6 +13766,7 @@ class DefaultApi
      * @param  string $select Pass list of object properties to query (optional)
      * @param  string $additional_type Filter by the additional type property (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $usage usage (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -13770,10 +13774,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTagAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function listTagAsyncWithHttpInfo($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $usage = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsTagsResponse';
-        $request = $this->listTagRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        $request = $this->listTagRequest($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $usage, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13823,6 +13827,7 @@ class DefaultApi
      * @param  string $select Pass list of object properties to query (optional)
      * @param  string $additional_type Filter by the additional type property (optional)
      * @param  bool $include_count Pass &#x27;true&#x27; if you want to get total filtered items count in response (optional)
+     * @param  string $usage usage (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -13830,7 +13835,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listTagRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    protected function listTagRequest($updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $additional_type = null, $include_count = null, $usage = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
 
         $resourcePath = '/tags';
@@ -13871,6 +13876,10 @@ class DefaultApi
         // query params
         if ($include_count !== null) {
             $queryParams['includeCount'] = ObjectSerializer::toQueryValue($include_count);
+        }
+        // query params
+        if ($usage !== null) {
+            $queryParams['usage'] = ObjectSerializer::toQueryValue($usage);
         }
         // header params
         if ($ocp_apim_subscription_key !== null) {
@@ -22264,7 +22273,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
-     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
+     * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -22286,7 +22295,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
-     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
+     * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -22366,7 +22375,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
-     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
+     * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -22391,7 +22400,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
-     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
+     * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -22446,7 +22455,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to set root Region. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
-     * @param  string $admin_areas_only set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (optional)
+     * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)

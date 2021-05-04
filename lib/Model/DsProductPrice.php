@@ -57,7 +57,8 @@ class DsProductPrice implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'price_chf' => 'double',
-'max_allowed_age' => 'int'    ];
+'max_allowed_age' => 'int',
+'min_allowed_age' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,7 +67,8 @@ class DsProductPrice implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'price_chf' => 'double',
-'max_allowed_age' => 'int32'    ];
+'max_allowed_age' => 'int32',
+'min_allowed_age' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -96,7 +98,8 @@ class DsProductPrice implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'price_chf' => 'priceCHF',
-'max_allowed_age' => 'maxAllowedAge'    ];
+'max_allowed_age' => 'maxAllowedAge',
+'min_allowed_age' => 'minAllowedAge'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -105,7 +108,8 @@ class DsProductPrice implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'price_chf' => 'setPriceChf',
-'max_allowed_age' => 'setMaxAllowedAge'    ];
+'max_allowed_age' => 'setMaxAllowedAge',
+'min_allowed_age' => 'setMinAllowedAge'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -114,7 +118,8 @@ class DsProductPrice implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'price_chf' => 'getPriceChf',
-'max_allowed_age' => 'getMaxAllowedAge'    ];
+'max_allowed_age' => 'getMaxAllowedAge',
+'min_allowed_age' => 'getMinAllowedAge'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -176,6 +181,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     {
         $this->container['price_chf'] = isset($data['price_chf']) ? $data['price_chf'] : null;
         $this->container['max_allowed_age'] = isset($data['max_allowed_age']) ? $data['max_allowed_age'] : null;
+        $this->container['min_allowed_age'] = isset($data['min_allowed_age']) ? $data['min_allowed_age'] : null;
     }
 
     /**
@@ -246,6 +252,30 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     public function setMaxAllowedAge($max_allowed_age)
     {
         $this->container['max_allowed_age'] = $max_allowed_age;
+
+        return $this;
+    }
+
+    /**
+     * Gets min_allowed_age
+     *
+     * @return int
+     */
+    public function getMinAllowedAge()
+    {
+        return $this->container['min_allowed_age'];
+    }
+
+    /**
+     * Sets min_allowed_age
+     *
+     * @param int $min_allowed_age min_allowed_age
+     *
+     * @return $this
+     */
+    public function setMinAllowedAge($min_allowed_age)
+    {
+        $this->container['min_allowed_age'] = $min_allowed_age;
 
         return $this;
     }

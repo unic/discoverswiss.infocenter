@@ -1997,7 +1997,7 @@ $top = 56; // int | Format - int32. Number of next set of entities.
 $project = "project_example"; // string | Use this property to filter objects by project.
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$admin_areas_only = "admin_areas_only_example"; // string | set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default = false (works only in combination with rootObjectsOnly).
+$admin_areas_only = "admin_areas_only_example"; // string | set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default = false (works only in combination with rootObjectsOnly).
 $root_objects_only = true; // bool | Pass 'true' if you want to get only root areas.
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
@@ -2025,7 +2025,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Use this property to filter objects by project. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **admin_areas_only** | **string**| set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false (works only in combination with rootObjectsOnly). | [optional]
+ **admin_areas_only** | **string**| set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (works only in combination with rootObjectsOnly). | [optional]
  **root_objects_only** | **bool**| Pass &#x27;true&#x27; if you want to get only root areas. | [optional]
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
@@ -2975,7 +2975,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTag**
-> \Infocenter\Client\Model\DsTagsResponse listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTagsResponse listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $usage, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 List Tag
 
@@ -3007,12 +3007,13 @@ $project = "project_example"; // string | Use this property to filter objects by
 $select = "select_example"; // string | Pass list of object properties to query
 $additional_type = "additional_type_example"; // string | Filter by the additional type property
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$usage = "usage_example"; // string | usage
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    $result = $apiInstance->listTag($updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $usage, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listTag: ', $e->getMessage(), PHP_EOL;
@@ -3032,6 +3033,7 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **additional_type** | **string**| Filter by the additional type property | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **usage** | **string**| usage | [optional]
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
@@ -4847,7 +4849,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Region to set root Region.
 $levels = "levels_example"; // string | controls how deep the tree should go. default = 1
-$admin_areas_only = "admin_areas_only_example"; // string | set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default = false
+$admin_areas_only = "admin_areas_only_example"; // string | set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default = false
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
@@ -4867,7 +4869,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Region to set root Region. |
  **levels** | **string**| controls how deep the tree should go. default &#x3D; 1 | [optional]
- **admin_areas_only** | **string**| set to true all types of areas are included. This kind of destroys the tree structure and combined with high levels the performance is bad. default &#x3D; false | [optional]
+ **admin_areas_only** | **string**| set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false | [optional]
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]

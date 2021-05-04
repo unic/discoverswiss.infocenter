@@ -58,8 +58,8 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'acronym' => 'string',
 'name' => 'string',
-'logo' => '\Infocenter\Client\Model\DsImageObjectSimplex',
-'link' => '\Infocenter\Client\Model\DsPartnerLink[]',
+'logo' => '\Infocenter\Client\Model\DsLogoImageObject',
+'link' => '\Infocenter\Client\Model\DsLink[]',
 'identifier' => 'string'    ];
 
     /**
@@ -271,7 +271,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
     /**
      * Gets logo
      *
-     * @return \Infocenter\Client\Model\DsImageObjectSimplex
+     * @return \Infocenter\Client\Model\DsLogoImageObject
      */
     public function getLogo()
     {
@@ -281,7 +281,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
     /**
      * Sets logo
      *
-     * @param \Infocenter\Client\Model\DsImageObjectSimplex $logo logo
+     * @param \Infocenter\Client\Model\DsLogoImageObject $logo logo
      *
      * @return $this
      */
@@ -295,7 +295,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
     /**
      * Gets link
      *
-     * @return \Infocenter\Client\Model\DsPartnerLink[]
+     * @return \Infocenter\Client\Model\DsLink[]
      */
     public function getLink()
     {
@@ -305,7 +305,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
     /**
      * Sets link
      *
-     * @param \Infocenter\Client\Model\DsPartnerLink[] $link link
+     * @param \Infocenter\Client\Model\DsLink[] $link link
      *
      * @return $this
      */
