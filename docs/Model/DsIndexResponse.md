@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional] 
 **oua_id** | **int** |  | [optional] 
-**source_id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **datasource** | **string[]** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\DsDataGovernance**](DsDataGovernance.md) |  | [optional] 
@@ -28,6 +27,10 @@ Name | Type | Description | Notes
 **elevation** | [**\Infocenter\Client\Model\DsTourElevation**](DsTourElevation.md) |  | [optional] 
 **link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
 **auto_translated_data** | **bool** |  | [optional] 
+**ticketing_contact** | **string** |  | [optional] 
+**price_information** | **string** |  | [optional] 
+**organizer** | [**\Infocenter\Client\Model\DsOrganization**](DsOrganization.md) |  | [optional] 
+**last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

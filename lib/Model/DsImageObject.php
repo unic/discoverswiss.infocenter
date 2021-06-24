@@ -70,6 +70,10 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'is_accessible_for_free' => 'bool',
 'thumbnail_url' => 'string',
 'in_language' => 'string',
+'category' => '\Infocenter\Client\Model\DsCategorySimplex[]',
+'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
@@ -77,8 +81,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'available_data_language' => 'string[]',
 'auto_translated_data' => 'bool',
 'license' => 'string',
-'category' => '\Infocenter\Client\Model\DsCategorySimplex[]',
-'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -110,6 +112,10 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'is_accessible_for_free' => null,
 'thumbnail_url' => null,
 'in_language' => null,
+'category' => null,
+'tag' => null,
+'campaign_tag' => null,
+'profile_tag' => null,
 'id' => null,
 'identifier' => null,
 'data_governance' => null,
@@ -117,8 +123,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'available_data_language' => null,
 'auto_translated_data' => null,
 'license' => null,
-'category' => null,
-'tag' => null,
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -171,6 +175,10 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'is_accessible_for_free' => 'isAccessibleForFree',
 'thumbnail_url' => 'thumbnailUrl',
 'in_language' => 'inLanguage',
+'category' => 'category',
+'tag' => 'tag',
+'campaign_tag' => 'campaignTag',
+'profile_tag' => 'profileTag',
 'id' => '@id',
 'identifier' => 'identifier',
 'data_governance' => 'dataGovernance',
@@ -178,8 +186,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'available_data_language' => 'availableDataLanguage',
 'auto_translated_data' => 'autoTranslatedData',
 'license' => 'license',
-'category' => 'category',
-'tag' => 'tag',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -211,6 +217,10 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'is_accessible_for_free' => 'setIsAccessibleForFree',
 'thumbnail_url' => 'setThumbnailUrl',
 'in_language' => 'setInLanguage',
+'category' => 'setCategory',
+'tag' => 'setTag',
+'campaign_tag' => 'setCampaignTag',
+'profile_tag' => 'setProfileTag',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'data_governance' => 'setDataGovernance',
@@ -218,8 +228,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'available_data_language' => 'setAvailableDataLanguage',
 'auto_translated_data' => 'setAutoTranslatedData',
 'license' => 'setLicense',
-'category' => 'setCategory',
-'tag' => 'setTag',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -251,6 +259,10 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'is_accessible_for_free' => 'getIsAccessibleForFree',
 'thumbnail_url' => 'getThumbnailUrl',
 'in_language' => 'getInLanguage',
+'category' => 'getCategory',
+'tag' => 'getTag',
+'campaign_tag' => 'getCampaignTag',
+'profile_tag' => 'getProfileTag',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'data_governance' => 'getDataGovernance',
@@ -258,8 +270,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'available_data_language' => 'getAvailableDataLanguage',
 'auto_translated_data' => 'getAutoTranslatedData',
 'license' => 'getLicense',
-'category' => 'getCategory',
-'tag' => 'getTag',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -343,6 +353,10 @@ class DsImageObject implements ModelInterface, ArrayAccess
         $this->container['is_accessible_for_free'] = isset($data['is_accessible_for_free']) ? $data['is_accessible_for_free'] : null;
         $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
         $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
+        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
+        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
+        $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
+        $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
@@ -350,8 +364,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
         $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
         $this->container['license'] = isset($data['license']) ? $data['license'] : null;
-        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
-        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -725,6 +737,102 @@ class DsImageObject implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets category
+     *
+     * @return \Infocenter\Client\Model\DsCategorySimplex[]
+     */
+    public function getCategory()
+    {
+        return $this->container['category'];
+    }
+
+    /**
+     * Sets category
+     *
+     * @param \Infocenter\Client\Model\DsCategorySimplex[] $category category
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getTag()
+    {
+        return $this->container['tag'];
+    }
+
+    /**
+     * Sets tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $tag tag
+     *
+     * @return $this
+     */
+    public function setTag($tag)
+    {
+        $this->container['tag'] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets campaign_tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getCampaignTag()
+    {
+        return $this->container['campaign_tag'];
+    }
+
+    /**
+     * Sets campaign_tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $campaign_tag campaign_tag
+     *
+     * @return $this
+     */
+    public function setCampaignTag($campaign_tag)
+    {
+        $this->container['campaign_tag'] = $campaign_tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets profile_tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getProfileTag()
+    {
+        return $this->container['profile_tag'];
+    }
+
+    /**
+     * Sets profile_tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $profile_tag profile_tag
+     *
+     * @return $this
+     */
+    public function setProfileTag($profile_tag)
+    {
+        $this->container['profile_tag'] = $profile_tag;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return string
@@ -888,54 +996,6 @@ class DsImageObject implements ModelInterface, ArrayAccess
     public function setLicense($license)
     {
         $this->container['license'] = $license;
-
-        return $this;
-    }
-
-    /**
-     * Gets category
-     *
-     * @return \Infocenter\Client\Model\DsCategorySimplex[]
-     */
-    public function getCategory()
-    {
-        return $this->container['category'];
-    }
-
-    /**
-     * Sets category
-     *
-     * @param \Infocenter\Client\Model\DsCategorySimplex[] $category category
-     *
-     * @return $this
-     */
-    public function setCategory($category)
-    {
-        $this->container['category'] = $category;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag
-     *
-     * @return \Infocenter\Client\Model\DsTagSimplex[]
-     */
-    public function getTag()
-    {
-        return $this->container['tag'];
-    }
-
-    /**
-     * Sets tag
-     *
-     * @param \Infocenter\Client\Model\DsTagSimplex[] $tag tag
-     *
-     * @return $this
-     */
-    public function setTag($tag)
-    {
-        $this->container['tag'] = $tag;
 
         return $this;
     }

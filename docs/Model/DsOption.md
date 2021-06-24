@@ -1,16 +1,12 @@
-# DsFacetRequest
+# DsOption
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**identifier** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
-**interval** | **string** |  | [optional] 
-**values** | **string** |  | [optional] 
-**select_values** | **string[]** |  | [optional] 
-**filter_values** | **string[]** |  | [optional] 
-**count** | **int** |  | [optional] 
-**scope** | **string** |  | [optional] 
-**project** | **string[]** |  | [optional] 
+**value** | **string** |  | [optional] 
+**position** | **int** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

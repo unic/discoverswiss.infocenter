@@ -62,7 +62,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'select_values' => 'string[]',
 'filter_values' => 'string[]',
 'count' => 'int',
-'scope' => 'string'    ];
+'scope' => 'string',
+'project' => 'string[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -76,7 +77,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'select_values' => null,
 'filter_values' => null,
 'count' => 'int32',
-'scope' => null    ];
+'scope' => null,
+'project' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -111,7 +113,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'select_values' => 'selectValues',
 'filter_values' => 'filterValues',
 'count' => 'count',
-'scope' => 'scope'    ];
+'scope' => 'scope',
+'project' => 'project'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -125,7 +128,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'select_values' => 'setSelectValues',
 'filter_values' => 'setFilterValues',
 'count' => 'setCount',
-'scope' => 'setScope'    ];
+'scope' => 'setScope',
+'project' => 'setProject'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -139,7 +143,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'select_values' => 'getSelectValues',
 'filter_values' => 'getFilterValues',
 'count' => 'getCount',
-'scope' => 'getScope'    ];
+'scope' => 'getScope',
+'project' => 'getProject'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -206,6 +211,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         $this->container['filter_values'] = isset($data['filter_values']) ? $data['filter_values'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['scope'] = isset($data['scope']) ? $data['scope'] : null;
+        $this->container['project'] = isset($data['project']) ? $data['project'] : null;
     }
 
     /**
@@ -396,6 +402,30 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     public function setScope($scope)
     {
         $this->container['scope'] = $scope;
+
+        return $this;
+    }
+
+    /**
+     * Gets project
+     *
+     * @return string[]
+     */
+    public function getProject()
+    {
+        return $this->container['project'];
+    }
+
+    /**
+     * Sets project
+     *
+     * @param string[] $project project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->container['project'] = $project;
 
         return $this;
     }

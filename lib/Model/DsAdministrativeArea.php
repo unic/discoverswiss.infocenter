@@ -89,16 +89,18 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'osm_id' => 'string',
 'aggregate_rating' => '\Infocenter\Client\Model\DsAggregateRating',
 'opening_hours' => 'string',
-'license' => 'string',
 'category' => '\Infocenter\Client\Model\DsCategorySimplex[]',
 'contained_in_place' => '\Infocenter\Client\Model\DsPlaceSimplex[]',
+'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
 'auto_translated_data' => 'bool',
-'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'license' => 'string',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -149,16 +151,18 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'osm_id' => null,
 'aggregate_rating' => null,
 'opening_hours' => null,
-'license' => null,
 'category' => null,
 'contained_in_place' => null,
+'tag' => null,
+'campaign_tag' => null,
+'profile_tag' => null,
 'id' => null,
 'identifier' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
 'auto_translated_data' => null,
-'tag' => null,
+'license' => null,
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -230,16 +234,18 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'osm_id' => 'osm_id',
 'aggregate_rating' => 'aggregateRating',
 'opening_hours' => 'openingHours',
-'license' => 'license',
 'category' => 'category',
 'contained_in_place' => 'containedInPlace',
+'tag' => 'tag',
+'campaign_tag' => 'campaignTag',
+'profile_tag' => 'profileTag',
 'id' => '@id',
 'identifier' => 'identifier',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
 'auto_translated_data' => 'autoTranslatedData',
-'tag' => 'tag',
+'license' => 'license',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -290,16 +296,18 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'osm_id' => 'setOsmId',
 'aggregate_rating' => 'setAggregateRating',
 'opening_hours' => 'setOpeningHours',
-'license' => 'setLicense',
 'category' => 'setCategory',
 'contained_in_place' => 'setContainedInPlace',
+'tag' => 'setTag',
+'campaign_tag' => 'setCampaignTag',
+'profile_tag' => 'setProfileTag',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
 'auto_translated_data' => 'setAutoTranslatedData',
-'tag' => 'setTag',
+'license' => 'setLicense',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -350,16 +358,18 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'osm_id' => 'getOsmId',
 'aggregate_rating' => 'getAggregateRating',
 'opening_hours' => 'getOpeningHours',
-'license' => 'getLicense',
 'category' => 'getCategory',
 'contained_in_place' => 'getContainedInPlace',
+'tag' => 'getTag',
+'campaign_tag' => 'getCampaignTag',
+'profile_tag' => 'getProfileTag',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
 'auto_translated_data' => 'getAutoTranslatedData',
-'tag' => 'getTag',
+'license' => 'getLicense',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -462,16 +472,18 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
         $this->container['osm_id'] = isset($data['osm_id']) ? $data['osm_id'] : null;
         $this->container['aggregate_rating'] = isset($data['aggregate_rating']) ? $data['aggregate_rating'] : null;
         $this->container['opening_hours'] = isset($data['opening_hours']) ? $data['opening_hours'] : null;
-        $this->container['license'] = isset($data['license']) ? $data['license'] : null;
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
+        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
+        $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
+        $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
         $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
-        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
+        $this->container['license'] = isset($data['license']) ? $data['license'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -1301,30 +1313,6 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets license
-     *
-     * @return string
-     */
-    public function getLicense()
-    {
-        return $this->container['license'];
-    }
-
-    /**
-     * Sets license
-     *
-     * @param string $license license
-     *
-     * @return $this
-     */
-    public function setLicense($license)
-    {
-        $this->container['license'] = $license;
-
-        return $this;
-    }
-
-    /**
      * Gets category
      *
      * @return \Infocenter\Client\Model\DsCategorySimplex[]
@@ -1368,6 +1356,78 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     public function setContainedInPlace($contained_in_place)
     {
         $this->container['contained_in_place'] = $contained_in_place;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getTag()
+    {
+        return $this->container['tag'];
+    }
+
+    /**
+     * Sets tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $tag tag
+     *
+     * @return $this
+     */
+    public function setTag($tag)
+    {
+        $this->container['tag'] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets campaign_tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getCampaignTag()
+    {
+        return $this->container['campaign_tag'];
+    }
+
+    /**
+     * Sets campaign_tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $campaign_tag campaign_tag
+     *
+     * @return $this
+     */
+    public function setCampaignTag($campaign_tag)
+    {
+        $this->container['campaign_tag'] = $campaign_tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets profile_tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getProfileTag()
+    {
+        return $this->container['profile_tag'];
+    }
+
+    /**
+     * Sets profile_tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $profile_tag profile_tag
+     *
+     * @return $this
+     */
+    public function setProfileTag($profile_tag)
+    {
+        $this->container['profile_tag'] = $profile_tag;
 
         return $this;
     }
@@ -1517,25 +1577,25 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets tag
+     * Gets license
      *
-     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     * @return string
      */
-    public function getTag()
+    public function getLicense()
     {
-        return $this->container['tag'];
+        return $this->container['license'];
     }
 
     /**
-     * Sets tag
+     * Sets license
      *
-     * @param \Infocenter\Client\Model\DsTagSimplex[] $tag tag
+     * @param string $license license
      *
      * @return $this
      */
-    public function setTag($tag)
+    public function setLicense($license)
     {
-        $this->container['tag'] = $tag;
+        $this->container['license'] = $license;
 
         return $this;
     }

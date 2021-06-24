@@ -1,6 +1,6 @@
 <?php
 /**
- * DsPartnerSimplex
+ * DsOption
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsPartnerSimplex Class Doc Comment
+ * DsOption Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsPartnerSimplex implements ModelInterface, ArrayAccess
+class DsOption implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PartnerSimplex';
+    protected static $swaggerModelName = 'Option';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,10 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'acronym' => 'string',
+        'identifier' => 'string',
 'name' => 'string',
-'logo' => '\Infocenter\Client\Model\DsMediaObjectSimplex',
-'link' => '\Infocenter\Client\Model\DsLink[]',
-'identifier' => 'string'    ];
+'value' => 'string',
+'position' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +67,10 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'acronym' => null,
+        'identifier' => null,
 'name' => null,
-'logo' => null,
-'link' => null,
-'identifier' => null    ];
+'value' => null,
+'position' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +99,10 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'acronym' => 'acronym',
+        'identifier' => 'identifier',
 'name' => 'name',
-'logo' => 'logo',
-'link' => 'link',
-'identifier' => 'identifier'    ];
+'value' => 'value',
+'position' => 'position'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +110,10 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'acronym' => 'setAcronym',
+        'identifier' => 'setIdentifier',
 'name' => 'setName',
-'logo' => 'setLogo',
-'link' => 'setLink',
-'identifier' => 'setIdentifier'    ];
+'value' => 'setValue',
+'position' => 'setPosition'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +121,10 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'acronym' => 'getAcronym',
+        'identifier' => 'getIdentifier',
 'name' => 'getName',
-'logo' => 'getLogo',
-'link' => 'getLink',
-'identifier' => 'getIdentifier'    ];
+'value' => 'getValue',
+'position' => 'getPosition'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +184,10 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['acronym'] = isset($data['acronym']) ? $data['acronym'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['logo'] = isset($data['logo']) ? $data['logo'] : null;
-        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
     }
 
     /**
@@ -221,25 +215,25 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets acronym
+     * Gets identifier
      *
      * @return string
      */
-    public function getAcronym()
+    public function getIdentifier()
     {
-        return $this->container['acronym'];
+        return $this->container['identifier'];
     }
 
     /**
-     * Sets acronym
+     * Sets identifier
      *
-     * @param string $acronym acronym
+     * @param string $identifier identifier
      *
      * @return $this
      */
-    public function setAcronym($acronym)
+    public function setIdentifier($identifier)
     {
-        $this->container['acronym'] = $acronym;
+        $this->container['identifier'] = $identifier;
 
         return $this;
     }
@@ -269,73 +263,49 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets logo
-     *
-     * @return \Infocenter\Client\Model\DsMediaObjectSimplex
-     */
-    public function getLogo()
-    {
-        return $this->container['logo'];
-    }
-
-    /**
-     * Sets logo
-     *
-     * @param \Infocenter\Client\Model\DsMediaObjectSimplex $logo logo
-     *
-     * @return $this
-     */
-    public function setLogo($logo)
-    {
-        $this->container['logo'] = $logo;
-
-        return $this;
-    }
-
-    /**
-     * Gets link
-     *
-     * @return \Infocenter\Client\Model\DsLink[]
-     */
-    public function getLink()
-    {
-        return $this->container['link'];
-    }
-
-    /**
-     * Sets link
-     *
-     * @param \Infocenter\Client\Model\DsLink[] $link link
-     *
-     * @return $this
-     */
-    public function setLink($link)
-    {
-        $this->container['link'] = $link;
-
-        return $this;
-    }
-
-    /**
-     * Gets identifier
+     * Gets value
      *
      * @return string
      */
-    public function getIdentifier()
+    public function getValue()
     {
-        return $this->container['identifier'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets identifier
+     * Sets value
      *
-     * @param string $identifier identifier
+     * @param string $value value
      *
      * @return $this
      */
-    public function setIdentifier($identifier)
+    public function setValue($value)
     {
-        $this->container['identifier'] = $identifier;
+        $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets position
+     *
+     * @return int
+     */
+    public function getPosition()
+    {
+        return $this->container['position'];
+    }
+
+    /**
+     * Sets position
+     *
+     * @param int $position position
+     *
+     * @return $this
+     */
+    public function setPosition($position)
+    {
+        $this->container['position'] = $position;
 
         return $this;
     }

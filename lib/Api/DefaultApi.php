@@ -19189,7 +19189,6 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
-     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -19198,9 +19197,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsProduct
      */
-    public function product($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function product($id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        list($response) = $this->productWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        list($response) = $this->productWithHttpInfo($id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
         return $response;
     }
 
@@ -19211,7 +19210,6 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
-     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -19220,10 +19218,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsProduct, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function productWithHttpInfo($id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsProduct';
-        $request = $this->productRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        $request = $this->productRequest($id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         try {
             $options = $this->createHttpClientOption();
@@ -19291,7 +19289,6 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
-     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -19299,9 +19296,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productAsync($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function productAsync($id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
-        return $this->productAsyncWithHttpInfo($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+        return $this->productAsyncWithHttpInfo($id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -19316,7 +19313,6 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
-     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -19324,10 +19320,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productAsyncWithHttpInfo($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    public function productAsyncWithHttpInfo($id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         $returnType = '\Infocenter\Client\Model\DsProduct';
-        $request = $this->productRequest($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        $request = $this->productRequest($id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -19371,7 +19367,6 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $project Use this property to filter objects by project. (optional)
-     * @param  string $contained_in_place Use property identifier of place to filter. (optional)
      * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
@@ -19379,7 +19374,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function productRequest($id, $project = null, $contained_in_place = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    protected function productRequest($id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -19399,10 +19394,6 @@ class DefaultApi
         if ($project !== null) {
             $queryParams['project'] = ObjectSerializer::toQueryValue($project);
         }
-        // query params
-        if ($contained_in_place !== null) {
-            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
-        }
         // header params
         if ($ocp_apim_subscription_key !== null) {
             $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
@@ -19421,6 +19412,314 @@ class DefaultApi
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
                 ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation productByProductVariantId
+     *
+     * Product by ProductVariantId
+     *
+     * @param  string $product_variant_id Use property to get product object by product variant identifier. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsProduct
+     */
+    public function productByProductVariantId($product_variant_id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->productByProductVariantIdWithHttpInfo($product_variant_id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation productByProductVariantIdWithHttpInfo
+     *
+     * Product by ProductVariantId
+     *
+     * @param  string $product_variant_id Use property to get product object by product variant identifier. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsProduct, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productByProductVariantIdWithHttpInfo($product_variant_id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsProduct';
+        $request = $this->productByProductVariantIdRequest($product_variant_id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsProduct',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productByProductVariantIdAsync
+     *
+     * Product by ProductVariantId
+     *
+     * @param  string $product_variant_id Use property to get product object by product variant identifier. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function productByProductVariantIdAsync($product_variant_id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->productByProductVariantIdAsyncWithHttpInfo($product_variant_id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation productByProductVariantIdAsyncWithHttpInfo
+     *
+     * Product by ProductVariantId
+     *
+     * @param  string $product_variant_id Use property to get product object by product variant identifier. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function productByProductVariantIdAsyncWithHttpInfo($product_variant_id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsProduct';
+        $request = $this->productByProductVariantIdRequest($product_variant_id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'productByProductVariantId'
+     *
+     * @param  string $product_variant_id Use property to get product object by product variant identifier. (required)
+     * @param  string $project Use this property to filter objects by project. (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function productByProductVariantIdRequest($product_variant_id, $project = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'product_variant_id' is set
+        if ($product_variant_id === null || (is_array($product_variant_id) && count($product_variant_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $product_variant_id when calling productByProductVariantId'
+            );
+        }
+
+        $resourcePath = '/productVariants/{productVariantId}/products';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($product_variant_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'productVariantId' . '}',
+                ObjectSerializer::toPathValue($product_variant_id),
                 $resourcePath
             );
         }
@@ -20349,6 +20648,938 @@ class DefaultApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation searchByGETForPdf
+     *
+     * Search by GET for pdf
+     *
+     * @param  string $project Use property to select project which is used to select pdf template (required)
+     * @param  string $template Use property to select pdf template in selected project (required)
+     * @param  string $search_text Use property for search request text (optional)
+     * @param  string $search_fields Use property for selecting of search fields by which necessary to search (optional)
+     * @param  string $select Use property for selecting fields which necessary to return in response (optional)
+     * @param  int $current_page Format - int32. Use property to set number of page (optional)
+     * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
+     * @param  string $order_by Use property for ordering (optional)
+     * @param  string $category Use property for filtering by &#x60;category&#x60; (optional)
+     * @param  string $filters Use property for odata filtering (optional)
+     * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
+     * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
+     * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
+     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType (optional)
+     * @param  string $combined_type_tree Use property for filtering by &#x60;combinedTypeTree&#x60; (optional)
+     * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
+     * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $profile_tag Use property for filtering by &#x60;profileTag&#x60; (optional)
+     * @param  string $all_tag Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; (optional)
+     * @param  string $scoring_tag Use property to score results by profile-tags (optional)
+     * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
+     * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
+     * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
+     * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
+     * @param  string $time Use property for filtering/facet-filtering by &#x60;time&#x60; (optional)
+     * @param  string $state Use property for filtering/facet-filtering by &#x60;state&#x60; (optional)
+     * @param  string $rating_condition Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; (optional)
+     * @param  string $rating_difficulty Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; (optional)
+     * @param  string $elevation_ascent Use property for filtering/facet-filtering by &#x60;elevation/ascent&#x60; (optional)
+     * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
+     * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
+     * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;season&#x60; (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsFile
+     */
+    public function searchByGETForPdf($project, $template, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->searchByGETForPdfWithHttpInfo($project, $template, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation searchByGETForPdfWithHttpInfo
+     *
+     * Search by GET for pdf
+     *
+     * @param  string $project Use property to select project which is used to select pdf template (required)
+     * @param  string $template Use property to select pdf template in selected project (required)
+     * @param  string $search_text Use property for search request text (optional)
+     * @param  string $search_fields Use property for selecting of search fields by which necessary to search (optional)
+     * @param  string $select Use property for selecting fields which necessary to return in response (optional)
+     * @param  int $current_page Format - int32. Use property to set number of page (optional)
+     * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
+     * @param  string $order_by Use property for ordering (optional)
+     * @param  string $category Use property for filtering by &#x60;category&#x60; (optional)
+     * @param  string $filters Use property for odata filtering (optional)
+     * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
+     * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
+     * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
+     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType (optional)
+     * @param  string $combined_type_tree Use property for filtering by &#x60;combinedTypeTree&#x60; (optional)
+     * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
+     * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $profile_tag Use property for filtering by &#x60;profileTag&#x60; (optional)
+     * @param  string $all_tag Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; (optional)
+     * @param  string $scoring_tag Use property to score results by profile-tags (optional)
+     * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
+     * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
+     * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
+     * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
+     * @param  string $time Use property for filtering/facet-filtering by &#x60;time&#x60; (optional)
+     * @param  string $state Use property for filtering/facet-filtering by &#x60;state&#x60; (optional)
+     * @param  string $rating_condition Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; (optional)
+     * @param  string $rating_difficulty Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; (optional)
+     * @param  string $elevation_ascent Use property for filtering/facet-filtering by &#x60;elevation/ascent&#x60; (optional)
+     * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
+     * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
+     * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;season&#x60; (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsFile, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function searchByGETForPdfWithHttpInfo($project, $template, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsFile';
+        $request = $this->searchByGETForPdfRequest($project, $template, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsFile',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation searchByGETForPdfAsync
+     *
+     * Search by GET for pdf
+     *
+     * @param  string $project Use property to select project which is used to select pdf template (required)
+     * @param  string $template Use property to select pdf template in selected project (required)
+     * @param  string $search_text Use property for search request text (optional)
+     * @param  string $search_fields Use property for selecting of search fields by which necessary to search (optional)
+     * @param  string $select Use property for selecting fields which necessary to return in response (optional)
+     * @param  int $current_page Format - int32. Use property to set number of page (optional)
+     * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
+     * @param  string $order_by Use property for ordering (optional)
+     * @param  string $category Use property for filtering by &#x60;category&#x60; (optional)
+     * @param  string $filters Use property for odata filtering (optional)
+     * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
+     * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
+     * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
+     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType (optional)
+     * @param  string $combined_type_tree Use property for filtering by &#x60;combinedTypeTree&#x60; (optional)
+     * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
+     * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $profile_tag Use property for filtering by &#x60;profileTag&#x60; (optional)
+     * @param  string $all_tag Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; (optional)
+     * @param  string $scoring_tag Use property to score results by profile-tags (optional)
+     * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
+     * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
+     * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
+     * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
+     * @param  string $time Use property for filtering/facet-filtering by &#x60;time&#x60; (optional)
+     * @param  string $state Use property for filtering/facet-filtering by &#x60;state&#x60; (optional)
+     * @param  string $rating_condition Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; (optional)
+     * @param  string $rating_difficulty Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; (optional)
+     * @param  string $elevation_ascent Use property for filtering/facet-filtering by &#x60;elevation/ascent&#x60; (optional)
+     * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
+     * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
+     * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;season&#x60; (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function searchByGETForPdfAsync($project, $template, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->searchByGETForPdfAsyncWithHttpInfo($project, $template, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation searchByGETForPdfAsyncWithHttpInfo
+     *
+     * Search by GET for pdf
+     *
+     * @param  string $project Use property to select project which is used to select pdf template (required)
+     * @param  string $template Use property to select pdf template in selected project (required)
+     * @param  string $search_text Use property for search request text (optional)
+     * @param  string $search_fields Use property for selecting of search fields by which necessary to search (optional)
+     * @param  string $select Use property for selecting fields which necessary to return in response (optional)
+     * @param  int $current_page Format - int32. Use property to set number of page (optional)
+     * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
+     * @param  string $order_by Use property for ordering (optional)
+     * @param  string $category Use property for filtering by &#x60;category&#x60; (optional)
+     * @param  string $filters Use property for odata filtering (optional)
+     * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
+     * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
+     * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
+     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType (optional)
+     * @param  string $combined_type_tree Use property for filtering by &#x60;combinedTypeTree&#x60; (optional)
+     * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
+     * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $profile_tag Use property for filtering by &#x60;profileTag&#x60; (optional)
+     * @param  string $all_tag Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; (optional)
+     * @param  string $scoring_tag Use property to score results by profile-tags (optional)
+     * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
+     * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
+     * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
+     * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
+     * @param  string $time Use property for filtering/facet-filtering by &#x60;time&#x60; (optional)
+     * @param  string $state Use property for filtering/facet-filtering by &#x60;state&#x60; (optional)
+     * @param  string $rating_condition Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; (optional)
+     * @param  string $rating_difficulty Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; (optional)
+     * @param  string $elevation_ascent Use property for filtering/facet-filtering by &#x60;elevation/ascent&#x60; (optional)
+     * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
+     * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
+     * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;season&#x60; (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function searchByGETForPdfAsyncWithHttpInfo($project, $template, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsFile';
+        $request = $this->searchByGETForPdfRequest($project, $template, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'searchByGETForPdf'
+     *
+     * @param  string $project Use property to select project which is used to select pdf template (required)
+     * @param  string $template Use property to select pdf template in selected project (required)
+     * @param  string $search_text Use property for search request text (optional)
+     * @param  string $search_fields Use property for selecting of search fields by which necessary to search (optional)
+     * @param  string $select Use property for selecting fields which necessary to return in response (optional)
+     * @param  int $current_page Format - int32. Use property to set number of page (optional)
+     * @param  int $results_per_page Format - int32. Use property to set count of results per page (optional)
+     * @param  string $order_by Use property for ordering (optional)
+     * @param  string $category Use property for filtering by &#x60;category&#x60; (optional)
+     * @param  string $filters Use property for odata filtering (optional)
+     * @param  string $type Use property for filtering by &#x60;type&#x60; (optional)
+     * @param  string $datasource Use property for filtering by &#x60;dataSource&#x60; (optional)
+     * @param  string $project Use property for filtering by &#x60;project&#x60; (optional)
+     * @param  string $combined_type Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType (optional)
+     * @param  string $combined_type_tree Use property for filtering by &#x60;combinedTypeTree&#x60; (optional)
+     * @param  string $leaf_type Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type (optional)
+     * @param  string $campaign_tag Use property for filtering by &#x60;campaignTag&#x60; (optional)
+     * @param  string $profile_tag Use property for filtering by &#x60;profileTag&#x60; (optional)
+     * @param  string $all_tag Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; (optional)
+     * @param  string $scoring_tag Use property to score results by profile-tags (optional)
+     * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
+     * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
+     * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
+     * @param  string $address_locality Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; (optional)
+     * @param  string $address_postal_code Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; (optional)
+     * @param  string $time Use property for filtering/facet-filtering by &#x60;time&#x60; (optional)
+     * @param  string $state Use property for filtering/facet-filtering by &#x60;state&#x60; (optional)
+     * @param  string $rating_condition Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; (optional)
+     * @param  string $rating_difficulty Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; (optional)
+     * @param  string $elevation_ascent Use property for filtering/facet-filtering by &#x60;elevation/ascent&#x60; (optional)
+     * @param  string $elevation_descent Use property for filtering/facet-filtering by &#x60;elevation/descent&#x60; (optional)
+     * @param  string $elevation_min_altitude Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; (optional)
+     * @param  string $elevation_max_altitude Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; (optional)
+     * @param  string $season Use property for filtering/facet-filtering by &#x60;season&#x60; (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function searchByGETForPdfRequest($project, $template, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'project' is set
+        if ($project === null || (is_array($project) && count($project) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $project when calling searchByGETForPdf'
+            );
+        }
+        // verify the required parameter 'template' is set
+        if ($template === null || (is_array($template) && count($template) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $template when calling searchByGETForPdf'
+            );
+        }
+
+        $resourcePath = '/search/pdf/{project}/{template}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($search_text !== null) {
+            $queryParams['searchText'] = ObjectSerializer::toQueryValue($search_text);
+        }
+        // query params
+        if ($search_fields !== null) {
+            $queryParams['searchFields'] = ObjectSerializer::toQueryValue($search_fields);
+        }
+        // query params
+        if ($select !== null) {
+            $queryParams['select'] = ObjectSerializer::toQueryValue($select);
+        }
+        // query params
+        if ($current_page !== null) {
+            $queryParams['currentPage'] = ObjectSerializer::toQueryValue($current_page);
+        }
+        // query params
+        if ($results_per_page !== null) {
+            $queryParams['resultsPerPage'] = ObjectSerializer::toQueryValue($results_per_page);
+        }
+        // query params
+        if ($order_by !== null) {
+            $queryParams['orderBy'] = ObjectSerializer::toQueryValue($order_by);
+        }
+        // query params
+        if ($category !== null) {
+            $queryParams['category'] = ObjectSerializer::toQueryValue($category);
+        }
+        // query params
+        if ($filters !== null) {
+            $queryParams['filters'] = ObjectSerializer::toQueryValue($filters);
+        }
+        // query params
+        if ($type !== null) {
+            $queryParams['type'] = ObjectSerializer::toQueryValue($type);
+        }
+        // query params
+        if ($datasource !== null) {
+            $queryParams['datasource'] = ObjectSerializer::toQueryValue($datasource);
+        }
+        // query params
+        if ($project !== null) {
+            $queryParams['project'] = ObjectSerializer::toQueryValue($project);
+        }
+        // query params
+        if ($combined_type !== null) {
+            $queryParams['combinedType'] = ObjectSerializer::toQueryValue($combined_type);
+        }
+        // query params
+        if ($combined_type_tree !== null) {
+            $queryParams['combinedTypeTree'] = ObjectSerializer::toQueryValue($combined_type_tree);
+        }
+        // query params
+        if ($leaf_type !== null) {
+            $queryParams['leafType'] = ObjectSerializer::toQueryValue($leaf_type);
+        }
+        // query params
+        if ($campaign_tag !== null) {
+            $queryParams['campaignTag'] = ObjectSerializer::toQueryValue($campaign_tag);
+        }
+        // query params
+        if ($profile_tag !== null) {
+            $queryParams['profileTag'] = ObjectSerializer::toQueryValue($profile_tag);
+        }
+        // query params
+        if ($all_tag !== null) {
+            $queryParams['allTag'] = ObjectSerializer::toQueryValue($all_tag);
+        }
+        // query params
+        if ($scoring_tag !== null) {
+            $queryParams['scoringTag'] = ObjectSerializer::toQueryValue($scoring_tag);
+        }
+        // query params
+        if ($category_tree !== null) {
+            $queryParams['categoryTree'] = ObjectSerializer::toQueryValue($category_tree);
+        }
+        // query params
+        if ($tag !== null) {
+            $queryParams['tag'] = ObjectSerializer::toQueryValue($tag);
+        }
+        // query params
+        if ($contained_in_place !== null) {
+            $queryParams['containedInPlace'] = ObjectSerializer::toQueryValue($contained_in_place);
+        }
+        // query params
+        if ($address_locality !== null) {
+            $queryParams['addressLocality'] = ObjectSerializer::toQueryValue($address_locality);
+        }
+        // query params
+        if ($address_postal_code !== null) {
+            $queryParams['addressPostalCode'] = ObjectSerializer::toQueryValue($address_postal_code);
+        }
+        // query params
+        if ($time !== null) {
+            $queryParams['time'] = ObjectSerializer::toQueryValue($time);
+        }
+        // query params
+        if ($state !== null) {
+            $queryParams['state'] = ObjectSerializer::toQueryValue($state);
+        }
+        // query params
+        if ($rating_condition !== null) {
+            $queryParams['ratingCondition'] = ObjectSerializer::toQueryValue($rating_condition);
+        }
+        // query params
+        if ($rating_difficulty !== null) {
+            $queryParams['ratingDifficulty'] = ObjectSerializer::toQueryValue($rating_difficulty);
+        }
+        // query params
+        if ($elevation_ascent !== null) {
+            $queryParams['elevationAscent'] = ObjectSerializer::toQueryValue($elevation_ascent);
+        }
+        // query params
+        if ($elevation_descent !== null) {
+            $queryParams['elevationDescent'] = ObjectSerializer::toQueryValue($elevation_descent);
+        }
+        // query params
+        if ($elevation_min_altitude !== null) {
+            $queryParams['elevationMinAltitude'] = ObjectSerializer::toQueryValue($elevation_min_altitude);
+        }
+        // query params
+        if ($elevation_max_altitude !== null) {
+            $queryParams['elevationMaxAltitude'] = ObjectSerializer::toQueryValue($elevation_max_altitude);
+        }
+        // query params
+        if ($season !== null) {
+            $queryParams['season'] = ObjectSerializer::toQueryValue($season);
+        }
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($project !== null) {
+            $resourcePath = str_replace(
+                '{' . 'project' . '}',
+                ObjectSerializer::toPathValue($project),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($template !== null) {
+            $resourcePath = str_replace(
+                '{' . 'template' . '}',
+                ObjectSerializer::toPathValue($template),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/pdf']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/pdf'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation searchByPOSTForPdf
+     *
+     * Search by POST for pdf
+     *
+     * @param  string $project Use property to select project which is used to select pdf template (required)
+     * @param  string $template Use property to select pdf template in selected project (required)
+     * @param  \Infocenter\Client\Model\DsFullSearchRequest $body body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Infocenter\Client\Model\DsFile
+     */
+    public function searchByPOSTForPdf($project, $template, $body = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        list($response) = $this->searchByPOSTForPdfWithHttpInfo($project, $template, $body, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+        return $response;
+    }
+
+    /**
+     * Operation searchByPOSTForPdfWithHttpInfo
+     *
+     * Search by POST for pdf
+     *
+     * @param  string $project Use property to select project which is used to select pdf template (required)
+     * @param  string $template Use property to select pdf template in selected project (required)
+     * @param  \Infocenter\Client\Model\DsFullSearchRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Infocenter\Client\Model\DsFile, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function searchByPOSTForPdfWithHttpInfo($project, $template, $body = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsFile';
+        $request = $this->searchByPOSTForPdfRequest($project, $template, $body, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infocenter\Client\Model\DsFile',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation searchByPOSTForPdfAsync
+     *
+     * Search by POST for pdf
+     *
+     * @param  string $project Use property to select project which is used to select pdf template (required)
+     * @param  string $template Use property to select pdf template in selected project (required)
+     * @param  \Infocenter\Client\Model\DsFullSearchRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function searchByPOSTForPdfAsync($project, $template, $body = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        return $this->searchByPOSTForPdfAsyncWithHttpInfo($project, $template, $body, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation searchByPOSTForPdfAsyncWithHttpInfo
+     *
+     * Search by POST for pdf
+     *
+     * @param  string $project Use property to select project which is used to select pdf template (required)
+     * @param  string $template Use property to select pdf template in selected project (required)
+     * @param  \Infocenter\Client\Model\DsFullSearchRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function searchByPOSTForPdfAsyncWithHttpInfo($project, $template, $body = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        $returnType = '\Infocenter\Client\Model\DsFile';
+        $request = $this->searchByPOSTForPdfRequest($project, $template, $body, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'searchByPOSTForPdf'
+     *
+     * @param  string $project Use property to select project which is used to select pdf template (required)
+     * @param  string $template Use property to select pdf template in selected project (required)
+     * @param  \Infocenter\Client\Model\DsFullSearchRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
+     * @param  string $accept_language Two-letter language code to get localized properties. (optional)
+     * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function searchByPOSTForPdfRequest($project, $template, $body = null, $ocp_apim_subscription_key = null, $accept_language = null, $accept_timezone = null)
+    {
+        // verify the required parameter 'project' is set
+        if ($project === null || (is_array($project) && count($project) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $project when calling searchByPOSTForPdf'
+            );
+        }
+        // verify the required parameter 'template' is set
+        if ($template === null || (is_array($template) && count($template) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $template when calling searchByPOSTForPdf'
+            );
+        }
+
+        $resourcePath = '/search/pdf/{project}/{template}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+        // header params
+        if ($accept_timezone !== null) {
+            $headerParams['Accept-Timezone'] = ObjectSerializer::toHeaderValue($accept_timezone);
+        }
+
+        // path params
+        if ($project !== null) {
+            $resourcePath = str_replace(
+                '{' . 'project' . '}',
+                ObjectSerializer::toPathValue($project),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($template !== null) {
+            $resourcePath = str_replace(
+                '{' . 'template' . '}',
+                ObjectSerializer::toPathValue($template),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/pdf']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/pdf'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

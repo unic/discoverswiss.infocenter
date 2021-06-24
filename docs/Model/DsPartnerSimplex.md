@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **acronym** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
-**logo** | [**\Infocenter\Client\Model\DsLogoImageObject**](DsLogoImageObject.md) |  | [optional] 
+**logo** | [**\Infocenter\Client\Model\DsMediaObjectSimplex**](DsMediaObjectSimplex.md) |  | [optional] 
 **link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
 **identifier** | **string** |  | [optional] 
 

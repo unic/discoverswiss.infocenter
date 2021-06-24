@@ -58,7 +58,6 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
 'oua_id' => 'int',
-'source_id' => 'string',
 'identifier' => 'string',
 'datasource' => 'string[]',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
@@ -80,7 +79,11 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'recurred_count' => 'int',
 'elevation' => '\Infocenter\Client\Model\DsTourElevation',
 'link' => '\Infocenter\Client\Model\DsLink[]',
-'auto_translated_data' => 'bool'    ];
+'auto_translated_data' => 'bool',
+'ticketing_contact' => 'string',
+'price_information' => 'string',
+'organizer' => '\Infocenter\Client\Model\DsOrganization',
+'last_modified' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -90,7 +93,6 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
 'oua_id' => 'int32',
-'source_id' => null,
 'identifier' => null,
 'datasource' => null,
 'data_governance' => null,
@@ -112,7 +114,11 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'recurred_count' => 'int32',
 'elevation' => null,
 'link' => null,
-'auto_translated_data' => null    ];
+'auto_translated_data' => null,
+'ticketing_contact' => null,
+'price_information' => null,
+'organizer' => null,
+'last_modified' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -143,7 +149,6 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => '@id',
 'oua_id' => 'ouaId',
-'source_id' => 'sourceId',
 'identifier' => 'identifier',
 'datasource' => 'datasource',
 'data_governance' => 'dataGovernance',
@@ -165,7 +170,11 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'recurred_count' => 'recurredCount',
 'elevation' => 'elevation',
 'link' => 'link',
-'auto_translated_data' => 'autoTranslatedData'    ];
+'auto_translated_data' => 'autoTranslatedData',
+'ticketing_contact' => 'ticketingContact',
+'price_information' => 'priceInformation',
+'organizer' => 'organizer',
+'last_modified' => 'lastModified'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -175,7 +184,6 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
 'oua_id' => 'setOuaId',
-'source_id' => 'setSourceId',
 'identifier' => 'setIdentifier',
 'datasource' => 'setDatasource',
 'data_governance' => 'setDataGovernance',
@@ -197,7 +205,11 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'recurred_count' => 'setRecurredCount',
 'elevation' => 'setElevation',
 'link' => 'setLink',
-'auto_translated_data' => 'setAutoTranslatedData'    ];
+'auto_translated_data' => 'setAutoTranslatedData',
+'ticketing_contact' => 'setTicketingContact',
+'price_information' => 'setPriceInformation',
+'organizer' => 'setOrganizer',
+'last_modified' => 'setLastModified'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -207,7 +219,6 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
 'oua_id' => 'getOuaId',
-'source_id' => 'getSourceId',
 'identifier' => 'getIdentifier',
 'datasource' => 'getDatasource',
 'data_governance' => 'getDataGovernance',
@@ -229,7 +240,11 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'recurred_count' => 'getRecurredCount',
 'elevation' => 'getElevation',
 'link' => 'getLink',
-'auto_translated_data' => 'getAutoTranslatedData'    ];
+'auto_translated_data' => 'getAutoTranslatedData',
+'ticketing_contact' => 'getTicketingContact',
+'price_information' => 'getPriceInformation',
+'organizer' => 'getOrganizer',
+'last_modified' => 'getLastModified'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -291,7 +306,6 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['oua_id'] = isset($data['oua_id']) ? $data['oua_id'] : null;
-        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
@@ -314,6 +328,10 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
         $this->container['elevation'] = isset($data['elevation']) ? $data['elevation'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
+        $this->container['ticketing_contact'] = isset($data['ticketing_contact']) ? $data['ticketing_contact'] : null;
+        $this->container['price_information'] = isset($data['price_information']) ? $data['price_information'] : null;
+        $this->container['organizer'] = isset($data['organizer']) ? $data['organizer'] : null;
+        $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
     }
 
     /**
@@ -384,30 +402,6 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     public function setOuaId($oua_id)
     {
         $this->container['oua_id'] = $oua_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets source_id
-     *
-     * @return string
-     */
-    public function getSourceId()
-    {
-        return $this->container['source_id'];
-    }
-
-    /**
-     * Sets source_id
-     *
-     * @param string $source_id source_id
-     *
-     * @return $this
-     */
-    public function setSourceId($source_id)
-    {
-        $this->container['source_id'] = $source_id;
 
         return $this;
     }
@@ -936,6 +930,102 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     public function setAutoTranslatedData($auto_translated_data)
     {
         $this->container['auto_translated_data'] = $auto_translated_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets ticketing_contact
+     *
+     * @return string
+     */
+    public function getTicketingContact()
+    {
+        return $this->container['ticketing_contact'];
+    }
+
+    /**
+     * Sets ticketing_contact
+     *
+     * @param string $ticketing_contact ticketing_contact
+     *
+     * @return $this
+     */
+    public function setTicketingContact($ticketing_contact)
+    {
+        $this->container['ticketing_contact'] = $ticketing_contact;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_information
+     *
+     * @return string
+     */
+    public function getPriceInformation()
+    {
+        return $this->container['price_information'];
+    }
+
+    /**
+     * Sets price_information
+     *
+     * @param string $price_information price_information
+     *
+     * @return $this
+     */
+    public function setPriceInformation($price_information)
+    {
+        $this->container['price_information'] = $price_information;
+
+        return $this;
+    }
+
+    /**
+     * Gets organizer
+     *
+     * @return \Infocenter\Client\Model\DsOrganization
+     */
+    public function getOrganizer()
+    {
+        return $this->container['organizer'];
+    }
+
+    /**
+     * Sets organizer
+     *
+     * @param \Infocenter\Client\Model\DsOrganization $organizer organizer
+     *
+     * @return $this
+     */
+    public function setOrganizer($organizer)
+    {
+        $this->container['organizer'] = $organizer;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_modified
+     *
+     * @return \DateTime
+     */
+    public function getLastModified()
+    {
+        return $this->container['last_modified'];
+    }
+
+    /**
+     * Sets last_modified
+     *
+     * @param \DateTime $last_modified last_modified
+     *
+     * @return $this
+     */
+    public function setLastModified($last_modified)
+    {
+        $this->container['last_modified'] = $last_modified;
 
         return $this;
     }

@@ -83,12 +83,14 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'category' => 'string[]',
 'facets' => '\Infocenter\Client\Model\DsFacetRequest[]',
 'scoring_tag' => 'string[]',
+'source_id' => 'string[]',
 'search_text' => 'string',
 'search_fields' => 'string',
 'select' => 'string',
 'current_page' => 'int',
 'results_per_page' => 'int',
-'order_by' => 'string'    ];
+'order_by' => 'string',
+'scoring_reference_point' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -123,12 +125,14 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'category' => null,
 'facets' => null,
 'scoring_tag' => null,
+'source_id' => null,
 'search_text' => null,
 'search_fields' => null,
 'select' => null,
 'current_page' => 'int32',
 'results_per_page' => 'int32',
-'order_by' => null    ];
+'order_by' => null,
+'scoring_reference_point' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -184,12 +188,14 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'category' => 'category',
 'facets' => 'facets',
 'scoring_tag' => 'scoringTag',
+'source_id' => 'sourceId',
 'search_text' => 'searchText',
 'search_fields' => 'searchFields',
 'select' => 'select',
 'current_page' => 'currentPage',
 'results_per_page' => 'resultsPerPage',
-'order_by' => 'orderBy'    ];
+'order_by' => 'orderBy',
+'scoring_reference_point' => 'scoringReferencePoint'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -224,12 +230,14 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'category' => 'setCategory',
 'facets' => 'setFacets',
 'scoring_tag' => 'setScoringTag',
+'source_id' => 'setSourceId',
 'search_text' => 'setSearchText',
 'search_fields' => 'setSearchFields',
 'select' => 'setSelect',
 'current_page' => 'setCurrentPage',
 'results_per_page' => 'setResultsPerPage',
-'order_by' => 'setOrderBy'    ];
+'order_by' => 'setOrderBy',
+'scoring_reference_point' => 'setScoringReferencePoint'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -264,12 +272,14 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'category' => 'getCategory',
 'facets' => 'getFacets',
 'scoring_tag' => 'getScoringTag',
+'source_id' => 'getSourceId',
 'search_text' => 'getSearchText',
 'search_fields' => 'getSearchFields',
 'select' => 'getSelect',
 'current_page' => 'getCurrentPage',
 'results_per_page' => 'getResultsPerPage',
-'order_by' => 'getOrderBy'    ];
+'order_by' => 'getOrderBy',
+'scoring_reference_point' => 'getScoringReferencePoint'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -356,12 +366,14 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['facets'] = isset($data['facets']) ? $data['facets'] : null;
         $this->container['scoring_tag'] = isset($data['scoring_tag']) ? $data['scoring_tag'] : null;
+        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
         $this->container['search_text'] = isset($data['search_text']) ? $data['search_text'] : null;
         $this->container['search_fields'] = isset($data['search_fields']) ? $data['search_fields'] : null;
         $this->container['select'] = isset($data['select']) ? $data['select'] : null;
         $this->container['current_page'] = isset($data['current_page']) ? $data['current_page'] : null;
         $this->container['results_per_page'] = isset($data['results_per_page']) ? $data['results_per_page'] : null;
         $this->container['order_by'] = isset($data['order_by']) ? $data['order_by'] : null;
+        $this->container['scoring_reference_point'] = isset($data['scoring_reference_point']) ? $data['scoring_reference_point'] : null;
     }
 
     /**
@@ -1037,6 +1049,30 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets source_id
+     *
+     * @return string[]
+     */
+    public function getSourceId()
+    {
+        return $this->container['source_id'];
+    }
+
+    /**
+     * Sets source_id
+     *
+     * @param string[] $source_id source_id
+     *
+     * @return $this
+     */
+    public function setSourceId($source_id)
+    {
+        $this->container['source_id'] = $source_id;
+
+        return $this;
+    }
+
+    /**
      * Gets search_text
      *
      * @return string
@@ -1176,6 +1212,30 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     public function setOrderBy($order_by)
     {
         $this->container['order_by'] = $order_by;
+
+        return $this;
+    }
+
+    /**
+     * Gets scoring_reference_point
+     *
+     * @return string
+     */
+    public function getScoringReferencePoint()
+    {
+        return $this->container['scoring_reference_point'];
+    }
+
+    /**
+     * Sets scoring_reference_point
+     *
+     * @param string $scoring_reference_point scoring_reference_point
+     *
+     * @return $this
+     */
+    public function setScoringReferencePoint($scoring_reference_point)
+    {
+        $this->container['scoring_reference_point'] = $scoring_reference_point;
 
         return $this;
     }

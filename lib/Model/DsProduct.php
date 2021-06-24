@@ -56,18 +56,32 @@ class DsProduct implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
+        'service' => 'string',
+'vendor' => 'string',
+'variant' => '\Infocenter\Client\Model\DsProductVariant[]',
+'photo' => '\Infocenter\Client\Model\DsImageObjectSimplex[]',
+'category' => '\Infocenter\Client\Model\DsCategorySimplex[]',
+'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'guest_field' => '\Infocenter\Client\Model\DsGuestField[]',
+'id' => 'string',
 'identifier' => 'string',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
-'name' => 'string',
-'sku' => 'string',
-'price_list' => '\Infocenter\Client\Model\DsProductPrice[]',
-'tax_rate' => 'double',
 'auto_translated_data' => 'bool',
-'service' => 'string',
-'license' => 'string'    ];
+'license' => 'string',
+'alternate_name' => 'string',
+'description' => 'string',
+'disambiguating_description' => 'string',
+'image' => '\Infocenter\Client\Model\DsImageObjectSimplex',
+'same_as' => 'string',
+'url' => 'string',
+'additional_type' => 'string',
+'link' => '\Infocenter\Client\Model\DsLink[]',
+'name' => 'string',
+'type' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -75,18 +89,32 @@ class DsProduct implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
+        'service' => null,
+'vendor' => null,
+'variant' => null,
+'photo' => null,
+'category' => null,
+'tag' => null,
+'campaign_tag' => null,
+'profile_tag' => null,
+'guest_field' => null,
+'id' => null,
 'identifier' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
-'name' => null,
-'sku' => null,
-'price_list' => null,
-'tax_rate' => 'double',
 'auto_translated_data' => null,
-'service' => null,
-'license' => null    ];
+'license' => null,
+'alternate_name' => null,
+'description' => null,
+'disambiguating_description' => null,
+'image' => null,
+'same_as' => null,
+'url' => null,
+'additional_type' => null,
+'link' => null,
+'name' => null,
+'type' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -115,18 +143,32 @@ class DsProduct implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => '@id',
+        'service' => 'service',
+'vendor' => 'vendor',
+'variant' => 'variant',
+'photo' => 'photo',
+'category' => 'category',
+'tag' => 'tag',
+'campaign_tag' => 'campaignTag',
+'profile_tag' => 'profileTag',
+'guest_field' => 'guestField',
+'id' => '@id',
 'identifier' => 'identifier',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
-'name' => 'name',
-'sku' => 'sku',
-'price_list' => 'priceList',
-'tax_rate' => 'taxRate',
 'auto_translated_data' => 'autoTranslatedData',
-'service' => 'service',
-'license' => 'license'    ];
+'license' => 'license',
+'alternate_name' => 'alternateName',
+'description' => 'description',
+'disambiguating_description' => 'disambiguatingDescription',
+'image' => 'image',
+'same_as' => 'sameAs',
+'url' => 'url',
+'additional_type' => 'additionalType',
+'link' => 'link',
+'name' => 'name',
+'type' => 'type'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -134,18 +176,32 @@ class DsProduct implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
+        'service' => 'setService',
+'vendor' => 'setVendor',
+'variant' => 'setVariant',
+'photo' => 'setPhoto',
+'category' => 'setCategory',
+'tag' => 'setTag',
+'campaign_tag' => 'setCampaignTag',
+'profile_tag' => 'setProfileTag',
+'guest_field' => 'setGuestField',
+'id' => 'setId',
 'identifier' => 'setIdentifier',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
-'name' => 'setName',
-'sku' => 'setSku',
-'price_list' => 'setPriceList',
-'tax_rate' => 'setTaxRate',
 'auto_translated_data' => 'setAutoTranslatedData',
-'service' => 'setService',
-'license' => 'setLicense'    ];
+'license' => 'setLicense',
+'alternate_name' => 'setAlternateName',
+'description' => 'setDescription',
+'disambiguating_description' => 'setDisambiguatingDescription',
+'image' => 'setImage',
+'same_as' => 'setSameAs',
+'url' => 'setUrl',
+'additional_type' => 'setAdditionalType',
+'link' => 'setLink',
+'name' => 'setName',
+'type' => 'setType'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -153,18 +209,32 @@ class DsProduct implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
+        'service' => 'getService',
+'vendor' => 'getVendor',
+'variant' => 'getVariant',
+'photo' => 'getPhoto',
+'category' => 'getCategory',
+'tag' => 'getTag',
+'campaign_tag' => 'getCampaignTag',
+'profile_tag' => 'getProfileTag',
+'guest_field' => 'getGuestField',
+'id' => 'getId',
 'identifier' => 'getIdentifier',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
-'name' => 'getName',
-'sku' => 'getSku',
-'price_list' => 'getPriceList',
-'tax_rate' => 'getTaxRate',
 'auto_translated_data' => 'getAutoTranslatedData',
-'service' => 'getService',
-'license' => 'getLicense'    ];
+'license' => 'getLicense',
+'alternate_name' => 'getAlternateName',
+'description' => 'getDescription',
+'disambiguating_description' => 'getDisambiguatingDescription',
+'image' => 'getImage',
+'same_as' => 'getSameAs',
+'url' => 'getUrl',
+'additional_type' => 'getAdditionalType',
+'link' => 'getLink',
+'name' => 'getName',
+'type' => 'getType'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -224,18 +294,32 @@ class DsProduct implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['service'] = isset($data['service']) ? $data['service'] : null;
+        $this->container['vendor'] = isset($data['vendor']) ? $data['vendor'] : null;
+        $this->container['variant'] = isset($data['variant']) ? $data['variant'] : null;
+        $this->container['photo'] = isset($data['photo']) ? $data['photo'] : null;
+        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
+        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
+        $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
+        $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
+        $this->container['guest_field'] = isset($data['guest_field']) ? $data['guest_field'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['sku'] = isset($data['sku']) ? $data['sku'] : null;
-        $this->container['price_list'] = isset($data['price_list']) ? $data['price_list'] : null;
-        $this->container['tax_rate'] = isset($data['tax_rate']) ? $data['tax_rate'] : null;
         $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
-        $this->container['service'] = isset($data['service']) ? $data['service'] : null;
         $this->container['license'] = isset($data['license']) ? $data['license'] : null;
+        $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
+        $this->container['image'] = isset($data['image']) ? $data['image'] : null;
+        $this->container['same_as'] = isset($data['same_as']) ? $data['same_as'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
+        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -261,6 +345,222 @@ class DsProduct implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets service
+     *
+     * @return string
+     */
+    public function getService()
+    {
+        return $this->container['service'];
+    }
+
+    /**
+     * Sets service
+     *
+     * @param string $service service
+     *
+     * @return $this
+     */
+    public function setService($service)
+    {
+        $this->container['service'] = $service;
+
+        return $this;
+    }
+
+    /**
+     * Gets vendor
+     *
+     * @return string
+     */
+    public function getVendor()
+    {
+        return $this->container['vendor'];
+    }
+
+    /**
+     * Sets vendor
+     *
+     * @param string $vendor vendor
+     *
+     * @return $this
+     */
+    public function setVendor($vendor)
+    {
+        $this->container['vendor'] = $vendor;
+
+        return $this;
+    }
+
+    /**
+     * Gets variant
+     *
+     * @return \Infocenter\Client\Model\DsProductVariant[]
+     */
+    public function getVariant()
+    {
+        return $this->container['variant'];
+    }
+
+    /**
+     * Sets variant
+     *
+     * @param \Infocenter\Client\Model\DsProductVariant[] $variant variant
+     *
+     * @return $this
+     */
+    public function setVariant($variant)
+    {
+        $this->container['variant'] = $variant;
+
+        return $this;
+    }
+
+    /**
+     * Gets photo
+     *
+     * @return \Infocenter\Client\Model\DsImageObjectSimplex[]
+     */
+    public function getPhoto()
+    {
+        return $this->container['photo'];
+    }
+
+    /**
+     * Sets photo
+     *
+     * @param \Infocenter\Client\Model\DsImageObjectSimplex[] $photo photo
+     *
+     * @return $this
+     */
+    public function setPhoto($photo)
+    {
+        $this->container['photo'] = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Gets category
+     *
+     * @return \Infocenter\Client\Model\DsCategorySimplex[]
+     */
+    public function getCategory()
+    {
+        return $this->container['category'];
+    }
+
+    /**
+     * Sets category
+     *
+     * @param \Infocenter\Client\Model\DsCategorySimplex[] $category category
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getTag()
+    {
+        return $this->container['tag'];
+    }
+
+    /**
+     * Sets tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $tag tag
+     *
+     * @return $this
+     */
+    public function setTag($tag)
+    {
+        $this->container['tag'] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets campaign_tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getCampaignTag()
+    {
+        return $this->container['campaign_tag'];
+    }
+
+    /**
+     * Sets campaign_tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $campaign_tag campaign_tag
+     *
+     * @return $this
+     */
+    public function setCampaignTag($campaign_tag)
+    {
+        $this->container['campaign_tag'] = $campaign_tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets profile_tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getProfileTag()
+    {
+        return $this->container['profile_tag'];
+    }
+
+    /**
+     * Sets profile_tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $profile_tag profile_tag
+     *
+     * @return $this
+     */
+    public function setProfileTag($profile_tag)
+    {
+        $this->container['profile_tag'] = $profile_tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets guest_field
+     *
+     * @return \Infocenter\Client\Model\DsGuestField[]
+     */
+    public function getGuestField()
+    {
+        return $this->container['guest_field'];
+    }
+
+    /**
+     * Sets guest_field
+     *
+     * @param \Infocenter\Client\Model\DsGuestField[] $guest_field guest_field
+     *
+     * @return $this
+     */
+    public function setGuestField($guest_field)
+    {
+        $this->container['guest_field'] = $guest_field;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -383,102 +683,6 @@ class DsProduct implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets sku
-     *
-     * @return string
-     */
-    public function getSku()
-    {
-        return $this->container['sku'];
-    }
-
-    /**
-     * Sets sku
-     *
-     * @param string $sku sku
-     *
-     * @return $this
-     */
-    public function setSku($sku)
-    {
-        $this->container['sku'] = $sku;
-
-        return $this;
-    }
-
-    /**
-     * Gets price_list
-     *
-     * @return \Infocenter\Client\Model\DsProductPrice[]
-     */
-    public function getPriceList()
-    {
-        return $this->container['price_list'];
-    }
-
-    /**
-     * Sets price_list
-     *
-     * @param \Infocenter\Client\Model\DsProductPrice[] $price_list price_list
-     *
-     * @return $this
-     */
-    public function setPriceList($price_list)
-    {
-        $this->container['price_list'] = $price_list;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_rate
-     *
-     * @return double
-     */
-    public function getTaxRate()
-    {
-        return $this->container['tax_rate'];
-    }
-
-    /**
-     * Sets tax_rate
-     *
-     * @param double $tax_rate tax_rate
-     *
-     * @return $this
-     */
-    public function setTaxRate($tax_rate)
-    {
-        $this->container['tax_rate'] = $tax_rate;
-
-        return $this;
-    }
-
-    /**
      * Gets auto_translated_data
      *
      * @return bool
@@ -503,30 +707,6 @@ class DsProduct implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets service
-     *
-     * @return string
-     */
-    public function getService()
-    {
-        return $this->container['service'];
-    }
-
-    /**
-     * Sets service
-     *
-     * @param string $service service
-     *
-     * @return $this
-     */
-    public function setService($service)
-    {
-        $this->container['service'] = $service;
-
-        return $this;
-    }
-
-    /**
      * Gets license
      *
      * @return string
@@ -546,6 +726,246 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setLicense($license)
     {
         $this->container['license'] = $license;
+
+        return $this;
+    }
+
+    /**
+     * Gets alternate_name
+     *
+     * @return string
+     */
+    public function getAlternateName()
+    {
+        return $this->container['alternate_name'];
+    }
+
+    /**
+     * Sets alternate_name
+     *
+     * @param string $alternate_name alternate_name
+     *
+     * @return $this
+     */
+    public function setAlternateName($alternate_name)
+    {
+        $this->container['alternate_name'] = $alternate_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets disambiguating_description
+     *
+     * @return string
+     */
+    public function getDisambiguatingDescription()
+    {
+        return $this->container['disambiguating_description'];
+    }
+
+    /**
+     * Sets disambiguating_description
+     *
+     * @param string $disambiguating_description disambiguating_description
+     *
+     * @return $this
+     */
+    public function setDisambiguatingDescription($disambiguating_description)
+    {
+        $this->container['disambiguating_description'] = $disambiguating_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets image
+     *
+     * @return \Infocenter\Client\Model\DsImageObjectSimplex
+     */
+    public function getImage()
+    {
+        return $this->container['image'];
+    }
+
+    /**
+     * Sets image
+     *
+     * @param \Infocenter\Client\Model\DsImageObjectSimplex $image image
+     *
+     * @return $this
+     */
+    public function setImage($image)
+    {
+        $this->container['image'] = $image;
+
+        return $this;
+    }
+
+    /**
+     * Gets same_as
+     *
+     * @return string
+     */
+    public function getSameAs()
+    {
+        return $this->container['same_as'];
+    }
+
+    /**
+     * Sets same_as
+     *
+     * @param string $same_as same_as
+     *
+     * @return $this
+     */
+    public function setSameAs($same_as)
+    {
+        $this->container['same_as'] = $same_as;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string $url url
+     *
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_type
+     *
+     * @return string
+     */
+    public function getAdditionalType()
+    {
+        return $this->container['additional_type'];
+    }
+
+    /**
+     * Sets additional_type
+     *
+     * @param string $additional_type additional_type
+     *
+     * @return $this
+     */
+    public function setAdditionalType($additional_type)
+    {
+        $this->container['additional_type'] = $additional_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets link
+     *
+     * @return \Infocenter\Client\Model\DsLink[]
+     */
+    public function getLink()
+    {
+        return $this->container['link'];
+    }
+
+    /**
+     * Sets link
+     *
+     * @param \Infocenter\Client\Model\DsLink[] $link link
+     *
+     * @return $this
+     */
+    public function setLink($link)
+    {
+        $this->container['link'] = $link;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

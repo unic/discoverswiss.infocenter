@@ -1855,16 +1855,43 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $id = "id_example"; // string | Use property identifier of Product to get single object.
 $project = "project_example"; // string | Use this property to filter objects by project.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->product($id, $project, $contained_in_place, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    $result = $apiInstance->product($id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->product: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$product_variant_id = "product_variant_id_example"; // string | Use property to get product object by product variant identifier.
+$project = "project_example"; // string | Use this property to filter objects by project.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->productByProductVariantId($product_variant_id, $project, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->productByProductVariantId: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiKeyHeader
@@ -1950,6 +1977,95 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGET: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$project = "project_example"; // string | Use property to select project which is used to select pdf template
+$template = "template_example"; // string | Use property to select pdf template in selected project
+$search_text = "search_text_example"; // string | Use property for search request text
+$search_fields = "search_fields_example"; // string | Use property for selecting of search fields by which necessary to search
+$select = "select_example"; // string | Use property for selecting fields which necessary to return in response
+$current_page = 56; // int | Format - int32. Use property to set number of page
+$results_per_page = 56; // int | Format - int32. Use property to set count of results per page
+$order_by = "order_by_example"; // string | Use property for ordering
+$category = "category_example"; // string | Use property for filtering by `category`
+$filters = "filters_example"; // string | Use property for odata filtering
+$type = "type_example"; // string | Use property for filtering by `type`
+$datasource = "datasource_example"; // string | Use property for filtering by `dataSource`
+$project = "project_example"; // string | Use property for filtering by `project`
+$combined_type = "combined_type_example"; // string | Use property for filtering by `combinedType` which contains parentType and parentAdditionalType
+$combined_type_tree = "combined_type_tree_example"; // string | Use property for filtering by `combinedTypeTree`
+$leaf_type = "leaf_type_example"; // string | Use property for filtering by `leafType` which contains additionalType or type
+$campaign_tag = "campaign_tag_example"; // string | Use property for filtering by `campaignTag`
+$profile_tag = "profile_tag_example"; // string | Use property for filtering by `profileTag`
+$all_tag = "all_tag_example"; // string | Use property for filtering by `allTag` which contains values from `tag`, `campaignTag` and `profileTag`
+$scoring_tag = "scoring_tag_example"; // string | Use property to score results by profile-tags
+$category_tree = "category_tree_example"; // string | Use property for filtering/facet-filtering by `categoryTree`
+$tag = "tag_example"; // string | Use property for filtering/facet-filtering by `tag`
+$contained_in_place = "contained_in_place_example"; // string | Use property for filtering/facet-filtering by `containedInPlace/id`
+$address_locality = "address_locality_example"; // string | Use property for filtering/facet-filtering by `address/addressLocality`
+$address_postal_code = "address_postal_code_example"; // string | Use property for filtering/facet-filtering by `address/postalCode`
+$time = "time_example"; // string | Use property for filtering/facet-filtering by `time`
+$state = "state_example"; // string | Use property for filtering/facet-filtering by `state`
+$rating_condition = "rating_condition_example"; // string | Use property for filtering/facet-filtering by `rating/condition`
+$rating_difficulty = "rating_difficulty_example"; // string | Use property for filtering/facet-filtering by `rating/difficulty`
+$elevation_ascent = "elevation_ascent_example"; // string | Use property for filtering/facet-filtering by `elevation/ascent`
+$elevation_descent = "elevation_descent_example"; // string | Use property for filtering/facet-filtering by `elevation/descent`
+$elevation_min_altitude = "elevation_min_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/minAltitude`
+$elevation_max_altitude = "elevation_max_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/maxAltitude`
+$season = "season_example"; // string | Use property for filtering/facet-filtering by `season`
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->searchByGETForPdf($project, $template, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->searchByGETForPdf: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$project = "project_example"; // string | Use property to select project which is used to select pdf template
+$template = "template_example"; // string | Use property to select pdf template in selected project
+$body = new \Infocenter\Client\Model\DsFullSearchRequest(); // \Infocenter\Client\Model\DsFullSearchRequest | 
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->searchByPOSTForPdf($project, $template, $body, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->searchByPOSTForPdf: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiKeyHeader
@@ -2343,8 +2459,11 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**placeHourlyForecast**](docs/Api/DefaultApi.md#placehourlyforecast) | **GET** /places/{id}/weather/forecast/hourly | Place hourly forecast
 *DefaultApi* | [**placeWeather**](docs/Api/DefaultApi.md#placeweather) | **GET** /places/{id}/weather | Place weather
 *DefaultApi* | [**product**](docs/Api/DefaultApi.md#product) | **GET** /products/{id} | Product
+*DefaultApi* | [**productByProductVariantId**](docs/Api/DefaultApi.md#productbyproductvariantid) | **GET** /productVariants/{productVariantId}/products | Product by ProductVariantId
 *DefaultApi* | [**search**](docs/Api/DefaultApi.md#search) | **POST** /search | Search
 *DefaultApi* | [**searchByGET**](docs/Api/DefaultApi.md#searchbyget) | **GET** /search | Search by GET
+*DefaultApi* | [**searchByGETForPdf**](docs/Api/DefaultApi.md#searchbygetforpdf) | **GET** /search/pdf/{project}/{template} | Search by GET for pdf
+*DefaultApi* | [**searchByPOSTForPdf**](docs/Api/DefaultApi.md#searchbypostforpdf) | **POST** /search/pdf/{project}/{template} | Search by POST for pdf
 *DefaultApi* | [**tag**](docs/Api/DefaultApi.md#tag) | **GET** /tags/{id} | Tag
 *DefaultApi* | [**termVersion**](docs/Api/DefaultApi.md#termversion) | **GET** /termversions/{code} | TermVersion
 *DefaultApi* | [**tour**](docs/Api/DefaultApi.md#tour) | **GET** /tours/{id} | Tour
@@ -2387,11 +2506,13 @@ Class | Method | HTTP request | Description
  - [DsFacetRequest](docs/Model/DsFacetRequest.md)
  - [DsFacetResponse](docs/Model/DsFacetResponse.md)
  - [DsFacetValueResponse](docs/Model/DsFacetValueResponse.md)
+ - [DsFile](docs/Model/DsFile.md)
  - [DsFoodEstablishment](docs/Model/DsFoodEstablishment.md)
  - [DsFoodEstablishmentsResponse](docs/Model/DsFoodEstablishmentsResponse.md)
  - [DsFullSearchRequest](docs/Model/DsFullSearchRequest.md)
  - [DsGeoCoordinates](docs/Model/DsGeoCoordinates.md)
  - [DsGeoShape](docs/Model/DsGeoShape.md)
+ - [DsGuestField](docs/Model/DsGuestField.md)
  - [DsHourlyForecast](docs/Model/DsHourlyForecast.md)
  - [DsHourlyForecastArray](docs/Model/DsHourlyForecastArray.md)
  - [DsImageObject](docs/Model/DsImageObject.md)
@@ -2404,10 +2525,10 @@ Class | Method | HTTP request | Description
  - [DsLocationFeatureSpecification](docs/Model/DsLocationFeatureSpecification.md)
  - [DsLodgingBusiness](docs/Model/DsLodgingBusiness.md)
  - [DsLodgingBusinessesResponse](docs/Model/DsLodgingBusinessesResponse.md)
- - [DsLogoImageObject](docs/Model/DsLogoImageObject.md)
  - [DsMediaObjectSimplex](docs/Model/DsMediaObjectSimplex.md)
  - [DsMediaObjectsResponse](docs/Model/DsMediaObjectsResponse.md)
  - [DsOpeningHoursSpecification](docs/Model/DsOpeningHoursSpecification.md)
+ - [DsOption](docs/Model/DsOption.md)
  - [DsOrganization](docs/Model/DsOrganization.md)
  - [DsOrigin](docs/Model/DsOrigin.md)
  - [DsPartnerSimplex](docs/Model/DsPartnerSimplex.md)
@@ -2423,6 +2544,7 @@ Class | Method | HTTP request | Description
  - [DsPressureTendency](docs/Model/DsPressureTendency.md)
  - [DsProduct](docs/Model/DsProduct.md)
  - [DsProductPrice](docs/Model/DsProductPrice.md)
+ - [DsProductVariant](docs/Model/DsProductVariant.md)
  - [DsProductsResponse](docs/Model/DsProductsResponse.md)
  - [DsPropertyValue](docs/Model/DsPropertyValue.md)
  - [DsQuantitativeValue](docs/Model/DsQuantitativeValue.md)

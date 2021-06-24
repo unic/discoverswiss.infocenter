@@ -1,6 +1,6 @@
 <?php
 /**
- * DsPartnerSimplex
+ * DsFile
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsPartnerSimplex Class Doc Comment
+ * DsFile Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsPartnerSimplex implements ModelInterface, ArrayAccess
+class DsFile implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PartnerSimplex';
+    protected static $swaggerModelName = 'File';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'acronym' => 'string',
-'name' => 'string',
-'logo' => '\Infocenter\Client\Model\DsMediaObjectSimplex',
-'link' => '\Infocenter\Client\Model\DsLink[]',
-'identifier' => 'string'    ];
+            ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +64,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'acronym' => null,
-'name' => null,
-'logo' => null,
-'link' => null,
-'identifier' => null    ];
+            ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +93,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'acronym' => 'acronym',
-'name' => 'name',
-'logo' => 'logo',
-'link' => 'link',
-'identifier' => 'identifier'    ];
+            ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +101,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'acronym' => 'setAcronym',
-'name' => 'setName',
-'logo' => 'setLogo',
-'link' => 'setLink',
-'identifier' => 'setIdentifier'    ];
+            ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +109,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'acronym' => 'getAcronym',
-'name' => 'getName',
-'logo' => 'getLogo',
-'link' => 'getLink',
-'identifier' => 'getIdentifier'    ];
+            ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +169,6 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['acronym'] = isset($data['acronym']) ? $data['acronym'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['logo'] = isset($data['logo']) ? $data['logo'] : null;
-        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
     }
 
     /**
@@ -219,126 +194,6 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets acronym
-     *
-     * @return string
-     */
-    public function getAcronym()
-    {
-        return $this->container['acronym'];
-    }
-
-    /**
-     * Sets acronym
-     *
-     * @param string $acronym acronym
-     *
-     * @return $this
-     */
-    public function setAcronym($acronym)
-    {
-        $this->container['acronym'] = $acronym;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets logo
-     *
-     * @return \Infocenter\Client\Model\DsMediaObjectSimplex
-     */
-    public function getLogo()
-    {
-        return $this->container['logo'];
-    }
-
-    /**
-     * Sets logo
-     *
-     * @param \Infocenter\Client\Model\DsMediaObjectSimplex $logo logo
-     *
-     * @return $this
-     */
-    public function setLogo($logo)
-    {
-        $this->container['logo'] = $logo;
-
-        return $this;
-    }
-
-    /**
-     * Gets link
-     *
-     * @return \Infocenter\Client\Model\DsLink[]
-     */
-    public function getLink()
-    {
-        return $this->container['link'];
-    }
-
-    /**
-     * Sets link
-     *
-     * @param \Infocenter\Client\Model\DsLink[] $link link
-     *
-     * @return $this
-     */
-    public function setLink($link)
-    {
-        $this->container['link'] = $link;
-
-        return $this;
-    }
-
-    /**
-     * Gets identifier
-     *
-     * @return string
-     */
-    public function getIdentifier()
-    {
-        return $this->container['identifier'];
-    }
-
-    /**
-     * Sets identifier
-     *
-     * @param string $identifier identifier
-     *
-     * @return $this
-     */
-    public function setIdentifier($identifier)
-    {
-        $this->container['identifier'] = $identifier;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

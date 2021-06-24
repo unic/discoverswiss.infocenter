@@ -30,12 +30,14 @@ Name | Type | Description | Notes
 **category** | **string[]** |  | [optional] 
 **facets** | [**\Infocenter\Client\Model\DsFacetRequest[]**](DsFacetRequest.md) |  | [optional] 
 **scoring_tag** | **string[]** |  | [optional] 
+**source_id** | **string[]** |  | [optional] 
 **search_text** | **string** |  | [optional] 
 **search_fields** | **string** |  | [optional] 
 **select** | **string** |  | [optional] 
 **current_page** | **int** |  | [optional] 
 **results_per_page** | **int** |  | [optional] 
 **order_by** | **string** |  | [optional] 
+**scoring_reference_point** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -56,9 +56,15 @@ class DsProductPrice implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'price_chf' => 'double',
+        'price_category_id' => 'string',
+'price_category_name' => 'string',
+'price_chf' => 'double',
+'compare_at_price_chf' => 'double',
 'max_allowed_age' => 'int',
-'min_allowed_age' => 'int'    ];
+'min_allowed_age' => 'int',
+'type' => 'string',
+'min_seats' => 'int',
+'max_seats' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +72,15 @@ class DsProductPrice implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'price_chf' => 'double',
+        'price_category_id' => null,
+'price_category_name' => null,
+'price_chf' => 'double',
+'compare_at_price_chf' => 'double',
 'max_allowed_age' => 'int32',
-'min_allowed_age' => 'int32'    ];
+'min_allowed_age' => 'int32',
+'type' => null,
+'min_seats' => 'int32',
+'max_seats' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +109,15 @@ class DsProductPrice implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'price_chf' => 'priceCHF',
+        'price_category_id' => 'priceCategoryId',
+'price_category_name' => 'priceCategoryName',
+'price_chf' => 'priceCHF',
+'compare_at_price_chf' => 'compareAtPriceCHF',
 'max_allowed_age' => 'maxAllowedAge',
-'min_allowed_age' => 'minAllowedAge'    ];
+'min_allowed_age' => 'minAllowedAge',
+'type' => 'type',
+'min_seats' => 'minSeats',
+'max_seats' => 'maxSeats'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +125,15 @@ class DsProductPrice implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'price_chf' => 'setPriceChf',
+        'price_category_id' => 'setPriceCategoryId',
+'price_category_name' => 'setPriceCategoryName',
+'price_chf' => 'setPriceChf',
+'compare_at_price_chf' => 'setCompareAtPriceChf',
 'max_allowed_age' => 'setMaxAllowedAge',
-'min_allowed_age' => 'setMinAllowedAge'    ];
+'min_allowed_age' => 'setMinAllowedAge',
+'type' => 'setType',
+'min_seats' => 'setMinSeats',
+'max_seats' => 'setMaxSeats'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +141,15 @@ class DsProductPrice implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'price_chf' => 'getPriceChf',
+        'price_category_id' => 'getPriceCategoryId',
+'price_category_name' => 'getPriceCategoryName',
+'price_chf' => 'getPriceChf',
+'compare_at_price_chf' => 'getCompareAtPriceChf',
 'max_allowed_age' => 'getMaxAllowedAge',
-'min_allowed_age' => 'getMinAllowedAge'    ];
+'min_allowed_age' => 'getMinAllowedAge',
+'type' => 'getType',
+'min_seats' => 'getMinSeats',
+'max_seats' => 'getMaxSeats'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +209,15 @@ class DsProductPrice implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['price_category_id'] = isset($data['price_category_id']) ? $data['price_category_id'] : null;
+        $this->container['price_category_name'] = isset($data['price_category_name']) ? $data['price_category_name'] : null;
         $this->container['price_chf'] = isset($data['price_chf']) ? $data['price_chf'] : null;
+        $this->container['compare_at_price_chf'] = isset($data['compare_at_price_chf']) ? $data['compare_at_price_chf'] : null;
         $this->container['max_allowed_age'] = isset($data['max_allowed_age']) ? $data['max_allowed_age'] : null;
         $this->container['min_allowed_age'] = isset($data['min_allowed_age']) ? $data['min_allowed_age'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['min_seats'] = isset($data['min_seats']) ? $data['min_seats'] : null;
+        $this->container['max_seats'] = isset($data['max_seats']) ? $data['max_seats'] : null;
     }
 
     /**
@@ -209,6 +245,54 @@ class DsProductPrice implements ModelInterface, ArrayAccess
 
 
     /**
+     * Gets price_category_id
+     *
+     * @return string
+     */
+    public function getPriceCategoryId()
+    {
+        return $this->container['price_category_id'];
+    }
+
+    /**
+     * Sets price_category_id
+     *
+     * @param string $price_category_id price_category_id
+     *
+     * @return $this
+     */
+    public function setPriceCategoryId($price_category_id)
+    {
+        $this->container['price_category_id'] = $price_category_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_category_name
+     *
+     * @return string
+     */
+    public function getPriceCategoryName()
+    {
+        return $this->container['price_category_name'];
+    }
+
+    /**
+     * Sets price_category_name
+     *
+     * @param string $price_category_name price_category_name
+     *
+     * @return $this
+     */
+    public function setPriceCategoryName($price_category_name)
+    {
+        $this->container['price_category_name'] = $price_category_name;
+
+        return $this;
+    }
+
+    /**
      * Gets price_chf
      *
      * @return double
@@ -228,6 +312,30 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     public function setPriceChf($price_chf)
     {
         $this->container['price_chf'] = $price_chf;
+
+        return $this;
+    }
+
+    /**
+     * Gets compare_at_price_chf
+     *
+     * @return double
+     */
+    public function getCompareAtPriceChf()
+    {
+        return $this->container['compare_at_price_chf'];
+    }
+
+    /**
+     * Sets compare_at_price_chf
+     *
+     * @param double $compare_at_price_chf compare_at_price_chf
+     *
+     * @return $this
+     */
+    public function setCompareAtPriceChf($compare_at_price_chf)
+    {
+        $this->container['compare_at_price_chf'] = $compare_at_price_chf;
 
         return $this;
     }
@@ -276,6 +384,78 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     public function setMinAllowedAge($min_allowed_age)
     {
         $this->container['min_allowed_age'] = $min_allowed_age;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets min_seats
+     *
+     * @return int
+     */
+    public function getMinSeats()
+    {
+        return $this->container['min_seats'];
+    }
+
+    /**
+     * Sets min_seats
+     *
+     * @param int $min_seats min_seats
+     *
+     * @return $this
+     */
+    public function setMinSeats($min_seats)
+    {
+        $this->container['min_seats'] = $min_seats;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_seats
+     *
+     * @return int
+     */
+    public function getMaxSeats()
+    {
+        return $this->container['max_seats'];
+    }
+
+    /**
+     * Sets max_seats
+     *
+     * @param int $max_seats max_seats
+     *
+     * @return $this
+     */
+    public function setMaxSeats($max_seats)
+    {
+        $this->container['max_seats'] = $max_seats;
 
         return $this;
     }

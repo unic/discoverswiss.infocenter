@@ -72,6 +72,9 @@ class DsEvent implements ModelInterface, ArrayAccess
 'opening_hours' => 'string',
 'category' => '\Infocenter\Client\Model\DsCategorySimplex[]',
 'contained_in_place' => '\Infocenter\Client\Model\DsPlaceSimplex[]',
+'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
@@ -112,6 +115,9 @@ class DsEvent implements ModelInterface, ArrayAccess
 'opening_hours' => null,
 'category' => null,
 'contained_in_place' => null,
+'tag' => null,
+'campaign_tag' => null,
+'profile_tag' => null,
 'id' => null,
 'identifier' => null,
 'data_governance' => null,
@@ -173,6 +179,9 @@ class DsEvent implements ModelInterface, ArrayAccess
 'opening_hours' => 'openingHours',
 'category' => 'category',
 'contained_in_place' => 'containedInPlace',
+'tag' => 'tag',
+'campaign_tag' => 'campaignTag',
+'profile_tag' => 'profileTag',
 'id' => '@id',
 'identifier' => 'identifier',
 'data_governance' => 'dataGovernance',
@@ -213,6 +222,9 @@ class DsEvent implements ModelInterface, ArrayAccess
 'opening_hours' => 'setOpeningHours',
 'category' => 'setCategory',
 'contained_in_place' => 'setContainedInPlace',
+'tag' => 'setTag',
+'campaign_tag' => 'setCampaignTag',
+'profile_tag' => 'setProfileTag',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'data_governance' => 'setDataGovernance',
@@ -253,6 +265,9 @@ class DsEvent implements ModelInterface, ArrayAccess
 'opening_hours' => 'getOpeningHours',
 'category' => 'getCategory',
 'contained_in_place' => 'getContainedInPlace',
+'tag' => 'getTag',
+'campaign_tag' => 'getCampaignTag',
+'profile_tag' => 'getProfileTag',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'data_governance' => 'getDataGovernance',
@@ -345,6 +360,9 @@ class DsEvent implements ModelInterface, ArrayAccess
         $this->container['opening_hours'] = isset($data['opening_hours']) ? $data['opening_hours'] : null;
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
+        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
+        $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
+        $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
@@ -768,6 +786,78 @@ class DsEvent implements ModelInterface, ArrayAccess
     public function setContainedInPlace($contained_in_place)
     {
         $this->container['contained_in_place'] = $contained_in_place;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getTag()
+    {
+        return $this->container['tag'];
+    }
+
+    /**
+     * Sets tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $tag tag
+     *
+     * @return $this
+     */
+    public function setTag($tag)
+    {
+        $this->container['tag'] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets campaign_tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getCampaignTag()
+    {
+        return $this->container['campaign_tag'];
+    }
+
+    /**
+     * Sets campaign_tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $campaign_tag campaign_tag
+     *
+     * @return $this
+     */
+    public function setCampaignTag($campaign_tag)
+    {
+        $this->container['campaign_tag'] = $campaign_tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets profile_tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getProfileTag()
+    {
+        return $this->container['profile_tag'];
+    }
+
+    /**
+     * Sets profile_tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $profile_tag profile_tag
+     *
+     * @return $this
+     */
+    public function setProfileTag($profile_tag)
+    {
+        $this->container['profile_tag'] = $profile_tag;
 
         return $this;
     }

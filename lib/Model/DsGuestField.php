@@ -1,6 +1,6 @@
 <?php
 /**
- * DsPartnerSimplex
+ * DsGuestField
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsPartnerSimplex Class Doc Comment
+ * DsGuestField Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsPartnerSimplex implements ModelInterface, ArrayAccess
+class DsGuestField implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PartnerSimplex';
+    protected static $swaggerModelName = 'GuestField';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,10 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'acronym' => 'string',
+        'identifier' => 'string',
+'type' => 'string',
 'name' => 'string',
-'logo' => '\Infocenter\Client\Model\DsMediaObjectSimplex',
-'link' => '\Infocenter\Client\Model\DsLink[]',
-'identifier' => 'string'    ];
+'possible_value' => 'map[string,string]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +67,10 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'acronym' => null,
+        'identifier' => null,
+'type' => null,
 'name' => null,
-'logo' => null,
-'link' => null,
-'identifier' => null    ];
+'possible_value' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +99,10 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'acronym' => 'acronym',
+        'identifier' => 'identifier',
+'type' => 'type',
 'name' => 'name',
-'logo' => 'logo',
-'link' => 'link',
-'identifier' => 'identifier'    ];
+'possible_value' => 'possibleValue'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +110,10 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'acronym' => 'setAcronym',
+        'identifier' => 'setIdentifier',
+'type' => 'setType',
 'name' => 'setName',
-'logo' => 'setLogo',
-'link' => 'setLink',
-'identifier' => 'setIdentifier'    ];
+'possible_value' => 'setPossibleValue'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +121,10 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'acronym' => 'getAcronym',
+        'identifier' => 'getIdentifier',
+'type' => 'getType',
 'name' => 'getName',
-'logo' => 'getLogo',
-'link' => 'getLink',
-'identifier' => 'getIdentifier'    ];
+'possible_value' => 'getPossibleValue'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +184,10 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['acronym'] = isset($data['acronym']) ? $data['acronym'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['logo'] = isset($data['logo']) ? $data['logo'] : null;
-        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['possible_value'] = isset($data['possible_value']) ? $data['possible_value'] : null;
     }
 
     /**
@@ -221,25 +215,49 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets acronym
+     * Gets identifier
      *
      * @return string
      */
-    public function getAcronym()
+    public function getIdentifier()
     {
-        return $this->container['acronym'];
+        return $this->container['identifier'];
     }
 
     /**
-     * Sets acronym
+     * Sets identifier
      *
-     * @param string $acronym acronym
+     * @param string $identifier identifier
      *
      * @return $this
      */
-    public function setAcronym($acronym)
+    public function setIdentifier($identifier)
     {
-        $this->container['acronym'] = $acronym;
+        $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }
@@ -269,73 +287,25 @@ class DsPartnerSimplex implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets logo
+     * Gets possible_value
      *
-     * @return \Infocenter\Client\Model\DsMediaObjectSimplex
+     * @return map[string,string]
      */
-    public function getLogo()
+    public function getPossibleValue()
     {
-        return $this->container['logo'];
+        return $this->container['possible_value'];
     }
 
     /**
-     * Sets logo
+     * Sets possible_value
      *
-     * @param \Infocenter\Client\Model\DsMediaObjectSimplex $logo logo
+     * @param map[string,string] $possible_value possible_value
      *
      * @return $this
      */
-    public function setLogo($logo)
+    public function setPossibleValue($possible_value)
     {
-        $this->container['logo'] = $logo;
-
-        return $this;
-    }
-
-    /**
-     * Gets link
-     *
-     * @return \Infocenter\Client\Model\DsLink[]
-     */
-    public function getLink()
-    {
-        return $this->container['link'];
-    }
-
-    /**
-     * Sets link
-     *
-     * @param \Infocenter\Client\Model\DsLink[] $link link
-     *
-     * @return $this
-     */
-    public function setLink($link)
-    {
-        $this->container['link'] = $link;
-
-        return $this;
-    }
-
-    /**
-     * Gets identifier
-     *
-     * @return string
-     */
-    public function getIdentifier()
-    {
-        return $this->container['identifier'];
-    }
-
-    /**
-     * Sets identifier
-     *
-     * @param string $identifier identifier
-     *
-     * @return $this
-     */
-    public function setIdentifier($identifier)
-    {
-        $this->container['identifier'] = $identifier;
+        $this->container['possible_value'] = $possible_value;
 
         return $this;
     }
