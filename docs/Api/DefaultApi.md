@@ -66,8 +66,8 @@ Method | HTTP request | Description
 [**productByProductVariantId**](DefaultApi.md#productbyproductvariantid) | **GET** /productVariants/{productVariantId}/products | Product by ProductVariantId
 [**search**](DefaultApi.md#search) | **POST** /search | Search
 [**searchByGET**](DefaultApi.md#searchbyget) | **GET** /search | Search by GET
-[**searchByGETForPdf**](DefaultApi.md#searchbygetforpdf) | **GET** /search/pdf/{project}/{template} | Search by GET for pdf
-[**searchByPOSTForPdf**](DefaultApi.md#searchbypostforpdf) | **POST** /search/pdf/{project}/{template} | Search by POST for pdf
+[**searchByGETForPdf**](DefaultApi.md#searchbygetforpdf) | **GET** /search/pdf/{templateProject}/{template} | Search by GET for pdf
+[**searchByPOSTForPdf**](DefaultApi.md#searchbypostforpdf) | **POST** /search/pdf/{templateProject}/{template} | Search by POST for pdf
 [**tag**](DefaultApi.md#tag) | **GET** /tags/{id} | Tag
 [**termVersion**](DefaultApi.md#termversion) | **GET** /termversions/{code} | TermVersion
 [**tour**](DefaultApi.md#tour) | **GET** /tours/{id} | Tour
@@ -4485,7 +4485,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByGETForPdf**
-> \Infocenter\Client\Model\DsFile searchByGETForPdf($project_path, $template, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsFile searchByGETForPdf($template_project, $template, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Search by GET for pdf
 
@@ -4509,7 +4509,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$project_path = "project_path_example"; // string | Use property to select project which is used to select pdf template
+$template_project = "template_project_example"; // string | Use property to select project which is used to select pdf template
 $template = "template_example"; // string | Use property to select pdf template in selected project
 $search_text = "search_text_example"; // string | Use property for search request text
 $search_fields = "search_fields_example"; // string | Use property for selecting of search fields by which necessary to search
@@ -4548,7 +4548,7 @@ $accept_language = "accept_language_example"; // string | Two-letter language co
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->searchByGETForPdf($project_path, $template, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    $result = $apiInstance->searchByGETForPdf($template_project, $template, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGETForPdf: ', $e->getMessage(), PHP_EOL;
@@ -4560,7 +4560,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_path** | **string**| Use property to select project which is used to select pdf template |
+ **template_project** | **string**| Use property to select project which is used to select pdf template |
  **template** | **string**| Use property to select pdf template in selected project |
  **search_text** | **string**| Use property for search request text | [optional]
  **search_fields** | **string**| Use property for selecting of search fields by which necessary to search | [optional]
@@ -4614,7 +4614,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByPOSTForPdf**
-> \Infocenter\Client\Model\DsFile searchByPOSTForPdf($project, $template, $body, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsFile searchByPOSTForPdf($template_project, $template, $body, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Search by POST for pdf
 
@@ -4638,7 +4638,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$project = "project_example"; // string | Use property to select project which is used to select pdf template
+$template_project = "template_project_example"; // string | Use property to select project which is used to select pdf template
 $template = "template_example"; // string | Use property to select pdf template in selected project
 $body = new \Infocenter\Client\Model\DsFullSearchRequest(); // \Infocenter\Client\Model\DsFullSearchRequest | 
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
@@ -4646,7 +4646,7 @@ $accept_language = "accept_language_example"; // string | Two-letter language co
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->searchByPOSTForPdf($project, $template, $body, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    $result = $apiInstance->searchByPOSTForPdf($template_project, $template, $body, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByPOSTForPdf: ', $e->getMessage(), PHP_EOL;
@@ -4658,7 +4658,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | **string**| Use property to select project which is used to select pdf template |
+ **template_project** | **string**| Use property to select project which is used to select pdf template |
  **template** | **string**| Use property to select pdf template in selected project |
  **body** | [**\Infocenter\Client\Model\DsFullSearchRequest**](../Model/DsFullSearchRequest.md)|  | [optional]
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]

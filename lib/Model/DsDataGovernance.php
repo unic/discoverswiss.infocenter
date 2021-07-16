@@ -58,7 +58,7 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'origin' => '\Infocenter\Client\Model\DsOrigin[]',
 'provider' => '\Infocenter\Client\Model\DsPartnerSimplex',
-'term' => '\Infocenter\Client\Model\DsTerm',
+'term' => '\Infocenter\Client\Model\DsTermSimplex',
 'source' => '\Infocenter\Client\Model\DsPartnerSimplex',
 'author' => '\Infocenter\Client\Model\DsPerson'    ];
 
@@ -271,7 +271,7 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
     /**
      * Gets term
      *
-     * @return \Infocenter\Client\Model\DsTerm
+     * @return \Infocenter\Client\Model\DsTermSimplex
      */
     public function getTerm()
     {
@@ -281,7 +281,7 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
     /**
      * Sets term
      *
-     * @param \Infocenter\Client\Model\DsTerm $term term
+     * @param \Infocenter\Client\Model\DsTermSimplex $term term
      *
      * @return $this
      */

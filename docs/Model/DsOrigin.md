@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **license** | **string** |  | [optional] 
 **provider** | [**\Infocenter\Client\Model\DsPartnerSimplex**](DsPartnerSimplex.md) |  | [optional] 
-**term** | [**\Infocenter\Client\Model\DsTerm**](DsTerm.md) |  | [optional] 
+**term** | [**\Infocenter\Client\Model\DsTermSimplex**](DsTermSimplex.md) |  | [optional] 
 **source** | [**\Infocenter\Client\Model\DsPartnerSimplex**](DsPartnerSimplex.md) |  | [optional] 
 **author** | [**\Infocenter\Client\Model\DsPerson**](DsPerson.md) |  | [optional] 
 

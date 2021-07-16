@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **campaign_tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **profile_tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **guest_field** | [**\Infocenter\Client\Model\DsGuestField[]**](DsGuestField.md) |  | [optional] 
+**price_information** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\DsDataGovernance**](DsDataGovernance.md) |  | [optional] 

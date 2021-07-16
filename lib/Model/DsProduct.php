@@ -65,6 +65,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'guest_field' => '\Infocenter\Client\Model\DsGuestField[]',
+'price_information' => 'string',
 'id' => 'string',
 'identifier' => 'string',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
@@ -98,6 +99,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'campaign_tag' => null,
 'profile_tag' => null,
 'guest_field' => null,
+'price_information' => null,
 'id' => null,
 'identifier' => null,
 'data_governance' => null,
@@ -152,6 +154,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'campaign_tag' => 'campaignTag',
 'profile_tag' => 'profileTag',
 'guest_field' => 'guestField',
+'price_information' => 'priceInformation',
 'id' => '@id',
 'identifier' => 'identifier',
 'data_governance' => 'dataGovernance',
@@ -185,6 +188,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'campaign_tag' => 'setCampaignTag',
 'profile_tag' => 'setProfileTag',
 'guest_field' => 'setGuestField',
+'price_information' => 'setPriceInformation',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'data_governance' => 'setDataGovernance',
@@ -218,6 +222,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'campaign_tag' => 'getCampaignTag',
 'profile_tag' => 'getProfileTag',
 'guest_field' => 'getGuestField',
+'price_information' => 'getPriceInformation',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'data_governance' => 'getDataGovernance',
@@ -303,6 +308,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['guest_field'] = isset($data['guest_field']) ? $data['guest_field'] : null;
+        $this->container['price_information'] = isset($data['price_information']) ? $data['price_information'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
@@ -558,6 +564,30 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setGuestField($guest_field)
     {
         $this->container['guest_field'] = $guest_field;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_information
+     *
+     * @return string
+     */
+    public function getPriceInformation()
+    {
+        return $this->container['price_information'];
+    }
+
+    /**
+     * Sets price_information
+     *
+     * @param string $price_information price_information
+     *
+     * @return $this
+     */
+    public function setPriceInformation($price_information)
+    {
+        $this->container['price_information'] = $price_information;
 
         return $this;
     }

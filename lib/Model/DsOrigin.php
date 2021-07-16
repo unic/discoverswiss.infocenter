@@ -62,7 +62,7 @@ class DsOrigin implements ModelInterface, ArrayAccess
 'last_modified' => '\DateTime',
 'license' => 'string',
 'provider' => '\Infocenter\Client\Model\DsPartnerSimplex',
-'term' => '\Infocenter\Client\Model\DsTerm',
+'term' => '\Infocenter\Client\Model\DsTermSimplex',
 'source' => '\Infocenter\Client\Model\DsPartnerSimplex',
 'author' => '\Infocenter\Client\Model\DsPerson'    ];
 
@@ -391,7 +391,7 @@ class DsOrigin implements ModelInterface, ArrayAccess
     /**
      * Gets term
      *
-     * @return \Infocenter\Client\Model\DsTerm
+     * @return \Infocenter\Client\Model\DsTermSimplex
      */
     public function getTerm()
     {
@@ -401,7 +401,7 @@ class DsOrigin implements ModelInterface, ArrayAccess
     /**
      * Sets term
      *
-     * @param \Infocenter\Client\Model\DsTerm $term term
+     * @param \Infocenter\Client\Model\DsTermSimplex $term term
      *
      * @return $this
      */

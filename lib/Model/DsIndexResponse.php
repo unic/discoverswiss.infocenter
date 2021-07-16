@@ -83,7 +83,8 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'ticketing_contact' => 'string',
 'price_information' => 'string',
 'organizer' => '\Infocenter\Client\Model\DsOrganization',
-'last_modified' => '\DateTime'    ];
+'last_modified' => '\DateTime',
+'source_id' => 'string[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -118,7 +119,8 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'ticketing_contact' => null,
 'price_information' => null,
 'organizer' => null,
-'last_modified' => 'date-time'    ];
+'last_modified' => 'date-time',
+'source_id' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -174,7 +176,8 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'ticketing_contact' => 'ticketingContact',
 'price_information' => 'priceInformation',
 'organizer' => 'organizer',
-'last_modified' => 'lastModified'    ];
+'last_modified' => 'lastModified',
+'source_id' => 'sourceId'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -209,7 +212,8 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'ticketing_contact' => 'setTicketingContact',
 'price_information' => 'setPriceInformation',
 'organizer' => 'setOrganizer',
-'last_modified' => 'setLastModified'    ];
+'last_modified' => 'setLastModified',
+'source_id' => 'setSourceId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -244,7 +248,8 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'ticketing_contact' => 'getTicketingContact',
 'price_information' => 'getPriceInformation',
 'organizer' => 'getOrganizer',
-'last_modified' => 'getLastModified'    ];
+'last_modified' => 'getLastModified',
+'source_id' => 'getSourceId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -332,6 +337,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
         $this->container['price_information'] = isset($data['price_information']) ? $data['price_information'] : null;
         $this->container['organizer'] = isset($data['organizer']) ? $data['organizer'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
+        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
     }
 
     /**
@@ -1026,6 +1032,30 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     public function setLastModified($last_modified)
     {
         $this->container['last_modified'] = $last_modified;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_id
+     *
+     * @return string[]
+     */
+    public function getSourceId()
+    {
+        return $this->container['source_id'];
+    }
+
+    /**
+     * Sets source_id
+     *
+     * @param string[] $source_id source_id
+     *
+     * @return $this
+     */
+    public function setSourceId($source_id)
+    {
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }

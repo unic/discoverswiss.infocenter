@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **price_information** | **string** |  | [optional] 
 **organizer** | [**\Infocenter\Client\Model\DsOrganization**](DsOrganization.md) |  | [optional] 
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**source_id** | **string[]** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

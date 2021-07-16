@@ -1,6 +1,6 @@
 <?php
 /**
- * DsTermVersion
+ * DsTermSimplex
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsTermVersion Class Doc Comment
+ * DsTermSimplex Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsTermVersion implements ModelInterface, ArrayAccess
+class DsTermSimplex implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsTermVersion implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TermVersion';
+    protected static $swaggerModelName = 'TermSimplex';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,14 +56,8 @@ class DsTermVersion implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-'code' => 'string',
-'name' => 'string',
-'positioning' => 'int',
-'partner_name' => 'string',
-'term_document' => 'string',
-'valid_from' => '\DateTime',
-'term_code' => 'string'    ];
+        'code' => 'string',
+'name' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,14 +65,8 @@ class DsTermVersion implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-'code' => null,
-'name' => null,
-'positioning' => 'int32',
-'partner_name' => null,
-'term_document' => null,
-'valid_from' => 'date-time',
-'term_code' => null    ];
+        'code' => null,
+'name' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -107,14 +95,8 @@ class DsTermVersion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => '@id',
-'code' => 'code',
-'name' => 'name',
-'positioning' => 'positioning',
-'partner_name' => 'partnerName',
-'term_document' => 'termDocument',
-'valid_from' => 'validFrom',
-'term_code' => 'termCode'    ];
+        'code' => 'code',
+'name' => 'name'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -122,14 +104,8 @@ class DsTermVersion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-'code' => 'setCode',
-'name' => 'setName',
-'positioning' => 'setPositioning',
-'partner_name' => 'setPartnerName',
-'term_document' => 'setTermDocument',
-'valid_from' => 'setValidFrom',
-'term_code' => 'setTermCode'    ];
+        'code' => 'setCode',
+'name' => 'setName'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -137,14 +113,8 @@ class DsTermVersion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-'code' => 'getCode',
-'name' => 'getName',
-'positioning' => 'getPositioning',
-'partner_name' => 'getPartnerName',
-'term_document' => 'getTermDocument',
-'valid_from' => 'getValidFrom',
-'term_code' => 'getTermCode'    ];
+        'code' => 'getCode',
+'name' => 'getName'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -204,14 +174,8 @@ class DsTermVersion implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['positioning'] = isset($data['positioning']) ? $data['positioning'] : null;
-        $this->container['partner_name'] = isset($data['partner_name']) ? $data['partner_name'] : null;
-        $this->container['term_document'] = isset($data['term_document']) ? $data['term_document'] : null;
-        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
-        $this->container['term_code'] = isset($data['term_code']) ? $data['term_code'] : null;
     }
 
     /**
@@ -237,30 +201,6 @@ class DsTermVersion implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
 
     /**
      * Gets code
@@ -306,126 +246,6 @@ class DsTermVersion implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets positioning
-     *
-     * @return int
-     */
-    public function getPositioning()
-    {
-        return $this->container['positioning'];
-    }
-
-    /**
-     * Sets positioning
-     *
-     * @param int $positioning positioning
-     *
-     * @return $this
-     */
-    public function setPositioning($positioning)
-    {
-        $this->container['positioning'] = $positioning;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_name
-     *
-     * @return string
-     */
-    public function getPartnerName()
-    {
-        return $this->container['partner_name'];
-    }
-
-    /**
-     * Sets partner_name
-     *
-     * @param string $partner_name partner_name
-     *
-     * @return $this
-     */
-    public function setPartnerName($partner_name)
-    {
-        $this->container['partner_name'] = $partner_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets term_document
-     *
-     * @return string
-     */
-    public function getTermDocument()
-    {
-        return $this->container['term_document'];
-    }
-
-    /**
-     * Sets term_document
-     *
-     * @param string $term_document term_document
-     *
-     * @return $this
-     */
-    public function setTermDocument($term_document)
-    {
-        $this->container['term_document'] = $term_document;
-
-        return $this;
-    }
-
-    /**
-     * Gets valid_from
-     *
-     * @return \DateTime
-     */
-    public function getValidFrom()
-    {
-        return $this->container['valid_from'];
-    }
-
-    /**
-     * Sets valid_from
-     *
-     * @param \DateTime $valid_from valid_from
-     *
-     * @return $this
-     */
-    public function setValidFrom($valid_from)
-    {
-        $this->container['valid_from'] = $valid_from;
-
-        return $this;
-    }
-
-    /**
-     * Gets term_code
-     *
-     * @return string
-     */
-    public function getTermCode()
-    {
-        return $this->container['term_code'];
-    }
-
-    /**
-     * Sets term_code
-     *
-     * @param string $term_code term_code
-     *
-     * @return $this
-     */
-    public function setTermCode($term_code)
-    {
-        $this->container['term_code'] = $term_code;
 
         return $this;
     }
