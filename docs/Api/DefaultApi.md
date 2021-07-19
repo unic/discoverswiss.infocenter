@@ -4485,7 +4485,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByGETForPdf**
-> \Infocenter\Client\Model\DsFile searchByGETForPdf($template_project, $template, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> string searchByGETForPdf($template_project, $template, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Search by GET for pdf
 
@@ -4600,7 +4600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsFile**](../Model/DsFile.md)
+**string**
 
 ### Authorization
 
@@ -4614,7 +4614,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByPOSTForPdf**
-> \Infocenter\Client\Model\DsFile searchByPOSTForPdf($template_project, $template, $body, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> string searchByPOSTForPdf($template_project, $template, $body, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Search by POST for pdf
 
@@ -4667,7 +4667,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsFile**](../Model/DsFile.md)
+**string**
 
 ### Authorization
 
