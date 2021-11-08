@@ -63,7 +63,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'filter_values' => 'string[]',
 'count' => 'int',
 'scope' => 'string',
-'project' => 'string[]'    ];
+'project' => 'string[]',
+'additional_type' => 'string[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -78,7 +79,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'filter_values' => null,
 'count' => 'int32',
 'scope' => null,
-'project' => null    ];
+'project' => null,
+'additional_type' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -114,7 +116,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'filter_values' => 'filterValues',
 'count' => 'count',
 'scope' => 'scope',
-'project' => 'project'    ];
+'project' => 'project',
+'additional_type' => 'additionalType'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -129,7 +132,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'filter_values' => 'setFilterValues',
 'count' => 'setCount',
 'scope' => 'setScope',
-'project' => 'setProject'    ];
+'project' => 'setProject',
+'additional_type' => 'setAdditionalType'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -144,7 +148,8 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 'filter_values' => 'getFilterValues',
 'count' => 'getCount',
 'scope' => 'getScope',
-'project' => 'getProject'    ];
+'project' => 'getProject',
+'additional_type' => 'getAdditionalType'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -212,6 +217,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['scope'] = isset($data['scope']) ? $data['scope'] : null;
         $this->container['project'] = isset($data['project']) ? $data['project'] : null;
+        $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
     }
 
     /**
@@ -426,6 +432,30 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     public function setProject($project)
     {
         $this->container['project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_type
+     *
+     * @return string[]
+     */
+    public function getAdditionalType()
+    {
+        return $this->container['additional_type'];
+    }
+
+    /**
+     * Sets additional_type
+     *
+     * @param string[] $additional_type additional_type
+     *
+     * @return $this
+     */
+    public function setAdditionalType($additional_type)
+    {
+        $this->container['additional_type'] = $additional_type;
 
         return $this;
     }

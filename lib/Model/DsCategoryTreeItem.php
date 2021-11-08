@@ -56,7 +56,8 @@ class DsCategoryTreeItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'identifier' => 'string',
+        'id' => 'string',
+'identifier' => 'string',
 'name' => 'string',
 'children' => '\Infocenter\Client\Model\DsCategoryTreeItem[]',
 'icons' => '\Infocenter\Client\Model\DsCategoryIcon[]'    ];
@@ -67,7 +68,8 @@ class DsCategoryTreeItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'identifier' => null,
+        'id' => null,
+'identifier' => null,
 'name' => null,
 'children' => null,
 'icons' => null    ];
@@ -99,7 +101,8 @@ class DsCategoryTreeItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'identifier' => 'identifier',
+        'id' => '@id',
+'identifier' => 'identifier',
 'name' => 'name',
 'children' => 'children',
 'icons' => 'icons'    ];
@@ -110,7 +113,8 @@ class DsCategoryTreeItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'identifier' => 'setIdentifier',
+        'id' => 'setId',
+'identifier' => 'setIdentifier',
 'name' => 'setName',
 'children' => 'setChildren',
 'icons' => 'setIcons'    ];
@@ -121,7 +125,8 @@ class DsCategoryTreeItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'identifier' => 'getIdentifier',
+        'id' => 'getId',
+'identifier' => 'getIdentifier',
 'name' => 'getName',
 'children' => 'getChildren',
 'icons' => 'getIcons'    ];
@@ -184,6 +189,7 @@ class DsCategoryTreeItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['children'] = isset($data['children']) ? $data['children'] : null;
@@ -213,6 +219,30 @@ class DsCategoryTreeItem implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets identifier

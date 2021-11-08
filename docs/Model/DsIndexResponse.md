@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **additional_type** | **string** |  | [optional] 
 **address** | [**\Infocenter\Client\Model\DsPostalAddress**](DsPostalAddress.md) |  | [optional] 
 **geo** | [**\Infocenter\Client\Model\DsGeoCoordinates**](DsGeoCoordinates.md) |  | [optional] 
+**geo_destination** | [**\Infocenter\Client\Model\DsGeoCoordinates**](DsGeoCoordinates.md) |  | [optional] 
 **opening_hours** | **string** |  | [optional] 
 **image** | [**\Infocenter\Client\Model\DsImageObjectSimplex**](DsImageObjectSimplex.md) |  | [optional] 
 **name** | **string** |  | [optional] 

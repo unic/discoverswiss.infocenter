@@ -11,9 +11,9 @@
  */
 
 /**
- * Infocenter-TEST
+ * Infocenter-TEST-V2
  *
- * Infocenter-TEST
+ * Infocenter API test-v2
  *
  * OpenAPI spec version: v2
  * 
@@ -61,18 +61,26 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'embed_url' => 'string',
 'height' => 'string',
 'width' => 'string',
+'additional_property' => '\Infocenter\Client\Model\DsPropertyValue[]',
 'content_reference_time' => '\DateTime',
-'copyright_year' => 'double',
+'copyright_year' => 'int',
 'encoding_format' => 'string',
 'is_accessible_for_free' => 'bool',
 'thumbnail_url' => 'string',
 'in_language' => 'string',
+'category' => '\Infocenter\Client\Model\DsCategorySimplex[]',
+'contained_in_place' => '\Infocenter\Client\Model\DsPlaceSimplex[]',
+'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
-'datasource' => 'string',
+'removed' => 'bool',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
+'auto_translated_data' => 'bool',
+'license' => 'string',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -80,9 +88,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'same_as' => 'string',
 'url' => 'string',
 'additional_type' => 'string',
-'links' => '\Infocenter\Client\Model\DsLink[]',
-'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
-'contains_translated_data' => 'bool',
+'link' => '\Infocenter\Client\Model\DsLink[]',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -97,18 +103,26 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'embed_url' => null,
 'height' => null,
 'width' => null,
+'additional_property' => null,
 'content_reference_time' => 'date-time',
-'copyright_year' => 'double',
+'copyright_year' => 'int32',
 'encoding_format' => null,
 'is_accessible_for_free' => null,
 'thumbnail_url' => null,
 'in_language' => null,
+'category' => null,
+'contained_in_place' => null,
+'tag' => null,
+'campaign_tag' => null,
+'profile_tag' => null,
 'id' => null,
 'identifier' => null,
-'datasource' => null,
+'removed' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
+'auto_translated_data' => null,
+'license' => null,
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -116,9 +130,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'same_as' => null,
 'url' => null,
 'additional_type' => null,
-'links' => null,
-'tag' => null,
-'contains_translated_data' => null,
+'link' => null,
 'name' => null,
 'type' => null    ];
 
@@ -154,18 +166,26 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'embed_url' => 'embedUrl',
 'height' => 'height',
 'width' => 'width',
+'additional_property' => 'additionalProperty',
 'content_reference_time' => 'contentReferenceTime',
 'copyright_year' => 'copyrightYear',
 'encoding_format' => 'encodingFormat',
 'is_accessible_for_free' => 'isAccessibleForFree',
 'thumbnail_url' => 'thumbnailUrl',
 'in_language' => 'inLanguage',
+'category' => 'category',
+'contained_in_place' => 'containedInPlace',
+'tag' => 'tag',
+'campaign_tag' => 'campaignTag',
+'profile_tag' => 'profileTag',
 'id' => '@id',
 'identifier' => 'identifier',
-'datasource' => 'datasource',
+'removed' => 'removed',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
+'auto_translated_data' => 'autoTranslatedData',
+'license' => 'license',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -173,9 +193,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'same_as' => 'sameAs',
 'url' => 'url',
 'additional_type' => 'additionalType',
-'links' => 'links',
-'tag' => 'tag',
-'contains_translated_data' => 'containsTranslatedData',
+'link' => 'link',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -190,18 +208,26 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'embed_url' => 'setEmbedUrl',
 'height' => 'setHeight',
 'width' => 'setWidth',
+'additional_property' => 'setAdditionalProperty',
 'content_reference_time' => 'setContentReferenceTime',
 'copyright_year' => 'setCopyrightYear',
 'encoding_format' => 'setEncodingFormat',
 'is_accessible_for_free' => 'setIsAccessibleForFree',
 'thumbnail_url' => 'setThumbnailUrl',
 'in_language' => 'setInLanguage',
+'category' => 'setCategory',
+'contained_in_place' => 'setContainedInPlace',
+'tag' => 'setTag',
+'campaign_tag' => 'setCampaignTag',
+'profile_tag' => 'setProfileTag',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
-'datasource' => 'setDatasource',
+'removed' => 'setRemoved',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
+'auto_translated_data' => 'setAutoTranslatedData',
+'license' => 'setLicense',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -209,9 +235,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'same_as' => 'setSameAs',
 'url' => 'setUrl',
 'additional_type' => 'setAdditionalType',
-'links' => 'setLinks',
-'tag' => 'setTag',
-'contains_translated_data' => 'setContainsTranslatedData',
+'link' => 'setLink',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -226,18 +250,26 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'embed_url' => 'getEmbedUrl',
 'height' => 'getHeight',
 'width' => 'getWidth',
+'additional_property' => 'getAdditionalProperty',
 'content_reference_time' => 'getContentReferenceTime',
 'copyright_year' => 'getCopyrightYear',
 'encoding_format' => 'getEncodingFormat',
 'is_accessible_for_free' => 'getIsAccessibleForFree',
 'thumbnail_url' => 'getThumbnailUrl',
 'in_language' => 'getInLanguage',
+'category' => 'getCategory',
+'contained_in_place' => 'getContainedInPlace',
+'tag' => 'getTag',
+'campaign_tag' => 'getCampaignTag',
+'profile_tag' => 'getProfileTag',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
-'datasource' => 'getDatasource',
+'removed' => 'getRemoved',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
+'auto_translated_data' => 'getAutoTranslatedData',
+'license' => 'getLicense',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -245,9 +277,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'same_as' => 'getSameAs',
 'url' => 'getUrl',
 'additional_type' => 'getAdditionalType',
-'links' => 'getLinks',
-'tag' => 'getTag',
-'contains_translated_data' => 'getContainsTranslatedData',
+'link' => 'getLink',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -314,18 +344,26 @@ class DsMediaObject implements ModelInterface, ArrayAccess
         $this->container['embed_url'] = isset($data['embed_url']) ? $data['embed_url'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
+        $this->container['additional_property'] = isset($data['additional_property']) ? $data['additional_property'] : null;
         $this->container['content_reference_time'] = isset($data['content_reference_time']) ? $data['content_reference_time'] : null;
         $this->container['copyright_year'] = isset($data['copyright_year']) ? $data['copyright_year'] : null;
         $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
         $this->container['is_accessible_for_free'] = isset($data['is_accessible_for_free']) ? $data['is_accessible_for_free'] : null;
         $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
         $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
+        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
+        $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
+        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
+        $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
+        $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
-        $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
+        $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
+        $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
+        $this->container['license'] = isset($data['license']) ? $data['license'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -333,9 +371,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
         $this->container['same_as'] = isset($data['same_as']) ? $data['same_as'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
-        $this->container['contains_translated_data'] = isset($data['contains_translated_data']) ? $data['contains_translated_data'] : null;
+        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -485,6 +521,30 @@ class DsMediaObject implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets additional_property
+     *
+     * @return \Infocenter\Client\Model\DsPropertyValue[]
+     */
+    public function getAdditionalProperty()
+    {
+        return $this->container['additional_property'];
+    }
+
+    /**
+     * Sets additional_property
+     *
+     * @param \Infocenter\Client\Model\DsPropertyValue[] $additional_property additional_property
+     *
+     * @return $this
+     */
+    public function setAdditionalProperty($additional_property)
+    {
+        $this->container['additional_property'] = $additional_property;
+
+        return $this;
+    }
+
+    /**
      * Gets content_reference_time
      *
      * @return \DateTime
@@ -511,7 +571,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
     /**
      * Gets copyright_year
      *
-     * @return double
+     * @return int
      */
     public function getCopyrightYear()
     {
@@ -521,7 +581,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
     /**
      * Sets copyright_year
      *
-     * @param double $copyright_year copyright_year
+     * @param int $copyright_year copyright_year
      *
      * @return $this
      */
@@ -629,6 +689,126 @@ class DsMediaObject implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets category
+     *
+     * @return \Infocenter\Client\Model\DsCategorySimplex[]
+     */
+    public function getCategory()
+    {
+        return $this->container['category'];
+    }
+
+    /**
+     * Sets category
+     *
+     * @param \Infocenter\Client\Model\DsCategorySimplex[] $category category
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets contained_in_place
+     *
+     * @return \Infocenter\Client\Model\DsPlaceSimplex[]
+     */
+    public function getContainedInPlace()
+    {
+        return $this->container['contained_in_place'];
+    }
+
+    /**
+     * Sets contained_in_place
+     *
+     * @param \Infocenter\Client\Model\DsPlaceSimplex[] $contained_in_place contained_in_place
+     *
+     * @return $this
+     */
+    public function setContainedInPlace($contained_in_place)
+    {
+        $this->container['contained_in_place'] = $contained_in_place;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getTag()
+    {
+        return $this->container['tag'];
+    }
+
+    /**
+     * Sets tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $tag tag
+     *
+     * @return $this
+     */
+    public function setTag($tag)
+    {
+        $this->container['tag'] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets campaign_tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getCampaignTag()
+    {
+        return $this->container['campaign_tag'];
+    }
+
+    /**
+     * Sets campaign_tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $campaign_tag campaign_tag
+     *
+     * @return $this
+     */
+    public function setCampaignTag($campaign_tag)
+    {
+        $this->container['campaign_tag'] = $campaign_tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets profile_tag
+     *
+     * @return \Infocenter\Client\Model\DsTagSimplex[]
+     */
+    public function getProfileTag()
+    {
+        return $this->container['profile_tag'];
+    }
+
+    /**
+     * Sets profile_tag
+     *
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $profile_tag profile_tag
+     *
+     * @return $this
+     */
+    public function setProfileTag($profile_tag)
+    {
+        $this->container['profile_tag'] = $profile_tag;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return string
@@ -677,25 +857,25 @@ class DsMediaObject implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets datasource
+     * Gets removed
      *
-     * @return string
+     * @return bool
      */
-    public function getDatasource()
+    public function getRemoved()
     {
-        return $this->container['datasource'];
+        return $this->container['removed'];
     }
 
     /**
-     * Sets datasource
+     * Sets removed
      *
-     * @param string $datasource datasource
+     * @param bool $removed removed
      *
      * @return $this
      */
-    public function setDatasource($datasource)
+    public function setRemoved($removed)
     {
-        $this->container['datasource'] = $datasource;
+        $this->container['removed'] = $removed;
 
         return $this;
     }
@@ -768,6 +948,54 @@ class DsMediaObject implements ModelInterface, ArrayAccess
     public function setAvailableDataLanguage($available_data_language)
     {
         $this->container['available_data_language'] = $available_data_language;
+
+        return $this;
+    }
+
+    /**
+     * Gets auto_translated_data
+     *
+     * @return bool
+     */
+    public function getAutoTranslatedData()
+    {
+        return $this->container['auto_translated_data'];
+    }
+
+    /**
+     * Sets auto_translated_data
+     *
+     * @param bool $auto_translated_data auto_translated_data
+     *
+     * @return $this
+     */
+    public function setAutoTranslatedData($auto_translated_data)
+    {
+        $this->container['auto_translated_data'] = $auto_translated_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets license
+     *
+     * @return string
+     */
+    public function getLicense()
+    {
+        return $this->container['license'];
+    }
+
+    /**
+     * Sets license
+     *
+     * @param string $license license
+     *
+     * @return $this
+     */
+    public function setLicense($license)
+    {
+        $this->container['license'] = $license;
 
         return $this;
     }
@@ -941,73 +1169,25 @@ class DsMediaObject implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets links
+     * Gets link
      *
      * @return \Infocenter\Client\Model\DsLink[]
      */
-    public function getLinks()
+    public function getLink()
     {
-        return $this->container['links'];
+        return $this->container['link'];
     }
 
     /**
-     * Sets links
+     * Sets link
      *
-     * @param \Infocenter\Client\Model\DsLink[] $links links
+     * @param \Infocenter\Client\Model\DsLink[] $link link
      *
      * @return $this
      */
-    public function setLinks($links)
+    public function setLink($link)
     {
-        $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag
-     *
-     * @return \Infocenter\Client\Model\DsTagSimplex[]
-     */
-    public function getTag()
-    {
-        return $this->container['tag'];
-    }
-
-    /**
-     * Sets tag
-     *
-     * @param \Infocenter\Client\Model\DsTagSimplex[] $tag tag
-     *
-     * @return $this
-     */
-    public function setTag($tag)
-    {
-        $this->container['tag'] = $tag;
-
-        return $this;
-    }
-
-    /**
-     * Gets contains_translated_data
-     *
-     * @return bool
-     */
-    public function getContainsTranslatedData()
-    {
-        return $this->container['contains_translated_data'];
-    }
-
-    /**
-     * Sets contains_translated_data
-     *
-     * @param bool $contains_translated_data contains_translated_data
-     *
-     * @return $this
-     */
-    public function setContainsTranslatedData($contains_translated_data)
-    {
-        $this->container['contains_translated_data'] = $contains_translated_data;
+        $this->container['link'] = $link;
 
         return $this;
     }

@@ -65,7 +65,8 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
 'count' => 'int',
 'query' => 'string',
 'name' => 'string',
-'name_plural' => 'string'    ];
+'name_plural' => 'string',
+'additional_type' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -82,7 +83,8 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
 'count' => 'int64',
 'query' => null,
 'name' => null,
-'name_plural' => null    ];
+'name_plural' => null,
+'additional_type' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -120,7 +122,8 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
 'count' => 'count',
 'query' => 'query',
 'name' => 'name',
-'name_plural' => 'namePlural'    ];
+'name_plural' => 'namePlural',
+'additional_type' => 'additionalType'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -137,7 +140,8 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
 'count' => 'setCount',
 'query' => 'setQuery',
 'name' => 'setName',
-'name_plural' => 'setNamePlural'    ];
+'name_plural' => 'setNamePlural',
+'additional_type' => 'setAdditionalType'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -154,7 +158,8 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
 'count' => 'getCount',
 'query' => 'getQuery',
 'name' => 'getName',
-'name_plural' => 'getNamePlural'    ];
+'name_plural' => 'getNamePlural',
+'additional_type' => 'getAdditionalType'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -224,6 +229,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
         $this->container['query'] = isset($data['query']) ? $data['query'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['name_plural'] = isset($data['name_plural']) ? $data['name_plural'] : null;
+        $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
     }
 
     /**
@@ -486,6 +492,30 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     public function setNamePlural($name_plural)
     {
         $this->container['name_plural'] = $name_plural;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_type
+     *
+     * @return string
+     */
+    public function getAdditionalType()
+    {
+        return $this->container['additional_type'];
+    }
+
+    /**
+     * Sets additional_type
+     *
+     * @param string $additional_type additional_type
+     *
+     * @return $this
+     */
+    public function setAdditionalType($additional_type)
+    {
+        $this->container['additional_type'] = $additional_type;
 
         return $this;
     }

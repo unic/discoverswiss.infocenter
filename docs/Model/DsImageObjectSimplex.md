@@ -3,9 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**caption** | **string** |  | [optional] 
+**is_winter** | **bool** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\DsDataGovernance**](DsDataGovernance.md) |  | [optional] 
 **content_url** | **string** |  | [optional] 
+**caption** | **string** |  | [optional] 
+**encoding_format** | **string** |  | [optional] 
 **in_language** | **string** |  | [optional] 
 **thumbnail_url** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 

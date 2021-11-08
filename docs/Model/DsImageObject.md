@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**caption** | **string** |  | [optional] 
 **is_winter** | **bool** |  | [optional] 
+**caption** | **string** |  | [optional] 
 **content_size** | **string** |  | [optional] 
 **content_url** | **string** |  | [optional] 
 **embed_url** | **string** |  | [optional] 
@@ -18,11 +18,13 @@ Name | Type | Description | Notes
 **thumbnail_url** | **string** |  | [optional] 
 **in_language** | **string** |  | [optional] 
 **category** | [**\Infocenter\Client\Model\DsCategorySimplex[]**](DsCategorySimplex.md) |  | [optional] 
+**contained_in_place** | [**\Infocenter\Client\Model\DsPlaceSimplex[]**](DsPlaceSimplex.md) |  | [optional] 
 **tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **campaign_tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **profile_tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
+**removed** | **bool** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\DsDataGovernance**](DsDataGovernance.md) |  | [optional] 
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **available_data_language** | **string[]** |  | [optional] 

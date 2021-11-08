@@ -1,0 +1,44 @@
+# DsAudioObject
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**caption** | **string** |  | [optional] 
+**content_size** | **string** |  | [optional] 
+**content_url** | **string** |  | [optional] 
+**embed_url** | **string** |  | [optional] 
+**height** | **string** |  | [optional] 
+**width** | **string** |  | [optional] 
+**additional_property** | [**\Infocenter\Client\Model\DsPropertyValue[]**](DsPropertyValue.md) |  | [optional] 
+**content_reference_time** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**copyright_year** | **int** |  | [optional] 
+**encoding_format** | **string** |  | [optional] 
+**is_accessible_for_free** | **bool** |  | [optional] 
+**thumbnail_url** | **string** |  | [optional] 
+**in_language** | **string** |  | [optional] 
+**category** | [**\Infocenter\Client\Model\DsCategorySimplex[]**](DsCategorySimplex.md) |  | [optional] 
+**contained_in_place** | [**\Infocenter\Client\Model\DsPlaceSimplex[]**](DsPlaceSimplex.md) |  | [optional] 
+**tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
+**campaign_tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
+**profile_tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
+**id** | **string** |  | [optional] 
+**identifier** | **string** |  | [optional] 
+**removed** | **bool** |  | [optional] 
+**data_governance** | [**\Infocenter\Client\Model\DsDataGovernance**](DsDataGovernance.md) |  | [optional] 
+**last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**available_data_language** | **string[]** |  | [optional] 
+**auto_translated_data** | **bool** |  | [optional] 
+**license** | **string** |  | [optional] 
+**alternate_name** | **string** |  | [optional] 
+**description** | **string** |  | [optional] 
+**disambiguating_description** | **string** |  | [optional] 
+**image** | [**\Infocenter\Client\Model\DsImageObjectSimplex**](DsImageObjectSimplex.md) |  | [optional] 
+**same_as** | **string** |  | [optional] 
+**url** | **string** |  | [optional] 
+**additional_type** | **string** |  | [optional] 
+**link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
+**name** | **string** |  | [optional] 
+**type** | **string** |  | [optional] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+

@@ -65,6 +65,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'additional_type' => 'string',
 'address' => '\Infocenter\Client\Model\DsPostalAddress',
 'geo' => '\Infocenter\Client\Model\DsGeoCoordinates',
+'geo_destination' => '\Infocenter\Client\Model\DsGeoCoordinates',
 'opening_hours' => 'string',
 'image' => '\Infocenter\Client\Model\DsImageObjectSimplex',
 'name' => 'string',
@@ -101,6 +102,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'additional_type' => null,
 'address' => null,
 'geo' => null,
+'geo_destination' => null,
 'opening_hours' => null,
 'image' => null,
 'name' => null,
@@ -158,6 +160,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'additional_type' => 'additionalType',
 'address' => 'address',
 'geo' => 'geo',
+'geo_destination' => 'geoDestination',
 'opening_hours' => 'openingHours',
 'image' => 'image',
 'name' => 'name',
@@ -194,6 +197,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'additional_type' => 'setAdditionalType',
 'address' => 'setAddress',
 'geo' => 'setGeo',
+'geo_destination' => 'setGeoDestination',
 'opening_hours' => 'setOpeningHours',
 'image' => 'setImage',
 'name' => 'setName',
@@ -230,6 +234,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'additional_type' => 'getAdditionalType',
 'address' => 'getAddress',
 'geo' => 'getGeo',
+'geo_destination' => 'getGeoDestination',
 'opening_hours' => 'getOpeningHours',
 'image' => 'getImage',
 'name' => 'getName',
@@ -318,6 +323,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['geo'] = isset($data['geo']) ? $data['geo'] : null;
+        $this->container['geo_destination'] = isset($data['geo_destination']) ? $data['geo_destination'] : null;
         $this->container['opening_hours'] = isset($data['opening_hours']) ? $data['opening_hours'] : null;
         $this->container['image'] = isset($data['image']) ? $data['image'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
@@ -576,6 +582,30 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     public function setGeo($geo)
     {
         $this->container['geo'] = $geo;
+
+        return $this;
+    }
+
+    /**
+     * Gets geo_destination
+     *
+     * @return \Infocenter\Client\Model\DsGeoCoordinates
+     */
+    public function getGeoDestination()
+    {
+        return $this->container['geo_destination'];
+    }
+
+    /**
+     * Sets geo_destination
+     *
+     * @param \Infocenter\Client\Model\DsGeoCoordinates $geo_destination geo_destination
+     *
+     * @return $this
+     */
+    public function setGeoDestination($geo_destination)
+    {
+        $this->container['geo_destination'] = $geo_destination;
 
         return $this;
     }

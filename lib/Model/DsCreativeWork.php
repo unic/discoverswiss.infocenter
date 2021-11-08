@@ -64,11 +64,13 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
 'thumbnail_url' => 'string',
 'in_language' => 'string',
 'category' => '\Infocenter\Client\Model\DsCategorySimplex[]',
+'contained_in_place' => '\Infocenter\Client\Model\DsPlaceSimplex[]',
 'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
+'removed' => 'bool',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
@@ -99,11 +101,13 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
 'thumbnail_url' => null,
 'in_language' => null,
 'category' => null,
+'contained_in_place' => null,
 'tag' => null,
 'campaign_tag' => null,
 'profile_tag' => null,
 'id' => null,
 'identifier' => null,
+'removed' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
@@ -155,11 +159,13 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
 'thumbnail_url' => 'thumbnailUrl',
 'in_language' => 'inLanguage',
 'category' => 'category',
+'contained_in_place' => 'containedInPlace',
 'tag' => 'tag',
 'campaign_tag' => 'campaignTag',
 'profile_tag' => 'profileTag',
 'id' => '@id',
 'identifier' => 'identifier',
+'removed' => 'removed',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
@@ -190,11 +196,13 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
 'thumbnail_url' => 'setThumbnailUrl',
 'in_language' => 'setInLanguage',
 'category' => 'setCategory',
+'contained_in_place' => 'setContainedInPlace',
 'tag' => 'setTag',
 'campaign_tag' => 'setCampaignTag',
 'profile_tag' => 'setProfileTag',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
+'removed' => 'setRemoved',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
@@ -225,11 +233,13 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
 'thumbnail_url' => 'getThumbnailUrl',
 'in_language' => 'getInLanguage',
 'category' => 'getCategory',
+'contained_in_place' => 'getContainedInPlace',
 'tag' => 'getTag',
 'campaign_tag' => 'getCampaignTag',
 'profile_tag' => 'getProfileTag',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
+'removed' => 'getRemoved',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
@@ -312,11 +322,13 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
         $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
         $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
+        $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
@@ -551,6 +563,30 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets contained_in_place
+     *
+     * @return \Infocenter\Client\Model\DsPlaceSimplex[]
+     */
+    public function getContainedInPlace()
+    {
+        return $this->container['contained_in_place'];
+    }
+
+    /**
+     * Sets contained_in_place
+     *
+     * @param \Infocenter\Client\Model\DsPlaceSimplex[] $contained_in_place contained_in_place
+     *
+     * @return $this
+     */
+    public function setContainedInPlace($contained_in_place)
+    {
+        $this->container['contained_in_place'] = $contained_in_place;
+
+        return $this;
+    }
+
+    /**
      * Gets tag
      *
      * @return \Infocenter\Client\Model\DsTagSimplex[]
@@ -666,6 +702,30 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets removed
+     *
+     * @return bool
+     */
+    public function getRemoved()
+    {
+        return $this->container['removed'];
+    }
+
+    /**
+     * Sets removed
+     *
+     * @param bool $removed removed
+     *
+     * @return $this
+     */
+    public function setRemoved($removed)
+    {
+        $this->container['removed'] = $removed;
 
         return $this;
     }

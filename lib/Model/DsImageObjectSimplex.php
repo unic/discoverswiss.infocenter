@@ -56,9 +56,11 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'caption' => 'string',
+        'is_winter' => 'bool',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'content_url' => 'string',
+'caption' => 'string',
+'encoding_format' => 'string',
 'in_language' => 'string',
 'thumbnail_url' => 'string',
 'id' => 'string',
@@ -70,9 +72,11 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'caption' => null,
+        'is_winter' => null,
 'data_governance' => null,
 'content_url' => null,
+'caption' => null,
+'encoding_format' => null,
 'in_language' => null,
 'thumbnail_url' => null,
 'id' => null,
@@ -105,9 +109,11 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'caption' => 'caption',
+        'is_winter' => 'isWinter',
 'data_governance' => 'dataGovernance',
 'content_url' => 'contentUrl',
+'caption' => 'caption',
+'encoding_format' => 'encodingFormat',
 'in_language' => 'inLanguage',
 'thumbnail_url' => 'thumbnailUrl',
 'id' => 'id',
@@ -119,9 +125,11 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'caption' => 'setCaption',
+        'is_winter' => 'setIsWinter',
 'data_governance' => 'setDataGovernance',
 'content_url' => 'setContentUrl',
+'caption' => 'setCaption',
+'encoding_format' => 'setEncodingFormat',
 'in_language' => 'setInLanguage',
 'thumbnail_url' => 'setThumbnailUrl',
 'id' => 'setId',
@@ -133,9 +141,11 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'caption' => 'getCaption',
+        'is_winter' => 'getIsWinter',
 'data_governance' => 'getDataGovernance',
 'content_url' => 'getContentUrl',
+'caption' => 'getCaption',
+'encoding_format' => 'getEncodingFormat',
 'in_language' => 'getInLanguage',
 'thumbnail_url' => 'getThumbnailUrl',
 'id' => 'getId',
@@ -199,9 +209,11 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
+        $this->container['is_winter'] = isset($data['is_winter']) ? $data['is_winter'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
+        $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
+        $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
         $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
         $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
@@ -233,25 +245,25 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets caption
+     * Gets is_winter
      *
-     * @return string
+     * @return bool
      */
-    public function getCaption()
+    public function getIsWinter()
     {
-        return $this->container['caption'];
+        return $this->container['is_winter'];
     }
 
     /**
-     * Sets caption
+     * Sets is_winter
      *
-     * @param string $caption caption
+     * @param bool $is_winter is_winter
      *
      * @return $this
      */
-    public function setCaption($caption)
+    public function setIsWinter($is_winter)
     {
-        $this->container['caption'] = $caption;
+        $this->container['is_winter'] = $is_winter;
 
         return $this;
     }
@@ -300,6 +312,54 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
     public function setContentUrl($content_url)
     {
         $this->container['content_url'] = $content_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets caption
+     *
+     * @return string
+     */
+    public function getCaption()
+    {
+        return $this->container['caption'];
+    }
+
+    /**
+     * Sets caption
+     *
+     * @param string $caption caption
+     *
+     * @return $this
+     */
+    public function setCaption($caption)
+    {
+        $this->container['caption'] = $caption;
+
+        return $this;
+    }
+
+    /**
+     * Gets encoding_format
+     *
+     * @return string
+     */
+    public function getEncodingFormat()
+    {
+        return $this->container['encoding_format'];
+    }
+
+    /**
+     * Sets encoding_format
+     *
+     * @param string $encoding_format encoding_format
+     *
+     * @return $this
+     */
+    public function setEncodingFormat($encoding_format)
+    {
+        $this->container['encoding_format'] = $encoding_format;
 
         return $this;
     }

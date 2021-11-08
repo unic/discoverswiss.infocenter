@@ -64,6 +64,8 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'value_str' => 'string',
 'property_id' => 'string',
 'value_type' => 'string',
+'value_description' => 'string',
+'audience' => 'string[]',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -89,6 +91,8 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'value_str' => null,
 'property_id' => null,
 'value_type' => null,
+'value_description' => null,
+'audience' => null,
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -135,6 +139,8 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'value_str' => 'valueStr',
 'property_id' => 'propertyId',
 'value_type' => 'valueType',
+'value_description' => 'valueDescription',
+'audience' => 'audience',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -160,6 +166,8 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'value_str' => 'setValueStr',
 'property_id' => 'setPropertyId',
 'value_type' => 'setValueType',
+'value_description' => 'setValueDescription',
+'audience' => 'setAudience',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -185,6 +193,8 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
 'value_str' => 'getValueStr',
 'property_id' => 'getPropertyId',
 'value_type' => 'getValueType',
+'value_description' => 'getValueDescription',
+'audience' => 'getAudience',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -262,6 +272,8 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
         $this->container['value_str'] = isset($data['value_str']) ? $data['value_str'] : null;
         $this->container['property_id'] = isset($data['property_id']) ? $data['property_id'] : null;
         $this->container['value_type'] = isset($data['value_type']) ? $data['value_type'] : null;
+        $this->container['value_description'] = isset($data['value_description']) ? $data['value_description'] : null;
+        $this->container['audience'] = isset($data['audience']) ? $data['audience'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -486,6 +498,54 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     public function setValueType($value_type)
     {
         $this->container['value_type'] = $value_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets value_description
+     *
+     * @return string
+     */
+    public function getValueDescription()
+    {
+        return $this->container['value_description'];
+    }
+
+    /**
+     * Sets value_description
+     *
+     * @param string $value_description value_description
+     *
+     * @return $this
+     */
+    public function setValueDescription($value_description)
+    {
+        $this->container['value_description'] = $value_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets audience
+     *
+     * @return string[]
+     */
+    public function getAudience()
+    {
+        return $this->container['audience'];
+    }
+
+    /**
+     * Sets audience
+     *
+     * @param string[] $audience audience
+     *
+     * @return $this
+     */
+    public function setAudience($audience)
+    {
+        $this->container['audience'] = $audience;
 
         return $this;
     }

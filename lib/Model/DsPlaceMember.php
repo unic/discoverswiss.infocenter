@@ -56,9 +56,10 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'address' => '\Infocenter\Client\Model\DsPostalAddress',
+        'name' => 'string',
+'address' => '\Infocenter\Client\Model\DsPostalAddress',
 'geo' => '\Infocenter\Client\Model\DsGeoCoordinates',
-'name' => 'string',
+'additional_type' => 'string',
 'id' => 'string',
 'identifier' => 'string'    ];
 
@@ -68,9 +69,10 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'address' => null,
+        'name' => null,
+'address' => null,
 'geo' => null,
-'name' => null,
+'additional_type' => null,
 'id' => null,
 'identifier' => null    ];
 
@@ -101,9 +103,10 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'address' => 'address',
+        'name' => 'name',
+'address' => 'address',
 'geo' => 'geo',
-'name' => 'name',
+'additional_type' => 'additionalType',
 'id' => 'id',
 'identifier' => 'identifier'    ];
 
@@ -113,9 +116,10 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'address' => 'setAddress',
+        'name' => 'setName',
+'address' => 'setAddress',
 'geo' => 'setGeo',
-'name' => 'setName',
+'additional_type' => 'setAdditionalType',
 'id' => 'setId',
 'identifier' => 'setIdentifier'    ];
 
@@ -125,9 +129,10 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'address' => 'getAddress',
+        'name' => 'getName',
+'address' => 'getAddress',
 'geo' => 'getGeo',
-'name' => 'getName',
+'additional_type' => 'getAdditionalType',
 'id' => 'getId',
 'identifier' => 'getIdentifier'    ];
 
@@ -189,9 +194,10 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['geo'] = isset($data['geo']) ? $data['geo'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
     }
@@ -219,6 +225,30 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
 
     /**
      * Gets address
@@ -269,25 +299,25 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets name
+     * Gets additional_type
      *
      * @return string
      */
-    public function getName()
+    public function getAdditionalType()
     {
-        return $this->container['name'];
+        return $this->container['additional_type'];
     }
 
     /**
-     * Sets name
+     * Sets additional_type
      *
-     * @param string $name name
+     * @param string $additional_type additional_type
      *
      * @return $this
      */
-    public function setName($name)
+    public function setAdditionalType($additional_type)
     {
-        $this->container['name'] = $name;
+        $this->container['additional_type'] = $additional_type;
 
         return $this;
     }

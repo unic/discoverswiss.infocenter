@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **children** | [**\Infocenter\Client\Model\DsCategoryTreeItem[]**](DsCategoryTreeItem.md) |  | [optional] 

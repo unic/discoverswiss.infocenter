@@ -3,9 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **string** |  | [optional] 
 **address** | [**\Infocenter\Client\Model\DsPostalAddress**](DsPostalAddress.md) |  | [optional] 
 **geo** | [**\Infocenter\Client\Model\DsGeoCoordinates**](DsGeoCoordinates.md) |  | [optional] 
-**name** | **string** |  | [optional] 
+**additional_type** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 

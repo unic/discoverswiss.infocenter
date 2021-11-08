@@ -94,8 +94,11 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
+'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
+'removed' => 'bool',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
@@ -156,8 +159,11 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'tag' => null,
 'campaign_tag' => null,
 'profile_tag' => null,
+'audio' => null,
+'video' => null,
 'id' => null,
 'identifier' => null,
+'removed' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
@@ -239,8 +245,11 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'tag' => 'tag',
 'campaign_tag' => 'campaignTag',
 'profile_tag' => 'profileTag',
+'audio' => 'audio',
+'video' => 'video',
 'id' => '@id',
 'identifier' => 'identifier',
+'removed' => 'removed',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
@@ -301,8 +310,11 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'tag' => 'setTag',
 'campaign_tag' => 'setCampaignTag',
 'profile_tag' => 'setProfileTag',
+'audio' => 'setAudio',
+'video' => 'setVideo',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
+'removed' => 'setRemoved',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
@@ -363,8 +375,11 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'tag' => 'getTag',
 'campaign_tag' => 'getCampaignTag',
 'profile_tag' => 'getProfileTag',
+'audio' => 'getAudio',
+'video' => 'getVideo',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
+'removed' => 'getRemoved',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
@@ -477,8 +492,11 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
+        $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
+        $this->container['video'] = isset($data['video']) ? $data['video'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
@@ -1433,6 +1451,54 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets audio
+     *
+     * @return \Infocenter\Client\Model\DsAudioObjectSimplex[]
+     */
+    public function getAudio()
+    {
+        return $this->container['audio'];
+    }
+
+    /**
+     * Sets audio
+     *
+     * @param \Infocenter\Client\Model\DsAudioObjectSimplex[] $audio audio
+     *
+     * @return $this
+     */
+    public function setAudio($audio)
+    {
+        $this->container['audio'] = $audio;
+
+        return $this;
+    }
+
+    /**
+     * Gets video
+     *
+     * @return \Infocenter\Client\Model\DsVideoObjectSimplex[]
+     */
+    public function getVideo()
+    {
+        return $this->container['video'];
+    }
+
+    /**
+     * Sets video
+     *
+     * @param \Infocenter\Client\Model\DsVideoObjectSimplex[] $video video
+     *
+     * @return $this
+     */
+    public function setVideo($video)
+    {
+        $this->container['video'] = $video;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return string
@@ -1476,6 +1542,30 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets removed
+     *
+     * @return bool
+     */
+    public function getRemoved()
+    {
+        return $this->container['removed'];
+    }
+
+    /**
+     * Sets removed
+     *
+     * @param bool $removed removed
+     *
+     * @return $this
+     */
+    public function setRemoved($removed)
+    {
+        $this->container['removed'] = $removed;
 
         return $this;
     }

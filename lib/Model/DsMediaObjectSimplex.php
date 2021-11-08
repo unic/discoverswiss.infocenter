@@ -57,6 +57,8 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'content_url' => 'string',
+'caption' => 'string',
+'encoding_format' => 'string',
 'in_language' => 'string',
 'thumbnail_url' => 'string',
 'id' => 'string',
@@ -69,6 +71,8 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'content_url' => null,
+'caption' => null,
+'encoding_format' => null,
 'in_language' => null,
 'thumbnail_url' => null,
 'id' => null,
@@ -102,6 +106,8 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'content_url' => 'contentUrl',
+'caption' => 'caption',
+'encoding_format' => 'encodingFormat',
 'in_language' => 'inLanguage',
 'thumbnail_url' => 'thumbnailUrl',
 'id' => 'id',
@@ -114,6 +120,8 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'content_url' => 'setContentUrl',
+'caption' => 'setCaption',
+'encoding_format' => 'setEncodingFormat',
 'in_language' => 'setInLanguage',
 'thumbnail_url' => 'setThumbnailUrl',
 'id' => 'setId',
@@ -126,6 +134,8 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'content_url' => 'getContentUrl',
+'caption' => 'getCaption',
+'encoding_format' => 'getEncodingFormat',
 'in_language' => 'getInLanguage',
 'thumbnail_url' => 'getThumbnailUrl',
 'id' => 'getId',
@@ -190,6 +200,8 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
+        $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
+        $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
         $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
         $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
@@ -240,6 +252,54 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
     public function setContentUrl($content_url)
     {
         $this->container['content_url'] = $content_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets caption
+     *
+     * @return string
+     */
+    public function getCaption()
+    {
+        return $this->container['caption'];
+    }
+
+    /**
+     * Sets caption
+     *
+     * @param string $caption caption
+     *
+     * @return $this
+     */
+    public function setCaption($caption)
+    {
+        $this->container['caption'] = $caption;
+
+        return $this;
+    }
+
+    /**
+     * Gets encoding_format
+     *
+     * @return string
+     */
+    public function getEncodingFormat()
+    {
+        return $this->container['encoding_format'];
+    }
+
+    /**
+     * Sets encoding_format
+     *
+     * @param string $encoding_format encoding_format
+     *
+     * @return $this
+     */
+    public function setEncodingFormat($encoding_format)
+    {
+        $this->container['encoding_format'] = $encoding_format;
 
         return $this;
     }

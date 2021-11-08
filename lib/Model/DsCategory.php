@@ -61,6 +61,7 @@ class DsCategory implements ModelInterface, ArrayAccess
 'icons' => '\Infocenter\Client\Model\DsCategoryIcon[]',
 'id' => 'string',
 'identifier' => 'string',
+'removed' => 'bool',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
@@ -81,6 +82,7 @@ class DsCategory implements ModelInterface, ArrayAccess
 'icons' => null,
 'id' => null,
 'identifier' => null,
+'removed' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
@@ -122,6 +124,7 @@ class DsCategory implements ModelInterface, ArrayAccess
 'icons' => 'icons',
 'id' => '@id',
 'identifier' => 'identifier',
+'removed' => 'removed',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
@@ -142,6 +145,7 @@ class DsCategory implements ModelInterface, ArrayAccess
 'icons' => 'setIcons',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
+'removed' => 'setRemoved',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
@@ -162,6 +166,7 @@ class DsCategory implements ModelInterface, ArrayAccess
 'icons' => 'getIcons',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
+'removed' => 'getRemoved',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
@@ -234,6 +239,7 @@ class DsCategory implements ModelInterface, ArrayAccess
         $this->container['icons'] = isset($data['icons']) ? $data['icons'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
@@ -384,6 +390,30 @@ class DsCategory implements ModelInterface, ArrayAccess
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets removed
+     *
+     * @return bool
+     */
+    public function getRemoved()
+    {
+        return $this->container['removed'];
+    }
+
+    /**
+     * Sets removed
+     *
+     * @param bool $removed removed
+     *
+     * @return $this
+     */
+    public function setRemoved($removed)
+    {
+        $this->container['removed'] = $removed;
 
         return $this;
     }

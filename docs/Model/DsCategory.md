@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **icons** | [**\Infocenter\Client\Model\DsCategoryIcon[]**](DsCategoryIcon.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
+**removed** | **bool** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\DsDataGovernance**](DsDataGovernance.md) |  | [optional] 
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **available_data_language** | **string[]** |  | [optional] 

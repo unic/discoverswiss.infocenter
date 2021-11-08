@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **value_str** | **string** |  | [optional] 
 **property_id** | **string** |  | [optional] 
 **value_type** | **string** |  | [optional] 
+**value_description** | **string** |  | [optional] 
+**audience** | **string[]** |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **disambiguating_description** | **string** |  | [optional] 

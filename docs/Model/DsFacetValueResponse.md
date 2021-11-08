@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **query** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **name_plural** | **string** |  | [optional] 
+**additional_type** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

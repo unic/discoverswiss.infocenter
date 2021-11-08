@@ -57,17 +57,33 @@ class DsProduct implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'service' => 'string',
-'vendor' => 'string',
+'seller' => '\Infocenter\Client\Model\DsLocalBusinessMember',
 'variant' => '\Infocenter\Client\Model\DsProductVariant[]',
 'photo' => '\Infocenter\Client\Model\DsImageObjectSimplex[]',
 'category' => '\Infocenter\Client\Model\DsCategorySimplex[]',
 'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
-'guest_field' => '\Infocenter\Client\Model\DsGuestField[]',
+'item_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
+'guest_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
 'price_information' => 'string',
+'add_on_item' => '\Infocenter\Client\Model\DsProductAddOn[]',
+'add_on_guest' => '\Infocenter\Client\Model\DsProductAddOn[]',
+'in_language' => 'string[]',
+'meeting_point' => '\Infocenter\Client\Model\DsGeoCoordinates[]',
+'geo' => '\Infocenter\Client\Model\DsGeoCoordinates',
+'geo_shape' => '\Infocenter\Client\Model\DsGeoShape',
+'inclusions' => 'string[]',
+'exclusions' => 'string[]',
+'important_info' => 'string[]',
+'detailed_information' => 'string[]',
+'destination' => 'string',
+'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
+'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
+'potential_action' => '\Infocenter\Client\Model\DsAction[]',
 'id' => 'string',
 'identifier' => 'string',
+'removed' => 'bool',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
@@ -91,17 +107,33 @@ class DsProduct implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'service' => null,
-'vendor' => null,
+'seller' => null,
 'variant' => null,
 'photo' => null,
 'category' => null,
 'tag' => null,
 'campaign_tag' => null,
 'profile_tag' => null,
+'item_field' => null,
 'guest_field' => null,
 'price_information' => null,
+'add_on_item' => null,
+'add_on_guest' => null,
+'in_language' => null,
+'meeting_point' => null,
+'geo' => null,
+'geo_shape' => null,
+'inclusions' => null,
+'exclusions' => null,
+'important_info' => null,
+'detailed_information' => null,
+'destination' => null,
+'audio' => null,
+'video' => null,
+'potential_action' => null,
 'id' => null,
 'identifier' => null,
+'removed' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
@@ -146,17 +178,33 @@ class DsProduct implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'service' => 'service',
-'vendor' => 'vendor',
+'seller' => 'seller',
 'variant' => 'variant',
 'photo' => 'photo',
 'category' => 'category',
 'tag' => 'tag',
 'campaign_tag' => 'campaignTag',
 'profile_tag' => 'profileTag',
+'item_field' => 'itemField',
 'guest_field' => 'guestField',
 'price_information' => 'priceInformation',
+'add_on_item' => 'addOnItem',
+'add_on_guest' => 'addOnGuest',
+'in_language' => 'inLanguage',
+'meeting_point' => 'meetingPoint',
+'geo' => 'geo',
+'geo_shape' => 'geoShape',
+'inclusions' => 'inclusions',
+'exclusions' => 'exclusions',
+'important_info' => 'importantInfo',
+'detailed_information' => 'detailedInformation',
+'destination' => 'destination',
+'audio' => 'audio',
+'video' => 'video',
+'potential_action' => 'potentialAction',
 'id' => '@id',
 'identifier' => 'identifier',
+'removed' => 'removed',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
@@ -180,17 +228,33 @@ class DsProduct implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'service' => 'setService',
-'vendor' => 'setVendor',
+'seller' => 'setSeller',
 'variant' => 'setVariant',
 'photo' => 'setPhoto',
 'category' => 'setCategory',
 'tag' => 'setTag',
 'campaign_tag' => 'setCampaignTag',
 'profile_tag' => 'setProfileTag',
+'item_field' => 'setItemField',
 'guest_field' => 'setGuestField',
 'price_information' => 'setPriceInformation',
+'add_on_item' => 'setAddOnItem',
+'add_on_guest' => 'setAddOnGuest',
+'in_language' => 'setInLanguage',
+'meeting_point' => 'setMeetingPoint',
+'geo' => 'setGeo',
+'geo_shape' => 'setGeoShape',
+'inclusions' => 'setInclusions',
+'exclusions' => 'setExclusions',
+'important_info' => 'setImportantInfo',
+'detailed_information' => 'setDetailedInformation',
+'destination' => 'setDestination',
+'audio' => 'setAudio',
+'video' => 'setVideo',
+'potential_action' => 'setPotentialAction',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
+'removed' => 'setRemoved',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
@@ -214,17 +278,33 @@ class DsProduct implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'service' => 'getService',
-'vendor' => 'getVendor',
+'seller' => 'getSeller',
 'variant' => 'getVariant',
 'photo' => 'getPhoto',
 'category' => 'getCategory',
 'tag' => 'getTag',
 'campaign_tag' => 'getCampaignTag',
 'profile_tag' => 'getProfileTag',
+'item_field' => 'getItemField',
 'guest_field' => 'getGuestField',
 'price_information' => 'getPriceInformation',
+'add_on_item' => 'getAddOnItem',
+'add_on_guest' => 'getAddOnGuest',
+'in_language' => 'getInLanguage',
+'meeting_point' => 'getMeetingPoint',
+'geo' => 'getGeo',
+'geo_shape' => 'getGeoShape',
+'inclusions' => 'getInclusions',
+'exclusions' => 'getExclusions',
+'important_info' => 'getImportantInfo',
+'detailed_information' => 'getDetailedInformation',
+'destination' => 'getDestination',
+'audio' => 'getAudio',
+'video' => 'getVideo',
+'potential_action' => 'getPotentialAction',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
+'removed' => 'getRemoved',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
@@ -300,17 +380,33 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['service'] = isset($data['service']) ? $data['service'] : null;
-        $this->container['vendor'] = isset($data['vendor']) ? $data['vendor'] : null;
+        $this->container['seller'] = isset($data['seller']) ? $data['seller'] : null;
         $this->container['variant'] = isset($data['variant']) ? $data['variant'] : null;
         $this->container['photo'] = isset($data['photo']) ? $data['photo'] : null;
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
+        $this->container['item_field'] = isset($data['item_field']) ? $data['item_field'] : null;
         $this->container['guest_field'] = isset($data['guest_field']) ? $data['guest_field'] : null;
         $this->container['price_information'] = isset($data['price_information']) ? $data['price_information'] : null;
+        $this->container['add_on_item'] = isset($data['add_on_item']) ? $data['add_on_item'] : null;
+        $this->container['add_on_guest'] = isset($data['add_on_guest']) ? $data['add_on_guest'] : null;
+        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
+        $this->container['meeting_point'] = isset($data['meeting_point']) ? $data['meeting_point'] : null;
+        $this->container['geo'] = isset($data['geo']) ? $data['geo'] : null;
+        $this->container['geo_shape'] = isset($data['geo_shape']) ? $data['geo_shape'] : null;
+        $this->container['inclusions'] = isset($data['inclusions']) ? $data['inclusions'] : null;
+        $this->container['exclusions'] = isset($data['exclusions']) ? $data['exclusions'] : null;
+        $this->container['important_info'] = isset($data['important_info']) ? $data['important_info'] : null;
+        $this->container['detailed_information'] = isset($data['detailed_information']) ? $data['detailed_information'] : null;
+        $this->container['destination'] = isset($data['destination']) ? $data['destination'] : null;
+        $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
+        $this->container['video'] = isset($data['video']) ? $data['video'] : null;
+        $this->container['potential_action'] = isset($data['potential_action']) ? $data['potential_action'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
@@ -377,25 +473,25 @@ class DsProduct implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets vendor
+     * Gets seller
      *
-     * @return string
+     * @return \Infocenter\Client\Model\DsLocalBusinessMember
      */
-    public function getVendor()
+    public function getSeller()
     {
-        return $this->container['vendor'];
+        return $this->container['seller'];
     }
 
     /**
-     * Sets vendor
+     * Sets seller
      *
-     * @param string $vendor vendor
+     * @param \Infocenter\Client\Model\DsLocalBusinessMember $seller seller
      *
      * @return $this
      */
-    public function setVendor($vendor)
+    public function setSeller($seller)
     {
-        $this->container['vendor'] = $vendor;
+        $this->container['seller'] = $seller;
 
         return $this;
     }
@@ -545,9 +641,33 @@ class DsProduct implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets item_field
+     *
+     * @return \Infocenter\Client\Model\DsFieldDefinition[]
+     */
+    public function getItemField()
+    {
+        return $this->container['item_field'];
+    }
+
+    /**
+     * Sets item_field
+     *
+     * @param \Infocenter\Client\Model\DsFieldDefinition[] $item_field item_field
+     *
+     * @return $this
+     */
+    public function setItemField($item_field)
+    {
+        $this->container['item_field'] = $item_field;
+
+        return $this;
+    }
+
+    /**
      * Gets guest_field
      *
-     * @return \Infocenter\Client\Model\DsGuestField[]
+     * @return \Infocenter\Client\Model\DsFieldDefinition[]
      */
     public function getGuestField()
     {
@@ -557,7 +677,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets guest_field
      *
-     * @param \Infocenter\Client\Model\DsGuestField[] $guest_field guest_field
+     * @param \Infocenter\Client\Model\DsFieldDefinition[] $guest_field guest_field
      *
      * @return $this
      */
@@ -588,6 +708,342 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setPriceInformation($price_information)
     {
         $this->container['price_information'] = $price_information;
+
+        return $this;
+    }
+
+    /**
+     * Gets add_on_item
+     *
+     * @return \Infocenter\Client\Model\DsProductAddOn[]
+     */
+    public function getAddOnItem()
+    {
+        return $this->container['add_on_item'];
+    }
+
+    /**
+     * Sets add_on_item
+     *
+     * @param \Infocenter\Client\Model\DsProductAddOn[] $add_on_item add_on_item
+     *
+     * @return $this
+     */
+    public function setAddOnItem($add_on_item)
+    {
+        $this->container['add_on_item'] = $add_on_item;
+
+        return $this;
+    }
+
+    /**
+     * Gets add_on_guest
+     *
+     * @return \Infocenter\Client\Model\DsProductAddOn[]
+     */
+    public function getAddOnGuest()
+    {
+        return $this->container['add_on_guest'];
+    }
+
+    /**
+     * Sets add_on_guest
+     *
+     * @param \Infocenter\Client\Model\DsProductAddOn[] $add_on_guest add_on_guest
+     *
+     * @return $this
+     */
+    public function setAddOnGuest($add_on_guest)
+    {
+        $this->container['add_on_guest'] = $add_on_guest;
+
+        return $this;
+    }
+
+    /**
+     * Gets in_language
+     *
+     * @return string[]
+     */
+    public function getInLanguage()
+    {
+        return $this->container['in_language'];
+    }
+
+    /**
+     * Sets in_language
+     *
+     * @param string[] $in_language in_language
+     *
+     * @return $this
+     */
+    public function setInLanguage($in_language)
+    {
+        $this->container['in_language'] = $in_language;
+
+        return $this;
+    }
+
+    /**
+     * Gets meeting_point
+     *
+     * @return \Infocenter\Client\Model\DsGeoCoordinates[]
+     */
+    public function getMeetingPoint()
+    {
+        return $this->container['meeting_point'];
+    }
+
+    /**
+     * Sets meeting_point
+     *
+     * @param \Infocenter\Client\Model\DsGeoCoordinates[] $meeting_point meeting_point
+     *
+     * @return $this
+     */
+    public function setMeetingPoint($meeting_point)
+    {
+        $this->container['meeting_point'] = $meeting_point;
+
+        return $this;
+    }
+
+    /**
+     * Gets geo
+     *
+     * @return \Infocenter\Client\Model\DsGeoCoordinates
+     */
+    public function getGeo()
+    {
+        return $this->container['geo'];
+    }
+
+    /**
+     * Sets geo
+     *
+     * @param \Infocenter\Client\Model\DsGeoCoordinates $geo geo
+     *
+     * @return $this
+     */
+    public function setGeo($geo)
+    {
+        $this->container['geo'] = $geo;
+
+        return $this;
+    }
+
+    /**
+     * Gets geo_shape
+     *
+     * @return \Infocenter\Client\Model\DsGeoShape
+     */
+    public function getGeoShape()
+    {
+        return $this->container['geo_shape'];
+    }
+
+    /**
+     * Sets geo_shape
+     *
+     * @param \Infocenter\Client\Model\DsGeoShape $geo_shape geo_shape
+     *
+     * @return $this
+     */
+    public function setGeoShape($geo_shape)
+    {
+        $this->container['geo_shape'] = $geo_shape;
+
+        return $this;
+    }
+
+    /**
+     * Gets inclusions
+     *
+     * @return string[]
+     */
+    public function getInclusions()
+    {
+        return $this->container['inclusions'];
+    }
+
+    /**
+     * Sets inclusions
+     *
+     * @param string[] $inclusions inclusions
+     *
+     * @return $this
+     */
+    public function setInclusions($inclusions)
+    {
+        $this->container['inclusions'] = $inclusions;
+
+        return $this;
+    }
+
+    /**
+     * Gets exclusions
+     *
+     * @return string[]
+     */
+    public function getExclusions()
+    {
+        return $this->container['exclusions'];
+    }
+
+    /**
+     * Sets exclusions
+     *
+     * @param string[] $exclusions exclusions
+     *
+     * @return $this
+     */
+    public function setExclusions($exclusions)
+    {
+        $this->container['exclusions'] = $exclusions;
+
+        return $this;
+    }
+
+    /**
+     * Gets important_info
+     *
+     * @return string[]
+     */
+    public function getImportantInfo()
+    {
+        return $this->container['important_info'];
+    }
+
+    /**
+     * Sets important_info
+     *
+     * @param string[] $important_info important_info
+     *
+     * @return $this
+     */
+    public function setImportantInfo($important_info)
+    {
+        $this->container['important_info'] = $important_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets detailed_information
+     *
+     * @return string[]
+     */
+    public function getDetailedInformation()
+    {
+        return $this->container['detailed_information'];
+    }
+
+    /**
+     * Sets detailed_information
+     *
+     * @param string[] $detailed_information detailed_information
+     *
+     * @return $this
+     */
+    public function setDetailedInformation($detailed_information)
+    {
+        $this->container['detailed_information'] = $detailed_information;
+
+        return $this;
+    }
+
+    /**
+     * Gets destination
+     *
+     * @return string
+     */
+    public function getDestination()
+    {
+        return $this->container['destination'];
+    }
+
+    /**
+     * Sets destination
+     *
+     * @param string $destination destination
+     *
+     * @return $this
+     */
+    public function setDestination($destination)
+    {
+        $this->container['destination'] = $destination;
+
+        return $this;
+    }
+
+    /**
+     * Gets audio
+     *
+     * @return \Infocenter\Client\Model\DsAudioObjectSimplex[]
+     */
+    public function getAudio()
+    {
+        return $this->container['audio'];
+    }
+
+    /**
+     * Sets audio
+     *
+     * @param \Infocenter\Client\Model\DsAudioObjectSimplex[] $audio audio
+     *
+     * @return $this
+     */
+    public function setAudio($audio)
+    {
+        $this->container['audio'] = $audio;
+
+        return $this;
+    }
+
+    /**
+     * Gets video
+     *
+     * @return \Infocenter\Client\Model\DsVideoObjectSimplex[]
+     */
+    public function getVideo()
+    {
+        return $this->container['video'];
+    }
+
+    /**
+     * Sets video
+     *
+     * @param \Infocenter\Client\Model\DsVideoObjectSimplex[] $video video
+     *
+     * @return $this
+     */
+    public function setVideo($video)
+    {
+        $this->container['video'] = $video;
+
+        return $this;
+    }
+
+    /**
+     * Gets potential_action
+     *
+     * @return \Infocenter\Client\Model\DsAction[]
+     */
+    public function getPotentialAction()
+    {
+        return $this->container['potential_action'];
+    }
+
+    /**
+     * Sets potential_action
+     *
+     * @param \Infocenter\Client\Model\DsAction[] $potential_action potential_action
+     *
+     * @return $this
+     */
+    public function setPotentialAction($potential_action)
+    {
+        $this->container['potential_action'] = $potential_action;
 
         return $this;
     }
@@ -636,6 +1092,30 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets removed
+     *
+     * @return bool
+     */
+    public function getRemoved()
+    {
+        return $this->container['removed'];
+    }
+
+    /**
+     * Sets removed
+     *
+     * @param bool $removed removed
+     *
+     * @return $this
+     */
+    public function setRemoved($removed)
+    {
+        $this->container['removed'] = $removed;
 
         return $this;
     }

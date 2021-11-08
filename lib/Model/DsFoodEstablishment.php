@@ -63,6 +63,7 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
 'contact_point' => '\Infocenter\Client\Model\DsContactPoint',
 'opening_days' => 'string',
 'price_range' => 'string',
+'potential_action' => '\Infocenter\Client\Model\DsAction[]',
 'available_language' => 'string[]',
 'address' => '\Infocenter\Client\Model\DsPostalAddress',
 'fax_number' => 'string',
@@ -100,8 +101,11 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
 'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
+'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
+'removed' => 'bool',
 'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'last_modified' => '\DateTime',
 'available_data_language' => 'string[]',
@@ -131,6 +135,7 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
 'contact_point' => null,
 'opening_days' => null,
 'price_range' => null,
+'potential_action' => null,
 'available_language' => null,
 'address' => null,
 'fax_number' => null,
@@ -168,8 +173,11 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
 'tag' => null,
 'campaign_tag' => null,
 'profile_tag' => null,
+'audio' => null,
+'video' => null,
 'id' => null,
 'identifier' => null,
+'removed' => null,
 'data_governance' => null,
 'last_modified' => 'date-time',
 'available_data_language' => null,
@@ -220,6 +228,7 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
 'contact_point' => 'contactPoint',
 'opening_days' => 'openingDays',
 'price_range' => 'priceRange',
+'potential_action' => 'potentialAction',
 'available_language' => 'availableLanguage',
 'address' => 'address',
 'fax_number' => 'faxNumber',
@@ -257,8 +266,11 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
 'tag' => 'tag',
 'campaign_tag' => 'campaignTag',
 'profile_tag' => 'profileTag',
+'audio' => 'audio',
+'video' => 'video',
 'id' => '@id',
 'identifier' => 'identifier',
+'removed' => 'removed',
 'data_governance' => 'dataGovernance',
 'last_modified' => 'lastModified',
 'available_data_language' => 'availableDataLanguage',
@@ -288,6 +300,7 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
 'contact_point' => 'setContactPoint',
 'opening_days' => 'setOpeningDays',
 'price_range' => 'setPriceRange',
+'potential_action' => 'setPotentialAction',
 'available_language' => 'setAvailableLanguage',
 'address' => 'setAddress',
 'fax_number' => 'setFaxNumber',
@@ -325,8 +338,11 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
 'tag' => 'setTag',
 'campaign_tag' => 'setCampaignTag',
 'profile_tag' => 'setProfileTag',
+'audio' => 'setAudio',
+'video' => 'setVideo',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
+'removed' => 'setRemoved',
 'data_governance' => 'setDataGovernance',
 'last_modified' => 'setLastModified',
 'available_data_language' => 'setAvailableDataLanguage',
@@ -356,6 +372,7 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
 'contact_point' => 'getContactPoint',
 'opening_days' => 'getOpeningDays',
 'price_range' => 'getPriceRange',
+'potential_action' => 'getPotentialAction',
 'available_language' => 'getAvailableLanguage',
 'address' => 'getAddress',
 'fax_number' => 'getFaxNumber',
@@ -393,8 +410,11 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
 'tag' => 'getTag',
 'campaign_tag' => 'getCampaignTag',
 'profile_tag' => 'getProfileTag',
+'audio' => 'getAudio',
+'video' => 'getVideo',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
+'removed' => 'getRemoved',
 'data_governance' => 'getDataGovernance',
 'last_modified' => 'getLastModified',
 'available_data_language' => 'getAvailableDataLanguage',
@@ -476,6 +496,7 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
         $this->container['contact_point'] = isset($data['contact_point']) ? $data['contact_point'] : null;
         $this->container['opening_days'] = isset($data['opening_days']) ? $data['opening_days'] : null;
         $this->container['price_range'] = isset($data['price_range']) ? $data['price_range'] : null;
+        $this->container['potential_action'] = isset($data['potential_action']) ? $data['potential_action'] : null;
         $this->container['available_language'] = isset($data['available_language']) ? $data['available_language'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['fax_number'] = isset($data['fax_number']) ? $data['fax_number'] : null;
@@ -513,8 +534,11 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
+        $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
+        $this->container['video'] = isset($data['video']) ? $data['video'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
@@ -720,6 +744,30 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
     public function setPriceRange($price_range)
     {
         $this->container['price_range'] = $price_range;
+
+        return $this;
+    }
+
+    /**
+     * Gets potential_action
+     *
+     * @return \Infocenter\Client\Model\DsAction[]
+     */
+    public function getPotentialAction()
+    {
+        return $this->container['potential_action'];
+    }
+
+    /**
+     * Sets potential_action
+     *
+     * @param \Infocenter\Client\Model\DsAction[] $potential_action potential_action
+     *
+     * @return $this
+     */
+    public function setPotentialAction($potential_action)
+    {
+        $this->container['potential_action'] = $potential_action;
 
         return $this;
     }
@@ -1613,6 +1661,54 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets audio
+     *
+     * @return \Infocenter\Client\Model\DsAudioObjectSimplex[]
+     */
+    public function getAudio()
+    {
+        return $this->container['audio'];
+    }
+
+    /**
+     * Sets audio
+     *
+     * @param \Infocenter\Client\Model\DsAudioObjectSimplex[] $audio audio
+     *
+     * @return $this
+     */
+    public function setAudio($audio)
+    {
+        $this->container['audio'] = $audio;
+
+        return $this;
+    }
+
+    /**
+     * Gets video
+     *
+     * @return \Infocenter\Client\Model\DsVideoObjectSimplex[]
+     */
+    public function getVideo()
+    {
+        return $this->container['video'];
+    }
+
+    /**
+     * Sets video
+     *
+     * @param \Infocenter\Client\Model\DsVideoObjectSimplex[] $video video
+     *
+     * @return $this
+     */
+    public function setVideo($video)
+    {
+        $this->container['video'] = $video;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return string
@@ -1656,6 +1752,30 @@ class DsFoodEstablishment implements ModelInterface, ArrayAccess
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets removed
+     *
+     * @return bool
+     */
+    public function getRemoved()
+    {
+        return $this->container['removed'];
+    }
+
+    /**
+     * Sets removed
+     *
+     * @param bool $removed removed
+     *
+     * @return $this
+     */
+    public function setRemoved($removed)
+    {
+        $this->container['removed'] = $removed;
 
         return $this;
     }
