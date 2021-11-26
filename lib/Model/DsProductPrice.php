@@ -64,7 +64,9 @@ class DsProductPrice implements ModelInterface, ArrayAccess
 'min_allowed_age' => 'int',
 'type' => 'string',
 'min_seats' => 'int',
-'max_seats' => 'int'    ];
+'max_seats' => 'int',
+'valid_from' => '\DateTime',
+'valid_through' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -80,7 +82,9 @@ class DsProductPrice implements ModelInterface, ArrayAccess
 'min_allowed_age' => 'int32',
 'type' => null,
 'min_seats' => 'int32',
-'max_seats' => 'int32'    ];
+'max_seats' => 'int32',
+'valid_from' => 'date-time',
+'valid_through' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -117,7 +121,9 @@ class DsProductPrice implements ModelInterface, ArrayAccess
 'min_allowed_age' => 'minAllowedAge',
 'type' => 'type',
 'min_seats' => 'minSeats',
-'max_seats' => 'maxSeats'    ];
+'max_seats' => 'maxSeats',
+'valid_from' => 'validFrom',
+'valid_through' => 'validThrough'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -133,7 +139,9 @@ class DsProductPrice implements ModelInterface, ArrayAccess
 'min_allowed_age' => 'setMinAllowedAge',
 'type' => 'setType',
 'min_seats' => 'setMinSeats',
-'max_seats' => 'setMaxSeats'    ];
+'max_seats' => 'setMaxSeats',
+'valid_from' => 'setValidFrom',
+'valid_through' => 'setValidThrough'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -149,7 +157,9 @@ class DsProductPrice implements ModelInterface, ArrayAccess
 'min_allowed_age' => 'getMinAllowedAge',
 'type' => 'getType',
 'min_seats' => 'getMinSeats',
-'max_seats' => 'getMaxSeats'    ];
+'max_seats' => 'getMaxSeats',
+'valid_from' => 'getValidFrom',
+'valid_through' => 'getValidThrough'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -218,6 +228,8 @@ class DsProductPrice implements ModelInterface, ArrayAccess
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['min_seats'] = isset($data['min_seats']) ? $data['min_seats'] : null;
         $this->container['max_seats'] = isset($data['max_seats']) ? $data['max_seats'] : null;
+        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
+        $this->container['valid_through'] = isset($data['valid_through']) ? $data['valid_through'] : null;
     }
 
     /**
@@ -456,6 +468,54 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     public function setMaxSeats($max_seats)
     {
         $this->container['max_seats'] = $max_seats;
+
+        return $this;
+    }
+
+    /**
+     * Gets valid_from
+     *
+     * @return \DateTime
+     */
+    public function getValidFrom()
+    {
+        return $this->container['valid_from'];
+    }
+
+    /**
+     * Sets valid_from
+     *
+     * @param \DateTime $valid_from valid_from
+     *
+     * @return $this
+     */
+    public function setValidFrom($valid_from)
+    {
+        $this->container['valid_from'] = $valid_from;
+
+        return $this;
+    }
+
+    /**
+     * Gets valid_through
+     *
+     * @return \DateTime
+     */
+    public function getValidThrough()
+    {
+        return $this->container['valid_through'];
+    }
+
+    /**
+     * Sets valid_through
+     *
+     * @param \DateTime $valid_through valid_through
+     *
+     * @return $this
+     */
+    public function setValidThrough($valid_through)
+    {
+        $this->container['valid_through'] = $valid_through;
 
         return $this;
     }

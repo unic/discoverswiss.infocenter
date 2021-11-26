@@ -58,13 +58,15 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'parent' => '\Infocenter\Client\Model\DsPlaceSimplex[]',
 'available_language' => 'string[]',
-'address' => '\Infocenter\Client\Model\DsPostalAddress',
+'slogan' => 'string',
+'address' => '\Infocenter\Client\Model\DsFullAddress',
 'fax_number' => 'string',
 'geo' => '\Infocenter\Client\Model\DsGeoCoordinates',
 'has_map' => 'string',
 'is_accessible_for_free' => 'bool',
 'maximum_attendee_capacity' => 'int',
 'opening_hours_specification' => '\Infocenter\Client\Model\DsOpeningHoursSpecification[]',
+'logo' => '\Infocenter\Client\Model\DsImageObjectSimplex',
 'photo' => '\Infocenter\Client\Model\DsImageObjectSimplex[]',
 'public_access' => 'bool',
 'smoking_allowed' => 'bool',
@@ -123,6 +125,7 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'parent' => null,
 'available_language' => null,
+'slogan' => null,
 'address' => null,
 'fax_number' => null,
 'geo' => null,
@@ -130,6 +133,7 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'is_accessible_for_free' => null,
 'maximum_attendee_capacity' => 'int32',
 'opening_hours_specification' => null,
+'logo' => null,
 'photo' => null,
 'public_access' => null,
 'smoking_allowed' => null,
@@ -209,6 +213,7 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'parent' => 'parent',
 'available_language' => 'availableLanguage',
+'slogan' => 'slogan',
 'address' => 'address',
 'fax_number' => 'faxNumber',
 'geo' => 'geo',
@@ -216,6 +221,7 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'is_accessible_for_free' => 'isAccessibleForFree',
 'maximum_attendee_capacity' => 'maximumAttendeeCapacity',
 'opening_hours_specification' => 'openingHoursSpecification',
+'logo' => 'logo',
 'photo' => 'photo',
 'public_access' => 'publicAccess',
 'smoking_allowed' => 'smokingAllowed',
@@ -274,6 +280,7 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     protected static $setters = [
         'parent' => 'setParent',
 'available_language' => 'setAvailableLanguage',
+'slogan' => 'setSlogan',
 'address' => 'setAddress',
 'fax_number' => 'setFaxNumber',
 'geo' => 'setGeo',
@@ -281,6 +288,7 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'is_accessible_for_free' => 'setIsAccessibleForFree',
 'maximum_attendee_capacity' => 'setMaximumAttendeeCapacity',
 'opening_hours_specification' => 'setOpeningHoursSpecification',
+'logo' => 'setLogo',
 'photo' => 'setPhoto',
 'public_access' => 'setPublicAccess',
 'smoking_allowed' => 'setSmokingAllowed',
@@ -339,6 +347,7 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     protected static $getters = [
         'parent' => 'getParent',
 'available_language' => 'getAvailableLanguage',
+'slogan' => 'getSlogan',
 'address' => 'getAddress',
 'fax_number' => 'getFaxNumber',
 'geo' => 'getGeo',
@@ -346,6 +355,7 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
 'is_accessible_for_free' => 'getIsAccessibleForFree',
 'maximum_attendee_capacity' => 'getMaximumAttendeeCapacity',
 'opening_hours_specification' => 'getOpeningHoursSpecification',
+'logo' => 'getLogo',
 'photo' => 'getPhoto',
 'public_access' => 'getPublicAccess',
 'smoking_allowed' => 'getSmokingAllowed',
@@ -456,6 +466,7 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     {
         $this->container['parent'] = isset($data['parent']) ? $data['parent'] : null;
         $this->container['available_language'] = isset($data['available_language']) ? $data['available_language'] : null;
+        $this->container['slogan'] = isset($data['slogan']) ? $data['slogan'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['fax_number'] = isset($data['fax_number']) ? $data['fax_number'] : null;
         $this->container['geo'] = isset($data['geo']) ? $data['geo'] : null;
@@ -463,6 +474,7 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
         $this->container['is_accessible_for_free'] = isset($data['is_accessible_for_free']) ? $data['is_accessible_for_free'] : null;
         $this->container['maximum_attendee_capacity'] = isset($data['maximum_attendee_capacity']) ? $data['maximum_attendee_capacity'] : null;
         $this->container['opening_hours_specification'] = isset($data['opening_hours_specification']) ? $data['opening_hours_specification'] : null;
+        $this->container['logo'] = isset($data['logo']) ? $data['logo'] : null;
         $this->container['photo'] = isset($data['photo']) ? $data['photo'] : null;
         $this->container['public_access'] = isset($data['public_access']) ? $data['public_access'] : null;
         $this->container['smoking_allowed'] = isset($data['smoking_allowed']) ? $data['smoking_allowed'] : null;
@@ -587,9 +599,33 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets slogan
+     *
+     * @return string
+     */
+    public function getSlogan()
+    {
+        return $this->container['slogan'];
+    }
+
+    /**
+     * Sets slogan
+     *
+     * @param string $slogan slogan
+     *
+     * @return $this
+     */
+    public function setSlogan($slogan)
+    {
+        $this->container['slogan'] = $slogan;
+
+        return $this;
+    }
+
+    /**
      * Gets address
      *
-     * @return \Infocenter\Client\Model\DsPostalAddress
+     * @return \Infocenter\Client\Model\DsFullAddress
      */
     public function getAddress()
     {
@@ -599,7 +635,7 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Infocenter\Client\Model\DsPostalAddress $address address
+     * @param \Infocenter\Client\Model\DsFullAddress $address address
      *
      * @return $this
      */
@@ -750,6 +786,30 @@ class DsAdministrativeArea implements ModelInterface, ArrayAccess
     public function setOpeningHoursSpecification($opening_hours_specification)
     {
         $this->container['opening_hours_specification'] = $opening_hours_specification;
+
+        return $this;
+    }
+
+    /**
+     * Gets logo
+     *
+     * @return \Infocenter\Client\Model\DsImageObjectSimplex
+     */
+    public function getLogo()
+    {
+        return $this->container['logo'];
+    }
+
+    /**
+     * Sets logo
+     *
+     * @param \Infocenter\Client\Model\DsImageObjectSimplex $logo logo
+     *
+     * @return $this
+     */
+    public function setLogo($logo)
+    {
+        $this->container['logo'] = $logo;
 
         return $this;
     }

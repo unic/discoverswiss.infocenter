@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **type** | **string** |  | [optional] 
 **min_seats** | **int** |  | [optional] 
 **max_seats** | **int** |  | [optional] 
+**valid_from** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**valid_through** | [**\DateTime**](\DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

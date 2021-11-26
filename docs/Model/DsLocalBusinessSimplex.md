@@ -1,13 +1,10 @@
-# DsPerson
+# DsLocalBusinessSimplex
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**given_name** | **string** |  | [optional] 
-**family_name** | **string** |  | [optional] 
-**email** | **string** |  | [optional] 
-**gender** | **string** |  | [optional] 
-**telephone** | **string** |  | [optional] 
+**id** | **string** |  | [optional] 
+**identifier** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

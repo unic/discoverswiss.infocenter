@@ -1,6 +1,6 @@
 <?php
 /**
- * DsPerson
+ * DsLocalBusinessSimplex
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsPerson Class Doc Comment
+ * DsLocalBusinessSimplex Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsPerson implements ModelInterface, ArrayAccess
+class DsLocalBusinessSimplex implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsPerson implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Person';
+    protected static $swaggerModelName = 'LocalBusinessSimplex';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,8 @@ class DsPerson implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'given_name' => 'string',
-'family_name' => 'string',
-'email' => 'string',
-'gender' => 'string',
-'telephone' => 'string'    ];
+        'id' => 'string',
+'identifier' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +65,8 @@ class DsPerson implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'given_name' => null,
-'family_name' => null,
-'email' => null,
-'gender' => null,
-'telephone' => null    ];
+        'id' => null,
+'identifier' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +95,8 @@ class DsPerson implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'given_name' => 'givenName',
-'family_name' => 'familyName',
-'email' => 'email',
-'gender' => 'gender',
-'telephone' => 'telephone'    ];
+        'id' => 'id',
+'identifier' => 'identifier'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +104,8 @@ class DsPerson implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'given_name' => 'setGivenName',
-'family_name' => 'setFamilyName',
-'email' => 'setEmail',
-'gender' => 'setGender',
-'telephone' => 'setTelephone'    ];
+        'id' => 'setId',
+'identifier' => 'setIdentifier'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +113,8 @@ class DsPerson implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'given_name' => 'getGivenName',
-'family_name' => 'getFamilyName',
-'email' => 'getEmail',
-'gender' => 'getGender',
-'telephone' => 'getTelephone'    ];
+        'id' => 'getId',
+'identifier' => 'getIdentifier'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +174,8 @@ class DsPerson implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['given_name'] = isset($data['given_name']) ? $data['given_name'] : null;
-        $this->container['family_name'] = isset($data['family_name']) ? $data['family_name'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
-        $this->container['telephone'] = isset($data['telephone']) ? $data['telephone'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
     }
 
     /**
@@ -221,121 +203,49 @@ class DsPerson implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets given_name
+     * Gets id
      *
      * @return string
      */
-    public function getGivenName()
+    public function getId()
     {
-        return $this->container['given_name'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets given_name
+     * Sets id
      *
-     * @param string $given_name given_name
+     * @param string $id id
      *
      * @return $this
      */
-    public function setGivenName($given_name)
+    public function setId($id)
     {
-        $this->container['given_name'] = $given_name;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets family_name
+     * Gets identifier
      *
      * @return string
      */
-    public function getFamilyName()
+    public function getIdentifier()
     {
-        return $this->container['family_name'];
+        return $this->container['identifier'];
     }
 
     /**
-     * Sets family_name
+     * Sets identifier
      *
-     * @param string $family_name family_name
+     * @param string $identifier identifier
      *
      * @return $this
      */
-    public function setFamilyName($family_name)
+    public function setIdentifier($identifier)
     {
-        $this->container['family_name'] = $family_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string $email email
-     *
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets gender
-     *
-     * @return string
-     */
-    public function getGender()
-    {
-        return $this->container['gender'];
-    }
-
-    /**
-     * Sets gender
-     *
-     * @param string $gender gender
-     *
-     * @return $this
-     */
-    public function setGender($gender)
-    {
-        $this->container['gender'] = $gender;
-
-        return $this;
-    }
-
-    /**
-     * Gets telephone
-     *
-     * @return string
-     */
-    public function getTelephone()
-    {
-        return $this->container['telephone'];
-    }
-
-    /**
-     * Sets telephone
-     *
-     * @param string $telephone telephone
-     *
-     * @return $this
-     */
-    public function setTelephone($telephone)
-    {
-        $this->container['telephone'] = $telephone;
+        $this->container['identifier'] = $identifier;
 
         return $this;
     }

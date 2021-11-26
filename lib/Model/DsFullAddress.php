@@ -1,6 +1,6 @@
 <?php
 /**
- * DsOrganization
+ * DsFullAddress
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsOrganization Class Doc Comment
+ * DsFullAddress Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsOrganization implements ModelInterface, ArrayAccess
+class DsFullAddress implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsOrganization implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Organization';
+    protected static $swaggerModelName = 'FullAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +56,22 @@ class DsOrganization implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'address' => '\Infocenter\Client\Model\DsFullAddress',
-'contact_point' => '\Infocenter\Client\Model\DsContactPoint',
+        'given_name' => 'string',
+'family_name' => 'string',
+'salutation' => 'string',
+'address_country' => 'string',
+'address_locality' => 'string',
+'address_region' => 'string',
+'postal_code' => 'string',
+'post_office_box_number' => 'string',
+'street_address' => 'string',
+'address_line' => 'string',
+'available_language' => 'string[]',
+'contact_type' => 'string',
+'email' => 'string',
+'fax_number' => 'string',
+'telephone' => 'string',
+'hours_available' => '\Infocenter\Client\Model\DsOpeningHoursSpecification[]',
 'alternate_name' => 'string',
 'description' => 'string',
 'disambiguating_description' => 'string',
@@ -75,8 +89,22 @@ class DsOrganization implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'address' => null,
-'contact_point' => null,
+        'given_name' => null,
+'family_name' => null,
+'salutation' => null,
+'address_country' => null,
+'address_locality' => null,
+'address_region' => null,
+'postal_code' => null,
+'post_office_box_number' => null,
+'street_address' => null,
+'address_line' => null,
+'available_language' => null,
+'contact_type' => null,
+'email' => null,
+'fax_number' => null,
+'telephone' => null,
+'hours_available' => null,
 'alternate_name' => null,
 'description' => null,
 'disambiguating_description' => null,
@@ -115,8 +143,22 @@ class DsOrganization implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'address' => 'address',
-'contact_point' => 'contactPoint',
+        'given_name' => 'givenName',
+'family_name' => 'familyName',
+'salutation' => 'salutation',
+'address_country' => 'addressCountry',
+'address_locality' => 'addressLocality',
+'address_region' => 'addressRegion',
+'postal_code' => 'postalCode',
+'post_office_box_number' => 'postOfficeBoxNumber',
+'street_address' => 'streetAddress',
+'address_line' => 'addressLine',
+'available_language' => 'availableLanguage',
+'contact_type' => 'contactType',
+'email' => 'email',
+'fax_number' => 'faxNumber',
+'telephone' => 'telephone',
+'hours_available' => 'hoursAvailable',
 'alternate_name' => 'alternateName',
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
@@ -134,8 +176,22 @@ class DsOrganization implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'address' => 'setAddress',
-'contact_point' => 'setContactPoint',
+        'given_name' => 'setGivenName',
+'family_name' => 'setFamilyName',
+'salutation' => 'setSalutation',
+'address_country' => 'setAddressCountry',
+'address_locality' => 'setAddressLocality',
+'address_region' => 'setAddressRegion',
+'postal_code' => 'setPostalCode',
+'post_office_box_number' => 'setPostOfficeBoxNumber',
+'street_address' => 'setStreetAddress',
+'address_line' => 'setAddressLine',
+'available_language' => 'setAvailableLanguage',
+'contact_type' => 'setContactType',
+'email' => 'setEmail',
+'fax_number' => 'setFaxNumber',
+'telephone' => 'setTelephone',
+'hours_available' => 'setHoursAvailable',
 'alternate_name' => 'setAlternateName',
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
@@ -153,8 +209,22 @@ class DsOrganization implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'address' => 'getAddress',
-'contact_point' => 'getContactPoint',
+        'given_name' => 'getGivenName',
+'family_name' => 'getFamilyName',
+'salutation' => 'getSalutation',
+'address_country' => 'getAddressCountry',
+'address_locality' => 'getAddressLocality',
+'address_region' => 'getAddressRegion',
+'postal_code' => 'getPostalCode',
+'post_office_box_number' => 'getPostOfficeBoxNumber',
+'street_address' => 'getStreetAddress',
+'address_line' => 'getAddressLine',
+'available_language' => 'getAvailableLanguage',
+'contact_type' => 'getContactType',
+'email' => 'getEmail',
+'fax_number' => 'getFaxNumber',
+'telephone' => 'getTelephone',
+'hours_available' => 'getHoursAvailable',
 'alternate_name' => 'getAlternateName',
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
@@ -224,8 +294,22 @@ class DsOrganization implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['contact_point'] = isset($data['contact_point']) ? $data['contact_point'] : null;
+        $this->container['given_name'] = isset($data['given_name']) ? $data['given_name'] : null;
+        $this->container['family_name'] = isset($data['family_name']) ? $data['family_name'] : null;
+        $this->container['salutation'] = isset($data['salutation']) ? $data['salutation'] : null;
+        $this->container['address_country'] = isset($data['address_country']) ? $data['address_country'] : null;
+        $this->container['address_locality'] = isset($data['address_locality']) ? $data['address_locality'] : null;
+        $this->container['address_region'] = isset($data['address_region']) ? $data['address_region'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['post_office_box_number'] = isset($data['post_office_box_number']) ? $data['post_office_box_number'] : null;
+        $this->container['street_address'] = isset($data['street_address']) ? $data['street_address'] : null;
+        $this->container['address_line'] = isset($data['address_line']) ? $data['address_line'] : null;
+        $this->container['available_language'] = isset($data['available_language']) ? $data['available_language'] : null;
+        $this->container['contact_type'] = isset($data['contact_type']) ? $data['contact_type'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['fax_number'] = isset($data['fax_number']) ? $data['fax_number'] : null;
+        $this->container['telephone'] = isset($data['telephone']) ? $data['telephone'] : null;
+        $this->container['hours_available'] = isset($data['hours_available']) ? $data['hours_available'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
@@ -263,49 +347,385 @@ class DsOrganization implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets address
+     * Gets given_name
      *
-     * @return \Infocenter\Client\Model\DsFullAddress
+     * @return string
      */
-    public function getAddress()
+    public function getGivenName()
     {
-        return $this->container['address'];
+        return $this->container['given_name'];
     }
 
     /**
-     * Sets address
+     * Sets given_name
      *
-     * @param \Infocenter\Client\Model\DsFullAddress $address address
+     * @param string $given_name given_name
      *
      * @return $this
      */
-    public function setAddress($address)
+    public function setGivenName($given_name)
     {
-        $this->container['address'] = $address;
+        $this->container['given_name'] = $given_name;
 
         return $this;
     }
 
     /**
-     * Gets contact_point
+     * Gets family_name
      *
-     * @return \Infocenter\Client\Model\DsContactPoint
+     * @return string
      */
-    public function getContactPoint()
+    public function getFamilyName()
     {
-        return $this->container['contact_point'];
+        return $this->container['family_name'];
     }
 
     /**
-     * Sets contact_point
+     * Sets family_name
      *
-     * @param \Infocenter\Client\Model\DsContactPoint $contact_point contact_point
+     * @param string $family_name family_name
      *
      * @return $this
      */
-    public function setContactPoint($contact_point)
+    public function setFamilyName($family_name)
     {
-        $this->container['contact_point'] = $contact_point;
+        $this->container['family_name'] = $family_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets salutation
+     *
+     * @return string
+     */
+    public function getSalutation()
+    {
+        return $this->container['salutation'];
+    }
+
+    /**
+     * Sets salutation
+     *
+     * @param string $salutation salutation
+     *
+     * @return $this
+     */
+    public function setSalutation($salutation)
+    {
+        $this->container['salutation'] = $salutation;
+
+        return $this;
+    }
+
+    /**
+     * Gets address_country
+     *
+     * @return string
+     */
+    public function getAddressCountry()
+    {
+        return $this->container['address_country'];
+    }
+
+    /**
+     * Sets address_country
+     *
+     * @param string $address_country address_country
+     *
+     * @return $this
+     */
+    public function setAddressCountry($address_country)
+    {
+        $this->container['address_country'] = $address_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets address_locality
+     *
+     * @return string
+     */
+    public function getAddressLocality()
+    {
+        return $this->container['address_locality'];
+    }
+
+    /**
+     * Sets address_locality
+     *
+     * @param string $address_locality address_locality
+     *
+     * @return $this
+     */
+    public function setAddressLocality($address_locality)
+    {
+        $this->container['address_locality'] = $address_locality;
+
+        return $this;
+    }
+
+    /**
+     * Gets address_region
+     *
+     * @return string
+     */
+    public function getAddressRegion()
+    {
+        return $this->container['address_region'];
+    }
+
+    /**
+     * Sets address_region
+     *
+     * @param string $address_region address_region
+     *
+     * @return $this
+     */
+    public function setAddressRegion($address_region)
+    {
+        $this->container['address_region'] = $address_region;
+
+        return $this;
+    }
+
+    /**
+     * Gets postal_code
+     *
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postal_code'];
+    }
+
+    /**
+     * Sets postal_code
+     *
+     * @param string $postal_code postal_code
+     *
+     * @return $this
+     */
+    public function setPostalCode($postal_code)
+    {
+        $this->container['postal_code'] = $postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets post_office_box_number
+     *
+     * @return string
+     */
+    public function getPostOfficeBoxNumber()
+    {
+        return $this->container['post_office_box_number'];
+    }
+
+    /**
+     * Sets post_office_box_number
+     *
+     * @param string $post_office_box_number post_office_box_number
+     *
+     * @return $this
+     */
+    public function setPostOfficeBoxNumber($post_office_box_number)
+    {
+        $this->container['post_office_box_number'] = $post_office_box_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets street_address
+     *
+     * @return string
+     */
+    public function getStreetAddress()
+    {
+        return $this->container['street_address'];
+    }
+
+    /**
+     * Sets street_address
+     *
+     * @param string $street_address street_address
+     *
+     * @return $this
+     */
+    public function setStreetAddress($street_address)
+    {
+        $this->container['street_address'] = $street_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets address_line
+     *
+     * @return string
+     */
+    public function getAddressLine()
+    {
+        return $this->container['address_line'];
+    }
+
+    /**
+     * Sets address_line
+     *
+     * @param string $address_line address_line
+     *
+     * @return $this
+     */
+    public function setAddressLine($address_line)
+    {
+        $this->container['address_line'] = $address_line;
+
+        return $this;
+    }
+
+    /**
+     * Gets available_language
+     *
+     * @return string[]
+     */
+    public function getAvailableLanguage()
+    {
+        return $this->container['available_language'];
+    }
+
+    /**
+     * Sets available_language
+     *
+     * @param string[] $available_language available_language
+     *
+     * @return $this
+     */
+    public function setAvailableLanguage($available_language)
+    {
+        $this->container['available_language'] = $available_language;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_type
+     *
+     * @return string
+     */
+    public function getContactType()
+    {
+        return $this->container['contact_type'];
+    }
+
+    /**
+     * Sets contact_type
+     *
+     * @param string $contact_type contact_type
+     *
+     * @return $this
+     */
+    public function setContactType($contact_type)
+    {
+        $this->container['contact_type'] = $contact_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets fax_number
+     *
+     * @return string
+     */
+    public function getFaxNumber()
+    {
+        return $this->container['fax_number'];
+    }
+
+    /**
+     * Sets fax_number
+     *
+     * @param string $fax_number fax_number
+     *
+     * @return $this
+     */
+    public function setFaxNumber($fax_number)
+    {
+        $this->container['fax_number'] = $fax_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->container['telephone'];
+    }
+
+    /**
+     * Sets telephone
+     *
+     * @param string $telephone telephone
+     *
+     * @return $this
+     */
+    public function setTelephone($telephone)
+    {
+        $this->container['telephone'] = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Gets hours_available
+     *
+     * @return \Infocenter\Client\Model\DsOpeningHoursSpecification[]
+     */
+    public function getHoursAvailable()
+    {
+        return $this->container['hours_available'];
+    }
+
+    /**
+     * Sets hours_available
+     *
+     * @param \Infocenter\Client\Model\DsOpeningHoursSpecification[] $hours_available hours_available
+     *
+     * @return $this
+     */
+    public function setHoursAvailable($hours_available)
+    {
+        $this->container['hours_available'] = $hours_available;
 
         return $this;
     }

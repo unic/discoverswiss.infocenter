@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **organizer** | [**\Infocenter\Client\Model\DsOrganization**](DsOrganization.md) |  | [optional] 
+**event_status** | **string** |  | [optional] 
 **start_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **end_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **event_schedule** | [**\Infocenter\Client\Model\DsSchedule[]**](DsSchedule.md) |  | [optional] 

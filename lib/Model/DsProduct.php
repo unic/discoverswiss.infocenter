@@ -81,6 +81,8 @@ class DsProduct implements ModelInterface, ArrayAccess
 'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
 'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
 'potential_action' => '\Infocenter\Client\Model\DsAction[]',
+'offered_by' => '\Infocenter\Client\Model\DsLocalBusinessSimplex',
+'area_served' => '\Infocenter\Client\Model\DsPlaceSimplex',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -131,6 +133,8 @@ class DsProduct implements ModelInterface, ArrayAccess
 'audio' => null,
 'video' => null,
 'potential_action' => null,
+'offered_by' => null,
+'area_served' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -202,6 +206,8 @@ class DsProduct implements ModelInterface, ArrayAccess
 'audio' => 'audio',
 'video' => 'video',
 'potential_action' => 'potentialAction',
+'offered_by' => 'offeredBy',
+'area_served' => 'areaServed',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -252,6 +258,8 @@ class DsProduct implements ModelInterface, ArrayAccess
 'audio' => 'setAudio',
 'video' => 'setVideo',
 'potential_action' => 'setPotentialAction',
+'offered_by' => 'setOfferedBy',
+'area_served' => 'setAreaServed',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -302,6 +310,8 @@ class DsProduct implements ModelInterface, ArrayAccess
 'audio' => 'getAudio',
 'video' => 'getVideo',
 'potential_action' => 'getPotentialAction',
+'offered_by' => 'getOfferedBy',
+'area_served' => 'getAreaServed',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -404,6 +414,8 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
         $this->container['video'] = isset($data['video']) ? $data['video'] : null;
         $this->container['potential_action'] = isset($data['potential_action']) ? $data['potential_action'] : null;
+        $this->container['offered_by'] = isset($data['offered_by']) ? $data['offered_by'] : null;
+        $this->container['area_served'] = isset($data['area_served']) ? $data['area_served'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -1044,6 +1056,54 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setPotentialAction($potential_action)
     {
         $this->container['potential_action'] = $potential_action;
+
+        return $this;
+    }
+
+    /**
+     * Gets offered_by
+     *
+     * @return \Infocenter\Client\Model\DsLocalBusinessSimplex
+     */
+    public function getOfferedBy()
+    {
+        return $this->container['offered_by'];
+    }
+
+    /**
+     * Sets offered_by
+     *
+     * @param \Infocenter\Client\Model\DsLocalBusinessSimplex $offered_by offered_by
+     *
+     * @return $this
+     */
+    public function setOfferedBy($offered_by)
+    {
+        $this->container['offered_by'] = $offered_by;
+
+        return $this;
+    }
+
+    /**
+     * Gets area_served
+     *
+     * @return \Infocenter\Client\Model\DsPlaceSimplex
+     */
+    public function getAreaServed()
+    {
+        return $this->container['area_served'];
+    }
+
+    /**
+     * Sets area_served
+     *
+     * @param \Infocenter\Client\Model\DsPlaceSimplex $area_served area_served
+     *
+     * @return $this
+     */
+    public function setAreaServed($area_served)
+    {
+        $this->container['area_served'] = $area_served;
 
         return $this;
     }

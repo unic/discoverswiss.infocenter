@@ -28,6 +28,8 @@ Name | Type | Description | Notes
 **audio** | [**\Infocenter\Client\Model\DsAudioObjectSimplex[]**](DsAudioObjectSimplex.md) |  | [optional] 
 **video** | [**\Infocenter\Client\Model\DsVideoObjectSimplex[]**](DsVideoObjectSimplex.md) |  | [optional] 
 **potential_action** | [**\Infocenter\Client\Model\DsAction[]**](DsAction.md) |  | [optional] 
+**offered_by** | [**\Infocenter\Client\Model\DsLocalBusinessSimplex**](DsLocalBusinessSimplex.md) |  | [optional] 
+**area_served** | [**\Infocenter\Client\Model\DsPlaceSimplex**](DsPlaceSimplex.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **removed** | **bool** |  | [optional] 

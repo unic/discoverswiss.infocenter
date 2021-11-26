@@ -57,6 +57,7 @@ class DsEvent implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'organizer' => '\Infocenter\Client\Model\DsOrganization',
+'event_status' => 'string',
 'start_date' => '\DateTime',
 'end_date' => '\DateTime',
 'event_schedule' => '\Infocenter\Client\Model\DsSchedule[]',
@@ -105,6 +106,7 @@ class DsEvent implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'organizer' => null,
+'event_status' => null,
 'start_date' => 'date-time',
 'end_date' => 'date-time',
 'event_schedule' => null,
@@ -174,6 +176,7 @@ class DsEvent implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'organizer' => 'organizer',
+'event_status' => 'eventStatus',
 'start_date' => 'startDate',
 'end_date' => 'endDate',
 'event_schedule' => 'eventSchedule',
@@ -222,6 +225,7 @@ class DsEvent implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'organizer' => 'setOrganizer',
+'event_status' => 'setEventStatus',
 'start_date' => 'setStartDate',
 'end_date' => 'setEndDate',
 'event_schedule' => 'setEventSchedule',
@@ -270,6 +274,7 @@ class DsEvent implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'organizer' => 'getOrganizer',
+'event_status' => 'getEventStatus',
 'start_date' => 'getStartDate',
 'end_date' => 'getEndDate',
 'event_schedule' => 'getEventSchedule',
@@ -370,6 +375,7 @@ class DsEvent implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['organizer'] = isset($data['organizer']) ? $data['organizer'] : null;
+        $this->container['event_status'] = isset($data['event_status']) ? $data['event_status'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['event_schedule'] = isset($data['event_schedule']) ? $data['event_schedule'] : null;
@@ -456,6 +462,30 @@ class DsEvent implements ModelInterface, ArrayAccess
     public function setOrganizer($organizer)
     {
         $this->container['organizer'] = $organizer;
+
+        return $this;
+    }
+
+    /**
+     * Gets event_status
+     *
+     * @return string
+     */
+    public function getEventStatus()
+    {
+        return $this->container['event_status'];
+    }
+
+    /**
+     * Sets event_status
+     *
+     * @param string $event_status event_status
+     *
+     * @return $this
+     */
+    public function setEventStatus($event_status)
+    {
+        $this->container['event_status'] = $event_status;
 
         return $this;
     }

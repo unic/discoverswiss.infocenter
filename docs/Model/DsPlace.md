@@ -4,13 +4,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **available_language** | **string[]** |  | [optional] 
-**address** | [**\Infocenter\Client\Model\DsPostalAddress**](DsPostalAddress.md) |  | [optional] 
+**slogan** | **string** |  | [optional] 
+**address** | [**\Infocenter\Client\Model\DsFullAddress**](DsFullAddress.md) |  | [optional] 
 **fax_number** | **string** |  | [optional] 
 **geo** | [**\Infocenter\Client\Model\DsGeoCoordinates**](DsGeoCoordinates.md) |  | [optional] 
 **has_map** | **string** |  | [optional] 
 **is_accessible_for_free** | **bool** |  | [optional] 
 **maximum_attendee_capacity** | **int** |  | [optional] 
 **opening_hours_specification** | [**\Infocenter\Client\Model\DsOpeningHoursSpecification[]**](DsOpeningHoursSpecification.md) |  | [optional] 
+**logo** | [**\Infocenter\Client\Model\DsImageObjectSimplex**](DsImageObjectSimplex.md) |  | [optional] 
 **photo** | [**\Infocenter\Client\Model\DsImageObjectSimplex[]**](DsImageObjectSimplex.md) |  | [optional] 
 **public_access** | **bool** |  | [optional] 
 **smoking_allowed** | **bool** |  | [optional] 

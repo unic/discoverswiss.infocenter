@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | [**\Infocenter\Client\Model\DsPostalAddress**](DsPostalAddress.md) |  | [optional] 
+**address** | [**\Infocenter\Client\Model\DsFullAddress**](DsFullAddress.md) |  | [optional] 
 **contact_point** | [**\Infocenter\Client\Model\DsContactPoint**](DsContactPoint.md) |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
