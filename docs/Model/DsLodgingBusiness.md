@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amenity_feature** | [**\Infocenter\Client\Model\DsLocationFeatureSpecification[]**](DsLocationFeatureSpecification.md) |  | [optional] 
-**checkin_time** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**checkout_time** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**checkin_time** | **string** |  | [optional] 
+**checkout_time** | **string** |  | [optional] 
 **number_of_rooms** | [**\Infocenter\Client\Model\DsQuantitativeValue[]**](DsQuantitativeValue.md) |  | [optional] 
 **pets_allowed** | **bool** |  | [optional] 
 **star_rating** | [**\Infocenter\Client\Model\DsRating**](DsRating.md) |  | [optional] 

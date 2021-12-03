@@ -60,6 +60,7 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
 'address' => '\Infocenter\Client\Model\DsPostalAddress',
 'geo' => '\Infocenter\Client\Model\DsGeoCoordinates',
 'additional_type' => 'string',
+'telephone' => 'string',
 'id' => 'string',
 'identifier' => 'string'    ];
 
@@ -73,6 +74,7 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
 'address' => null,
 'geo' => null,
 'additional_type' => null,
+'telephone' => null,
 'id' => null,
 'identifier' => null    ];
 
@@ -107,6 +109,7 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
 'address' => 'address',
 'geo' => 'geo',
 'additional_type' => 'additionalType',
+'telephone' => 'telephone',
 'id' => 'id',
 'identifier' => 'identifier'    ];
 
@@ -120,6 +123,7 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
 'address' => 'setAddress',
 'geo' => 'setGeo',
 'additional_type' => 'setAdditionalType',
+'telephone' => 'setTelephone',
 'id' => 'setId',
 'identifier' => 'setIdentifier'    ];
 
@@ -133,6 +137,7 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
 'address' => 'getAddress',
 'geo' => 'getGeo',
 'additional_type' => 'getAdditionalType',
+'telephone' => 'getTelephone',
 'id' => 'getId',
 'identifier' => 'getIdentifier'    ];
 
@@ -198,6 +203,7 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['geo'] = isset($data['geo']) ? $data['geo'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
+        $this->container['telephone'] = isset($data['telephone']) ? $data['telephone'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
     }
@@ -318,6 +324,30 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
     public function setAdditionalType($additional_type)
     {
         $this->container['additional_type'] = $additional_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->container['telephone'];
+    }
+
+    /**
+     * Sets telephone
+     *
+     * @param string $telephone telephone
+     *
+     * @return $this
+     */
+    public function setTelephone($telephone)
+    {
+        $this->container['telephone'] = $telephone;
 
         return $this;
     }

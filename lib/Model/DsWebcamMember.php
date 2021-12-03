@@ -56,10 +56,12 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
+        'url' => 'string',
+'name' => 'string',
 'address' => '\Infocenter\Client\Model\DsPostalAddress',
 'geo' => '\Infocenter\Client\Model\DsGeoCoordinates',
 'additional_type' => 'string',
+'telephone' => 'string',
 'id' => 'string',
 'identifier' => 'string'    ];
 
@@ -69,10 +71,12 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
+        'url' => null,
+'name' => null,
 'address' => null,
 'geo' => null,
 'additional_type' => null,
+'telephone' => null,
 'id' => null,
 'identifier' => null    ];
 
@@ -103,10 +107,12 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
+        'url' => 'url',
+'name' => 'name',
 'address' => 'address',
 'geo' => 'geo',
 'additional_type' => 'additionalType',
+'telephone' => 'telephone',
 'id' => 'id',
 'identifier' => 'identifier'    ];
 
@@ -116,10 +122,12 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
+        'url' => 'setUrl',
+'name' => 'setName',
 'address' => 'setAddress',
 'geo' => 'setGeo',
 'additional_type' => 'setAdditionalType',
+'telephone' => 'setTelephone',
 'id' => 'setId',
 'identifier' => 'setIdentifier'    ];
 
@@ -129,10 +137,12 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
+        'url' => 'getUrl',
+'name' => 'getName',
 'address' => 'getAddress',
 'geo' => 'getGeo',
 'additional_type' => 'getAdditionalType',
+'telephone' => 'getTelephone',
 'id' => 'getId',
 'identifier' => 'getIdentifier'    ];
 
@@ -194,10 +204,12 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['geo'] = isset($data['geo']) ? $data['geo'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
+        $this->container['telephone'] = isset($data['telephone']) ? $data['telephone'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
     }
@@ -225,6 +237,30 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string $url url
+     *
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        $this->container['url'] = $url;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -318,6 +354,30 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
     public function setAdditionalType($additional_type)
     {
         $this->container['additional_type'] = $additional_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->container['telephone'];
+    }
+
+    /**
+     * Sets telephone
+     *
+     * @param string $telephone telephone
+     *
+     * @return $this
+     */
+    public function setTelephone($telephone)
+    {
+        $this->container['telephone'] = $telephone;
 
         return $this;
     }

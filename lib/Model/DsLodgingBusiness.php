@@ -57,8 +57,8 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'amenity_feature' => '\Infocenter\Client\Model\DsLocationFeatureSpecification[]',
-'checkin_time' => '\DateTime',
-'checkout_time' => '\DateTime',
+'checkin_time' => 'string',
+'checkout_time' => 'string',
 'number_of_rooms' => '\Infocenter\Client\Model\DsQuantitativeValue[]',
 'pets_allowed' => 'bool',
 'star_rating' => '\Infocenter\Client\Model\DsRating',
@@ -133,8 +133,8 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'amenity_feature' => null,
-'checkin_time' => 'date-time',
-'checkout_time' => 'date-time',
+'checkin_time' => null,
+'checkout_time' => null,
 'number_of_rooms' => null,
 'pets_allowed' => null,
 'star_rating' => null,
@@ -631,7 +631,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
     /**
      * Gets checkin_time
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCheckinTime()
     {
@@ -641,7 +641,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
     /**
      * Sets checkin_time
      *
-     * @param \DateTime $checkin_time checkin_time
+     * @param string $checkin_time checkin_time
      *
      * @return $this
      */
@@ -655,7 +655,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
     /**
      * Gets checkout_time
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCheckoutTime()
     {
@@ -665,7 +665,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
     /**
      * Sets checkout_time
      *
-     * @param \DateTime $checkout_time checkout_time
+     * @param string $checkout_time checkout_time
      *
      * @return $this
      */

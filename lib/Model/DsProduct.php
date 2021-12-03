@@ -81,8 +81,9 @@ class DsProduct implements ModelInterface, ArrayAccess
 'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
 'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
 'potential_action' => '\Infocenter\Client\Model\DsAction[]',
-'offered_by' => '\Infocenter\Client\Model\DsLocalBusinessSimplex',
-'area_served' => '\Infocenter\Client\Model\DsPlaceSimplex',
+'offered_by' => '\Infocenter\Client\Model\DsLocalBusinessMember',
+'area_served' => '\Infocenter\Client\Model\DsPlaceMember',
+'contained_in_place' => '\Infocenter\Client\Model\DsPlaceSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -135,6 +136,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'potential_action' => null,
 'offered_by' => null,
 'area_served' => null,
+'contained_in_place' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -208,6 +210,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'potential_action' => 'potentialAction',
 'offered_by' => 'offeredBy',
 'area_served' => 'areaServed',
+'contained_in_place' => 'containedInPlace',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -260,6 +263,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'potential_action' => 'setPotentialAction',
 'offered_by' => 'setOfferedBy',
 'area_served' => 'setAreaServed',
+'contained_in_place' => 'setContainedInPlace',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -312,6 +316,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'potential_action' => 'getPotentialAction',
 'offered_by' => 'getOfferedBy',
 'area_served' => 'getAreaServed',
+'contained_in_place' => 'getContainedInPlace',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -416,6 +421,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['potential_action'] = isset($data['potential_action']) ? $data['potential_action'] : null;
         $this->container['offered_by'] = isset($data['offered_by']) ? $data['offered_by'] : null;
         $this->container['area_served'] = isset($data['area_served']) ? $data['area_served'] : null;
+        $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -1063,7 +1069,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Gets offered_by
      *
-     * @return \Infocenter\Client\Model\DsLocalBusinessSimplex
+     * @return \Infocenter\Client\Model\DsLocalBusinessMember
      */
     public function getOfferedBy()
     {
@@ -1073,7 +1079,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets offered_by
      *
-     * @param \Infocenter\Client\Model\DsLocalBusinessSimplex $offered_by offered_by
+     * @param \Infocenter\Client\Model\DsLocalBusinessMember $offered_by offered_by
      *
      * @return $this
      */
@@ -1087,7 +1093,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Gets area_served
      *
-     * @return \Infocenter\Client\Model\DsPlaceSimplex
+     * @return \Infocenter\Client\Model\DsPlaceMember
      */
     public function getAreaServed()
     {
@@ -1097,13 +1103,37 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets area_served
      *
-     * @param \Infocenter\Client\Model\DsPlaceSimplex $area_served area_served
+     * @param \Infocenter\Client\Model\DsPlaceMember $area_served area_served
      *
      * @return $this
      */
     public function setAreaServed($area_served)
     {
         $this->container['area_served'] = $area_served;
+
+        return $this;
+    }
+
+    /**
+     * Gets contained_in_place
+     *
+     * @return \Infocenter\Client\Model\DsPlaceSimplex[]
+     */
+    public function getContainedInPlace()
+    {
+        return $this->container['contained_in_place'];
+    }
+
+    /**
+     * Sets contained_in_place
+     *
+     * @param \Infocenter\Client\Model\DsPlaceSimplex[] $contained_in_place contained_in_place
+     *
+     * @return $this
+     */
+    public function setContainedInPlace($contained_in_place)
+    {
+        $this->container['contained_in_place'] = $contained_in_place;
 
         return $this;
     }

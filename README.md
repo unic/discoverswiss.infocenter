@@ -2858,7 +2858,6 @@ Class | Method | HTTP request | Description
  - [DsLink](docs/Model/DsLink.md)
  - [DsLocalBusiness](docs/Model/DsLocalBusiness.md)
  - [DsLocalBusinessMember](docs/Model/DsLocalBusinessMember.md)
- - [DsLocalBusinessSimplex](docs/Model/DsLocalBusinessSimplex.md)
  - [DsLocalBusinessesResponse](docs/Model/DsLocalBusinessesResponse.md)
  - [DsLocationFeatureSpecification](docs/Model/DsLocationFeatureSpecification.md)
  - [DsLodgingBusiness](docs/Model/DsLodgingBusiness.md)
