@@ -69,6 +69,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'opening_hours' => 'string',
 'image' => '\Infocenter\Client\Model\DsImageObjectSimplex',
 'name' => 'string',
+'disambiguating_description' => 'string',
 'description' => 'string',
 'contained_in_place' => 'string',
 'state' => 'string',
@@ -85,7 +86,8 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'price_information' => 'string',
 'organizer' => '\Infocenter\Client\Model\DsOrganization',
 'last_modified' => '\DateTime',
-'source_id' => 'string[]'    ];
+'source_id' => 'string[]',
+'has_review' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -106,6 +108,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'opening_hours' => null,
 'image' => null,
 'name' => null,
+'disambiguating_description' => null,
 'description' => null,
 'contained_in_place' => null,
 'state' => null,
@@ -122,7 +125,8 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'price_information' => null,
 'organizer' => null,
 'last_modified' => 'date-time',
-'source_id' => null    ];
+'source_id' => null,
+'has_review' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -164,6 +168,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'opening_hours' => 'openingHours',
 'image' => 'image',
 'name' => 'name',
+'disambiguating_description' => 'disambiguatingDescription',
 'description' => 'description',
 'contained_in_place' => 'containedInPlace',
 'state' => 'state',
@@ -180,7 +185,8 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'price_information' => 'priceInformation',
 'organizer' => 'organizer',
 'last_modified' => 'lastModified',
-'source_id' => 'sourceId'    ];
+'source_id' => 'sourceId',
+'has_review' => 'hasReview'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -201,6 +207,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'opening_hours' => 'setOpeningHours',
 'image' => 'setImage',
 'name' => 'setName',
+'disambiguating_description' => 'setDisambiguatingDescription',
 'description' => 'setDescription',
 'contained_in_place' => 'setContainedInPlace',
 'state' => 'setState',
@@ -217,7 +224,8 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'price_information' => 'setPriceInformation',
 'organizer' => 'setOrganizer',
 'last_modified' => 'setLastModified',
-'source_id' => 'setSourceId'    ];
+'source_id' => 'setSourceId',
+'has_review' => 'setHasReview'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -238,6 +246,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'opening_hours' => 'getOpeningHours',
 'image' => 'getImage',
 'name' => 'getName',
+'disambiguating_description' => 'getDisambiguatingDescription',
 'description' => 'getDescription',
 'contained_in_place' => 'getContainedInPlace',
 'state' => 'getState',
@@ -254,7 +263,8 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'price_information' => 'getPriceInformation',
 'organizer' => 'getOrganizer',
 'last_modified' => 'getLastModified',
-'source_id' => 'getSourceId'    ];
+'source_id' => 'getSourceId',
+'has_review' => 'getHasReview'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -327,6 +337,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
         $this->container['opening_hours'] = isset($data['opening_hours']) ? $data['opening_hours'] : null;
         $this->container['image'] = isset($data['image']) ? $data['image'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
@@ -344,6 +355,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
         $this->container['organizer'] = isset($data['organizer']) ? $data['organizer'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
+        $this->container['has_review'] = isset($data['has_review']) ? $data['has_review'] : null;
     }
 
     /**
@@ -678,6 +690,30 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets disambiguating_description
+     *
+     * @return string
+     */
+    public function getDisambiguatingDescription()
+    {
+        return $this->container['disambiguating_description'];
+    }
+
+    /**
+     * Sets disambiguating_description
+     *
+     * @param string $disambiguating_description disambiguating_description
+     *
+     * @return $this
+     */
+    public function setDisambiguatingDescription($disambiguating_description)
+    {
+        $this->container['disambiguating_description'] = $disambiguating_description;
 
         return $this;
     }
@@ -1086,6 +1122,30 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     public function setSourceId($source_id)
     {
         $this->container['source_id'] = $source_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_review
+     *
+     * @return string
+     */
+    public function getHasReview()
+    {
+        return $this->container['has_review'];
+    }
+
+    /**
+     * Sets has_review
+     *
+     * @param string $has_review has_review
+     *
+     * @return $this
+     */
+    public function setHasReview($has_review)
+    {
+        $this->container['has_review'] = $has_review;
 
         return $this;
     }

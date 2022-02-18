@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **created** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **additional_property** | [**\Infocenter\Client\Model\DsPropertyValue[]**](DsPropertyValue.md) |  | [optional] 
+**item_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) |  | [optional] 
+**guest_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

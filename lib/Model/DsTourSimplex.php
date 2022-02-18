@@ -1,6 +1,6 @@
 <?php
 /**
- * DsAudioObjectSimplex
+ * DsTourSimplex
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsAudioObjectSimplex Class Doc Comment
+ * DsTourSimplex Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsAudioObjectSimplex implements ModelInterface, ArrayAccess
+class DsTourSimplex implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsAudioObjectSimplex implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AudioObjectSimplex';
+    protected static $swaggerModelName = 'TourSimplex';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,14 +56,7 @@ class DsAudioObjectSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
-'content_url' => 'string',
-'caption' => 'string',
-'encoding_format' => 'string',
-'additional_type' => 'string',
-'in_language' => 'string',
-'thumbnail_url' => 'string',
-'id' => 'string',
+        'id' => 'string',
 'identifier' => 'string'    ];
 
     /**
@@ -72,14 +65,7 @@ class DsAudioObjectSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'data_governance' => null,
-'content_url' => null,
-'caption' => null,
-'encoding_format' => null,
-'additional_type' => null,
-'in_language' => null,
-'thumbnail_url' => null,
-'id' => null,
+        'id' => null,
 'identifier' => null    ];
 
     /**
@@ -109,14 +95,7 @@ class DsAudioObjectSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data_governance' => 'dataGovernance',
-'content_url' => 'contentUrl',
-'caption' => 'caption',
-'encoding_format' => 'encodingFormat',
-'additional_type' => 'additionalType',
-'in_language' => 'inLanguage',
-'thumbnail_url' => 'thumbnailUrl',
-'id' => 'id',
+        'id' => 'id',
 'identifier' => 'identifier'    ];
 
     /**
@@ -125,14 +104,7 @@ class DsAudioObjectSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data_governance' => 'setDataGovernance',
-'content_url' => 'setContentUrl',
-'caption' => 'setCaption',
-'encoding_format' => 'setEncodingFormat',
-'additional_type' => 'setAdditionalType',
-'in_language' => 'setInLanguage',
-'thumbnail_url' => 'setThumbnailUrl',
-'id' => 'setId',
+        'id' => 'setId',
 'identifier' => 'setIdentifier'    ];
 
     /**
@@ -141,14 +113,7 @@ class DsAudioObjectSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data_governance' => 'getDataGovernance',
-'content_url' => 'getContentUrl',
-'caption' => 'getCaption',
-'encoding_format' => 'getEncodingFormat',
-'additional_type' => 'getAdditionalType',
-'in_language' => 'getInLanguage',
-'thumbnail_url' => 'getThumbnailUrl',
-'id' => 'getId',
+        'id' => 'getId',
 'identifier' => 'getIdentifier'    ];
 
     /**
@@ -209,13 +174,6 @@ class DsAudioObjectSimplex implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
-        $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
-        $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
-        $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
-        $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
     }
@@ -243,174 +201,6 @@ class DsAudioObjectSimplex implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets data_governance
-     *
-     * @return \Infocenter\Client\Model\DsDataGovernance
-     */
-    public function getDataGovernance()
-    {
-        return $this->container['data_governance'];
-    }
-
-    /**
-     * Sets data_governance
-     *
-     * @param \Infocenter\Client\Model\DsDataGovernance $data_governance data_governance
-     *
-     * @return $this
-     */
-    public function setDataGovernance($data_governance)
-    {
-        $this->container['data_governance'] = $data_governance;
-
-        return $this;
-    }
-
-    /**
-     * Gets content_url
-     *
-     * @return string
-     */
-    public function getContentUrl()
-    {
-        return $this->container['content_url'];
-    }
-
-    /**
-     * Sets content_url
-     *
-     * @param string $content_url content_url
-     *
-     * @return $this
-     */
-    public function setContentUrl($content_url)
-    {
-        $this->container['content_url'] = $content_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets caption
-     *
-     * @return string
-     */
-    public function getCaption()
-    {
-        return $this->container['caption'];
-    }
-
-    /**
-     * Sets caption
-     *
-     * @param string $caption caption
-     *
-     * @return $this
-     */
-    public function setCaption($caption)
-    {
-        $this->container['caption'] = $caption;
-
-        return $this;
-    }
-
-    /**
-     * Gets encoding_format
-     *
-     * @return string
-     */
-    public function getEncodingFormat()
-    {
-        return $this->container['encoding_format'];
-    }
-
-    /**
-     * Sets encoding_format
-     *
-     * @param string $encoding_format encoding_format
-     *
-     * @return $this
-     */
-    public function setEncodingFormat($encoding_format)
-    {
-        $this->container['encoding_format'] = $encoding_format;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_type
-     *
-     * @return string
-     */
-    public function getAdditionalType()
-    {
-        return $this->container['additional_type'];
-    }
-
-    /**
-     * Sets additional_type
-     *
-     * @param string $additional_type additional_type
-     *
-     * @return $this
-     */
-    public function setAdditionalType($additional_type)
-    {
-        $this->container['additional_type'] = $additional_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets in_language
-     *
-     * @return string
-     */
-    public function getInLanguage()
-    {
-        return $this->container['in_language'];
-    }
-
-    /**
-     * Sets in_language
-     *
-     * @param string $in_language in_language
-     *
-     * @return $this
-     */
-    public function setInLanguage($in_language)
-    {
-        $this->container['in_language'] = $in_language;
-
-        return $this;
-    }
-
-    /**
-     * Gets thumbnail_url
-     *
-     * @return string
-     */
-    public function getThumbnailUrl()
-    {
-        return $this->container['thumbnail_url'];
-    }
-
-    /**
-     * Sets thumbnail_url
-     *
-     * @param string $thumbnail_url thumbnail_url
-     *
-     * @return $this
-     */
-    public function setThumbnailUrl($thumbnail_url)
-    {
-        $this->container['thumbnail_url'] = $thumbnail_url;
-
-        return $this;
-    }
 
     /**
      * Gets id

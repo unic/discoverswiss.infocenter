@@ -60,6 +60,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'checkin_time' => 'string',
 'checkout_time' => 'string',
 'number_of_rooms' => '\Infocenter\Client\Model\DsQuantitativeValue[]',
+'number_of_beds' => 'int',
 'pets_allowed' => 'bool',
 'star_rating' => '\Infocenter\Client\Model\DsRating',
 'contact_point' => '\Infocenter\Client\Model\DsContactPoint',
@@ -107,6 +108,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
 'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
+'review' => '\Infocenter\Client\Model\DsReviewSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -136,6 +138,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'checkin_time' => null,
 'checkout_time' => null,
 'number_of_rooms' => null,
+'number_of_beds' => 'int32',
 'pets_allowed' => null,
 'star_rating' => null,
 'contact_point' => null,
@@ -183,6 +186,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'profile_tag' => null,
 'audio' => null,
 'video' => null,
+'review' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -233,6 +237,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'checkin_time' => 'checkinTime',
 'checkout_time' => 'checkoutTime',
 'number_of_rooms' => 'numberOfRooms',
+'number_of_beds' => 'numberOfBeds',
 'pets_allowed' => 'petsAllowed',
 'star_rating' => 'starRating',
 'contact_point' => 'contactPoint',
@@ -280,6 +285,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'profile_tag' => 'profileTag',
 'audio' => 'audio',
 'video' => 'video',
+'review' => 'review',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -309,6 +315,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'checkin_time' => 'setCheckinTime',
 'checkout_time' => 'setCheckoutTime',
 'number_of_rooms' => 'setNumberOfRooms',
+'number_of_beds' => 'setNumberOfBeds',
 'pets_allowed' => 'setPetsAllowed',
 'star_rating' => 'setStarRating',
 'contact_point' => 'setContactPoint',
@@ -356,6 +363,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'profile_tag' => 'setProfileTag',
 'audio' => 'setAudio',
 'video' => 'setVideo',
+'review' => 'setReview',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -385,6 +393,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'checkin_time' => 'getCheckinTime',
 'checkout_time' => 'getCheckoutTime',
 'number_of_rooms' => 'getNumberOfRooms',
+'number_of_beds' => 'getNumberOfBeds',
 'pets_allowed' => 'getPetsAllowed',
 'star_rating' => 'getStarRating',
 'contact_point' => 'getContactPoint',
@@ -432,6 +441,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
 'profile_tag' => 'getProfileTag',
 'audio' => 'getAudio',
 'video' => 'getVideo',
+'review' => 'getReview',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -513,6 +523,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
         $this->container['checkin_time'] = isset($data['checkin_time']) ? $data['checkin_time'] : null;
         $this->container['checkout_time'] = isset($data['checkout_time']) ? $data['checkout_time'] : null;
         $this->container['number_of_rooms'] = isset($data['number_of_rooms']) ? $data['number_of_rooms'] : null;
+        $this->container['number_of_beds'] = isset($data['number_of_beds']) ? $data['number_of_beds'] : null;
         $this->container['pets_allowed'] = isset($data['pets_allowed']) ? $data['pets_allowed'] : null;
         $this->container['star_rating'] = isset($data['star_rating']) ? $data['star_rating'] : null;
         $this->container['contact_point'] = isset($data['contact_point']) ? $data['contact_point'] : null;
@@ -560,6 +571,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
         $this->container['video'] = isset($data['video']) ? $data['video'] : null;
+        $this->container['review'] = isset($data['review']) ? $data['review'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -696,6 +708,30 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
     public function setNumberOfRooms($number_of_rooms)
     {
         $this->container['number_of_rooms'] = $number_of_rooms;
+
+        return $this;
+    }
+
+    /**
+     * Gets number_of_beds
+     *
+     * @return int
+     */
+    public function getNumberOfBeds()
+    {
+        return $this->container['number_of_beds'];
+    }
+
+    /**
+     * Sets number_of_beds
+     *
+     * @param int $number_of_beds number_of_beds
+     *
+     * @return $this
+     */
+    public function setNumberOfBeds($number_of_beds)
+    {
+        $this->container['number_of_beds'] = $number_of_beds;
 
         return $this;
     }
@@ -1824,6 +1860,30 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
     public function setVideo($video)
     {
         $this->container['video'] = $video;
+
+        return $this;
+    }
+
+    /**
+     * Gets review
+     *
+     * @return \Infocenter\Client\Model\DsReviewSimplex[]
+     */
+    public function getReview()
+    {
+        return $this->container['review'];
+    }
+
+    /**
+     * Sets review
+     *
+     * @param \Infocenter\Client\Model\DsReviewSimplex[] $review review
+     *
+     * @return $this
+     */
+    public function setReview($review)
+    {
+        $this->container['review'] = $review;
 
         return $this;
     }

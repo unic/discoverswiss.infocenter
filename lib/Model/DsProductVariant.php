@@ -68,7 +68,9 @@ class DsProductVariant implements ModelInterface, ArrayAccess
 'image' => '\Infocenter\Client\Model\DsImageObjectSimplex',
 'created' => '\DateTime',
 'last_modified' => '\DateTime',
-'additional_property' => '\Infocenter\Client\Model\DsPropertyValue[]'    ];
+'additional_property' => '\Infocenter\Client\Model\DsPropertyValue[]',
+'item_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
+'guest_field' => '\Infocenter\Client\Model\DsFieldDefinition[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -88,7 +90,9 @@ class DsProductVariant implements ModelInterface, ArrayAccess
 'image' => null,
 'created' => 'date-time',
 'last_modified' => 'date-time',
-'additional_property' => null    ];
+'additional_property' => null,
+'item_field' => null,
+'guest_field' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -129,7 +133,9 @@ class DsProductVariant implements ModelInterface, ArrayAccess
 'image' => 'image',
 'created' => 'created',
 'last_modified' => 'lastModified',
-'additional_property' => 'additionalProperty'    ];
+'additional_property' => 'additionalProperty',
+'item_field' => 'itemField',
+'guest_field' => 'guestField'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -149,7 +155,9 @@ class DsProductVariant implements ModelInterface, ArrayAccess
 'image' => 'setImage',
 'created' => 'setCreated',
 'last_modified' => 'setLastModified',
-'additional_property' => 'setAdditionalProperty'    ];
+'additional_property' => 'setAdditionalProperty',
+'item_field' => 'setItemField',
+'guest_field' => 'setGuestField'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -169,7 +177,9 @@ class DsProductVariant implements ModelInterface, ArrayAccess
 'image' => 'getImage',
 'created' => 'getCreated',
 'last_modified' => 'getLastModified',
-'additional_property' => 'getAdditionalProperty'    ];
+'additional_property' => 'getAdditionalProperty',
+'item_field' => 'getItemField',
+'guest_field' => 'getGuestField'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -242,6 +252,8 @@ class DsProductVariant implements ModelInterface, ArrayAccess
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['additional_property'] = isset($data['additional_property']) ? $data['additional_property'] : null;
+        $this->container['item_field'] = isset($data['item_field']) ? $data['item_field'] : null;
+        $this->container['guest_field'] = isset($data['guest_field']) ? $data['guest_field'] : null;
     }
 
     /**
@@ -576,6 +588,54 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     public function setAdditionalProperty($additional_property)
     {
         $this->container['additional_property'] = $additional_property;
+
+        return $this;
+    }
+
+    /**
+     * Gets item_field
+     *
+     * @return \Infocenter\Client\Model\DsFieldDefinition[]
+     */
+    public function getItemField()
+    {
+        return $this->container['item_field'];
+    }
+
+    /**
+     * Sets item_field
+     *
+     * @param \Infocenter\Client\Model\DsFieldDefinition[] $item_field item_field
+     *
+     * @return $this
+     */
+    public function setItemField($item_field)
+    {
+        $this->container['item_field'] = $item_field;
+
+        return $this;
+    }
+
+    /**
+     * Gets guest_field
+     *
+     * @return \Infocenter\Client\Model\DsFieldDefinition[]
+     */
+    public function getGuestField()
+    {
+        return $this->container['guest_field'];
+    }
+
+    /**
+     * Sets guest_field
+     *
+     * @param \Infocenter\Client\Model\DsFieldDefinition[] $guest_field guest_field
+     *
+     * @return $this
+     */
+    public function setGuestField($guest_field)
+    {
+        $this->container['guest_field'] = $guest_field;
 
         return $this;
     }

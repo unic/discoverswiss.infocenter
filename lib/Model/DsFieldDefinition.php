@@ -56,15 +56,17 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'identifier' => 'string',
-'property_id' => 'string',
+        'property_id' => 'string',
 'type' => 'string',
 'name' => 'string',
 'required' => 'bool',
 'required_for_offers' => 'bool',
 'possible_value' => 'map[string,string]',
 'range_min' => 'string',
-'range_max' => 'string'    ];
+'range_max' => 'string',
+'range_base_property_id' => 'string',
+'parent_field_property_id' => 'string',
+'parent_field_value' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -72,15 +74,17 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'identifier' => null,
-'property_id' => null,
+        'property_id' => null,
 'type' => null,
 'name' => null,
 'required' => null,
 'required_for_offers' => null,
 'possible_value' => null,
 'range_min' => null,
-'range_max' => null    ];
+'range_max' => null,
+'range_base_property_id' => null,
+'parent_field_property_id' => null,
+'parent_field_value' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -109,15 +113,17 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'identifier' => 'identifier',
-'property_id' => 'propertyId',
+        'property_id' => 'propertyId',
 'type' => 'type',
 'name' => 'name',
 'required' => 'required',
 'required_for_offers' => 'requiredForOffers',
 'possible_value' => 'possibleValue',
 'range_min' => 'rangeMin',
-'range_max' => 'rangeMax'    ];
+'range_max' => 'rangeMax',
+'range_base_property_id' => 'rangeBasePropertyId',
+'parent_field_property_id' => 'parentFieldPropertyId',
+'parent_field_value' => 'parentFieldValue'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -125,15 +131,17 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'identifier' => 'setIdentifier',
-'property_id' => 'setPropertyId',
+        'property_id' => 'setPropertyId',
 'type' => 'setType',
 'name' => 'setName',
 'required' => 'setRequired',
 'required_for_offers' => 'setRequiredForOffers',
 'possible_value' => 'setPossibleValue',
 'range_min' => 'setRangeMin',
-'range_max' => 'setRangeMax'    ];
+'range_max' => 'setRangeMax',
+'range_base_property_id' => 'setRangeBasePropertyId',
+'parent_field_property_id' => 'setParentFieldPropertyId',
+'parent_field_value' => 'setParentFieldValue'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -141,15 +149,17 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'identifier' => 'getIdentifier',
-'property_id' => 'getPropertyId',
+        'property_id' => 'getPropertyId',
 'type' => 'getType',
 'name' => 'getName',
 'required' => 'getRequired',
 'required_for_offers' => 'getRequiredForOffers',
 'possible_value' => 'getPossibleValue',
 'range_min' => 'getRangeMin',
-'range_max' => 'getRangeMax'    ];
+'range_max' => 'getRangeMax',
+'range_base_property_id' => 'getRangeBasePropertyId',
+'parent_field_property_id' => 'getParentFieldPropertyId',
+'parent_field_value' => 'getParentFieldValue'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -209,7 +219,6 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['property_id'] = isset($data['property_id']) ? $data['property_id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
@@ -218,6 +227,9 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
         $this->container['possible_value'] = isset($data['possible_value']) ? $data['possible_value'] : null;
         $this->container['range_min'] = isset($data['range_min']) ? $data['range_min'] : null;
         $this->container['range_max'] = isset($data['range_max']) ? $data['range_max'] : null;
+        $this->container['range_base_property_id'] = isset($data['range_base_property_id']) ? $data['range_base_property_id'] : null;
+        $this->container['parent_field_property_id'] = isset($data['parent_field_property_id']) ? $data['parent_field_property_id'] : null;
+        $this->container['parent_field_value'] = isset($data['parent_field_value']) ? $data['parent_field_value'] : null;
     }
 
     /**
@@ -243,30 +255,6 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets identifier
-     *
-     * @return string
-     */
-    public function getIdentifier()
-    {
-        return $this->container['identifier'];
-    }
-
-    /**
-     * Sets identifier
-     *
-     * @param string $identifier identifier
-     *
-     * @return $this
-     */
-    public function setIdentifier($identifier)
-    {
-        $this->container['identifier'] = $identifier;
-
-        return $this;
-    }
 
     /**
      * Gets property_id
@@ -456,6 +444,78 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     public function setRangeMax($range_max)
     {
         $this->container['range_max'] = $range_max;
+
+        return $this;
+    }
+
+    /**
+     * Gets range_base_property_id
+     *
+     * @return string
+     */
+    public function getRangeBasePropertyId()
+    {
+        return $this->container['range_base_property_id'];
+    }
+
+    /**
+     * Sets range_base_property_id
+     *
+     * @param string $range_base_property_id range_base_property_id
+     *
+     * @return $this
+     */
+    public function setRangeBasePropertyId($range_base_property_id)
+    {
+        $this->container['range_base_property_id'] = $range_base_property_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent_field_property_id
+     *
+     * @return string
+     */
+    public function getParentFieldPropertyId()
+    {
+        return $this->container['parent_field_property_id'];
+    }
+
+    /**
+     * Sets parent_field_property_id
+     *
+     * @param string $parent_field_property_id parent_field_property_id
+     *
+     * @return $this
+     */
+    public function setParentFieldPropertyId($parent_field_property_id)
+    {
+        $this->container['parent_field_property_id'] = $parent_field_property_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent_field_value
+     *
+     * @return string
+     */
+    public function getParentFieldValue()
+    {
+        return $this->container['parent_field_value'];
+    }
+
+    /**
+     * Sets parent_field_value
+     *
+     * @param string $parent_field_value parent_field_value
+     *
+     * @return $this
+     */
+    public function setParentFieldValue($parent_field_value)
+    {
+        $this->container['parent_field_value'] = $parent_field_value;
 
         return $this;
     }

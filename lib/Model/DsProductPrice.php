@@ -58,6 +58,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'price_category_id' => 'string',
 'price_category_name' => 'string',
+'price_category_type' => 'string',
 'price_chf' => 'double',
 'compare_at_price_chf' => 'double',
 'max_allowed_age' => 'int',
@@ -66,7 +67,8 @@ class DsProductPrice implements ModelInterface, ArrayAccess
 'min_seats' => 'int',
 'max_seats' => 'int',
 'valid_from' => '\DateTime',
-'valid_through' => '\DateTime'    ];
+'valid_through' => '\DateTime',
+'reduction' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -76,6 +78,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'price_category_id' => null,
 'price_category_name' => null,
+'price_category_type' => null,
 'price_chf' => 'double',
 'compare_at_price_chf' => 'double',
 'max_allowed_age' => 'int32',
@@ -84,7 +87,8 @@ class DsProductPrice implements ModelInterface, ArrayAccess
 'min_seats' => 'int32',
 'max_seats' => 'int32',
 'valid_from' => 'date-time',
-'valid_through' => 'date-time'    ];
+'valid_through' => 'date-time',
+'reduction' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -115,6 +119,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'price_category_id' => 'priceCategoryId',
 'price_category_name' => 'priceCategoryName',
+'price_category_type' => 'priceCategoryType',
 'price_chf' => 'priceCHF',
 'compare_at_price_chf' => 'compareAtPriceCHF',
 'max_allowed_age' => 'maxAllowedAge',
@@ -123,7 +128,8 @@ class DsProductPrice implements ModelInterface, ArrayAccess
 'min_seats' => 'minSeats',
 'max_seats' => 'maxSeats',
 'valid_from' => 'validFrom',
-'valid_through' => 'validThrough'    ];
+'valid_through' => 'validThrough',
+'reduction' => 'reduction'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -133,6 +139,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     protected static $setters = [
         'price_category_id' => 'setPriceCategoryId',
 'price_category_name' => 'setPriceCategoryName',
+'price_category_type' => 'setPriceCategoryType',
 'price_chf' => 'setPriceChf',
 'compare_at_price_chf' => 'setCompareAtPriceChf',
 'max_allowed_age' => 'setMaxAllowedAge',
@@ -141,7 +148,8 @@ class DsProductPrice implements ModelInterface, ArrayAccess
 'min_seats' => 'setMinSeats',
 'max_seats' => 'setMaxSeats',
 'valid_from' => 'setValidFrom',
-'valid_through' => 'setValidThrough'    ];
+'valid_through' => 'setValidThrough',
+'reduction' => 'setReduction'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -151,6 +159,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     protected static $getters = [
         'price_category_id' => 'getPriceCategoryId',
 'price_category_name' => 'getPriceCategoryName',
+'price_category_type' => 'getPriceCategoryType',
 'price_chf' => 'getPriceChf',
 'compare_at_price_chf' => 'getCompareAtPriceChf',
 'max_allowed_age' => 'getMaxAllowedAge',
@@ -159,7 +168,8 @@ class DsProductPrice implements ModelInterface, ArrayAccess
 'min_seats' => 'getMinSeats',
 'max_seats' => 'getMaxSeats',
 'valid_from' => 'getValidFrom',
-'valid_through' => 'getValidThrough'    ];
+'valid_through' => 'getValidThrough',
+'reduction' => 'getReduction'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -221,6 +231,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     {
         $this->container['price_category_id'] = isset($data['price_category_id']) ? $data['price_category_id'] : null;
         $this->container['price_category_name'] = isset($data['price_category_name']) ? $data['price_category_name'] : null;
+        $this->container['price_category_type'] = isset($data['price_category_type']) ? $data['price_category_type'] : null;
         $this->container['price_chf'] = isset($data['price_chf']) ? $data['price_chf'] : null;
         $this->container['compare_at_price_chf'] = isset($data['compare_at_price_chf']) ? $data['compare_at_price_chf'] : null;
         $this->container['max_allowed_age'] = isset($data['max_allowed_age']) ? $data['max_allowed_age'] : null;
@@ -230,6 +241,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
         $this->container['max_seats'] = isset($data['max_seats']) ? $data['max_seats'] : null;
         $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
         $this->container['valid_through'] = isset($data['valid_through']) ? $data['valid_through'] : null;
+        $this->container['reduction'] = isset($data['reduction']) ? $data['reduction'] : null;
     }
 
     /**
@@ -300,6 +312,30 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     public function setPriceCategoryName($price_category_name)
     {
         $this->container['price_category_name'] = $price_category_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_category_type
+     *
+     * @return string
+     */
+    public function getPriceCategoryType()
+    {
+        return $this->container['price_category_type'];
+    }
+
+    /**
+     * Sets price_category_type
+     *
+     * @param string $price_category_type price_category_type
+     *
+     * @return $this
+     */
+    public function setPriceCategoryType($price_category_type)
+    {
+        $this->container['price_category_type'] = $price_category_type;
 
         return $this;
     }
@@ -516,6 +552,30 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     public function setValidThrough($valid_through)
     {
         $this->container['valid_through'] = $valid_through;
+
+        return $this;
+    }
+
+    /**
+     * Gets reduction
+     *
+     * @return string
+     */
+    public function getReduction()
+    {
+        return $this->container['reduction'];
+    }
+
+    /**
+     * Sets reduction
+     *
+     * @param string $reduction reduction
+     *
+     * @return $this
+     */
+    public function setReduction($reduction)
+    {
+        $this->container['reduction'] = $reduction;
 
         return $this;
     }

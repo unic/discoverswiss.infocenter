@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **opening_hours** | **string** |  | [optional] 
 **image** | [**\Infocenter\Client\Model\DsImageObjectSimplex**](DsImageObjectSimplex.md) |  | [optional] 
 **name** | **string** |  | [optional] 
+**disambiguating_description** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **contained_in_place** | **string** |  | [optional] 
 **state** | **string** |  | [optional] 
@@ -33,6 +34,7 @@ Name | Type | Description | Notes
 **organizer** | [**\Infocenter\Client\Model\DsOrganization**](DsOrganization.md) |  | [optional] 
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **source_id** | **string[]** |  | [optional] 
+**has_review** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

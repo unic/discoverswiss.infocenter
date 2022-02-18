@@ -57,7 +57,8 @@ class DsEntryPoint implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'type' => 'string',
-'url_template' => 'string'    ];
+'url_template' => 'string',
+'additional_type' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,7 +67,8 @@ class DsEntryPoint implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'type' => null,
-'url_template' => null    ];
+'url_template' => null,
+'additional_type' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -96,7 +98,8 @@ class DsEntryPoint implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'type' => 'type',
-'url_template' => 'urlTemplate'    ];
+'url_template' => 'urlTemplate',
+'additional_type' => 'additionalType'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -105,7 +108,8 @@ class DsEntryPoint implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'type' => 'setType',
-'url_template' => 'setUrlTemplate'    ];
+'url_template' => 'setUrlTemplate',
+'additional_type' => 'setAdditionalType'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -114,7 +118,8 @@ class DsEntryPoint implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'type' => 'getType',
-'url_template' => 'getUrlTemplate'    ];
+'url_template' => 'getUrlTemplate',
+'additional_type' => 'getAdditionalType'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -176,6 +181,7 @@ class DsEntryPoint implements ModelInterface, ArrayAccess
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['url_template'] = isset($data['url_template']) ? $data['url_template'] : null;
+        $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
     }
 
     /**
@@ -246,6 +252,30 @@ class DsEntryPoint implements ModelInterface, ArrayAccess
     public function setUrlTemplate($url_template)
     {
         $this->container['url_template'] = $url_template;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_type
+     *
+     * @return string
+     */
+    public function getAdditionalType()
+    {
+        return $this->container['additional_type'];
+    }
+
+    /**
+     * Sets additional_type
+     *
+     * @param string $additional_type additional_type
+     *
+     * @return $this
+     */
+    public function setAdditionalType($additional_type)
+    {
+        $this->container['additional_type'] = $additional_type;
 
         return $this;
     }

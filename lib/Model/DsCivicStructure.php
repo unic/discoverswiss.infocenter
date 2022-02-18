@@ -98,6 +98,7 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
 'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
+'review' => '\Infocenter\Client\Model\DsReviewSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -165,6 +166,7 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'profile_tag' => null,
 'audio' => null,
 'video' => null,
+'review' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -253,6 +255,7 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'profile_tag' => 'profileTag',
 'audio' => 'audio',
 'video' => 'video',
+'review' => 'review',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -320,6 +323,7 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'profile_tag' => 'setProfileTag',
 'audio' => 'setAudio',
 'video' => 'setVideo',
+'review' => 'setReview',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -387,6 +391,7 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'profile_tag' => 'getProfileTag',
 'audio' => 'getAudio',
 'video' => 'getVideo',
+'review' => 'getReview',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -506,6 +511,7 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
         $this->container['video'] = isset($data['video']) ? $data['video'] : null;
+        $this->container['review'] = isset($data['review']) ? $data['review'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -1554,6 +1560,30 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
     public function setVideo($video)
     {
         $this->container['video'] = $video;
+
+        return $this;
+    }
+
+    /**
+     * Gets review
+     *
+     * @return \Infocenter\Client\Model\DsReviewSimplex[]
+     */
+    public function getReview()
+    {
+        return $this->container['review'];
+    }
+
+    /**
+     * Sets review
+     *
+     * @param \Infocenter\Client\Model\DsReviewSimplex[] $review review
+     *
+     * @return $this
+     */
+    public function setReview($review)
+    {
+        $this->container['review'] = $review;
 
         return $this;
     }

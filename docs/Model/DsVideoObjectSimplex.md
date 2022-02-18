@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **content_url** | **string** |  | [optional] 
 **caption** | **string** |  | [optional] 
 **encoding_format** | **string** |  | [optional] 
+**additional_type** | **string** |  | [optional] 
 **in_language** | **string** |  | [optional] 
 **thumbnail_url** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 

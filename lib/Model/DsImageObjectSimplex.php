@@ -61,6 +61,7 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
 'content_url' => 'string',
 'caption' => 'string',
 'encoding_format' => 'string',
+'additional_type' => 'string',
 'in_language' => 'string',
 'thumbnail_url' => 'string',
 'id' => 'string',
@@ -77,6 +78,7 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
 'content_url' => null,
 'caption' => null,
 'encoding_format' => null,
+'additional_type' => null,
 'in_language' => null,
 'thumbnail_url' => null,
 'id' => null,
@@ -114,6 +116,7 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
 'content_url' => 'contentUrl',
 'caption' => 'caption',
 'encoding_format' => 'encodingFormat',
+'additional_type' => 'additionalType',
 'in_language' => 'inLanguage',
 'thumbnail_url' => 'thumbnailUrl',
 'id' => 'id',
@@ -130,6 +133,7 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
 'content_url' => 'setContentUrl',
 'caption' => 'setCaption',
 'encoding_format' => 'setEncodingFormat',
+'additional_type' => 'setAdditionalType',
 'in_language' => 'setInLanguage',
 'thumbnail_url' => 'setThumbnailUrl',
 'id' => 'setId',
@@ -146,6 +150,7 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
 'content_url' => 'getContentUrl',
 'caption' => 'getCaption',
 'encoding_format' => 'getEncodingFormat',
+'additional_type' => 'getAdditionalType',
 'in_language' => 'getInLanguage',
 'thumbnail_url' => 'getThumbnailUrl',
 'id' => 'getId',
@@ -214,6 +219,7 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
         $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
         $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
         $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
+        $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
         $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
@@ -360,6 +366,30 @@ class DsImageObjectSimplex implements ModelInterface, ArrayAccess
     public function setEncodingFormat($encoding_format)
     {
         $this->container['encoding_format'] = $encoding_format;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_type
+     *
+     * @return string
+     */
+    public function getAdditionalType()
+    {
+        return $this->container['additional_type'];
+    }
+
+    /**
+     * Sets additional_type
+     *
+     * @param string $additional_type additional_type
+     *
+     * @return $this
+     */
+    public function setAdditionalType($additional_type)
+    {
+        $this->container['additional_type'] = $additional_type;
 
         return $this;
     }

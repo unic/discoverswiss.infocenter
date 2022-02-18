@@ -56,7 +56,7 @@ class DsAction implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
+        'additional_type' => 'string',
 'target' => '\Infocenter\Client\Model\DsEntryPoint[]',
 'name' => 'string'    ];
 
@@ -66,7 +66,7 @@ class DsAction implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
+        'additional_type' => null,
 'target' => null,
 'name' => null    ];
 
@@ -97,7 +97,7 @@ class DsAction implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
+        'additional_type' => 'additionalType',
 'target' => 'target',
 'name' => 'name'    ];
 
@@ -107,7 +107,7 @@ class DsAction implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
+        'additional_type' => 'setAdditionalType',
 'target' => 'setTarget',
 'name' => 'setName'    ];
 
@@ -117,7 +117,7 @@ class DsAction implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
+        'additional_type' => 'getAdditionalType',
 'target' => 'getTarget',
 'name' => 'getName'    ];
 
@@ -179,7 +179,7 @@ class DsAction implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['target'] = isset($data['target']) ? $data['target'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
@@ -209,25 +209,25 @@ class DsAction implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets type
+     * Gets additional_type
      *
      * @return string
      */
-    public function getType()
+    public function getAdditionalType()
     {
-        return $this->container['type'];
+        return $this->container['additional_type'];
     }
 
     /**
-     * Sets type
+     * Sets additional_type
      *
-     * @param string $type type
+     * @param string $additional_type additional_type
      *
      * @return $this
      */
-    public function setType($type)
+    public function setAdditionalType($additional_type)
     {
-        $this->container['type'] = $type;
+        $this->container['additional_type'] = $additional_type;
 
         return $this;
     }

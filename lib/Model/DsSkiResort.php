@@ -75,6 +75,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
 'weather_valley' => '\Infocenter\Client\Model\DsSimpleForecast[]',
 'weather_mountain' => '\Infocenter\Client\Model\DsSimpleForecast[]',
 'skipass' => '\Infocenter\Client\Model\DsProductSimplex[]',
+'has_shuttle_bus' => 'bool',
 'contact_point' => '\Infocenter\Client\Model\DsContactPoint',
 'opening_days' => 'string',
 'price_range' => 'string',
@@ -120,6 +121,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
 'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
 'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
+'review' => '\Infocenter\Client\Model\DsReviewSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -164,6 +166,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
 'weather_valley' => null,
 'weather_mountain' => null,
 'skipass' => null,
+'has_shuttle_bus' => null,
 'contact_point' => null,
 'opening_days' => null,
 'price_range' => null,
@@ -209,6 +212,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
 'profile_tag' => null,
 'audio' => null,
 'video' => null,
+'review' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -274,6 +278,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
 'weather_valley' => 'weatherValley',
 'weather_mountain' => 'weatherMountain',
 'skipass' => 'skipass',
+'has_shuttle_bus' => 'hasShuttleBus',
 'contact_point' => 'contactPoint',
 'opening_days' => 'openingDays',
 'price_range' => 'priceRange',
@@ -319,6 +324,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
 'profile_tag' => 'profileTag',
 'audio' => 'audio',
 'video' => 'video',
+'review' => 'review',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -363,6 +369,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
 'weather_valley' => 'setWeatherValley',
 'weather_mountain' => 'setWeatherMountain',
 'skipass' => 'setSkipass',
+'has_shuttle_bus' => 'setHasShuttleBus',
 'contact_point' => 'setContactPoint',
 'opening_days' => 'setOpeningDays',
 'price_range' => 'setPriceRange',
@@ -408,6 +415,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
 'profile_tag' => 'setProfileTag',
 'audio' => 'setAudio',
 'video' => 'setVideo',
+'review' => 'setReview',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -452,6 +460,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
 'weather_valley' => 'getWeatherValley',
 'weather_mountain' => 'getWeatherMountain',
 'skipass' => 'getSkipass',
+'has_shuttle_bus' => 'getHasShuttleBus',
 'contact_point' => 'getContactPoint',
 'opening_days' => 'getOpeningDays',
 'price_range' => 'getPriceRange',
@@ -497,6 +506,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
 'profile_tag' => 'getProfileTag',
 'audio' => 'getAudio',
 'video' => 'getVideo',
+'review' => 'getReview',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -593,6 +603,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
         $this->container['weather_valley'] = isset($data['weather_valley']) ? $data['weather_valley'] : null;
         $this->container['weather_mountain'] = isset($data['weather_mountain']) ? $data['weather_mountain'] : null;
         $this->container['skipass'] = isset($data['skipass']) ? $data['skipass'] : null;
+        $this->container['has_shuttle_bus'] = isset($data['has_shuttle_bus']) ? $data['has_shuttle_bus'] : null;
         $this->container['contact_point'] = isset($data['contact_point']) ? $data['contact_point'] : null;
         $this->container['opening_days'] = isset($data['opening_days']) ? $data['opening_days'] : null;
         $this->container['price_range'] = isset($data['price_range']) ? $data['price_range'] : null;
@@ -638,6 +649,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
         $this->container['video'] = isset($data['video']) ? $data['video'] : null;
+        $this->container['review'] = isset($data['review']) ? $data['review'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -1134,6 +1146,30 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     public function setSkipass($skipass)
     {
         $this->container['skipass'] = $skipass;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_shuttle_bus
+     *
+     * @return bool
+     */
+    public function getHasShuttleBus()
+    {
+        return $this->container['has_shuttle_bus'];
+    }
+
+    /**
+     * Sets has_shuttle_bus
+     *
+     * @param bool $has_shuttle_bus has_shuttle_bus
+     *
+     * @return $this
+     */
+    public function setHasShuttleBus($has_shuttle_bus)
+    {
+        $this->container['has_shuttle_bus'] = $has_shuttle_bus;
 
         return $this;
     }
@@ -2214,6 +2250,30 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     public function setVideo($video)
     {
         $this->container['video'] = $video;
+
+        return $this;
+    }
+
+    /**
+     * Gets review
+     *
+     * @return \Infocenter\Client\Model\DsReviewSimplex[]
+     */
+    public function getReview()
+    {
+        return $this->container['review'];
+    }
+
+    /**
+     * Sets review
+     *
+     * @param \Infocenter\Client\Model\DsReviewSimplex[] $review review
+     *
+     * @return $this
+     */
+    public function setReview($review)
+    {
+        $this->container['review'] = $review;
 
         return $this;
     }

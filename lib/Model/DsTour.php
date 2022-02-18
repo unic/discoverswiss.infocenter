@@ -77,6 +77,8 @@ class DsTour implements ModelInterface, ArrayAccess
 'maps' => 'string',
 'state' => 'string',
 'duration' => 'string',
+'sub_trip' => '\Infocenter\Client\Model\DsTourSimplex[]',
+'part_of_trip' => '\Infocenter\Client\Model\DsTourSimplex[]',
 'available_language' => 'string[]',
 'slogan' => 'string',
 'address' => '\Infocenter\Client\Model\DsFullAddress',
@@ -118,6 +120,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
 'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
+'review' => '\Infocenter\Client\Model\DsReviewSimplex[]',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -164,6 +167,8 @@ class DsTour implements ModelInterface, ArrayAccess
 'maps' => null,
 'state' => null,
 'duration' => null,
+'sub_trip' => null,
+'part_of_trip' => null,
 'available_language' => null,
 'slogan' => null,
 'address' => null,
@@ -205,6 +210,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'profile_tag' => null,
 'audio' => null,
 'video' => null,
+'review' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -272,6 +278,8 @@ class DsTour implements ModelInterface, ArrayAccess
 'maps' => 'maps',
 'state' => 'state',
 'duration' => 'duration',
+'sub_trip' => 'subTrip',
+'part_of_trip' => 'partOfTrip',
 'available_language' => 'availableLanguage',
 'slogan' => 'slogan',
 'address' => 'address',
@@ -313,6 +321,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'profile_tag' => 'profileTag',
 'audio' => 'audio',
 'video' => 'video',
+'review' => 'review',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -359,6 +368,8 @@ class DsTour implements ModelInterface, ArrayAccess
 'maps' => 'setMaps',
 'state' => 'setState',
 'duration' => 'setDuration',
+'sub_trip' => 'setSubTrip',
+'part_of_trip' => 'setPartOfTrip',
 'available_language' => 'setAvailableLanguage',
 'slogan' => 'setSlogan',
 'address' => 'setAddress',
@@ -400,6 +411,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'profile_tag' => 'setProfileTag',
 'audio' => 'setAudio',
 'video' => 'setVideo',
+'review' => 'setReview',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -446,6 +458,8 @@ class DsTour implements ModelInterface, ArrayAccess
 'maps' => 'getMaps',
 'state' => 'getState',
 'duration' => 'getDuration',
+'sub_trip' => 'getSubTrip',
+'part_of_trip' => 'getPartOfTrip',
 'available_language' => 'getAvailableLanguage',
 'slogan' => 'getSlogan',
 'address' => 'getAddress',
@@ -487,6 +501,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'profile_tag' => 'getProfileTag',
 'audio' => 'getAudio',
 'video' => 'getVideo',
+'review' => 'getReview',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -585,6 +600,8 @@ class DsTour implements ModelInterface, ArrayAccess
         $this->container['maps'] = isset($data['maps']) ? $data['maps'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;
+        $this->container['sub_trip'] = isset($data['sub_trip']) ? $data['sub_trip'] : null;
+        $this->container['part_of_trip'] = isset($data['part_of_trip']) ? $data['part_of_trip'] : null;
         $this->container['available_language'] = isset($data['available_language']) ? $data['available_language'] : null;
         $this->container['slogan'] = isset($data['slogan']) ? $data['slogan'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
@@ -626,6 +643,7 @@ class DsTour implements ModelInterface, ArrayAccess
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
         $this->container['video'] = isset($data['video']) ? $data['video'] : null;
+        $this->container['review'] = isset($data['review']) ? $data['review'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -1170,6 +1188,54 @@ class DsTour implements ModelInterface, ArrayAccess
     public function setDuration($duration)
     {
         $this->container['duration'] = $duration;
+
+        return $this;
+    }
+
+    /**
+     * Gets sub_trip
+     *
+     * @return \Infocenter\Client\Model\DsTourSimplex[]
+     */
+    public function getSubTrip()
+    {
+        return $this->container['sub_trip'];
+    }
+
+    /**
+     * Sets sub_trip
+     *
+     * @param \Infocenter\Client\Model\DsTourSimplex[] $sub_trip sub_trip
+     *
+     * @return $this
+     */
+    public function setSubTrip($sub_trip)
+    {
+        $this->container['sub_trip'] = $sub_trip;
+
+        return $this;
+    }
+
+    /**
+     * Gets part_of_trip
+     *
+     * @return \Infocenter\Client\Model\DsTourSimplex[]
+     */
+    public function getPartOfTrip()
+    {
+        return $this->container['part_of_trip'];
+    }
+
+    /**
+     * Sets part_of_trip
+     *
+     * @param \Infocenter\Client\Model\DsTourSimplex[] $part_of_trip part_of_trip
+     *
+     * @return $this
+     */
+    public function setPartOfTrip($part_of_trip)
+    {
+        $this->container['part_of_trip'] = $part_of_trip;
 
         return $this;
     }
@@ -2154,6 +2220,30 @@ class DsTour implements ModelInterface, ArrayAccess
     public function setVideo($video)
     {
         $this->container['video'] = $video;
+
+        return $this;
+    }
+
+    /**
+     * Gets review
+     *
+     * @return \Infocenter\Client\Model\DsReviewSimplex[]
+     */
+    public function getReview()
+    {
+        return $this->container['review'];
+    }
+
+    /**
+     * Sets review
+     *
+     * @param \Infocenter\Client\Model\DsReviewSimplex[] $review review
+     *
+     * @return $this
+     */
+    public function setReview($review)
+    {
+        $this->container['review'] = $review;
 
         return $this;
     }

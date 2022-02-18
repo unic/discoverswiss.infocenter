@@ -1,6 +1,6 @@
 <?php
 /**
- * DsMediaObjectSimplex
+ * DsReviewResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsMediaObjectSimplex Class Doc Comment
+ * DsReviewResponse Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
+class DsReviewResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MediaObjectSimplex';
+    protected static $swaggerModelName = 'ReviewResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,14 +56,10 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content_url' => 'string',
-'caption' => 'string',
-'encoding_format' => 'string',
-'additional_type' => 'string',
-'in_language' => 'string',
-'thumbnail_url' => 'string',
-'id' => 'string',
-'identifier' => 'string'    ];
+        'count' => 'int',
+'has_next_page' => 'bool',
+'next_page_token' => 'string',
+'data' => '\Infocenter\Client\Model\DsReview[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,14 +67,10 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'content_url' => null,
-'caption' => null,
-'encoding_format' => null,
-'additional_type' => null,
-'in_language' => null,
-'thumbnail_url' => null,
-'id' => null,
-'identifier' => null    ];
+        'count' => 'int32',
+'has_next_page' => null,
+'next_page_token' => null,
+'data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -107,14 +99,10 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'content_url' => 'contentUrl',
-'caption' => 'caption',
-'encoding_format' => 'encodingFormat',
-'additional_type' => 'additionalType',
-'in_language' => 'inLanguage',
-'thumbnail_url' => 'thumbnailUrl',
-'id' => 'id',
-'identifier' => 'identifier'    ];
+        'count' => 'count',
+'has_next_page' => 'hasNextPage',
+'next_page_token' => 'nextPageToken',
+'data' => 'data'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -122,14 +110,10 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'content_url' => 'setContentUrl',
-'caption' => 'setCaption',
-'encoding_format' => 'setEncodingFormat',
-'additional_type' => 'setAdditionalType',
-'in_language' => 'setInLanguage',
-'thumbnail_url' => 'setThumbnailUrl',
-'id' => 'setId',
-'identifier' => 'setIdentifier'    ];
+        'count' => 'setCount',
+'has_next_page' => 'setHasNextPage',
+'next_page_token' => 'setNextPageToken',
+'data' => 'setData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -137,14 +121,10 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'content_url' => 'getContentUrl',
-'caption' => 'getCaption',
-'encoding_format' => 'getEncodingFormat',
-'additional_type' => 'getAdditionalType',
-'in_language' => 'getInLanguage',
-'thumbnail_url' => 'getThumbnailUrl',
-'id' => 'getId',
-'identifier' => 'getIdentifier'    ];
+        'count' => 'getCount',
+'has_next_page' => 'getHasNextPage',
+'next_page_token' => 'getNextPageToken',
+'data' => 'getData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -204,14 +184,10 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
-        $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
-        $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
-        $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['has_next_page'] = isset($data['has_next_page']) ? $data['has_next_page'] : null;
+        $this->container['next_page_token'] = isset($data['next_page_token']) ? $data['next_page_token'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /**
@@ -239,193 +215,97 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets content_url
+     * Gets count
      *
-     * @return string
+     * @return int
      */
-    public function getContentUrl()
+    public function getCount()
     {
-        return $this->container['content_url'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets content_url
+     * Sets count
      *
-     * @param string $content_url content_url
+     * @param int $count count
      *
      * @return $this
      */
-    public function setContentUrl($content_url)
+    public function setCount($count)
     {
-        $this->container['content_url'] = $content_url;
+        $this->container['count'] = $count;
 
         return $this;
     }
 
     /**
-     * Gets caption
+     * Gets has_next_page
      *
-     * @return string
+     * @return bool
      */
-    public function getCaption()
+    public function getHasNextPage()
     {
-        return $this->container['caption'];
+        return $this->container['has_next_page'];
     }
 
     /**
-     * Sets caption
+     * Sets has_next_page
      *
-     * @param string $caption caption
+     * @param bool $has_next_page has_next_page
      *
      * @return $this
      */
-    public function setCaption($caption)
+    public function setHasNextPage($has_next_page)
     {
-        $this->container['caption'] = $caption;
+        $this->container['has_next_page'] = $has_next_page;
 
         return $this;
     }
 
     /**
-     * Gets encoding_format
+     * Gets next_page_token
      *
      * @return string
      */
-    public function getEncodingFormat()
+    public function getNextPageToken()
     {
-        return $this->container['encoding_format'];
+        return $this->container['next_page_token'];
     }
 
     /**
-     * Sets encoding_format
+     * Sets next_page_token
      *
-     * @param string $encoding_format encoding_format
+     * @param string $next_page_token next_page_token
      *
      * @return $this
      */
-    public function setEncodingFormat($encoding_format)
+    public function setNextPageToken($next_page_token)
     {
-        $this->container['encoding_format'] = $encoding_format;
+        $this->container['next_page_token'] = $next_page_token;
 
         return $this;
     }
 
     /**
-     * Gets additional_type
+     * Gets data
      *
-     * @return string
+     * @return \Infocenter\Client\Model\DsReview[]
      */
-    public function getAdditionalType()
+    public function getData()
     {
-        return $this->container['additional_type'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets additional_type
+     * Sets data
      *
-     * @param string $additional_type additional_type
+     * @param \Infocenter\Client\Model\DsReview[] $data data
      *
      * @return $this
      */
-    public function setAdditionalType($additional_type)
+    public function setData($data)
     {
-        $this->container['additional_type'] = $additional_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets in_language
-     *
-     * @return string
-     */
-    public function getInLanguage()
-    {
-        return $this->container['in_language'];
-    }
-
-    /**
-     * Sets in_language
-     *
-     * @param string $in_language in_language
-     *
-     * @return $this
-     */
-    public function setInLanguage($in_language)
-    {
-        $this->container['in_language'] = $in_language;
-
-        return $this;
-    }
-
-    /**
-     * Gets thumbnail_url
-     *
-     * @return string
-     */
-    public function getThumbnailUrl()
-    {
-        return $this->container['thumbnail_url'];
-    }
-
-    /**
-     * Sets thumbnail_url
-     *
-     * @param string $thumbnail_url thumbnail_url
-     *
-     * @return $this
-     */
-    public function setThumbnailUrl($thumbnail_url)
-    {
-        $this->container['thumbnail_url'] = $thumbnail_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets identifier
-     *
-     * @return string
-     */
-    public function getIdentifier()
-    {
-        return $this->container['identifier'];
-    }
-
-    /**
-     * Sets identifier
-     *
-     * @param string $identifier identifier
-     *
-     * @return $this
-     */
-    public function setIdentifier($identifier)
-    {
-        $this->container['identifier'] = $identifier;
+        $this->container['data'] = $data;
 
         return $this;
     }

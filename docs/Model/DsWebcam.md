@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **profile_tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **audio** | [**\Infocenter\Client\Model\DsAudioObjectSimplex[]**](DsAudioObjectSimplex.md) |  | [optional] 
 **video** | [**\Infocenter\Client\Model\DsVideoObjectSimplex[]**](DsVideoObjectSimplex.md) |  | [optional] 
+**review** | [**\Infocenter\Client\Model\DsReviewSimplex[]**](DsReviewSimplex.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **removed** | **bool** |  | [optional] 

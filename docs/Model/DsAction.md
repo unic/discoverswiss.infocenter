@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [optional] 
+**additional_type** | **string** |  | [optional] 
 **target** | [**\Infocenter\Client\Model\DsEntryPoint[]**](DsEntryPoint.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 
