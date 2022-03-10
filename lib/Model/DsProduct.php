@@ -84,6 +84,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'offered_by' => '\Infocenter\Client\Model\DsLocalBusinessMember',
 'area_served' => '\Infocenter\Client\Model\DsPlaceMember',
 'contained_in_place' => '\Infocenter\Client\Model\DsPlaceSimplex[]',
+'robots' => 'string',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -137,6 +138,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'offered_by' => null,
 'area_served' => null,
 'contained_in_place' => null,
+'robots' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -211,6 +213,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'offered_by' => 'offeredBy',
 'area_served' => 'areaServed',
 'contained_in_place' => 'containedInPlace',
+'robots' => 'robots',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -264,6 +267,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'offered_by' => 'setOfferedBy',
 'area_served' => 'setAreaServed',
 'contained_in_place' => 'setContainedInPlace',
+'robots' => 'setRobots',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -317,6 +321,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'offered_by' => 'getOfferedBy',
 'area_served' => 'getAreaServed',
 'contained_in_place' => 'getContainedInPlace',
+'robots' => 'getRobots',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -422,6 +427,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['offered_by'] = isset($data['offered_by']) ? $data['offered_by'] : null;
         $this->container['area_served'] = isset($data['area_served']) ? $data['area_served'] : null;
         $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
+        $this->container['robots'] = isset($data['robots']) ? $data['robots'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -1134,6 +1140,30 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setContainedInPlace($contained_in_place)
     {
         $this->container['contained_in_place'] = $contained_in_place;
+
+        return $this;
+    }
+
+    /**
+     * Gets robots
+     *
+     * @return string
+     */
+    public function getRobots()
+    {
+        return $this->container['robots'];
+    }
+
+    /**
+     * Sets robots
+     *
+     * @param string $robots robots
+     *
+     * @return $this
+     */
+    public function setRobots($robots)
+    {
+        $this->container['robots'] = $robots;
 
         return $this;
     }

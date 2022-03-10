@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **offered_by** | [**\Infocenter\Client\Model\DsLocalBusinessMember**](DsLocalBusinessMember.md) |  | [optional] 
 **area_served** | [**\Infocenter\Client\Model\DsPlaceMember**](DsPlaceMember.md) |  | [optional] 
 **contained_in_place** | [**\Infocenter\Client\Model\DsPlaceSimplex[]**](DsPlaceSimplex.md) |  | [optional] 
+**robots** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **removed** | **bool** |  | [optional] 

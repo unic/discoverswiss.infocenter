@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**caption** | **string** |  | [optional] 
 **content_size** | **string** |  | [optional] 
 **content_url** | **string** |  | [optional] 
 **embed_url** | **string** |  | [optional] 
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **campaign_tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
 **profile_tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) |  | [optional] 
+**robots** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **removed** | **bool** |  | [optional] 

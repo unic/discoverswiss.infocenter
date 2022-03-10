@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **audio** | [**\Infocenter\Client\Model\DsAudioObjectSimplex[]**](DsAudioObjectSimplex.md) |  | [optional] 
 **video** | [**\Infocenter\Client\Model\DsVideoObjectSimplex[]**](DsVideoObjectSimplex.md) |  | [optional] 
 **potential_action** | [**\Infocenter\Client\Model\DsAction[]**](DsAction.md) |  | [optional] 
+**robots** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **removed** | **bool** |  | [optional] 

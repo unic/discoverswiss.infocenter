@@ -644,7 +644,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **civicStructureDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecastArray civicStructureDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecast[] civicStructureDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
 
 CivicStructure daily forecast
 
@@ -699,7 +699,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
+[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
 
 ### Authorization
 
@@ -5010,7 +5010,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByGETForPdf**
-> \Infocenter\Client\Model\DsFile searchByGETForPdf($template_project, $template, $ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $title, $leadtext, $accept_language, $accept_timezone)
+> string searchByGETForPdf($template_project, $template, $ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $campaign_tag, $profile_tag, $all_tag, $scoring_tag, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $title, $leadtext, $accept_language, $accept_timezone)
 
 Search by GET for pdf
 
@@ -5129,7 +5129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsFile**](../Model/DsFile.md)
+**string**
 
 ### Authorization
 
@@ -5143,7 +5143,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByPOSTForPdf**
-> \Infocenter\Client\Model\DsFile searchByPOSTForPdf($ocp_apim_subscription_key, $template_project, $template, $body, $accept_language, $accept_timezone)
+> string searchByPOSTForPdf($ocp_apim_subscription_key, $template_project, $template, $body, $accept_language, $accept_timezone)
 
 Search by POST for pdf
 
@@ -5196,7 +5196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsFile**](../Model/DsFile.md)
+**string**
 
 ### Authorization
 

@@ -75,6 +75,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'robots' => 'string',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -119,6 +120,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'tag' => null,
 'campaign_tag' => null,
 'profile_tag' => null,
+'robots' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -184,6 +186,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'tag' => 'tag',
 'campaign_tag' => 'campaignTag',
 'profile_tag' => 'profileTag',
+'robots' => 'robots',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -228,6 +231,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'tag' => 'setTag',
 'campaign_tag' => 'setCampaignTag',
 'profile_tag' => 'setProfileTag',
+'robots' => 'setRobots',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -272,6 +276,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
 'tag' => 'getTag',
 'campaign_tag' => 'getCampaignTag',
 'profile_tag' => 'getProfileTag',
+'robots' => 'getRobots',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -368,6 +373,7 @@ class DsImageObject implements ModelInterface, ArrayAccess
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
+        $this->container['robots'] = isset($data['robots']) ? $data['robots'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -864,6 +870,30 @@ class DsImageObject implements ModelInterface, ArrayAccess
     public function setProfileTag($profile_tag)
     {
         $this->container['profile_tag'] = $profile_tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets robots
+     *
+     * @return string
+     */
+    public function getRobots()
+    {
+        return $this->container['robots'];
+    }
+
+    /**
+     * Sets robots
+     *
+     * @param string $robots robots
+     *
+     * @return $this
+     */
+    public function setRobots($robots)
+    {
+        $this->container['robots'] = $robots;
 
         return $this;
     }

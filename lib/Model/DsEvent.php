@@ -80,6 +80,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
 'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
 'potential_action' => '\Infocenter\Client\Model\DsAction[]',
+'robots' => 'string',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -129,6 +130,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'audio' => null,
 'video' => null,
 'potential_action' => null,
+'robots' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -199,6 +201,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'audio' => 'audio',
 'video' => 'video',
 'potential_action' => 'potentialAction',
+'robots' => 'robots',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -248,6 +251,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'audio' => 'setAudio',
 'video' => 'setVideo',
 'potential_action' => 'setPotentialAction',
+'robots' => 'setRobots',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -297,6 +301,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'audio' => 'getAudio',
 'video' => 'getVideo',
 'potential_action' => 'getPotentialAction',
+'robots' => 'getRobots',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -398,6 +403,7 @@ class DsEvent implements ModelInterface, ArrayAccess
         $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
         $this->container['video'] = isset($data['video']) ? $data['video'] : null;
         $this->container['potential_action'] = isset($data['potential_action']) ? $data['potential_action'] : null;
+        $this->container['robots'] = isset($data['robots']) ? $data['robots'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -1014,6 +1020,30 @@ class DsEvent implements ModelInterface, ArrayAccess
     public function setPotentialAction($potential_action)
     {
         $this->container['potential_action'] = $potential_action;
+
+        return $this;
+    }
+
+    /**
+     * Gets robots
+     *
+     * @return string
+     */
+    public function getRobots()
+    {
+        return $this->container['robots'];
+    }
+
+    /**
+     * Sets robots
+     *
+     * @param string $robots robots
+     *
+     * @return $this
+     */
+    public function setRobots($robots)
+    {
+        $this->container['robots'] = $robots;
 
         return $this;
     }

@@ -56,7 +56,8 @@ class DsMediaObject implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content_size' => 'string',
+        'caption' => 'string',
+'content_size' => 'string',
 'content_url' => 'string',
 'embed_url' => 'string',
 'height' => 'string',
@@ -73,6 +74,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
+'robots' => 'string',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -98,7 +100,8 @@ class DsMediaObject implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'content_size' => null,
+        'caption' => null,
+'content_size' => null,
 'content_url' => null,
 'embed_url' => null,
 'height' => null,
@@ -115,6 +118,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'tag' => null,
 'campaign_tag' => null,
 'profile_tag' => null,
+'robots' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -161,7 +165,8 @@ class DsMediaObject implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'content_size' => 'contentSize',
+        'caption' => 'caption',
+'content_size' => 'contentSize',
 'content_url' => 'contentUrl',
 'embed_url' => 'embedUrl',
 'height' => 'height',
@@ -178,6 +183,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'tag' => 'tag',
 'campaign_tag' => 'campaignTag',
 'profile_tag' => 'profileTag',
+'robots' => 'robots',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -203,7 +209,8 @@ class DsMediaObject implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'content_size' => 'setContentSize',
+        'caption' => 'setCaption',
+'content_size' => 'setContentSize',
 'content_url' => 'setContentUrl',
 'embed_url' => 'setEmbedUrl',
 'height' => 'setHeight',
@@ -220,6 +227,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'tag' => 'setTag',
 'campaign_tag' => 'setCampaignTag',
 'profile_tag' => 'setProfileTag',
+'robots' => 'setRobots',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -245,7 +253,8 @@ class DsMediaObject implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'content_size' => 'getContentSize',
+        'caption' => 'getCaption',
+'content_size' => 'getContentSize',
 'content_url' => 'getContentUrl',
 'embed_url' => 'getEmbedUrl',
 'height' => 'getHeight',
@@ -262,6 +271,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
 'tag' => 'getTag',
 'campaign_tag' => 'getCampaignTag',
 'profile_tag' => 'getProfileTag',
+'robots' => 'getRobots',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -339,6 +349,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
         $this->container['content_size'] = isset($data['content_size']) ? $data['content_size'] : null;
         $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
         $this->container['embed_url'] = isset($data['embed_url']) ? $data['embed_url'] : null;
@@ -356,6 +367,7 @@ class DsMediaObject implements ModelInterface, ArrayAccess
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
+        $this->container['robots'] = isset($data['robots']) ? $data['robots'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -399,6 +411,30 @@ class DsMediaObject implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets caption
+     *
+     * @return string
+     */
+    public function getCaption()
+    {
+        return $this->container['caption'];
+    }
+
+    /**
+     * Sets caption
+     *
+     * @param string $caption caption
+     *
+     * @return $this
+     */
+    public function setCaption($caption)
+    {
+        $this->container['caption'] = $caption;
+
+        return $this;
+    }
 
     /**
      * Gets content_size
@@ -804,6 +840,30 @@ class DsMediaObject implements ModelInterface, ArrayAccess
     public function setProfileTag($profile_tag)
     {
         $this->container['profile_tag'] = $profile_tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets robots
+     *
+     * @return string
+     */
+    public function getRobots()
+    {
+        return $this->container['robots'];
+    }
+
+    /**
+     * Sets robots
+     *
+     * @param string $robots robots
+     *
+     * @return $this
+     */
+    public function setRobots($robots)
+    {
+        $this->container['robots'] = $robots;
 
         return $this;
     }

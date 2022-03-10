@@ -121,6 +121,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
 'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
 'review' => '\Infocenter\Client\Model\DsReviewSimplex[]',
+'robots' => 'string',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -211,6 +212,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'audio' => null,
 'video' => null,
 'review' => null,
+'robots' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -322,6 +324,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'audio' => 'audio',
 'video' => 'video',
 'review' => 'review',
+'robots' => 'robots',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -412,6 +415,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'audio' => 'setAudio',
 'video' => 'setVideo',
 'review' => 'setReview',
+'robots' => 'setRobots',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -502,6 +506,7 @@ class DsTour implements ModelInterface, ArrayAccess
 'audio' => 'getAudio',
 'video' => 'getVideo',
 'review' => 'getReview',
+'robots' => 'getRobots',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -644,6 +649,7 @@ class DsTour implements ModelInterface, ArrayAccess
         $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
         $this->container['video'] = isset($data['video']) ? $data['video'] : null;
         $this->container['review'] = isset($data['review']) ? $data['review'] : null;
+        $this->container['robots'] = isset($data['robots']) ? $data['robots'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -2244,6 +2250,30 @@ class DsTour implements ModelInterface, ArrayAccess
     public function setReview($review)
     {
         $this->container['review'] = $review;
+
+        return $this;
+    }
+
+    /**
+     * Gets robots
+     *
+     * @return string
+     */
+    public function getRobots()
+    {
+        return $this->container['robots'];
+    }
+
+    /**
+     * Sets robots
+     *
+     * @param string $robots robots
+     *
+     * @return $this
+     */
+    public function setRobots($robots)
+    {
+        $this->container['robots'] = $robots;
 
         return $this;
     }

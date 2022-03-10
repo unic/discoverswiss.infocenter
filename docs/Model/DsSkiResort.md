@@ -69,6 +69,7 @@ Name | Type | Description | Notes
 **audio** | [**\Infocenter\Client\Model\DsAudioObjectSimplex[]**](DsAudioObjectSimplex.md) |  | [optional] 
 **video** | [**\Infocenter\Client\Model\DsVideoObjectSimplex[]**](DsVideoObjectSimplex.md) |  | [optional] 
 **review** | [**\Infocenter\Client\Model\DsReviewSimplex[]**](DsReviewSimplex.md) |  | [optional] 
+**robots** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **removed** | **bool** |  | [optional] 
