@@ -75,7 +75,6 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'tourist_type' => 'string',
 'additional_property' => '\Infocenter\Client\Model\DsPropertyValue[]',
 'geo_shape' => '\Infocenter\Client\Model\DsGeoShape',
-'cc' => 'string',
 'located' => 'string[]',
 'copyright' => 'string',
 'detailed_information' => 'string[]',
@@ -116,6 +115,7 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'url' => 'string',
 'additional_type' => 'string',
 'link' => '\Infocenter\Client\Model\DsLink[]',
+'potential_action' => '\Infocenter\Client\Model\DsAction[]',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -144,7 +144,6 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'tourist_type' => null,
 'additional_property' => null,
 'geo_shape' => null,
-'cc' => null,
 'located' => null,
 'copyright' => null,
 'detailed_information' => null,
@@ -185,6 +184,7 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'url' => null,
 'additional_type' => null,
 'link' => null,
+'potential_action' => null,
 'name' => null,
 'type' => null    ];
 
@@ -234,7 +234,6 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'tourist_type' => 'touristType',
 'additional_property' => 'additionalProperty',
 'geo_shape' => 'geoShape',
-'cc' => 'cc',
 'located' => 'located',
 'copyright' => 'copyright',
 'detailed_information' => 'detailedInformation',
@@ -275,6 +274,7 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'url' => 'url',
 'additional_type' => 'additionalType',
 'link' => 'link',
+'potential_action' => 'potentialAction',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -303,7 +303,6 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'tourist_type' => 'setTouristType',
 'additional_property' => 'setAdditionalProperty',
 'geo_shape' => 'setGeoShape',
-'cc' => 'setCc',
 'located' => 'setLocated',
 'copyright' => 'setCopyright',
 'detailed_information' => 'setDetailedInformation',
@@ -344,6 +343,7 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'url' => 'setUrl',
 'additional_type' => 'setAdditionalType',
 'link' => 'setLink',
+'potential_action' => 'setPotentialAction',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -372,7 +372,6 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'tourist_type' => 'getTouristType',
 'additional_property' => 'getAdditionalProperty',
 'geo_shape' => 'getGeoShape',
-'cc' => 'getCc',
 'located' => 'getLocated',
 'copyright' => 'getCopyright',
 'detailed_information' => 'getDetailedInformation',
@@ -413,6 +412,7 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
 'url' => 'getUrl',
 'additional_type' => 'getAdditionalType',
 'link' => 'getLink',
+'potential_action' => 'getPotentialAction',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -493,7 +493,6 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
         $this->container['tourist_type'] = isset($data['tourist_type']) ? $data['tourist_type'] : null;
         $this->container['additional_property'] = isset($data['additional_property']) ? $data['additional_property'] : null;
         $this->container['geo_shape'] = isset($data['geo_shape']) ? $data['geo_shape'] : null;
-        $this->container['cc'] = isset($data['cc']) ? $data['cc'] : null;
         $this->container['located'] = isset($data['located']) ? $data['located'] : null;
         $this->container['copyright'] = isset($data['copyright']) ? $data['copyright'] : null;
         $this->container['detailed_information'] = isset($data['detailed_information']) ? $data['detailed_information'] : null;
@@ -534,6 +533,7 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['potential_action'] = isset($data['potential_action']) ? $data['potential_action'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -1014,30 +1014,6 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
     public function setGeoShape($geo_shape)
     {
         $this->container['geo_shape'] = $geo_shape;
-
-        return $this;
-    }
-
-    /**
-     * Gets cc
-     *
-     * @return string
-     */
-    public function getCc()
-    {
-        return $this->container['cc'];
-    }
-
-    /**
-     * Sets cc
-     *
-     * @param string $cc cc
-     *
-     * @return $this
-     */
-    public function setCc($cc)
-    {
-        $this->container['cc'] = $cc;
 
         return $this;
     }
@@ -1998,6 +1974,30 @@ class DsCivicStructure implements ModelInterface, ArrayAccess
     public function setLink($link)
     {
         $this->container['link'] = $link;
+
+        return $this;
+    }
+
+    /**
+     * Gets potential_action
+     *
+     * @return \Infocenter\Client\Model\DsAction[]
+     */
+    public function getPotentialAction()
+    {
+        return $this->container['potential_action'];
+    }
+
+    /**
+     * Sets potential_action
+     *
+     * @param \Infocenter\Client\Model\DsAction[] $potential_action potential_action
+     *
+     * @return $this
+     */
+    public function setPotentialAction($potential_action)
+    {
+        $this->container['potential_action'] = $potential_action;
 
         return $this;
     }

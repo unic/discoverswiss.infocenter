@@ -1,6 +1,6 @@
 <?php
 /**
- * DsFacetRequest
+ * DsTypeTree
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsFacetRequest Class Doc Comment
+ * DsTypeTree Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsFacetRequest implements ModelInterface, ArrayAccess
+class DsTypeTree implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'FacetRequest';
+    protected static $swaggerModelName = 'TypeTree';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,16 +56,10 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-'response_name' => 'string',
-'interval' => 'string',
-'values' => 'string',
-'select_values' => 'string[]',
-'filter_values' => 'string[]',
-'count' => 'int',
-'scope' => 'string',
-'project' => 'string[]',
-'additional_type' => 'string[]'    ];
+        'entity_type' => 'string',
+'additional_type' => 'string',
+'name' => 'string',
+'types' => '\Infocenter\Client\Model\DsTypeTree[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -73,16 +67,10 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
-'response_name' => null,
-'interval' => null,
-'values' => null,
-'select_values' => null,
-'filter_values' => null,
-'count' => 'int32',
-'scope' => null,
-'project' => null,
-'additional_type' => null    ];
+        'entity_type' => null,
+'additional_type' => null,
+'name' => null,
+'types' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -111,16 +99,10 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-'response_name' => 'responseName',
-'interval' => 'interval',
-'values' => 'values',
-'select_values' => 'selectValues',
-'filter_values' => 'filterValues',
-'count' => 'count',
-'scope' => 'scope',
-'project' => 'project',
-'additional_type' => 'additionalType'    ];
+        'entity_type' => 'entityType',
+'additional_type' => 'additionalType',
+'name' => 'name',
+'types' => 'types'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -128,16 +110,10 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-'response_name' => 'setResponseName',
-'interval' => 'setInterval',
-'values' => 'setValues',
-'select_values' => 'setSelectValues',
-'filter_values' => 'setFilterValues',
-'count' => 'setCount',
-'scope' => 'setScope',
-'project' => 'setProject',
-'additional_type' => 'setAdditionalType'    ];
+        'entity_type' => 'setEntityType',
+'additional_type' => 'setAdditionalType',
+'name' => 'setName',
+'types' => 'setTypes'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -145,16 +121,10 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-'response_name' => 'getResponseName',
-'interval' => 'getInterval',
-'values' => 'getValues',
-'select_values' => 'getSelectValues',
-'filter_values' => 'getFilterValues',
-'count' => 'getCount',
-'scope' => 'getScope',
-'project' => 'getProject',
-'additional_type' => 'getAdditionalType'    ];
+        'entity_type' => 'getEntityType',
+'additional_type' => 'getAdditionalType',
+'name' => 'getName',
+'types' => 'getTypes'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -214,16 +184,10 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['response_name'] = isset($data['response_name']) ? $data['response_name'] : null;
-        $this->container['interval'] = isset($data['interval']) ? $data['interval'] : null;
-        $this->container['values'] = isset($data['values']) ? $data['values'] : null;
-        $this->container['select_values'] = isset($data['select_values']) ? $data['select_values'] : null;
-        $this->container['filter_values'] = isset($data['filter_values']) ? $data['filter_values'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['scope'] = isset($data['scope']) ? $data['scope'] : null;
-        $this->container['project'] = isset($data['project']) ? $data['project'] : null;
+        $this->container['entity_type'] = isset($data['entity_type']) ? $data['entity_type'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['types'] = isset($data['types']) ? $data['types'] : null;
     }
 
     /**
@@ -251,6 +215,54 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
 
 
     /**
+     * Gets entity_type
+     *
+     * @return string
+     */
+    public function getEntityType()
+    {
+        return $this->container['entity_type'];
+    }
+
+    /**
+     * Sets entity_type
+     *
+     * @param string $entity_type entity_type
+     *
+     * @return $this
+     */
+    public function setEntityType($entity_type)
+    {
+        $this->container['entity_type'] = $entity_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_type
+     *
+     * @return string
+     */
+    public function getAdditionalType()
+    {
+        return $this->container['additional_type'];
+    }
+
+    /**
+     * Sets additional_type
+     *
+     * @param string $additional_type additional_type
+     *
+     * @return $this
+     */
+    public function setAdditionalType($additional_type)
+    {
+        $this->container['additional_type'] = $additional_type;
+
+        return $this;
+    }
+
+    /**
      * Gets name
      *
      * @return string
@@ -275,217 +287,25 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets response_name
+     * Gets types
      *
-     * @return string
+     * @return \Infocenter\Client\Model\DsTypeTree[]
      */
-    public function getResponseName()
+    public function getTypes()
     {
-        return $this->container['response_name'];
+        return $this->container['types'];
     }
 
     /**
-     * Sets response_name
+     * Sets types
      *
-     * @param string $response_name response_name
+     * @param \Infocenter\Client\Model\DsTypeTree[] $types types
      *
      * @return $this
      */
-    public function setResponseName($response_name)
+    public function setTypes($types)
     {
-        $this->container['response_name'] = $response_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets interval
-     *
-     * @return string
-     */
-    public function getInterval()
-    {
-        return $this->container['interval'];
-    }
-
-    /**
-     * Sets interval
-     *
-     * @param string $interval interval
-     *
-     * @return $this
-     */
-    public function setInterval($interval)
-    {
-        $this->container['interval'] = $interval;
-
-        return $this;
-    }
-
-    /**
-     * Gets values
-     *
-     * @return string
-     */
-    public function getValues()
-    {
-        return $this->container['values'];
-    }
-
-    /**
-     * Sets values
-     *
-     * @param string $values values
-     *
-     * @return $this
-     */
-    public function setValues($values)
-    {
-        $this->container['values'] = $values;
-
-        return $this;
-    }
-
-    /**
-     * Gets select_values
-     *
-     * @return string[]
-     */
-    public function getSelectValues()
-    {
-        return $this->container['select_values'];
-    }
-
-    /**
-     * Sets select_values
-     *
-     * @param string[] $select_values select_values
-     *
-     * @return $this
-     */
-    public function setSelectValues($select_values)
-    {
-        $this->container['select_values'] = $select_values;
-
-        return $this;
-    }
-
-    /**
-     * Gets filter_values
-     *
-     * @return string[]
-     */
-    public function getFilterValues()
-    {
-        return $this->container['filter_values'];
-    }
-
-    /**
-     * Sets filter_values
-     *
-     * @param string[] $filter_values filter_values
-     *
-     * @return $this
-     */
-    public function setFilterValues($filter_values)
-    {
-        $this->container['filter_values'] = $filter_values;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     *
-     * @return int
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param int $count count
-     *
-     * @return $this
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
-
-        return $this;
-    }
-
-    /**
-     * Gets scope
-     *
-     * @return string
-     */
-    public function getScope()
-    {
-        return $this->container['scope'];
-    }
-
-    /**
-     * Sets scope
-     *
-     * @param string $scope scope
-     *
-     * @return $this
-     */
-    public function setScope($scope)
-    {
-        $this->container['scope'] = $scope;
-
-        return $this;
-    }
-
-    /**
-     * Gets project
-     *
-     * @return string[]
-     */
-    public function getProject()
-    {
-        return $this->container['project'];
-    }
-
-    /**
-     * Sets project
-     *
-     * @param string[] $project project
-     *
-     * @return $this
-     */
-    public function setProject($project)
-    {
-        $this->container['project'] = $project;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_type
-     *
-     * @return string[]
-     */
-    public function getAdditionalType()
-    {
-        return $this->container['additional_type'];
-    }
-
-    /**
-     * Sets additional_type
-     *
-     * @param string[] $additional_type additional_type
-     *
-     * @return $this
-     */
-    public function setAdditionalType($additional_type)
-    {
-        $this->container['additional_type'] = $additional_type;
+        $this->container['types'] = $types;
 
         return $this;
     }

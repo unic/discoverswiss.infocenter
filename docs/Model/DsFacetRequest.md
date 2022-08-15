@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  | [optional] 
+**response_name** | **string** |  | [optional] 
 **interval** | **string** |  | [optional] 
 **values** | **string** |  | [optional] 
 **select_values** | **string[]** |  | [optional] 

@@ -85,6 +85,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
 'url' => 'string',
 'additional_type' => 'string',
 'link' => '\Infocenter\Client\Model\DsLink[]',
+'potential_action' => '\Infocenter\Client\Model\DsAction[]',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -123,6 +124,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
 'url' => null,
 'additional_type' => null,
 'link' => null,
+'potential_action' => null,
 'name' => null,
 'type' => null    ];
 
@@ -182,6 +184,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
 'url' => 'url',
 'additional_type' => 'additionalType',
 'link' => 'link',
+'potential_action' => 'potentialAction',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -220,6 +223,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
 'url' => 'setUrl',
 'additional_type' => 'setAdditionalType',
 'link' => 'setLink',
+'potential_action' => 'setPotentialAction',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -258,6 +262,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
 'url' => 'getUrl',
 'additional_type' => 'getAdditionalType',
 'link' => 'getLink',
+'potential_action' => 'getPotentialAction',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -348,6 +353,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['potential_action'] = isset($data['potential_action']) ? $data['potential_action'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -1068,6 +1074,30 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     public function setLink($link)
     {
         $this->container['link'] = $link;
+
+        return $this;
+    }
+
+    /**
+     * Gets potential_action
+     *
+     * @return \Infocenter\Client\Model\DsAction[]
+     */
+    public function getPotentialAction()
+    {
+        return $this->container['potential_action'];
+    }
+
+    /**
+     * Sets potential_action
+     *
+     * @param \Infocenter\Client\Model\DsAction[] $potential_action potential_action
+     *
+     * @return $this
+     */
+    public function setPotentialAction($potential_action)
+    {
+        $this->container['potential_action'] = $potential_action;
 
         return $this;
     }

@@ -57,6 +57,7 @@ class DsOption implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'identifier' => 'string',
+'value_identifier' => 'string',
 'name' => 'string',
 'value' => 'string',
 'position' => 'int'    ];
@@ -68,6 +69,7 @@ class DsOption implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'identifier' => null,
+'value_identifier' => null,
 'name' => null,
 'value' => null,
 'position' => 'int32'    ];
@@ -100,6 +102,7 @@ class DsOption implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'identifier' => 'identifier',
+'value_identifier' => 'valueIdentifier',
 'name' => 'name',
 'value' => 'value',
 'position' => 'position'    ];
@@ -111,6 +114,7 @@ class DsOption implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'identifier' => 'setIdentifier',
+'value_identifier' => 'setValueIdentifier',
 'name' => 'setName',
 'value' => 'setValue',
 'position' => 'setPosition'    ];
@@ -122,6 +126,7 @@ class DsOption implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'identifier' => 'getIdentifier',
+'value_identifier' => 'getValueIdentifier',
 'name' => 'getName',
 'value' => 'getValue',
 'position' => 'getPosition'    ];
@@ -185,6 +190,7 @@ class DsOption implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['value_identifier'] = isset($data['value_identifier']) ? $data['value_identifier'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['position'] = isset($data['position']) ? $data['position'] : null;
@@ -234,6 +240,30 @@ class DsOption implements ModelInterface, ArrayAccess
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets value_identifier
+     *
+     * @return string
+     */
+    public function getValueIdentifier()
+    {
+        return $this->container['value_identifier'];
+    }
+
+    /**
+     * Sets value_identifier
+     *
+     * @param string $value_identifier value_identifier
+     *
+     * @return $this
+     */
+    public function setValueIdentifier($value_identifier)
+    {
+        $this->container['value_identifier'] = $value_identifier;
 
         return $this;
     }

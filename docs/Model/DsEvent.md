@@ -26,8 +26,8 @@ Name | Type | Description | Notes
 **duration** | **string** |  | [optional] 
 **audio** | [**\Infocenter\Client\Model\DsAudioObjectSimplex[]**](DsAudioObjectSimplex.md) |  | [optional] 
 **video** | [**\Infocenter\Client\Model\DsVideoObjectSimplex[]**](DsVideoObjectSimplex.md) |  | [optional] 
-**potential_action** | [**\Infocenter\Client\Model\DsAction[]**](DsAction.md) |  | [optional] 
 **robots** | **string** |  | [optional] 
+**additional_property** | [**\Infocenter\Client\Model\DsPropertyValue[]**](DsPropertyValue.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **removed** | **bool** |  | [optional] 
@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **url** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
 **link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
+**potential_action** | [**\Infocenter\Client\Model\DsAction[]**](DsAction.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

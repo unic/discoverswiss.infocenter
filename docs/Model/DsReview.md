@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**item_reviewed** | [**\Infocenter\Client\Model\DsPlaceSimplex[]**](DsPlaceSimplex.md) |  | [optional] 
+**item_reviewed** | [**\Infocenter\Client\Model\DsPlaceMember[]**](DsPlaceMember.md) |  | [optional] 
 **review_body** | **string** |  | [optional] 
 **additional_property** | [**\Infocenter\Client\Model\DsPropertyValue[]**](DsPropertyValue.md) |  | [optional] 
 **content_reference_time** | [**\DateTime**](\DateTime.md) |  | [optional] 
@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **url** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
 **link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
+**potential_action** | [**\Infocenter\Client\Model\DsAction[]**](DsAction.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

@@ -17,7 +17,9 @@ Name | Type | Description | Notes
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **additional_property** | [**\Infocenter\Client\Model\DsPropertyValue[]**](DsPropertyValue.md) |  | [optional] 
 **item_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) |  | [optional] 
-**guest_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) |  | [optional] 
+**traveler_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) |  | [optional] 
+**available_delivery_mode** | **string[]** |  | [optional] 
+**weight** | [**\Infocenter\Client\Model\DsQuantitativeValue**](DsQuantitativeValue.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

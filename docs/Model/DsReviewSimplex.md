@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
-**item_reviewed** | [**\Infocenter\Client\Model\DsPlaceSimplex[]**](DsPlaceSimplex.md) |  | [optional] 
+**item_reviewed** | [**\Infocenter\Client\Model\DsPlaceMember[]**](DsPlaceMember.md) |  | [optional] 
 **in_language** | **string** |  | [optional] 
 **thumbnail_url** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 

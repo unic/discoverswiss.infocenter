@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **range_base_property_id** | **string** |  | [optional] 
 **parent_field_property_id** | **string** |  | [optional] 
 **parent_field_value** | **string** |  | [optional] 
+**readonly** | **bool** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

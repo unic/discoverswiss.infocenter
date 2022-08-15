@@ -79,8 +79,8 @@ class DsEvent implements ModelInterface, ArrayAccess
 'duration' => 'string',
 'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
 'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
-'potential_action' => '\Infocenter\Client\Model\DsAction[]',
 'robots' => 'string',
+'additional_property' => '\Infocenter\Client\Model\DsPropertyValue[]',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -97,6 +97,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'url' => 'string',
 'additional_type' => 'string',
 'link' => '\Infocenter\Client\Model\DsLink[]',
+'potential_action' => '\Infocenter\Client\Model\DsAction[]',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -129,8 +130,8 @@ class DsEvent implements ModelInterface, ArrayAccess
 'duration' => null,
 'audio' => null,
 'video' => null,
-'potential_action' => null,
 'robots' => null,
+'additional_property' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -147,6 +148,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'url' => null,
 'additional_type' => null,
 'link' => null,
+'potential_action' => null,
 'name' => null,
 'type' => null    ];
 
@@ -200,8 +202,8 @@ class DsEvent implements ModelInterface, ArrayAccess
 'duration' => 'duration',
 'audio' => 'audio',
 'video' => 'video',
-'potential_action' => 'potentialAction',
 'robots' => 'robots',
+'additional_property' => 'additionalProperty',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -218,6 +220,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'url' => 'url',
 'additional_type' => 'additionalType',
 'link' => 'link',
+'potential_action' => 'potentialAction',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -250,8 +253,8 @@ class DsEvent implements ModelInterface, ArrayAccess
 'duration' => 'setDuration',
 'audio' => 'setAudio',
 'video' => 'setVideo',
-'potential_action' => 'setPotentialAction',
 'robots' => 'setRobots',
+'additional_property' => 'setAdditionalProperty',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -268,6 +271,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'url' => 'setUrl',
 'additional_type' => 'setAdditionalType',
 'link' => 'setLink',
+'potential_action' => 'setPotentialAction',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -300,8 +304,8 @@ class DsEvent implements ModelInterface, ArrayAccess
 'duration' => 'getDuration',
 'audio' => 'getAudio',
 'video' => 'getVideo',
-'potential_action' => 'getPotentialAction',
 'robots' => 'getRobots',
+'additional_property' => 'getAdditionalProperty',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -318,6 +322,7 @@ class DsEvent implements ModelInterface, ArrayAccess
 'url' => 'getUrl',
 'additional_type' => 'getAdditionalType',
 'link' => 'getLink',
+'potential_action' => 'getPotentialAction',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -402,8 +407,8 @@ class DsEvent implements ModelInterface, ArrayAccess
         $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;
         $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
         $this->container['video'] = isset($data['video']) ? $data['video'] : null;
-        $this->container['potential_action'] = isset($data['potential_action']) ? $data['potential_action'] : null;
         $this->container['robots'] = isset($data['robots']) ? $data['robots'] : null;
+        $this->container['additional_property'] = isset($data['additional_property']) ? $data['additional_property'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -420,6 +425,7 @@ class DsEvent implements ModelInterface, ArrayAccess
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['potential_action'] = isset($data['potential_action']) ? $data['potential_action'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -1001,30 +1007,6 @@ class DsEvent implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets potential_action
-     *
-     * @return \Infocenter\Client\Model\DsAction[]
-     */
-    public function getPotentialAction()
-    {
-        return $this->container['potential_action'];
-    }
-
-    /**
-     * Sets potential_action
-     *
-     * @param \Infocenter\Client\Model\DsAction[] $potential_action potential_action
-     *
-     * @return $this
-     */
-    public function setPotentialAction($potential_action)
-    {
-        $this->container['potential_action'] = $potential_action;
-
-        return $this;
-    }
-
-    /**
      * Gets robots
      *
      * @return string
@@ -1044,6 +1026,30 @@ class DsEvent implements ModelInterface, ArrayAccess
     public function setRobots($robots)
     {
         $this->container['robots'] = $robots;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_property
+     *
+     * @return \Infocenter\Client\Model\DsPropertyValue[]
+     */
+    public function getAdditionalProperty()
+    {
+        return $this->container['additional_property'];
+    }
+
+    /**
+     * Sets additional_property
+     *
+     * @param \Infocenter\Client\Model\DsPropertyValue[] $additional_property additional_property
+     *
+     * @return $this
+     */
+    public function setAdditionalProperty($additional_property)
+    {
+        $this->container['additional_property'] = $additional_property;
 
         return $this;
     }
@@ -1428,6 +1434,30 @@ class DsEvent implements ModelInterface, ArrayAccess
     public function setLink($link)
     {
         $this->container['link'] = $link;
+
+        return $this;
+    }
+
+    /**
+     * Gets potential_action
+     *
+     * @return \Infocenter\Client\Model\DsAction[]
+     */
+    public function getPotentialAction()
+    {
+        return $this->container['potential_action'];
+    }
+
+    /**
+     * Sets potential_action
+     *
+     * @param \Infocenter\Client\Model\DsAction[] $potential_action potential_action
+     *
+     * @return $this
+     */
+    public function setPotentialAction($potential_action)
+    {
+        $this->container['potential_action'] = $potential_action;
 
         return $this;
     }

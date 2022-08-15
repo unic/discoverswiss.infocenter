@@ -66,7 +66,8 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
 'range_max' => 'string',
 'range_base_property_id' => 'string',
 'parent_field_property_id' => 'string',
-'parent_field_value' => 'string'    ];
+'parent_field_value' => 'string',
+'readonly' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -84,7 +85,8 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
 'range_max' => null,
 'range_base_property_id' => null,
 'parent_field_property_id' => null,
-'parent_field_value' => null    ];
+'parent_field_value' => null,
+'readonly' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -123,7 +125,8 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
 'range_max' => 'rangeMax',
 'range_base_property_id' => 'rangeBasePropertyId',
 'parent_field_property_id' => 'parentFieldPropertyId',
-'parent_field_value' => 'parentFieldValue'    ];
+'parent_field_value' => 'parentFieldValue',
+'readonly' => 'readonly'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -141,7 +144,8 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
 'range_max' => 'setRangeMax',
 'range_base_property_id' => 'setRangeBasePropertyId',
 'parent_field_property_id' => 'setParentFieldPropertyId',
-'parent_field_value' => 'setParentFieldValue'    ];
+'parent_field_value' => 'setParentFieldValue',
+'readonly' => 'setReadonly'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -159,7 +163,8 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
 'range_max' => 'getRangeMax',
 'range_base_property_id' => 'getRangeBasePropertyId',
 'parent_field_property_id' => 'getParentFieldPropertyId',
-'parent_field_value' => 'getParentFieldValue'    ];
+'parent_field_value' => 'getParentFieldValue',
+'readonly' => 'getReadonly'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -230,6 +235,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
         $this->container['range_base_property_id'] = isset($data['range_base_property_id']) ? $data['range_base_property_id'] : null;
         $this->container['parent_field_property_id'] = isset($data['parent_field_property_id']) ? $data['parent_field_property_id'] : null;
         $this->container['parent_field_value'] = isset($data['parent_field_value']) ? $data['parent_field_value'] : null;
+        $this->container['readonly'] = isset($data['readonly']) ? $data['readonly'] : null;
     }
 
     /**
@@ -516,6 +522,30 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     public function setParentFieldValue($parent_field_value)
     {
         $this->container['parent_field_value'] = $parent_field_value;
+
+        return $this;
+    }
+
+    /**
+     * Gets readonly
+     *
+     * @return bool
+     */
+    public function getReadonly()
+    {
+        return $this->container['readonly'];
+    }
+
+    /**
+     * Sets readonly
+     *
+     * @param bool $readonly readonly
+     *
+     * @return $this
+     */
+    public function setReadonly($readonly)
+    {
+        $this->container['readonly'] = $readonly;
 
         return $this;
     }

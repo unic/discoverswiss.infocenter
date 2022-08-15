@@ -58,7 +58,7 @@ class DsReviewSimplex implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
 'additional_type' => 'string',
-'item_reviewed' => '\Infocenter\Client\Model\DsPlaceSimplex[]',
+'item_reviewed' => '\Infocenter\Client\Model\DsPlaceMember[]',
 'in_language' => 'string',
 'thumbnail_url' => 'string',
 'id' => 'string',
@@ -283,7 +283,7 @@ class DsReviewSimplex implements ModelInterface, ArrayAccess
     /**
      * Gets item_reviewed
      *
-     * @return \Infocenter\Client\Model\DsPlaceSimplex[]
+     * @return \Infocenter\Client\Model\DsPlaceMember[]
      */
     public function getItemReviewed()
     {
@@ -293,7 +293,7 @@ class DsReviewSimplex implements ModelInterface, ArrayAccess
     /**
      * Sets item_reviewed
      *
-     * @param \Infocenter\Client\Model\DsPlaceSimplex[] $item_reviewed item_reviewed
+     * @param \Infocenter\Client\Model\DsPlaceMember[] $item_reviewed item_reviewed
      *
      * @return $this
      */

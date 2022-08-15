@@ -57,7 +57,6 @@ class DsProduct implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'service' => 'string',
-'seller' => '\Infocenter\Client\Model\DsLocalBusinessMember',
 'variant' => '\Infocenter\Client\Model\DsProductVariant[]',
 'photo' => '\Infocenter\Client\Model\DsImageObjectSimplex[]',
 'category' => '\Infocenter\Client\Model\DsCategorySimplex[]',
@@ -65,10 +64,10 @@ class DsProduct implements ModelInterface, ArrayAccess
 'campaign_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'profile_tag' => '\Infocenter\Client\Model\DsTagSimplex[]',
 'item_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
-'guest_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
+'traveler_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
 'price_information' => 'string',
 'add_on_item' => '\Infocenter\Client\Model\DsProductAddOn[]',
-'add_on_guest' => '\Infocenter\Client\Model\DsProductAddOn[]',
+'add_on_traveler' => '\Infocenter\Client\Model\DsProductAddOn[]',
 'in_language' => 'string[]',
 'meeting_point' => '\Infocenter\Client\Model\DsGeoCoordinates[]',
 'geo' => '\Infocenter\Client\Model\DsGeoCoordinates',
@@ -80,11 +79,11 @@ class DsProduct implements ModelInterface, ArrayAccess
 'destination' => 'string',
 'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
 'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
-'potential_action' => '\Infocenter\Client\Model\DsAction[]',
 'offered_by' => '\Infocenter\Client\Model\DsLocalBusinessMember',
 'area_served' => '\Infocenter\Client\Model\DsPlaceMember',
 'contained_in_place' => '\Infocenter\Client\Model\DsPlaceSimplex[]',
 'robots' => 'string',
+'additional_property' => '\Infocenter\Client\Model\DsPropertyValue[]',
 'id' => 'string',
 'identifier' => 'string',
 'removed' => 'bool',
@@ -101,6 +100,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'url' => 'string',
 'additional_type' => 'string',
 'link' => '\Infocenter\Client\Model\DsLink[]',
+'potential_action' => '\Infocenter\Client\Model\DsAction[]',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -111,7 +111,6 @@ class DsProduct implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'service' => null,
-'seller' => null,
 'variant' => null,
 'photo' => null,
 'category' => null,
@@ -119,10 +118,10 @@ class DsProduct implements ModelInterface, ArrayAccess
 'campaign_tag' => null,
 'profile_tag' => null,
 'item_field' => null,
-'guest_field' => null,
+'traveler_field' => null,
 'price_information' => null,
 'add_on_item' => null,
-'add_on_guest' => null,
+'add_on_traveler' => null,
 'in_language' => null,
 'meeting_point' => null,
 'geo' => null,
@@ -134,11 +133,11 @@ class DsProduct implements ModelInterface, ArrayAccess
 'destination' => null,
 'audio' => null,
 'video' => null,
-'potential_action' => null,
 'offered_by' => null,
 'area_served' => null,
 'contained_in_place' => null,
 'robots' => null,
+'additional_property' => null,
 'id' => null,
 'identifier' => null,
 'removed' => null,
@@ -155,6 +154,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'url' => null,
 'additional_type' => null,
 'link' => null,
+'potential_action' => null,
 'name' => null,
 'type' => null    ];
 
@@ -186,7 +186,6 @@ class DsProduct implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'service' => 'service',
-'seller' => 'seller',
 'variant' => 'variant',
 'photo' => 'photo',
 'category' => 'category',
@@ -194,10 +193,10 @@ class DsProduct implements ModelInterface, ArrayAccess
 'campaign_tag' => 'campaignTag',
 'profile_tag' => 'profileTag',
 'item_field' => 'itemField',
-'guest_field' => 'guestField',
+'traveler_field' => 'travelerField',
 'price_information' => 'priceInformation',
 'add_on_item' => 'addOnItem',
-'add_on_guest' => 'addOnGuest',
+'add_on_traveler' => 'addOnTraveler',
 'in_language' => 'inLanguage',
 'meeting_point' => 'meetingPoint',
 'geo' => 'geo',
@@ -209,11 +208,11 @@ class DsProduct implements ModelInterface, ArrayAccess
 'destination' => 'destination',
 'audio' => 'audio',
 'video' => 'video',
-'potential_action' => 'potentialAction',
 'offered_by' => 'offeredBy',
 'area_served' => 'areaServed',
 'contained_in_place' => 'containedInPlace',
 'robots' => 'robots',
+'additional_property' => 'additionalProperty',
 'id' => '@id',
 'identifier' => 'identifier',
 'removed' => 'removed',
@@ -230,6 +229,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'url' => 'url',
 'additional_type' => 'additionalType',
 'link' => 'link',
+'potential_action' => 'potentialAction',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -240,7 +240,6 @@ class DsProduct implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'service' => 'setService',
-'seller' => 'setSeller',
 'variant' => 'setVariant',
 'photo' => 'setPhoto',
 'category' => 'setCategory',
@@ -248,10 +247,10 @@ class DsProduct implements ModelInterface, ArrayAccess
 'campaign_tag' => 'setCampaignTag',
 'profile_tag' => 'setProfileTag',
 'item_field' => 'setItemField',
-'guest_field' => 'setGuestField',
+'traveler_field' => 'setTravelerField',
 'price_information' => 'setPriceInformation',
 'add_on_item' => 'setAddOnItem',
-'add_on_guest' => 'setAddOnGuest',
+'add_on_traveler' => 'setAddOnTraveler',
 'in_language' => 'setInLanguage',
 'meeting_point' => 'setMeetingPoint',
 'geo' => 'setGeo',
@@ -263,11 +262,11 @@ class DsProduct implements ModelInterface, ArrayAccess
 'destination' => 'setDestination',
 'audio' => 'setAudio',
 'video' => 'setVideo',
-'potential_action' => 'setPotentialAction',
 'offered_by' => 'setOfferedBy',
 'area_served' => 'setAreaServed',
 'contained_in_place' => 'setContainedInPlace',
 'robots' => 'setRobots',
+'additional_property' => 'setAdditionalProperty',
 'id' => 'setId',
 'identifier' => 'setIdentifier',
 'removed' => 'setRemoved',
@@ -284,6 +283,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'url' => 'setUrl',
 'additional_type' => 'setAdditionalType',
 'link' => 'setLink',
+'potential_action' => 'setPotentialAction',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -294,7 +294,6 @@ class DsProduct implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'service' => 'getService',
-'seller' => 'getSeller',
 'variant' => 'getVariant',
 'photo' => 'getPhoto',
 'category' => 'getCategory',
@@ -302,10 +301,10 @@ class DsProduct implements ModelInterface, ArrayAccess
 'campaign_tag' => 'getCampaignTag',
 'profile_tag' => 'getProfileTag',
 'item_field' => 'getItemField',
-'guest_field' => 'getGuestField',
+'traveler_field' => 'getTravelerField',
 'price_information' => 'getPriceInformation',
 'add_on_item' => 'getAddOnItem',
-'add_on_guest' => 'getAddOnGuest',
+'add_on_traveler' => 'getAddOnTraveler',
 'in_language' => 'getInLanguage',
 'meeting_point' => 'getMeetingPoint',
 'geo' => 'getGeo',
@@ -317,11 +316,11 @@ class DsProduct implements ModelInterface, ArrayAccess
 'destination' => 'getDestination',
 'audio' => 'getAudio',
 'video' => 'getVideo',
-'potential_action' => 'getPotentialAction',
 'offered_by' => 'getOfferedBy',
 'area_served' => 'getAreaServed',
 'contained_in_place' => 'getContainedInPlace',
 'robots' => 'getRobots',
+'additional_property' => 'getAdditionalProperty',
 'id' => 'getId',
 'identifier' => 'getIdentifier',
 'removed' => 'getRemoved',
@@ -338,6 +337,7 @@ class DsProduct implements ModelInterface, ArrayAccess
 'url' => 'getUrl',
 'additional_type' => 'getAdditionalType',
 'link' => 'getLink',
+'potential_action' => 'getPotentialAction',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -400,7 +400,6 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['service'] = isset($data['service']) ? $data['service'] : null;
-        $this->container['seller'] = isset($data['seller']) ? $data['seller'] : null;
         $this->container['variant'] = isset($data['variant']) ? $data['variant'] : null;
         $this->container['photo'] = isset($data['photo']) ? $data['photo'] : null;
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
@@ -408,10 +407,10 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['item_field'] = isset($data['item_field']) ? $data['item_field'] : null;
-        $this->container['guest_field'] = isset($data['guest_field']) ? $data['guest_field'] : null;
+        $this->container['traveler_field'] = isset($data['traveler_field']) ? $data['traveler_field'] : null;
         $this->container['price_information'] = isset($data['price_information']) ? $data['price_information'] : null;
         $this->container['add_on_item'] = isset($data['add_on_item']) ? $data['add_on_item'] : null;
-        $this->container['add_on_guest'] = isset($data['add_on_guest']) ? $data['add_on_guest'] : null;
+        $this->container['add_on_traveler'] = isset($data['add_on_traveler']) ? $data['add_on_traveler'] : null;
         $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
         $this->container['meeting_point'] = isset($data['meeting_point']) ? $data['meeting_point'] : null;
         $this->container['geo'] = isset($data['geo']) ? $data['geo'] : null;
@@ -423,11 +422,11 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['destination'] = isset($data['destination']) ? $data['destination'] : null;
         $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
         $this->container['video'] = isset($data['video']) ? $data['video'] : null;
-        $this->container['potential_action'] = isset($data['potential_action']) ? $data['potential_action'] : null;
         $this->container['offered_by'] = isset($data['offered_by']) ? $data['offered_by'] : null;
         $this->container['area_served'] = isset($data['area_served']) ? $data['area_served'] : null;
         $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
         $this->container['robots'] = isset($data['robots']) ? $data['robots'] : null;
+        $this->container['additional_property'] = isset($data['additional_property']) ? $data['additional_property'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -444,6 +443,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['potential_action'] = isset($data['potential_action']) ? $data['potential_action'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -492,30 +492,6 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setService($service)
     {
         $this->container['service'] = $service;
-
-        return $this;
-    }
-
-    /**
-     * Gets seller
-     *
-     * @return \Infocenter\Client\Model\DsLocalBusinessMember
-     */
-    public function getSeller()
-    {
-        return $this->container['seller'];
-    }
-
-    /**
-     * Sets seller
-     *
-     * @param \Infocenter\Client\Model\DsLocalBusinessMember $seller seller
-     *
-     * @return $this
-     */
-    public function setSeller($seller)
-    {
-        $this->container['seller'] = $seller;
 
         return $this;
     }
@@ -689,25 +665,25 @@ class DsProduct implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets guest_field
+     * Gets traveler_field
      *
      * @return \Infocenter\Client\Model\DsFieldDefinition[]
      */
-    public function getGuestField()
+    public function getTravelerField()
     {
-        return $this->container['guest_field'];
+        return $this->container['traveler_field'];
     }
 
     /**
-     * Sets guest_field
+     * Sets traveler_field
      *
-     * @param \Infocenter\Client\Model\DsFieldDefinition[] $guest_field guest_field
+     * @param \Infocenter\Client\Model\DsFieldDefinition[] $traveler_field traveler_field
      *
      * @return $this
      */
-    public function setGuestField($guest_field)
+    public function setTravelerField($traveler_field)
     {
-        $this->container['guest_field'] = $guest_field;
+        $this->container['traveler_field'] = $traveler_field;
 
         return $this;
     }
@@ -761,25 +737,25 @@ class DsProduct implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets add_on_guest
+     * Gets add_on_traveler
      *
      * @return \Infocenter\Client\Model\DsProductAddOn[]
      */
-    public function getAddOnGuest()
+    public function getAddOnTraveler()
     {
-        return $this->container['add_on_guest'];
+        return $this->container['add_on_traveler'];
     }
 
     /**
-     * Sets add_on_guest
+     * Sets add_on_traveler
      *
-     * @param \Infocenter\Client\Model\DsProductAddOn[] $add_on_guest add_on_guest
+     * @param \Infocenter\Client\Model\DsProductAddOn[] $add_on_traveler add_on_traveler
      *
      * @return $this
      */
-    public function setAddOnGuest($add_on_guest)
+    public function setAddOnTraveler($add_on_traveler)
     {
-        $this->container['add_on_guest'] = $add_on_guest;
+        $this->container['add_on_traveler'] = $add_on_traveler;
 
         return $this;
     }
@@ -1049,30 +1025,6 @@ class DsProduct implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets potential_action
-     *
-     * @return \Infocenter\Client\Model\DsAction[]
-     */
-    public function getPotentialAction()
-    {
-        return $this->container['potential_action'];
-    }
-
-    /**
-     * Sets potential_action
-     *
-     * @param \Infocenter\Client\Model\DsAction[] $potential_action potential_action
-     *
-     * @return $this
-     */
-    public function setPotentialAction($potential_action)
-    {
-        $this->container['potential_action'] = $potential_action;
-
-        return $this;
-    }
-
-    /**
      * Gets offered_by
      *
      * @return \Infocenter\Client\Model\DsLocalBusinessMember
@@ -1164,6 +1116,30 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setRobots($robots)
     {
         $this->container['robots'] = $robots;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_property
+     *
+     * @return \Infocenter\Client\Model\DsPropertyValue[]
+     */
+    public function getAdditionalProperty()
+    {
+        return $this->container['additional_property'];
+    }
+
+    /**
+     * Sets additional_property
+     *
+     * @param \Infocenter\Client\Model\DsPropertyValue[] $additional_property additional_property
+     *
+     * @return $this
+     */
+    public function setAdditionalProperty($additional_property)
+    {
+        $this->container['additional_property'] = $additional_property;
 
         return $this;
     }
@@ -1548,6 +1524,30 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setLink($link)
     {
         $this->container['link'] = $link;
+
+        return $this;
+    }
+
+    /**
+     * Gets potential_action
+     *
+     * @return \Infocenter\Client\Model\DsAction[]
+     */
+    public function getPotentialAction()
+    {
+        return $this->container['potential_action'];
+    }
+
+    /**
+     * Sets potential_action
+     *
+     * @param \Infocenter\Client\Model\DsAction[] $potential_action potential_action
+     *
+     * @return $this
+     */
+    public function setPotentialAction($potential_action)
+    {
+        $this->container['potential_action'] = $potential_action;
 
         return $this;
     }

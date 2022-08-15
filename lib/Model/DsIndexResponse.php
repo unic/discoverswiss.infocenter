@@ -75,6 +75,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'state' => 'string',
 'time' => 'int',
 'rating' => '\Infocenter\Client\Model\DsTourRating',
+'campaign_tag' => 'string[]',
 'profile_tag' => 'string[]',
 'schedule' => '\Infocenter\Client\Model\DsSchedule[]',
 'next_occurrence' => '\DateTime',
@@ -114,6 +115,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'state' => null,
 'time' => 'int32',
 'rating' => null,
+'campaign_tag' => null,
 'profile_tag' => null,
 'schedule' => null,
 'next_occurrence' => 'date-time',
@@ -174,6 +176,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'state' => 'state',
 'time' => 'time',
 'rating' => 'rating',
+'campaign_tag' => 'campaignTag',
 'profile_tag' => 'profileTag',
 'schedule' => 'schedule',
 'next_occurrence' => 'nextOccurrence',
@@ -213,6 +216,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'state' => 'setState',
 'time' => 'setTime',
 'rating' => 'setRating',
+'campaign_tag' => 'setCampaignTag',
 'profile_tag' => 'setProfileTag',
 'schedule' => 'setSchedule',
 'next_occurrence' => 'setNextOccurrence',
@@ -252,6 +256,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
 'state' => 'getState',
 'time' => 'getTime',
 'rating' => 'getRating',
+'campaign_tag' => 'getCampaignTag',
 'profile_tag' => 'getProfileTag',
 'schedule' => 'getSchedule',
 'next_occurrence' => 'getNextOccurrence',
@@ -343,6 +348,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['time'] = isset($data['time']) ? $data['time'] : null;
         $this->container['rating'] = isset($data['rating']) ? $data['rating'] : null;
+        $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['schedule'] = isset($data['schedule']) ? $data['schedule'] : null;
         $this->container['next_occurrence'] = isset($data['next_occurrence']) ? $data['next_occurrence'] : null;
@@ -834,6 +840,30 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     public function setRating($rating)
     {
         $this->container['rating'] = $rating;
+
+        return $this;
+    }
+
+    /**
+     * Gets campaign_tag
+     *
+     * @return string[]
+     */
+    public function getCampaignTag()
+    {
+        return $this->container['campaign_tag'];
+    }
+
+    /**
+     * Sets campaign_tag
+     *
+     * @param string[] $campaign_tag campaign_tag
+     *
+     * @return $this
+     */
+    public function setCampaignTag($campaign_tag)
+    {
+        $this->container['campaign_tag'] = $campaign_tag;
 
         return $this;
     }

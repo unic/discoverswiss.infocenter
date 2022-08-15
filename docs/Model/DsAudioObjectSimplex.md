@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data_governance** | [**\Infocenter\Client\Model\DsDataGovernance**](DsDataGovernance.md) |  | [optional] 
 **content_url** | **string** |  | [optional] 
+**embed_url** | **string** |  | [optional] 
 **caption** | **string** |  | [optional] 
 **encoding_format** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 

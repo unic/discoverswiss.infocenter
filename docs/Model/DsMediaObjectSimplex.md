@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content_url** | **string** |  | [optional] 
+**embed_url** | **string** |  | [optional] 
 **caption** | **string** |  | [optional] 
 **encoding_format** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 

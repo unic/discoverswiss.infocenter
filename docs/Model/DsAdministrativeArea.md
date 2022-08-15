@@ -22,7 +22,6 @@ Name | Type | Description | Notes
 **tourist_type** | **string** |  | [optional] 
 **additional_property** | [**\Infocenter\Client\Model\DsPropertyValue[]**](DsPropertyValue.md) |  | [optional] 
 **geo_shape** | [**\Infocenter\Client\Model\DsGeoShape**](DsGeoShape.md) |  | [optional] 
-**cc** | **string** |  | [optional] 
 **located** | **string[]** |  | [optional] 
 **copyright** | **string** |  | [optional] 
 **detailed_information** | **string[]** |  | [optional] 
@@ -63,6 +62,7 @@ Name | Type | Description | Notes
 **url** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
 **link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
+**potential_action** | [**\Infocenter\Client\Model\DsAction[]**](DsAction.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

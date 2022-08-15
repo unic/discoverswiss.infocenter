@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **contact_point** | [**\Infocenter\Client\Model\DsContactPoint**](DsContactPoint.md) |  | [optional] 
 **opening_days** | **string** |  | [optional] 
 **price_range** | **string** |  | [optional] 
-**potential_action** | [**\Infocenter\Client\Model\DsAction[]**](DsAction.md) |  | [optional] 
 **available_language** | **string[]** |  | [optional] 
 **slogan** | **string** |  | [optional] 
 **address** | [**\Infocenter\Client\Model\DsFullAddress**](DsFullAddress.md) |  | [optional] 
@@ -32,7 +31,6 @@ Name | Type | Description | Notes
 **tourist_type** | **string** |  | [optional] 
 **additional_property** | [**\Infocenter\Client\Model\DsPropertyValue[]**](DsPropertyValue.md) |  | [optional] 
 **geo_shape** | [**\Infocenter\Client\Model\DsGeoShape**](DsGeoShape.md) |  | [optional] 
-**cc** | **string** |  | [optional] 
 **located** | **string[]** |  | [optional] 
 **copyright** | **string** |  | [optional] 
 **detailed_information** | **string[]** |  | [optional] 
@@ -73,6 +71,7 @@ Name | Type | Description | Notes
 **url** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
 **link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
+**potential_action** | [**\Infocenter\Client\Model\DsAction[]**](DsAction.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 

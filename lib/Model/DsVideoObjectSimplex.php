@@ -58,6 +58,7 @@ class DsVideoObjectSimplex implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
 'content_url' => 'string',
+'embed_url' => 'string',
 'caption' => 'string',
 'encoding_format' => 'string',
 'additional_type' => 'string',
@@ -74,6 +75,7 @@ class DsVideoObjectSimplex implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'data_governance' => null,
 'content_url' => null,
+'embed_url' => null,
 'caption' => null,
 'encoding_format' => null,
 'additional_type' => null,
@@ -111,6 +113,7 @@ class DsVideoObjectSimplex implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'data_governance' => 'dataGovernance',
 'content_url' => 'contentUrl',
+'embed_url' => 'embedUrl',
 'caption' => 'caption',
 'encoding_format' => 'encodingFormat',
 'additional_type' => 'additionalType',
@@ -127,6 +130,7 @@ class DsVideoObjectSimplex implements ModelInterface, ArrayAccess
     protected static $setters = [
         'data_governance' => 'setDataGovernance',
 'content_url' => 'setContentUrl',
+'embed_url' => 'setEmbedUrl',
 'caption' => 'setCaption',
 'encoding_format' => 'setEncodingFormat',
 'additional_type' => 'setAdditionalType',
@@ -143,6 +147,7 @@ class DsVideoObjectSimplex implements ModelInterface, ArrayAccess
     protected static $getters = [
         'data_governance' => 'getDataGovernance',
 'content_url' => 'getContentUrl',
+'embed_url' => 'getEmbedUrl',
 'caption' => 'getCaption',
 'encoding_format' => 'getEncodingFormat',
 'additional_type' => 'getAdditionalType',
@@ -211,6 +216,7 @@ class DsVideoObjectSimplex implements ModelInterface, ArrayAccess
     {
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
+        $this->container['embed_url'] = isset($data['embed_url']) ? $data['embed_url'] : null;
         $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
         $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
@@ -288,6 +294,30 @@ class DsVideoObjectSimplex implements ModelInterface, ArrayAccess
     public function setContentUrl($content_url)
     {
         $this->container['content_url'] = $content_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets embed_url
+     *
+     * @return string
+     */
+    public function getEmbedUrl()
+    {
+        return $this->container['embed_url'];
+    }
+
+    /**
+     * Sets embed_url
+     *
+     * @param string $embed_url embed_url
+     *
+     * @return $this
+     */
+    public function setEmbedUrl($embed_url)
+    {
+        $this->container['embed_url'] = $embed_url;
 
         return $this;
     }

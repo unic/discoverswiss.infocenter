@@ -57,6 +57,7 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'content_url' => 'string',
+'embed_url' => 'string',
 'caption' => 'string',
 'encoding_format' => 'string',
 'additional_type' => 'string',
@@ -72,6 +73,7 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'content_url' => null,
+'embed_url' => null,
 'caption' => null,
 'encoding_format' => null,
 'additional_type' => null,
@@ -108,6 +110,7 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'content_url' => 'contentUrl',
+'embed_url' => 'embedUrl',
 'caption' => 'caption',
 'encoding_format' => 'encodingFormat',
 'additional_type' => 'additionalType',
@@ -123,6 +126,7 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'content_url' => 'setContentUrl',
+'embed_url' => 'setEmbedUrl',
 'caption' => 'setCaption',
 'encoding_format' => 'setEncodingFormat',
 'additional_type' => 'setAdditionalType',
@@ -138,6 +142,7 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'content_url' => 'getContentUrl',
+'embed_url' => 'getEmbedUrl',
 'caption' => 'getCaption',
 'encoding_format' => 'getEncodingFormat',
 'additional_type' => 'getAdditionalType',
@@ -205,6 +210,7 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
+        $this->container['embed_url'] = isset($data['embed_url']) ? $data['embed_url'] : null;
         $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
         $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
@@ -258,6 +264,30 @@ class DsMediaObjectSimplex implements ModelInterface, ArrayAccess
     public function setContentUrl($content_url)
     {
         $this->container['content_url'] = $content_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets embed_url
+     *
+     * @return string
+     */
+    public function getEmbedUrl()
+    {
+        return $this->container['embed_url'];
+    }
+
+    /**
+     * Sets embed_url
+     *
+     * @param string $embed_url embed_url
+     *
+     * @return $this
+     */
+    public function setEmbedUrl($embed_url)
+    {
+        $this->container['embed_url'] = $embed_url;
 
         return $this;
     }

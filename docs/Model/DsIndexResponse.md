@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **state** | **string** |  | [optional] 
 **time** | **int** |  | [optional] 
 **rating** | [**\Infocenter\Client\Model\DsTourRating**](DsTourRating.md) |  | [optional] 
+**campaign_tag** | **string[]** |  | [optional] 
 **profile_tag** | **string[]** |  | [optional] 
 **schedule** | [**\Infocenter\Client\Model\DsSchedule[]**](DsSchedule.md) |  | [optional] 
 **next_occurrence** | [**\DateTime**](\DateTime.md) |  | [optional] 

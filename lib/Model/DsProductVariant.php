@@ -70,7 +70,9 @@ class DsProductVariant implements ModelInterface, ArrayAccess
 'last_modified' => '\DateTime',
 'additional_property' => '\Infocenter\Client\Model\DsPropertyValue[]',
 'item_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
-'guest_field' => '\Infocenter\Client\Model\DsFieldDefinition[]'    ];
+'traveler_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
+'available_delivery_mode' => 'string[]',
+'weight' => '\Infocenter\Client\Model\DsQuantitativeValue'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -92,7 +94,9 @@ class DsProductVariant implements ModelInterface, ArrayAccess
 'last_modified' => 'date-time',
 'additional_property' => null,
 'item_field' => null,
-'guest_field' => null    ];
+'traveler_field' => null,
+'available_delivery_mode' => null,
+'weight' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -135,7 +139,9 @@ class DsProductVariant implements ModelInterface, ArrayAccess
 'last_modified' => 'lastModified',
 'additional_property' => 'additionalProperty',
 'item_field' => 'itemField',
-'guest_field' => 'guestField'    ];
+'traveler_field' => 'travelerField',
+'available_delivery_mode' => 'availableDeliveryMode',
+'weight' => 'weight'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -157,7 +163,9 @@ class DsProductVariant implements ModelInterface, ArrayAccess
 'last_modified' => 'setLastModified',
 'additional_property' => 'setAdditionalProperty',
 'item_field' => 'setItemField',
-'guest_field' => 'setGuestField'    ];
+'traveler_field' => 'setTravelerField',
+'available_delivery_mode' => 'setAvailableDeliveryMode',
+'weight' => 'setWeight'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -179,7 +187,9 @@ class DsProductVariant implements ModelInterface, ArrayAccess
 'last_modified' => 'getLastModified',
 'additional_property' => 'getAdditionalProperty',
 'item_field' => 'getItemField',
-'guest_field' => 'getGuestField'    ];
+'traveler_field' => 'getTravelerField',
+'available_delivery_mode' => 'getAvailableDeliveryMode',
+'weight' => 'getWeight'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -253,7 +263,9 @@ class DsProductVariant implements ModelInterface, ArrayAccess
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['additional_property'] = isset($data['additional_property']) ? $data['additional_property'] : null;
         $this->container['item_field'] = isset($data['item_field']) ? $data['item_field'] : null;
-        $this->container['guest_field'] = isset($data['guest_field']) ? $data['guest_field'] : null;
+        $this->container['traveler_field'] = isset($data['traveler_field']) ? $data['traveler_field'] : null;
+        $this->container['available_delivery_mode'] = isset($data['available_delivery_mode']) ? $data['available_delivery_mode'] : null;
+        $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
     }
 
     /**
@@ -617,25 +629,73 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets guest_field
+     * Gets traveler_field
      *
      * @return \Infocenter\Client\Model\DsFieldDefinition[]
      */
-    public function getGuestField()
+    public function getTravelerField()
     {
-        return $this->container['guest_field'];
+        return $this->container['traveler_field'];
     }
 
     /**
-     * Sets guest_field
+     * Sets traveler_field
      *
-     * @param \Infocenter\Client\Model\DsFieldDefinition[] $guest_field guest_field
+     * @param \Infocenter\Client\Model\DsFieldDefinition[] $traveler_field traveler_field
      *
      * @return $this
      */
-    public function setGuestField($guest_field)
+    public function setTravelerField($traveler_field)
     {
-        $this->container['guest_field'] = $guest_field;
+        $this->container['traveler_field'] = $traveler_field;
+
+        return $this;
+    }
+
+    /**
+     * Gets available_delivery_mode
+     *
+     * @return string[]
+     */
+    public function getAvailableDeliveryMode()
+    {
+        return $this->container['available_delivery_mode'];
+    }
+
+    /**
+     * Sets available_delivery_mode
+     *
+     * @param string[] $available_delivery_mode available_delivery_mode
+     *
+     * @return $this
+     */
+    public function setAvailableDeliveryMode($available_delivery_mode)
+    {
+        $this->container['available_delivery_mode'] = $available_delivery_mode;
+
+        return $this;
+    }
+
+    /**
+     * Gets weight
+     *
+     * @return \Infocenter\Client\Model\DsQuantitativeValue
+     */
+    public function getWeight()
+    {
+        return $this->container['weight'];
+    }
+
+    /**
+     * Sets weight
+     *
+     * @param \Infocenter\Client\Model\DsQuantitativeValue $weight weight
+     *
+     * @return $this
+     */
+    public function setWeight($weight)
+    {
+        $this->container['weight'] = $weight;
 
         return $this;
     }

@@ -77,6 +77,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'filters' => 'string[]',
 'datasource' => 'string[]',
 'project' => 'string[]',
+'source_partner' => 'string[]',
 'campaign_tag' => 'string[]',
 'profile_tag' => 'string[]',
 'all_tag' => 'string[]',
@@ -84,6 +85,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'facets' => '\Infocenter\Client\Model\DsFacetRequest[]',
 'scoring_tag' => 'string[]',
 'source_id' => 'string[]',
+'location' => 'string[]',
 'search_text' => 'string',
 'search_fields' => 'string',
 'select' => 'string',
@@ -119,6 +121,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'filters' => null,
 'datasource' => null,
 'project' => null,
+'source_partner' => null,
 'campaign_tag' => null,
 'profile_tag' => null,
 'all_tag' => null,
@@ -126,6 +129,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'facets' => null,
 'scoring_tag' => null,
 'source_id' => null,
+'location' => null,
 'search_text' => null,
 'search_fields' => null,
 'select' => null,
@@ -182,6 +186,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'filters' => 'filters',
 'datasource' => 'datasource',
 'project' => 'project',
+'source_partner' => 'sourcePartner',
 'campaign_tag' => 'campaignTag',
 'profile_tag' => 'profileTag',
 'all_tag' => 'allTag',
@@ -189,6 +194,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'facets' => 'facets',
 'scoring_tag' => 'scoringTag',
 'source_id' => 'sourceId',
+'location' => 'location',
 'search_text' => 'searchText',
 'search_fields' => 'searchFields',
 'select' => 'select',
@@ -224,6 +230,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'filters' => 'setFilters',
 'datasource' => 'setDatasource',
 'project' => 'setProject',
+'source_partner' => 'setSourcePartner',
 'campaign_tag' => 'setCampaignTag',
 'profile_tag' => 'setProfileTag',
 'all_tag' => 'setAllTag',
@@ -231,6 +238,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'facets' => 'setFacets',
 'scoring_tag' => 'setScoringTag',
 'source_id' => 'setSourceId',
+'location' => 'setLocation',
 'search_text' => 'setSearchText',
 'search_fields' => 'setSearchFields',
 'select' => 'setSelect',
@@ -266,6 +274,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'filters' => 'getFilters',
 'datasource' => 'getDatasource',
 'project' => 'getProject',
+'source_partner' => 'getSourcePartner',
 'campaign_tag' => 'getCampaignTag',
 'profile_tag' => 'getProfileTag',
 'all_tag' => 'getAllTag',
@@ -273,6 +282,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
 'facets' => 'getFacets',
 'scoring_tag' => 'getScoringTag',
 'source_id' => 'getSourceId',
+'location' => 'getLocation',
 'search_text' => 'getSearchText',
 'search_fields' => 'getSearchFields',
 'select' => 'getSelect',
@@ -360,6 +370,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         $this->container['filters'] = isset($data['filters']) ? $data['filters'] : null;
         $this->container['datasource'] = isset($data['datasource']) ? $data['datasource'] : null;
         $this->container['project'] = isset($data['project']) ? $data['project'] : null;
+        $this->container['source_partner'] = isset($data['source_partner']) ? $data['source_partner'] : null;
         $this->container['campaign_tag'] = isset($data['campaign_tag']) ? $data['campaign_tag'] : null;
         $this->container['profile_tag'] = isset($data['profile_tag']) ? $data['profile_tag'] : null;
         $this->container['all_tag'] = isset($data['all_tag']) ? $data['all_tag'] : null;
@@ -367,6 +378,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         $this->container['facets'] = isset($data['facets']) ? $data['facets'] : null;
         $this->container['scoring_tag'] = isset($data['scoring_tag']) ? $data['scoring_tag'] : null;
         $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
+        $this->container['location'] = isset($data['location']) ? $data['location'] : null;
         $this->container['search_text'] = isset($data['search_text']) ? $data['search_text'] : null;
         $this->container['search_fields'] = isset($data['search_fields']) ? $data['search_fields'] : null;
         $this->container['select'] = isset($data['select']) ? $data['select'] : null;
@@ -905,6 +917,30 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets source_partner
+     *
+     * @return string[]
+     */
+    public function getSourcePartner()
+    {
+        return $this->container['source_partner'];
+    }
+
+    /**
+     * Sets source_partner
+     *
+     * @param string[] $source_partner source_partner
+     *
+     * @return $this
+     */
+    public function setSourcePartner($source_partner)
+    {
+        $this->container['source_partner'] = $source_partner;
+
+        return $this;
+    }
+
+    /**
      * Gets campaign_tag
      *
      * @return string[]
@@ -1068,6 +1104,30 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     public function setSourceId($source_id)
     {
         $this->container['source_id'] = $source_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets location
+     *
+     * @return string[]
+     */
+    public function getLocation()
+    {
+        return $this->container['location'];
+    }
+
+    /**
+     * Sets location
+     *
+     * @param string[] $location location
+     *
+     * @return $this
+     */
+    public function setLocation($location)
+    {
+        $this->container['location'] = $location;
 
         return $this;
     }
