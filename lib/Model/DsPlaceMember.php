@@ -56,7 +56,8 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
+        'type' => 'string',
+'name' => 'string',
 'address' => '\Infocenter\Client\Model\DsPostalAddress',
 'geo' => '\Infocenter\Client\Model\DsGeoCoordinates',
 'additional_type' => 'string',
@@ -70,7 +71,8 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
+        'type' => null,
+'name' => null,
 'address' => null,
 'geo' => null,
 'additional_type' => null,
@@ -105,7 +107,8 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
+        'type' => 'type',
+'name' => 'name',
 'address' => 'address',
 'geo' => 'geo',
 'additional_type' => 'additionalType',
@@ -119,7 +122,8 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
+        'type' => 'setType',
+'name' => 'setName',
 'address' => 'setAddress',
 'geo' => 'setGeo',
 'additional_type' => 'setAdditionalType',
@@ -133,7 +137,8 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
+        'type' => 'getType',
+'name' => 'getName',
 'address' => 'getAddress',
 'geo' => 'getGeo',
 'additional_type' => 'getAdditionalType',
@@ -199,6 +204,7 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['geo'] = isset($data['geo']) ? $data['geo'] : null;
@@ -231,6 +237,30 @@ class DsPlaceMember implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
 
     /**
      * Gets name

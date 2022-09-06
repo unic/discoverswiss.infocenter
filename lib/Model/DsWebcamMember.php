@@ -57,6 +57,7 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'url' => 'string',
+'type' => 'string',
 'name' => 'string',
 'address' => '\Infocenter\Client\Model\DsPostalAddress',
 'geo' => '\Infocenter\Client\Model\DsGeoCoordinates',
@@ -72,6 +73,7 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'url' => null,
+'type' => null,
 'name' => null,
 'address' => null,
 'geo' => null,
@@ -108,6 +110,7 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'url' => 'url',
+'type' => 'type',
 'name' => 'name',
 'address' => 'address',
 'geo' => 'geo',
@@ -123,6 +126,7 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'url' => 'setUrl',
+'type' => 'setType',
 'name' => 'setName',
 'address' => 'setAddress',
 'geo' => 'setGeo',
@@ -138,6 +142,7 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'url' => 'getUrl',
+'type' => 'getType',
 'name' => 'getName',
 'address' => 'getAddress',
 'geo' => 'getGeo',
@@ -205,6 +210,7 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['geo'] = isset($data['geo']) ? $data['geo'] : null;
@@ -258,6 +264,30 @@ class DsWebcamMember implements ModelInterface, ArrayAccess
     public function setUrl($url)
     {
         $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }
