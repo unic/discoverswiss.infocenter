@@ -221,7 +221,7 @@ class DsSearchResponse implements ModelInterface, ArrayAccess
     /**
      * Sets count
      *
-     * @param int $count count
+     * @param int $count Actual count of results in actual query but not count possible results
      *
      * @return $this
      */
@@ -245,7 +245,7 @@ class DsSearchResponse implements ModelInterface, ArrayAccess
     /**
      * Sets values
      *
-     * @param \Infocenter\Client\Model\DsIndexResponse[] $values values
+     * @param \Infocenter\Client\Model\DsIndexResponse[] $values Paged count of results by query
      *
      * @return $this
      */
@@ -269,7 +269,7 @@ class DsSearchResponse implements ModelInterface, ArrayAccess
     /**
      * Sets facets
      *
-     * @param map[string,\Infocenter\Client\Model\DsFacetResponse] $facets facets
+     * @param map[string,\Infocenter\Client\Model\DsFacetResponse] $facets Dictionary of facets by the query. Where the key is a string with name of facets from azure search, and the value is SearchFacetResponse
      *
      * @return $this
      */

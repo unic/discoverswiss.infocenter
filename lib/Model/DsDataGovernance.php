@@ -233,7 +233,7 @@ class DsDataGovernance implements ModelInterface, ArrayAccess
     /**
      * Sets origin
      *
-     * @param \Infocenter\Client\Model\DsOrigin[] $origin origin
+     * @param \Infocenter\Client\Model\DsOrigin[] $origin List of data origins/sources
      *
      * @return $this
      */

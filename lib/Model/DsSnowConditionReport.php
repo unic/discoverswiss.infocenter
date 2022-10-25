@@ -35,6 +35,7 @@ use \Infocenter\Client\ObjectSerializer;
  * DsSnowConditionReport Class Doc Comment
  *
  * @category Class
+ * @description Report of the snow conditions of a ski resort or ski slope.
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -269,7 +270,7 @@ class DsSnowConditionReport implements ModelInterface, ArrayAccess
     /**
      * Sets last_snowfall
      *
-     * @param \DateTime $last_snowfall last_snowfall
+     * @param \DateTime $last_snowfall Date of last snow fall. (local date)
      *
      * @return $this
      */
@@ -341,7 +342,7 @@ class DsSnowConditionReport implements ModelInterface, ArrayAccess
     /**
      * Sets snow_condition
      *
-     * @param string $snow_condition snow_condition
+     * @param string $snow_condition Current snow conditions (e.g., fresh, wet, ...)
      *
      * @return $this
      */
@@ -365,7 +366,7 @@ class DsSnowConditionReport implements ModelInterface, ArrayAccess
     /**
      * Sets snow_type
      *
-     * @param string $snow_type snow_type
+     * @param string $snow_type Type of snow (e.g., artificial, ...)
      *
      * @return $this
      */
@@ -389,7 +390,7 @@ class DsSnowConditionReport implements ModelInterface, ArrayAccess
     /**
      * Sets report
      *
-     * @param string $report report
+     * @param string $report Text snow report. Multilingual
      *
      * @return $this
      */

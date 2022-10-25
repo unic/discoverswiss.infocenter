@@ -281,7 +281,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     /**
      * Sets price_category_id
      *
-     * @param string $price_category_id price_category_id
+     * @param string $price_category_id Ticket Category id
      *
      * @return $this
      */
@@ -305,7 +305,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     /**
      * Sets price_category_name
      *
-     * @param string $price_category_name price_category_name
+     * @param string $price_category_name Ticket Category name
      *
      * @return $this
      */
@@ -353,7 +353,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     /**
      * Sets price_chf
      *
-     * @param double $price_chf price_chf
+     * @param double $price_chf Price in CHF
      *
      * @return $this
      */
@@ -377,7 +377,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     /**
      * Sets compare_at_price_chf
      *
-     * @param double $compare_at_price_chf compare_at_price_chf
+     * @param double $compare_at_price_chf Price to compare with ('regular price', 'instead-of', 'statt') in CHF
      *
      * @return $this
      */
@@ -401,7 +401,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     /**
      * Sets max_allowed_age
      *
-     * @param int $max_allowed_age max_allowed_age
+     * @param int $max_allowed_age Price valid until this age (first day of valid period counts)
      *
      * @return $this
      */
@@ -425,7 +425,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     /**
      * Sets min_allowed_age
      *
-     * @param int $min_allowed_age min_allowed_age
+     * @param int $min_allowed_age Price valid from this age
      *
      * @return $this
      */
@@ -449,7 +449,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type type
+     * @param string $type If fixed total amount for booked guests will be price of this ticket category. If variable - price will be multiplied by guests count, e.g. if ticket category Adult has fixed price 100 CHF and 5 guests were booked total price will be still 100 CHF. If it had variable price type total price would be 500 CHF
      *
      * @return $this
      */
@@ -473,7 +473,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     /**
      * Sets min_seats
      *
-     * @param int $min_seats min_seats
+     * @param int $min_seats Minimum seats required to book this ticket category
      *
      * @return $this
      */
@@ -497,7 +497,7 @@ class DsProductPrice implements ModelInterface, ArrayAccess
     /**
      * Sets max_seats
      *
-     * @param int $max_seats max_seats
+     * @param int $max_seats Maximum seats allowed to book this ticket category.If it is a single seat ticket with one ticket code it should be 1.If it is more than 1 e.g. 5 we assume that no matter how many spots were booked 2 or 5 this ticket will have only 1 ticket code (QR Code, Barcode, etc) which means it is a GROUP ticket
      *
      * @return $this
      */

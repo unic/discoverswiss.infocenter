@@ -899,7 +899,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets max_elevation
      *
-     * @param int $max_elevation max_elevation
+     * @param int $max_elevation The highest elevation of the SkiResort
      *
      * @return $this
      */
@@ -923,7 +923,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets min_elevation
      *
-     * @param int $min_elevation min_elevation
+     * @param int $min_elevation The lowest elevation of the SkiResort
      *
      * @return $this
      */
@@ -947,7 +947,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets season_end
      *
-     * @param \DateTime $season_end season_end
+     * @param \DateTime $season_end The end date of the season
      *
      * @return $this
      */
@@ -971,7 +971,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets season_start
      *
-     * @param \DateTime $season_start season_start
+     * @param \DateTime $season_start The start date of the season
      *
      * @return $this
      */
@@ -995,7 +995,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets webcam
      *
-     * @param \Infocenter\Client\Model\DsWebcamMember[] $webcam webcam
+     * @param \Infocenter\Client\Model\DsWebcamMember[] $webcam A webcam that belongs to this ski resort.
      *
      * @return $this
      */
@@ -1067,7 +1067,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param string $status status
+     * @param string $status Open status of the place: EOpeningStatus: Closed, NoInformation, Open, WeekendOnly
      *
      * @return $this
      */
@@ -1091,7 +1091,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets weather_valley
      *
-     * @param \Infocenter\Client\Model\DsSimpleForecast[] $weather_valley weather_valley
+     * @param \Infocenter\Client\Model\DsSimpleForecast[] $weather_valley Simple forecast delivered by ST net
      *
      * @return $this
      */
@@ -1115,7 +1115,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets weather_mountain
      *
-     * @param \Infocenter\Client\Model\DsSimpleForecast[] $weather_mountain weather_mountain
+     * @param \Infocenter\Client\Model\DsSimpleForecast[] $weather_mountain Simple forecast delivered by ST net
      *
      * @return $this
      */
@@ -1139,7 +1139,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets skipass
      *
-     * @param \Infocenter\Client\Model\DsProductSimplex[] $skipass skipass
+     * @param \Infocenter\Client\Model\DsProductSimplex[] $skipass Information about skipass prices
      *
      * @return $this
      */
@@ -1211,7 +1211,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets opening_days
      *
-     * @param string $opening_days opening_days
+     * @param string $opening_days Contains days only (ZH extension) 'Monday,Wednesday,Thursday,Friday,Saturday,Sunday'
      *
      * @return $this
      */
@@ -1259,7 +1259,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets available_language
      *
-     * @param string[] $available_language available_language
+     * @param string[] $available_language List of 2-letter-iso-code (en, de, it, ...)
      *
      * @return $this
      */
@@ -1691,7 +1691,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets located
      *
-     * @param string[] $located located
+     * @param string[] $located Extension CMS ZH [ 'Indoors', 'Outdoors' ]
      *
      * @return $this
      */
@@ -1715,7 +1715,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets copyright
      *
-     * @param string $copyright copyright
+     * @param string $copyright Extension CMS ZH. Multilingual
      *
      * @return $this
      */
@@ -1739,7 +1739,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets detailed_information
      *
-     * @param string[] $detailed_information detailed_information
+     * @param string[] $detailed_information Extension CMS ZH [ 'Centrally located', 'Good for breakfast', 'Industrial flair' ]. Multilingual Can contain HTML
      *
      * @return $this
      */
@@ -1763,7 +1763,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets title_teaser
      *
-     * @param string $title_teaser title_teaser
+     * @param string $title_teaser Extension CMS ZH. Multilingual
      *
      * @return $this
      */
@@ -1787,7 +1787,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets text_teaser
      *
-     * @param string $text_teaser text_teaser
+     * @param string $text_teaser Extension CMS ZH. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1811,7 +1811,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets public_transport
      *
-     * @param string $public_transport public_transport
+     * @param string $public_transport Describes how public transport may be used to get to the starting point or get back home from the tour's destination. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1835,7 +1835,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets getting_there
      *
-     * @param string $getting_there getting_there
+     * @param string $getting_there How to get to the starting point, especially by car. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1859,7 +1859,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets parking
      *
-     * @param string $parking parking
+     * @param string $parking Information about parking at the starting point. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1883,7 +1883,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets directions
      *
-     * @param string $directions directions
+     * @param string $directions Describes important signs, crossings and other information to find your way. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1907,7 +1907,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets fees
      *
-     * @param string $fees fees
+     * @param string $fees Fees and Pricing. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1931,7 +1931,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets zurichcard
      *
-     * @param bool $zurichcard zurichcard
+     * @param bool $zurichcard Extension CMS ZH. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1955,7 +1955,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets zurichcard_description
      *
-     * @param string $zurichcard_description zurichcard_description
+     * @param string $zurichcard_description Extension CMS ZH. Multilingual
      *
      * @return $this
      */
@@ -1979,7 +1979,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets osm_id
      *
-     * @param string $osm_id osm_id
+     * @param string $osm_id Openstreetmap node id. https://zt.zuerich.com/en/open-data/api#/?id=open-street-map-integration
      *
      * @return $this
      */
@@ -2027,7 +2027,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets opening_hours
      *
-     * @param string $opening_hours opening_hours
+     * @param string $opening_hours Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -2075,7 +2075,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets contained_in_place
      *
-     * @param \Infocenter\Client\Model\DsPlaceSimplex[] $contained_in_place contained_in_place
+     * @param \Infocenter\Client\Model\DsPlaceSimplex[] $contained_in_place Used for creating a region-tree and the relation of a place to a region (AdministrativeArea)
      *
      * @return $this
      */
@@ -2243,7 +2243,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets robots
      *
-     * @param string $robots robots
+     * @param string $robots Based on the same values that used in the Robots Meta Tag as defined by Google
      *
      * @return $this
      */
@@ -2267,7 +2267,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param string $id json-ld: full url to load the object (based on identifier)
      *
      * @return $this
      */
@@ -2411,7 +2411,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets auto_translated_data
      *
-     * @param bool $auto_translated_data auto_translated_data
+     * @param bool $auto_translated_data Indicates if the data in the current language was automatically translated
      *
      * @return $this
      */
@@ -2483,7 +2483,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets description
      *
-     * @param string $description description
+     * @param string $description Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML
      *
      * @return $this
      */
@@ -2507,7 +2507,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets disambiguating_description
      *
-     * @param string $disambiguating_description disambiguating_description
+     * @param string $disambiguating_description Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -2579,7 +2579,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets url
      *
-     * @param string $url url
+     * @param string $url URL of the item
      *
      * @return $this
      */
@@ -2603,7 +2603,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets additional_type
      *
-     * @param string $additional_type additional_type
+     * @param string $additional_type Name of the 'real', more descriptive class which has no additional properties. Examples are schema.org/Country, schema.org/State, schema.org/City
      *
      * @return $this
      */
@@ -2627,7 +2627,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets link
      *
-     * @param \Infocenter\Client\Model\DsLink[] $link link
+     * @param \Infocenter\Client\Model\DsLink[] $link Web-links and general links between things
      *
      * @return $this
      */
@@ -2675,7 +2675,7 @@ class DsSkiResort implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Multilingual. Can contain HTML
      *
      * @return $this
      */

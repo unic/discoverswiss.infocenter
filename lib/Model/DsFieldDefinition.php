@@ -275,7 +275,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets property_id
      *
-     * @param string $property_id property_id
+     * @param string $property_id PropertyId
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type type
+     * @param string $type Traveler field type. Can be radio, text, select, etc.
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Can be used as a label of a field
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets required
      *
-     * @param bool $required required
+     * @param bool $required Is travelerField required?
      *
      * @return $this
      */
@@ -371,7 +371,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets required_for_offers
      *
-     * @param bool $required_for_offers required_for_offers
+     * @param bool $required_for_offers Is this required to get an offer? null - not used for offers (default). false - can be used. true - must be used
      *
      * @return $this
      */
@@ -395,7 +395,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets possible_value
      *
-     * @param map[string,string] $possible_value possible_value
+     * @param map[string,string] $possible_value Values of the field
      *
      * @return $this
      */
@@ -419,7 +419,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets range_min
      *
-     * @param string $range_min range_min
+     * @param string $range_min Integer, number: number-date, dateTime: duration ISO 8601 duration
      *
      * @return $this
      */
@@ -443,7 +443,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets range_max
      *
-     * @param string $range_max range_max
+     * @param string $range_max Integer, number: number-date, dateTime: duration ISO 8601 duration
      *
      * @return $this
      */
@@ -467,7 +467,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets range_base_property_id
      *
-     * @param string $range_base_property_id range_base_property_id
+     * @param string $range_base_property_id Property id from which range will be calculated (e.g. for ZH it is birthDate). Currently only DateTime validation supports it.
      *
      * @return $this
      */
@@ -491,7 +491,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets parent_field_property_id
      *
-     * @param string $parent_field_property_id parent_field_property_id
+     * @param string $parent_field_property_id Name of parent field property
      *
      * @return $this
      */
@@ -515,7 +515,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets parent_field_value
      *
-     * @param string $parent_field_value parent_field_value
+     * @param string $parent_field_value Value of parent field property
      *
      * @return $this
      */
@@ -539,7 +539,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets readonly
      *
-     * @param bool $readonly readonly
+     * @param bool $readonly Can this field be changed in the 'edit order item': null/false - the referenced property is editable. true - the referenced property must not change its value
      *
      * @return $this
      */

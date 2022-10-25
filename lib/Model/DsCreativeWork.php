@@ -659,7 +659,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets profile_tag
      *
-     * @param \Infocenter\Client\Model\DsTagSimplex[] $profile_tag profile_tag
+     * @param \Infocenter\Client\Model\DsTagSimplex[] $profile_tag Published profile tags in database
      *
      * @return $this
      */
@@ -683,7 +683,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets robots
      *
-     * @param string $robots robots
+     * @param string $robots Based on the same values that used in the Robots Meta Tag as defined by Google
      *
      * @return $this
      */
@@ -707,7 +707,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param string $id json-ld: full url to load the object (based on identifier)
      *
      * @return $this
      */
@@ -851,7 +851,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets auto_translated_data
      *
-     * @param bool $auto_translated_data auto_translated_data
+     * @param bool $auto_translated_data Indicates if the data in the current language was automatically translated
      *
      * @return $this
      */
@@ -923,7 +923,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets description
      *
-     * @param string $description description
+     * @param string $description Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML
      *
      * @return $this
      */
@@ -947,7 +947,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets disambiguating_description
      *
-     * @param string $disambiguating_description disambiguating_description
+     * @param string $disambiguating_description Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1019,7 +1019,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets url
      *
-     * @param string $url url
+     * @param string $url URL of the item
      *
      * @return $this
      */
@@ -1043,7 +1043,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets additional_type
      *
-     * @param string $additional_type additional_type
+     * @param string $additional_type Name of the 'real', more descriptive class which has no additional properties. Examples are schema.org/Country, schema.org/State, schema.org/City
      *
      * @return $this
      */
@@ -1067,7 +1067,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets link
      *
-     * @param \Infocenter\Client\Model\DsLink[] $link link
+     * @param \Infocenter\Client\Model\DsLink[] $link Web-links and general links between things
      *
      * @return $this
      */
@@ -1115,7 +1115,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Multilingual. Can contain HTML
      *
      * @return $this
      */

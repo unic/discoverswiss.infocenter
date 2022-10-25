@@ -22939,14 +22939,15 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $category_version Use to filter categories by version (optional)
+     * @param  string $authorization Authorization header to identify the B2C user profile. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsSearchResponse
      */
-    public function search($ocp_apim_subscription_key, $body = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    public function search($ocp_apim_subscription_key, $body = null, $accept_language = null, $accept_timezone = null, $category_version = null, $authorization = null)
     {
-        list($response) = $this->searchWithHttpInfo($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version);
+        list($response) = $this->searchWithHttpInfo($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version, $authorization);
         return $response;
     }
 
@@ -22960,15 +22961,16 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $category_version Use to filter categories by version (optional)
+     * @param  string $authorization Authorization header to identify the B2C user profile. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsSearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchWithHttpInfo($ocp_apim_subscription_key, $body = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    public function searchWithHttpInfo($ocp_apim_subscription_key, $body = null, $accept_language = null, $accept_timezone = null, $category_version = null, $authorization = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchRequest($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version);
+        $request = $this->searchRequest($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -23039,13 +23041,14 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $category_version Use to filter categories by version (optional)
+     * @param  string $authorization Authorization header to identify the B2C user profile. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAsync($ocp_apim_subscription_key, $body = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    public function searchAsync($ocp_apim_subscription_key, $body = null, $accept_language = null, $accept_timezone = null, $category_version = null, $authorization = null)
     {
-        return $this->searchAsyncWithHttpInfo($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version)
+        return $this->searchAsyncWithHttpInfo($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -23063,14 +23066,15 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $category_version Use to filter categories by version (optional)
+     * @param  string $authorization Authorization header to identify the B2C user profile. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAsyncWithHttpInfo($ocp_apim_subscription_key, $body = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    public function searchAsyncWithHttpInfo($ocp_apim_subscription_key, $body = null, $accept_language = null, $accept_timezone = null, $category_version = null, $authorization = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchRequest($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version);
+        $request = $this->searchRequest($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -23117,11 +23121,12 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $category_version Use to filter categories by version (optional)
+     * @param  string $authorization Authorization header to identify the B2C user profile. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchRequest($ocp_apim_subscription_key, $body = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    protected function searchRequest($ocp_apim_subscription_key, $body = null, $accept_language = null, $accept_timezone = null, $category_version = null, $authorization = null)
     {
         // verify the required parameter 'ocp_apim_subscription_key' is set
         if ($ocp_apim_subscription_key === null || (is_array($ocp_apim_subscription_key) && count($ocp_apim_subscription_key) === 0)) {
@@ -23152,6 +23157,10 @@ class DefaultApi
         // header params
         if ($category_version !== null) {
             $headerParams['categoryVersion'] = ObjectSerializer::toHeaderValue($category_version);
+        }
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
         }
 
 
@@ -23276,14 +23285,15 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $category_version Use to filter categories by version (optional)
+     * @param  string $authorization Authorization header to identify the B2C user profile. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsSearchResponse
      */
-    public function searchByGET($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $has_review = null, $location = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $source_partner = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    public function searchByGET($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $has_review = null, $location = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $source_partner = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null, $category_version = null, $authorization = null)
     {
-        list($response) = $this->searchByGETWithHttpInfo($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version);
+        list($response) = $this->searchByGETWithHttpInfo($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version, $authorization);
         return $response;
     }
 
@@ -23331,15 +23341,16 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $category_version Use to filter categories by version (optional)
+     * @param  string $authorization Authorization header to identify the B2C user profile. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsSearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchByGETWithHttpInfo($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $has_review = null, $location = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $source_partner = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    public function searchByGETWithHttpInfo($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $has_review = null, $location = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $source_partner = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null, $category_version = null, $authorization = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version);
+        $request = $this->searchByGETRequest($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -23444,13 +23455,14 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $category_version Use to filter categories by version (optional)
+     * @param  string $authorization Authorization header to identify the B2C user profile. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsync($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $has_review = null, $location = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $source_partner = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    public function searchByGETAsync($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $has_review = null, $location = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $source_partner = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null, $category_version = null, $authorization = null)
     {
-        return $this->searchByGETAsyncWithHttpInfo($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version)
+        return $this->searchByGETAsyncWithHttpInfo($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -23502,14 +23514,15 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $category_version Use to filter categories by version (optional)
+     * @param  string $authorization Authorization header to identify the B2C user profile. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsyncWithHttpInfo($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $has_review = null, $location = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $source_partner = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    public function searchByGETAsyncWithHttpInfo($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $has_review = null, $location = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $source_partner = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null, $category_version = null, $authorization = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version);
+        $request = $this->searchByGETRequest($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -23590,11 +23603,12 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time (optional)
      * @param  string $category_version Use to filter categories by version (optional)
+     * @param  string $authorization Authorization header to identify the B2C user profile. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchByGETRequest($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $has_review = null, $location = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $source_partner = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    protected function searchByGETRequest($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $category = null, $filters = null, $type = null, $datasource = null, $project = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $profile_tag = null, $all_tag = null, $scoring_tag = null, $has_review = null, $location = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $source_partner = null, $campaign_tag = null, $accept_language = null, $accept_timezone = null, $category_version = null, $authorization = null)
     {
         // verify the required parameter 'ocp_apim_subscription_key' is set
         if ($ocp_apim_subscription_key === null || (is_array($ocp_apim_subscription_key) && count($ocp_apim_subscription_key) === 0)) {
@@ -23765,6 +23779,10 @@ class DefaultApi
         // header params
         if ($category_version !== null) {
             $headerParams['categoryVersion'] = ObjectSerializer::toHeaderValue($category_version);
+        }
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
         }
 
 

@@ -251,7 +251,7 @@ class DsWebcamsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets has_next_page
      *
-     * @param bool $has_next_page has_next_page
+     * @param bool $has_next_page Indicates whether we have next page of data
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class DsWebcamsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets next_page_token
      *
-     * @param string $next_page_token next_page_token
+     * @param string $next_page_token Next page token used to get next page of data
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class DsWebcamsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Infocenter\Client\Model\DsWebcam[] $data data
+     * @param \Infocenter\Client\Model\DsWebcam[] $data Collection of entities of queried type
      *
      * @return $this
      */

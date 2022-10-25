@@ -227,7 +227,7 @@ class DsSimpleForecast implements ModelInterface, ArrayAccess
     /**
      * Sets date
      *
-     * @param \DateTime $date date
+     * @param \DateTime $date Forecast date
      *
      * @return $this
      */
@@ -251,7 +251,7 @@ class DsSimpleForecast implements ModelInterface, ArrayAccess
     /**
      * Sets temperature
      *
-     * @param int $temperature temperature
+     * @param int $temperature Temperature in degrees
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class DsSimpleForecast implements ModelInterface, ArrayAccess
     /**
      * Sets icon
      *
-     * @param int $icon icon
+     * @param int $icon discover.swiss weather icon code
      *
      * @return $this
      */

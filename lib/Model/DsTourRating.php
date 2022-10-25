@@ -233,7 +233,7 @@ class DsTourRating implements ModelInterface, ArrayAccess
     /**
      * Sets condition
      *
-     * @param int $condition condition
+     * @param int $condition 1-6
      *
      * @return $this
      */
@@ -257,7 +257,7 @@ class DsTourRating implements ModelInterface, ArrayAccess
     /**
      * Sets difficulty
      *
-     * @param int $difficulty difficulty
+     * @param int $difficulty 1-3
      *
      * @return $this
      */
@@ -281,7 +281,7 @@ class DsTourRating implements ModelInterface, ArrayAccess
     /**
      * Sets technique
      *
-     * @param int $technique technique
+     * @param int $technique 1-6
      *
      * @return $this
      */
@@ -305,7 +305,7 @@ class DsTourRating implements ModelInterface, ArrayAccess
     /**
      * Sets quality_of_experience
      *
-     * @param int $quality_of_experience quality_of_experience
+     * @param int $quality_of_experience 1-6
      *
      * @return $this
      */
@@ -329,7 +329,7 @@ class DsTourRating implements ModelInterface, ArrayAccess
     /**
      * Sets landscape
      *
-     * @param int $landscape landscape
+     * @param int $landscape 1-6
      *
      * @return $this
      */

@@ -57,6 +57,7 @@ class DsAction implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'additional_type' => 'string',
+'in_language' => 'string',
 'target' => '\Infocenter\Client\Model\DsEntryPoint[]',
 'name' => 'string'    ];
 
@@ -67,6 +68,7 @@ class DsAction implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'additional_type' => null,
+'in_language' => null,
 'target' => null,
 'name' => null    ];
 
@@ -98,6 +100,7 @@ class DsAction implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'additional_type' => 'additionalType',
+'in_language' => 'inLanguage',
 'target' => 'target',
 'name' => 'name'    ];
 
@@ -108,6 +111,7 @@ class DsAction implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'additional_type' => 'setAdditionalType',
+'in_language' => 'setInLanguage',
 'target' => 'setTarget',
 'name' => 'setName'    ];
 
@@ -118,6 +122,7 @@ class DsAction implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'additional_type' => 'getAdditionalType',
+'in_language' => 'getInLanguage',
 'target' => 'getTarget',
 'name' => 'getName'    ];
 
@@ -180,6 +185,7 @@ class DsAction implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
+        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
         $this->container['target'] = isset($data['target']) ? $data['target'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
@@ -233,6 +239,30 @@ class DsAction implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets in_language
+     *
+     * @return string
+     */
+    public function getInLanguage()
+    {
+        return $this->container['in_language'];
+    }
+
+    /**
+     * Sets in_language
+     *
+     * @param string $in_language in_language
+     *
+     * @return $this
+     */
+    public function setInLanguage($in_language)
+    {
+        $this->container['in_language'] = $in_language;
+
+        return $this;
+    }
+
+    /**
      * Gets target
      *
      * @return \Infocenter\Client\Model\DsEntryPoint[]
@@ -245,7 +275,7 @@ class DsAction implements ModelInterface, ArrayAccess
     /**
      * Sets target
      *
-     * @param \Infocenter\Client\Model\DsEntryPoint[] $target target
+     * @param \Infocenter\Client\Model\DsEntryPoint[] $target Indicates a target EntryPoint for an Action. Or in other words: how to execute it
      *
      * @return $this
      */

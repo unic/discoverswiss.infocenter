@@ -35,6 +35,7 @@ use \Infocenter\Client\ObjectSerializer;
  * DsPartnerSimplex Class Doc Comment
  *
  * @category Class
+ * @description Partner which is delivering the data, for example Outdooractive
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen

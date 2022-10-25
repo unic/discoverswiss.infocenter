@@ -251,7 +251,7 @@ class DsTourExposition implements ModelInterface, ArrayAccess
     /**
      * Sets nn
      *
-     * @param bool $nn nn
+     * @param bool $nn North
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class DsTourExposition implements ModelInterface, ArrayAccess
     /**
      * Sets ne
      *
-     * @param bool $ne ne
+     * @param bool $ne North-east
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class DsTourExposition implements ModelInterface, ArrayAccess
     /**
      * Sets nw
      *
-     * @param bool $nw nw
+     * @param bool $nw North-west
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class DsTourExposition implements ModelInterface, ArrayAccess
     /**
      * Sets ee
      *
-     * @param bool $ee ee
+     * @param bool $ee East
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class DsTourExposition implements ModelInterface, ArrayAccess
     /**
      * Sets ss
      *
-     * @param bool $ss ss
+     * @param bool $ss South
      *
      * @return $this
      */
@@ -371,7 +371,7 @@ class DsTourExposition implements ModelInterface, ArrayAccess
     /**
      * Sets se
      *
-     * @param bool $se se
+     * @param bool $se South-east
      *
      * @return $this
      */
@@ -395,7 +395,7 @@ class DsTourExposition implements ModelInterface, ArrayAccess
     /**
      * Sets sw
      *
-     * @param bool $sw sw
+     * @param bool $sw South-west
      *
      * @return $this
      */
@@ -419,7 +419,7 @@ class DsTourExposition implements ModelInterface, ArrayAccess
     /**
      * Sets ww
      *
-     * @param bool $ww ww
+     * @param bool $ww West
      *
      * @return $this
      */

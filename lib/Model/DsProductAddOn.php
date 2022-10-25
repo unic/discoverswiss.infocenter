@@ -239,7 +239,7 @@ class DsProductAddOn implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param string $id Identifier discover.swiss order number
      *
      * @return $this
      */
@@ -359,7 +359,7 @@ class DsProductAddOn implements ModelInterface, ArrayAccess
     /**
      * Sets tax_rate
      *
-     * @param double $tax_rate tax_rate
+     * @param double $tax_rate Tax rate (0.077 = 7.7%)
      *
      * @return $this
      */

@@ -299,7 +299,7 @@ class DsSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets by_day
      *
-     * @param string[] $by_day by_day
+     * @param string[] $by_day Where 'string' is Monday, Tuesday https://schema.org/dayOfWeek
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class DsSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets start_date
      *
-     * @param string $start_date start_date
+     * @param string $start_date Only date without time information
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class DsSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets end_date
      *
-     * @param string $end_date end_date
+     * @param string $end_date Only date without time information
      *
      * @return $this
      */
@@ -371,7 +371,7 @@ class DsSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets start_time
      *
-     * @param string $start_time start_time
+     * @param string $start_time Only time
      *
      * @return $this
      */
@@ -395,7 +395,7 @@ class DsSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets end_time
      *
-     * @param string $end_time end_time
+     * @param string $end_time Only time
      *
      * @return $this
      */
@@ -443,7 +443,7 @@ class DsSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets description
      *
-     * @param string $description description
+     * @param string $description Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML
      *
      * @return $this
      */
@@ -467,7 +467,7 @@ class DsSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets disambiguating_description
      *
-     * @param string $disambiguating_description disambiguating_description
+     * @param string $disambiguating_description Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -539,7 +539,7 @@ class DsSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets url
      *
-     * @param string $url url
+     * @param string $url URL of the item
      *
      * @return $this
      */
@@ -563,7 +563,7 @@ class DsSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets additional_type
      *
-     * @param string $additional_type additional_type
+     * @param string $additional_type Name of the 'real', more descriptive class which has no additional properties. Examples are schema.org/Country, schema.org/State, schema.org/City
      *
      * @return $this
      */
@@ -587,7 +587,7 @@ class DsSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets link
      *
-     * @param \Infocenter\Client\Model\DsLink[] $link link
+     * @param \Infocenter\Client\Model\DsLink[] $link Web-links and general links between things
      *
      * @return $this
      */
@@ -635,7 +635,7 @@ class DsSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Multilingual. Can contain HTML
      *
      * @return $this
      */

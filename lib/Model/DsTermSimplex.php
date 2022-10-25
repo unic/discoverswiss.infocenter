@@ -35,6 +35,7 @@ use \Infocenter\Client\ObjectSerializer;
  * DsTermSimplex Class Doc Comment
  *
  * @category Class
+ * @description The relation goes to the applicable term
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen

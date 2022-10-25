@@ -575,7 +575,7 @@ class DsCategory implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Multilingual. Can contain HTML
      *
      * @return $this
      */

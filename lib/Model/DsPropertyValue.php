@@ -449,7 +449,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Sets value_str
      *
-     * @param string $value_str value_str
+     * @param string $value_str The string-value of the value property in case the valueType is not object but a value-type
      *
      * @return $this
      */
@@ -497,7 +497,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Sets value_type
      *
-     * @param string $value_type value_type
+     * @param string $value_type String, integer, double etc.
      *
      * @return $this
      */
@@ -521,7 +521,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Sets value_description
      *
-     * @param string $value_description value_description
+     * @param string $value_description Multilingual description of the value (for example of codes)
      *
      * @return $this
      */
@@ -593,7 +593,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Sets description
      *
-     * @param string $description description
+     * @param string $description Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML
      *
      * @return $this
      */
@@ -617,7 +617,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Sets disambiguating_description
      *
-     * @param string $disambiguating_description disambiguating_description
+     * @param string $disambiguating_description Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -689,7 +689,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Sets url
      *
-     * @param string $url url
+     * @param string $url URL of the item
      *
      * @return $this
      */
@@ -713,7 +713,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Sets additional_type
      *
-     * @param string $additional_type additional_type
+     * @param string $additional_type Name of the 'real', more descriptive class which has no additional properties. Examples are schema.org/Country, schema.org/State, schema.org/City
      *
      * @return $this
      */
@@ -737,7 +737,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Sets link
      *
-     * @param \Infocenter\Client\Model\DsLink[] $link link
+     * @param \Infocenter\Client\Model\DsLink[] $link Web-links and general links between things
      *
      * @return $this
      */
@@ -785,7 +785,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Multilingual. Can contain HTML
      *
      * @return $this
      */

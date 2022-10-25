@@ -209,7 +209,7 @@ class DsAvalancheRiskReport implements ModelInterface, ArrayAccess
     /**
      * Sets level_icon
      *
-     * @param string $level_icon level_icon
+     * @param string $level_icon Link to the icon of http://www.slf.ch/avalanche/external/icon/bki_teaser_c.gif
      *
      * @return $this
      */

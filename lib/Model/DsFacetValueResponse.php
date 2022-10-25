@@ -269,7 +269,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets facet_type
      *
-     * @param string $facet_type facet_type
+     * @param string $facet_type Type of facet query result. Possible values: ['value', 'range']
      *
      * @return $this
      */
@@ -293,7 +293,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets filter_type
      *
-     * @param string $filter_type filter_type
+     * @param string $filter_type Filter type which could be used for building correct odata filters. Possible values: ['object', 'collection']
      *
      * @return $this
      */
@@ -317,7 +317,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets value_type
      *
-     * @param string $value_type value_type
+     * @param string $value_type Type of value property. Could be used for building correct odata filters. Possible values: ['string', 'integer', 'number']
      *
      * @return $this
      */
@@ -341,7 +341,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets from
      *
-     * @param object $from from
+     * @param object $from From value for filter range
      *
      * @return $this
      */
@@ -365,7 +365,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets to
      *
-     * @param object $to to
+     * @param object $to To value for filter range
      *
      * @return $this
      */
@@ -389,7 +389,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param object $value value
+     * @param object $value Value of facet
      *
      * @return $this
      */
@@ -437,7 +437,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets query
      *
-     * @param string $query query
+     * @param string $query Contains string which could be used as facet filter value
      *
      * @return $this
      */
@@ -461,7 +461,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Represents the name of category
      *
      * @return $this
      */
@@ -485,7 +485,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets name_plural
      *
-     * @param string $name_plural name_plural
+     * @param string $name_plural Represent the plural name of category
      *
      * @return $this
      */
@@ -509,7 +509,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets additional_type
      *
-     * @param string $additional_type additional_type
+     * @param string $additional_type Loaded from the facet-values-vertex like the 'name' below
      *
      * @return $this
      */

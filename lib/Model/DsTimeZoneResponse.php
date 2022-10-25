@@ -227,7 +227,7 @@ class DsTimeZoneResponse implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param string $id Identifier of TimeZone. Send it in Accept-Timezone header
      *
      * @return $this
      */
@@ -251,7 +251,7 @@ class DsTimeZoneResponse implements ModelInterface, ArrayAccess
     /**
      * Sets display_name
      *
-     * @param string $display_name display_name
+     * @param string $display_name Name of TimeZone with offset in it
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class DsTimeZoneResponse implements ModelInterface, ArrayAccess
     /**
      * Sets base_utc_offset
      *
-     * @param string $base_utc_offset base_utc_offset
+     * @param string $base_utc_offset Information about TimeZone offset from UTC time
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class DsTimeZoneResponse implements ModelInterface, ArrayAccess
     /**
      * Sets supports_daylight_saving_time
      *
-     * @param bool $supports_daylight_saving_time supports_daylight_saving_time
+     * @param bool $supports_daylight_saving_time Indicates does TimeZone supports Daylight Saving Time
      *
      * @return $this
      */

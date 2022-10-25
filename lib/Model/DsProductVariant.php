@@ -305,7 +305,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets identifier
      *
-     * @param string $identifier identifier
+     * @param string $identifier Product variant identifier
      *
      * @return $this
      */
@@ -329,7 +329,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Multilingual
      *
      * @return $this
      */
@@ -377,7 +377,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets sku
      *
-     * @param string $sku sku
+     * @param string $sku The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.Order number at the supplier
      *
      * @return $this
      */
@@ -401,7 +401,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets position
      *
-     * @param int $position position
+     * @param int $position Position of the variant in the list
      *
      * @return $this
      */
@@ -425,7 +425,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets option
      *
-     * @param \Infocenter\Client\Model\DsOption[] $option option
+     * @param \Infocenter\Client\Model\DsOption[] $option Options which make up the variants of the product
      *
      * @return $this
      */
@@ -449,7 +449,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets inventory_quantity
      *
-     * @param int $inventory_quantity inventory_quantity
+     * @param int $inventory_quantity If null there is no inventory or it doesn't matter API: = inventoryQuantity - reserveQuantity (always >= 0)
      *
      * @return $this
      */
@@ -473,7 +473,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets price_list
      *
-     * @param \Infocenter\Client\Model\DsProductPrice[] $price_list price_list
+     * @param \Infocenter\Client\Model\DsProductPrice[] $price_list List of product prices by age
      *
      * @return $this
      */
@@ -497,7 +497,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets tax_rate
      *
-     * @param double $tax_rate tax_rate
+     * @param double $tax_rate Tax rate (0.077 = 7.7%)
      *
      * @return $this
      */
@@ -545,7 +545,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created created
+     * @param \DateTime $created Date and time of the creation in the provider's database
      *
      * @return $this
      */
@@ -569,7 +569,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets last_modified
      *
-     * @param \DateTime $last_modified last_modified
+     * @param \DateTime $last_modified Date and time of the last modification in the provider's database
      *
      * @return $this
      */
@@ -593,7 +593,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets additional_property
      *
-     * @param \Infocenter\Client\Model\DsPropertyValue[] $additional_property additional_property
+     * @param \Infocenter\Client\Model\DsPropertyValue[] $additional_property A property-value pair representing an additional characteristic of the entity in which there is no matching property in schema.org.
      *
      * @return $this
      */
@@ -617,7 +617,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets item_field
      *
-     * @param \Infocenter\Client\Model\DsFieldDefinition[] $item_field item_field
+     * @param \Infocenter\Client\Model\DsFieldDefinition[] $item_field Fields which must/should be added with values of the orderItem
      *
      * @return $this
      */
@@ -641,7 +641,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets traveler_field
      *
-     * @param \Infocenter\Client\Model\DsFieldDefinition[] $traveler_field traveler_field
+     * @param \Infocenter\Client\Model\DsFieldDefinition[] $traveler_field Fields which must/should be added with values of the traveler
      *
      * @return $this
      */
@@ -665,7 +665,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     /**
      * Sets available_delivery_mode
      *
-     * @param string[] $available_delivery_mode available_delivery_mode
+     * @param string[] $available_delivery_mode Available delivery mode see Delivery modes and shipping. Remark: if there are several, this information is in the itemFields as well and with them offered to the guest for selection.
      *
      * @return $this
      */

@@ -233,7 +233,7 @@ class DsOption implements ModelInterface, ArrayAccess
     /**
      * Sets identifier
      *
-     * @param string $identifier identifier
+     * @param string $identifier Identifier of the option
      *
      * @return $this
      */
@@ -257,7 +257,7 @@ class DsOption implements ModelInterface, ArrayAccess
     /**
      * Sets value_identifier
      *
-     * @param string $value_identifier value_identifier
+     * @param string $value_identifier Identifier of the option value (unique value for several translations)
      *
      * @return $this
      */
@@ -281,7 +281,7 @@ class DsOption implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Translated name of the option
      *
      * @return $this
      */
@@ -305,7 +305,7 @@ class DsOption implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value value
+     * @param string $value Translated value of the option
      *
      * @return $this
      */
@@ -329,7 +329,7 @@ class DsOption implements ModelInterface, ArrayAccess
     /**
      * Sets position
      *
-     * @param int $position position
+     * @param int $position Position of the option in the list
      *
      * @return $this
      */

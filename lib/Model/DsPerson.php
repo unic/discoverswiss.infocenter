@@ -305,7 +305,7 @@ class DsPerson implements ModelInterface, ArrayAccess
     /**
      * Sets gender
      *
-     * @param string $gender gender
+     * @param string $gender Female, Male, Diverse
      *
      * @return $this
      */

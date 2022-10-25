@@ -263,7 +263,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Name of facet or value from filterPropertyName property that will be in the response of search (e.g. rating/condition and ratingCondition returns same facet)
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     /**
      * Sets response_name
      *
-     * @param string $response_name response_name
+     * @param string $response_name Value which will be returned in the FacetResponse.Name property. If it is null then a default name will be returned for the current facet
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     /**
      * Sets interval
      *
-     * @param string $interval interval
+     * @param string $interval Property that represent interval borders for range response
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     /**
      * Sets values
      *
-     * @param string $values values
+     * @param string $values Property that represent borders for range response
      *
      * @return $this
      */
@@ -359,7 +359,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     /**
      * Sets select_values
      *
-     * @param string[] $select_values select_values
+     * @param string[] $select_values Facet values which will be returned in the response. If selectValues is set then filterValues, values or interval can't be used. If selectValues contains values then the value of count will be equals to max int (2,147,483,647)
      *
      * @return $this
      */
@@ -383,7 +383,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     /**
      * Sets filter_values
      *
-     * @param string[] $filter_values filter_values
+     * @param string[] $filter_values Facet values which will be returned in the response. If filterValues is set then selectValues, values or interval can't be used. If filterValues contains values then the value of count will be equals to max int (2,147,483,647)
      *
      * @return $this
      */
@@ -407,7 +407,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     /**
      * Sets count
      *
-     * @param int $count count
+     * @param int $count Count of facets in the response
      *
      * @return $this
      */
@@ -431,7 +431,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     /**
      * Sets scope
      *
-     * @param string $scope scope
+     * @param string $scope Represent type of scope which will be used for building response. Possible values: ['all', 'parent', 'current']. Default value is current
      *
      * @return $this
      */
@@ -455,7 +455,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     /**
      * Sets project
      *
-     * @param string[] $project project
+     * @param string[] $project Use this property to filter facet values by project
      *
      * @return $this
      */
@@ -479,7 +479,7 @@ class DsFacetRequest implements ModelInterface, ArrayAccess
     /**
      * Sets additional_type
      *
-     * @param string[] $additional_type additional_type
+     * @param string[] $additional_type Filter facet values by their additional type
      *
      * @return $this
      */

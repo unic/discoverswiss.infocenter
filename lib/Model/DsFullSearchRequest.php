@@ -857,7 +857,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets filters
      *
-     * @param string[] $filters filters
+     * @param string[] $filters Optional. Odata strings for filters
      *
      * @return $this
      */
@@ -881,7 +881,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets datasource
      *
-     * @param string[] $datasource datasource
+     * @param string[] $datasource Optional. Determines one or many datasources used to filter data
      *
      * @return $this
      */
@@ -905,7 +905,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets project
      *
-     * @param string[] $project project
+     * @param string[] $project Optional. Determines one or many projects used to filter data
      *
      * @return $this
      */
@@ -977,7 +977,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets profile_tag
      *
-     * @param string[] $profile_tag profile_tag
+     * @param string[] $profile_tag Optional. Determines one or many profile tag by which data will be filtered
      *
      * @return $this
      */
@@ -1025,7 +1025,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets category
      *
-     * @param string[] $category category
+     * @param string[] $category Optional. Determines one or many categories used to filter data
      *
      * @return $this
      */
@@ -1049,7 +1049,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets facets
      *
-     * @param \Infocenter\Client\Model\DsFacetRequest[] $facets facets
+     * @param \Infocenter\Client\Model\DsFacetRequest[] $facets Optional. List of facets which will be in the response
      *
      * @return $this
      */
@@ -1073,7 +1073,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets scoring_tag
      *
-     * @param string[] $scoring_tag scoring_tag
+     * @param string[] $scoring_tag Optional. List of tags which will be used for scoring (Beta) of results in the response
      *
      * @return $this
      */
@@ -1145,7 +1145,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets search_text
      *
-     * @param string $search_text search_text
+     * @param string $search_text Optional. Search for contained string by the searchable fields
      *
      * @return $this
      */
@@ -1169,7 +1169,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets search_fields
      *
-     * @param string $search_fields search_fields
+     * @param string $search_fields Optional. When name of fields are specified as a comma separated string (e.g. 'name, description, address/name') then only the selected fields will be used for searching.
      *
      * @return $this
      */
@@ -1193,7 +1193,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets select
      *
-     * @param string $select select
+     * @param string $select Optional. When name of fields are specified as a comma separated string (e.g. 'name, description, @id, address') then only the selected fields will be returned.
      *
      * @return $this
      */
@@ -1217,7 +1217,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets current_page
      *
-     * @param int $current_page current_page
+     * @param int $current_page Optional. By default equal 1. Determines which page of results to return in the response
      *
      * @return $this
      */
@@ -1241,7 +1241,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets results_per_page
      *
-     * @param int $results_per_page results_per_page
+     * @param int $results_per_page Optional. By default equal 10 for regular request and 50 for pdf request. Determines how many results are in response
      *
      * @return $this
      */
@@ -1265,7 +1265,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets order_by
      *
-     * @param string $order_by order_by
+     * @param string $order_by Optional. Determines name of field by which result will be ordered
      *
      * @return $this
      */
@@ -1289,7 +1289,7 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets scoring_reference_point
      *
-     * @param string $scoring_reference_point scoring_reference_point
+     * @param string $scoring_reference_point Optional. Coordinates of point in format 'Longitude,Latitude' (e.g.: 8.5172912,47.5722339) which will be used for scoring by distance
      *
      * @return $this
      */

@@ -2185,9 +2185,10 @@ $body = new \Infocenter\Client\Model\DsFullSearchRequest(); // \Infocenter\Clien
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 $category_version = "category_version_example"; // string | Use to filter categories by version
+$authorization = "authorization_example"; // string | Authorization header to identify the B2C user profile.
 
 try {
-    $result = $apiInstance->search($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->search($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->search: ', $e->getMessage(), PHP_EOL;
@@ -2247,9 +2248,10 @@ $campaign_tag = "campaign_tag_example"; // string | Use property for filtering/f
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 $category_version = "category_version_example"; // string | Use to filter categories by version
+$authorization = "authorization_example"; // string | Authorization header to identify the B2C user profile.
 
 try {
-    $result = $apiInstance->searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGET: ', $e->getMessage(), PHP_EOL;
@@ -2963,7 +2965,6 @@ Class | Method | HTTP request | Description
  - [DsAudioObjectSimplex](docs/Model/DsAudioObjectSimplex.md)
  - [DsAudioObjectsResponse](docs/Model/DsAudioObjectsResponse.md)
  - [DsAvalancheRiskReport](docs/Model/DsAvalancheRiskReport.md)
- - [DsBaseSimplex](docs/Model/DsBaseSimplex.md)
  - [DsCategoriesResponse](docs/Model/DsCategoriesResponse.md)
  - [DsCategory](docs/Model/DsCategory.md)
  - [DsCategoryIcon](docs/Model/DsCategoryIcon.md)

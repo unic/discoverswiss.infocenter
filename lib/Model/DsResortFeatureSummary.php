@@ -275,7 +275,7 @@ class DsResortFeatureSummary implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Name of the resort feature
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class DsResortFeatureSummary implements ModelInterface, ArrayAccess
     /**
      * Sets min_elevation
      *
-     * @param double $min_elevation min_elevation
+     * @param double $min_elevation The lowest schema.org/elevation in meters above sea level
      *
      * @return $this
      */
@@ -371,7 +371,7 @@ class DsResortFeatureSummary implements ModelInterface, ArrayAccess
     /**
      * Sets max_elevation
      *
-     * @param double $max_elevation max_elevation
+     * @param double $max_elevation The highest schema.org/elevation in meters above sea level
      *
      * @return $this
      */
@@ -515,7 +515,7 @@ class DsResortFeatureSummary implements ModelInterface, ArrayAccess
     /**
      * Sets additional_property
      *
-     * @param \Infocenter\Client\Model\DsPropertyValue[] $additional_property additional_property
+     * @param \Infocenter\Client\Model\DsPropertyValue[] $additional_property A property-value pair representing an additional characteristics of the entity which there is no matching property in schema.org. See public docs for the available additionalProperties
      *
      * @return $this
      */
@@ -539,7 +539,7 @@ class DsResortFeatureSummary implements ModelInterface, ArrayAccess
     /**
      * Sets report
      *
-     * @param string $report report
+     * @param string $report Multilingual
      *
      * @return $this
      */

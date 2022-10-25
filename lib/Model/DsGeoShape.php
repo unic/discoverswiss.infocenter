@@ -473,7 +473,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
     /**
      * Sets line
      *
-     * @param string $line line
+     * @param string $line A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
      *
      * @return $this
      */
@@ -545,7 +545,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
     /**
      * Sets multiline
      *
-     * @param string $multiline multiline
+     * @param string $multiline Several lines in ()
      *
      * @return $this
      */
@@ -593,7 +593,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
     /**
      * Sets description
      *
-     * @param string $description description
+     * @param string $description Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML
      *
      * @return $this
      */
@@ -617,7 +617,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
     /**
      * Sets disambiguating_description
      *
-     * @param string $disambiguating_description disambiguating_description
+     * @param string $disambiguating_description Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -689,7 +689,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
     /**
      * Sets url
      *
-     * @param string $url url
+     * @param string $url URL of the item
      *
      * @return $this
      */
@@ -713,7 +713,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
     /**
      * Sets additional_type
      *
-     * @param string $additional_type additional_type
+     * @param string $additional_type Name of the 'real', more descriptive class which has no additional properties. Examples are schema.org/Country, schema.org/State, schema.org/City
      *
      * @return $this
      */
@@ -737,7 +737,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
     /**
      * Sets link
      *
-     * @param \Infocenter\Client\Model\DsLink[] $link link
+     * @param \Infocenter\Client\Model\DsLink[] $link Web-links and general links between things
      *
      * @return $this
      */
@@ -785,7 +785,7 @@ class DsGeoShape implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Multilingual. Can contain HTML
      *
      * @return $this
      */

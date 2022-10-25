@@ -257,7 +257,7 @@ class DsOrigin implements ModelInterface, ArrayAccess
     /**
      * Sets datasource
      *
-     * @param string $datasource datasource
+     * @param string $datasource Key to identify and filter the data source
      *
      * @return $this
      */
@@ -281,7 +281,7 @@ class DsOrigin implements ModelInterface, ArrayAccess
     /**
      * Sets source_id
      *
-     * @param string $source_id source_id
+     * @param string $source_id The id of the data in the source system
      *
      * @return $this
      */
@@ -305,7 +305,7 @@ class DsOrigin implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created created
+     * @param \DateTime $created Date and time of the creation in the provider's database
      *
      * @return $this
      */
@@ -329,7 +329,7 @@ class DsOrigin implements ModelInterface, ArrayAccess
     /**
      * Sets last_modified
      *
-     * @param \DateTime $last_modified last_modified
+     * @param \DateTime $last_modified Date and time of the last modification in the provider's database
      *
      * @return $this
      */

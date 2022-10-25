@@ -755,7 +755,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets time
      *
-     * @param int $time time
+     * @param int $time Duration of the tour in minutes
      *
      * @return $this
      */
@@ -899,7 +899,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets risk_potential
      *
-     * @param int $risk_potential risk_potential
+     * @param int $risk_potential 1-6
      *
      * @return $this
      */
@@ -923,7 +923,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets titles
      *
-     * @param string $titles titles
+     * @param string $titles Multilingual
      *
      * @return $this
      */
@@ -947,7 +947,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets starting_point_description
      *
-     * @param string $starting_point_description starting_point_description
+     * @param string $starting_point_description Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -971,7 +971,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets safety_guidelines
      *
-     * @param string $safety_guidelines safety_guidelines
+     * @param string $safety_guidelines Multilingual. Current conditions like snow are not part of this description. Can contain HTML
      *
      * @return $this
      */
@@ -995,7 +995,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets equipment
      *
-     * @param string $equipment equipment
+     * @param string $equipment Multilingual. Special equipment needed for this tour. Can contain HTML
      *
      * @return $this
      */
@@ -1019,7 +1019,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets tip
      *
-     * @param string $tip tip
+     * @param string $tip Multilingual. Tip of the author. Can contain HTML
      *
      * @return $this
      */
@@ -1043,7 +1043,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets additional_information
      *
-     * @param string $additional_information additional_information
+     * @param string $additional_information Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1067,7 +1067,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets destination
      *
-     * @param string $destination destination
+     * @param string $destination Multilingual. Zielpunkt der Tour. Describes the destination of the tour. Can contain HTML
      *
      * @return $this
      */
@@ -1091,7 +1091,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets track_signage
      *
-     * @param string $track_signage track_signage
+     * @param string $track_signage Multilingual. Describes sings along the tour. Can contain HTML
      *
      * @return $this
      */
@@ -1115,7 +1115,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets literature
      *
-     * @param string $literature literature
+     * @param string $literature Multilingual. Recommended books. Can contain HTML
      *
      * @return $this
      */
@@ -1139,7 +1139,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets maps
      *
-     * @param string $maps maps
+     * @param string $maps Multilingual. Recommended printed maps. Can contain HTML
      *
      * @return $this
      */
@@ -1163,7 +1163,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets state
      *
-     * @param string $state state
+     * @param string $state Might be 'open', 'closed' or null
      *
      * @return $this
      */
@@ -1211,7 +1211,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets sub_trip
      *
-     * @param \Infocenter\Client\Model\DsTourSimplex[] $sub_trip sub_trip
+     * @param \Infocenter\Client\Model\DsTourSimplex[] $sub_trip Identifies a Trip that is a subTrip of this Trip. For example Day 1, Day 2, etc. of a multi-day trip. Inverse property: partOfTrip
      *
      * @return $this
      */
@@ -1235,7 +1235,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets part_of_trip
      *
-     * @param \Infocenter\Client\Model\DsTourSimplex[] $part_of_trip part_of_trip
+     * @param \Infocenter\Client\Model\DsTourSimplex[] $part_of_trip Identifies that this Trip is a subTrip of another Trip. For example Day 1, Day 2, etc. of a multi-day trip. Inverse property: subTrip
      *
      * @return $this
      */
@@ -1259,7 +1259,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets available_language
      *
-     * @param string[] $available_language available_language
+     * @param string[] $available_language List of 2-letter-iso-code (en, de, it, ...)
      *
      * @return $this
      */
@@ -1691,7 +1691,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets located
      *
-     * @param string[] $located located
+     * @param string[] $located Extension CMS ZH [ 'Indoors', 'Outdoors' ]
      *
      * @return $this
      */
@@ -1715,7 +1715,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets copyright
      *
-     * @param string $copyright copyright
+     * @param string $copyright Extension CMS ZH. Multilingual
      *
      * @return $this
      */
@@ -1739,7 +1739,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets detailed_information
      *
-     * @param string[] $detailed_information detailed_information
+     * @param string[] $detailed_information Extension CMS ZH [ 'Centrally located', 'Good for breakfast', 'Industrial flair' ]. Multilingual Can contain HTML
      *
      * @return $this
      */
@@ -1763,7 +1763,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets title_teaser
      *
-     * @param string $title_teaser title_teaser
+     * @param string $title_teaser Extension CMS ZH. Multilingual
      *
      * @return $this
      */
@@ -1787,7 +1787,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets text_teaser
      *
-     * @param string $text_teaser text_teaser
+     * @param string $text_teaser Extension CMS ZH. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1811,7 +1811,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets public_transport
      *
-     * @param string $public_transport public_transport
+     * @param string $public_transport Describes how public transport may be used to get to the starting point or get back home from the tour's destination. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1835,7 +1835,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets getting_there
      *
-     * @param string $getting_there getting_there
+     * @param string $getting_there How to get to the starting point, especially by car. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1859,7 +1859,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets parking
      *
-     * @param string $parking parking
+     * @param string $parking Information about parking at the starting point. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1883,7 +1883,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets directions
      *
-     * @param string $directions directions
+     * @param string $directions Describes important signs, crossings and other information to find your way. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1907,7 +1907,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets fees
      *
-     * @param string $fees fees
+     * @param string $fees Fees and Pricing. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1931,7 +1931,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets zurichcard
      *
-     * @param bool $zurichcard zurichcard
+     * @param bool $zurichcard Extension CMS ZH. Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1955,7 +1955,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets zurichcard_description
      *
-     * @param string $zurichcard_description zurichcard_description
+     * @param string $zurichcard_description Extension CMS ZH. Multilingual
      *
      * @return $this
      */
@@ -1979,7 +1979,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets osm_id
      *
-     * @param string $osm_id osm_id
+     * @param string $osm_id Openstreetmap node id. https://zt.zuerich.com/en/open-data/api#/?id=open-street-map-integration
      *
      * @return $this
      */
@@ -2027,7 +2027,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets opening_hours
      *
-     * @param string $opening_hours opening_hours
+     * @param string $opening_hours Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -2075,7 +2075,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets contained_in_place
      *
-     * @param \Infocenter\Client\Model\DsPlaceSimplex[] $contained_in_place contained_in_place
+     * @param \Infocenter\Client\Model\DsPlaceSimplex[] $contained_in_place Used for creating a region-tree and the relation of a place to a region (AdministrativeArea)
      *
      * @return $this
      */
@@ -2243,7 +2243,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets robots
      *
-     * @param string $robots robots
+     * @param string $robots Based on the same values that used in the Robots Meta Tag as defined by Google
      *
      * @return $this
      */
@@ -2267,7 +2267,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param string $id json-ld: full url to load the object (based on identifier)
      *
      * @return $this
      */
@@ -2411,7 +2411,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets auto_translated_data
      *
-     * @param bool $auto_translated_data auto_translated_data
+     * @param bool $auto_translated_data Indicates if the data in the current language was automatically translated
      *
      * @return $this
      */
@@ -2483,7 +2483,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets description
      *
-     * @param string $description description
+     * @param string $description Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML
      *
      * @return $this
      */
@@ -2507,7 +2507,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets disambiguating_description
      *
-     * @param string $disambiguating_description disambiguating_description
+     * @param string $disambiguating_description Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -2579,7 +2579,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets url
      *
-     * @param string $url url
+     * @param string $url URL of the item
      *
      * @return $this
      */
@@ -2603,7 +2603,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets additional_type
      *
-     * @param string $additional_type additional_type
+     * @param string $additional_type Name of the 'real', more descriptive class which has no additional properties. Examples are schema.org/Country, schema.org/State, schema.org/City
      *
      * @return $this
      */
@@ -2627,7 +2627,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets link
      *
-     * @param \Infocenter\Client\Model\DsLink[] $link link
+     * @param \Infocenter\Client\Model\DsLink[] $link Web-links and general links between things
      *
      * @return $this
      */
@@ -2675,7 +2675,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Multilingual. Can contain HTML
      *
      * @return $this
      */

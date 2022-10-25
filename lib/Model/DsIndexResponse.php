@@ -401,7 +401,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param string $id json-ld: full url to load the object (based on identifier)
      *
      * @return $this
      */
@@ -425,7 +425,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     /**
      * Sets oua_id
      *
-     * @param int $oua_id oua_id
+     * @param int $oua_id Outdooractive id
      *
      * @return $this
      */
@@ -785,7 +785,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     /**
      * Sets state
      *
-     * @param string $state state
+     * @param string $state Tour state
      *
      * @return $this
      */
@@ -809,7 +809,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     /**
      * Sets time
      *
-     * @param int $time time
+     * @param int $time Tour time
      *
      * @return $this
      */
@@ -929,7 +929,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     /**
      * Sets next_occurrence
      *
-     * @param \DateTime $next_occurrence next_occurrence
+     * @param \DateTime $next_occurrence Contains the date and time of next occurrence of event
      *
      * @return $this
      */
@@ -953,7 +953,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     /**
      * Sets recurred_count
      *
-     * @param int $recurred_count recurred_count
+     * @param int $recurred_count Contains the number of repetition of event with one week frequency
      *
      * @return $this
      */
@@ -1169,7 +1169,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     /**
      * Sets has_review
      *
-     * @param string $has_review has_review
+     * @param string $has_review true or false if the object contains reviews
      *
      * @return $this
      */

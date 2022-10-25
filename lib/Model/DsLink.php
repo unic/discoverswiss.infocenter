@@ -61,7 +61,6 @@ class DsLink implements ModelInterface, ArrayAccess
 'in_language' => 'string',
 'title' => 'string',
 'ordering_number' => 'int',
-'target' => '\Infocenter\Client\Model\DsBaseSimplex',
 'name' => 'string',
 'type' => 'string'    ];
 
@@ -76,7 +75,6 @@ class DsLink implements ModelInterface, ArrayAccess
 'in_language' => null,
 'title' => null,
 'ordering_number' => 'int32',
-'target' => null,
 'name' => null,
 'type' => null    ];
 
@@ -112,7 +110,6 @@ class DsLink implements ModelInterface, ArrayAccess
 'in_language' => 'inLanguage',
 'title' => 'title',
 'ordering_number' => 'orderingNumber',
-'target' => 'target',
 'name' => 'name',
 'type' => 'type'    ];
 
@@ -127,7 +124,6 @@ class DsLink implements ModelInterface, ArrayAccess
 'in_language' => 'setInLanguage',
 'title' => 'setTitle',
 'ordering_number' => 'setOrderingNumber',
-'target' => 'setTarget',
 'name' => 'setName',
 'type' => 'setType'    ];
 
@@ -142,7 +138,6 @@ class DsLink implements ModelInterface, ArrayAccess
 'in_language' => 'getInLanguage',
 'title' => 'getTitle',
 'ordering_number' => 'getOrderingNumber',
-'target' => 'getTarget',
 'name' => 'getName',
 'type' => 'getType'    ];
 
@@ -209,7 +204,6 @@ class DsLink implements ModelInterface, ArrayAccess
         $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['ordering_number'] = isset($data['ordering_number']) ? $data['ordering_number'] : null;
-        $this->container['target'] = isset($data['target']) ? $data['target'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -299,7 +293,7 @@ class DsLink implements ModelInterface, ArrayAccess
     /**
      * Sets in_language
      *
-     * @param string $in_language in_language
+     * @param string $in_language Two letter ISO code of link language
      *
      * @return $this
      */
@@ -323,7 +317,7 @@ class DsLink implements ModelInterface, ArrayAccess
     /**
      * Sets title
      *
-     * @param string $title title
+     * @param string $title Link text
      *
      * @return $this
      */
@@ -347,37 +341,13 @@ class DsLink implements ModelInterface, ArrayAccess
     /**
      * Sets ordering_number
      *
-     * @param int $ordering_number ordering_number
+     * @param int $ordering_number Used to represent order of tour stages
      *
      * @return $this
      */
     public function setOrderingNumber($ordering_number)
     {
         $this->container['ordering_number'] = $ordering_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets target
-     *
-     * @return \Infocenter\Client\Model\DsBaseSimplex
-     */
-    public function getTarget()
-    {
-        return $this->container['target'];
-    }
-
-    /**
-     * Sets target
-     *
-     * @param \Infocenter\Client\Model\DsBaseSimplex $target target
-     *
-     * @return $this
-     */
-    public function setTarget($target)
-    {
-        $this->container['target'] = $target;
 
         return $this;
     }
@@ -395,7 +365,7 @@ class DsLink implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Multilingual. Can contain HTML
      *
      * @return $this
      */

@@ -221,7 +221,7 @@ class DsFacetResponse implements ModelInterface, ArrayAccess
     /**
      * Sets filter_property_name
      *
-     * @param string $filter_property_name filter_property_name
+     * @param string $filter_property_name Facet property name used for filtering and getting exact facets
      *
      * @return $this
      */
@@ -245,7 +245,7 @@ class DsFacetResponse implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Human readable facet name
      *
      * @return $this
      */
@@ -269,7 +269,7 @@ class DsFacetResponse implements ModelInterface, ArrayAccess
     /**
      * Sets values
      *
-     * @param \Infocenter\Client\Model\DsFacetValueResponse[] $values values
+     * @param \Infocenter\Client\Model\DsFacetValueResponse[] $values Type of value property. Could be used for building correct odata filters
      *
      * @return $this
      */

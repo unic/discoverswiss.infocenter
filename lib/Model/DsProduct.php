@@ -485,7 +485,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets service
      *
-     * @param string $service service
+     * @param string $service The service identifier (refers to Partner)
      *
      * @return $this
      */
@@ -509,7 +509,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets variant
      *
-     * @param \Infocenter\Client\Model\DsProductVariant[] $variant variant
+     * @param \Infocenter\Client\Model\DsProductVariant[] $variant Product variants which can be ordered
      *
      * @return $this
      */
@@ -653,7 +653,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets item_field
      *
-     * @param \Infocenter\Client\Model\DsFieldDefinition[] $item_field item_field
+     * @param \Infocenter\Client\Model\DsFieldDefinition[] $item_field Fields which must/should be added with values of the orderItem
      *
      * @return $this
      */
@@ -677,7 +677,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets traveler_field
      *
-     * @param \Infocenter\Client\Model\DsFieldDefinition[] $traveler_field traveler_field
+     * @param \Infocenter\Client\Model\DsFieldDefinition[] $traveler_field Fields which must/should be added with values of the traveler
      *
      * @return $this
      */
@@ -869,7 +869,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets inclusions
      *
-     * @param string[] $inclusions inclusions
+     * @param string[] $inclusions List of items that are included in the activity
      *
      * @return $this
      */
@@ -893,7 +893,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets exclusions
      *
-     * @param string[] $exclusions exclusions
+     * @param string[] $exclusions List of items that are excluded
      *
      * @return $this
      */
@@ -917,7 +917,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets important_info
      *
-     * @param string[] $important_info important_info
+     * @param string[] $important_info List of items that are important to know
      *
      * @return $this
      */
@@ -941,7 +941,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets detailed_information
      *
-     * @param string[] $detailed_information detailed_information
+     * @param string[] $detailed_information List of details or highlights
      *
      * @return $this
      */
@@ -965,7 +965,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets destination
      *
-     * @param string $destination destination
+     * @param string $destination Zielpunkt der Tour. Describes the destination of the tour
      *
      * @return $this
      */
@@ -1109,7 +1109,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets robots
      *
-     * @param string $robots robots
+     * @param string $robots Based on the same values that used in the Robots Meta Tag as defined by Google
      *
      * @return $this
      */
@@ -1157,7 +1157,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param string $id json-ld: full url to load the object (based on identifier)
      *
      * @return $this
      */
@@ -1301,7 +1301,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets auto_translated_data
      *
-     * @param bool $auto_translated_data auto_translated_data
+     * @param bool $auto_translated_data Indicates if the data in the current language was automatically translated
      *
      * @return $this
      */
@@ -1373,7 +1373,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets description
      *
-     * @param string $description description
+     * @param string $description Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML
      *
      * @return $this
      */
@@ -1397,7 +1397,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets disambiguating_description
      *
-     * @param string $disambiguating_description disambiguating_description
+     * @param string $disambiguating_description Multilingual. Can contain HTML
      *
      * @return $this
      */
@@ -1469,7 +1469,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets url
      *
-     * @param string $url url
+     * @param string $url URL of the item
      *
      * @return $this
      */
@@ -1493,7 +1493,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets additional_type
      *
-     * @param string $additional_type additional_type
+     * @param string $additional_type Name of the 'real', more descriptive class which has no additional properties. Examples are schema.org/Country, schema.org/State, schema.org/City
      *
      * @return $this
      */
@@ -1517,7 +1517,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets link
      *
-     * @param \Infocenter\Client\Model\DsLink[] $link link
+     * @param \Infocenter\Client\Model\DsLink[] $link Web-links and general links between things
      *
      * @return $this
      */
@@ -1565,7 +1565,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Multilingual. Can contain HTML
      *
      * @return $this
      */

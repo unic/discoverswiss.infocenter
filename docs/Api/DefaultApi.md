@@ -4905,7 +4905,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **search**
-> \Infocenter\Client\Model\DsSearchResponse search($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsSearchResponse search($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version, $authorization)
 
 Search
 
@@ -4934,9 +4934,10 @@ $body = new \Infocenter\Client\Model\DsFullSearchRequest(); // \Infocenter\Clien
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 $category_version = "category_version_example"; // string | Use to filter categories by version
+$authorization = "authorization_example"; // string | Authorization header to identify the B2C user profile.
 
 try {
-    $result = $apiInstance->search($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->search($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->search: ', $e->getMessage(), PHP_EOL;
@@ -4953,6 +4954,7 @@ Name | Type | Description  | Notes
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
+ **authorization** | **string**| Authorization header to identify the B2C user profile. | [optional]
 
 ### Return type
 
@@ -4970,7 +4972,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByGET**
-> \Infocenter\Client\Model\DsSearchResponse searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsSearchResponse searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version, $authorization)
 
 Search by GET
 
@@ -5033,9 +5035,10 @@ $campaign_tag = "campaign_tag_example"; // string | Use property for filtering/f
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 $category_version = "category_version_example"; // string | Use to filter categories by version
+$authorization = "authorization_example"; // string | Authorization header to identify the B2C user profile.
 
 try {
-    $result = $apiInstance->searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGET: ', $e->getMessage(), PHP_EOL;
@@ -5086,6 +5089,7 @@ Name | Type | Description  | Notes
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
+ **authorization** | **string**| Authorization header to identify the B2C user profile. | [optional]
 
 ### Return type
 
