@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**max_value** | **double** |  | [optional] 
-**min_value** | **double** |  | [optional] 
+**max_value** | **string** |  | [optional] 
+**min_value** | **string** |  | [optional] 
 **unit_code** | **string** |  | [optional] 
 **unit_text** | **string** |  | [optional] 
 **value** | **object** |  | [optional] 
@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **value_type** | **string** | String, integer, double etc. | [optional] 
 **value_description** | **string** | Multilingual description of the value (for example of codes) | [optional] 
 **audience** | **string[]** |  | [optional] 
+**type_name** | **string** | Translated name of type. | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** | Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML | [optional] 
 **disambiguating_description** | **string** | Multilingual. Can contain HTML | [optional] 

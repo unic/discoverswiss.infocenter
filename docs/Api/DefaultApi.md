@@ -4,11 +4,14 @@ All URIs are relative to *https://api.discover.swiss/test/info/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**accommodation**](DefaultApi.md#accommodation) | **GET** /accommodations/{id} | Accommodation
 [**administrativeAreaRegion**](DefaultApi.md#administrativearearegion) | **GET** /areas/{id} | AdministrativeArea (Region)
 [**administrativeAreaRegionDailyForecast**](DefaultApi.md#administrativearearegiondailyforecast) | **GET** /areas/{id}/weather/forecast/daily | AdministrativeArea (Region) daily forecast
 [**administrativeAreaRegionHourlyForecast**](DefaultApi.md#administrativearearegionhourlyforecast) | **GET** /areas/{id}/weather/forecast/hourly | AdministrativeArea (Region) hourly forecast
 [**administrativeAreaRegionWeather**](DefaultApi.md#administrativearearegionweather) | **GET** /areas/{id}/weather | AdministrativeArea (Region) weather
+[**amenity**](DefaultApi.md#amenity) | **GET** /amenities/{id} | Amenity
 [**audioObject**](DefaultApi.md#audioobject) | **GET** /audioObjects/{id} | AudioObject
+[**award**](DefaultApi.md#award) | **GET** /awards/{id} | Award
 [**category**](DefaultApi.md#category) | **GET** /categories/{id} | Category
 [**categoryTree**](DefaultApi.md#categorytree) | **GET** /categories/{id}/tree | Category Tree
 [**civicStructure**](DefaultApi.md#civicstructure) | **GET** /civicStructures/{id} | CivicStructure
@@ -33,8 +36,11 @@ Method | HTTP request | Description
 [**getStatusAbout**](DefaultApi.md#getstatusabout) | **GET** /status/about | GetStatusAbout
 [**getTheCurrentTermVersionsOfThePartner**](DefaultApi.md#getthecurrenttermversionsofthepartner) | **GET** /partners/{partnerAcronym}/terms/currentVersion | Get the current TermVersions of the partner
 [**imageObject**](DefaultApi.md#imageobject) | **GET** /imageObjects/{id} | ImageObject
+[**listAccommodation**](DefaultApi.md#listaccommodation) | **GET** /accommodations | List Accommodation
 [**listAdministrativeAreaRegion**](DefaultApi.md#listadministrativearearegion) | **GET** /areas | List AdministrativeArea (Region)
+[**listAmenities**](DefaultApi.md#listamenities) | **GET** /amenities | List Amenities
 [**listAudioObject**](DefaultApi.md#listaudioobject) | **GET** /audioObjects | List AudioObject
+[**listAward**](DefaultApi.md#listaward) | **GET** /awards | List Award
 [**listCategory**](DefaultApi.md#listcategory) | **GET** /categories | List Category
 [**listCivicStructure**](DefaultApi.md#listcivicstructure) | **GET** /civicStructures | List CivicStructure
 [**listCondition**](DefaultApi.md#listcondition) | **GET** /conditions | List Condition
@@ -47,11 +53,13 @@ Method | HTTP request | Description
 [**listMediaObject**](DefaultApi.md#listmediaobject) | **GET** /mediaObjects | List MediaObject
 [**listPlace**](DefaultApi.md#listplace) | **GET** /places | List Place
 [**listProducts**](DefaultApi.md#listproducts) | **GET** /products | List Products
+[**listProductsPOST**](DefaultApi.md#listproductspost) | **POST** /getProducts | List Products (POST)
 [**listReview**](DefaultApi.md#listreview) | **GET** /reviews | List Review
 [**listSkiResort**](DefaultApi.md#listskiresort) | **GET** /skiresorts | List SkiResort
 [**listTag**](DefaultApi.md#listtag) | **GET** /tags | List Tag
 [**listTimezones**](DefaultApi.md#listtimezones) | **GET** /timezones | List Timezones
 [**listTour**](DefaultApi.md#listtour) | **GET** /tours | List Tour
+[**listTransportationSystem**](DefaultApi.md#listtransportationsystem) | **GET** /transportationSystems | List TransportationSystem
 [**listVideoObject**](DefaultApi.md#listvideoobject) | **GET** /videoObjects | List VideoObject
 [**listWebcams**](DefaultApi.md#listwebcams) | **GET** /webcams | List Webcams
 [**localBusiness**](DefaultApi.md#localbusiness) | **GET** /localbusinesses/{id} | LocalBusiness
@@ -63,6 +71,7 @@ Method | HTTP request | Description
 [**lodgingBusinessHourlyForecast**](DefaultApi.md#lodgingbusinesshourlyforecast) | **GET** /lodgingbusinesses/{id}/weather/forecast/hourly | LodgingBusiness hourly forecast
 [**lodgingBusinessWeather**](DefaultApi.md#lodgingbusinessweather) | **GET** /lodgingbusinesses/{id}/weather | LodgingBusiness weather
 [**mediaObject**](DefaultApi.md#mediaobject) | **GET** /mediaObjects/{id} | MediaObject
+[**openapi**](DefaultApi.md#openapi) | **GET** /openapi/{version}.{type} | OpenApi
 [**place**](DefaultApi.md#place) | **GET** /places/{id} | Place
 [**placeDailyForecast**](DefaultApi.md#placedailyforecast) | **GET** /places/{id}/weather/forecast/daily | Place daily forecast
 [**placeHourlyForecast**](DefaultApi.md#placehourlyforecast) | **GET** /places/{id}/weather/forecast/hourly | Place hourly forecast
@@ -84,6 +93,10 @@ Method | HTTP request | Description
 [**tourDailyForecast**](DefaultApi.md#tourdailyforecast) | **GET** /tours/{id}/weather/forecast/daily | Tour daily forecast
 [**tourHourlyForecast**](DefaultApi.md#tourhourlyforecast) | **GET** /tours/{id}/weather/forecast/hourly | Tour hourly forecast
 [**tourWeather**](DefaultApi.md#tourweather) | **GET** /tours/{id}/weather | Tour weather
+[**transportationSystem**](DefaultApi.md#transportationsystem) | **GET** /transportationSystems/{id} | TransportationSystem
+[**transportationSystemDailyForecast**](DefaultApi.md#transportationsystemdailyforecast) | **GET** /transportationSystems/{id}/weather/forecast/daily | TransportationSystem daily forecast
+[**transportationSystemHourlyForecast**](DefaultApi.md#transportationsystemhourlyforecast) | **GET** /transportationSystems/{id}/weather/forecast/hourly | TransportationSystem hourly forecast
+[**transportationSystemWeather**](DefaultApi.md#transportationsystemweather) | **GET** /transportationSystems/{id}/weather | TransportationSystem weather
 [**treeAdministrativeAreaRegion**](DefaultApi.md#treeadministrativearearegion) | **GET** /areas/{id}/tree | Tree AdministrativeArea (Region)
 [**typeTree**](DefaultApi.md#typetree) | **GET** /types/tree | Type Tree
 [**videoObject**](DefaultApi.md#videoobject) | **GET** /videoObjects/{id} | VideoObject
@@ -92,12 +105,83 @@ Method | HTTP request | Description
 [**webcamHourlyForecast**](DefaultApi.md#webcamhourlyforecast) | **GET** /webcams/{id}/weather/forecast/hourly | Webcam hourly forecast
 [**webcamWeather**](DefaultApi.md#webcamweather) | **GET** /webcams/{id}/weather | Webcam weather
 
+# **accommodation**
+> \Infocenter\Client\Model\DsAccommodation accommodation($id, $ocp_apim_subscription_key, $project, $select, $include_all_photos, $accept_language, $accept_timezone, $scope)
+
+Accommodation
+
+Get the full detailed information of an Accommodation object.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Accommodation to get single object.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Pass list of object properties to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+
+try {
+    $result = $apiInstance->accommodation($id, $ocp_apim_subscription_key, $project, $select, $include_all_photos, $accept_language, $accept_timezone, $scope);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->accommodation: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of Accommodation to get single object. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsAccommodation**](../Model/DsAccommodation.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **administrativeAreaRegion**
 > \Infocenter\Client\Model\DsAdministrativeArea administrativeAreaRegion($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
 
 AdministrativeArea (Region)
 
-Get the full detailed information of a Region object.
+Get the full detailed information of an Region object.
 
 ### Example
 ```php
@@ -164,7 +248,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **administrativeAreaRegionDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecast[] administrativeAreaRegionDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray administrativeAreaRegionDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
 
 AdministrativeArea (Region) daily forecast
 
@@ -219,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
+[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
 
 ### Authorization
 
@@ -372,12 +456,73 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **amenity**
+> \Infocenter\Client\Model\DsLocationFeatureSpecification amenity($id, $ocp_apim_subscription_key, $accept_language)
+
+Amenity
+
+Get the full detailed information of an Amenity object.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Amenity to get single object.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+
+try {
+    $result = $apiInstance->amenity($id, $ocp_apim_subscription_key, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->amenity: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of Amenity to get single object. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsLocationFeatureSpecification**](../Model/DsLocationFeatureSpecification.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **audioObject**
-> \Infocenter\Client\Model\DsAudioObject audioObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsAudioObject audioObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
 
 AudioObject
 
-Get the full detailed information of a AudioObject object.
+Get the full detailed information of an AudioObject object.
 
 ### Example
 ```php
@@ -404,10 +549,11 @@ $contained_in_place = "contained_in_place_example"; // string | Use property ide
 $select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->audioObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->audioObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->audioObject: ', $e->getMessage(), PHP_EOL;
@@ -426,6 +572,7 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -443,12 +590,81 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **award**
+> \Infocenter\Client\Model\DsAward award($id, $ocp_apim_subscription_key, $project, $select, $accept_language, $accept_timezone, $scope)
+
+Award
+
+Get the full detailed information of an Award object.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of Award to get single object.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Pass list of object properties to query
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+
+try {
+    $result = $apiInstance->award($id, $ocp_apim_subscription_key, $project, $select, $accept_language, $accept_timezone, $scope);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->award: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of Award to get single object. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsAward**](../Model/DsAward.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **category**
 > \Infocenter\Client\Model\DsCategory category($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
 
 Category
 
-Get the full detailed information of a Category object.
+Get the full detailed information of an Category object.
 
 ### Example
 ```php
@@ -519,7 +735,7 @@ Name | Type | Description  | Notes
 
 Category Tree
 
-Get the full detailed information of a Category tree.
+Get the full detailed information of an Category tree.
 
 ### Example
 ```php
@@ -584,11 +800,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **civicStructure**
-> \Infocenter\Client\Model\DsCivicStructure civicStructure($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsCivicStructure civicStructure($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 CivicStructure
 
-Get the full detailed information of a CivicStructure object.
+Get the full detailed information of an CivicStructure object.
 
 ### Example
 ```php
@@ -613,12 +829,14 @@ $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Su
 $project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $select = "select_example"; // string | Pass list of object properties to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->civicStructure($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->civicStructure($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->civicStructure: ', $e->getMessage(), PHP_EOL;
@@ -635,8 +853,10 @@ Name | Type | Description  | Notes
  **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -655,7 +875,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **civicStructureDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecast[] civicStructureDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray civicStructureDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
 
 CivicStructure daily forecast
 
@@ -710,7 +930,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
+[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
 
 ### Authorization
 
@@ -864,11 +1084,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **condition**
-> \Infocenter\Client\Model\DsCondition condition($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsCondition condition($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 Condition
 
-Get the full detailed information of a Condition object.
+Get the full detailed information of an Condition object.
 
 ### Example
 ```php
@@ -893,12 +1113,14 @@ $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Su
 $project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $select = "select_example"; // string | Pass list of object properties to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->condition($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->condition($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->condition: ', $e->getMessage(), PHP_EOL;
@@ -915,8 +1137,10 @@ Name | Type | Description  | Notes
  **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -935,7 +1159,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **conditionDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecast[] conditionDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray conditionDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
 
 Condition daily forecast
 
@@ -990,7 +1214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
+[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
 
 ### Authorization
 
@@ -1144,11 +1368,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **creativeWork**
-> \Infocenter\Client\Model\DsCreativeWork creativeWork($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsCreativeWork creativeWork($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
 
 CreativeWork
 
-Get the full detailed information of a CreativeWork object.
+Get the full detailed information of an CreativeWork object.
 
 ### Example
 ```php
@@ -1175,10 +1399,11 @@ $contained_in_place = "contained_in_place_example"; // string | Use property ide
 $select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->creativeWork($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->creativeWork($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->creativeWork: ', $e->getMessage(), PHP_EOL;
@@ -1197,6 +1422,7 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -1219,7 +1445,7 @@ Name | Type | Description  | Notes
 
 Current TermVersion
 
-Get the full detailed information of a current TermVersion object queried by the term-code and the language (Accept-Language header)
+Get the full detailed information of an current TermVersion object queried by the term-code and the language (Accept-Language header)
 
 ### Example
 ```php
@@ -1278,11 +1504,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **event**
-> \Infocenter\Client\Model\DsEvent event($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsEvent event($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 Event
 
-Get the full detailed information of a Event object.
+Get the full detailed information of an Event object.
 
 ### Example
 ```php
@@ -1307,12 +1533,14 @@ $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Su
 $project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $select = "select_example"; // string | Pass list of object properties to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->event($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->event($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->event: ', $e->getMessage(), PHP_EOL;
@@ -1329,8 +1557,10 @@ Name | Type | Description  | Notes
  **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -1349,7 +1579,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **eventDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecast[] eventDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray eventDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
 
 Event daily forecast
 
@@ -1404,7 +1634,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
+[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
 
 ### Authorization
 
@@ -1558,11 +1788,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **foodEstablishment**
-> \Infocenter\Client\Model\DsFoodEstablishment foodEstablishment($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsFoodEstablishment foodEstablishment($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 FoodEstablishment
 
-Get the full detailed information of a FoodEstablishment object.
+Get the full detailed information of an FoodEstablishment object.
 
 ### Example
 ```php
@@ -1587,12 +1817,14 @@ $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Su
 $project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $select = "select_example"; // string | Pass list of object properties to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->foodEstablishment($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->foodEstablishment($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->foodEstablishment: ', $e->getMessage(), PHP_EOL;
@@ -1609,8 +1841,10 @@ Name | Type | Description  | Notes
  **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -1700,7 +1934,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **foodEstablishmentWeatherDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecast[] foodEstablishmentWeatherDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray foodEstablishmentWeatherDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
 
 FoodEstablishment weather daily forecast
 
@@ -1755,7 +1989,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
+[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
 
 ### Authorization
 
@@ -1838,7 +2072,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getStatus**
-> \Infocenter\Client\Model\DsStatusGet200TextPlainResponse getStatus($ocp_apim_subscription_key)
+> getStatus($ocp_apim_subscription_key)
 
 GetStatus
 
@@ -1865,8 +2099,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->getStatus($ocp_apim_subscription_key);
-    print_r($result);
+    $apiInstance->getStatus($ocp_apim_subscription_key);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStatus: ', $e->getMessage(), PHP_EOL;
 }
@@ -1881,7 +2114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsStatusGet200TextPlainResponse**](../Model/DsStatusGet200TextPlainResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1890,7 +2123,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1947,16 +2180,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTheCurrentTermVersionsOfThePartner**
-> \Infocenter\Client\Model\DsTermVersionArray getTheCurrentTermVersionsOfThePartner($partner_acronym, $ocp_apim_subscription_key, $scope, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTermVersionArray getTheCurrentTermVersionsOfThePartner($partner_acronym, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
 
 Get the current TermVersions of the partner
 
-Get the full detailed information of a Partner current TermVersion object and the language (Accept-Language header)
+Get the full detailed information of an Partner current TermVersion object and the language (Accept-Language header)
 
 ### Example
 ```php
@@ -1978,12 +2211,11 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $partner_acronym = "partner_acronym_example"; // string | Use partner acronym to set the partner which should be used in the request.
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$scope = "scope_example"; // string | The scope of the term definition ('profile' or null)
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->getTheCurrentTermVersionsOfThePartner($partner_acronym, $ocp_apim_subscription_key, $scope, $accept_language, $accept_timezone);
+    $result = $apiInstance->getTheCurrentTermVersionsOfThePartner($partner_acronym, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTheCurrentTermVersionsOfThePartner: ', $e->getMessage(), PHP_EOL;
@@ -1997,7 +2229,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **partner_acronym** | **string**| Use partner acronym to set the partner which should be used in the request. |
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **scope** | **string**| The scope of the term definition (&#x27;profile&#x27; or null) | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
 
@@ -2017,11 +2248,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **imageObject**
-> \Infocenter\Client\Model\DsImageObject imageObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsImageObject imageObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
 
 ImageObject
 
-Get the full detailed information of a ImageObject object.
+Get the full detailed information of an ImageObject object.
 
 ### Example
 ```php
@@ -2048,10 +2279,11 @@ $contained_in_place = "contained_in_place_example"; // string | Use property ide
 $select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->imageObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->imageObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->imageObject: ', $e->getMessage(), PHP_EOL;
@@ -2070,11 +2302,97 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
 
 [**\Infocenter\Client\Model\DsImageObject**](../Model/DsImageObject.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **listAccommodation**
+> \Infocenter\Client\Model\DsAccommodationsResponse listAccommodation($ocp_apim_subscription_key, $project, $select, $updated_since, $datasource, $continuation_token, $top, $additional_type, $include_count, $usage, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope)
+
+List Accommodation
+
+Get the list of the Accommodations with full detailed information.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Pass list of object properties to query
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$datasource = "datasource_example"; // string | Use datasource to filter.
+$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
+$top = 56; // int | Format - int32. Number of next set of entities.
+$additional_type = "additional_type_example"; // string | Filter by the additional type property
+$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$usage = "usage_example"; // string | usage
+$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+
+try {
+    $result = $apiInstance->listAccommodation($ocp_apim_subscription_key, $project, $select, $updated_since, $datasource, $continuation_token, $top, $additional_type, $include_count, $usage, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->listAccommodation: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **datasource** | **string**| Use datasource to filter. | [optional]
+ **continuation_token** | **string**| Use it for get next set of data. | [optional]
+ **top** | **int**| Format - int32. Number of next set of entities. | [optional]
+ **additional_type** | **string**| Filter by the additional type property | [optional]
+ **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **usage** | **string**| usage | [optional]
+ **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsAccommodationsResponse**](../Model/DsAccommodationsResponse.md)
 
 ### Authorization
 
@@ -2115,7 +2433,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $category = "category_example"; // string | Use property identifier of category to filter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -2145,7 +2463,7 @@ Name | Type | Description  | Notes
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
  **category** | **string**| Use property identifier of category to filter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -2174,8 +2492,75 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **listAmenities**
+> \Infocenter\Client\Model\DsLocationFeatureSpecificationArray listAmenities($ocp_apim_subscription_key, $additional_type, $place_features, $lodging_business_features, $accommodation_features, $accept_language)
+
+List Amenities
+
+Get the list of the Amenities with full detailed information.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$additional_type = "additional_type_example"; // string | Filter by the additional type property
+$place_features = true; // bool | Filter by place features.
+$lodging_business_features = true; // bool | Filter by lodging business features.
+$accommodation_features = true; // bool | Filter by accommodation features.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+
+try {
+    $result = $apiInstance->listAmenities($ocp_apim_subscription_key, $additional_type, $place_features, $lodging_business_features, $accommodation_features, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->listAmenities: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **additional_type** | **string**| Filter by the additional type property | [optional]
+ **place_features** | **bool**| Filter by place features. | [optional]
+ **lodging_business_features** | **bool**| Filter by lodging business features. | [optional]
+ **accommodation_features** | **bool**| Filter by accommodation features. | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsLocationFeatureSpecificationArray**](../Model/DsLocationFeatureSpecificationArray.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **listAudioObject**
-> \Infocenter\Client\Model\DsAudioObjectsResponse listAudioObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsAudioObjectsResponse listAudioObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
 
 List AudioObject
 
@@ -2200,7 +2585,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -2210,10 +2595,11 @@ $include_count = true; // bool | Pass 'true' if you want to get total filtered i
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listAudioObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listAudioObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listAudioObject: ', $e->getMessage(), PHP_EOL;
@@ -2226,7 +2612,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -2236,11 +2622,95 @@ Name | Type | Description  | Notes
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
 
 [**\Infocenter\Client\Model\DsAudioObjectsResponse**](../Model/DsAudioObjectsResponse.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **listAward**
+> \Infocenter\Client\Model\DsAwardsResponse listAward($ocp_apim_subscription_key, $project, $select, $updated_since, $datasource, $continuation_token, $top, $additional_type, $include_count, $usage, $identifiers, $accept_language, $accept_timezone, $scope)
+
+List Award
+
+Get the list of the Awards with full detailed information.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Pass list of object properties to query
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$datasource = "datasource_example"; // string | Use datasource to filter.
+$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
+$top = 56; // int | Format - int32. Number of next set of entities.
+$additional_type = "additional_type_example"; // string | Filter by the additional type property
+$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$usage = "usage_example"; // string | usage
+$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+
+try {
+    $result = $apiInstance->listAward($ocp_apim_subscription_key, $project, $select, $updated_since, $datasource, $continuation_token, $top, $additional_type, $include_count, $usage, $identifiers, $accept_language, $accept_timezone, $scope);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->listAward: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **datasource** | **string**| Use datasource to filter. | [optional]
+ **continuation_token** | **string**| Use it for get next set of data. | [optional]
+ **top** | **int**| Format - int32. Number of next set of entities. | [optional]
+ **additional_type** | **string**| Filter by the additional type property | [optional]
+ **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **usage** | **string**| usage | [optional]
+ **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsAwardsResponse**](../Model/DsAwardsResponse.md)
 
 ### Authorization
 
@@ -2280,7 +2750,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $parent_category = "parent_category_example"; // string | Use property identifier of category to filter.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -2307,7 +2777,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
  **parent_category** | **string**| Use property identifier of category to filter. | [optional]
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -2335,7 +2805,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCivicStructure**
-> \Infocenter\Client\Model\DsCivicStructuresResponse listCivicStructure($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsCivicStructuresResponse listCivicStructure($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 List CivicStructure
 
@@ -2362,7 +2832,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $category = "category_example"; // string | Use property identifier of category to filter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -2370,12 +2840,14 @@ $project = "project_example"; // string | Required - Use this property to filter
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listCivicStructure($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listCivicStructure($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCivicStructure: ', $e->getMessage(), PHP_EOL;
@@ -2390,7 +2862,7 @@ Name | Type | Description  | Notes
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
  **category** | **string**| Use property identifier of category to filter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -2398,8 +2870,10 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -2418,7 +2892,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCondition**
-> \Infocenter\Client\Model\DsConditionsResponse listCondition($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_timezone, $accept_language, $category_version)
+> \Infocenter\Client\Model\DsConditionsResponse listCondition($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_timezone, $scope, $accept_language, $category_version)
 
 List Condition
 
@@ -2445,7 +2919,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $category = "category_example"; // string | Use property identifier of category to filter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -2453,12 +2927,14 @@ $project = "project_example"; // string | Required - Use this property to filter
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listCondition($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_timezone, $accept_language, $category_version);
+    $result = $apiInstance->listCondition($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_timezone, $scope, $accept_language, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCondition: ', $e->getMessage(), PHP_EOL;
@@ -2473,7 +2949,7 @@ Name | Type | Description  | Notes
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
  **category** | **string**| Use property identifier of category to filter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -2481,7 +2957,9 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
@@ -2501,7 +2979,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCreativeWork**
-> \Infocenter\Client\Model\DsCreativeWorksResponse listCreativeWork($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsCreativeWorksResponse listCreativeWork($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
 
 List CreativeWork
 
@@ -2526,7 +3004,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -2536,10 +3014,11 @@ $include_count = true; // bool | Pass 'true' if you want to get total filtered i
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listCreativeWork($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listCreativeWork($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCreativeWork: ', $e->getMessage(), PHP_EOL;
@@ -2552,7 +3031,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -2562,6 +3041,7 @@ Name | Type | Description  | Notes
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -2580,7 +3060,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listEvents**
-> \Infocenter\Client\Model\DsEventsResponse listEvents($ocp_apim_subscription_key, $updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $identifiers, $accept_timezone, $accept_language, $category_version)
+> \Infocenter\Client\Model\DsEventsResponse listEvents($ocp_apim_subscription_key, $updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_timezone, $scope, $accept_language, $category_version)
 
 List Events
 
@@ -2605,7 +3085,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $category = "category_example"; // string | Use property identifier of category to filter.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
@@ -2616,12 +3096,14 @@ $project = "project_example"; // string | Required - Use this property to filter
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listEvents($ocp_apim_subscription_key, $updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $identifiers, $accept_timezone, $accept_language, $category_version);
+    $result = $apiInstance->listEvents($ocp_apim_subscription_key, $updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_timezone, $scope, $accept_language, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listEvents: ', $e->getMessage(), PHP_EOL;
@@ -2634,7 +3116,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **category** | **string**| Use property identifier of category to filter. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
@@ -2645,7 +3127,9 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
@@ -2665,7 +3149,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listFoodEstablishment**
-> \Infocenter\Client\Model\DsFoodEstablishmentsResponse listFoodEstablishment($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsFoodEstablishmentsResponse listFoodEstablishment($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 List FoodEstablishment
 
@@ -2692,7 +3176,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $category = "category_example"; // string | Use property identifier of category to filter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -2700,12 +3184,14 @@ $project = "project_example"; // string | Required - Use this property to filter
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listFoodEstablishment($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listFoodEstablishment($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listFoodEstablishment: ', $e->getMessage(), PHP_EOL;
@@ -2720,7 +3206,7 @@ Name | Type | Description  | Notes
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
  **category** | **string**| Use property identifier of category to filter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -2728,8 +3214,10 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -2748,7 +3236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listImageObject**
-> \Infocenter\Client\Model\DsImageObjectsResponse listImageObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsImageObjectsResponse listImageObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
 
 List ImageObject
 
@@ -2773,7 +3261,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -2783,10 +3271,11 @@ $include_count = true; // bool | Pass 'true' if you want to get total filtered i
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listImageObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listImageObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listImageObject: ', $e->getMessage(), PHP_EOL;
@@ -2799,7 +3288,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -2809,6 +3298,7 @@ Name | Type | Description  | Notes
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -2827,7 +3317,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listLocalBusiness**
-> \Infocenter\Client\Model\DsLocalBusinessesResponse listLocalBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsLocalBusinessesResponse listLocalBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $additional_type, $parent_organization, $accept_language, $accept_timezone, $scope, $category_version)
 
 List LocalBusiness
 
@@ -2854,7 +3344,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $category = "category_example"; // string | Use property identifier of category to filter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -2863,12 +3353,16 @@ $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
 $description_mode = "description_mode_example"; // string | Use property to extract additional information from description to additionalProperty.
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$additional_type = "additional_type_example"; // string | Filter by the additional type property
+$parent_organization = "parent_organization_example"; // string | Filter by the parentOrganization property.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listLocalBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listLocalBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $additional_type, $parent_organization, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listLocalBusiness: ', $e->getMessage(), PHP_EOL;
@@ -2883,7 +3377,7 @@ Name | Type | Description  | Notes
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
  **category** | **string**| Use property identifier of category to filter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -2892,8 +3386,12 @@ Name | Type | Description  | Notes
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
  **description_mode** | **string**| Use property to extract additional information from description to additionalProperty. | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **additional_type** | **string**| Filter by the additional type property | [optional]
+ **parent_organization** | **string**| Filter by the parentOrganization property. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -2912,7 +3410,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listLodgingBusiness**
-> \Infocenter\Client\Model\DsLodgingBusinessesResponse listLodgingBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsLodgingBusinessesResponse listLodgingBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $parent_organization, $accept_language, $accept_timezone, $scope, $category_version)
 
 List LodgingBusiness
 
@@ -2939,7 +3437,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $category = "category_example"; // string | Use property identifier of category to filter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -2948,12 +3446,15 @@ $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
 $description_mode = "description_mode_example"; // string | Use property to extract additional information from description to additionalProperty.
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$parent_organization = "parent_organization_example"; // string | Filter by the parentOrganization property.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listLodgingBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listLodgingBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $parent_organization, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listLodgingBusiness: ', $e->getMessage(), PHP_EOL;
@@ -2968,7 +3469,7 @@ Name | Type | Description  | Notes
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
  **category** | **string**| Use property identifier of category to filter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -2977,8 +3478,11 @@ Name | Type | Description  | Notes
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
  **description_mode** | **string**| Use property to extract additional information from description to additionalProperty. | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **parent_organization** | **string**| Filter by the parentOrganization property. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -2997,7 +3501,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMediaObject**
-> \Infocenter\Client\Model\DsMediaObjectsResponse listMediaObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsMediaObjectsResponse listMediaObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
 
 List MediaObject
 
@@ -3022,7 +3526,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -3032,10 +3536,11 @@ $include_count = true; // bool | Pass 'true' if you want to get total filtered i
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listMediaObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listMediaObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listMediaObject: ', $e->getMessage(), PHP_EOL;
@@ -3048,7 +3553,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -3058,6 +3563,7 @@ Name | Type | Description  | Notes
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -3076,7 +3582,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listPlace**
-> \Infocenter\Client\Model\DsPlacesResponse listPlace($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsPlacesResponse listPlace($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 List Place
 
@@ -3103,7 +3609,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $category = "category_example"; // string | Use property identifier of category to filter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -3111,12 +3617,14 @@ $project = "project_example"; // string | Required - Use this property to filter
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listPlace($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listPlace($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listPlace: ', $e->getMessage(), PHP_EOL;
@@ -3131,7 +3639,7 @@ Name | Type | Description  | Notes
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
  **category** | **string**| Use property identifier of category to filter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -3139,8 +3647,10 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -3159,7 +3669,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listProducts**
-> \Infocenter\Client\Model\DsProductsResponse listProducts($ocp_apim_subscription_key, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $accept_language, $category_version)
+> \Infocenter\Client\Model\DsProductsResponse listProducts($ocp_apim_subscription_key, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $area_served, $accept_language, $category_version)
 
 List Products
 
@@ -3192,11 +3702,13 @@ $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
 $description_mode = "description_mode_example"; // string | Use property to extract additional information from description to additionalProperty.
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$area_served = "area_served_example"; // string | Filter by area served id
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listProducts($ocp_apim_subscription_key, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $accept_language, $category_version);
+    $result = $apiInstance->listProducts($ocp_apim_subscription_key, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $area_served, $accept_language, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listProducts: ', $e->getMessage(), PHP_EOL;
@@ -3217,6 +3729,8 @@ Name | Type | Description  | Notes
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
  **description_mode** | **string**| Use property to extract additional information from description to additionalProperty. | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **area_served** | **string**| Filter by area served id | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
@@ -3235,8 +3749,73 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **listProductsPOST**
+> \Infocenter\Client\Model\DsProductsResponse listProductsPOST($ocp_apim_subscription_key, $body, $accept_language, $category_version, $area_served)
+
+List Products (POST)
+
+Get the list of the Products with full detailed information. This endpoint offers the same functionality as GET /products and can be used as an alternative especially when the query parameters get too long.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$body = new \Infocenter\Client\Model\DsListProductRequest(); // \Infocenter\Client\Model\DsListProductRequest | 
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$category_version = "category_version_example"; // string | Use to filter categories by version
+$area_served = "area_served_example"; // string | Filter by area served id
+
+try {
+    $result = $apiInstance->listProductsPOST($ocp_apim_subscription_key, $body, $accept_language, $category_version, $area_served);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->listProductsPOST: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **body** | [**\Infocenter\Client\Model\DsListProductRequest**](../Model/DsListProductRequest.md)|  | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **category_version** | **string**| Use to filter categories by version | [optional]
+ **area_served** | **string**| Filter by area served id | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsProductsResponse**](../Model/DsProductsResponse.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **listReview**
-> \Infocenter\Client\Model\DsReviewResponse listReview($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsReviewResponse listReview($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
 
 List Review
 
@@ -3261,7 +3840,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -3271,10 +3850,11 @@ $include_count = true; // bool | Pass 'true' if you want to get total filtered i
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listReview($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listReview($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listReview: ', $e->getMessage(), PHP_EOL;
@@ -3287,7 +3867,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -3297,6 +3877,7 @@ Name | Type | Description  | Notes
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -3315,7 +3896,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSkiResort**
-> \Infocenter\Client\Model\DsSkiResortsResponse listSkiResort($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsSkiResortsResponse listSkiResort($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 List SkiResort
 
@@ -3342,7 +3923,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $category = "category_example"; // string | Use property identifier of category to filter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -3350,12 +3931,14 @@ $project = "project_example"; // string | Required - Use this property to filter
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listSkiResort($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listSkiResort($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listSkiResort: ', $e->getMessage(), PHP_EOL;
@@ -3370,7 +3953,7 @@ Name | Type | Description  | Notes
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
  **category** | **string**| Use property identifier of category to filter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -3378,8 +3961,10 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -3423,7 +4008,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -3450,7 +4035,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -3536,7 +4121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTour**
-> \Infocenter\Client\Model\DsToursResponse listTour($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsToursResponse listTour($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 List Tour
 
@@ -3563,7 +4148,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $category = "category_example"; // string | Use property identifier of category to filter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -3571,12 +4156,14 @@ $project = "project_example"; // string | Required - Use this property to filter
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listTour($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listTour($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listTour: ', $e->getMessage(), PHP_EOL;
@@ -3591,7 +4178,7 @@ Name | Type | Description  | Notes
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
  **category** | **string**| Use property identifier of category to filter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -3599,8 +4186,10 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -3618,8 +4207,95 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **listTransportationSystem**
+> \Infocenter\Client\Model\DsTransportationSystemsResponse listTransportationSystem($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+
+List TransportationSystem
+
+Get the list of the TransportationSystems with full detailed information.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$category = "category_example"; // string | Use property identifier of category to filter.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$datasource = "datasource_example"; // string | Use datasource to filter.
+$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
+$top = 56; // int | Format - int32. Number of next set of entities.
+$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Pass list of object properties to query
+$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+$category_version = "category_version_example"; // string | Use to filter categories by version
+
+try {
+    $result = $apiInstance->listTransportationSystem($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->listTransportationSystem: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **category** | **string**| Use property identifier of category to filter. | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **datasource** | **string**| Use datasource to filter. | [optional]
+ **continuation_token** | **string**| Use it for get next set of data. | [optional]
+ **top** | **int**| Format - int32. Number of next set of entities. | [optional]
+ **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
+ **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+ **category_version** | **string**| Use to filter categories by version | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsTransportationSystemsResponse**](../Model/DsTransportationSystemsResponse.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **listVideoObject**
-> \Infocenter\Client\Model\DsVideoObjectsResponse listVideoObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsVideoObjectsResponse listVideoObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
 
 List VideoObject
 
@@ -3644,7 +4320,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -3654,10 +4330,11 @@ $include_count = true; // bool | Pass 'true' if you want to get total filtered i
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listVideoObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listVideoObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listVideoObject: ', $e->getMessage(), PHP_EOL;
@@ -3670,7 +4347,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -3680,6 +4357,7 @@ Name | Type | Description  | Notes
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -3698,7 +4376,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listWebcams**
-> \Infocenter\Client\Model\DsWebcamsResponse listWebcams($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsWebcamsResponse listWebcams($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 List Webcams
 
@@ -3725,7 +4403,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $category = "category_example"; // string | Use property identifier of category to filter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = "updated_since_example"; // string | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
 $datasource = "datasource_example"; // string | Use datasource to filter.
 $continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
 $top = 56; // int | Format - int32. Number of next set of entities.
@@ -3733,12 +4411,14 @@ $project = "project_example"; // string | Required - Use this property to filter
 $select = "select_example"; // string | Pass list of object properties to query
 $include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
 $identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listWebcams($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->listWebcams($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listWebcams: ', $e->getMessage(), PHP_EOL;
@@ -3753,7 +4433,7 @@ Name | Type | Description  | Notes
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
  **category** | **string**| Use property identifier of category to filter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **string**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
  **datasource** | **string**| Use datasource to filter. | [optional]
  **continuation_token** | **string**| Use it for get next set of data. | [optional]
  **top** | **int**| Format - int32. Number of next set of entities. | [optional]
@@ -3761,8 +4441,10 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
  **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -3781,11 +4463,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **localBusiness**
-> \Infocenter\Client\Model\DsLocalBusiness localBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsLocalBusiness localBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 LocalBusiness
 
-Get the full detailed information of a LocalBusiness object.
+Get the full detailed information of an LocalBusiness object.
 
 ### Example
 ```php
@@ -3811,12 +4493,14 @@ $project = "project_example"; // string | Required - Use this property to filter
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $select = "select_example"; // string | Pass list of object properties to query
 $description_mode = "description_mode_example"; // string | Use property to extract additional information from description to additionalProperty.
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->localBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->localBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->localBusiness: ', $e->getMessage(), PHP_EOL;
@@ -3834,8 +4518,10 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **description_mode** | **string**| Use property to extract additional information from description to additionalProperty. | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -3854,7 +4540,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **localBusinessDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecast[] localBusinessDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray localBusinessDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
 
 LocalBusiness daily forecast
 
@@ -3909,7 +4595,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
+[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
 
 ### Authorization
 
@@ -4063,11 +4749,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lodgingBusiness**
-> \Infocenter\Client\Model\DsLodgingBusiness lodgingBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsLodgingBusiness lodgingBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 LodgingBusiness
 
-Get the full detailed information of a LodgingBusiness object.
+Get the full detailed information of an LodgingBusiness object.
 
 ### Example
 ```php
@@ -4093,12 +4779,14 @@ $project = "project_example"; // string | Required - Use this property to filter
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $select = "select_example"; // string | Pass list of object properties to query
 $description_mode = "description_mode_example"; // string | Use property to extract additional information from description to additionalProperty.
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->lodgingBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->lodgingBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->lodgingBusiness: ', $e->getMessage(), PHP_EOL;
@@ -4116,8 +4804,10 @@ Name | Type | Description  | Notes
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **description_mode** | **string**| Use property to extract additional information from description to additionalProperty. | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -4136,7 +4826,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lodgingBusinessDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecast[] lodgingBusinessDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray lodgingBusinessDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
 
 LodgingBusiness daily forecast
 
@@ -4191,7 +4881,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
+[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
 
 ### Authorization
 
@@ -4345,11 +5035,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **mediaObject**
-> \Infocenter\Client\Model\DsMediaObject mediaObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsMediaObject mediaObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
 
 MediaObject
 
-Get the full detailed information of a MediaObject object.
+Get the full detailed information of an MediaObject object.
 
 ### Example
 ```php
@@ -4376,10 +5066,11 @@ $contained_in_place = "contained_in_place_example"; // string | Use property ide
 $select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->mediaObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->mediaObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->mediaObject: ', $e->getMessage(), PHP_EOL;
@@ -4398,6 +5089,7 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -4415,12 +5107,68 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **openapi**
+> openapi($version, $type)
+
+OpenApi
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$version = new \Infocenter\Client\Model\Ds_(); // Ds_ | 
+$type = new \Infocenter\Client\Model\Ds_(); // Ds_ | 
+
+try {
+    $apiInstance->openapi($version, $type);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->openapi: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | [**Ds_**](../Model/.md)|  |
+ **type** | [**Ds_**](../Model/.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **place**
-> \Infocenter\Client\Model\DsPlace place($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsPlace place($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 Place
 
-Get the full detailed information of a Place object.
+Get the full detailed information of an Place object.
 
 ### Example
 ```php
@@ -4445,12 +5193,14 @@ $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Su
 $project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $select = "select_example"; // string | Pass list of object properties to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->place($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->place($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->place: ', $e->getMessage(), PHP_EOL;
@@ -4467,8 +5217,10 @@ Name | Type | Description  | Notes
  **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -4487,7 +5239,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **placeDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecast[] placeDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray placeDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
 
 Place daily forecast
 
@@ -4542,7 +5294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
+[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
 
 ### Authorization
 
@@ -4696,11 +5448,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **product**
-> \Infocenter\Client\Model\DsProduct product($id, $ocp_apim_subscription_key, $project, $select, $description_mode, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsProduct product($id, $ocp_apim_subscription_key, $project, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 Product
 
-Get the full detailed information of a Product object.
+Get the full detailed information of an Product object.
 
 ### Example
 ```php
@@ -4725,12 +5477,14 @@ $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Su
 $project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
 $select = "select_example"; // string | Pass list of object properties to query
 $description_mode = "description_mode_example"; // string | Use property to extract additional information from description to additionalProperty.
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->product($id, $ocp_apim_subscription_key, $project, $select, $description_mode, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->product($id, $ocp_apim_subscription_key, $project, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->product: ', $e->getMessage(), PHP_EOL;
@@ -4747,8 +5501,10 @@ Name | Type | Description  | Notes
  **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
  **description_mode** | **string**| Use property to extract additional information from description to additionalProperty. | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -4767,11 +5523,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productByProductVariantId**
-> \Infocenter\Client\Model\DsProduct productByProductVariantId($product_variant_id, $ocp_apim_subscription_key, $project, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsProduct productByProductVariantId($product_variant_id, $ocp_apim_subscription_key, $project, $accept_language, $accept_timezone, $scope, $category_version)
 
 Product by ProductVariantId
 
-Get the full detailed information of a Product object.
+Get the full detailed information of an Product object.
 
 ### Example
 ```php
@@ -4796,10 +5552,11 @@ $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Su
 $project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->productByProductVariantId($product_variant_id, $ocp_apim_subscription_key, $project, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->productByProductVariantId($product_variant_id, $ocp_apim_subscription_key, $project, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->productByProductVariantId: ', $e->getMessage(), PHP_EOL;
@@ -4816,6 +5573,7 @@ Name | Type | Description  | Notes
  **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -4834,11 +5592,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **review**
-> \Infocenter\Client\Model\DsReview review($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsReview review($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
 
 Review
 
-Get the full detailed information of a Review.
+Get the full detailed information of an Review.
 
 ### Example
 ```php
@@ -4865,10 +5623,11 @@ $contained_in_place = "contained_in_place_example"; // string | Use property ide
 $select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->review($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->review($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->review: ', $e->getMessage(), PHP_EOL;
@@ -4887,6 +5646,7 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -4972,7 +5732,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByGET**
-> \Infocenter\Client\Model\DsSearchResponse searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version, $authorization)
+> \Infocenter\Client\Model\DsSearchResponse searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $accept_language, $accept_timezone, $category_version, $authorization)
 
 Search by GET
 
@@ -4997,31 +5757,39 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$search_text = "search_text_example"; // string | Use property for search request text
-$search_fields = "search_fields_example"; // string | Use property for selecting of search fields by which necessary to search
-$select = "select_example"; // string | Use property for selecting fields which necessary to return in response
-$current_page = 56; // int | Format - int32. Use property to set number of page
-$results_per_page = 56; // int | Format - int32. Use property to set count of results per page
-$order_by = "order_by_example"; // string | Use property for ordering
-$category = "category_example"; // string | Use property for filtering by `category`
-$filters = "filters_example"; // string | Use property for odata filtering
-$type = "type_example"; // string | Use property for filtering by `type`
-$datasource = "datasource_example"; // string | Use property for filtering by `dataSource`
-$project = "project_example"; // string | Use property for filtering by `project`
-$combined_type = "combined_type_example"; // string | Use property for filtering by `combinedType` which contains parentType and parentAdditionalType
-$combined_type_tree = "combined_type_tree_example"; // string | Use property for filtering by `combinedTypeTree`
-$leaf_type = "leaf_type_example"; // string | Use property for filtering by `leafType` which contains additionalType or type
-$profile_tag = "profile_tag_example"; // string | Use property for filtering by `profileTag`
-$all_tag = "all_tag_example"; // string | Use property for filtering by `allTag` which contains values from `tag`, `campaignTag` and `profileTag`
-$scoring_tag = "scoring_tag_example"; // string | Use property to score results by profile-tags
-$has_review = "has_review_example"; // string | Use property for filtering by `hasReview`
-$location = "location_example"; // string | Use property for filtering by `location`
+$search_text = "search_text_example"; // string | Optional. Search for contained string by the searchable fields.
+$search_fields = "search_fields_example"; // string | Optional. When name of fields are specified as a comma separated string (e.g. 'name, description, address/name') then only the selected fields will be used for searching.
+$select = "select_example"; // string | Optional. When name of fields are specified as a comma separated string (e.g. 'name, description, @id, address') then only the selected fields will be returned.
+$current_page = 56; // int | Format - int32. Optional. By default equal 1. Determines which page of results to return in the response
+$results_per_page = 56; // int | Format - int32. Optional. By default equal 10 for regular request and 50 for pdf request. Determines how many results are in response.
+$order_by = "order_by_example"; // string | Optional. Determines name of field by which result will be ordered (e.g. name/de desc).
+$scoring_reference_point = "scoring_reference_point_example"; // string | Optional. Coordinates of point in format 'Longitude,Latitude' (e.g.: 8.5172912,47.5722339) which will be used for scoring by distance
+$only_suggestions = true; // bool | Use property to get only suggestions in the response based on current request
+$facet_order = "facet_order_example"; // string | Use property to specify ordering direction (desc or asc) for facets results.
+$filters = "filters_example"; // string | Optional. List of OData filters.
+$datasource = "datasource_example"; // string | Optional. List of datasources to filter by (with OR condition).
+$project = "project_example"; // string | Optional. List of projects to filter by (with OR condition).
+$source_partner = "source_partner_example"; // string | Optional. List of source partners acronyms to filter by (with OR condition).
+$award = "award_example"; // string | Optional. List of award ids to filter by (with OR condition).
+$campaign_tag = "campaign_tag_example"; // string | Optional. List of campaign tags to filter by (with OR condition).
+$profile_tag = "profile_tag_example"; // string | Optional. List of profile tags to filter by (with OR condition).
+$all_tag = "all_tag_example"; // string | Optional. List of tags to filter by (with OR condition).
+$category = "category_example"; // string | Optional. List of categories to filter by (with OR condition).
+$facets = "facets_example"; // string | Optional. List of facets which will be in the response.
+$scoring_tag = "scoring_tag_example"; // string | Optional. List of tags which will be used for scoring (Beta) of results in the response.
+$source_id = "source_id_example"; // string | Optional. List of location ids to filter by (with OR condition).
+$location = "location_example"; // string | Optional. List of location ids to filter by (with OR condition).
+$has_geo_shape = "has_geo_shape_example"; // string | 
+$product_availability = "product_availability_example"; // string | Optional. List of properties for searching product availabilities.
+$action = "action_example"; // string | Optional. List of action to filter by (with OR condition). Possible values: `OrderActionWeb`, `RegisterActionWeb` and `OrderActionDsMarket`.
+$only_with_availabilities = "only_with_availabilities_example"; // string | Results are filtered by availabilities (by default true if there is an availability-filter set) otherwise the information is only added to the search result. When it is true - facets won't be returned.
 $category_tree = "category_tree_example"; // string | Use property for filtering/facet-filtering by `categoryTree`
 $tag = "tag_example"; // string | Use property for filtering/facet-filtering by `tag`
 $contained_in_place = "contained_in_place_example"; // string | Use property for filtering/facet-filtering by `containedInPlace/id`
 $address_locality = "address_locality_example"; // string | Use property for filtering/facet-filtering by `address/addressLocality`
 $address_postal_code = "address_postal_code_example"; // string | Use property for filtering/facet-filtering by `address/postalCode`
 $time = "time_example"; // string | Use property for filtering/facet-filtering by `time`
+$length = "length_example"; // string | Use property for filtering/facet-filtering by `length`
 $state = "state_example"; // string | Use property for filtering/facet-filtering by `state`
 $rating_condition = "rating_condition_example"; // string | Use property for filtering/facet-filtering by `rating/condition`
 $rating_difficulty = "rating_difficulty_example"; // string | Use property for filtering/facet-filtering by `rating/difficulty`
@@ -5030,15 +5798,17 @@ $elevation_descent = "elevation_descent_example"; // string | Use property for f
 $elevation_min_altitude = "elevation_min_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/minAltitude`
 $elevation_max_altitude = "elevation_max_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/maxAltitude`
 $season = "season_example"; // string | Use property for filtering/facet-filtering by `season`
-$source_partner = "source_partner_example"; // string | Use property for filtering/facet-filtering by `sourcePartner`
-$campaign_tag = "campaign_tag_example"; // string | Use property for filtering/facet-filtering by `campaignTag`
+$type = "type_example"; // string | Use property for filtering by `type`
+$combined_type = "combined_type_example"; // string | Use property for filtering by `combinedType` which contains parentType and parentAdditionalType
+$combined_type_tree = "combined_type_tree_example"; // string | Use property for filtering by `combinedTypeTree`
+$leaf_type = "leaf_type_example"; // string | Use property for filtering by `leafType` which contains additionalType or type
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 $category_version = "category_version_example"; // string | Use to filter categories by version
 $authorization = "authorization_example"; // string | Authorization header to identify the B2C user profile.
 
 try {
-    $result = $apiInstance->searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $has_review, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $source_partner, $campaign_tag, $accept_language, $accept_timezone, $category_version, $authorization);
+    $result = $apiInstance->searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $accept_language, $accept_timezone, $category_version, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGET: ', $e->getMessage(), PHP_EOL;
@@ -5051,31 +5821,39 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **search_text** | **string**| Use property for search request text | [optional]
- **search_fields** | **string**| Use property for selecting of search fields by which necessary to search | [optional]
- **select** | **string**| Use property for selecting fields which necessary to return in response | [optional]
- **current_page** | **int**| Format - int32. Use property to set number of page | [optional]
- **results_per_page** | **int**| Format - int32. Use property to set count of results per page | [optional]
- **order_by** | **string**| Use property for ordering | [optional]
- **category** | **string**| Use property for filtering by &#x60;category&#x60; | [optional]
- **filters** | **string**| Use property for odata filtering | [optional]
- **type** | **string**| Use property for filtering by &#x60;type&#x60; | [optional]
- **datasource** | **string**| Use property for filtering by &#x60;dataSource&#x60; | [optional]
- **project** | **string**| Use property for filtering by &#x60;project&#x60; | [optional]
- **combined_type** | **string**| Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType | [optional]
- **combined_type_tree** | **string**| Use property for filtering by &#x60;combinedTypeTree&#x60; | [optional]
- **leaf_type** | **string**| Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type | [optional]
- **profile_tag** | **string**| Use property for filtering by &#x60;profileTag&#x60; | [optional]
- **all_tag** | **string**| Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; | [optional]
- **scoring_tag** | **string**| Use property to score results by profile-tags | [optional]
- **has_review** | **string**| Use property for filtering by &#x60;hasReview&#x60; | [optional]
- **location** | **string**| Use property for filtering by &#x60;location&#x60; | [optional]
+ **search_text** | **string**| Optional. Search for contained string by the searchable fields. | [optional]
+ **search_fields** | **string**| Optional. When name of fields are specified as a comma separated string (e.g. &#x27;name, description, address/name&#x27;) then only the selected fields will be used for searching. | [optional]
+ **select** | **string**| Optional. When name of fields are specified as a comma separated string (e.g. &#x27;name, description, @id, address&#x27;) then only the selected fields will be returned. | [optional]
+ **current_page** | **int**| Format - int32. Optional. By default equal 1. Determines which page of results to return in the response | [optional]
+ **results_per_page** | **int**| Format - int32. Optional. By default equal 10 for regular request and 50 for pdf request. Determines how many results are in response. | [optional]
+ **order_by** | **string**| Optional. Determines name of field by which result will be ordered (e.g. name/de desc). | [optional]
+ **scoring_reference_point** | **string**| Optional. Coordinates of point in format &#x27;Longitude,Latitude&#x27; (e.g.: 8.5172912,47.5722339) which will be used for scoring by distance | [optional]
+ **only_suggestions** | **bool**| Use property to get only suggestions in the response based on current request | [optional]
+ **facet_order** | **string**| Use property to specify ordering direction (desc or asc) for facets results. | [optional]
+ **filters** | **string**| Optional. List of OData filters. | [optional]
+ **datasource** | **string**| Optional. List of datasources to filter by (with OR condition). | [optional]
+ **project** | **string**| Optional. List of projects to filter by (with OR condition). | [optional]
+ **source_partner** | **string**| Optional. List of source partners acronyms to filter by (with OR condition). | [optional]
+ **award** | **string**| Optional. List of award ids to filter by (with OR condition). | [optional]
+ **campaign_tag** | **string**| Optional. List of campaign tags to filter by (with OR condition). | [optional]
+ **profile_tag** | **string**| Optional. List of profile tags to filter by (with OR condition). | [optional]
+ **all_tag** | **string**| Optional. List of tags to filter by (with OR condition). | [optional]
+ **category** | **string**| Optional. List of categories to filter by (with OR condition). | [optional]
+ **facets** | **string**| Optional. List of facets which will be in the response. | [optional]
+ **scoring_tag** | **string**| Optional. List of tags which will be used for scoring (Beta) of results in the response. | [optional]
+ **source_id** | **string**| Optional. List of location ids to filter by (with OR condition). | [optional]
+ **location** | **string**| Optional. List of location ids to filter by (with OR condition). | [optional]
+ **has_geo_shape** | **string**|  | [optional]
+ **product_availability** | **string**| Optional. List of properties for searching product availabilities. | [optional]
+ **action** | **string**| Optional. List of action to filter by (with OR condition). Possible values: &#x60;OrderActionWeb&#x60;, &#x60;RegisterActionWeb&#x60; and &#x60;OrderActionDsMarket&#x60;. | [optional]
+ **only_with_availabilities** | **string**| Results are filtered by availabilities (by default true if there is an availability-filter set) otherwise the information is only added to the search result. When it is true - facets won&#x27;t be returned. | [optional]
  **category_tree** | **string**| Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; | [optional]
  **tag** | **string**| Use property for filtering/facet-filtering by &#x60;tag&#x60; | [optional]
  **contained_in_place** | **string**| Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; | [optional]
  **address_locality** | **string**| Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; | [optional]
  **address_postal_code** | **string**| Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; | [optional]
  **time** | **string**| Use property for filtering/facet-filtering by &#x60;time&#x60; | [optional]
+ **length** | **string**| Use property for filtering/facet-filtering by &#x60;length&#x60; | [optional]
  **state** | **string**| Use property for filtering/facet-filtering by &#x60;state&#x60; | [optional]
  **rating_condition** | **string**| Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; | [optional]
  **rating_difficulty** | **string**| Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; | [optional]
@@ -5084,8 +5862,10 @@ Name | Type | Description  | Notes
  **elevation_min_altitude** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; | [optional]
  **elevation_max_altitude** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; | [optional]
  **season** | **string**| Use property for filtering/facet-filtering by &#x60;season&#x60; | [optional]
- **source_partner** | **string**| Use property for filtering/facet-filtering by &#x60;sourcePartner&#x60; | [optional]
- **campaign_tag** | **string**| Use property for filtering/facet-filtering by &#x60;campaignTag&#x60; | [optional]
+ **type** | **string**| Use property for filtering by &#x60;type&#x60; | [optional]
+ **combined_type** | **string**| Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType | [optional]
+ **combined_type_tree** | **string**| Use property for filtering by &#x60;combinedTypeTree&#x60; | [optional]
+ **leaf_type** | **string**| Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
@@ -5107,7 +5887,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByGETForPdf**
-> string searchByGETForPdf($template_project, $template, $ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $campaign_tag, $title, $leadtext, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsFile searchByGETForPdf($template_project, $template, $ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $title, $leadtext, $accept_language, $accept_timezone)
 
 Search by GET for pdf
 
@@ -5134,30 +5914,39 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $template_project = "template_project_example"; // string | Use property to select project which is used to select pdf template
 $template = "template_example"; // string | Use property to select pdf template in selected project
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$search_text = "search_text_example"; // string | Use property for search request text
-$search_fields = "search_fields_example"; // string | Use property for selecting of search fields by which necessary to search
-$select = "select_example"; // string | Use property for selecting fields which necessary to return in response
-$current_page = 56; // int | Format - int32. Use property to set number of page
-$results_per_page = 56; // int | Format - int32. Use property to set count of results per page
-$order_by = "order_by_example"; // string | Use property for ordering
-$category = "category_example"; // string | Use property for filtering by `category`
-$filters = "filters_example"; // string | Use property for odata filtering
-$type = "type_example"; // string | Use property for filtering by `type`
-$datasource = "datasource_example"; // string | Use property for filtering by `dataSource`
-$project = "project_example"; // string | Use property for filtering by `project`
-$combined_type = "combined_type_example"; // string | Use property for filtering by `combinedType` which contains parentType and parentAdditionalType
-$combined_type_tree = "combined_type_tree_example"; // string | Use property for filtering by `combinedTypeTree`
-$leaf_type = "leaf_type_example"; // string | Use property for filtering by `leafType` which contains additionalType or type
-$profile_tag = "profile_tag_example"; // string | Use property for filtering by `profileTag`
-$all_tag = "all_tag_example"; // string | Use property for filtering by `allTag` which contains values from `tag`, `campaignTag` and `profileTag`
-$scoring_tag = "scoring_tag_example"; // string | Use property to score results by profile-tags
-$location = "location_example"; // string | Use property for filtering by `location`
+$search_text = "search_text_example"; // string | Optional. Search for contained string by the searchable fields.
+$search_fields = "search_fields_example"; // string | Optional. When name of fields are specified as a comma separated string (e.g. 'name, description, address/name') then only the selected fields will be used for searching.
+$select = "select_example"; // string | Optional. When name of fields are specified as a comma separated string (e.g. 'name, description, @id, address') then only the selected fields will be returned.
+$current_page = 56; // int | Format - int32. Optional. By default equal 1. Determines which page of results to return in the response
+$results_per_page = 56; // int | Format - int32. Optional. By default equal 10 for regular request and 50 for pdf request. Determines how many results are in response.
+$order_by = "order_by_example"; // string | Optional. Determines name of field by which result will be ordered (e.g. name/de desc).
+$scoring_reference_point = "scoring_reference_point_example"; // string | Optional. Coordinates of point in format 'Longitude,Latitude' (e.g.: 8.5172912,47.5722339) which will be used for scoring by distance
+$only_suggestions = true; // bool | Use property to get only suggestions in the response based on current request
+$facet_order = "facet_order_example"; // string | Use property to specify ordering direction (desc or asc) for facets results.
+$filters = "filters_example"; // string | Optional. List of OData filters.
+$datasource = "datasource_example"; // string | Optional. List of datasources to filter by (with OR condition).
+$project = "project_example"; // string | Optional. List of projects to filter by (with OR condition).
+$source_partner = "source_partner_example"; // string | Optional. List of source partners acronyms to filter by (with OR condition).
+$award = "award_example"; // string | Optional. List of award ids to filter by (with OR condition).
+$campaign_tag = "campaign_tag_example"; // string | Optional. List of campaign tags to filter by (with OR condition).
+$profile_tag = "profile_tag_example"; // string | Optional. List of profile tags to filter by (with OR condition).
+$all_tag = "all_tag_example"; // string | Optional. List of tags to filter by (with OR condition).
+$category = "category_example"; // string | Optional. List of categories to filter by (with OR condition).
+$facets = "facets_example"; // string | Optional. List of facets which will be in the response.
+$scoring_tag = "scoring_tag_example"; // string | Optional. List of tags which will be used for scoring (Beta) of results in the response.
+$source_id = "source_id_example"; // string | Optional. List of location ids to filter by (with OR condition).
+$location = "location_example"; // string | Optional. List of location ids to filter by (with OR condition).
+$has_geo_shape = "has_geo_shape_example"; // string | 
+$product_availability = "product_availability_example"; // string | Optional. List of properties for searching product availabilities.
+$action = "action_example"; // string | Optional. List of action to filter by (with OR condition). Possible values: `OrderActionWeb`, `RegisterActionWeb` and `OrderActionDsMarket`.
+$only_with_availabilities = "only_with_availabilities_example"; // string | Results are filtered by availabilities (by default true if there is an availability-filter set) otherwise the information is only added to the search result. When it is true - facets won't be returned.
 $category_tree = "category_tree_example"; // string | Use property for filtering/facet-filtering by `categoryTree`
 $tag = "tag_example"; // string | Use property for filtering/facet-filtering by `tag`
 $contained_in_place = "contained_in_place_example"; // string | Use property for filtering/facet-filtering by `containedInPlace/id`
 $address_locality = "address_locality_example"; // string | Use property for filtering/facet-filtering by `address/addressLocality`
 $address_postal_code = "address_postal_code_example"; // string | Use property for filtering/facet-filtering by `address/postalCode`
 $time = "time_example"; // string | Use property for filtering/facet-filtering by `time`
+$length = "length_example"; // string | Use property for filtering/facet-filtering by `length`
 $state = "state_example"; // string | Use property for filtering/facet-filtering by `state`
 $rating_condition = "rating_condition_example"; // string | Use property for filtering/facet-filtering by `rating/condition`
 $rating_difficulty = "rating_difficulty_example"; // string | Use property for filtering/facet-filtering by `rating/difficulty`
@@ -5166,14 +5955,17 @@ $elevation_descent = "elevation_descent_example"; // string | Use property for f
 $elevation_min_altitude = "elevation_min_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/minAltitude`
 $elevation_max_altitude = "elevation_max_altitude_example"; // string | Use property for filtering/facet-filtering by `elevation/maxAltitude`
 $season = "season_example"; // string | Use property for filtering/facet-filtering by `season`
-$campaign_tag = "campaign_tag_example"; // string | Use property for filtering/facet-filtering by `campaignTag`
+$type = "type_example"; // string | Use property for filtering by `type`
+$combined_type = "combined_type_example"; // string | Use property for filtering by `combinedType` which contains parentType and parentAdditionalType
+$combined_type_tree = "combined_type_tree_example"; // string | Use property for filtering by `combinedTypeTree`
+$leaf_type = "leaf_type_example"; // string | Use property for filtering by `leafType` which contains additionalType or type
 $title = "title_example"; // string | Use property for define custom title in the generated pdf
 $leadtext = "leadtext_example"; // string | Use property for define custom lead text in the generated pdf
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
 
 try {
-    $result = $apiInstance->searchByGETForPdf($template_project, $template, $ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $category, $filters, $type, $datasource, $project, $combined_type, $combined_type_tree, $leaf_type, $profile_tag, $all_tag, $scoring_tag, $location, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $campaign_tag, $title, $leadtext, $accept_language, $accept_timezone);
+    $result = $apiInstance->searchByGETForPdf($template_project, $template, $ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $title, $leadtext, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGETForPdf: ', $e->getMessage(), PHP_EOL;
@@ -5188,30 +5980,39 @@ Name | Type | Description  | Notes
  **template_project** | **string**| Use property to select project which is used to select pdf template |
  **template** | **string**| Use property to select pdf template in selected project |
  **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **search_text** | **string**| Use property for search request text | [optional]
- **search_fields** | **string**| Use property for selecting of search fields by which necessary to search | [optional]
- **select** | **string**| Use property for selecting fields which necessary to return in response | [optional]
- **current_page** | **int**| Format - int32. Use property to set number of page | [optional]
- **results_per_page** | **int**| Format - int32. Use property to set count of results per page | [optional]
- **order_by** | **string**| Use property for ordering | [optional]
- **category** | **string**| Use property for filtering by &#x60;category&#x60; | [optional]
- **filters** | **string**| Use property for odata filtering | [optional]
- **type** | **string**| Use property for filtering by &#x60;type&#x60; | [optional]
- **datasource** | **string**| Use property for filtering by &#x60;dataSource&#x60; | [optional]
- **project** | **string**| Use property for filtering by &#x60;project&#x60; | [optional]
- **combined_type** | **string**| Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType | [optional]
- **combined_type_tree** | **string**| Use property for filtering by &#x60;combinedTypeTree&#x60; | [optional]
- **leaf_type** | **string**| Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type | [optional]
- **profile_tag** | **string**| Use property for filtering by &#x60;profileTag&#x60; | [optional]
- **all_tag** | **string**| Use property for filtering by &#x60;allTag&#x60; which contains values from &#x60;tag&#x60;, &#x60;campaignTag&#x60; and &#x60;profileTag&#x60; | [optional]
- **scoring_tag** | **string**| Use property to score results by profile-tags | [optional]
- **location** | **string**| Use property for filtering by &#x60;location&#x60; | [optional]
+ **search_text** | **string**| Optional. Search for contained string by the searchable fields. | [optional]
+ **search_fields** | **string**| Optional. When name of fields are specified as a comma separated string (e.g. &#x27;name, description, address/name&#x27;) then only the selected fields will be used for searching. | [optional]
+ **select** | **string**| Optional. When name of fields are specified as a comma separated string (e.g. &#x27;name, description, @id, address&#x27;) then only the selected fields will be returned. | [optional]
+ **current_page** | **int**| Format - int32. Optional. By default equal 1. Determines which page of results to return in the response | [optional]
+ **results_per_page** | **int**| Format - int32. Optional. By default equal 10 for regular request and 50 for pdf request. Determines how many results are in response. | [optional]
+ **order_by** | **string**| Optional. Determines name of field by which result will be ordered (e.g. name/de desc). | [optional]
+ **scoring_reference_point** | **string**| Optional. Coordinates of point in format &#x27;Longitude,Latitude&#x27; (e.g.: 8.5172912,47.5722339) which will be used for scoring by distance | [optional]
+ **only_suggestions** | **bool**| Use property to get only suggestions in the response based on current request | [optional]
+ **facet_order** | **string**| Use property to specify ordering direction (desc or asc) for facets results. | [optional]
+ **filters** | **string**| Optional. List of OData filters. | [optional]
+ **datasource** | **string**| Optional. List of datasources to filter by (with OR condition). | [optional]
+ **project** | **string**| Optional. List of projects to filter by (with OR condition). | [optional]
+ **source_partner** | **string**| Optional. List of source partners acronyms to filter by (with OR condition). | [optional]
+ **award** | **string**| Optional. List of award ids to filter by (with OR condition). | [optional]
+ **campaign_tag** | **string**| Optional. List of campaign tags to filter by (with OR condition). | [optional]
+ **profile_tag** | **string**| Optional. List of profile tags to filter by (with OR condition). | [optional]
+ **all_tag** | **string**| Optional. List of tags to filter by (with OR condition). | [optional]
+ **category** | **string**| Optional. List of categories to filter by (with OR condition). | [optional]
+ **facets** | **string**| Optional. List of facets which will be in the response. | [optional]
+ **scoring_tag** | **string**| Optional. List of tags which will be used for scoring (Beta) of results in the response. | [optional]
+ **source_id** | **string**| Optional. List of location ids to filter by (with OR condition). | [optional]
+ **location** | **string**| Optional. List of location ids to filter by (with OR condition). | [optional]
+ **has_geo_shape** | **string**|  | [optional]
+ **product_availability** | **string**| Optional. List of properties for searching product availabilities. | [optional]
+ **action** | **string**| Optional. List of action to filter by (with OR condition). Possible values: &#x60;OrderActionWeb&#x60;, &#x60;RegisterActionWeb&#x60; and &#x60;OrderActionDsMarket&#x60;. | [optional]
+ **only_with_availabilities** | **string**| Results are filtered by availabilities (by default true if there is an availability-filter set) otherwise the information is only added to the search result. When it is true - facets won&#x27;t be returned. | [optional]
  **category_tree** | **string**| Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; | [optional]
  **tag** | **string**| Use property for filtering/facet-filtering by &#x60;tag&#x60; | [optional]
  **contained_in_place** | **string**| Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; | [optional]
  **address_locality** | **string**| Use property for filtering/facet-filtering by &#x60;address/addressLocality&#x60; | [optional]
  **address_postal_code** | **string**| Use property for filtering/facet-filtering by &#x60;address/postalCode&#x60; | [optional]
  **time** | **string**| Use property for filtering/facet-filtering by &#x60;time&#x60; | [optional]
+ **length** | **string**| Use property for filtering/facet-filtering by &#x60;length&#x60; | [optional]
  **state** | **string**| Use property for filtering/facet-filtering by &#x60;state&#x60; | [optional]
  **rating_condition** | **string**| Use property for filtering/facet-filtering by &#x60;rating/condition&#x60; | [optional]
  **rating_difficulty** | **string**| Use property for filtering/facet-filtering by &#x60;rating/difficulty&#x60; | [optional]
@@ -5220,7 +6021,10 @@ Name | Type | Description  | Notes
  **elevation_min_altitude** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/minAltitude&#x60; | [optional]
  **elevation_max_altitude** | **string**| Use property for filtering/facet-filtering by &#x60;elevation/maxAltitude&#x60; | [optional]
  **season** | **string**| Use property for filtering/facet-filtering by &#x60;season&#x60; | [optional]
- **campaign_tag** | **string**| Use property for filtering/facet-filtering by &#x60;campaignTag&#x60; | [optional]
+ **type** | **string**| Use property for filtering by &#x60;type&#x60; | [optional]
+ **combined_type** | **string**| Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType | [optional]
+ **combined_type_tree** | **string**| Use property for filtering by &#x60;combinedTypeTree&#x60; | [optional]
+ **leaf_type** | **string**| Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type | [optional]
  **title** | **string**| Use property for define custom title in the generated pdf | [optional]
  **leadtext** | **string**| Use property for define custom lead text in the generated pdf | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
@@ -5228,7 +6032,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**\Infocenter\Client\Model\DsFile**](../Model/DsFile.md)
 
 ### Authorization
 
@@ -5242,7 +6046,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByPOSTForPdf**
-> string searchByPOSTForPdf($ocp_apim_subscription_key, $template_project, $template, $body, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsFile searchByPOSTForPdf($ocp_apim_subscription_key, $template_project, $template, $body, $accept_language, $accept_timezone)
 
 Search by POST for pdf
 
@@ -5295,7 +6099,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**\Infocenter\Client\Model\DsFile**](../Model/DsFile.md)
 
 ### Authorization
 
@@ -5309,11 +6113,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **skiResort**
-> \Infocenter\Client\Model\DsSkiResort skiResort($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsSkiResort skiResort($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 SkiResort
 
-Get the full detailed information of a SkiResort object.
+Get the full detailed information of an SkiResort object.
 
 ### Example
 ```php
@@ -5338,12 +6142,14 @@ $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Su
 $project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $select = "select_example"; // string | Pass list of object properties to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->skiResort($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->skiResort($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->skiResort: ', $e->getMessage(), PHP_EOL;
@@ -5360,8 +6166,10 @@ Name | Type | Description  | Notes
  **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -5380,7 +6188,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **skiResortDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecast[] skiResortDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray skiResortDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
 
 SkiResort daily forecast
 
@@ -5435,7 +6243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
+[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
 
 ### Authorization
 
@@ -5593,7 +6401,7 @@ Name | Type | Description  | Notes
 
 Tag
 
-Get the full detailed information of a Tag object.
+Get the full detailed information of an Tag object.
 
 ### Example
 ```php
@@ -5660,7 +6468,7 @@ Name | Type | Description  | Notes
 
 TermVersion
 
-Get the full detailed information of a TermVersion object.
+Get the full detailed information of an TermVersion object.
 
 ### Example
 ```php
@@ -5719,11 +6527,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tour**
-> \Infocenter\Client\Model\DsTour tour($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsTour tour($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 Tour
 
-Get the full detailed information of a Tour object.
+Get the full detailed information of an Tour object.
 
 ### Example
 ```php
@@ -5748,12 +6556,14 @@ $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Su
 $project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $select = "select_example"; // string | Pass list of object properties to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->tour($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->tour($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->tour: ', $e->getMessage(), PHP_EOL;
@@ -5770,8 +6580,10 @@ Name | Type | Description  | Notes
  **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -5790,7 +6602,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tourDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecast[] tourDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray tourDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
 
 Tour daily forecast
 
@@ -5845,7 +6657,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
+[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
 
 ### Authorization
 
@@ -5998,6 +6810,290 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **transportationSystem**
+> \Infocenter\Client\Model\DsTransportationSystem transportationSystem($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+
+TransportationSystem
+
+Get the full detailed information of a TransportationSystem object.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of TransportationSystem to get single object.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$select = "select_example"; // string | Pass list of object properties to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+$category_version = "category_version_example"; // string | Use to filter categories by version
+
+try {
+    $result = $apiInstance->transportationSystem($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->transportationSystem: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of TransportationSystem to get single object. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **select** | **string**| Pass list of object properties to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+ **category_version** | **string**| Use to filter categories by version | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsTransportationSystem**](../Model/DsTransportationSystem.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **transportationSystemDailyForecast**
+> \Infocenter\Client\Model\DsDailyForecastArray transportationSystemDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+
+TransportationSystem daily forecast
+
+Get the full detailed information about the weather daily forecast for a TransportationSystem object.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of TransportationSystem to get the weather daily forecast information for it.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->transportationSystemDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->transportationSystemDailyForecast: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of TransportationSystem to get the weather daily forecast information for it. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **transportationSystemHourlyForecast**
+> \Infocenter\Client\Model\DsHourlyForecastArray transportationSystemHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+
+TransportationSystem hourly forecast
+
+Get the full detailed information about the weather hourly forecast for a TransportationSystem object.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of TransportationSystem to get the weather hourly forecast information for it.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->transportationSystemHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->transportationSystemHourlyForecast: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of TransportationSystem to get the weather hourly forecast information for it. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsHourlyForecastArray**](../Model/DsHourlyForecastArray.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **transportationSystemWeather**
+> \Infocenter\Client\Model\DsWeatherArray transportationSystemWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone)
+
+TransportationSystem weather
+
+Get the full detailed information about the weather for a TransportationSystem object.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKeyHeader
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
+$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
+
+$apiInstance = new Infocenter\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Use property identifier of TransportationSystem to get the weather information for it.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
+$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+
+try {
+    $result = $apiInstance->transportationSystemWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->transportationSystemWeather: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Use property identifier of TransportationSystem to get the weather information for it. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
+ **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+
+### Return type
+
+[**\Infocenter\Client\Model\DsWeatherArray**](../Model/DsWeatherArray.md)
+
+### Authorization
+
+[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **treeAdministrativeAreaRegion**
 > \Infocenter\Client\Model\DsAdministrativeAreaTreeItem treeAdministrativeAreaRegion($id, $ocp_apim_subscription_key, $levels, $admin_areas_only, $project, $accept_timezone, $accept_language)
 
@@ -6072,7 +7168,7 @@ Name | Type | Description  | Notes
 
 Type Tree
 
-Get the full detailed information of a Type tree.
+Get the full detailed information of an Type tree.
 
 ### Example
 ```php
@@ -6127,11 +7223,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **videoObject**
-> \Infocenter\Client\Model\DsVideoObject videoObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsVideoObject videoObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
 
 VideoObject
 
-Get the full detailed information of a VideoObject object.
+Get the full detailed information of an VideoObject object.
 
 ### Example
 ```php
@@ -6158,10 +7254,11 @@ $contained_in_place = "contained_in_place_example"; // string | Use property ide
 $select = "select_example"; // string | Pass list of object properties to query
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->videoObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->videoObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->videoObject: ', $e->getMessage(), PHP_EOL;
@@ -6180,6 +7277,7 @@ Name | Type | Description  | Notes
  **select** | **string**| Pass list of object properties to query | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -6198,11 +7296,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **webcam**
-> \Infocenter\Client\Model\DsWebcam webcam($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsWebcam webcam($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
 
 Webcam
 
-Get the full detailed information of a Webcam object.
+Get the full detailed information of an Webcam object.
 
 ### Example
 ```php
@@ -6227,12 +7325,14 @@ $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Su
 $project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
 $contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
 $select = "select_example"; // string | Pass list of object properties to query
+$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 $category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->webcam($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->webcam($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->webcam: ', $e->getMessage(), PHP_EOL;
@@ -6249,8 +7349,10 @@ Name | Type | Description  | Notes
  **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
  **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
  **select** | **string**| Pass list of object properties to query | [optional]
+ **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
  **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
@@ -6269,7 +7371,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **webcamDailyForecast**
-> \Infocenter\Client\Model\DsDailyForecast[] webcamDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsDailyForecastArray webcamDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone)
 
 Webcam daily forecast
 
@@ -6324,7 +7426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsDailyForecast[]**](../Model/DsDailyForecast.md)
+[**\Infocenter\Client\Model\DsDailyForecastArray**](../Model/DsDailyForecastArray.md)
 
 ### Authorization
 

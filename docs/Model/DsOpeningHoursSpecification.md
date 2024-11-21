@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **day_of_week** | **string** |  | [optional] 
 **valid_through** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **closes** | **string** |  | [optional] 
+**type_name** | **string** | Translated name of type. | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** | Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML | [optional] 
 **disambiguating_description** | **string** | Multilingual. Can contain HTML | [optional] 

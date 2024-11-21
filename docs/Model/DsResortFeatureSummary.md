@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **total_features** | [**\Infocenter\Client\Model\DsQuantitativeValue**](DsQuantitativeValue.md) |  | [optional] 
 **total_features_open** | [**\Infocenter\Client\Model\DsQuantitativeValue**](DsQuantitativeValue.md) |  | [optional] 
 **length** | [**\Infocenter\Client\Model\DsQuantitativeValue**](DsQuantitativeValue.md) |  | [optional] 
+**length_open** | [**\Infocenter\Client\Model\DsQuantitativeValue**](DsQuantitativeValue.md) |  | [optional] 
 **area** | [**\Infocenter\Client\Model\DsQuantitativeValue**](DsQuantitativeValue.md) |  | [optional] 
 **condition** | [**\Infocenter\Client\Model\DsQuantitativeValue**](DsQuantitativeValue.md) |  | [optional] 
 **additional_property** | [**\Infocenter\Client\Model\DsPropertyValue[]**](DsPropertyValue.md) | A property-value pair representing an additional characteristics of the entity which there is no matching property in schema.org. See public docs for the available additionalProperties | [optional] 

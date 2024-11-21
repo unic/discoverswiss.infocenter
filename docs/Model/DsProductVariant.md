@@ -13,13 +13,18 @@ Name | Type | Description | Notes
 **price_list** | [**\Infocenter\Client\Model\DsProductPrice[]**](DsProductPrice.md) | List of product prices by age | [optional] 
 **tax_rate** | **double** | Tax rate (0.077 &#x3D; 7.7%) | [optional] 
 **image** | [**\Infocenter\Client\Model\DsImageObjectSimplex**](DsImageObjectSimplex.md) |  | [optional] 
+**photo** | [**\Infocenter\Client\Model\DsImageObjectSimplex[]**](DsImageObjectSimplex.md) | Photo of product variant | [optional] 
 **created** | [**\DateTime**](\DateTime.md) | Date and time of the creation in the provider&#x27;s database | [optional] 
 **last_modified** | [**\DateTime**](\DateTime.md) | Date and time of the last modification in the provider&#x27;s database | [optional] 
 **additional_property** | [**\Infocenter\Client\Model\DsPropertyValue[]**](DsPropertyValue.md) | A property-value pair representing an additional characteristic of the entity in which there is no matching property in schema.org. | [optional] 
+**duration** | **string** | Duration in ISO 8601 duration format | [optional] 
 **item_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) | Fields which must/should be added with values of the orderItem | [optional] 
 **traveler_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) | Fields which must/should be added with values of the traveler | [optional] 
+**customer_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) | Fields which must/should be added with values of the customer | [optional] 
 **available_delivery_mode** | **string[]** | Available delivery mode see Delivery modes and shipping. Remark: if there are several, this information is in the itemFields as well and with them offered to the guest for selection. | [optional] 
 **weight** | [**\Infocenter\Client\Model\DsQuantitativeValue**](DsQuantitativeValue.md) |  | [optional] 
+**add_on_item** | [**\Infocenter\Client\Model\DsProductAddOn[]**](DsProductAddOn.md) | Fields which must/should be added with values of the orderItem | [optional] 
+**add_on_traveler** | [**\Infocenter\Client\Model\DsProductAddOn[]**](DsProductAddOn.md) | Fields which must/should be added with values of the traveler | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

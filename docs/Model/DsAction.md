@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additional_type** | **string** |  | [optional] 
-**in_language** | **string** |  | [optional] 
+**in_language** | **string** | The language of the content or performance or used in an action. Format: ISO 639-1. | [optional] 
 **target** | [**\Infocenter\Client\Model\DsEntryPoint[]**](DsEntryPoint.md) | Indicates a target EntryPoint for an Action. Or in other words: how to execute it | [optional] 
 **name** | **string** |  | [optional] 
 

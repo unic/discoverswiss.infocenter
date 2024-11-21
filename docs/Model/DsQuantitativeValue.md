@@ -3,12 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**property_id** | **string** |  | [optional] 
 **max_value** | **double** |  | [optional] 
 **min_value** | **double** |  | [optional] 
 **unit_code** | **string** |  | [optional] 
 **unit_text** | **string** |  | [optional] 
 **value** | **string** |  | [optional] 
 **value_description** | **string** |  | [optional] 
+**type_name** | **string** | Translated name of type. | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** | Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML | [optional] 
 **disambiguating_description** | **string** | Multilingual. Can contain HTML | [optional] 

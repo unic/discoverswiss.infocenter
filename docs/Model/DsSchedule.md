@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **end_date** | **string** | Only date without time information | [optional] 
 **start_time** | **string** | Only time | [optional] 
 **end_time** | **string** | Only time | [optional] 
+**type_name** | **string** | Translated name of type. | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** | Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML | [optional] 
 **disambiguating_description** | **string** | Multilingual. Can contain HTML | [optional] 

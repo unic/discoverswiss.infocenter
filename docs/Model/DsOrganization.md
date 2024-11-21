@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | [**\Infocenter\Client\Model\DsFullAddress**](DsFullAddress.md) |  | [optional] 
 **contact_point** | [**\Infocenter\Client\Model\DsContactPoint**](DsContactPoint.md) |  | [optional] 
+**type_name** | **string** | Translated name of type. | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** | Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML | [optional] 
 **disambiguating_description** | **string** | Multilingual. Can contain HTML | [optional] 

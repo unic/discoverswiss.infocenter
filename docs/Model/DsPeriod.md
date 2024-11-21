@@ -23,8 +23,8 @@ Name | Type | Description | Notes
 **ice** | [**\Infocenter\Client\Model\DsUnitValue**](DsUnitValue.md) |  | [optional] 
 **hours_of_precipitation** | **double** |  | [optional] 
 **hours_of_rain** | **double** |  | [optional] 
-**hours_of_snow** | **int** |  | [optional] 
-**hours_of_ice** | **int** |  | [optional] 
+**hours_of_snow** | **double** |  | [optional] 
+**hours_of_ice** | **double** |  | [optional] 
 **cloud_cover** | **int** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
