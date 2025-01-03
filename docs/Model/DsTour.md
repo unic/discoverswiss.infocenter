@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **track_signage** | **string** | Multilingual. Describes sings along the tour. Can contain HTML | [optional] 
 **literature** | **string** | Multilingual. Recommended books. Can contain HTML | [optional] 
 **maps** | **string** | Multilingual. Recommended printed maps. Can contain HTML | [optional] 
-**duration** | **string** |  | [optional] 
+**duration** | **string** | Duration of the tour in ISO 8601 format. | [optional] 
 **sub_trip** | [**\Infocenter\Client\Model\DsTourSimplex[]**](DsTourSimplex.md) | Identifies a Trip that is a subTrip of this Trip. For example Day 1, Day 2, etc. of a multi-day trip. Inverse property: partOfTrip | [optional] 
 **part_of_trip** | [**\Infocenter\Client\Model\DsTourSimplex[]**](DsTourSimplex.md) | Identifies that this Trip is a subTrip of another Trip. For example Day 1, Day 2, etc. of a multi-day trip. Inverse property: subTrip | [optional] 
 **available_language** | **string[]** | List of languages someone may use with or at the item, service or place. Format: ISO 639-1. | [optional] 

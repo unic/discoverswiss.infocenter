@@ -60,6 +60,7 @@ class DsEvent implements ModelInterface, ArrayAccess
         'event_status' => 'string',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
+        'event_attendance_mode' => 'string',
         'event_schedule' => '\Infocenter\Client\Model\DsSchedule[]',
         'next_occurrence' => '\DateTime',
         'min_start_date' => '\DateTime',
@@ -113,6 +114,7 @@ class DsEvent implements ModelInterface, ArrayAccess
         'event_status' => null,
         'start_date' => 'date-time',
         'end_date' => 'date-time',
+        'event_attendance_mode' => null,
         'event_schedule' => null,
         'next_occurrence' => 'date-time',
         'min_start_date' => 'date-time',
@@ -187,6 +189,7 @@ class DsEvent implements ModelInterface, ArrayAccess
         'event_status' => 'eventStatus',
         'start_date' => 'startDate',
         'end_date' => 'endDate',
+        'event_attendance_mode' => 'eventAttendanceMode',
         'event_schedule' => 'eventSchedule',
         'next_occurrence' => 'nextOccurrence',
         'min_start_date' => 'minStartDate',
@@ -240,6 +243,7 @@ class DsEvent implements ModelInterface, ArrayAccess
         'event_status' => 'setEventStatus',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
+        'event_attendance_mode' => 'setEventAttendanceMode',
         'event_schedule' => 'setEventSchedule',
         'next_occurrence' => 'setNextOccurrence',
         'min_start_date' => 'setMinStartDate',
@@ -293,6 +297,7 @@ class DsEvent implements ModelInterface, ArrayAccess
         'event_status' => 'getEventStatus',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
+        'event_attendance_mode' => 'getEventAttendanceMode',
         'event_schedule' => 'getEventSchedule',
         'next_occurrence' => 'getNextOccurrence',
         'min_start_date' => 'getMinStartDate',
@@ -398,6 +403,7 @@ class DsEvent implements ModelInterface, ArrayAccess
         $this->container['event_status'] = isset($data['event_status']) ? $data['event_status'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['event_attendance_mode'] = isset($data['event_attendance_mode']) ? $data['event_attendance_mode'] : null;
         $this->container['event_schedule'] = isset($data['event_schedule']) ? $data['event_schedule'] : null;
         $this->container['next_occurrence'] = isset($data['next_occurrence']) ? $data['next_occurrence'] : null;
         $this->container['min_start_date'] = isset($data['min_start_date']) ? $data['min_start_date'] : null;
@@ -557,6 +563,30 @@ class DsEvent implements ModelInterface, ArrayAccess
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets event_attendance_mode
+     *
+     * @return string
+     */
+    public function getEventAttendanceMode()
+    {
+        return $this->container['event_attendance_mode'];
+    }
+
+    /**
+     * Sets event_attendance_mode
+     *
+     * @param string $event_attendance_mode Indicates whether it occurs 'Online', 'Offline', or a 'Mixed'.
+     *
+     * @return $this
+     */
+    public function setEventAttendanceMode($event_attendance_mode)
+    {
+        $this->container['event_attendance_mode'] = $event_attendance_mode;
 
         return $this;
     }

@@ -2270,30 +2270,6 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$version = new \Infocenter\Client\Model\Ds_(); // Ds_ | 
-$type = new \Infocenter\Client\Model\Ds_(); // Ds_ | 
-
-try {
-    $apiInstance->openapi($version, $type);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->openapi: ', $e->getMessage(), PHP_EOL;
-}
-
-// Configure API key authorization: apiKeyHeader
-$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-// Configure API key authorization: apiKeyQuery
-$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-$apiInstance = new Infocenter\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
 $id = "id_example"; // string | Use property identifier of Place to get single object.
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 $project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
@@ -3418,7 +3394,6 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**lodgingBusinessHourlyForecast**](docs/Api/DefaultApi.md#lodgingbusinesshourlyforecast) | **GET** /lodgingbusinesses/{id}/weather/forecast/hourly | LodgingBusiness hourly forecast
 *DefaultApi* | [**lodgingBusinessWeather**](docs/Api/DefaultApi.md#lodgingbusinessweather) | **GET** /lodgingbusinesses/{id}/weather | LodgingBusiness weather
 *DefaultApi* | [**mediaObject**](docs/Api/DefaultApi.md#mediaobject) | **GET** /mediaObjects/{id} | MediaObject
-*DefaultApi* | [**openapi**](docs/Api/DefaultApi.md#openapi) | **GET** /openapi/{version}.{type} | OpenApi
 *DefaultApi* | [**place**](docs/Api/DefaultApi.md#place) | **GET** /places/{id} | Place
 *DefaultApi* | [**placeDailyForecast**](docs/Api/DefaultApi.md#placedailyforecast) | **GET** /places/{id}/weather/forecast/daily | Place daily forecast
 *DefaultApi* | [**placeHourlyForecast**](docs/Api/DefaultApi.md#placehourlyforecast) | **GET** /places/{id}/weather/forecast/hourly | Place hourly forecast

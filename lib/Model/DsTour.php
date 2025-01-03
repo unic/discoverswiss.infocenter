@@ -1258,7 +1258,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets duration
      *
-     * @param string $duration duration
+     * @param string $duration Duration of the tour in ISO 8601 format.
      *
      * @return $this
      */

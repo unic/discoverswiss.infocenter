@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **event_status** | **string** |  | [optional] 
 **start_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **end_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**event_attendance_mode** | **string** | Indicates whether it occurs &#x27;Online&#x27;, &#x27;Offline&#x27;, or a &#x27;Mixed&#x27;. | [optional] 
 **event_schedule** | [**\Infocenter\Client\Model\DsSchedule[]**](DsSchedule.md) |  | [optional] 
 **next_occurrence** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **min_start_date** | [**\DateTime**](\DateTime.md) | Min start date of all schedules or startDate (used to query) | [optional] 
