@@ -59,9 +59,9 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
         'facet_type' => 'string',
         'filter_type' => 'string',
         'value_type' => 'string',
-        'from' => 'object',
-        'to' => 'object',
-        'value' => 'object',
+        'from' => '',
+        'to' => '',
+        'value' => '',
         'count' => 'int',
         'query' => 'string',
         'name' => 'string',
@@ -336,7 +336,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets from
      *
-     * @return object
+     * @return 
      */
     public function getFrom()
     {
@@ -346,7 +346,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets from
      *
-     * @param object $from From value for filter range
+     * @param  $from From value for filter range
      *
      * @return $this
      */
@@ -360,7 +360,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets to
      *
-     * @return object
+     * @return 
      */
     public function getTo()
     {
@@ -370,7 +370,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets to
      *
-     * @param object $to To value for filter range
+     * @param  $to To value for filter range
      *
      * @return $this
      */
@@ -384,7 +384,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets value
      *
-     * @return object
+     * @return 
      */
     public function getValue()
     {
@@ -394,7 +394,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param object $value Value of facet
+     * @param  $value Value of facet
      *
      * @return $this
      */

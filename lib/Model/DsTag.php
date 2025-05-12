@@ -60,6 +60,7 @@ class DsTag implements ModelInterface, ArrayAccess
         'additional_type' => 'string',
         'id' => 'string',
         'identifier' => 'string',
+        'description' => 'string',
         'removed' => 'bool',
         'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
         'last_modified' => '\DateTime',
@@ -80,6 +81,7 @@ class DsTag implements ModelInterface, ArrayAccess
         'additional_type' => null,
         'id' => null,
         'identifier' => null,
+        'description' => null,
         'removed' => null,
         'data_governance' => null,
         'last_modified' => 'date-time',
@@ -121,6 +123,7 @@ class DsTag implements ModelInterface, ArrayAccess
         'additional_type' => 'additionalType',
         'id' => '@id',
         'identifier' => 'identifier',
+        'description' => 'description',
         'removed' => 'removed',
         'data_governance' => 'dataGovernance',
         'last_modified' => 'lastModified',
@@ -141,6 +144,7 @@ class DsTag implements ModelInterface, ArrayAccess
         'additional_type' => 'setAdditionalType',
         'id' => 'setId',
         'identifier' => 'setIdentifier',
+        'description' => 'setDescription',
         'removed' => 'setRemoved',
         'data_governance' => 'setDataGovernance',
         'last_modified' => 'setLastModified',
@@ -161,6 +165,7 @@ class DsTag implements ModelInterface, ArrayAccess
         'additional_type' => 'getAdditionalType',
         'id' => 'getId',
         'identifier' => 'getIdentifier',
+        'description' => 'getDescription',
         'removed' => 'getRemoved',
         'data_governance' => 'getDataGovernance',
         'last_modified' => 'getLastModified',
@@ -233,6 +238,7 @@ class DsTag implements ModelInterface, ArrayAccess
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
@@ -359,6 +365,30 @@ class DsTag implements ModelInterface, ArrayAccess
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
 
         return $this;
     }

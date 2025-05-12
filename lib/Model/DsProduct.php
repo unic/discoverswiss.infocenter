@@ -67,6 +67,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         'traveler_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
         'customer_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
         'price_information' => 'string',
+        'standard_price' => 'double',
         'add_on_item' => '\Infocenter\Client\Model\DsProductAddOn[]',
         'add_on_traveler' => '\Infocenter\Client\Model\DsProductAddOn[]',
         'in_language' => 'string[]',
@@ -82,6 +83,8 @@ class DsProduct implements ModelInterface, ArrayAccess
         'aggregate_rating' => '\Infocenter\Client\Model\DsAggregateRating',
         'item_offered' => '\Infocenter\Client\Model\DsBaseSimplex',
         'is_related_to' => '\Infocenter\Client\Model\DsProductSimplex[]',
+        'valid_from' => '\DateTime',
+        'valid_through' => '\DateTime',
         'id' => 'string',
         'identifier' => 'string',
         'removed' => 'bool',
@@ -123,6 +126,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         'traveler_field' => null,
         'customer_field' => null,
         'price_information' => null,
+        'standard_price' => 'double',
         'add_on_item' => null,
         'add_on_traveler' => null,
         'in_language' => null,
@@ -138,6 +142,8 @@ class DsProduct implements ModelInterface, ArrayAccess
         'aggregate_rating' => null,
         'item_offered' => null,
         'is_related_to' => null,
+        'valid_from' => 'date-time',
+        'valid_through' => 'date-time',
         'id' => null,
         'identifier' => null,
         'removed' => null,
@@ -200,6 +206,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         'traveler_field' => 'travelerField',
         'customer_field' => 'customerField',
         'price_information' => 'priceInformation',
+        'standard_price' => 'standardPrice',
         'add_on_item' => 'addOnItem',
         'add_on_traveler' => 'addOnTraveler',
         'in_language' => 'inLanguage',
@@ -215,6 +222,8 @@ class DsProduct implements ModelInterface, ArrayAccess
         'aggregate_rating' => 'aggregateRating',
         'item_offered' => 'itemOffered',
         'is_related_to' => 'isRelatedTo',
+        'valid_from' => 'validFrom',
+        'valid_through' => 'validThrough',
         'id' => '@id',
         'identifier' => 'identifier',
         'removed' => 'removed',
@@ -256,6 +265,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         'traveler_field' => 'setTravelerField',
         'customer_field' => 'setCustomerField',
         'price_information' => 'setPriceInformation',
+        'standard_price' => 'setStandardPrice',
         'add_on_item' => 'setAddOnItem',
         'add_on_traveler' => 'setAddOnTraveler',
         'in_language' => 'setInLanguage',
@@ -271,6 +281,8 @@ class DsProduct implements ModelInterface, ArrayAccess
         'aggregate_rating' => 'setAggregateRating',
         'item_offered' => 'setItemOffered',
         'is_related_to' => 'setIsRelatedTo',
+        'valid_from' => 'setValidFrom',
+        'valid_through' => 'setValidThrough',
         'id' => 'setId',
         'identifier' => 'setIdentifier',
         'removed' => 'setRemoved',
@@ -312,6 +324,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         'traveler_field' => 'getTravelerField',
         'customer_field' => 'getCustomerField',
         'price_information' => 'getPriceInformation',
+        'standard_price' => 'getStandardPrice',
         'add_on_item' => 'getAddOnItem',
         'add_on_traveler' => 'getAddOnTraveler',
         'in_language' => 'getInLanguage',
@@ -327,6 +340,8 @@ class DsProduct implements ModelInterface, ArrayAccess
         'aggregate_rating' => 'getAggregateRating',
         'item_offered' => 'getItemOffered',
         'is_related_to' => 'getIsRelatedTo',
+        'valid_from' => 'getValidFrom',
+        'valid_through' => 'getValidThrough',
         'id' => 'getId',
         'identifier' => 'getIdentifier',
         'removed' => 'getRemoved',
@@ -420,6 +435,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['traveler_field'] = isset($data['traveler_field']) ? $data['traveler_field'] : null;
         $this->container['customer_field'] = isset($data['customer_field']) ? $data['customer_field'] : null;
         $this->container['price_information'] = isset($data['price_information']) ? $data['price_information'] : null;
+        $this->container['standard_price'] = isset($data['standard_price']) ? $data['standard_price'] : null;
         $this->container['add_on_item'] = isset($data['add_on_item']) ? $data['add_on_item'] : null;
         $this->container['add_on_traveler'] = isset($data['add_on_traveler']) ? $data['add_on_traveler'] : null;
         $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
@@ -435,6 +451,8 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['aggregate_rating'] = isset($data['aggregate_rating']) ? $data['aggregate_rating'] : null;
         $this->container['item_offered'] = isset($data['item_offered']) ? $data['item_offered'] : null;
         $this->container['is_related_to'] = isset($data['is_related_to']) ? $data['is_related_to'] : null;
+        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
+        $this->container['valid_through'] = isset($data['valid_through']) ? $data['valid_through'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -743,6 +761,30 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setPriceInformation($price_information)
     {
         $this->container['price_information'] = $price_information;
+
+        return $this;
+    }
+
+    /**
+     * Gets standard_price
+     *
+     * @return double
+     */
+    public function getStandardPrice()
+    {
+        return $this->container['standard_price'];
+    }
+
+    /**
+     * Sets standard_price
+     *
+     * @param double $standard_price The lowest price of all regular prices for adults.
+     *
+     * @return $this
+     */
+    public function setStandardPrice($standard_price)
+    {
+        $this->container['standard_price'] = $standard_price;
 
         return $this;
     }
@@ -1108,6 +1150,54 @@ class DsProduct implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets valid_from
+     *
+     * @return \DateTime
+     */
+    public function getValidFrom()
+    {
+        return $this->container['valid_from'];
+    }
+
+    /**
+     * Sets valid_from
+     *
+     * @param \DateTime $valid_from The date when the product becomes valid.
+     *
+     * @return $this
+     */
+    public function setValidFrom($valid_from)
+    {
+        $this->container['valid_from'] = $valid_from;
+
+        return $this;
+    }
+
+    /**
+     * Gets valid_through
+     *
+     * @return \DateTime
+     */
+    public function getValidThrough()
+    {
+        return $this->container['valid_through'];
+    }
+
+    /**
+     * Sets valid_through
+     *
+     * @param \DateTime $valid_through The date after when the product is not valid.
+     *
+     * @return $this
+     */
+    public function setValidThrough($valid_through)
+    {
+        $this->container['valid_through'] = $valid_through;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return string
@@ -1120,7 +1210,7 @@ class DsProduct implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id json-ld: full url to load the object (based on identifier)
+     * @param string $id A unique json-ld identifier for the vertex, represented as a Infocenter API url.
      *
      * @return $this
      */

@@ -62,7 +62,8 @@ class DsProductAvailabilityResponse implements ModelInterface, ArrayAccess
         'last_modified' => '\DateTime',
         'count' => 'int',
         'service' => 'string',
-        'additional_property' => '\Infocenter\Client\Model\DsPropertyValueResponse[]'
+        'additional_property' => '\Infocenter\Client\Model\DsPropertyValueResponse[]',
+        'standard_price' => 'double'
     ];
 
     /**
@@ -77,7 +78,8 @@ class DsProductAvailabilityResponse implements ModelInterface, ArrayAccess
         'last_modified' => 'date-time',
         'count' => 'int32',
         'service' => null,
-        'additional_property' => null
+        'additional_property' => null,
+        'standard_price' => 'double'
     ];
 
     /**
@@ -113,7 +115,8 @@ class DsProductAvailabilityResponse implements ModelInterface, ArrayAccess
         'last_modified' => 'lastModified',
         'count' => 'count',
         'service' => 'service',
-        'additional_property' => 'additionalProperty'
+        'additional_property' => 'additionalProperty',
+        'standard_price' => 'standardPrice'
     ];
 
     /**
@@ -128,7 +131,8 @@ class DsProductAvailabilityResponse implements ModelInterface, ArrayAccess
         'last_modified' => 'setLastModified',
         'count' => 'setCount',
         'service' => 'setService',
-        'additional_property' => 'setAdditionalProperty'
+        'additional_property' => 'setAdditionalProperty',
+        'standard_price' => 'setStandardPrice'
     ];
 
     /**
@@ -143,7 +147,8 @@ class DsProductAvailabilityResponse implements ModelInterface, ArrayAccess
         'last_modified' => 'getLastModified',
         'count' => 'getCount',
         'service' => 'getService',
-        'additional_property' => 'getAdditionalProperty'
+        'additional_property' => 'getAdditionalProperty',
+        'standard_price' => 'getStandardPrice'
     ];
 
     /**
@@ -211,6 +216,7 @@ class DsProductAvailabilityResponse implements ModelInterface, ArrayAccess
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['service'] = isset($data['service']) ? $data['service'] : null;
         $this->container['additional_property'] = isset($data['additional_property']) ? $data['additional_property'] : null;
+        $this->container['standard_price'] = isset($data['standard_price']) ? $data['standard_price'] : null;
     }
 
     /**
@@ -401,6 +407,30 @@ class DsProductAvailabilityResponse implements ModelInterface, ArrayAccess
     public function setAdditionalProperty($additional_property)
     {
         $this->container['additional_property'] = $additional_property;
+
+        return $this;
+    }
+
+    /**
+     * Gets standard_price
+     *
+     * @return double
+     */
+    public function getStandardPrice()
+    {
+        return $this->container['standard_price'];
+    }
+
+    /**
+     * Sets standard_price
+     *
+     * @param double $standard_price standard_price
+     *
+     * @return $this
+     */
+    public function setStandardPrice($standard_price)
+    {
+        $this->container['standard_price'] = $standard_price;
 
         return $this;
     }

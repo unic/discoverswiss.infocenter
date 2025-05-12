@@ -1,11 +1,10 @@
-# DsPartnerSimplex
+# DsConditionSimplex
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**acronym** | **string** |  | [optional] 
-**logo** | [**\Infocenter\Client\Model\DsPartnerSimplexLogo**](DsPartnerSimplexLogo.md) |  | [optional] 
-**link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
+**branch_code** | **string** | Official room code STC for more information check [AccommodataHub documentation](https://docs.discover.swiss/dev/quickstarts/how-to-work-with-accommodatahub/) | [optional] 
+**id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 

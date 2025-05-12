@@ -61,11 +61,12 @@ class DsCategory implements ModelInterface, ArrayAccess
         'icons' => '\Infocenter\Client\Model\DsCategoryIcon[]',
         'id' => 'string',
         'identifier' => 'string',
+        'name_plural' => 'string',
+        'description' => 'string',
         'removed' => 'bool',
         'data_governance' => '\Infocenter\Client\Model\DsDataGovernance',
         'last_modified' => '\DateTime',
         'available_data_language' => 'string[]',
-        'name_plural' => 'string',
         'auto_translated_data' => 'bool',
         'license' => 'string',
         'name' => 'string',
@@ -83,11 +84,12 @@ class DsCategory implements ModelInterface, ArrayAccess
         'icons' => null,
         'id' => null,
         'identifier' => null,
+        'name_plural' => null,
+        'description' => null,
         'removed' => null,
         'data_governance' => null,
         'last_modified' => 'date-time',
         'available_data_language' => null,
-        'name_plural' => null,
         'auto_translated_data' => null,
         'license' => null,
         'name' => null,
@@ -126,11 +128,12 @@ class DsCategory implements ModelInterface, ArrayAccess
         'icons' => 'icons',
         'id' => '@id',
         'identifier' => 'identifier',
+        'name_plural' => 'namePlural',
+        'description' => 'description',
         'removed' => 'removed',
         'data_governance' => 'dataGovernance',
         'last_modified' => 'lastModified',
         'available_data_language' => 'availableDataLanguage',
-        'name_plural' => 'namePlural',
         'auto_translated_data' => 'autoTranslatedData',
         'license' => 'license',
         'name' => 'name',
@@ -148,11 +151,12 @@ class DsCategory implements ModelInterface, ArrayAccess
         'icons' => 'setIcons',
         'id' => 'setId',
         'identifier' => 'setIdentifier',
+        'name_plural' => 'setNamePlural',
+        'description' => 'setDescription',
         'removed' => 'setRemoved',
         'data_governance' => 'setDataGovernance',
         'last_modified' => 'setLastModified',
         'available_data_language' => 'setAvailableDataLanguage',
-        'name_plural' => 'setNamePlural',
         'auto_translated_data' => 'setAutoTranslatedData',
         'license' => 'setLicense',
         'name' => 'setName',
@@ -170,11 +174,12 @@ class DsCategory implements ModelInterface, ArrayAccess
         'icons' => 'getIcons',
         'id' => 'getId',
         'identifier' => 'getIdentifier',
+        'name_plural' => 'getNamePlural',
+        'description' => 'getDescription',
         'removed' => 'getRemoved',
         'data_governance' => 'getDataGovernance',
         'last_modified' => 'getLastModified',
         'available_data_language' => 'getAvailableDataLanguage',
-        'name_plural' => 'getNamePlural',
         'auto_translated_data' => 'getAutoTranslatedData',
         'license' => 'getLicense',
         'name' => 'getName',
@@ -244,11 +249,12 @@ class DsCategory implements ModelInterface, ArrayAccess
         $this->container['icons'] = isset($data['icons']) ? $data['icons'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['name_plural'] = isset($data['name_plural']) ? $data['name_plural'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
         $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['available_data_language'] = isset($data['available_data_language']) ? $data['available_data_language'] : null;
-        $this->container['name_plural'] = isset($data['name_plural']) ? $data['name_plural'] : null;
         $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
         $this->container['license'] = isset($data['license']) ? $data['license'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
@@ -400,6 +406,54 @@ class DsCategory implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets name_plural
+     *
+     * @return string
+     */
+    public function getNamePlural()
+    {
+        return $this->container['name_plural'];
+    }
+
+    /**
+     * Sets name_plural
+     *
+     * @param string $name_plural name_plural
+     *
+     * @return $this
+     */
+    public function setNamePlural($name_plural)
+    {
+        $this->container['name_plural'] = $name_plural;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
      * Gets removed
      *
      * @return bool
@@ -491,30 +545,6 @@ class DsCategory implements ModelInterface, ArrayAccess
     public function setAvailableDataLanguage($available_data_language)
     {
         $this->container['available_data_language'] = $available_data_language;
-
-        return $this;
-    }
-
-    /**
-     * Gets name_plural
-     *
-     * @return string
-     */
-    public function getNamePlural()
-    {
-        return $this->container['name_plural'];
-    }
-
-    /**
-     * Sets name_plural
-     *
-     * @param string $name_plural name_plural
-     *
-     * @return $this
-     */
-    public function setNamePlural($name_plural)
-    {
-        $this->container['name_plural'] = $name_plural;
 
         return $this;
     }

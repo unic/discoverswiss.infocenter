@@ -1,11 +1,13 @@
-# DsPartnerSimplex
+# DsPartnerSimplexLogo
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**acronym** | **string** |  | [optional] 
-**logo** | [**\Infocenter\Client\Model\DsPartnerSimplexLogo**](DsPartnerSimplexLogo.md) |  | [optional] 
-**link** | [**\Infocenter\Client\Model\DsLink[]**](DsLink.md) |  | [optional] 
+**content_url** | **string** |  | [optional] 
+**encoding_format** | **string** |  | [optional] 
+**in_language** | **string** | The language of the content or performance or used in an action. Format: ISO 639-1. | [optional] 
+**thumbnail_url** | **string** |  | [optional] 
+**id** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 

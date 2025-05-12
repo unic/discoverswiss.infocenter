@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **profile_tag** | [**\Infocenter\Client\Model\DsTagSimplex[]**](DsTagSimplex.md) | Published profile tags in database | [optional] 
 **robots** | **string** | Based on the same values that used in the Robots Meta Tag as defined by Google | [optional] 
 **photo** | [**\Infocenter\Client\Model\DsImageObjectSimplex[]**](DsImageObjectSimplex.md) |  | [optional] 
-**id** | **string** | json-ld: full url to load the object (based on identifier) | [optional] 
+**id** | **string** | A unique json-ld identifier for the vertex, represented as a Infocenter API url. | [optional] 
 **identifier** | **string** |  | [optional] 
 **removed** | **bool** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\DsDataGovernance**](DsDataGovernance.md) |  | [optional] 

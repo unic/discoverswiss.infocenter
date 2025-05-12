@@ -358,7 +358,7 @@ class DsOpeningHoursSpecification implements ModelInterface, ArrayAccess
     /**
      * Sets day_of_week
      *
-     * @param string $day_of_week day_of_week
+     * @param string $day_of_week The day of the week. Possible values are: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, and Sunday.
      *
      * @return $this
      */

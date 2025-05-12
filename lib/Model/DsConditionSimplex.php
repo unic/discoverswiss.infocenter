@@ -1,6 +1,6 @@
 <?php
 /**
- * DsTypeTree
+ * DsConditionSimplex
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsTypeTree Class Doc Comment
+ * DsConditionSimplex Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsTypeTree implements ModelInterface, ArrayAccess
+class DsConditionSimplex implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsTypeTree implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TypeTree';
+    protected static $swaggerModelName = 'ConditionSimplex';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,12 +56,12 @@ class DsTypeTree implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'entity_type' => 'string',
+        'branch_code' => 'string',
+        'id' => 'string',
+        'identifier' => 'string',
+        'type' => 'string',
         'additional_type' => 'string',
-        'name' => 'string',
-        'name_plural' => 'string',
-        'description' => 'string',
-        'types' => '\Infocenter\Client\Model\DsTypeTree[]'
+        'name' => 'string'
     ];
 
     /**
@@ -70,12 +70,12 @@ class DsTypeTree implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'entity_type' => null,
+        'branch_code' => null,
+        'id' => null,
+        'identifier' => null,
+        'type' => null,
         'additional_type' => null,
-        'name' => null,
-        'name_plural' => null,
-        'description' => null,
-        'types' => null
+        'name' => null
     ];
 
     /**
@@ -105,12 +105,12 @@ class DsTypeTree implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'entity_type' => 'entityType',
+        'branch_code' => 'branchCode',
+        'id' => 'id',
+        'identifier' => 'identifier',
+        'type' => 'type',
         'additional_type' => 'additionalType',
-        'name' => 'name',
-        'name_plural' => 'namePlural',
-        'description' => 'description',
-        'types' => 'types'
+        'name' => 'name'
     ];
 
     /**
@@ -119,12 +119,12 @@ class DsTypeTree implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'entity_type' => 'setEntityType',
+        'branch_code' => 'setBranchCode',
+        'id' => 'setId',
+        'identifier' => 'setIdentifier',
+        'type' => 'setType',
         'additional_type' => 'setAdditionalType',
-        'name' => 'setName',
-        'name_plural' => 'setNamePlural',
-        'description' => 'setDescription',
-        'types' => 'setTypes'
+        'name' => 'setName'
     ];
 
     /**
@@ -133,12 +133,12 @@ class DsTypeTree implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'entity_type' => 'getEntityType',
+        'branch_code' => 'getBranchCode',
+        'id' => 'getId',
+        'identifier' => 'getIdentifier',
+        'type' => 'getType',
         'additional_type' => 'getAdditionalType',
-        'name' => 'getName',
-        'name_plural' => 'getNamePlural',
-        'description' => 'getDescription',
-        'types' => 'getTypes'
+        'name' => 'getName'
     ];
 
     /**
@@ -199,12 +199,12 @@ class DsTypeTree implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['entity_type'] = isset($data['entity_type']) ? $data['entity_type'] : null;
+        $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['name_plural'] = isset($data['name_plural']) ? $data['name_plural'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['types'] = isset($data['types']) ? $data['types'] : null;
     }
 
     /**
@@ -232,25 +232,97 @@ class DsTypeTree implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets entity_type
+     * Gets branch_code
      *
      * @return string
      */
-    public function getEntityType()
+    public function getBranchCode()
     {
-        return $this->container['entity_type'];
+        return $this->container['branch_code'];
     }
 
     /**
-     * Sets entity_type
+     * Sets branch_code
      *
-     * @param string $entity_type entity_type
+     * @param string $branch_code Official room code STC for more information check [AccommodataHub documentation](https://docs.discover.swiss/dev/quickstarts/how-to-work-with-accommodatahub/)
      *
      * @return $this
      */
-    public function setEntityType($entity_type)
+    public function setBranchCode($branch_code)
     {
-        $this->container['entity_type'] = $entity_type;
+        $this->container['branch_code'] = $branch_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets identifier
+     *
+     * @return string
+     */
+    public function getIdentifier()
+    {
+        return $this->container['identifier'];
+    }
+
+    /**
+     * Sets identifier
+     *
+     * @param string $identifier identifier
+     *
+     * @return $this
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }
@@ -299,78 +371,6 @@ class DsTypeTree implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets name_plural
-     *
-     * @return string
-     */
-    public function getNamePlural()
-    {
-        return $this->container['name_plural'];
-    }
-
-    /**
-     * Sets name_plural
-     *
-     * @param string $name_plural name_plural
-     *
-     * @return $this
-     */
-    public function setNamePlural($name_plural)
-    {
-        $this->container['name_plural'] = $name_plural;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets types
-     *
-     * @return \Infocenter\Client\Model\DsTypeTree[]
-     */
-    public function getTypes()
-    {
-        return $this->container['types'];
-    }
-
-    /**
-     * Sets types
-     *
-     * @param \Infocenter\Client\Model\DsTypeTree[] $types types
-     *
-     * @return $this
-     */
-    public function setTypes($types)
-    {
-        $this->container['types'] = $types;
 
         return $this;
     }

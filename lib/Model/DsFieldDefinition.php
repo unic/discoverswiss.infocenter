@@ -69,7 +69,8 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
         'parent_field_property_id' => 'string',
         'parent_field_value' => 'string',
         'parent_field_operator' => 'string',
-        'readonly' => 'bool'
+        'readonly' => 'bool',
+        'required_error_name' => 'string'
     ];
 
     /**
@@ -91,7 +92,8 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
         'parent_field_property_id' => null,
         'parent_field_value' => null,
         'parent_field_operator' => null,
-        'readonly' => null
+        'readonly' => null,
+        'required_error_name' => null
     ];
 
     /**
@@ -134,7 +136,8 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
         'parent_field_property_id' => 'parentFieldPropertyId',
         'parent_field_value' => 'parentFieldValue',
         'parent_field_operator' => 'parentFieldOperator',
-        'readonly' => 'readonly'
+        'readonly' => 'readonly',
+        'required_error_name' => 'requiredErrorName'
     ];
 
     /**
@@ -156,7 +159,8 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
         'parent_field_property_id' => 'setParentFieldPropertyId',
         'parent_field_value' => 'setParentFieldValue',
         'parent_field_operator' => 'setParentFieldOperator',
-        'readonly' => 'setReadonly'
+        'readonly' => 'setReadonly',
+        'required_error_name' => 'setRequiredErrorName'
     ];
 
     /**
@@ -178,7 +182,8 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
         'parent_field_property_id' => 'getParentFieldPropertyId',
         'parent_field_value' => 'getParentFieldValue',
         'parent_field_operator' => 'getParentFieldOperator',
-        'readonly' => 'getReadonly'
+        'readonly' => 'getReadonly',
+        'required_error_name' => 'getRequiredErrorName'
     ];
 
     /**
@@ -253,6 +258,7 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
         $this->container['parent_field_value'] = isset($data['parent_field_value']) ? $data['parent_field_value'] : null;
         $this->container['parent_field_operator'] = isset($data['parent_field_operator']) ? $data['parent_field_operator'] : null;
         $this->container['readonly'] = isset($data['readonly']) ? $data['readonly'] : null;
+        $this->container['required_error_name'] = isset($data['required_error_name']) ? $data['required_error_name'] : null;
     }
 
     /**
@@ -611,6 +617,30 @@ class DsFieldDefinition implements ModelInterface, ArrayAccess
     public function setReadonly($readonly)
     {
         $this->container['readonly'] = $readonly;
+
+        return $this;
+    }
+
+    /**
+     * Gets required_error_name
+     *
+     * @return string
+     */
+    public function getRequiredErrorName()
+    {
+        return $this->container['required_error_name'];
+    }
+
+    /**
+     * Sets required_error_name
+     *
+     * @param string $required_error_name Name of error message translated resource which is used to generate custom validation message instead of default Required validation message
+     *
+     * @return $this
+     */
+    public function setRequiredErrorName($required_error_name)
+    {
+        $this->container['required_error_name'] = $required_error_name;
 
         return $this;
     }

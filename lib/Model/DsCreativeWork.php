@@ -730,7 +730,7 @@ class DsCreativeWork implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id json-ld: full url to load the object (based on identifier)
+     * @param string $id A unique json-ld identifier for the vertex, represented as a Infocenter API url.
      *
      * @return $this
      */

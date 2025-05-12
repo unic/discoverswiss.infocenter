@@ -105,7 +105,7 @@ Method | HTTP request | Description
 [**webcamWeather**](DefaultApi.md#webcamweather) | **GET** /webcams/{id}/weather | Webcam weather
 
 # **accommodation**
-> \Infocenter\Client\Model\DsAccommodation accommodation($id, $ocp_apim_subscription_key, $project, $select, $include_all_photos, $accept_language, $accept_timezone, $scope)
+> \Infocenter\Client\Model\DsAccommodation accommodation($id, $ocp_apim_subscription_key, $project, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 Accommodation
 
@@ -130,16 +130,20 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Accommodation to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->accommodation($id, $ocp_apim_subscription_key, $project, $select, $include_all_photos, $accept_language, $accept_timezone, $scope);
+    $result = $apiInstance->accommodation($id, $ocp_apim_subscription_key, $project, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->accommodation: ', $e->getMessage(), PHP_EOL;
@@ -152,13 +156,17 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Accommodation to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -176,7 +184,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **administrativeAreaRegion**
-> \Infocenter\Client\Model\DsAdministrativeArea administrativeAreaRegion($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsAdministrativeArea administrativeAreaRegion($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $ds_contained_in_place_filter)
 
 AdministrativeArea (Region)
 
@@ -201,16 +209,17 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Region to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
 
 try {
-    $result = $apiInstance->administrativeAreaRegion($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->administrativeAreaRegion($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $ds_contained_in_place_filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->administrativeAreaRegion: ', $e->getMessage(), PHP_EOL;
@@ -223,13 +232,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Region to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
 
 ### Return type
 
@@ -272,12 +282,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of AdministrativeArea to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:<br>`1` - Return forecast data for the next day. Returned by default.<br>`5` - Return forecast data for the next 5 days.<br>`10` - Return forecast data for the next 10 days.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->administrativeAreaRegionDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -293,12 +303,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of AdministrativeArea to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -341,12 +351,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of AdministrativeArea to get the weather hourly forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:<br>`1` - Return forecast data for the next hour. Default value.<br>`12` - Return hourly forecast for next 12 hours.<br>`24` - Return hourly forecast for next 24 hours.<br>`72` - Return hourly forecast for next 72 hours (3 days).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->administrativeAreaRegionHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -362,12 +372,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of AdministrativeArea to get the weather hourly forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -410,13 +420,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of AdministrativeArea to get the weather information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
-$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:<br>`0` - Return the most current weather conditions. Default value.<br>`6` - Return weather conditions from past 6 hours.<br>`24` - Return weather conditions from past 24 hours.
+$details = true; // bool | Returns full details for the current conditions, `false` by default.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->administrativeAreaRegionWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
@@ -432,13 +442,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of AdministrativeArea to get the weather information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
- **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. | [optional]
+ **details** | **bool**| Returns full details for the current conditions, &#x60;false&#x60; by default. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -481,7 +491,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Amenity to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
@@ -498,7 +508,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Amenity to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
 
 ### Return type
@@ -517,7 +527,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **audioObject**
-> \Infocenter\Client\Model\DsAudioObject audioObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsAudioObject audioObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope)
 
 AudioObject
 
@@ -542,17 +552,16 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of AudioObject to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->audioObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->audioObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->audioObject: ', $e->getMessage(), PHP_EOL;
@@ -565,14 +574,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of AudioObject to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
 
@@ -615,11 +623,11 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Award to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 
 try {
@@ -636,11 +644,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Award to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
 
 ### Return type
@@ -659,7 +667,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **category**
-> \Infocenter\Client\Model\DsCategory category($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsCategory category($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope)
 
 Category
 
@@ -684,16 +692,16 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Category to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 
 try {
-    $result = $apiInstance->category($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->category($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->category: ', $e->getMessage(), PHP_EOL;
@@ -706,13 +714,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Category to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
 
 ### Return type
 
@@ -730,7 +738,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **categoryTree**
-> \Infocenter\Client\Model\DsCategoryTreeItem categoryTree($id, $ocp_apim_subscription_key, $project, $select, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsCategoryTreeItem categoryTree($id, $ocp_apim_subscription_key, $select, $accept_language, $accept_timezone, $scope)
 
 Category Tree
 
@@ -755,15 +763,14 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Category to set root category.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 
 try {
-    $result = $apiInstance->categoryTree($id, $ocp_apim_subscription_key, $project, $select, $accept_language, $accept_timezone, $category_version);
+    $result = $apiInstance->categoryTree($id, $ocp_apim_subscription_key, $select, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->categoryTree: ', $e->getMessage(), PHP_EOL;
@@ -776,12 +783,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Category to set root category. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
 
 ### Return type
 
@@ -799,7 +805,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **civicStructure**
-> \Infocenter\Client\Model\DsCivicStructure civicStructure($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsCivicStructure civicStructure($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 CivicStructure
 
@@ -824,18 +830,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of CivicStructure to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->civicStructure($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->civicStructure($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->civicStructure: ', $e->getMessage(), PHP_EOL;
@@ -848,15 +857,18 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of CivicStructure to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -899,12 +911,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of CivicStructure to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:<br>`1` - Return forecast data for the next day. Returned by default.<br>`5` - Return forecast data for the next 5 days.<br>`10` - Return forecast data for the next 10 days.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->civicStructureDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -920,12 +932,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of CivicStructure to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -968,12 +980,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of CivicStructure to get the weather hourly forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:<br>`1` - Return forecast data for the next hour. Default value.<br>`12` - Return hourly forecast for next 12 hours.<br>`24` - Return hourly forecast for next 24 hours.<br>`72` - Return hourly forecast for next 72 hours (3 days).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->civicStructureHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -989,12 +1001,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of CivicStructure to get the weather hourly forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -1037,13 +1049,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of CivicStructure to get the weather information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
-$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:<br>`0` - Return the most current weather conditions. Default value.<br>`6` - Return weather conditions from past 6 hours.<br>`24` - Return weather conditions from past 24 hours.
+$details = true; // bool | Returns full details for the current conditions, `false` by default.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->civicStructureWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
@@ -1059,13 +1071,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of CivicStructure to get the weather information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
- **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. | [optional]
+ **details** | **bool**| Returns full details for the current conditions, &#x60;false&#x60; by default. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -1083,7 +1095,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **condition**
-> \Infocenter\Client\Model\DsCondition condition($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsCondition condition($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 Condition
 
@@ -1108,18 +1120,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Condition to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->condition($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->condition($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->condition: ', $e->getMessage(), PHP_EOL;
@@ -1132,15 +1147,18 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Condition to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -1183,12 +1201,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Condition to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:<br>`1` - Return forecast data for the next day. Returned by default.<br>`5` - Return forecast data for the next 5 days.<br>`10` - Return forecast data for the next 10 days.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->conditionDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -1204,12 +1222,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Condition to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -1252,12 +1270,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Condition to get the weather hourly forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:<br>`1` - Return forecast data for the next hour. Default value.<br>`12` - Return hourly forecast for next 12 hours.<br>`24` - Return hourly forecast for next 24 hours.<br>`72` - Return hourly forecast for next 72 hours (3 days).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->conditionHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -1273,12 +1291,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Condition to get the weather hourly forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -1321,13 +1339,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Condition to get the weather information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
-$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:<br>`0` - Return the most current weather conditions. Default value.<br>`6` - Return weather conditions from past 6 hours.<br>`24` - Return weather conditions from past 24 hours.
+$details = true; // bool | Returns full details for the current conditions, `false` by default.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->conditionWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
@@ -1343,13 +1361,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Condition to get the weather information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
- **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. | [optional]
+ **details** | **bool**| Returns full details for the current conditions, &#x60;false&#x60; by default. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -1367,7 +1385,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **creativeWork**
-> \Infocenter\Client\Model\DsCreativeWork creativeWork($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsCreativeWork creativeWork($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 CreativeWork
 
@@ -1392,17 +1410,20 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of CreativeWork to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->creativeWork($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->creativeWork($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->creativeWork: ', $e->getMessage(), PHP_EOL;
@@ -1415,14 +1436,17 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of CreativeWork to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -1465,9 +1489,9 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $term_code = "term_code_example"; // string | Use property code of a term to get the current term version.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->currentTermVersion($term_code, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
@@ -1483,9 +1507,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **term_code** | **string**| Use property code of a term to get the current term version. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -1503,7 +1527,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **event**
-> \Infocenter\Client\Model\DsEvent event($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsEvent event($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 Event
 
@@ -1528,18 +1552,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Event to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->event($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->event($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->event: ', $e->getMessage(), PHP_EOL;
@@ -1552,15 +1579,18 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Event to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -1603,12 +1633,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Event to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:<br>`1` - Return forecast data for the next day. Returned by default.<br>`5` - Return forecast data for the next 5 days.<br>`10` - Return forecast data for the next 10 days.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->eventDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -1624,12 +1654,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Event to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -1672,12 +1702,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Event to get the weather hourly forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:<br>`1` - Return forecast data for the next hour. Default value.<br>`12` - Return hourly forecast for next 12 hours.<br>`24` - Return hourly forecast for next 24 hours.<br>`72` - Return hourly forecast for next 72 hours (3 days).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->eventHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -1693,12 +1723,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Event to get the weather hourly forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -1741,13 +1771,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Event to get the weather information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
-$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:<br>`0` - Return the most current weather conditions. Default value.<br>`6` - Return weather conditions from past 6 hours.<br>`24` - Return weather conditions from past 24 hours.
+$details = true; // bool | Returns full details for the current conditions, `false` by default.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->eventWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
@@ -1763,13 +1793,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Event to get the weather information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
- **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. | [optional]
+ **details** | **bool**| Returns full details for the current conditions, &#x60;false&#x60; by default. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -1787,7 +1817,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **foodEstablishment**
-> \Infocenter\Client\Model\DsFoodEstablishment foodEstablishment($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsFoodEstablishment foodEstablishment($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 FoodEstablishment
 
@@ -1812,18 +1842,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of FoodEstablishment to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->foodEstablishment($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->foodEstablishment($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->foodEstablishment: ', $e->getMessage(), PHP_EOL;
@@ -1836,15 +1869,18 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of FoodEstablishment to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -1887,13 +1923,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of FoodEstablishment to get the weather information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
-$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:<br>`0` - Return the most current weather conditions. Default value.<br>`6` - Return weather conditions from past 6 hours.<br>`24` - Return weather conditions from past 24 hours.
+$details = true; // bool | Returns full details for the current conditions, `false` by default.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->foodEstablishmentWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
@@ -1909,13 +1945,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of FoodEstablishment to get the weather information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
- **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. | [optional]
+ **details** | **bool**| Returns full details for the current conditions, &#x60;false&#x60; by default. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -1958,12 +1994,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of FoodEstablishment to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:<br>`1` - Return forecast data for the next day. Returned by default.<br>`5` - Return forecast data for the next 5 days.<br>`10` - Return forecast data for the next 10 days.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->foodEstablishmentWeatherDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -1979,12 +2015,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of FoodEstablishment to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -2027,12 +2063,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of FoodEstablishment to get the weather hourly forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:<br>`1` - Return forecast data for the next hour. Default value.<br>`12` - Return hourly forecast for next 12 hours.<br>`24` - Return hourly forecast for next 24 hours.<br>`72` - Return hourly forecast for next 72 hours (3 days).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->foodEstablishmentWeatherHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -2048,12 +2084,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of FoodEstablishment to get the weather hourly forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -2095,7 +2131,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 
 try {
     $apiInstance->getStatus($ocp_apim_subscription_key);
@@ -2109,7 +2145,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
 
 ### Return type
 
@@ -2151,7 +2187,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 
 try {
     $result = $apiInstance->getStatusAbout($ocp_apim_subscription_key);
@@ -2166,7 +2202,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
 
 ### Return type
 
@@ -2184,7 +2220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTheCurrentTermVersionsOfThePartner**
-> \Infocenter\Client\Model\DsTermVersionArray getTheCurrentTermVersionsOfThePartner($partner_acronym, $ocp_apim_subscription_key, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTermVersionArray getTheCurrentTermVersionsOfThePartner($partner_acronym, $ocp_apim_subscription_key, $accept_language, $accept_timezone, $scope)
 
 Get the current TermVersions of the partner
 
@@ -2209,12 +2245,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $partner_acronym = "partner_acronym_example"; // string | Use partner acronym to set the partner which should be used in the request.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 
 try {
-    $result = $apiInstance->getTheCurrentTermVersionsOfThePartner($partner_acronym, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
+    $result = $apiInstance->getTheCurrentTermVersionsOfThePartner($partner_acronym, $ocp_apim_subscription_key, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTheCurrentTermVersionsOfThePartner: ', $e->getMessage(), PHP_EOL;
@@ -2227,9 +2264,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **partner_acronym** | **string**| Use partner acronym to set the partner which should be used in the request. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
 
 ### Return type
 
@@ -2247,7 +2285,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **imageObject**
-> \Infocenter\Client\Model\DsImageObject imageObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsImageObject imageObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $ds_tag_filter)
 
 ImageObject
 
@@ -2272,17 +2310,17 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of ImageObject to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
 
 try {
-    $result = $apiInstance->imageObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->imageObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $ds_tag_filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->imageObject: ', $e->getMessage(), PHP_EOL;
@@ -2295,14 +2333,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of ImageObject to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
 
 ### Return type
 
@@ -2320,7 +2358,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAccommodation**
-> \Infocenter\Client\Model\DsAccommodationsResponse listAccommodation($ocp_apim_subscription_key, $project, $select, $updated_since, $datasource, $continuation_token, $top, $additional_type, $include_count, $usage, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope)
+> \Infocenter\Client\Model\DsAccommodationsResponse listAccommodation($ocp_apim_subscription_key, $project, $select, $updated_since, $datasource, $continuation_token, $top, $additional_type, $include_count, $usage, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List Accommodation
 
@@ -2344,24 +2382,28 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$additional_type = "additional_type_example"; // string | Filter by the additional type property
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$usage = "usage_example"; // string | usage
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$additional_type = "additional_type_example"; // string | Filters by `additional type`.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$usage = "usage_example"; // string | 
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listAccommodation($ocp_apim_subscription_key, $project, $select, $updated_since, $datasource, $continuation_token, $top, $additional_type, $include_count, $usage, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope);
+    $result = $apiInstance->listAccommodation($ocp_apim_subscription_key, $project, $select, $updated_since, $datasource, $continuation_token, $top, $additional_type, $include_count, $usage, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listAccommodation: ', $e->getMessage(), PHP_EOL;
@@ -2373,21 +2415,25 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **additional_type** | **string**| Filter by the additional type property | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **usage** | **string**| usage | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **additional_type** | **string**| Filters by &#x60;additional type&#x60;. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **usage** | **string**|  | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -2405,7 +2451,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAdministrativeAreaRegion**
-> \Infocenter\Client\Model\DsAdministrativeAreasResponse listAdministrativeAreaRegion($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $identifiers, $accept_timezone, $category_version, $accept_language)
+> \Infocenter\Client\Model\DsAdministrativeAreasResponse listAdministrativeAreaRegion($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $identifiers, $accept_language, $accept_timezone, $scope, $ds_contained_in_place_filter)
 
 List AdministrativeArea (Region)
 
@@ -2429,25 +2475,26 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$category = "category_example"; // string | Use property identifier of category to filter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$category = "category_example"; // string | Filters by `category`. Use property identifier of category.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
 $admin_areas_only = "admin_areas_only_example"; // string | set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default = false (works only in combination with rootObjectsOnly).
 $root_objects_only = true; // bool | Pass 'true' if you want to get only root areas.
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
 
 try {
-    $result = $apiInstance->listAdministrativeAreaRegion($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $identifiers, $accept_timezone, $category_version, $accept_language);
+    $result = $apiInstance->listAdministrativeAreaRegion($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $admin_areas_only, $root_objects_only, $identifiers, $accept_language, $accept_timezone, $scope, $ds_contained_in_place_filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listAdministrativeAreaRegion: ', $e->getMessage(), PHP_EOL;
@@ -2459,22 +2506,23 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **category** | **string**| Use property identifier of category to filter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **category** | **string**| Filters by &#x60;category&#x60;. Use property identifier of category. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
  **admin_areas_only** | **string**| set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (works only in combination with rootObjectsOnly). | [optional]
  **root_objects_only** | **bool**| Pass &#x27;true&#x27; if you want to get only root areas. | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
 
 ### Return type
 
@@ -2516,8 +2564,8 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$additional_type = "additional_type_example"; // string | Filter by the additional type property
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$additional_type = "additional_type_example"; // string | Filters by `additional type`.
 $place_features = true; // bool | Filter by place features.
 $lodging_business_features = true; // bool | Filter by lodging business features.
 $accommodation_features = true; // bool | Filter by accommodation features.
@@ -2536,8 +2584,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **additional_type** | **string**| Filter by the additional type property | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **additional_type** | **string**| Filters by &#x60;additional type&#x60;. | [optional]
  **place_features** | **bool**| Filter by place features. | [optional]
  **lodging_business_features** | **bool**| Filter by lodging business features. | [optional]
  **accommodation_features** | **bool**| Filter by accommodation features. | [optional]
@@ -2559,7 +2607,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAudioObject**
-> \Infocenter\Client\Model\DsAudioObjectsResponse listAudioObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsAudioObjectsResponse listAudioObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope)
 
 List AudioObject
 
@@ -2583,22 +2631,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listAudioObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listAudioObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listAudioObject: ', $e->getMessage(), PHP_EOL;
@@ -2610,19 +2657,18 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
 
@@ -2664,19 +2710,19 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$additional_type = "additional_type_example"; // string | Filter by the additional type property
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$usage = "usage_example"; // string | usage
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$additional_type = "additional_type_example"; // string | Filters by `additional type`.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$usage = "usage_example"; // string | 
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 
 try {
@@ -2692,19 +2738,19 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **additional_type** | **string**| Filter by the additional type property | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **usage** | **string**| usage | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **additional_type** | **string**| Filters by &#x60;additional type&#x60;. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **usage** | **string**|  | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
 
 ### Return type
@@ -2723,7 +2769,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCategory**
-> \Infocenter\Client\Model\DsCategoriesResponse listCategory($ocp_apim_subscription_key, $parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $identifiers, $accept_language, $category_version)
+> \Infocenter\Client\Model\DsCategoriesResponse listCategory($ocp_apim_subscription_key, $parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $identifiers, $accept_language, $accept_timezone, $scope)
 
 List Category
 
@@ -2747,22 +2793,23 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $parent_category = "parent_category_example"; // string | Use property identifier of category to filter.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
 $root_objects_only = true; // bool | Pass 'true' if you want to get only root categories.
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 
 try {
-    $result = $apiInstance->listCategory($ocp_apim_subscription_key, $parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $identifiers, $accept_language, $category_version);
+    $result = $apiInstance->listCategory($ocp_apim_subscription_key, $parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $identifiers, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCategory: ', $e->getMessage(), PHP_EOL;
@@ -2774,19 +2821,20 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **parent_category** | **string**| Use property identifier of category to filter. | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
  **root_objects_only** | **bool**| Pass &#x27;true&#x27; if you want to get only root categories. | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
 
 ### Return type
 
@@ -2804,7 +2852,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCivicStructure**
-> \Infocenter\Client\Model\DsCivicStructuresResponse listCivicStructure($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsCivicStructuresResponse listCivicStructure($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List CivicStructure
 
@@ -2828,25 +2876,28 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$category = "category_example"; // string | Use property identifier of category to filter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$category = "category_example"; // string | Filters by `category`. Use property identifier of category.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listCivicStructure($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listCivicStructure($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCivicStructure: ', $e->getMessage(), PHP_EOL;
@@ -2858,22 +2909,25 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **category** | **string**| Use property identifier of category to filter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **category** | **string**| Filters by &#x60;category&#x60;. Use property identifier of category. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -2891,7 +2945,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCondition**
-> \Infocenter\Client\Model\DsConditionsResponse listCondition($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_timezone, $scope, $accept_language, $category_version)
+> \Infocenter\Client\Model\DsConditionsResponse listCondition($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List Condition
 
@@ -2915,25 +2969,28 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$category = "category_example"; // string | Use property identifier of category to filter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
-$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$category = "category_example"; // string | Filters by `category`. Use property identifier of category.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listCondition($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_timezone, $scope, $accept_language, $category_version);
+    $result = $apiInstance->listCondition($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCondition: ', $e->getMessage(), PHP_EOL;
@@ -2945,22 +3002,25 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **category** | **string**| Use property identifier of category to filter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
- **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **category** | **string**| Filters by &#x60;category&#x60;. Use property identifier of category. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -2978,7 +3038,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCreativeWork**
-> \Infocenter\Client\Model\DsCreativeWorksResponse listCreativeWork($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsCreativeWorksResponse listCreativeWork($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List CreativeWork
 
@@ -3002,22 +3062,25 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listCreativeWork($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listCreativeWork($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCreativeWork: ', $e->getMessage(), PHP_EOL;
@@ -3029,19 +3092,22 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -3059,7 +3125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listEvents**
-> \Infocenter\Client\Model\DsEventsResponse listEvents($ocp_apim_subscription_key, $updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_timezone, $scope, $accept_language, $category_version)
+> \Infocenter\Client\Model\DsEventsResponse listEvents($ocp_apim_subscription_key, $updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List Events
 
@@ -3083,26 +3149,29 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$category = "category_example"; // string | Use property identifier of category to filter.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$location = "location_example"; // string | Use property identifier of place to filter by the location (business).
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
-$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$category = "category_example"; // string | Filters by `category`. Use property identifier of category.
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$location = "location_example"; // string | Filters by `location`. Use property identifier of local bussiness.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listEvents($ocp_apim_subscription_key, $updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_timezone, $scope, $accept_language, $category_version);
+    $result = $apiInstance->listEvents($ocp_apim_subscription_key, $updated_since, $category, $datasource, $continuation_token, $top, $contained_in_place, $location, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listEvents: ', $e->getMessage(), PHP_EOL;
@@ -3114,23 +3183,26 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **category** | **string**| Use property identifier of category to filter. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **location** | **string**| Use property identifier of place to filter by the location (business). | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
- **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **category** | **string**| Filters by &#x60;category&#x60;. Use property identifier of category. | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **location** | **string**| Filters by &#x60;location&#x60;. Use property identifier of local bussiness. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -3148,7 +3220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listFoodEstablishment**
-> \Infocenter\Client\Model\DsFoodEstablishmentsResponse listFoodEstablishment($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsFoodEstablishmentsResponse listFoodEstablishment($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List FoodEstablishment
 
@@ -3172,25 +3244,28 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$category = "category_example"; // string | Use property identifier of category to filter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$category = "category_example"; // string | Filters by `category`. Use property identifier of category.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listFoodEstablishment($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listFoodEstablishment($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listFoodEstablishment: ', $e->getMessage(), PHP_EOL;
@@ -3202,22 +3277,25 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **category** | **string**| Use property identifier of category to filter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **category** | **string**| Filters by &#x60;category&#x60;. Use property identifier of category. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -3235,7 +3313,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listImageObject**
-> \Infocenter\Client\Model\DsImageObjectsResponse listImageObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsImageObjectsResponse listImageObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $ds_tag_filter)
 
 List ImageObject
 
@@ -3259,22 +3337,22 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
 
 try {
-    $result = $apiInstance->listImageObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listImageObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $ds_tag_filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listImageObject: ', $e->getMessage(), PHP_EOL;
@@ -3286,19 +3364,19 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
 
 ### Return type
 
@@ -3316,7 +3394,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listLocalBusiness**
-> \Infocenter\Client\Model\DsLocalBusinessesResponse listLocalBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $additional_type, $parent_organization, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsLocalBusinessesResponse listLocalBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $additional_type, $parent_organization, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List LocalBusiness
 
@@ -3340,28 +3418,31 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$category = "category_example"; // string | Use property identifier of category to filter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$description_mode = "description_mode_example"; // string | Use property to extract additional information from description to additionalProperty.
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
-$additional_type = "additional_type_example"; // string | Filter by the additional type property
-$parent_organization = "parent_organization_example"; // string | Filter by the parentOrganization property.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$category = "category_example"; // string | Filters by `category`. Use property identifier of category.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$description_mode = "description_mode_example"; // string | Use `splitToAdditionalProperty` to extract additional information from description to additionalProperty, by default `full`.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
+$additional_type = "additional_type_example"; // string | Filters by `additional type`.
+$parent_organization = "parent_organization_example"; // string | 
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listLocalBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $additional_type, $parent_organization, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listLocalBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $additional_type, $parent_organization, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listLocalBusiness: ', $e->getMessage(), PHP_EOL;
@@ -3373,25 +3454,28 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **category** | **string**| Use property identifier of category to filter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **description_mode** | **string**| Use property to extract additional information from description to additionalProperty. | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
- **additional_type** | **string**| Filter by the additional type property | [optional]
- **parent_organization** | **string**| Filter by the parentOrganization property. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **category** | **string**| Filters by &#x60;category&#x60;. Use property identifier of category. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **description_mode** | **string**| Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
+ **additional_type** | **string**| Filters by &#x60;additional type&#x60;. | [optional]
+ **parent_organization** | **string**|  | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -3409,7 +3493,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listLodgingBusiness**
-> \Infocenter\Client\Model\DsLodgingBusinessesResponse listLodgingBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $parent_organization, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsLodgingBusinessesResponse listLodgingBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $parent_organization, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List LodgingBusiness
 
@@ -3433,27 +3517,30 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$category = "category_example"; // string | Use property identifier of category to filter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$description_mode = "description_mode_example"; // string | Use property to extract additional information from description to additionalProperty.
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
-$parent_organization = "parent_organization_example"; // string | Filter by the parentOrganization property.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$category = "category_example"; // string | Filters by `category`. Use property identifier of category.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$description_mode = "description_mode_example"; // string | Use `splitToAdditionalProperty` to extract additional information from description to additionalProperty, by default `full`.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
+$parent_organization = "parent_organization_example"; // string | 
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listLodgingBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $parent_organization, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listLodgingBusiness($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $parent_organization, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listLodgingBusiness: ', $e->getMessage(), PHP_EOL;
@@ -3465,24 +3552,27 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **category** | **string**| Use property identifier of category to filter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **description_mode** | **string**| Use property to extract additional information from description to additionalProperty. | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
- **parent_organization** | **string**| Filter by the parentOrganization property. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **category** | **string**| Filters by &#x60;category&#x60;. Use property identifier of category. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **description_mode** | **string**| Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
+ **parent_organization** | **string**|  | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -3500,7 +3590,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMediaObject**
-> \Infocenter\Client\Model\DsMediaObjectsResponse listMediaObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsMediaObjectsResponse listMediaObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope)
 
 List MediaObject
 
@@ -3524,22 +3614,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listMediaObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listMediaObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listMediaObject: ', $e->getMessage(), PHP_EOL;
@@ -3551,19 +3640,18 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
 
@@ -3581,7 +3669,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listPlace**
-> \Infocenter\Client\Model\DsPlacesResponse listPlace($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsPlacesResponse listPlace($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List Place
 
@@ -3605,25 +3693,28 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$category = "category_example"; // string | Use property identifier of category to filter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$category = "category_example"; // string | Filters by `category`. Use property identifier of category.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listPlace($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listPlace($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listPlace: ', $e->getMessage(), PHP_EOL;
@@ -3635,22 +3726,25 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **category** | **string**| Use property identifier of category to filter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **category** | **string**| Filters by &#x60;category&#x60;. Use property identifier of category. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -3668,7 +3762,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listProducts**
-> \Infocenter\Client\Model\DsProductsResponse listProducts($ocp_apim_subscription_key, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $area_served, $accept_language, $category_version)
+> \Infocenter\Client\Model\DsProductsResponse listProducts($ocp_apim_subscription_key, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $area_served, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List Products
 
@@ -3692,22 +3786,27 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$description_mode = "description_mode_example"; // string | Use property to extract additional information from description to additionalProperty.
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
-$area_served = "area_served_example"; // string | Filter by area served id
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$description_mode = "description_mode_example"; // string | Use `splitToAdditionalProperty` to extract additional information from description to additionalProperty, by default `full`.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
+$area_served = "area_served_example"; // string | Filters by `areaServed`. Use property identifier of place.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listProducts($ocp_apim_subscription_key, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $area_served, $accept_language, $category_version);
+    $result = $apiInstance->listProducts($ocp_apim_subscription_key, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $description_mode, $include_all_photos, $area_served, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listProducts: ', $e->getMessage(), PHP_EOL;
@@ -3719,19 +3818,24 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **description_mode** | **string**| Use property to extract additional information from description to additionalProperty. | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
- **area_served** | **string**| Filter by area served id | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **description_mode** | **string**| Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
+ **area_served** | **string**| Filters by &#x60;areaServed&#x60;. Use property identifier of place. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -3749,7 +3853,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listProductsPOST**
-> \Infocenter\Client\Model\DsProductsResponse listProductsPOST($ocp_apim_subscription_key, $body, $accept_language, $category_version, $area_served)
+> \Infocenter\Client\Model\DsProductsResponse listProductsPOST($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version, $area_served)
 
 List Products (POST)
 
@@ -3773,14 +3877,19 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $body = new \Infocenter\Client\Model\DsListProductRequest(); // \Infocenter\Client\Model\DsListProductRequest | 
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$category_version = "category_version_example"; // string | Use to filter categories by version
-$area_served = "area_served_example"; // string | Filter by area served id
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
+$area_served = "area_served_example"; // string | Filters by `areaServed`. Use property identifier of place.
 
 try {
-    $result = $apiInstance->listProductsPOST($ocp_apim_subscription_key, $body, $accept_language, $category_version, $area_served);
+    $result = $apiInstance->listProductsPOST($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version, $area_served);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listProductsPOST: ', $e->getMessage(), PHP_EOL;
@@ -3792,11 +3901,16 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **body** | [**\Infocenter\Client\Model\DsListProductRequest**](../Model/DsListProductRequest.md)|  | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
- **area_served** | **string**| Filter by area served id | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
+ **area_served** | **string**| Filters by &#x60;areaServed&#x60;. Use property identifier of place. | [optional]
 
 ### Return type
 
@@ -3814,7 +3928,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listReview**
-> \Infocenter\Client\Model\DsReviewResponse listReview($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsReviewResponse listReview($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope)
 
 List Review
 
@@ -3838,22 +3952,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listReview($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listReview($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listReview: ', $e->getMessage(), PHP_EOL;
@@ -3865,19 +3978,18 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
 
@@ -3895,7 +4007,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSkiResort**
-> \Infocenter\Client\Model\DsSkiResortsResponse listSkiResort($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsSkiResortsResponse listSkiResort($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List SkiResort
 
@@ -3919,25 +4031,28 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$category = "category_example"; // string | Use property identifier of category to filter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$category = "category_example"; // string | Filters by `category`. Use property identifier of category.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listSkiResort($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listSkiResort($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listSkiResort: ', $e->getMessage(), PHP_EOL;
@@ -3949,22 +4064,25 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **category** | **string**| Use property identifier of category to filter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **category** | **string**| Filters by &#x60;category&#x60;. Use property identifier of category. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -3982,7 +4100,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTag**
-> \Infocenter\Client\Model\DsTagsResponse listTag($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $usage, $identifiers, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTagsResponse listTag($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $usage, $identifiers, $accept_language, $accept_timezone, $scope)
 
 List Tag
 
@@ -4006,22 +4124,23 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$additional_type = "additional_type_example"; // string | Filter by the additional type property
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$usage = "usage_example"; // string | usage
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$additional_type = "additional_type_example"; // string | Filters by `additional type`.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$usage = "usage_example"; // string | 
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 
 try {
-    $result = $apiInstance->listTag($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $usage, $identifiers, $accept_language, $accept_timezone);
+    $result = $apiInstance->listTag($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $additional_type, $include_count, $usage, $identifiers, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listTag: ', $e->getMessage(), PHP_EOL;
@@ -4033,19 +4152,20 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **additional_type** | **string**| Filter by the additional type property | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **usage** | **string**| usage | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **additional_type** | **string**| Filters by &#x60;additional type&#x60;. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **usage** | **string**|  | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
 
 ### Return type
 
@@ -4087,7 +4207,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 
 try {
     $result = $apiInstance->listTimezones($ocp_apim_subscription_key);
@@ -4102,7 +4222,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
 
 ### Return type
 
@@ -4120,7 +4240,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTour**
-> \Infocenter\Client\Model\DsToursResponse listTour($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsToursResponse listTour($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List Tour
 
@@ -4144,25 +4264,28 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$category = "category_example"; // string | Use property identifier of category to filter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$category = "category_example"; // string | Filters by `category`. Use property identifier of category.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listTour($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listTour($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listTour: ', $e->getMessage(), PHP_EOL;
@@ -4174,22 +4297,25 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **category** | **string**| Use property identifier of category to filter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **category** | **string**| Filters by &#x60;category&#x60;. Use property identifier of category. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -4207,7 +4333,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTransportationSystem**
-> \Infocenter\Client\Model\DsTransportationSystemsResponse listTransportationSystem($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsTransportationSystemsResponse listTransportationSystem($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List TransportationSystem
 
@@ -4231,25 +4357,28 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$category = "category_example"; // string | Use property identifier of category to filter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$category = "category_example"; // string | Filters by `category`. Use property identifier of category.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listTransportationSystem($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listTransportationSystem($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listTransportationSystem: ', $e->getMessage(), PHP_EOL;
@@ -4261,22 +4390,25 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **category** | **string**| Use property identifier of category to filter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **category** | **string**| Filters by &#x60;category&#x60;. Use property identifier of category. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -4294,7 +4426,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listVideoObject**
-> \Infocenter\Client\Model\DsVideoObjectsResponse listVideoObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsVideoObjectsResponse listVideoObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope)
 
 List VideoObject
 
@@ -4318,22 +4450,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->listVideoObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listVideoObject($ocp_apim_subscription_key, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listVideoObject: ', $e->getMessage(), PHP_EOL;
@@ -4345,19 +4476,18 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
 
@@ -4375,7 +4505,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listWebcams**
-> \Infocenter\Client\Model\DsWebcamsResponse listWebcams($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsWebcamsResponse listWebcams($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 List Webcams
 
@@ -4399,25 +4529,28 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$category = "category_example"; // string | Use property identifier of category to filter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Return only changed data since specific date.
-$datasource = "datasource_example"; // string | Use datasource to filter.
-$continuation_token = "continuation_token_example"; // string | Use it for get next set of data.
-$top = 56; // int | Format - int32. Number of next set of entities.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_count = true; // bool | Pass 'true' if you want to get total filtered items count in response
-$identifiers = "identifiers_example"; // string | Identifiers of the objects to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$category = "category_example"; // string | Filters by `category`. Use property identifier of category.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$updated_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: `yyyy-MM-ddTHH:mm:ss`
+$datasource = "datasource_example"; // string | Filters by `datasource`.
+$continuation_token = "continuation_token_example"; // string | A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken).
+$top = 56; // int | Format - int32. Sets the page size of response.
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_count = true; // bool | Use `true` if you want to get total filtered items count in response.
+$identifiers = "identifiers_example"; // string | Comma-separated list of Id's to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->listWebcams($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->listWebcams($ocp_apim_subscription_key, $category, $contained_in_place, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $identifiers, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listWebcams: ', $e->getMessage(), PHP_EOL;
@@ -4429,22 +4562,25 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **category** | **string**| Use property identifier of category to filter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Return only changed data since specific date. | [optional]
- **datasource** | **string**| Use datasource to filter. | [optional]
- **continuation_token** | **string**| Use it for get next set of data. | [optional]
- **top** | **int**| Format - int32. Number of next set of entities. | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_count** | **bool**| Pass &#x27;true&#x27; if you want to get total filtered items count in response | [optional]
- **identifiers** | **string**| Identifiers of the objects to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **category** | **string**| Filters by &#x60;category&#x60;. Use property identifier of category. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **updated_since** | **\DateTime**| Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **datasource** | **string**| Filters by &#x60;datasource&#x60;. | [optional]
+ **continuation_token** | **string**| A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). | [optional]
+ **top** | **int**| Format - int32. Sets the page size of response. | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_count** | **bool**| Use &#x60;true&#x60; if you want to get total filtered items count in response. | [optional]
+ **identifiers** | **string**| Comma-separated list of Id&#x27;s to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -4462,7 +4598,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **localBusiness**
-> \Infocenter\Client\Model\DsLocalBusiness localBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsLocalBusiness localBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 LocalBusiness
 
@@ -4487,19 +4623,22 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of LocalBusiness to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
-$description_mode = "description_mode_example"; // string | Use property to extract additional information from description to additionalProperty.
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$description_mode = "description_mode_example"; // string | Use `splitToAdditionalProperty` to extract additional information from description to additionalProperty, by default `full`.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->localBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->localBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->localBusiness: ', $e->getMessage(), PHP_EOL;
@@ -4512,16 +4651,19 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of LocalBusiness to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **description_mode** | **string**| Use property to extract additional information from description to additionalProperty. | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **description_mode** | **string**| Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -4564,12 +4706,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of LocalBusiness to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:<br>`1` - Return forecast data for the next day. Returned by default.<br>`5` - Return forecast data for the next 5 days.<br>`10` - Return forecast data for the next 10 days.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->localBusinessDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -4585,12 +4727,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of LocalBusiness to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -4633,12 +4775,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of LocalBusiness to get the weather hourly forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:<br>`1` - Return forecast data for the next hour. Default value.<br>`12` - Return hourly forecast for next 12 hours.<br>`24` - Return hourly forecast for next 24 hours.<br>`72` - Return hourly forecast for next 72 hours (3 days).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->localBusinessHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -4654,12 +4796,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of LocalBusiness to get the weather hourly forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -4702,13 +4844,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of LocalBusiness to get the weather information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
-$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:<br>`0` - Return the most current weather conditions. Default value.<br>`6` - Return weather conditions from past 6 hours.<br>`24` - Return weather conditions from past 24 hours.
+$details = true; // bool | Returns full details for the current conditions, `false` by default.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->localBusinessWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
@@ -4724,13 +4866,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of LocalBusiness to get the weather information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
- **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. | [optional]
+ **details** | **bool**| Returns full details for the current conditions, &#x60;false&#x60; by default. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -4748,7 +4890,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lodgingBusiness**
-> \Infocenter\Client\Model\DsLodgingBusiness lodgingBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsLodgingBusiness lodgingBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 LodgingBusiness
 
@@ -4773,19 +4915,22 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of LodgingBusiness to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
-$description_mode = "description_mode_example"; // string | Use property to extract additional information from description to additionalProperty.
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$description_mode = "description_mode_example"; // string | Use `splitToAdditionalProperty` to extract additional information from description to additionalProperty, by default `full`.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->lodgingBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->lodgingBusiness($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->lodgingBusiness: ', $e->getMessage(), PHP_EOL;
@@ -4798,16 +4943,19 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of LodgingBusiness to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **description_mode** | **string**| Use property to extract additional information from description to additionalProperty. | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **description_mode** | **string**| Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -4850,12 +4998,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of LodgingBusiness to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:<br>`1` - Return forecast data for the next day. Returned by default.<br>`5` - Return forecast data for the next 5 days.<br>`10` - Return forecast data for the next 10 days.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->lodgingBusinessDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -4871,12 +5019,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of LodgingBusiness to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -4919,12 +5067,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of LodgingBusiness to get the weather hourly forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:<br>`1` - Return forecast data for the next hour. Default value.<br>`12` - Return hourly forecast for next 12 hours.<br>`24` - Return hourly forecast for next 24 hours.<br>`72` - Return hourly forecast for next 72 hours (3 days).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->lodgingBusinessHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -4940,12 +5088,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of LodgingBusiness to get the weather hourly forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -4988,13 +5136,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of LodgingBusiness to get the weather information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
-$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:<br>`0` - Return the most current weather conditions. Default value.<br>`6` - Return weather conditions from past 6 hours.<br>`24` - Return weather conditions from past 24 hours.
+$details = true; // bool | Returns full details for the current conditions, `false` by default.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->lodgingBusinessWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
@@ -5010,13 +5158,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of LodgingBusiness to get the weather information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
- **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. | [optional]
+ **details** | **bool**| Returns full details for the current conditions, &#x60;false&#x60; by default. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -5034,7 +5182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **mediaObject**
-> \Infocenter\Client\Model\DsMediaObject mediaObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsMediaObject mediaObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope)
 
 MediaObject
 
@@ -5059,17 +5207,16 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of MediaObject to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->mediaObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->mediaObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->mediaObject: ', $e->getMessage(), PHP_EOL;
@@ -5082,14 +5229,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of MediaObject to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
 
@@ -5107,7 +5253,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **place**
-> \Infocenter\Client\Model\DsPlace place($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsPlace place($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 Place
 
@@ -5132,18 +5278,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Place to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->place($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->place($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->place: ', $e->getMessage(), PHP_EOL;
@@ -5156,15 +5305,18 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Place to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -5207,12 +5359,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Place to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:<br>`1` - Return forecast data for the next day. Returned by default.<br>`5` - Return forecast data for the next 5 days.<br>`10` - Return forecast data for the next 10 days.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->placeDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -5228,12 +5380,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Place to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -5276,12 +5428,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Place to get the weather hourly forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:<br>`1` - Return forecast data for the next hour. Default value.<br>`12` - Return hourly forecast for next 12 hours.<br>`24` - Return hourly forecast for next 24 hours.<br>`72` - Return hourly forecast for next 72 hours (3 days).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->placeHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -5297,12 +5449,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Place to get the weather hourly forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -5345,13 +5497,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Place to get the weather information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
-$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:<br>`0` - Return the most current weather conditions. Default value.<br>`6` - Return weather conditions from past 6 hours.<br>`24` - Return weather conditions from past 24 hours.
+$details = true; // bool | Returns full details for the current conditions, `false` by default.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->placeWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
@@ -5367,13 +5519,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Place to get the weather information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
- **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. | [optional]
+ **details** | **bool**| Returns full details for the current conditions, &#x60;false&#x60; by default. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -5391,7 +5543,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **product**
-> \Infocenter\Client\Model\DsProduct product($id, $ocp_apim_subscription_key, $project, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsProduct product($id, $ocp_apim_subscription_key, $project, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 Product
 
@@ -5416,18 +5568,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Product to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
-$description_mode = "description_mode_example"; // string | Use property to extract additional information from description to additionalProperty.
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$description_mode = "description_mode_example"; // string | Use `splitToAdditionalProperty` to extract additional information from description to additionalProperty, by default `full`.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->product($id, $ocp_apim_subscription_key, $project, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->product($id, $ocp_apim_subscription_key, $project, $select, $description_mode, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->product: ', $e->getMessage(), PHP_EOL;
@@ -5440,15 +5595,18 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Product to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **description_mode** | **string**| Use property to extract additional information from description to additionalProperty. | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **description_mode** | **string**| Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -5466,7 +5624,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productByProductVariantId**
-> \Infocenter\Client\Model\DsProduct productByProductVariantId($product_variant_id, $ocp_apim_subscription_key, $project, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsProduct productByProductVariantId($product_variant_id, $ocp_apim_subscription_key, $project, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 Product by ProductVariantId
 
@@ -5491,15 +5649,18 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $product_variant_id = "product_variant_id_example"; // string | Use property to get product object by product variant identifier.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->productByProductVariantId($product_variant_id, $ocp_apim_subscription_key, $project, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->productByProductVariantId($product_variant_id, $ocp_apim_subscription_key, $project, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->productByProductVariantId: ', $e->getMessage(), PHP_EOL;
@@ -5512,12 +5673,15 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_variant_id** | **string**| Use property to get product object by product variant identifier. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -5535,7 +5699,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **review**
-> \Infocenter\Client\Model\DsReview review($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsReview review($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope)
 
 Review
 
@@ -5560,17 +5724,16 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Review to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->review($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->review($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->review: ', $e->getMessage(), PHP_EOL;
@@ -5583,14 +5746,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Review to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
 
@@ -5608,7 +5770,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **search**
-> \Infocenter\Client\Model\DsSearchResponse search($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version, $authorization)
+> \Infocenter\Client\Model\DsSearchResponse search($ocp_apim_subscription_key, $body, $authorization, $accept_language, $accept_timezone, $category_version)
 
 Search
 
@@ -5632,15 +5794,15 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $body = new \Infocenter\Client\Model\DsFullSearchRequest(); // \Infocenter\Client\Model\DsFullSearchRequest | 
-$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
-$category_version = "category_version_example"; // string | Use to filter categories by version
 $authorization = "authorization_example"; // string | Authorization header to identify the B2C user profile.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->search($ocp_apim_subscription_key, $body, $accept_language, $accept_timezone, $category_version, $authorization);
+    $result = $apiInstance->search($ocp_apim_subscription_key, $body, $authorization, $accept_language, $accept_timezone, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->search: ', $e->getMessage(), PHP_EOL;
@@ -5652,12 +5814,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **body** | [**\Infocenter\Client\Model\DsFullSearchRequest**](../Model/DsFullSearchRequest.md)|  | [optional]
- **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
  **authorization** | **string**| Authorization header to identify the B2C user profile. | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -5675,7 +5837,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByGET**
-> \Infocenter\Client\Model\DsSearchResponse searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $accept_language, $accept_timezone, $category_version, $authorization)
+> \Infocenter\Client\Model\DsSearchResponse searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $authorization, $accept_language, $accept_timezone, $category_version)
 
 Search by GET
 
@@ -5699,7 +5861,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $search_text = "search_text_example"; // string | Optional. Search for contained string by the searchable fields.
 $search_fields = "search_fields_example"; // string | Optional. When name of fields are specified as a comma separated string (e.g. 'name, description, address/name') then only the selected fields will be used for searching.
 $select = "select_example"; // string | Optional. When name of fields are specified as a comma separated string (e.g. 'name, description, @id, address') then only the selected fields will be returned.
@@ -5745,13 +5907,13 @@ $type = "type_example"; // string | Use property for filtering by `type`
 $combined_type = "combined_type_example"; // string | Use property for filtering by `combinedType` which contains parentType and parentAdditionalType
 $combined_type_tree = "combined_type_tree_example"; // string | Use property for filtering by `combinedTypeTree`
 $leaf_type = "leaf_type_example"; // string | Use property for filtering by `leafType` which contains additionalType or type
-$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
-$category_version = "category_version_example"; // string | Use to filter categories by version
 $authorization = "authorization_example"; // string | Authorization header to identify the B2C user profile.
+$accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $accept_language, $accept_timezone, $category_version, $authorization);
+    $result = $apiInstance->searchByGET($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $authorization, $accept_language, $accept_timezone, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->searchByGET: ', $e->getMessage(), PHP_EOL;
@@ -5763,7 +5925,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **search_text** | **string**| Optional. Search for contained string by the searchable fields. | [optional]
  **search_fields** | **string**| Optional. When name of fields are specified as a comma separated string (e.g. &#x27;name, description, address/name&#x27;) then only the selected fields will be used for searching. | [optional]
  **select** | **string**| Optional. When name of fields are specified as a comma separated string (e.g. &#x27;name, description, @id, address&#x27;) then only the selected fields will be returned. | [optional]
@@ -5809,10 +5971,10 @@ Name | Type | Description  | Notes
  **combined_type** | **string**| Use property for filtering by &#x60;combinedType&#x60; which contains parentType and parentAdditionalType | [optional]
  **combined_type_tree** | **string**| Use property for filtering by &#x60;combinedTypeTree&#x60; | [optional]
  **leaf_type** | **string**| Use property for filtering by &#x60;leafType&#x60; which contains additionalType or type | [optional]
- **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
  **authorization** | **string**| Authorization header to identify the B2C user profile. | [optional]
+ **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -5856,7 +6018,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 );
 $template_project = "template_project_example"; // string | Use property to select project which is used to select pdf template
 $template = "template_example"; // string | Use property to select pdf template in selected project
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $search_text = "search_text_example"; // string | Optional. Search for contained string by the searchable fields.
 $search_fields = "search_fields_example"; // string | Optional. When name of fields are specified as a comma separated string (e.g. 'name, description, address/name') then only the selected fields will be used for searching.
 $select = "select_example"; // string | Optional. When name of fields are specified as a comma separated string (e.g. 'name, description, @id, address') then only the selected fields will be returned.
@@ -5905,7 +6067,7 @@ $leaf_type = "leaf_type_example"; // string | Use property for filtering by `lea
 $title = "title_example"; // string | Use property for define custom title in the generated pdf
 $leadtext = "leadtext_example"; // string | Use property for define custom lead text in the generated pdf
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->searchByGETForPdf($template_project, $template, $ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $title, $leadtext, $accept_language, $accept_timezone);
@@ -5922,7 +6084,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_project** | **string**| Use property to select project which is used to select pdf template |
  **template** | **string**| Use property to select pdf template in selected project |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **search_text** | **string**| Optional. Search for contained string by the searchable fields. | [optional]
  **search_fields** | **string**| Optional. When name of fields are specified as a comma separated string (e.g. &#x27;name, description, address/name&#x27;) then only the selected fields will be used for searching. | [optional]
  **select** | **string**| Optional. When name of fields are specified as a comma separated string (e.g. &#x27;name, description, @id, address&#x27;) then only the selected fields will be returned. | [optional]
@@ -5971,7 +6133,7 @@ Name | Type | Description  | Notes
  **title** | **string**| Use property for define custom title in the generated pdf | [optional]
  **leadtext** | **string**| Use property for define custom lead text in the generated pdf | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -6013,12 +6175,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $template_project = "template_project_example"; // string | Use property to select project which is used to select pdf template
 $template = "template_example"; // string | Use property to select pdf template in selected project
 $body = new \Infocenter\Client\Model\DsFullSearchRequest(); // \Infocenter\Client\Model\DsFullSearchRequest | 
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->searchByPOSTForPdf($ocp_apim_subscription_key, $template_project, $template, $body, $accept_language, $accept_timezone);
@@ -6033,12 +6195,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **template_project** | **string**| Use property to select project which is used to select pdf template |
  **template** | **string**| Use property to select pdf template in selected project |
  **body** | [**\Infocenter\Client\Model\DsFullSearchRequest**](../Model/DsFullSearchRequest.md)|  | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -6056,7 +6218,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **skiResort**
-> \Infocenter\Client\Model\DsSkiResort skiResort($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsSkiResort skiResort($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 SkiResort
 
@@ -6081,18 +6243,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of SkiResort to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->skiResort($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->skiResort($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->skiResort: ', $e->getMessage(), PHP_EOL;
@@ -6105,15 +6270,18 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of SkiResort to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -6156,12 +6324,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of SkiResort to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:<br>`1` - Return forecast data for the next day. Returned by default.<br>`5` - Return forecast data for the next 5 days.<br>`10` - Return forecast data for the next 10 days.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->skiResortDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -6177,12 +6345,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of SkiResort to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -6225,12 +6393,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of SkiResort to get the weather hourly forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:<br>`1` - Return forecast data for the next hour. Default value.<br>`12` - Return hourly forecast for next 12 hours.<br>`24` - Return hourly forecast for next 24 hours.<br>`72` - Return hourly forecast for next 72 hours (3 days).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->skiResortHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -6246,12 +6414,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of SkiResort to get the weather hourly forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -6294,13 +6462,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of SkiResort to get the weather information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
-$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:<br>`0` - Return the most current weather conditions. Default value.<br>`6` - Return weather conditions from past 6 hours.<br>`24` - Return weather conditions from past 24 hours.
+$details = true; // bool | Returns full details for the current conditions, `false` by default.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->skiResortWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
@@ -6316,13 +6484,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of SkiResort to get the weather information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
- **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. | [optional]
+ **details** | **bool**| Returns full details for the current conditions, &#x60;false&#x60; by default. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -6340,7 +6508,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tag**
-> \Infocenter\Client\Model\DsTag tag($id, $ocp_apim_subscription_key, $project, $select, $accept_language, $accept_timezone)
+> \Infocenter\Client\Model\DsTag tag($id, $ocp_apim_subscription_key, $project, $select, $accept_language, $accept_timezone, $scope)
 
 Tag
 
@@ -6365,14 +6533,15 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Tag to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$select = "select_example"; // string | Pass list of object properties to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
+$scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
 
 try {
-    $result = $apiInstance->tag($id, $ocp_apim_subscription_key, $project, $select, $accept_language, $accept_timezone);
+    $result = $apiInstance->tag($id, $ocp_apim_subscription_key, $project, $select, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->tag: ', $e->getMessage(), PHP_EOL;
@@ -6385,11 +6554,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Tag to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
+ **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
 
 ### Return type
 
@@ -6432,9 +6602,9 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $code = "code_example"; // string | Use property code of TermVersion to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->termVersion($code, $ocp_apim_subscription_key, $accept_language, $accept_timezone);
@@ -6450,9 +6620,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **code** | **string**| Use property code of TermVersion to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -6470,7 +6640,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tour**
-> \Infocenter\Client\Model\DsTour tour($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsTour tour($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 Tour
 
@@ -6495,18 +6665,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Tour to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->tour($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->tour($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->tour: ', $e->getMessage(), PHP_EOL;
@@ -6519,15 +6692,18 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Tour to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -6570,12 +6746,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Webcam to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:<br>`1` - Return forecast data for the next day. Returned by default.<br>`5` - Return forecast data for the next 5 days.<br>`10` - Return forecast data for the next 10 days.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->tourDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -6591,12 +6767,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Webcam to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -6639,12 +6815,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Webcam to get the weather hourly forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:<br>`1` - Return forecast data for the next hour. Default value.<br>`12` - Return hourly forecast for next 12 hours.<br>`24` - Return hourly forecast for next 24 hours.<br>`72` - Return hourly forecast for next 72 hours (3 days).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->tourHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -6660,12 +6836,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Webcam to get the weather hourly forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -6708,13 +6884,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Webcam to get the weather information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
-$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:<br>`0` - Return the most current weather conditions. Default value.<br>`6` - Return weather conditions from past 6 hours.<br>`24` - Return weather conditions from past 24 hours.
+$details = true; // bool | Returns full details for the current conditions, `false` by default.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->tourWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
@@ -6730,13 +6906,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Webcam to get the weather information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
- **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. | [optional]
+ **details** | **bool**| Returns full details for the current conditions, &#x60;false&#x60; by default. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -6754,7 +6930,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **transportationSystem**
-> \Infocenter\Client\Model\DsTransportationSystem transportationSystem($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsTransportationSystem transportationSystem($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 TransportationSystem
 
@@ -6779,18 +6955,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of TransportationSystem to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->transportationSystem($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->transportationSystem($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->transportationSystem: ', $e->getMessage(), PHP_EOL;
@@ -6803,15 +6982,18 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of TransportationSystem to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -6854,12 +7036,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of TransportationSystem to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:<br>`1` - Return forecast data for the next day. Returned by default.<br>`5` - Return forecast data for the next 5 days.<br>`10` - Return forecast data for the next 10 days.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->transportationSystemDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -6875,12 +7057,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of TransportationSystem to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -6923,12 +7105,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of TransportationSystem to get the weather hourly forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:<br>`1` - Return forecast data for the next hour. Default value.<br>`12` - Return hourly forecast for next 12 hours.<br>`24` - Return hourly forecast for next 24 hours.<br>`72` - Return hourly forecast for next 72 hours (3 days).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->transportationSystemHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -6944,12 +7126,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of TransportationSystem to get the weather hourly forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -6992,13 +7174,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of TransportationSystem to get the weather information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
-$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:<br>`0` - Return the most current weather conditions. Default value.<br>`6` - Return weather conditions from past 6 hours.<br>`24` - Return weather conditions from past 24 hours.
+$details = true; // bool | Returns full details for the current conditions, `false` by default.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->transportationSystemWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
@@ -7014,13 +7196,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of TransportationSystem to get the weather information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
- **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. | [optional]
+ **details** | **bool**| Returns full details for the current conditions, &#x60;false&#x60; by default. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -7038,7 +7220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **treeAdministrativeAreaRegion**
-> \Infocenter\Client\Model\DsAdministrativeAreaTreeItem treeAdministrativeAreaRegion($id, $ocp_apim_subscription_key, $levels, $admin_areas_only, $project, $accept_timezone, $accept_language)
+> \Infocenter\Client\Model\DsAdministrativeAreaTreeItem treeAdministrativeAreaRegion($id, $ocp_apim_subscription_key, $levels, $admin_areas_only, $project, $accept_language, $accept_timezone)
 
 Tree AdministrativeArea (Region)
 
@@ -7063,15 +7245,15 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Region to set root Region.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $levels = "levels_example"; // string | controls how deep the tree should go. default = 1
 $admin_areas_only = "admin_areas_only_example"; // string | set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default = false
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
-    $result = $apiInstance->treeAdministrativeAreaRegion($id, $ocp_apim_subscription_key, $levels, $admin_areas_only, $project, $accept_timezone, $accept_language);
+    $result = $apiInstance->treeAdministrativeAreaRegion($id, $ocp_apim_subscription_key, $levels, $admin_areas_only, $project, $accept_language, $accept_timezone);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->treeAdministrativeAreaRegion: ', $e->getMessage(), PHP_EOL;
@@ -7084,12 +7266,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Region to set root Region. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **levels** | **string**| controls how deep the tree should go. default &#x3D; 1 | [optional]
  **admin_areas_only** | **string**| set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false | [optional]
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -7131,7 +7313,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 
 try {
@@ -7147,7 +7329,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
 
 ### Return type
@@ -7166,7 +7348,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **videoObject**
-> \Infocenter\Client\Model\DsVideoObject videoObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsVideoObject videoObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope)
 
 VideoObject
 
@@ -7191,17 +7373,16 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of VideoObject to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
 
 try {
-    $result = $apiInstance->videoObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->videoObject($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->videoObject: ', $e->getMessage(), PHP_EOL;
@@ -7214,14 +7395,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of VideoObject to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
 
 ### Return type
 
@@ -7239,7 +7419,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **webcam**
-> \Infocenter\Client\Model\DsWebcam webcam($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version)
+> \Infocenter\Client\Model\DsWebcam webcam($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version)
 
 Webcam
 
@@ -7264,18 +7444,21 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Webcam to get single object.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$select = "select_example"; // string | Pass list of object properties to query
-$include_all_photos = true; // bool | Use to include all photos in response, otherwise images with low confidence will be skipped.
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$select = "select_example"; // string | Comma-separated list of properties to include in the response.
+$include_all_photos = true; // bool | Use `true` to include all photos in the response, otherwise images with low confidence will be skipped.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 $scope = "scope_example"; // string | Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.).
-$category_version = "category_version_example"; // string | Use to filter categories by version
+$ds_tag_filter = "ds_tag_filter_example"; // string | Filter tags in the response by `project` or `all`, by default `all`.
+$ds_contained_in_place_filter = "ds_contained_in_place_filter_example"; // string | Filter containedInPlace in the response by `project` or `all`, by default `all`.
+$ds_category_filter = "ds_category_filter_example"; // string | Filter categories in the response by `project`, `excludeRoot` or `all`, by default `all`. Filter by `excludeRoot` will filter out the root elements of the category tree.
+$category_version = "category_version_example"; // string | Filters categories by version.
 
 try {
-    $result = $apiInstance->webcam($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $category_version);
+    $result = $apiInstance->webcam($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $include_all_photos, $accept_language, $accept_timezone, $scope, $ds_tag_filter, $ds_contained_in_place_filter, $ds_category_filter, $category_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->webcam: ', $e->getMessage(), PHP_EOL;
@@ -7288,15 +7471,18 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Webcam to get single object. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **select** | **string**| Pass list of object properties to query | [optional]
- **include_all_photos** | **bool**| Use to include all photos in response, otherwise images with low confidence will be skipped. | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **select** | **string**| Comma-separated list of properties to include in the response. | [optional]
+ **include_all_photos** | **bool**| Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
  **scope** | **string**| Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). | [optional]
- **category_version** | **string**| Use to filter categories by version | [optional]
+ **ds_tag_filter** | **string**| Filter tags in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_contained_in_place_filter** | **string**| Filter containedInPlace in the response by &#x60;project&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. | [optional]
+ **ds_category_filter** | **string**| Filter categories in the response by &#x60;project&#x60;, &#x60;excludeRoot&#x60; or &#x60;all&#x60;, by default &#x60;all&#x60;. Filter by &#x60;excludeRoot&#x60; will filter out the root elements of the category tree. | [optional]
+ **category_version** | **string**| Filters categories by version. | [optional]
 
 ### Return type
 
@@ -7339,12 +7525,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Webcam to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:<br>`1` - Return forecast data for the next day. Returned by default.<br>`5` - Return forecast data for the next 5 days.<br>`10` - Return forecast data for the next 10 days.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->webcamDailyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -7360,12 +7546,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Webcam to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -7408,12 +7594,12 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Webcam to get the weather daily forecast information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:<br>`1` - Return forecast data for the next hour. Default value.<br>`12` - Return hourly forecast for next 12 hours.<br>`24` - Return hourly forecast for next 24 hours.<br>`72` - Return hourly forecast for next 72 hours (3 days).
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->webcamHourlyForecast($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
@@ -7429,12 +7615,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Webcam to get the weather daily forecast information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 
@@ -7477,13 +7663,13 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     $config
 );
 $id = "id_example"; // string | Use property identifier of Webcam to get the weather information for it.
-$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
-$project = "project_example"; // string | Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
-$contained_in_place = "contained_in_place_example"; // string | Use property identifier of place to filter.
-$duration = 56; // int | Format - int32. Supply number of past hours to get data for
-$details = true; // bool | Supply 'true' if you want to get detailed information about the weather
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
+$project = "project_example"; // string | Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
+$contained_in_place = "contained_in_place_example"; // string | Filters by `containedInPlace`. Use property identifier of place.
+$duration = 56; // int | Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:<br>`0` - Return the most current weather conditions. Default value.<br>`6` - Return weather conditions from past 6 hours.<br>`24` - Return weather conditions from past 24 hours.
+$details = true; // bool | Returns full details for the current conditions, `false` by default.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
-$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time
+$accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
 try {
     $result = $apiInstance->webcamWeather($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $details, $accept_language, $accept_timezone);
@@ -7499,13 +7685,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Use property identifier of Webcam to get the weather information for it. |
- **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. |
- **project** | **string**| Required - Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
- **contained_in_place** | **string**| Use property identifier of place to filter. | [optional]
- **duration** | **int**| Format - int32. Supply number of past hours to get data for | [optional]
- **details** | **bool**| Supply &#x27;true&#x27; if you want to get detailed information about the weather | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
+ **project** | **string**| Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. | [optional]
+ **contained_in_place** | **string**| Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. | [optional]
+ **duration** | **int**| Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. | [optional]
+ **details** | **bool**| Returns full details for the current conditions, &#x60;false&#x60; by default. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
- **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time | [optional]
+ **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
 ### Return type
 

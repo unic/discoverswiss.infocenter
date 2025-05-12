@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **additional_type** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **name_plural** | **string** |  | [optional] 
+**description** | **string** |  | [optional] 
 **types** | [**\Infocenter\Client\Model\DsTypeTree[]**](DsTypeTree.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

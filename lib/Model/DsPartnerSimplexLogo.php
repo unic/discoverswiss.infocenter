@@ -1,6 +1,6 @@
 <?php
 /**
- * DsTypeTree
+ * DsPartnerSimplexLogo
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Infocenter\Client\ObjectSerializer;
 
 /**
- * DsTypeTree Class Doc Comment
+ * DsPartnerSimplexLogo Class Doc Comment
  *
  * @category Class
  * @package  Infocenter\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsTypeTree implements ModelInterface, ArrayAccess
+class DsPartnerSimplexLogo implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsTypeTree implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TypeTree';
+    protected static $swaggerModelName = 'PartnerSimplexLogo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,12 +56,15 @@ class DsTypeTree implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'entity_type' => 'string',
+        'content_url' => 'string',
+        'encoding_format' => 'string',
+        'in_language' => 'string',
+        'thumbnail_url' => 'string',
+        'id' => 'string',
+        'identifier' => 'string',
+        'type' => 'string',
         'additional_type' => 'string',
-        'name' => 'string',
-        'name_plural' => 'string',
-        'description' => 'string',
-        'types' => '\Infocenter\Client\Model\DsTypeTree[]'
+        'name' => 'string'
     ];
 
     /**
@@ -70,12 +73,15 @@ class DsTypeTree implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'entity_type' => null,
+        'content_url' => null,
+        'encoding_format' => null,
+        'in_language' => null,
+        'thumbnail_url' => null,
+        'id' => null,
+        'identifier' => null,
+        'type' => null,
         'additional_type' => null,
-        'name' => null,
-        'name_plural' => null,
-        'description' => null,
-        'types' => null
+        'name' => null
     ];
 
     /**
@@ -105,12 +111,15 @@ class DsTypeTree implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'entity_type' => 'entityType',
+        'content_url' => 'contentUrl',
+        'encoding_format' => 'encodingFormat',
+        'in_language' => 'inLanguage',
+        'thumbnail_url' => 'thumbnailUrl',
+        'id' => 'id',
+        'identifier' => 'identifier',
+        'type' => 'type',
         'additional_type' => 'additionalType',
-        'name' => 'name',
-        'name_plural' => 'namePlural',
-        'description' => 'description',
-        'types' => 'types'
+        'name' => 'name'
     ];
 
     /**
@@ -119,12 +128,15 @@ class DsTypeTree implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'entity_type' => 'setEntityType',
+        'content_url' => 'setContentUrl',
+        'encoding_format' => 'setEncodingFormat',
+        'in_language' => 'setInLanguage',
+        'thumbnail_url' => 'setThumbnailUrl',
+        'id' => 'setId',
+        'identifier' => 'setIdentifier',
+        'type' => 'setType',
         'additional_type' => 'setAdditionalType',
-        'name' => 'setName',
-        'name_plural' => 'setNamePlural',
-        'description' => 'setDescription',
-        'types' => 'setTypes'
+        'name' => 'setName'
     ];
 
     /**
@@ -133,12 +145,15 @@ class DsTypeTree implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'entity_type' => 'getEntityType',
+        'content_url' => 'getContentUrl',
+        'encoding_format' => 'getEncodingFormat',
+        'in_language' => 'getInLanguage',
+        'thumbnail_url' => 'getThumbnailUrl',
+        'id' => 'getId',
+        'identifier' => 'getIdentifier',
+        'type' => 'getType',
         'additional_type' => 'getAdditionalType',
-        'name' => 'getName',
-        'name_plural' => 'getNamePlural',
-        'description' => 'getDescription',
-        'types' => 'getTypes'
+        'name' => 'getName'
     ];
 
     /**
@@ -199,12 +214,15 @@ class DsTypeTree implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['entity_type'] = isset($data['entity_type']) ? $data['entity_type'] : null;
+        $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
+        $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
+        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
+        $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['name_plural'] = isset($data['name_plural']) ? $data['name_plural'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['types'] = isset($data['types']) ? $data['types'] : null;
     }
 
     /**
@@ -232,25 +250,169 @@ class DsTypeTree implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets entity_type
+     * Gets content_url
      *
      * @return string
      */
-    public function getEntityType()
+    public function getContentUrl()
     {
-        return $this->container['entity_type'];
+        return $this->container['content_url'];
     }
 
     /**
-     * Sets entity_type
+     * Sets content_url
      *
-     * @param string $entity_type entity_type
+     * @param string $content_url content_url
      *
      * @return $this
      */
-    public function setEntityType($entity_type)
+    public function setContentUrl($content_url)
     {
-        $this->container['entity_type'] = $entity_type;
+        $this->container['content_url'] = $content_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets encoding_format
+     *
+     * @return string
+     */
+    public function getEncodingFormat()
+    {
+        return $this->container['encoding_format'];
+    }
+
+    /**
+     * Sets encoding_format
+     *
+     * @param string $encoding_format encoding_format
+     *
+     * @return $this
+     */
+    public function setEncodingFormat($encoding_format)
+    {
+        $this->container['encoding_format'] = $encoding_format;
+
+        return $this;
+    }
+
+    /**
+     * Gets in_language
+     *
+     * @return string
+     */
+    public function getInLanguage()
+    {
+        return $this->container['in_language'];
+    }
+
+    /**
+     * Sets in_language
+     *
+     * @param string $in_language The language of the content or performance or used in an action. Format: ISO 639-1.
+     *
+     * @return $this
+     */
+    public function setInLanguage($in_language)
+    {
+        $this->container['in_language'] = $in_language;
+
+        return $this;
+    }
+
+    /**
+     * Gets thumbnail_url
+     *
+     * @return string
+     */
+    public function getThumbnailUrl()
+    {
+        return $this->container['thumbnail_url'];
+    }
+
+    /**
+     * Sets thumbnail_url
+     *
+     * @param string $thumbnail_url thumbnail_url
+     *
+     * @return $this
+     */
+    public function setThumbnailUrl($thumbnail_url)
+    {
+        $this->container['thumbnail_url'] = $thumbnail_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets identifier
+     *
+     * @return string
+     */
+    public function getIdentifier()
+    {
+        return $this->container['identifier'];
+    }
+
+    /**
+     * Sets identifier
+     *
+     * @param string $identifier identifier
+     *
+     * @return $this
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }
@@ -299,78 +461,6 @@ class DsTypeTree implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets name_plural
-     *
-     * @return string
-     */
-    public function getNamePlural()
-    {
-        return $this->container['name_plural'];
-    }
-
-    /**
-     * Sets name_plural
-     *
-     * @param string $name_plural name_plural
-     *
-     * @return $this
-     */
-    public function setNamePlural($name_plural)
-    {
-        $this->container['name_plural'] = $name_plural;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets types
-     *
-     * @return \Infocenter\Client\Model\DsTypeTree[]
-     */
-    public function getTypes()
-    {
-        return $this->container['types'];
-    }
-
-    /**
-     * Sets types
-     *
-     * @param \Infocenter\Client\Model\DsTypeTree[] $types types
-     *
-     * @return $this
-     */
-    public function setTypes($types)
-    {
-        $this->container['types'] = $types;
 
         return $this;
     }

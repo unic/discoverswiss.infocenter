@@ -77,6 +77,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'literature' => 'string',
         'maps' => 'string',
         'duration' => 'string',
+        'surface_length' => '\Infocenter\Client\Model\DsQuantitativeValue[]',
         'sub_trip' => '\Infocenter\Client\Model\DsTourSimplex[]',
         'part_of_trip' => '\Infocenter\Client\Model\DsTourSimplex[]',
         'available_language' => 'string[]',
@@ -129,6 +130,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'located_at' => '\Infocenter\Client\Model\DsPlaceSimplex',
         'amenity_feature' => '\Infocenter\Client\Model\DsLocationFeatureSpecification[]',
         'variable_measured' => '\Infocenter\Client\Model\DsPropertyValue[]',
+        'spatial_coverage' => '\Infocenter\Client\Model\DsConditionSimplex[]',
         'id' => 'string',
         'identifier' => 'string',
         'removed' => 'bool',
@@ -180,6 +182,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'literature' => null,
         'maps' => null,
         'duration' => null,
+        'surface_length' => null,
         'sub_trip' => null,
         'part_of_trip' => null,
         'available_language' => null,
@@ -232,6 +235,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'located_at' => null,
         'amenity_feature' => null,
         'variable_measured' => null,
+        'spatial_coverage' => null,
         'id' => null,
         'identifier' => null,
         'removed' => null,
@@ -304,6 +308,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'literature' => 'literature',
         'maps' => 'maps',
         'duration' => 'duration',
+        'surface_length' => 'surfaceLength',
         'sub_trip' => 'subTrip',
         'part_of_trip' => 'partOfTrip',
         'available_language' => 'availableLanguage',
@@ -356,6 +361,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'located_at' => 'locatedAt',
         'amenity_feature' => 'amenityFeature',
         'variable_measured' => 'variableMeasured',
+        'spatial_coverage' => 'spatialCoverage',
         'id' => '@id',
         'identifier' => 'identifier',
         'removed' => 'removed',
@@ -407,6 +413,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'literature' => 'setLiterature',
         'maps' => 'setMaps',
         'duration' => 'setDuration',
+        'surface_length' => 'setSurfaceLength',
         'sub_trip' => 'setSubTrip',
         'part_of_trip' => 'setPartOfTrip',
         'available_language' => 'setAvailableLanguage',
@@ -459,6 +466,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'located_at' => 'setLocatedAt',
         'amenity_feature' => 'setAmenityFeature',
         'variable_measured' => 'setVariableMeasured',
+        'spatial_coverage' => 'setSpatialCoverage',
         'id' => 'setId',
         'identifier' => 'setIdentifier',
         'removed' => 'setRemoved',
@@ -510,6 +518,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'literature' => 'getLiterature',
         'maps' => 'getMaps',
         'duration' => 'getDuration',
+        'surface_length' => 'getSurfaceLength',
         'sub_trip' => 'getSubTrip',
         'part_of_trip' => 'getPartOfTrip',
         'available_language' => 'getAvailableLanguage',
@@ -562,6 +571,7 @@ class DsTour implements ModelInterface, ArrayAccess
         'located_at' => 'getLocatedAt',
         'amenity_feature' => 'getAmenityFeature',
         'variable_measured' => 'getVariableMeasured',
+        'spatial_coverage' => 'getSpatialCoverage',
         'id' => 'getId',
         'identifier' => 'getIdentifier',
         'removed' => 'getRemoved',
@@ -665,6 +675,7 @@ class DsTour implements ModelInterface, ArrayAccess
         $this->container['literature'] = isset($data['literature']) ? $data['literature'] : null;
         $this->container['maps'] = isset($data['maps']) ? $data['maps'] : null;
         $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;
+        $this->container['surface_length'] = isset($data['surface_length']) ? $data['surface_length'] : null;
         $this->container['sub_trip'] = isset($data['sub_trip']) ? $data['sub_trip'] : null;
         $this->container['part_of_trip'] = isset($data['part_of_trip']) ? $data['part_of_trip'] : null;
         $this->container['available_language'] = isset($data['available_language']) ? $data['available_language'] : null;
@@ -717,6 +728,7 @@ class DsTour implements ModelInterface, ArrayAccess
         $this->container['located_at'] = isset($data['located_at']) ? $data['located_at'] : null;
         $this->container['amenity_feature'] = isset($data['amenity_feature']) ? $data['amenity_feature'] : null;
         $this->container['variable_measured'] = isset($data['variable_measured']) ? $data['variable_measured'] : null;
+        $this->container['spatial_coverage'] = isset($data['spatial_coverage']) ? $data['spatial_coverage'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -1265,6 +1277,30 @@ class DsTour implements ModelInterface, ArrayAccess
     public function setDuration($duration)
     {
         $this->container['duration'] = $duration;
+
+        return $this;
+    }
+
+    /**
+     * Gets surface_length
+     *
+     * @return \Infocenter\Client\Model\DsQuantitativeValue[]
+     */
+    public function getSurfaceLength()
+    {
+        return $this->container['surface_length'];
+    }
+
+    /**
+     * Sets surface_length
+     *
+     * @param \Infocenter\Client\Model\DsQuantitativeValue[] $surface_length List of surface types and their corresponding lengths.
+     *
+     * @return $this
+     */
+    public function setSurfaceLength($surface_length)
+    {
+        $this->container['surface_length'] = $surface_length;
 
         return $this;
     }
@@ -2518,6 +2554,30 @@ class DsTour implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets spatial_coverage
+     *
+     * @return \Infocenter\Client\Model\DsConditionSimplex[]
+     */
+    public function getSpatialCoverage()
+    {
+        return $this->container['spatial_coverage'];
+    }
+
+    /**
+     * Sets spatial_coverage
+     *
+     * @param \Infocenter\Client\Model\DsConditionSimplex[] $spatial_coverage List of conditions that belong to place.
+     *
+     * @return $this
+     */
+    public function setSpatialCoverage($spatial_coverage)
+    {
+        $this->container['spatial_coverage'] = $spatial_coverage;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return string
@@ -2530,7 +2590,7 @@ class DsTour implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id json-ld: full url to load the object (based on identifier)
+     * @param string $id A unique json-ld identifier for the vertex, represented as a Infocenter API url.
      *
      * @return $this
      */

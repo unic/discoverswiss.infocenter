@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **opens** | **string** | The place is open if property is specified, and closed otherwise. | [optional] 
 **valid_from** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**day_of_week** | **string** |  | [optional] 
+**day_of_week** | **string** | The day of the week. Possible values are: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, and Sunday. | [optional] 
 **valid_through** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **closes** | **string** |  | [optional] 
 **type_name** | **string** | Translated name of type. | [optional] 

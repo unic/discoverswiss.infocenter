@@ -120,6 +120,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
         'located_at' => '\Infocenter\Client\Model\DsPlaceSimplex',
         'amenity_feature' => '\Infocenter\Client\Model\DsLocationFeatureSpecification[]',
         'variable_measured' => '\Infocenter\Client\Model\DsPropertyValue[]',
+        'spatial_coverage' => '\Infocenter\Client\Model\DsConditionSimplex[]',
         'id' => 'string',
         'identifier' => 'string',
         'removed' => 'bool',
@@ -214,6 +215,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
         'located_at' => null,
         'amenity_feature' => null,
         'variable_measured' => null,
+        'spatial_coverage' => null,
         'id' => null,
         'identifier' => null,
         'removed' => null,
@@ -329,6 +331,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
         'located_at' => 'locatedAt',
         'amenity_feature' => 'amenityFeature',
         'variable_measured' => 'variableMeasured',
+        'spatial_coverage' => 'spatialCoverage',
         'id' => '@id',
         'identifier' => 'identifier',
         'removed' => 'removed',
@@ -423,6 +426,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
         'located_at' => 'setLocatedAt',
         'amenity_feature' => 'setAmenityFeature',
         'variable_measured' => 'setVariableMeasured',
+        'spatial_coverage' => 'setSpatialCoverage',
         'id' => 'setId',
         'identifier' => 'setIdentifier',
         'removed' => 'setRemoved',
@@ -517,6 +521,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
         'located_at' => 'getLocatedAt',
         'amenity_feature' => 'getAmenityFeature',
         'variable_measured' => 'getVariableMeasured',
+        'spatial_coverage' => 'getSpatialCoverage',
         'id' => 'getId',
         'identifier' => 'getIdentifier',
         'removed' => 'getRemoved',
@@ -663,6 +668,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
         $this->container['located_at'] = isset($data['located_at']) ? $data['located_at'] : null;
         $this->container['amenity_feature'] = isset($data['amenity_feature']) ? $data['amenity_feature'] : null;
         $this->container['variable_measured'] = isset($data['variable_measured']) ? $data['variable_measured'] : null;
+        $this->container['spatial_coverage'] = isset($data['spatial_coverage']) ? $data['spatial_coverage'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -2248,6 +2254,30 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets spatial_coverage
+     *
+     * @return \Infocenter\Client\Model\DsConditionSimplex[]
+     */
+    public function getSpatialCoverage()
+    {
+        return $this->container['spatial_coverage'];
+    }
+
+    /**
+     * Sets spatial_coverage
+     *
+     * @param \Infocenter\Client\Model\DsConditionSimplex[] $spatial_coverage List of conditions that belong to place.
+     *
+     * @return $this
+     */
+    public function setSpatialCoverage($spatial_coverage)
+    {
+        $this->container['spatial_coverage'] = $spatial_coverage;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return string
@@ -2260,7 +2290,7 @@ class DsLodgingBusiness implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id json-ld: full url to load the object (based on identifier)
+     * @param string $id A unique json-ld identifier for the vertex, represented as a Infocenter API url.
      *
      * @return $this
      */

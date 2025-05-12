@@ -80,6 +80,8 @@ class DsEvent implements ModelInterface, ArrayAccess
         'audio' => '\Infocenter\Client\Model\DsAudioObjectSimplex[]',
         'video' => '\Infocenter\Client\Model\DsVideoObjectSimplex[]',
         'robots' => 'string',
+        'sub_event' => '\Infocenter\Client\Model\DsEventSimplex[]',
+        'super_event' => '\Infocenter\Client\Model\DsEventSimplex',
         'id' => 'string',
         'identifier' => 'string',
         'removed' => 'bool',
@@ -134,6 +136,8 @@ class DsEvent implements ModelInterface, ArrayAccess
         'audio' => null,
         'video' => null,
         'robots' => null,
+        'sub_event' => null,
+        'super_event' => null,
         'id' => null,
         'identifier' => null,
         'removed' => null,
@@ -209,6 +213,8 @@ class DsEvent implements ModelInterface, ArrayAccess
         'audio' => 'audio',
         'video' => 'video',
         'robots' => 'robots',
+        'sub_event' => 'subEvent',
+        'super_event' => 'superEvent',
         'id' => '@id',
         'identifier' => 'identifier',
         'removed' => 'removed',
@@ -263,6 +269,8 @@ class DsEvent implements ModelInterface, ArrayAccess
         'audio' => 'setAudio',
         'video' => 'setVideo',
         'robots' => 'setRobots',
+        'sub_event' => 'setSubEvent',
+        'super_event' => 'setSuperEvent',
         'id' => 'setId',
         'identifier' => 'setIdentifier',
         'removed' => 'setRemoved',
@@ -317,6 +325,8 @@ class DsEvent implements ModelInterface, ArrayAccess
         'audio' => 'getAudio',
         'video' => 'getVideo',
         'robots' => 'getRobots',
+        'sub_event' => 'getSubEvent',
+        'super_event' => 'getSuperEvent',
         'id' => 'getId',
         'identifier' => 'getIdentifier',
         'removed' => 'getRemoved',
@@ -423,6 +433,8 @@ class DsEvent implements ModelInterface, ArrayAccess
         $this->container['audio'] = isset($data['audio']) ? $data['audio'] : null;
         $this->container['video'] = isset($data['video']) ? $data['video'] : null;
         $this->container['robots'] = isset($data['robots']) ? $data['robots'] : null;
+        $this->container['sub_event'] = isset($data['sub_event']) ? $data['sub_event'] : null;
+        $this->container['super_event'] = isset($data['super_event']) ? $data['super_event'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['removed'] = isset($data['removed']) ? $data['removed'] : null;
@@ -1048,6 +1060,54 @@ class DsEvent implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets sub_event
+     *
+     * @return \Infocenter\Client\Model\DsEventSimplex[]
+     */
+    public function getSubEvent()
+    {
+        return $this->container['sub_event'];
+    }
+
+    /**
+     * Sets sub_event
+     *
+     * @param \Infocenter\Client\Model\DsEventSimplex[] $sub_event Events that is part of this event.
+     *
+     * @return $this
+     */
+    public function setSubEvent($sub_event)
+    {
+        $this->container['sub_event'] = $sub_event;
+
+        return $this;
+    }
+
+    /**
+     * Gets super_event
+     *
+     * @return \Infocenter\Client\Model\DsEventSimplex
+     */
+    public function getSuperEvent()
+    {
+        return $this->container['super_event'];
+    }
+
+    /**
+     * Sets super_event
+     *
+     * @param \Infocenter\Client\Model\DsEventSimplex $super_event super_event
+     *
+     * @return $this
+     */
+    public function setSuperEvent($super_event)
+    {
+        $this->container['super_event'] = $super_event;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return string
@@ -1060,7 +1120,7 @@ class DsEvent implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id json-ld: full url to load the object (based on identifier)
+     * @param string $id A unique json-ld identifier for the vertex, represented as a Infocenter API url.
      *
      * @return $this
      */
