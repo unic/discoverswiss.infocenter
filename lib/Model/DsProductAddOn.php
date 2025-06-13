@@ -60,6 +60,7 @@ class DsProductAddOn implements ModelInterface, ArrayAccess
         'name' => 'string',
         'description' => 'string',
         'sku' => 'string',
+        'additional_type' => 'string',
         'price_list' => '\Infocenter\Client\Model\DsProductPrice[]',
         'tax_rate' => 'double'
     ];
@@ -74,6 +75,7 @@ class DsProductAddOn implements ModelInterface, ArrayAccess
         'name' => null,
         'description' => null,
         'sku' => null,
+        'additional_type' => null,
         'price_list' => null,
         'tax_rate' => 'double'
     ];
@@ -109,6 +111,7 @@ class DsProductAddOn implements ModelInterface, ArrayAccess
         'name' => 'name',
         'description' => 'description',
         'sku' => 'sku',
+        'additional_type' => 'additionalType',
         'price_list' => 'priceList',
         'tax_rate' => 'taxRate'
     ];
@@ -123,6 +126,7 @@ class DsProductAddOn implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'description' => 'setDescription',
         'sku' => 'setSku',
+        'additional_type' => 'setAdditionalType',
         'price_list' => 'setPriceList',
         'tax_rate' => 'setTaxRate'
     ];
@@ -137,6 +141,7 @@ class DsProductAddOn implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'description' => 'getDescription',
         'sku' => 'getSku',
+        'additional_type' => 'getAdditionalType',
         'price_list' => 'getPriceList',
         'tax_rate' => 'getTaxRate'
     ];
@@ -203,6 +208,7 @@ class DsProductAddOn implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['sku'] = isset($data['sku']) ? $data['sku'] : null;
+        $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['price_list'] = isset($data['price_list']) ? $data['price_list'] : null;
         $this->container['tax_rate'] = isset($data['tax_rate']) ? $data['tax_rate'] : null;
     }
@@ -323,6 +329,30 @@ class DsProductAddOn implements ModelInterface, ArrayAccess
     public function setSku($sku)
     {
         $this->container['sku'] = $sku;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_type
+     *
+     * @return string
+     */
+    public function getAdditionalType()
+    {
+        return $this->container['additional_type'];
+    }
+
+    /**
+     * Sets additional_type
+     *
+     * @param string $additional_type additional_type
+     *
+     * @return $this
+     */
+    public function setAdditionalType($additional_type)
+    {
+        $this->container['additional_type'] = $additional_type;
 
         return $this;
     }

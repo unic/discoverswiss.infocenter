@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **item_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) | Fields which must/should be added with values of the orderItem | [optional] 
 **traveler_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) | Fields which must/should be added with values of the traveler | [optional] 
 **customer_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) | Fields which must/should be added with values of the customer | [optional] 
+**vehicle_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) | Fields which must/should be added with values of the vehicle | [optional] 
 **price_information** | **string** |  | [optional] 
 **standard_price** | **double** | The lowest price of all regular prices for adults. | [optional] 
 **add_on_item** | [**\Infocenter\Client\Model\DsProductAddOn[]**](DsProductAddOn.md) |  | [optional] 

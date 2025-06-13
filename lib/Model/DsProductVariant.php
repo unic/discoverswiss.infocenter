@@ -74,6 +74,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
         'item_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
         'traveler_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
         'customer_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
+        'vehicle_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
         'available_delivery_mode' => 'string[]',
         'weight' => '\Infocenter\Client\Model\DsQuantitativeValue',
         'add_on_item' => '\Infocenter\Client\Model\DsProductAddOn[]',
@@ -104,6 +105,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
         'item_field' => null,
         'traveler_field' => null,
         'customer_field' => null,
+        'vehicle_field' => null,
         'available_delivery_mode' => null,
         'weight' => null,
         'add_on_item' => null,
@@ -155,6 +157,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
         'item_field' => 'itemField',
         'traveler_field' => 'travelerField',
         'customer_field' => 'customerField',
+        'vehicle_field' => 'vehicleField',
         'available_delivery_mode' => 'availableDeliveryMode',
         'weight' => 'weight',
         'add_on_item' => 'addOnItem',
@@ -185,6 +188,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
         'item_field' => 'setItemField',
         'traveler_field' => 'setTravelerField',
         'customer_field' => 'setCustomerField',
+        'vehicle_field' => 'setVehicleField',
         'available_delivery_mode' => 'setAvailableDeliveryMode',
         'weight' => 'setWeight',
         'add_on_item' => 'setAddOnItem',
@@ -215,6 +219,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
         'item_field' => 'getItemField',
         'traveler_field' => 'getTravelerField',
         'customer_field' => 'getCustomerField',
+        'vehicle_field' => 'getVehicleField',
         'available_delivery_mode' => 'getAvailableDeliveryMode',
         'weight' => 'getWeight',
         'add_on_item' => 'getAddOnItem',
@@ -297,6 +302,7 @@ class DsProductVariant implements ModelInterface, ArrayAccess
         $this->container['item_field'] = isset($data['item_field']) ? $data['item_field'] : null;
         $this->container['traveler_field'] = isset($data['traveler_field']) ? $data['traveler_field'] : null;
         $this->container['customer_field'] = isset($data['customer_field']) ? $data['customer_field'] : null;
+        $this->container['vehicle_field'] = isset($data['vehicle_field']) ? $data['vehicle_field'] : null;
         $this->container['available_delivery_mode'] = isset($data['available_delivery_mode']) ? $data['available_delivery_mode'] : null;
         $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
         $this->container['add_on_item'] = isset($data['add_on_item']) ? $data['add_on_item'] : null;
@@ -755,6 +761,30 @@ class DsProductVariant implements ModelInterface, ArrayAccess
     public function setCustomerField($customer_field)
     {
         $this->container['customer_field'] = $customer_field;
+
+        return $this;
+    }
+
+    /**
+     * Gets vehicle_field
+     *
+     * @return \Infocenter\Client\Model\DsFieldDefinition[]
+     */
+    public function getVehicleField()
+    {
+        return $this->container['vehicle_field'];
+    }
+
+    /**
+     * Sets vehicle_field
+     *
+     * @param \Infocenter\Client\Model\DsFieldDefinition[] $vehicle_field Fields which must/should be added with values of the vehicle
+     *
+     * @return $this
+     */
+    public function setVehicleField($vehicle_field)
+    {
+        $this->container['vehicle_field'] = $vehicle_field;
 
         return $this;
     }

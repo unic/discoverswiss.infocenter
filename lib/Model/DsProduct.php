@@ -66,6 +66,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         'item_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
         'traveler_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
         'customer_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
+        'vehicle_field' => '\Infocenter\Client\Model\DsFieldDefinition[]',
         'price_information' => 'string',
         'standard_price' => 'double',
         'add_on_item' => '\Infocenter\Client\Model\DsProductAddOn[]',
@@ -125,6 +126,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         'item_field' => null,
         'traveler_field' => null,
         'customer_field' => null,
+        'vehicle_field' => null,
         'price_information' => null,
         'standard_price' => 'double',
         'add_on_item' => null,
@@ -205,6 +207,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         'item_field' => 'itemField',
         'traveler_field' => 'travelerField',
         'customer_field' => 'customerField',
+        'vehicle_field' => 'vehicleField',
         'price_information' => 'priceInformation',
         'standard_price' => 'standardPrice',
         'add_on_item' => 'addOnItem',
@@ -264,6 +267,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         'item_field' => 'setItemField',
         'traveler_field' => 'setTravelerField',
         'customer_field' => 'setCustomerField',
+        'vehicle_field' => 'setVehicleField',
         'price_information' => 'setPriceInformation',
         'standard_price' => 'setStandardPrice',
         'add_on_item' => 'setAddOnItem',
@@ -323,6 +327,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         'item_field' => 'getItemField',
         'traveler_field' => 'getTravelerField',
         'customer_field' => 'getCustomerField',
+        'vehicle_field' => 'getVehicleField',
         'price_information' => 'getPriceInformation',
         'standard_price' => 'getStandardPrice',
         'add_on_item' => 'getAddOnItem',
@@ -434,6 +439,7 @@ class DsProduct implements ModelInterface, ArrayAccess
         $this->container['item_field'] = isset($data['item_field']) ? $data['item_field'] : null;
         $this->container['traveler_field'] = isset($data['traveler_field']) ? $data['traveler_field'] : null;
         $this->container['customer_field'] = isset($data['customer_field']) ? $data['customer_field'] : null;
+        $this->container['vehicle_field'] = isset($data['vehicle_field']) ? $data['vehicle_field'] : null;
         $this->container['price_information'] = isset($data['price_information']) ? $data['price_information'] : null;
         $this->container['standard_price'] = isset($data['standard_price']) ? $data['standard_price'] : null;
         $this->container['add_on_item'] = isset($data['add_on_item']) ? $data['add_on_item'] : null;
@@ -737,6 +743,30 @@ class DsProduct implements ModelInterface, ArrayAccess
     public function setCustomerField($customer_field)
     {
         $this->container['customer_field'] = $customer_field;
+
+        return $this;
+    }
+
+    /**
+     * Gets vehicle_field
+     *
+     * @return \Infocenter\Client\Model\DsFieldDefinition[]
+     */
+    public function getVehicleField()
+    {
+        return $this->container['vehicle_field'];
+    }
+
+    /**
+     * Sets vehicle_field
+     *
+     * @param \Infocenter\Client\Model\DsFieldDefinition[] $vehicle_field Fields which must/should be added with values of the vehicle
+     *
+     * @return $this
+     */
+    public function setVehicleField($vehicle_field)
+    {
+        $this->container['vehicle_field'] = $vehicle_field;
 
         return $this;
     }

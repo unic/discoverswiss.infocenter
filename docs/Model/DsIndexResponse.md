@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **auto_translated_data** | **bool** | Indicates if one of the text properties was translated by machine. | [optional] 
 **ticketing_contact** | **string** |  | [optional] 
 **price_information** | **string** |  | [optional] 
+**standard_price** | **double** |  | [optional] 
 **potential_action** | [**\Infocenter\Client\Model\DsAction[]**](DsAction.md) |  | [optional] 
 **organizer** | [**\Infocenter\Client\Model\DsOrganization**](DsOrganization.md) |  | [optional] 
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 

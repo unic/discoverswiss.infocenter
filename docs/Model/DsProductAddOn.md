@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **sku** | **string** |  | [optional] 
+**additional_type** | **string** |  | [optional] 
 **price_list** | [**\Infocenter\Client\Model\DsProductPrice[]**](DsProductPrice.md) |  | [optional] 
 **tax_rate** | **double** | Tax rate (0.077 &#x3D; 7.7%) | [optional] 
 

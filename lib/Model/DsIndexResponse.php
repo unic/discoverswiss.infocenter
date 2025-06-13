@@ -87,6 +87,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
         'auto_translated_data' => 'bool',
         'ticketing_contact' => 'string',
         'price_information' => 'string',
+        'standard_price' => 'double',
         'potential_action' => '\Infocenter\Client\Model\DsAction[]',
         'organizer' => '\Infocenter\Client\Model\DsOrganization',
         'last_modified' => '\DateTime',
@@ -136,6 +137,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
         'auto_translated_data' => null,
         'ticketing_contact' => null,
         'price_information' => null,
+        'standard_price' => 'double',
         'potential_action' => null,
         'organizer' => null,
         'last_modified' => 'date-time',
@@ -206,6 +208,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
         'auto_translated_data' => 'autoTranslatedData',
         'ticketing_contact' => 'ticketingContact',
         'price_information' => 'priceInformation',
+        'standard_price' => 'standardPrice',
         'potential_action' => 'potentialAction',
         'organizer' => 'organizer',
         'last_modified' => 'lastModified',
@@ -255,6 +258,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
         'auto_translated_data' => 'setAutoTranslatedData',
         'ticketing_contact' => 'setTicketingContact',
         'price_information' => 'setPriceInformation',
+        'standard_price' => 'setStandardPrice',
         'potential_action' => 'setPotentialAction',
         'organizer' => 'setOrganizer',
         'last_modified' => 'setLastModified',
@@ -304,6 +308,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
         'auto_translated_data' => 'getAutoTranslatedData',
         'ticketing_contact' => 'getTicketingContact',
         'price_information' => 'getPriceInformation',
+        'standard_price' => 'getStandardPrice',
         'potential_action' => 'getPotentialAction',
         'organizer' => 'getOrganizer',
         'last_modified' => 'getLastModified',
@@ -405,6 +410,7 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
         $this->container['auto_translated_data'] = isset($data['auto_translated_data']) ? $data['auto_translated_data'] : null;
         $this->container['ticketing_contact'] = isset($data['ticketing_contact']) ? $data['ticketing_contact'] : null;
         $this->container['price_information'] = isset($data['price_information']) ? $data['price_information'] : null;
+        $this->container['standard_price'] = isset($data['standard_price']) ? $data['standard_price'] : null;
         $this->container['potential_action'] = isset($data['potential_action']) ? $data['potential_action'] : null;
         $this->container['organizer'] = isset($data['organizer']) ? $data['organizer'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
@@ -1181,6 +1187,30 @@ class DsIndexResponse implements ModelInterface, ArrayAccess
     public function setPriceInformation($price_information)
     {
         $this->container['price_information'] = $price_information;
+
+        return $this;
+    }
+
+    /**
+     * Gets standard_price
+     *
+     * @return double
+     */
+    public function getStandardPrice()
+    {
+        return $this->container['standard_price'];
+    }
+
+    /**
+     * Sets standard_price
+     *
+     * @param double $standard_price standard_price
+     *
+     * @return $this
+     */
+    public function setStandardPrice($standard_price)
+    {
+        $this->container['standard_price'] = $standard_price;
 
         return $this;
     }

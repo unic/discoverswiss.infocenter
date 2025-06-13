@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **item_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) | Fields which must/should be added with values of the orderItem | [optional] 
 **traveler_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) | Fields which must/should be added with values of the traveler | [optional] 
 **customer_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) | Fields which must/should be added with values of the customer | [optional] 
+**vehicle_field** | [**\Infocenter\Client\Model\DsFieldDefinition[]**](DsFieldDefinition.md) | Fields which must/should be added with values of the vehicle | [optional] 
 **available_delivery_mode** | **string[]** | Available delivery mode see Delivery modes and shipping. Remark: if there are several, this information is in the itemFields as well and with them offered to the guest for selection. | [optional] 
 **weight** | [**\Infocenter\Client\Model\DsQuantitativeValue**](DsQuantitativeValue.md) |  | [optional] 
 **add_on_item** | [**\Infocenter\Client\Model\DsProductAddOn[]**](DsProductAddOn.md) | Fields which must/should be added with values of the orderItem | [optional] 

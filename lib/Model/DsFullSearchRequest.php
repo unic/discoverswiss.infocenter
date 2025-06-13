@@ -92,6 +92,16 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         'product_availability' => '\Infocenter\Client\Model\DsProductAvailabilityRequest[]',
         'action' => 'string[]',
         'only_with_availabilities' => 'bool',
+        'amenity_feature' => 'string[]',
+        'star_rating_name' => 'double[]',
+        'star_rating_value' => 'double[]',
+        'star_rating_garni' => 'bool[]',
+        'star_rating_superior' => 'bool[]',
+        'number_of_rooms' => 'double[]',
+        'number_of_beds' => 'int[]',
+        'opening_hours_specification_day_of_week' => 'string[]',
+        'price_range' => 'int[]',
+        'standard_price' => 'double[]',
         'search_text' => 'string',
         'search_fields' => 'string',
         'select' => 'string',
@@ -147,6 +157,16 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         'product_availability' => null,
         'action' => null,
         'only_with_availabilities' => null,
+        'amenity_feature' => null,
+        'star_rating_name' => 'double',
+        'star_rating_value' => 'double',
+        'star_rating_garni' => null,
+        'star_rating_superior' => null,
+        'number_of_rooms' => 'double',
+        'number_of_beds' => 'int32',
+        'opening_hours_specification_day_of_week' => null,
+        'price_range' => 'int32',
+        'standard_price' => 'double',
         'search_text' => null,
         'search_fields' => null,
         'select' => null,
@@ -223,6 +243,16 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         'product_availability' => 'productAvailability',
         'action' => 'action',
         'only_with_availabilities' => 'onlyWithAvailabilities',
+        'amenity_feature' => 'amenityFeature',
+        'star_rating_name' => 'starRatingName',
+        'star_rating_value' => 'starRatingValue',
+        'star_rating_garni' => 'starRatingGarni',
+        'star_rating_superior' => 'starRatingSuperior',
+        'number_of_rooms' => 'numberOfRooms',
+        'number_of_beds' => 'numberOfBeds',
+        'opening_hours_specification_day_of_week' => 'openingHoursSpecificationDayOfWeek',
+        'price_range' => 'priceRange',
+        'standard_price' => 'standardPrice',
         'search_text' => 'searchText',
         'search_fields' => 'searchFields',
         'select' => 'select',
@@ -278,6 +308,16 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         'product_availability' => 'setProductAvailability',
         'action' => 'setAction',
         'only_with_availabilities' => 'setOnlyWithAvailabilities',
+        'amenity_feature' => 'setAmenityFeature',
+        'star_rating_name' => 'setStarRatingName',
+        'star_rating_value' => 'setStarRatingValue',
+        'star_rating_garni' => 'setStarRatingGarni',
+        'star_rating_superior' => 'setStarRatingSuperior',
+        'number_of_rooms' => 'setNumberOfRooms',
+        'number_of_beds' => 'setNumberOfBeds',
+        'opening_hours_specification_day_of_week' => 'setOpeningHoursSpecificationDayOfWeek',
+        'price_range' => 'setPriceRange',
+        'standard_price' => 'setStandardPrice',
         'search_text' => 'setSearchText',
         'search_fields' => 'setSearchFields',
         'select' => 'setSelect',
@@ -333,6 +373,16 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         'product_availability' => 'getProductAvailability',
         'action' => 'getAction',
         'only_with_availabilities' => 'getOnlyWithAvailabilities',
+        'amenity_feature' => 'getAmenityFeature',
+        'star_rating_name' => 'getStarRatingName',
+        'star_rating_value' => 'getStarRatingValue',
+        'star_rating_garni' => 'getStarRatingGarni',
+        'star_rating_superior' => 'getStarRatingSuperior',
+        'number_of_rooms' => 'getNumberOfRooms',
+        'number_of_beds' => 'getNumberOfBeds',
+        'opening_hours_specification_day_of_week' => 'getOpeningHoursSpecificationDayOfWeek',
+        'price_range' => 'getPriceRange',
+        'standard_price' => 'getStandardPrice',
         'search_text' => 'getSearchText',
         'search_fields' => 'getSearchFields',
         'select' => 'getSelect',
@@ -440,6 +490,16 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
         $this->container['product_availability'] = isset($data['product_availability']) ? $data['product_availability'] : null;
         $this->container['action'] = isset($data['action']) ? $data['action'] : null;
         $this->container['only_with_availabilities'] = isset($data['only_with_availabilities']) ? $data['only_with_availabilities'] : null;
+        $this->container['amenity_feature'] = isset($data['amenity_feature']) ? $data['amenity_feature'] : null;
+        $this->container['star_rating_name'] = isset($data['star_rating_name']) ? $data['star_rating_name'] : null;
+        $this->container['star_rating_value'] = isset($data['star_rating_value']) ? $data['star_rating_value'] : null;
+        $this->container['star_rating_garni'] = isset($data['star_rating_garni']) ? $data['star_rating_garni'] : null;
+        $this->container['star_rating_superior'] = isset($data['star_rating_superior']) ? $data['star_rating_superior'] : null;
+        $this->container['number_of_rooms'] = isset($data['number_of_rooms']) ? $data['number_of_rooms'] : null;
+        $this->container['number_of_beds'] = isset($data['number_of_beds']) ? $data['number_of_beds'] : null;
+        $this->container['opening_hours_specification_day_of_week'] = isset($data['opening_hours_specification_day_of_week']) ? $data['opening_hours_specification_day_of_week'] : null;
+        $this->container['price_range'] = isset($data['price_range']) ? $data['price_range'] : null;
+        $this->container['standard_price'] = isset($data['standard_price']) ? $data['standard_price'] : null;
         $this->container['search_text'] = isset($data['search_text']) ? $data['search_text'] : null;
         $this->container['search_fields'] = isset($data['search_fields']) ? $data['search_fields'] : null;
         $this->container['select'] = isset($data['select']) ? $data['select'] : null;
@@ -1337,6 +1397,246 @@ class DsFullSearchRequest implements ModelInterface, ArrayAccess
     public function setOnlyWithAvailabilities($only_with_availabilities)
     {
         $this->container['only_with_availabilities'] = $only_with_availabilities;
+
+        return $this;
+    }
+
+    /**
+     * Gets amenity_feature
+     *
+     * @return string[]
+     */
+    public function getAmenityFeature()
+    {
+        return $this->container['amenity_feature'];
+    }
+
+    /**
+     * Sets amenity_feature
+     *
+     * @param string[] $amenity_feature Optional. List of amenity feature ids to filter by (with OR condition).
+     *
+     * @return $this
+     */
+    public function setAmenityFeature($amenity_feature)
+    {
+        $this->container['amenity_feature'] = $amenity_feature;
+
+        return $this;
+    }
+
+    /**
+     * Gets star_rating_name
+     *
+     * @return double[]
+     */
+    public function getStarRatingName()
+    {
+        return $this->container['star_rating_name'];
+    }
+
+    /**
+     * Sets star_rating_name
+     *
+     * @param double[] $star_rating_name Optional. List of star ratings names to filter by (with OR condition).
+     *
+     * @return $this
+     */
+    public function setStarRatingName($star_rating_name)
+    {
+        $this->container['star_rating_name'] = $star_rating_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets star_rating_value
+     *
+     * @return double[]
+     */
+    public function getStarRatingValue()
+    {
+        return $this->container['star_rating_value'];
+    }
+
+    /**
+     * Sets star_rating_value
+     *
+     * @param double[] $star_rating_value Optional. List of star ratings to filter by (with OR condition).
+     *
+     * @return $this
+     */
+    public function setStarRatingValue($star_rating_value)
+    {
+        $this->container['star_rating_value'] = $star_rating_value;
+
+        return $this;
+    }
+
+    /**
+     * Gets star_rating_garni
+     *
+     * @return bool[]
+     */
+    public function getStarRatingGarni()
+    {
+        return $this->container['star_rating_garni'];
+    }
+
+    /**
+     * Sets star_rating_garni
+     *
+     * @param bool[] $star_rating_garni Optional. List of garni options (true/false) to filter by (with OR condition).
+     *
+     * @return $this
+     */
+    public function setStarRatingGarni($star_rating_garni)
+    {
+        $this->container['star_rating_garni'] = $star_rating_garni;
+
+        return $this;
+    }
+
+    /**
+     * Gets star_rating_superior
+     *
+     * @return bool[]
+     */
+    public function getStarRatingSuperior()
+    {
+        return $this->container['star_rating_superior'];
+    }
+
+    /**
+     * Sets star_rating_superior
+     *
+     * @param bool[] $star_rating_superior Optional. List of superrior options (true/false) to filter by (with OR condition).
+     *
+     * @return $this
+     */
+    public function setStarRatingSuperior($star_rating_superior)
+    {
+        $this->container['star_rating_superior'] = $star_rating_superior;
+
+        return $this;
+    }
+
+    /**
+     * Gets number_of_rooms
+     *
+     * @return double[]
+     */
+    public function getNumberOfRooms()
+    {
+        return $this->container['number_of_rooms'];
+    }
+
+    /**
+     * Sets number_of_rooms
+     *
+     * @param double[] $number_of_rooms Optional. List of number of rooms to filter by (with OR condition).
+     *
+     * @return $this
+     */
+    public function setNumberOfRooms($number_of_rooms)
+    {
+        $this->container['number_of_rooms'] = $number_of_rooms;
+
+        return $this;
+    }
+
+    /**
+     * Gets number_of_beds
+     *
+     * @return int[]
+     */
+    public function getNumberOfBeds()
+    {
+        return $this->container['number_of_beds'];
+    }
+
+    /**
+     * Sets number_of_beds
+     *
+     * @param int[] $number_of_beds Optional. List of number of beds to filter by (with OR condition).
+     *
+     * @return $this
+     */
+    public function setNumberOfBeds($number_of_beds)
+    {
+        $this->container['number_of_beds'] = $number_of_beds;
+
+        return $this;
+    }
+
+    /**
+     * Gets opening_hours_specification_day_of_week
+     *
+     * @return string[]
+     */
+    public function getOpeningHoursSpecificationDayOfWeek()
+    {
+        return $this->container['opening_hours_specification_day_of_week'];
+    }
+
+    /**
+     * Sets opening_hours_specification_day_of_week
+     *
+     * @param string[] $opening_hours_specification_day_of_week Optional. List of days of week to filter by (with OR condition).
+     *
+     * @return $this
+     */
+    public function setOpeningHoursSpecificationDayOfWeek($opening_hours_specification_day_of_week)
+    {
+        $this->container['opening_hours_specification_day_of_week'] = $opening_hours_specification_day_of_week;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_range
+     *
+     * @return int[]
+     */
+    public function getPriceRange()
+    {
+        return $this->container['price_range'];
+    }
+
+    /**
+     * Sets price_range
+     *
+     * @param int[] $price_range Optional. List of price ranges to filter by (with OR condition).
+     *
+     * @return $this
+     */
+    public function setPriceRange($price_range)
+    {
+        $this->container['price_range'] = $price_range;
+
+        return $this;
+    }
+
+    /**
+     * Gets standard_price
+     *
+     * @return double[]
+     */
+    public function getStandardPrice()
+    {
+        return $this->container['standard_price'];
+    }
+
+    /**
+     * Sets standard_price
+     *
+     * @param double[] $standard_price Optional. List of standard price values to filter by (with OR condition).
+     *
+     * @return $this
+     */
+    public function setStandardPrice($standard_price)
+    {
+        $this->container['standard_price'] = $standard_price;
 
         return $this;
     }

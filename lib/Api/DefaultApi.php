@@ -87,13 +87,267 @@ class DefaultApi
     }
 
     /**
+     * Operation 2e2cf26c21d341159e39a663d7497235
+     *
+     * openapi
+     *
+     * @param  string $version OpenAPI version (required)
+     * @param  string $extension OpenAPI document extension (required)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function 2e2cf26c21d341159e39a663d7497235($version, $extension)
+    {
+        $this->2e2cf26c21d341159e39a663d7497235WithHttpInfo($version, $extension);
+    }
+
+    /**
+     * Operation 2e2cf26c21d341159e39a663d7497235WithHttpInfo
+     *
+     * openapi
+     *
+     * @param  string $version OpenAPI version (required)
+     * @param  string $extension OpenAPI document extension (required)
+     *
+     * @throws \Infocenter\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function 2e2cf26c21d341159e39a663d7497235WithHttpInfo($version, $extension)
+    {
+        $returnType = '';
+        $request = $this->2e2cf26c21d341159e39a663d7497235Request($version, $extension);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation 2e2cf26c21d341159e39a663d7497235Async
+     *
+     * openapi
+     *
+     * @param  string $version OpenAPI version (required)
+     * @param  string $extension OpenAPI document extension (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function 2e2cf26c21d341159e39a663d7497235Async($version, $extension)
+    {
+        return $this->2e2cf26c21d341159e39a663d7497235AsyncWithHttpInfo($version, $extension)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation 2e2cf26c21d341159e39a663d7497235AsyncWithHttpInfo
+     *
+     * openapi
+     *
+     * @param  string $version OpenAPI version (required)
+     * @param  string $extension OpenAPI document extension (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function 2e2cf26c21d341159e39a663d7497235AsyncWithHttpInfo($version, $extension)
+    {
+        $returnType = '';
+        $request = $this->2e2cf26c21d341159e39a663d7497235Request($version, $extension);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation '2e2cf26c21d341159e39a663d7497235'
+     *
+     * @param  string $version OpenAPI version (required)
+     * @param  string $extension OpenAPI document extension (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function 2e2cf26c21d341159e39a663d7497235Request($version, $extension)
+    {
+        // verify the required parameter 'version' is set
+        if ($version === null || (is_array($version) && count($version) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $version when calling 2e2cf26c21d341159e39a663d7497235'
+            );
+        }
+        // verify the required parameter 'extension' is set
+        if ($extension === null || (is_array($extension) && count($extension) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $extension when calling 2e2cf26c21d341159e39a663d7497235'
+            );
+        }
+
+        $resourcePath = '/openapi/{version}.{extension}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($version !== null) {
+            $resourcePath = str_replace(
+                '{' . 'version' . '}',
+                ObjectSerializer::toPathValue($version),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($extension !== null) {
+            $resourcePath = str_replace(
+                '{' . 'extension' . '}',
+                ObjectSerializer::toPathValue($extension),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
+        if ($apiKey !== null) {
+            $queryParams['subscription-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation accommodation
      *
      * Accommodation
      *
      * @param  string $id Use property identifier of Accommodation to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -121,7 +375,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Accommodation to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -207,7 +461,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Accommodation to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -238,7 +492,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Accommodation to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -299,7 +553,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Accommodation to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -470,7 +724,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -495,7 +749,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -578,7 +832,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -606,7 +860,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -664,7 +918,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Region to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -820,7 +1074,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -828,7 +1082,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecast[]
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
     public function administrativeAreaRegionDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -843,7 +1097,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -851,11 +1105,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function administrativeAreaRegionDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->administrativeAreaRegionDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -907,7 +1161,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecast[]',
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -924,7 +1178,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -950,7 +1204,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -961,7 +1215,7 @@ class DefaultApi
      */
     public function administrativeAreaRegionDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->administrativeAreaRegionDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -1006,7 +1260,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -1152,7 +1406,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -1175,7 +1429,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -1256,7 +1510,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -1282,7 +1536,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -1338,7 +1592,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -1484,7 +1738,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -1508,7 +1762,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -1590,7 +1844,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -1617,7 +1871,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -1674,7 +1928,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AdministrativeArea to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -2121,7 +2375,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AudioObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -2145,7 +2399,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AudioObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -2227,7 +2481,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AudioObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -2254,7 +2508,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AudioObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -2311,7 +2565,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of AudioObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -2462,7 +2716,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Award to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
@@ -2485,7 +2739,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Award to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
@@ -2566,7 +2820,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Award to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
@@ -2592,7 +2846,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Award to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
@@ -2648,7 +2902,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Award to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
@@ -2794,20 +3048,21 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsCategory
      */
-    public function category($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $select = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    public function category($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $select = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
-        list($response) = $this->categoryWithHttpInfo($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope);
+        list($response) = $this->categoryWithHttpInfo($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
         return $response;
     }
 
@@ -2818,21 +3073,22 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsCategory, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $select = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    public function categoryWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $select = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCategory';
-        $request = $this->categoryRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope);
+        $request = $this->categoryRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2900,19 +3156,20 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAsync($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $select = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    public function categoryAsync($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $select = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
-        return $this->categoryAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope)
+        return $this->categoryAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2927,20 +3184,21 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $select = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    public function categoryAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $select = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCategory';
-        $request = $this->categoryRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope);
+        $request = $this->categoryRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $select, $accept_language, $accept_timezone, $scope, $category_version);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2984,17 +3242,18 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Category to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function categoryRequest($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $select = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    protected function categoryRequest($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $select = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -3043,6 +3302,10 @@ class DefaultApi
         // header params
         if ($scope !== null) {
             $headerParams['scope'] = ObjectSerializer::toHeaderValue($scope);
+        }
+        // header params
+        if ($category_version !== null) {
+            $headerParams['categoryVersion'] = ObjectSerializer::toHeaderValue($category_version);
         }
 
         // path params
@@ -3139,14 +3402,15 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsCategoryTreeItem
      */
-    public function categoryTree($id, $ocp_apim_subscription_key, $select = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    public function categoryTree($id, $ocp_apim_subscription_key, $select = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
-        list($response) = $this->categoryTreeWithHttpInfo($id, $ocp_apim_subscription_key, $select, $accept_language, $accept_timezone, $scope);
+        list($response) = $this->categoryTreeWithHttpInfo($id, $ocp_apim_subscription_key, $select, $accept_language, $accept_timezone, $scope, $category_version);
         return $response;
     }
 
@@ -3161,15 +3425,16 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsCategoryTreeItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryTreeWithHttpInfo($id, $ocp_apim_subscription_key, $select = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    public function categoryTreeWithHttpInfo($id, $ocp_apim_subscription_key, $select = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCategoryTreeItem';
-        $request = $this->categoryTreeRequest($id, $ocp_apim_subscription_key, $select, $accept_language, $accept_timezone, $scope);
+        $request = $this->categoryTreeRequest($id, $ocp_apim_subscription_key, $select, $accept_language, $accept_timezone, $scope, $category_version);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3241,13 +3506,14 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryTreeAsync($id, $ocp_apim_subscription_key, $select = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    public function categoryTreeAsync($id, $ocp_apim_subscription_key, $select = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
-        return $this->categoryTreeAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $select, $accept_language, $accept_timezone, $scope)
+        return $this->categoryTreeAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $select, $accept_language, $accept_timezone, $scope, $category_version)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3266,14 +3532,15 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryTreeAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $select = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    public function categoryTreeAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $select = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCategoryTreeItem';
-        $request = $this->categoryTreeRequest($id, $ocp_apim_subscription_key, $select, $accept_language, $accept_timezone, $scope);
+        $request = $this->categoryTreeRequest($id, $ocp_apim_subscription_key, $select, $accept_language, $accept_timezone, $scope, $category_version);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3321,11 +3588,12 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function categoryTreeRequest($id, $ocp_apim_subscription_key, $select = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    protected function categoryTreeRequest($id, $ocp_apim_subscription_key, $select = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -3366,6 +3634,10 @@ class DefaultApi
         // header params
         if ($scope !== null) {
             $headerParams['scope'] = ObjectSerializer::toHeaderValue($scope);
+        }
+        // header params
+        if ($category_version !== null) {
+            $headerParams['categoryVersion'] = ObjectSerializer::toHeaderValue($category_version);
         }
 
         // path params
@@ -3458,7 +3730,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -3487,7 +3759,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -3574,7 +3846,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -3606,7 +3878,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -3668,7 +3940,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -3844,7 +4116,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -3852,7 +4124,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecast[]
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
     public function civicStructureDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -3867,7 +4139,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -3875,11 +4147,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function civicStructureDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->civicStructureDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -3931,7 +4203,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecast[]',
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3948,7 +4220,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -3974,7 +4246,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -3985,7 +4257,7 @@ class DefaultApi
      */
     public function civicStructureDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->civicStructureDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -4030,7 +4302,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -4176,7 +4448,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -4199,7 +4471,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -4280,7 +4552,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -4306,7 +4578,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -4362,7 +4634,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -4508,7 +4780,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -4532,7 +4804,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -4614,7 +4886,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -4641,7 +4913,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -4698,7 +4970,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CivicStructure to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -4849,7 +5121,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -4878,7 +5150,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -4965,7 +5237,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -4997,7 +5269,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -5059,7 +5331,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -5235,7 +5507,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -5243,7 +5515,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecast[]
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
     public function conditionDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -5258,7 +5530,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -5266,11 +5538,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function conditionDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->conditionDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -5322,7 +5594,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecast[]',
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5339,7 +5611,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -5365,7 +5637,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -5376,7 +5648,7 @@ class DefaultApi
      */
     public function conditionDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->conditionDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -5421,7 +5693,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -5567,7 +5839,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -5590,7 +5862,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -5671,7 +5943,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -5697,7 +5969,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -5753,7 +6025,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -5899,7 +6171,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -5923,7 +6195,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -6005,7 +6277,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -6032,7 +6304,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -6089,7 +6361,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Condition to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -6240,7 +6512,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -6268,7 +6540,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -6354,7 +6626,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -6385,7 +6657,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -6446,7 +6718,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of CreativeWork to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -6922,7 +7194,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -6951,7 +7223,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -7038,7 +7310,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -7070,7 +7342,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -7132,7 +7404,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -7308,7 +7580,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -7316,7 +7588,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecast[]
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
     public function eventDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -7331,7 +7603,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -7339,11 +7611,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function eventDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->eventDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -7395,7 +7667,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecast[]',
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7412,7 +7684,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -7438,7 +7710,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -7449,7 +7721,7 @@ class DefaultApi
      */
     public function eventDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->eventDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -7494,7 +7766,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -7640,7 +7912,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -7663,7 +7935,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -7744,7 +8016,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -7770,7 +8042,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -7826,7 +8098,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -7972,7 +8244,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -7996,7 +8268,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -8078,7 +8350,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -8105,7 +8377,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -8162,7 +8434,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Event to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -8313,7 +8585,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -8342,7 +8614,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -8429,7 +8701,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -8461,7 +8733,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -8523,7 +8795,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -8699,7 +8971,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -8723,7 +8995,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -8805,7 +9077,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -8832,7 +9104,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -8889,7 +9161,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -9040,7 +9312,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -9048,7 +9320,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecast[]
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
     public function foodEstablishmentWeatherDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -9063,7 +9335,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -9071,11 +9343,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function foodEstablishmentWeatherDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->foodEstablishmentWeatherDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -9127,7 +9399,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecast[]',
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9144,7 +9416,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -9170,7 +9442,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -9181,7 +9453,7 @@ class DefaultApi
      */
     public function foodEstablishmentWeatherDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->foodEstablishmentWeatherDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -9226,7 +9498,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -9372,7 +9644,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -9395,7 +9667,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -9476,7 +9748,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -9502,7 +9774,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -9558,7 +9830,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of FoodEstablishment to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -10517,7 +10789,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -10542,7 +10814,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -10625,7 +10897,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -10653,7 +10925,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -10711,7 +10983,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of ImageObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -10866,7 +11138,7 @@ class DefaultApi
      * List Accommodation
      *
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  \DateTime $updated_since Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; (optional)
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
@@ -10901,7 +11173,7 @@ class DefaultApi
      * List Accommodation
      *
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  \DateTime $updated_since Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; (optional)
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
@@ -10994,7 +11266,7 @@ class DefaultApi
      * List Accommodation
      *
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  \DateTime $updated_since Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; (optional)
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
@@ -11032,7 +11304,7 @@ class DefaultApi
      * List Accommodation
      *
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  \DateTime $updated_since Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; (optional)
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
@@ -11100,7 +11372,7 @@ class DefaultApi
      * Create request for operation 'listAccommodation'
      *
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  \DateTime $updated_since Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; (optional)
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
@@ -11302,7 +11574,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
@@ -11335,7 +11607,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
@@ -11426,7 +11698,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
@@ -11462,7 +11734,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
@@ -11528,7 +11800,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (works only in combination with rootObjectsOnly). (optional)
@@ -12025,7 +12297,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -12053,7 +12325,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -12139,7 +12411,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -12170,7 +12442,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -12231,7 +12503,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -12388,7 +12660,7 @@ class DefaultApi
      * List Award
      *
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  \DateTime $updated_since Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; (optional)
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
@@ -12418,7 +12690,7 @@ class DefaultApi
      * List Award
      *
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  \DateTime $updated_since Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; (optional)
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
@@ -12506,7 +12778,7 @@ class DefaultApi
      * List Award
      *
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  \DateTime $updated_since Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; (optional)
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
@@ -12539,7 +12811,7 @@ class DefaultApi
      * List Award
      *
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  \DateTime $updated_since Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; (optional)
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
@@ -12602,7 +12874,7 @@ class DefaultApi
      * Create request for operation 'listAward'
      *
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  \DateTime $updated_since Format - date-time (as date-time in RFC3339). Returns only changed data since a specific date. Format: &#x60;yyyy-MM-ddTHH:mm:ss&#x60; (optional)
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
@@ -12778,7 +13050,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
@@ -12786,14 +13058,15 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsCategoriesResponse
      */
-    public function listCategory($ocp_apim_subscription_key, $parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $identifiers = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    public function listCategory($ocp_apim_subscription_key, $parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $identifiers = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
-        list($response) = $this->listCategoryWithHttpInfo($ocp_apim_subscription_key, $parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $identifiers, $accept_language, $accept_timezone, $scope);
+        list($response) = $this->listCategoryWithHttpInfo($ocp_apim_subscription_key, $parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
         return $response;
     }
 
@@ -12808,7 +13081,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
@@ -12816,15 +13089,16 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsCategoriesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCategoryWithHttpInfo($ocp_apim_subscription_key, $parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $identifiers = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    public function listCategoryWithHttpInfo($ocp_apim_subscription_key, $parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $identifiers = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCategoriesResponse';
-        $request = $this->listCategoryRequest($ocp_apim_subscription_key, $parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $identifiers, $accept_language, $accept_timezone, $scope);
+        $request = $this->listCategoryRequest($ocp_apim_subscription_key, $parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12896,7 +13170,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
@@ -12904,13 +13178,14 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCategoryAsync($ocp_apim_subscription_key, $parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $identifiers = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    public function listCategoryAsync($ocp_apim_subscription_key, $parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $identifiers = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
-        return $this->listCategoryAsyncWithHttpInfo($ocp_apim_subscription_key, $parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $identifiers, $accept_language, $accept_timezone, $scope)
+        return $this->listCategoryAsyncWithHttpInfo($ocp_apim_subscription_key, $parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $identifiers, $accept_language, $accept_timezone, $scope, $category_version)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12929,7 +13204,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
@@ -12937,14 +13212,15 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCategoryAsyncWithHttpInfo($ocp_apim_subscription_key, $parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $identifiers = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    public function listCategoryAsyncWithHttpInfo($ocp_apim_subscription_key, $parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $identifiers = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
         $returnType = '\Infocenter\Client\Model\DsCategoriesResponse';
-        $request = $this->listCategoryRequest($ocp_apim_subscription_key, $parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $identifiers, $accept_language, $accept_timezone, $scope);
+        $request = $this->listCategoryRequest($ocp_apim_subscription_key, $parent_category, $updated_since, $datasource, $continuation_token, $top, $project, $select, $include_count, $root_objects_only, $identifiers, $accept_language, $accept_timezone, $scope, $category_version);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12992,7 +13268,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  bool $root_objects_only Pass &#x27;true&#x27; if you want to get only root categories. (optional)
@@ -13000,11 +13276,12 @@ class DefaultApi
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
+     * @param  string $category_version Filters categories by version. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listCategoryRequest($ocp_apim_subscription_key, $parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $identifiers = null, $accept_language = null, $accept_timezone = null, $scope = null)
+    protected function listCategoryRequest($ocp_apim_subscription_key, $parent_category = null, $updated_since = null, $datasource = null, $continuation_token = null, $top = null, $project = null, $select = null, $include_count = null, $root_objects_only = null, $identifiers = null, $accept_language = null, $accept_timezone = null, $scope = null, $category_version = null)
     {
         // verify the required parameter 'ocp_apim_subscription_key' is set
         if ($ocp_apim_subscription_key === null || (is_array($ocp_apim_subscription_key) && count($ocp_apim_subscription_key) === 0)) {
@@ -13075,6 +13352,10 @@ class DefaultApi
         // header params
         if ($scope !== null) {
             $headerParams['scope'] = ObjectSerializer::toHeaderValue($scope);
+        }
+        // header params
+        if ($category_version !== null) {
+            $headerParams['categoryVersion'] = ObjectSerializer::toHeaderValue($category_version);
         }
 
 
@@ -13164,7 +13445,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -13199,7 +13480,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -13292,7 +13573,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -13330,7 +13611,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -13398,7 +13679,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -13594,7 +13875,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -13629,7 +13910,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -13722,7 +14003,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -13760,7 +14041,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -13828,7 +14109,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14022,7 +14303,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14054,7 +14335,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14144,7 +14425,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14179,7 +14460,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14244,7 +14525,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14428,7 +14709,7 @@ class DefaultApi
      * @param  int $top Format - int32. Sets the page size of response. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $location Filters by &#x60;location&#x60;. Use property identifier of local bussiness. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14464,7 +14745,7 @@ class DefaultApi
      * @param  int $top Format - int32. Sets the page size of response. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $location Filters by &#x60;location&#x60;. Use property identifier of local bussiness. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14558,7 +14839,7 @@ class DefaultApi
      * @param  int $top Format - int32. Sets the page size of response. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $location Filters by &#x60;location&#x60;. Use property identifier of local bussiness. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14597,7 +14878,7 @@ class DefaultApi
      * @param  int $top Format - int32. Sets the page size of response. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $location Filters by &#x60;location&#x60;. Use property identifier of local bussiness. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14666,7 +14947,7 @@ class DefaultApi
      * @param  int $top Format - int32. Sets the page size of response. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $location Filters by &#x60;location&#x60;. Use property identifier of local bussiness. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14866,7 +15147,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14901,7 +15182,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -14994,7 +15275,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -15032,7 +15313,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -15100,7 +15381,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -15294,7 +15575,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -15323,7 +15604,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -15410,7 +15691,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -15442,7 +15723,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -15504,7 +15785,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -15672,7 +15953,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -15710,7 +15991,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -15806,7 +16087,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -15847,7 +16128,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -15918,7 +16199,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -16129,7 +16410,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -16166,7 +16447,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -16261,7 +16542,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -16301,7 +16582,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -16371,7 +16652,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -16575,7 +16856,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -16603,7 +16884,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -16689,7 +16970,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -16720,7 +17001,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -16781,7 +17062,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -16944,7 +17225,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -16979,7 +17260,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -17072,7 +17353,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -17110,7 +17391,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -17178,7 +17459,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -17371,7 +17652,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -17405,7 +17686,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -17497,7 +17778,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -17534,7 +17815,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -17601,7 +17882,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -18141,7 +18422,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -18169,7 +18450,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -18255,7 +18536,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -18286,7 +18567,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -18347,7 +18628,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -18510,7 +18791,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -18545,7 +18826,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -18638,7 +18919,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -18676,7 +18957,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -18744,7 +19025,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -18938,7 +19219,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $additional_type Filters by &#x60;additional type&#x60;. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
@@ -18968,7 +19249,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $additional_type Filters by &#x60;additional type&#x60;. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
@@ -19056,7 +19337,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $additional_type Filters by &#x60;additional type&#x60;. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
@@ -19089,7 +19370,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $additional_type Filters by &#x60;additional type&#x60;. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
@@ -19152,7 +19433,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $additional_type Filters by &#x60;additional type&#x60;. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
@@ -19593,7 +19874,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -19628,7 +19909,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -19721,7 +20002,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -19759,7 +20040,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -19827,7 +20108,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20023,7 +20304,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20058,7 +20339,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20151,7 +20432,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20189,7 +20470,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20257,7 +20538,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20451,7 +20732,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20479,7 +20760,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20565,7 +20846,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20596,7 +20877,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20657,7 +20938,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20820,7 +21101,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20855,7 +21136,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20948,7 +21229,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -20986,7 +21267,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -21054,7 +21335,7 @@ class DefaultApi
      * @param  string $datasource Filters by &#x60;datasource&#x60;. (optional)
      * @param  string $continuation_token A next page cursor for use in pagination, see [Documentation](https://docs.discover.swiss/dev/quickstarts/how-to-get-access/#continuationtoken). (optional)
      * @param  int $top Format - int32. Sets the page size of response. (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_count Use &#x60;true&#x60; if you want to get total filtered items count in response. (optional)
      * @param  string $identifiers Comma-separated list of Id&#x27;s to include in the response. (optional)
@@ -21245,7 +21526,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
@@ -21275,7 +21556,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
@@ -21363,7 +21644,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
@@ -21396,7 +21677,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
@@ -21459,7 +21740,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
@@ -21640,7 +21921,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -21648,7 +21929,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecast[]
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
     public function localBusinessDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -21663,7 +21944,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -21671,11 +21952,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function localBusinessDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->localBusinessDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -21727,7 +22008,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecast[]',
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -21744,7 +22025,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -21770,7 +22051,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -21781,7 +22062,7 @@ class DefaultApi
      */
     public function localBusinessDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->localBusinessDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -21826,7 +22107,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -21972,7 +22253,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -21995,7 +22276,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -22076,7 +22357,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -22102,7 +22383,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -22158,7 +22439,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -22304,7 +22585,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -22328,7 +22609,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -22410,7 +22691,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -22437,7 +22718,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -22494,7 +22775,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LocalBusiness to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -22645,7 +22926,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
@@ -22675,7 +22956,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
@@ -22763,7 +23044,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
@@ -22796,7 +23077,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
@@ -22859,7 +23140,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
@@ -23040,7 +23321,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -23048,7 +23329,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecast[]
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
     public function lodgingBusinessDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -23063,7 +23344,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -23071,11 +23352,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function lodgingBusinessDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->lodgingBusinessDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -23127,7 +23408,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecast[]',
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -23144,7 +23425,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -23170,7 +23451,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -23181,7 +23462,7 @@ class DefaultApi
      */
     public function lodgingBusinessDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->lodgingBusinessDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -23226,7 +23507,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -23372,7 +23653,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -23395,7 +23676,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -23476,7 +23757,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -23502,7 +23783,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -23558,7 +23839,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -23704,7 +23985,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -23728,7 +24009,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -23810,7 +24091,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -23837,7 +24118,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -23894,7 +24175,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of LodgingBusiness to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -24045,7 +24326,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -24069,7 +24350,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -24151,7 +24432,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -24178,7 +24459,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -24235,7 +24516,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of MediaObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -24386,7 +24667,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -24415,7 +24696,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -24502,7 +24783,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -24534,7 +24815,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -24596,7 +24877,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -24772,7 +25053,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -24780,7 +25061,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecast[]
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
     public function placeDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -24795,7 +25076,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -24803,11 +25084,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function placeDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->placeDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -24859,7 +25140,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecast[]',
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -24876,7 +25157,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -24902,7 +25183,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -24913,7 +25194,7 @@ class DefaultApi
      */
     public function placeDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->placeDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -24958,7 +25239,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -25104,7 +25385,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -25127,7 +25408,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -25208,7 +25489,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -25234,7 +25515,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -25290,7 +25571,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -25436,7 +25717,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -25460,7 +25741,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -25542,7 +25823,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -25569,7 +25850,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -25626,7 +25907,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Place to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -25777,7 +26058,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -25806,7 +26087,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -25893,7 +26174,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -25925,7 +26206,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -25987,7 +26268,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Product to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $description_mode Use &#x60;splitToAdditionalProperty&#x60; to extract additional information from description to additionalProperty, by default &#x60;full&#x60;. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -26163,7 +26444,7 @@ class DefaultApi
      *
      * @param  string $product_variant_id Use property to get product object by product variant identifier. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
@@ -26189,7 +26470,7 @@ class DefaultApi
      *
      * @param  string $product_variant_id Use property to get product object by product variant identifier. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
@@ -26273,7 +26554,7 @@ class DefaultApi
      *
      * @param  string $product_variant_id Use property to get product object by product variant identifier. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
@@ -26302,7 +26583,7 @@ class DefaultApi
      *
      * @param  string $product_variant_id Use property to get product object by product variant identifier. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
@@ -26361,7 +26642,7 @@ class DefaultApi
      *
      * @param  string $product_variant_id Use property to get product object by product variant identifier. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      * @param  string $scope Value scope. Some providers support different values for different client targets. Has an effect on some multilingual values (name, description, etc.). (optional)
@@ -26522,7 +26803,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Review to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -26546,7 +26827,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Review to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -26628,7 +26909,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Review to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -26655,7 +26936,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Review to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -26712,7 +26993,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Review to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -27200,6 +27481,16 @@ class DefaultApi
      * @param  string $product_availability Optional. List of properties for searching product availabilities. (optional)
      * @param  string $action Optional. List of action to filter by (with OR condition). Possible values: &#x60;OrderActionWeb&#x60;, &#x60;RegisterActionWeb&#x60; and &#x60;OrderActionDsMarket&#x60;. (optional)
      * @param  string $only_with_availabilities Results are filtered by availabilities (by default true if there is an availability-filter set) otherwise the information is only added to the search result. When it is true - facets won&#x27;t be returned. (optional)
+     * @param  string $amenity_feature Optional. List of amenity feature ids to filter by (with OR condition). (optional)
+     * @param  string $star_rating_name Optional. List of star ratings names to filter by (with OR condition). (optional)
+     * @param  string $star_rating_value Optional. List of star ratings to filter by (with OR condition). (optional)
+     * @param  string $star_rating_garni Optional. List of garni options (true/false) to filter by (with OR condition). (optional)
+     * @param  string $star_rating_superior Optional. List of superrior options (true/false) to filter by (with OR condition). (optional)
+     * @param  string $number_of_rooms Optional. List of number of rooms to filter by (with OR condition). (optional)
+     * @param  string $number_of_beds Optional. List of number of beds to filter by (with OR condition). (optional)
+     * @param  string $opening_hours_specification_day_of_week Optional. List of days of week to filter by (with OR condition). (optional)
+     * @param  string $price_range Optional. List of price ranges to filter by (with OR condition). (optional)
+     * @param  string $standard_price Optional. List of standard price values to filter by (with OR condition). (optional)
      * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
@@ -27228,9 +27519,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infocenter\Client\Model\DsSearchResponse
      */
-    public function searchByGET($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $authorization = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    public function searchByGET($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $amenity_feature = null, $star_rating_name = null, $star_rating_value = null, $star_rating_garni = null, $star_rating_superior = null, $number_of_rooms = null, $number_of_beds = null, $opening_hours_specification_day_of_week = null, $price_range = null, $standard_price = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $authorization = null, $accept_language = null, $accept_timezone = null, $category_version = null)
     {
-        list($response) = $this->searchByGETWithHttpInfo($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $authorization, $accept_language, $accept_timezone, $category_version);
+        list($response) = $this->searchByGETWithHttpInfo($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $amenity_feature, $star_rating_name, $star_rating_value, $star_rating_garni, $star_rating_superior, $number_of_rooms, $number_of_beds, $opening_hours_specification_day_of_week, $price_range, $standard_price, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $authorization, $accept_language, $accept_timezone, $category_version);
         return $response;
     }
 
@@ -27266,6 +27557,16 @@ class DefaultApi
      * @param  string $product_availability Optional. List of properties for searching product availabilities. (optional)
      * @param  string $action Optional. List of action to filter by (with OR condition). Possible values: &#x60;OrderActionWeb&#x60;, &#x60;RegisterActionWeb&#x60; and &#x60;OrderActionDsMarket&#x60;. (optional)
      * @param  string $only_with_availabilities Results are filtered by availabilities (by default true if there is an availability-filter set) otherwise the information is only added to the search result. When it is true - facets won&#x27;t be returned. (optional)
+     * @param  string $amenity_feature Optional. List of amenity feature ids to filter by (with OR condition). (optional)
+     * @param  string $star_rating_name Optional. List of star ratings names to filter by (with OR condition). (optional)
+     * @param  string $star_rating_value Optional. List of star ratings to filter by (with OR condition). (optional)
+     * @param  string $star_rating_garni Optional. List of garni options (true/false) to filter by (with OR condition). (optional)
+     * @param  string $star_rating_superior Optional. List of superrior options (true/false) to filter by (with OR condition). (optional)
+     * @param  string $number_of_rooms Optional. List of number of rooms to filter by (with OR condition). (optional)
+     * @param  string $number_of_beds Optional. List of number of beds to filter by (with OR condition). (optional)
+     * @param  string $opening_hours_specification_day_of_week Optional. List of days of week to filter by (with OR condition). (optional)
+     * @param  string $price_range Optional. List of price ranges to filter by (with OR condition). (optional)
+     * @param  string $standard_price Optional. List of standard price values to filter by (with OR condition). (optional)
      * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
@@ -27294,10 +27595,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infocenter\Client\Model\DsSearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchByGETWithHttpInfo($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $authorization = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    public function searchByGETWithHttpInfo($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $amenity_feature = null, $star_rating_name = null, $star_rating_value = null, $star_rating_garni = null, $star_rating_superior = null, $number_of_rooms = null, $number_of_beds = null, $opening_hours_specification_day_of_week = null, $price_range = null, $standard_price = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $authorization = null, $accept_language = null, $accept_timezone = null, $category_version = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $authorization, $accept_language, $accept_timezone, $category_version);
+        $request = $this->searchByGETRequest($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $amenity_feature, $star_rating_name, $star_rating_value, $star_rating_garni, $star_rating_superior, $number_of_rooms, $number_of_beds, $opening_hours_specification_day_of_week, $price_range, $standard_price, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $authorization, $accept_language, $accept_timezone, $category_version);
 
         try {
             $options = $this->createHttpClientOption();
@@ -27390,6 +27691,16 @@ class DefaultApi
      * @param  string $product_availability Optional. List of properties for searching product availabilities. (optional)
      * @param  string $action Optional. List of action to filter by (with OR condition). Possible values: &#x60;OrderActionWeb&#x60;, &#x60;RegisterActionWeb&#x60; and &#x60;OrderActionDsMarket&#x60;. (optional)
      * @param  string $only_with_availabilities Results are filtered by availabilities (by default true if there is an availability-filter set) otherwise the information is only added to the search result. When it is true - facets won&#x27;t be returned. (optional)
+     * @param  string $amenity_feature Optional. List of amenity feature ids to filter by (with OR condition). (optional)
+     * @param  string $star_rating_name Optional. List of star ratings names to filter by (with OR condition). (optional)
+     * @param  string $star_rating_value Optional. List of star ratings to filter by (with OR condition). (optional)
+     * @param  string $star_rating_garni Optional. List of garni options (true/false) to filter by (with OR condition). (optional)
+     * @param  string $star_rating_superior Optional. List of superrior options (true/false) to filter by (with OR condition). (optional)
+     * @param  string $number_of_rooms Optional. List of number of rooms to filter by (with OR condition). (optional)
+     * @param  string $number_of_beds Optional. List of number of beds to filter by (with OR condition). (optional)
+     * @param  string $opening_hours_specification_day_of_week Optional. List of days of week to filter by (with OR condition). (optional)
+     * @param  string $price_range Optional. List of price ranges to filter by (with OR condition). (optional)
+     * @param  string $standard_price Optional. List of standard price values to filter by (with OR condition). (optional)
      * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
@@ -27417,9 +27728,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsync($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $authorization = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    public function searchByGETAsync($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $amenity_feature = null, $star_rating_name = null, $star_rating_value = null, $star_rating_garni = null, $star_rating_superior = null, $number_of_rooms = null, $number_of_beds = null, $opening_hours_specification_day_of_week = null, $price_range = null, $standard_price = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $authorization = null, $accept_language = null, $accept_timezone = null, $category_version = null)
     {
-        return $this->searchByGETAsyncWithHttpInfo($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $authorization, $accept_language, $accept_timezone, $category_version)
+        return $this->searchByGETAsyncWithHttpInfo($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $amenity_feature, $star_rating_name, $star_rating_value, $star_rating_garni, $star_rating_superior, $number_of_rooms, $number_of_beds, $opening_hours_specification_day_of_week, $price_range, $standard_price, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $authorization, $accept_language, $accept_timezone, $category_version)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -27459,6 +27770,16 @@ class DefaultApi
      * @param  string $product_availability Optional. List of properties for searching product availabilities. (optional)
      * @param  string $action Optional. List of action to filter by (with OR condition). Possible values: &#x60;OrderActionWeb&#x60;, &#x60;RegisterActionWeb&#x60; and &#x60;OrderActionDsMarket&#x60;. (optional)
      * @param  string $only_with_availabilities Results are filtered by availabilities (by default true if there is an availability-filter set) otherwise the information is only added to the search result. When it is true - facets won&#x27;t be returned. (optional)
+     * @param  string $amenity_feature Optional. List of amenity feature ids to filter by (with OR condition). (optional)
+     * @param  string $star_rating_name Optional. List of star ratings names to filter by (with OR condition). (optional)
+     * @param  string $star_rating_value Optional. List of star ratings to filter by (with OR condition). (optional)
+     * @param  string $star_rating_garni Optional. List of garni options (true/false) to filter by (with OR condition). (optional)
+     * @param  string $star_rating_superior Optional. List of superrior options (true/false) to filter by (with OR condition). (optional)
+     * @param  string $number_of_rooms Optional. List of number of rooms to filter by (with OR condition). (optional)
+     * @param  string $number_of_beds Optional. List of number of beds to filter by (with OR condition). (optional)
+     * @param  string $opening_hours_specification_day_of_week Optional. List of days of week to filter by (with OR condition). (optional)
+     * @param  string $price_range Optional. List of price ranges to filter by (with OR condition). (optional)
+     * @param  string $standard_price Optional. List of standard price values to filter by (with OR condition). (optional)
      * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
@@ -27486,10 +27807,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByGETAsyncWithHttpInfo($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $authorization = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    public function searchByGETAsyncWithHttpInfo($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $amenity_feature = null, $star_rating_name = null, $star_rating_value = null, $star_rating_garni = null, $star_rating_superior = null, $number_of_rooms = null, $number_of_beds = null, $opening_hours_specification_day_of_week = null, $price_range = null, $standard_price = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $authorization = null, $accept_language = null, $accept_timezone = null, $category_version = null)
     {
         $returnType = '\Infocenter\Client\Model\DsSearchResponse';
-        $request = $this->searchByGETRequest($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $authorization, $accept_language, $accept_timezone, $category_version);
+        $request = $this->searchByGETRequest($ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $amenity_feature, $star_rating_name, $star_rating_value, $star_rating_garni, $star_rating_superior, $number_of_rooms, $number_of_beds, $opening_hours_specification_day_of_week, $price_range, $standard_price, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $authorization, $accept_language, $accept_timezone, $category_version);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -27558,6 +27879,16 @@ class DefaultApi
      * @param  string $product_availability Optional. List of properties for searching product availabilities. (optional)
      * @param  string $action Optional. List of action to filter by (with OR condition). Possible values: &#x60;OrderActionWeb&#x60;, &#x60;RegisterActionWeb&#x60; and &#x60;OrderActionDsMarket&#x60;. (optional)
      * @param  string $only_with_availabilities Results are filtered by availabilities (by default true if there is an availability-filter set) otherwise the information is only added to the search result. When it is true - facets won&#x27;t be returned. (optional)
+     * @param  string $amenity_feature Optional. List of amenity feature ids to filter by (with OR condition). (optional)
+     * @param  string $star_rating_name Optional. List of star ratings names to filter by (with OR condition). (optional)
+     * @param  string $star_rating_value Optional. List of star ratings to filter by (with OR condition). (optional)
+     * @param  string $star_rating_garni Optional. List of garni options (true/false) to filter by (with OR condition). (optional)
+     * @param  string $star_rating_superior Optional. List of superrior options (true/false) to filter by (with OR condition). (optional)
+     * @param  string $number_of_rooms Optional. List of number of rooms to filter by (with OR condition). (optional)
+     * @param  string $number_of_beds Optional. List of number of beds to filter by (with OR condition). (optional)
+     * @param  string $opening_hours_specification_day_of_week Optional. List of days of week to filter by (with OR condition). (optional)
+     * @param  string $price_range Optional. List of price ranges to filter by (with OR condition). (optional)
+     * @param  string $standard_price Optional. List of standard price values to filter by (with OR condition). (optional)
      * @param  string $category_tree Use property for filtering/facet-filtering by &#x60;categoryTree&#x60; (optional)
      * @param  string $tag Use property for filtering/facet-filtering by &#x60;tag&#x60; (optional)
      * @param  string $contained_in_place Use property for filtering/facet-filtering by &#x60;containedInPlace/id&#x60; (optional)
@@ -27585,7 +27916,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchByGETRequest($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $authorization = null, $accept_language = null, $accept_timezone = null, $category_version = null)
+    protected function searchByGETRequest($ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $amenity_feature = null, $star_rating_name = null, $star_rating_value = null, $star_rating_garni = null, $star_rating_superior = null, $number_of_rooms = null, $number_of_beds = null, $opening_hours_specification_day_of_week = null, $price_range = null, $standard_price = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $authorization = null, $accept_language = null, $accept_timezone = null, $category_version = null)
     {
         // verify the required parameter 'ocp_apim_subscription_key' is set
         if ($ocp_apim_subscription_key === null || (is_array($ocp_apim_subscription_key) && count($ocp_apim_subscription_key) === 0)) {
@@ -27704,6 +28035,46 @@ class DefaultApi
         // query params
         if ($only_with_availabilities !== null) {
             $queryParams['onlyWithAvailabilities'] = ObjectSerializer::toQueryValue($only_with_availabilities, null);
+        }
+        // query params
+        if ($amenity_feature !== null) {
+            $queryParams['amenityFeature'] = ObjectSerializer::toQueryValue($amenity_feature, null);
+        }
+        // query params
+        if ($star_rating_name !== null) {
+            $queryParams['starRatingName'] = ObjectSerializer::toQueryValue($star_rating_name, null);
+        }
+        // query params
+        if ($star_rating_value !== null) {
+            $queryParams['starRatingValue'] = ObjectSerializer::toQueryValue($star_rating_value, null);
+        }
+        // query params
+        if ($star_rating_garni !== null) {
+            $queryParams['starRatingGarni'] = ObjectSerializer::toQueryValue($star_rating_garni, null);
+        }
+        // query params
+        if ($star_rating_superior !== null) {
+            $queryParams['starRatingSuperior'] = ObjectSerializer::toQueryValue($star_rating_superior, null);
+        }
+        // query params
+        if ($number_of_rooms !== null) {
+            $queryParams['numberOfRooms'] = ObjectSerializer::toQueryValue($number_of_rooms, null);
+        }
+        // query params
+        if ($number_of_beds !== null) {
+            $queryParams['numberOfBeds'] = ObjectSerializer::toQueryValue($number_of_beds, null);
+        }
+        // query params
+        if ($opening_hours_specification_day_of_week !== null) {
+            $queryParams['openingHoursSpecificationDayOfWeek'] = ObjectSerializer::toQueryValue($opening_hours_specification_day_of_week, null);
+        }
+        // query params
+        if ($price_range !== null) {
+            $queryParams['priceRange'] = ObjectSerializer::toQueryValue($price_range, null);
+        }
+        // query params
+        if ($standard_price !== null) {
+            $queryParams['standardPrice'] = ObjectSerializer::toQueryValue($standard_price, null);
         }
         // query params
         if ($category_tree !== null) {
@@ -27937,7 +28308,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return string
+     * @return \Infocenter\Client\Model\DsFile
      */
     public function searchByGETForPdf($template_project, $template, $ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $title = null, $leadtext = null, $accept_language = null, $accept_timezone = null)
     {
@@ -28005,11 +28376,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsFile, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchByGETForPdfWithHttpInfo($template_project, $template, $ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $title = null, $leadtext = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = 'string';
+        $returnType = '\Infocenter\Client\Model\DsFile';
         $request = $this->searchByGETForPdfRequest($template_project, $template, $ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $title, $leadtext, $accept_language, $accept_timezone);
 
         try {
@@ -28061,7 +28432,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'string',
+                        '\Infocenter\Client\Model\DsFile',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -28205,7 +28576,7 @@ class DefaultApi
      */
     public function searchByGETForPdfAsyncWithHttpInfo($template_project, $template, $ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $title = null, $leadtext = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = 'string';
+        $returnType = '\Infocenter\Client\Model\DsFile';
         $request = $this->searchByGETForPdfRequest($template_project, $template, $ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $title, $leadtext, $accept_language, $accept_timezone);
 
         return $this->client
@@ -28638,7 +29009,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return string
+     * @return \Infocenter\Client\Model\DsFile
      */
     public function searchByPOSTForPdf($ocp_apim_subscription_key, $template_project, $template, $body = null, $accept_language = null, $accept_timezone = null)
     {
@@ -28660,11 +29031,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsFile, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchByPOSTForPdfWithHttpInfo($ocp_apim_subscription_key, $template_project, $template, $body = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = 'string';
+        $returnType = '\Infocenter\Client\Model\DsFile';
         $request = $this->searchByPOSTForPdfRequest($ocp_apim_subscription_key, $template_project, $template, $body, $accept_language, $accept_timezone);
 
         try {
@@ -28716,7 +29087,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'string',
+                        '\Infocenter\Client\Model\DsFile',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -28768,7 +29139,7 @@ class DefaultApi
      */
     public function searchByPOSTForPdfAsyncWithHttpInfo($ocp_apim_subscription_key, $template_project, $template, $body = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = 'string';
+        $returnType = '\Infocenter\Client\Model\DsFile';
         $request = $this->searchByPOSTForPdfRequest($ocp_apim_subscription_key, $template_project, $template, $body, $accept_language, $accept_timezone);
 
         return $this->client
@@ -28963,7 +29334,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -28992,7 +29363,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -29079,7 +29450,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -29111,7 +29482,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -29173,7 +29544,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -29349,7 +29720,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -29357,7 +29728,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecast[]
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
     public function skiResortDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -29372,7 +29743,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -29380,11 +29751,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function skiResortDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->skiResortDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -29436,7 +29807,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecast[]',
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -29453,7 +29824,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -29479,7 +29850,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -29490,7 +29861,7 @@ class DefaultApi
      */
     public function skiResortDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->skiResortDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -29535,7 +29906,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -29681,7 +30052,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -29704,7 +30075,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -29785,7 +30156,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -29811,7 +30182,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -29867,7 +30238,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -30013,7 +30384,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -30037,7 +30408,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -30119,7 +30490,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -30146,7 +30517,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -30203,7 +30574,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of SkiResort to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -30354,7 +30725,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
@@ -30377,7 +30748,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
@@ -30458,7 +30829,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
@@ -30484,7 +30855,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
@@ -30540,7 +30911,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tag to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
@@ -30991,7 +31362,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -31020,7 +31391,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -31107,7 +31478,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -31139,7 +31510,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -31201,7 +31572,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Tour to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -31377,7 +31748,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -31385,7 +31756,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecast[]
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
     public function tourDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -31400,7 +31771,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -31408,11 +31779,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function tourDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->tourDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -31464,7 +31835,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecast[]',
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -31481,7 +31852,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -31507,7 +31878,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -31518,7 +31889,7 @@ class DefaultApi
      */
     public function tourDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->tourDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -31563,7 +31934,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -31709,7 +32080,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -31732,7 +32103,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -31813,7 +32184,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -31839,7 +32210,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -31895,7 +32266,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -32041,7 +32412,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -32065,7 +32436,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -32147,7 +32518,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -32174,7 +32545,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -32231,7 +32602,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -32382,7 +32753,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -32411,7 +32782,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -32498,7 +32869,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -32530,7 +32901,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -32592,7 +32963,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -32768,7 +33139,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -32776,7 +33147,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecast[]
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
     public function transportationSystemDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -32791,7 +33162,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -32799,11 +33170,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function transportationSystemDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->transportationSystemDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -32855,7 +33226,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecast[]',
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -32872,7 +33243,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -32898,7 +33269,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -32909,7 +33280,7 @@ class DefaultApi
      */
     public function transportationSystemDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->transportationSystemDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -32954,7 +33325,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -33100,7 +33471,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -33123,7 +33494,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -33204,7 +33575,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -33230,7 +33601,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -33286,7 +33657,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather hourly forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -33432,7 +33803,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -33456,7 +33827,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -33538,7 +33909,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -33565,7 +33936,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -33622,7 +33993,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of TransportationSystem to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -33775,7 +34146,7 @@ class DefaultApi
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      *
@@ -33798,7 +34169,7 @@ class DefaultApi
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      *
@@ -33879,7 +34250,7 @@ class DefaultApi
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      *
@@ -33905,7 +34276,7 @@ class DefaultApi
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      *
@@ -33961,7 +34332,7 @@ class DefaultApi
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
      * @param  string $levels controls how deep the tree should go. default &#x3D; 1 (optional)
      * @param  string $admin_areas_only set to true only administrative areas are included. Set to false then all types of areas are included. This kind can destroy the tree structure and combined with high levels the performance can be bad. default &#x3D; false (optional)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
      * @param  string $accept_timezone Time zone ID to apply its offset to dates and time. (optional)
      *
@@ -34382,7 +34753,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of VideoObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -34406,7 +34777,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of VideoObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -34488,7 +34859,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of VideoObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -34515,7 +34886,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of VideoObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -34572,7 +34943,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of VideoObject to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -34723,7 +35094,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -34752,7 +35123,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -34839,7 +35210,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -34871,7 +35242,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -34933,7 +35304,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get single object. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  string $select Comma-separated list of properties to include in the response. (optional)
      * @param  bool $include_all_photos Use &#x60;true&#x60; to include all photos in the response, otherwise images with low confidence will be skipped. (optional)
@@ -35109,7 +35480,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -35117,7 +35488,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecast[]
+     * @return \Infocenter\Client\Model\DsDailyForecastArray
      */
     public function webcamDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -35132,7 +35503,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -35140,11 +35511,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
      */
     public function webcamDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->webcamDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -35196,7 +35567,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecast[]',
+                        '\Infocenter\Client\Model\DsDailyForecastArray',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -35213,7 +35584,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -35239,7 +35610,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -35250,7 +35621,7 @@ class DefaultApi
      */
     public function webcamDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
         $request = $this->webcamDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -35295,7 +35666,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Sets for how many days the daily forecast responses are returned. Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next day. Returned by default.&lt;br&gt;&#x60;5&#x60; - Return forecast data for the next 5 days.&lt;br&gt;&#x60;10&#x60; - Return forecast data for the next 10 days. (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -35441,7 +35812,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -35464,7 +35835,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -35545,7 +35916,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -35571,7 +35942,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -35627,7 +35998,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather daily forecast information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned.Available values are:&lt;br&gt;&#x60;1&#x60; - Return forecast data for the next hour. Default value.&lt;br&gt;&#x60;12&#x60; - Return hourly forecast for next 12 hours.&lt;br&gt;&#x60;24&#x60; - Return hourly forecast for next 24 hours.&lt;br&gt;&#x60;72&#x60; - Return hourly forecast for next 72 hours (3 days). (optional)
      * @param  string $accept_language Two-letter language code to get localized properties. (optional)
@@ -35773,7 +36144,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -35797,7 +36168,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -35879,7 +36250,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -35906,7 +36277,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
@@ -35963,7 +36334,7 @@ class DefaultApi
      *
      * @param  string $id Use property identifier of Webcam to get the weather information for it. (required)
      * @param  string $ocp_apim_subscription_key Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. (required)
-     * @param  string $project Required. Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
+     * @param  string $project Use this property to filter objects by a specific project. All partners must provide their project code in this parameter. (optional)
      * @param  string $contained_in_place Filters by &#x60;containedInPlace&#x60;. Use property identifier of place. (optional)
      * @param  int $duration Format - int32. Time frame of the returned weather conditions. By default, the most current weather conditions will be returned. Available values are:&lt;br&gt;&#x60;0&#x60; - Return the most current weather conditions. Default value.&lt;br&gt;&#x60;6&#x60; - Return weather conditions from past 6 hours.&lt;br&gt;&#x60;24&#x60; - Return weather conditions from past 24 hours. (optional)
      * @param  bool $details Returns full details for the current conditions, &#x60;false&#x60; by default. (optional)
