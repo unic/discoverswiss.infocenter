@@ -87,260 +87,6 @@ class DefaultApi
     }
 
     /**
-     * Operation 2e2cf26c21d341159e39a663d7497235
-     *
-     * openapi
-     *
-     * @param  string $version OpenAPI version (required)
-     * @param  string $extension OpenAPI document extension (required)
-     *
-     * @throws \Infocenter\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function 2e2cf26c21d341159e39a663d7497235($version, $extension)
-    {
-        $this->2e2cf26c21d341159e39a663d7497235WithHttpInfo($version, $extension);
-    }
-
-    /**
-     * Operation 2e2cf26c21d341159e39a663d7497235WithHttpInfo
-     *
-     * openapi
-     *
-     * @param  string $version OpenAPI version (required)
-     * @param  string $extension OpenAPI document extension (required)
-     *
-     * @throws \Infocenter\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function 2e2cf26c21d341159e39a663d7497235WithHttpInfo($version, $extension)
-    {
-        $returnType = '';
-        $request = $this->2e2cf26c21d341159e39a663d7497235Request($version, $extension);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation 2e2cf26c21d341159e39a663d7497235Async
-     *
-     * openapi
-     *
-     * @param  string $version OpenAPI version (required)
-     * @param  string $extension OpenAPI document extension (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function 2e2cf26c21d341159e39a663d7497235Async($version, $extension)
-    {
-        return $this->2e2cf26c21d341159e39a663d7497235AsyncWithHttpInfo($version, $extension)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation 2e2cf26c21d341159e39a663d7497235AsyncWithHttpInfo
-     *
-     * openapi
-     *
-     * @param  string $version OpenAPI version (required)
-     * @param  string $extension OpenAPI document extension (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function 2e2cf26c21d341159e39a663d7497235AsyncWithHttpInfo($version, $extension)
-    {
-        $returnType = '';
-        $request = $this->2e2cf26c21d341159e39a663d7497235Request($version, $extension);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation '2e2cf26c21d341159e39a663d7497235'
-     *
-     * @param  string $version OpenAPI version (required)
-     * @param  string $extension OpenAPI document extension (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function 2e2cf26c21d341159e39a663d7497235Request($version, $extension)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling 2e2cf26c21d341159e39a663d7497235'
-            );
-        }
-        // verify the required parameter 'extension' is set
-        if ($extension === null || (is_array($extension) && count($extension) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $extension when calling 2e2cf26c21d341159e39a663d7497235'
-            );
-        }
-
-        $resourcePath = '/openapi/{version}.{extension}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($extension !== null) {
-            $resourcePath = str_replace(
-                '{' . 'extension' . '}',
-                ObjectSerializer::toPathValue($extension),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                [],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
-        if ($apiKey !== null) {
-            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('subscription-key');
-        if ($apiKey !== null) {
-            $queryParams['subscription-key'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation accommodation
      *
      * Accommodation
@@ -1082,7 +828,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function administrativeAreaRegionDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -1105,11 +851,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function administrativeAreaRegionDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->administrativeAreaRegionDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -1161,7 +907,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1215,7 +961,7 @@ class DefaultApi
      */
     public function administrativeAreaRegionDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->administrativeAreaRegionDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -4124,7 +3870,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function civicStructureDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -4147,11 +3893,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function civicStructureDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->civicStructureDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -4203,7 +3949,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4257,7 +4003,7 @@ class DefaultApi
      */
     public function civicStructureDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->civicStructureDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -5515,7 +5261,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function conditionDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -5538,11 +5284,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function conditionDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->conditionDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -5594,7 +5340,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5648,7 +5394,7 @@ class DefaultApi
      */
     public function conditionDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->conditionDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -7588,7 +7334,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function eventDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -7611,11 +7357,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function eventDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->eventDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -7667,7 +7413,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7721,7 +7467,7 @@ class DefaultApi
      */
     public function eventDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->eventDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -9320,7 +9066,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function foodEstablishmentWeatherDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -9343,11 +9089,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function foodEstablishmentWeatherDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->foodEstablishmentWeatherDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -9399,7 +9145,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9453,7 +9199,7 @@ class DefaultApi
      */
     public function foodEstablishmentWeatherDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->foodEstablishmentWeatherDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -21929,7 +21675,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function localBusinessDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -21952,11 +21698,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function localBusinessDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->localBusinessDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -22008,7 +21754,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -22062,7 +21808,7 @@ class DefaultApi
      */
     public function localBusinessDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->localBusinessDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -23329,7 +23075,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function lodgingBusinessDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -23352,11 +23098,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function lodgingBusinessDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->lodgingBusinessDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -23408,7 +23154,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -23462,7 +23208,7 @@ class DefaultApi
      */
     public function lodgingBusinessDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->lodgingBusinessDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -25061,7 +24807,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function placeDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -25084,11 +24830,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function placeDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->placeDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -25140,7 +24886,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -25194,7 +24940,7 @@ class DefaultApi
      */
     public function placeDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->placeDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -28308,7 +28054,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsFile
+     * @return string
      */
     public function searchByGETForPdf($template_project, $template, $ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $title = null, $leadtext = null, $accept_language = null, $accept_timezone = null)
     {
@@ -28376,11 +28122,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsFile, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchByGETForPdfWithHttpInfo($template_project, $template, $ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $title = null, $leadtext = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsFile';
+        $returnType = 'string';
         $request = $this->searchByGETForPdfRequest($template_project, $template, $ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $title, $leadtext, $accept_language, $accept_timezone);
 
         try {
@@ -28432,7 +28178,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsFile',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -28576,7 +28322,7 @@ class DefaultApi
      */
     public function searchByGETForPdfAsyncWithHttpInfo($template_project, $template, $ocp_apim_subscription_key, $search_text = null, $search_fields = null, $select = null, $current_page = null, $results_per_page = null, $order_by = null, $scoring_reference_point = null, $only_suggestions = null, $facet_order = null, $filters = null, $datasource = null, $project = null, $source_partner = null, $award = null, $campaign_tag = null, $profile_tag = null, $all_tag = null, $category = null, $facets = null, $scoring_tag = null, $source_id = null, $location = null, $has_geo_shape = null, $product_availability = null, $action = null, $only_with_availabilities = null, $category_tree = null, $tag = null, $contained_in_place = null, $address_locality = null, $address_postal_code = null, $time = null, $length = null, $state = null, $rating_condition = null, $rating_difficulty = null, $elevation_ascent = null, $elevation_descent = null, $elevation_min_altitude = null, $elevation_max_altitude = null, $season = null, $type = null, $combined_type = null, $combined_type_tree = null, $leaf_type = null, $title = null, $leadtext = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsFile';
+        $returnType = 'string';
         $request = $this->searchByGETForPdfRequest($template_project, $template, $ocp_apim_subscription_key, $search_text, $search_fields, $select, $current_page, $results_per_page, $order_by, $scoring_reference_point, $only_suggestions, $facet_order, $filters, $datasource, $project, $source_partner, $award, $campaign_tag, $profile_tag, $all_tag, $category, $facets, $scoring_tag, $source_id, $location, $has_geo_shape, $product_availability, $action, $only_with_availabilities, $category_tree, $tag, $contained_in_place, $address_locality, $address_postal_code, $time, $length, $state, $rating_condition, $rating_difficulty, $elevation_ascent, $elevation_descent, $elevation_min_altitude, $elevation_max_altitude, $season, $type, $combined_type, $combined_type_tree, $leaf_type, $title, $leadtext, $accept_language, $accept_timezone);
 
         return $this->client
@@ -29009,7 +28755,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsFile
+     * @return string
      */
     public function searchByPOSTForPdf($ocp_apim_subscription_key, $template_project, $template, $body = null, $accept_language = null, $accept_timezone = null)
     {
@@ -29031,11 +28777,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsFile, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchByPOSTForPdfWithHttpInfo($ocp_apim_subscription_key, $template_project, $template, $body = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsFile';
+        $returnType = 'string';
         $request = $this->searchByPOSTForPdfRequest($ocp_apim_subscription_key, $template_project, $template, $body, $accept_language, $accept_timezone);
 
         try {
@@ -29087,7 +28833,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsFile',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -29139,7 +28885,7 @@ class DefaultApi
      */
     public function searchByPOSTForPdfAsyncWithHttpInfo($ocp_apim_subscription_key, $template_project, $template, $body = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsFile';
+        $returnType = 'string';
         $request = $this->searchByPOSTForPdfRequest($ocp_apim_subscription_key, $template_project, $template, $body, $accept_language, $accept_timezone);
 
         return $this->client
@@ -29728,7 +29474,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function skiResortDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -29751,11 +29497,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function skiResortDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->skiResortDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -29807,7 +29553,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -29861,7 +29607,7 @@ class DefaultApi
      */
     public function skiResortDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->skiResortDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -31756,7 +31502,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function tourDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -31779,11 +31525,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function tourDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->tourDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -31835,7 +31581,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -31889,7 +31635,7 @@ class DefaultApi
      */
     public function tourDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->tourDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -33147,7 +32893,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function transportationSystemDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -33170,11 +32916,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function transportationSystemDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->transportationSystemDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -33226,7 +32972,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -33280,7 +33026,7 @@ class DefaultApi
      */
     public function transportationSystemDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->transportationSystemDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client
@@ -35488,7 +35234,7 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Infocenter\Client\Model\DsDailyForecastArray
+     * @return \Infocenter\Client\Model\DsDailyForecast[]
      */
     public function webcamDailyForecast($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
@@ -35511,11 +35257,11 @@ class DefaultApi
      *
      * @throws \Infocenter\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Infocenter\Client\Model\DsDailyForecastArray, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Infocenter\Client\Model\DsDailyForecast[], HTTP status code, HTTP response headers (array of strings)
      */
     public function webcamDailyForecastWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->webcamDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         try {
@@ -35567,7 +35313,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infocenter\Client\Model\DsDailyForecastArray',
+                        '\Infocenter\Client\Model\DsDailyForecast[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -35621,7 +35367,7 @@ class DefaultApi
      */
     public function webcamDailyForecastAsyncWithHttpInfo($id, $ocp_apim_subscription_key, $project = null, $contained_in_place = null, $duration = null, $accept_language = null, $accept_timezone = null)
     {
-        $returnType = '\Infocenter\Client\Model\DsDailyForecastArray';
+        $returnType = '\Infocenter\Client\Model\DsDailyForecast[]';
         $request = $this->webcamDailyForecastRequest($id, $ocp_apim_subscription_key, $project, $contained_in_place, $duration, $accept_language, $accept_timezone);
 
         return $this->client

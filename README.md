@@ -71,30 +71,6 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$version = "version_example"; // string | OpenAPI version
-$extension = "extension_example"; // string | OpenAPI document extension
-
-try {
-    $apiInstance->2e2cf26c21d341159e39a663d7497235($version, $extension);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->2e2cf26c21d341159e39a663d7497235: ', $e->getMessage(), PHP_EOL;
-}
-
-// Configure API key authorization: apiKeyHeader
-$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-// Configure API key authorization: apiKeyQuery
-$config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infocenter\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-$apiInstance = new Infocenter\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
 $id = "id_example"; // string | Use property identifier of Accommodation to get single object.
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $project = "project_example"; // string | Use this property to filter objects by a specific project. All partners must provide their project code in this parameter.
@@ -3457,7 +3433,6 @@ All URIs are relative to *https://api.discover.swiss/test/info/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**2e2cf26c21d341159e39a663d7497235**](docs/Api/DefaultApi.md#2e2cf26c21d341159e39a663d7497235) | **GET** /openapi/{version}.{extension} | openapi
 *DefaultApi* | [**accommodation**](docs/Api/DefaultApi.md#accommodation) | **GET** /accommodations/{id} | Accommodation
 *DefaultApi* | [**administrativeAreaRegion**](docs/Api/DefaultApi.md#administrativearearegion) | **GET** /areas/{id} | AdministrativeArea (Region)
 *DefaultApi* | [**administrativeAreaRegionDailyForecast**](docs/Api/DefaultApi.md#administrativearearegiondailyforecast) | **GET** /areas/{id}/weather/forecast/daily | AdministrativeArea (Region) daily forecast
