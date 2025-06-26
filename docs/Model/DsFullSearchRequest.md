@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **action** | **string[]** | Optional. List of action to filter by (with OR condition). Possible values: &#x60;OrderActionWeb&#x60;, &#x60;RegisterActionWeb&#x60; and &#x60;OrderActionDsMarket&#x60;. | [optional] 
 **only_with_availabilities** | **bool** | Results are filtered by availabilities (by default true if there is an availability-filter set) otherwise the information is only added to the search result. When it is true - facets won&#x27;t be returned. | [optional] 
 **amenity_feature** | **string[]** | Optional. List of amenity feature ids to filter by (with OR condition). | [optional] 
-**star_rating_name** | **double[]** | Optional. List of star ratings names to filter by (with OR condition). | [optional] 
+**star_rating_name** | **string[]** | Optional. List of star ratings names to filter by (with OR condition). | [optional] 
 **star_rating_value** | **double[]** | Optional. List of star ratings to filter by (with OR condition). | [optional] 
 **star_rating_garni** | **bool[]** | Optional. List of garni options (true/false) to filter by (with OR condition). | [optional] 
 **star_rating_superior** | **bool[]** | Optional. List of superrior options (true/false) to filter by (with OR condition). | [optional] 
