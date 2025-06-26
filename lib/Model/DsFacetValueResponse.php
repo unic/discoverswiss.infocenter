@@ -59,9 +59,9 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
         'facet_type' => 'string',
         'filter_type' => 'string',
         'value_type' => 'string',
-        'from' => 'DsAnyOfFacetValueResponseDsFrom',
-        'to' => 'DsAnyOfFacetValueResponseDsTo',
-        'value' => 'DsAnyOfFacetValueResponseDsValue',
+        'from' => 'object',
+        'to' => 'object',
+        'value' => 'object',
         'count' => 'int',
         'query' => 'string',
         'name' => 'string',
@@ -336,7 +336,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets from
      *
-     * @return DsAnyOfFacetValueResponseDsFrom
+     * @return object
      */
     public function getFrom()
     {
@@ -346,7 +346,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets from
      *
-     * @param DsAnyOfFacetValueResponseDsFrom $from From value for filter range
+     * @param object $from From value for filter range
      *
      * @return $this
      */
@@ -360,7 +360,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets to
      *
-     * @return DsAnyOfFacetValueResponseDsTo
+     * @return object
      */
     public function getTo()
     {
@@ -370,7 +370,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets to
      *
-     * @param DsAnyOfFacetValueResponseDsTo $to To value for filter range
+     * @param object $to To value for filter range
      *
      * @return $this
      */
@@ -384,7 +384,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Gets value
      *
-     * @return DsAnyOfFacetValueResponseDsValue
+     * @return object
      */
     public function getValue()
     {
@@ -394,7 +394,7 @@ class DsFacetValueResponse implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param DsAnyOfFacetValueResponseDsValue $value Value of facet
+     * @param object $value Value of facet
      *
      * @return $this
      */

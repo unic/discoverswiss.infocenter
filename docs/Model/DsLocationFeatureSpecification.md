@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **min_value** | **string** |  | [optional] 
 **unit_code** | **string** |  | [optional] 
 **unit_text** | **string** |  | [optional] 
-**value** | [**DsAnyOfLocationFeatureSpecificationDsValue**](DsAnyOfLocationFeatureSpecificationDsValue.md) |  | [optional] 
+**value** | **object** |  | [optional] 
 **value_str** | **string** | The string-value of the value property in case the valueType is not object but a value-type | [optional] 
 **property_id** | **string** |  | [optional] 
 **value_type** | **string** | String, integer, double etc. | [optional] 

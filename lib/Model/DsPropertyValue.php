@@ -60,7 +60,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
         'min_value' => 'string',
         'unit_code' => 'string',
         'unit_text' => 'string',
-        'value' => 'DsAnyOfPropertyValueDsValue',
+        'value' => 'object',
         'value_str' => 'string',
         'property_id' => 'string',
         'value_type' => 'string',
@@ -426,7 +426,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Gets value
      *
-     * @return DsAnyOfPropertyValueDsValue
+     * @return object
      */
     public function getValue()
     {
@@ -436,7 +436,7 @@ class DsPropertyValue implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param DsAnyOfPropertyValueDsValue $value value
+     * @param object $value value
      *
      * @return $this
      */
