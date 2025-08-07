@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**updateView**](SearchApi.md#updateview) | **PUT** /search/views/{id} | 
 
 # **createView**
-> \Infocenter\Client\Model\DsSearchView createView($ocp_apim_subscription_key, $body, $authorization, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsSearchViewResponse createView($ocp_apim_subscription_key, $body, $authorization, $accept_language, $accept_timezone, $category_version)
 
 
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsSearchView**](../Model/DsSearchView.md)
+[**\Infocenter\Client\Model\DsSearchViewResponse**](../Model/DsSearchViewResponse.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllViews**
-> \Infocenter\Client\Model\DsSearchView[] getAllViews($ocp_apim_subscription_key, $authorization, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsSearchViewResponse[] getAllViews($ocp_apim_subscription_key, $authorization, $accept_language, $accept_timezone, $category_version)
 
 
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsSearchView[]**](../Model/DsSearchView.md)
+[**\Infocenter\Client\Model\DsSearchViewResponse[]**](../Model/DsSearchViewResponse.md)
 
 ### Authorization
 
@@ -185,7 +185,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getViewById**
-> \Infocenter\Client\Model\DsSearchView getViewById($ocp_apim_subscription_key, $id, $authorization, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsSearchViewResponse getViewById($ocp_apim_subscription_key, $id, $authorization, $accept_language, $accept_timezone, $category_version)
 
 
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsSearchView**](../Model/DsSearchView.md)
+[**\Infocenter\Client\Model\DsSearchViewResponse**](../Model/DsSearchViewResponse.md)
 
 ### Authorization
 
@@ -244,7 +244,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateView**
-> \Infocenter\Client\Model\DsSearchView updateView($ocp_apim_subscription_key, $id, $body, $authorization, $accept_language, $accept_timezone, $category_version)
+> \Infocenter\Client\Model\DsSearchViewResponse updateView($ocp_apim_subscription_key, $id, $body, $authorization, $accept_language, $accept_timezone, $category_version)
 
 
 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Infocenter\Client\Model\DsSearchView**](../Model/DsSearchView.md)
+[**\Infocenter\Client\Model\DsSearchViewResponse**](../Model/DsSearchViewResponse.md)
 
 ### Authorization
 

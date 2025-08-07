@@ -39,6 +39,7 @@ Name | Type | Description | Notes
 **available_data_language** | **string[]** | List of languages in which data of the object is available. Format: ISO 639-1. | [optional] 
 **auto_translated_data** | **bool** | Indicates if one of the text properties was translated by machine. | [optional] 
 **license** | **string** |  | [optional] 
+**view** | **string[]** | Identifiers of the search view to which the vertex belongs. | [optional] 
 **type_name** | **string** | Translated name of type. | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **description** | **string** | Multilingual. It is automatically translated if the description is not provided in all languages. Translated text is trimmed to 9000 symbols. Can contain HTML | [optional] 

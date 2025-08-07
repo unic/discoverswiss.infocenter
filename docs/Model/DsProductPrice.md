@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **max_seats** | **int** | Maximum seats allowed to book this ticket category.If it is a single seat ticket with one ticket code it should be 1.If it is more than 1 e.g. 5 we assume that no matter how many spots were booked 2 or 5 this ticket will have only 1 ticket code (QR Code, Barcode, etc) which means it is a GROUP ticket | [optional] 
 **valid_from** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **valid_through** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**unit_type** | **string** |  | [optional] 
 **reduction** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

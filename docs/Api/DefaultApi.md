@@ -5201,7 +5201,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
     new GuzzleHttp\Client()
 );
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
-$body = new \Infocenter\Client\Model\DsFullSearchRequest(); // \Infocenter\Client\Model\DsFullSearchRequest | 
+$body = new \Infocenter\Client\Model\DsSearchRequest(); // \Infocenter\Client\Model\DsSearchRequest | 
 $authorization = "authorization_example"; // string | Authorization header to identify the B2C user profile.
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
@@ -5221,7 +5221,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
- **body** | [**\Infocenter\Client\Model\DsFullSearchRequest**](../Model/DsFullSearchRequest.md)|  | [optional]
+ **body** | [**\Infocenter\Client\Model\DsSearchRequest**](../Model/DsSearchRequest.md)|  | [optional]
  **authorization** | **string**| Authorization header to identify the B2C user profile. | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
@@ -5580,7 +5580,7 @@ $apiInstance = new Infocenter\Client\Api\DefaultApi(
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
 $template_project = "template_project_example"; // string | Use property to select project which is used to select pdf template
 $template = "template_example"; // string | Use property to select pdf template in selected project
-$body = new \Infocenter\Client\Model\DsFullSearchRequest(); // \Infocenter\Client\Model\DsFullSearchRequest | 
+$body = new \Infocenter\Client\Model\DsSearchRequest(); // \Infocenter\Client\Model\DsSearchRequest | 
 $accept_language = "accept_language_example"; // string | Two-letter language code to get localized properties.
 $accept_timezone = "accept_timezone_example"; // string | Time zone ID to apply its offset to dates and time.
 
@@ -5600,7 +5600,7 @@ Name | Type | Description  | Notes
  **ocp_apim_subscription_key** | **string**| Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss]. |
  **template_project** | **string**| Use property to select project which is used to select pdf template |
  **template** | **string**| Use property to select pdf template in selected project |
- **body** | [**\Infocenter\Client\Model\DsFullSearchRequest**](../Model/DsFullSearchRequest.md)|  | [optional]
+ **body** | [**\Infocenter\Client\Model\DsSearchRequest**](../Model/DsSearchRequest.md)|  | [optional]
  **accept_language** | **string**| Two-letter language code to get localized properties. | [optional]
  **accept_timezone** | **string**| Time zone ID to apply its offset to dates and time. | [optional]
 
