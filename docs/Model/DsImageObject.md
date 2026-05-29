@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_winter** | **bool** |  | [optional] 
+**is_winter** | **bool** | Indicates whether this image is suitable for winter season display. Deprecated, season defined by tags. | [optional] 
 **caption** | **string** | Multilingual | [optional] 
 **copyright_notice** | **string** | Text of a notice appropriate for describing the copyright aspects of this object | [optional] 
 **content_size** | **string** |  | [optional] 
@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **embed_url** | **string** |  | [optional] 
 **height** | **string** |  | [optional] 
 **width** | **string** |  | [optional] 
+**sha256** | **string** | The SHA-2 SHA256 hash of the content of the item | [optional] 
 **content_reference_time** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **copyright_year** | **int** |  | [optional] 
 **encoding_format** | **string** |  | [optional] 

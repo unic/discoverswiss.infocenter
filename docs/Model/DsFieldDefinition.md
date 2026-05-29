@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **type** | **string** | Traveler field type. Can be radio, text, select, etc. | [optional] 
 **additional_type** | **string** | Additional type for field. Can be ProfileImage, TravelerProfileImage, etc. for media type fields. | [optional] 
 **name** | **string** | Can be used as a label of a field | [optional] 
+**description** | **string** | Can be used as a description of a field | [optional] 
 **required** | **bool** | Is travelerField required? | [optional] 
 **required_for_offers** | **bool** | Is this required to get an offer? null - not used for offers (default). false - can be used. true - must be used | [optional] 
 **possible_value** | **map[string,string]** | Values of the field | [optional] 
@@ -16,8 +17,11 @@ Name | Type | Description | Notes
 **parent_field_property_id** | **string** | Name of parent field property | [optional] 
 **parent_field_value** | **string** | Value of parent field property | [optional] 
 **parent_field_operator** | **string** | Operator which is used to check the value defined in ParentFieldPropertyId. If operator is not defined or wrong operator provided then &#x27;equal&#x27; operator is used by default. Supported operators: &#x27;equal&#x27; - (default) current value must be equal to ParentFieldValue property; &#x27;notnullorempty&#x27; - can be applied on string and arrays and check that array/string contains value(s) | [optional] 
+**parent_field_type** | **string** | Type of parent field property. Explicit definition is useful only when type is &#x60;multiselect&#x60; or &#x60;checksum&#x60;. | [optional] 
+**parent_field_model** | **string** | Parent model which should be used for validation. Supported types: OrderItem, Customer, Stay. Example: when validating travelers -&gt; OrderItem or Customer properties can be used in parent fields. | [optional] 
 **readonly** | **bool** | Can this field be changed in the &#x27;edit order item&#x27;: null/false - the referenced property is editable. true - the referenced property must not change its value | [optional] 
 **required_error_name** | **string** | Name of error message translated resource which is used to generate custom validation message instead of default Required validation message | [optional] 
+**custom_error_names** | **map[string,string]** | List of custom translated error message resources which are used to generate custom validation message instead of default Required, RangeMin and RangeMax validation messages if defined | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

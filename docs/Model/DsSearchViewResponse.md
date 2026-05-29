@@ -4,6 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional] 
+**identifier** | **string** |  | [optional] 
+**additional_type** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **schedule_strategy** | **string** | Defines the strategy for the schedule. Possible values: &#x27;EveryHour&#x27;, &#x27;Every6Hours&#x27;, &#x27;Every12Hours&#x27;, &#x27;Daily&#x27; and &#x27;Weekly&#x27;. | [optional] 

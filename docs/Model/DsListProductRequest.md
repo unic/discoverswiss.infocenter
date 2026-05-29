@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **partner_acronym** | **string** |  | [optional] 
 **select** | **string** |  | [optional] 
 **description_mode** | **string** |  | [optional] 
+**photo_season** | **string** |  | [optional] 
 **include_all_photos** | **bool** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

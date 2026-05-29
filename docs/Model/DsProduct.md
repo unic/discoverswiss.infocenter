@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **is_related_to** | [**\Infocenter\Client\Model\DsProductSimplex[]**](DsProductSimplex.md) | A pointer to another, somehow related product (or multiple products). | [optional] 
 **valid_from** | [**\DateTime**](\DateTime.md) | The date when the product becomes valid. | [optional] 
 **valid_through** | [**\DateTime**](\DateTime.md) | The date after when the product is not valid. | [optional] 
+**daily_sales_quota** | **int** | If null then there is no default sales quota, otherwise this value will be used as default for sales quota services | [optional] 
 **id** | **string** | A unique json-ld identifier for the vertex, represented as a Infocenter API url. | [optional] 
 **identifier** | **string** |  | [optional] 
 **removed** | **bool** |  | [optional] 

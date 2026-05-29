@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **difficulties** | [**\Infocenter\Client\Model\DsTourDifficulties**](DsTourDifficulties.md) |  | [optional] 
 **exposition** | [**\Infocenter\Client\Model\DsTourExposition**](DsTourExposition.md) |  | [optional] 
 **risk_potential** | **int** | 1-6 | [optional] 
-**titles** | **string** | Multilingual | [optional] 
 **starting_point_description** | **string** | Multilingual. Can contain HTML | [optional] 
 **safety_guidelines** | **string** | Multilingual. Current conditions like snow are not part of this description. Can contain HTML | [optional] 
 **equipment** | **string** | Multilingual. Special equipment needed for this tour. Can contain HTML | [optional] 

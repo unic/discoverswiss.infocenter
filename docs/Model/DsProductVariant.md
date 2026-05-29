@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **position** | **int** | Position of the variant in the list | [optional] 
 **option** | [**\Infocenter\Client\Model\DsOption[]**](DsOption.md) | Options which make up the variants of the product | [optional] 
 **inventory_quantity** | **int** | If null there is no inventory or it doesn&#x27;t matter API: &#x3D; inventoryQuantity - reserveQuantity (always &gt;&#x3D; 0) | [optional] 
+**daily_sales_quota** | **int** | If null then there is no default sales quota for a Variant and the one of the product will be used, otherwise this value will be used as default for sales quota services | [optional] 
 **price_list** | [**\Infocenter\Client\Model\DsProductPrice[]**](DsProductPrice.md) | List of product prices by age | [optional] 
 **tax_rate** | **double** | Tax rate (0.077 &#x3D; 7.7%) | [optional] 
 **image** | [**\Infocenter\Client\Model\DsImageObjectSimplex**](DsImageObjectSimplex.md) |  | [optional] 

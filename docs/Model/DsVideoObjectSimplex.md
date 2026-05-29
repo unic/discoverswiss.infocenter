@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **caption** | **string** |  | [optional] 
 **copyright_notice** | **string** |  | [optional] 
 **encoding_format** | **string** |  | [optional] 
+**height** | **string** |  | [optional] 
+**width** | **string** |  | [optional] 
 **data_governance** | [**\Infocenter\Client\Model\DsDataGovernance**](DsDataGovernance.md) |  | [optional] 
 **in_language** | **string** | The language of the content or performance or used in an action. Format: ISO 639-1. | [optional] 
 **thumbnail_url** | **string** |  | [optional] 

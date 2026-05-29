@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accommodation_category** | **string** | Official room category HotellerieSuisse for more information check [AccommodataHub documentation](https://docs.discover.swiss/dev/quickstarts/how-to-work-with-accommodatahub/) | [optional] 
+**accommodation_category** | **string** |  | [optional] 
+**number_of_this_accommodation_in_located_at** | **int** | The number of this type/category accommodation in the located at place | [optional] 
 **floor_level** | **string** | The floor level for the accommodation in a multi-storey building. | [optional] 
 **permitted_usage** | **string** | Indications regarding the permitted usage of the accommodation. | [optional] 
 **bed** | [**\Infocenter\Client\Model\DsBedDetails[]**](DsBedDetails.md) | The type of bed or beds for more information check [AccommodataHub documentation](https://docs.discover.swiss/dev/quickstarts/how-to-work-with-accommodatahub/) | [optional] 

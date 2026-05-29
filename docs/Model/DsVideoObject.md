@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **embed_url** | **string** |  | [optional] 
 **height** | **string** |  | [optional] 
 **width** | **string** |  | [optional] 
+**sha256** | **string** | The SHA-2 SHA256 hash of the content of the item | [optional] 
 **content_reference_time** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **copyright_year** | **int** |  | [optional] 
 **encoding_format** | **string** |  | [optional] 

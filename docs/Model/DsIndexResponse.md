@@ -24,9 +24,12 @@ Name | Type | Description | Notes
 **time** | **int** | Tour time | [optional] 
 **length** | **double** | Tour length | [optional] 
 **rating** | [**\Infocenter\Client\Model\DsTourRating**](DsTourRating.md) |  | [optional] 
+**tag** | **string[]** |  | [optional] 
 **campaign_tag** | **string[]** |  | [optional] 
 **profile_tag** | **string[]** |  | [optional] 
 **schedule** | [**\Infocenter\Client\Model\DsSchedule[]**](DsSchedule.md) |  | [optional] 
+**opening_hours_specification** | [**\Infocenter\Client\Model\DsOpeningHoursSpecification[]**](DsOpeningHoursSpecification.md) |  | [optional] 
+**special_opening_hours_specification** | [**\Infocenter\Client\Model\DsOpeningHoursSpecification[]**](DsOpeningHoursSpecification.md) |  | [optional] 
 **next_occurrence** | [**\DateTime**](\DateTime.md) | Contains the date and time of next occurrence of event | [optional] 
 **recurred_count** | **int** | Contains the number of repetition of event with one week frequency | [optional] 
 **elevation** | [**\Infocenter\Client\Model\DsElevation**](DsElevation.md) |  | [optional] 
@@ -41,10 +44,13 @@ Name | Type | Description | Notes
 **source_id** | **string[]** |  | [optional] 
 **has_review** | **string** | true or false if the object contains reviews | [optional] 
 **location** | **string** |  | [optional] 
-**category** | **string[]** |  | [optional] 
+**category** | **string[]** | List of category identifiers | [optional] 
 **product_availability** | [**\Infocenter\Client\Model\DsProductAvailabilityResponse[]**](DsProductAvailabilityResponse.md) |  | [optional] 
 **star_rating** | [**\Infocenter\Client\Model\DsRating**](DsRating.md) |  | [optional] 
 **context** | [**\Infocenter\Client\Model\DsSearchContext**](DsSearchContext.md) |  | [optional] 
+**award** | **string[]** | List of award identifiers | [optional] 
+**relevance_score** | **double** |  | [optional] 
+**award_simplex** | [**\Infocenter\Client\Model\DsAwardSimplex[]**](DsAwardSimplex.md) | List of award simplex objects | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
