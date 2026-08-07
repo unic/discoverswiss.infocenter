@@ -1,0 +1,16 @@
+# Composer
+/vendor/
+composer.phar
+
+# PHPUnit
+/.phpunit.result.cache
+/build/
+
+# PHP CS Fixer
+/.php_cs.cache
+/.php-cs-fixer.cache
+
+# Editors / OS
+/.idea/
+/.vscode/
+.DS_Store
